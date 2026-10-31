@@ -1,6 +1,8 @@
 # Render 全球公开免费测试部署
 
-这是部署准备文档，**不代表网站已上线**。本次没有使用 Render 授权创建服务、数据库或域名。费用、地区、免费额度和到期政策应以创建时的控制台为准。
+当前公开测试站已部署：[https://easy-english-global.onrender.com](https://easy-english-global.onrender.com)。Render 服务为 Free，Neon 项目套餐为 free_v3，使用 PostgreSQL 18。服务通过连接器按 render.yaml 的运行参数创建，并非已建立 Blueprint；自动部署关闭，避免未验证的提交自动发布。费用、免费额度和到期政策仍以平台为准。
+
+数据库已执行仓库三份迁移并导入全套教材，重复执行已验证安全。生产启动的实际 TLS 会话验证已通过，日志为 `Database TLS verified: TLSv1.3`。真实公网 Smoke 14 项、扩展功能验收 19 项通过，结果见 [部署状态](../deployments/public-test.json)。管理员本人初始化与手机实机验收尚未完成。
 
 ## 1. 服务类型与连接仓库
 
@@ -157,3 +159,11 @@ DELETE FROM rate_limits WHERE expires_at < now();
 ```
 
 平台参考：[Render 免费服务](https://render.com/docs/free)、[Blueprint 配置](https://render.com/docs/blueprint-spec)、[Node 版本](https://render.com/docs/node-version)、[PostgreSQL](https://render.com/docs/postgresql)。
+
+## 当前部署限制与后续验收
+
+- 当前连接器可创建 Free Web Service，但不能直接创建 Blueprint，也不提供 HTTP 健康检查路径的修改操作。平台当前使用 TCP 探针；请在服务 Dashboard → Settings → Health Check Path 填 `/health`。这不改变套餐，不应选择升级实例。
+- 初始生产管理员数为 0，没有默认密码。按本文第 5 节在可信终端初始化；不要在聊天中提供密码，也不要把密码放入 Render 常驻环境。生产环境已验证普通用户不能访问管理员接口，管理员正向操作另有隔离 CI 覆盖，所有者初始化后仍需实际验收。
+- 公网验收工作流 `live-acceptance.yml` 需要部署负责人配合数据库控制，仅操作当前 GitHub run ID 对应的 `ee-live-<run>-a/b@example.invalid` 专用账号。先完成免费权限检查，再只为 B 账号开启试用；待 B 的付费教材及陪练记录保存后，将它的试用时间设为过去，验证到期限制。结束后禁用两个 QA 账号并过期它们的会话，保留记录；不要触碰真实用户。该流程不会创建管理员或输出测试密码。
+- `live-smoke.yml` 对真实公网地址执行无凭证 Smoke，发布状态文件变更时自动运行，也可手工触发。它不依赖终端的网络代理，不把本地 mock 结果冒充线上结果。
+- 安卓/iPhone 实机浏览器布局与英语语音质量尚未验收，不能由 HTTP 或 DOM 单测替代。

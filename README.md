@@ -71,7 +71,9 @@ Render 配置已提供在 [render.yaml](render.yaml)，选择 Free Node Web Serv
 
 生产必需数据库连接和 TLS，站点地址优先 APP_URL，否则使用 Render 的 RENDER_EXTERNAL_URL。Blueprint 测试默认 MAIL_PROVIDER=disabled，无需邮件密钥；找回密码暂不可用，后续可配置 MAIL_PROVIDER=resend、RESEND_API_KEY、MAIL_FROM 启用。秘密只填 Render 环境变量，禁止默认管理员密码。详细八步说明、免费数据库选择、一次性管理员初始化和部署后 `npm run smoke -- https://实际域名` 检查见 [部署文档](docs/deployment.md)。
 
-没有使用 Render 授权，未创建真实服务、数据库或邮件账户，不能声称已经上线。
+已通过授权部署公开测试站：[https://easy-english-global.onrender.com](https://easy-english-global.onrender.com)。Render Free + Neon Free PostgreSQL 18，真实教材已导入，生产模拟支付与邮件关闭。数据库连接启动日志确认 TLSv1.3 且证书验证成功。
+
+真实公网验收 19 项已通过（注册登录、学习记录、隔离、复习、试用访问与到期限制）；两个独立 QA 账号已禁用。首个管理员需要所有者本人安全初始化，安卓/iPhone 实机布局和语音尚未验收。Render 连接器未提供 HTTP 健康路径设置，平台当前仍为 TCP 检查，应用 `/health` 已由公网 Smoke 验证。详见 [部署状态](deployments/public-test.json)。
 
 ## 安全设计与限制
 
