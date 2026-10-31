@@ -16,7 +16,8 @@
 npm install
 cp .env.example .env
 # 修改 .env 中数据库密码；仅数据库容器使用 POSTGRES_PASSWORD
-POSTGRES_PASSWORD=local-development-only docker compose up -d
+# 在本地环境设置自己随机生成的 POSTGRES_PASSWORD，DATABASE_URL 使用相同凭证
+docker compose up -d
 npm run db:migrate
 npm run content:validate
 npm run content:import
@@ -25,13 +26,13 @@ npm start
 
 打开 http://localhost:3000 。数据库连接使用 `.env` 中的 `DATABASE_URL`。`docker compose` 只启动 PostgreSQL；应用运行在宿主机。正式环境必须修改开发密码。
 
-管理员只允许通过受信任的命令行创建，不存在公开的角色升级接口。先在当前终端设置 `ADMIN_EMAIL` 和 `ADMIN_PASSWORD`（至少 12 位，避免把密码写入命令历史），再运行：
+首个管理员只允许通过受信任的交互命令行创建，不存在公开初始化接口。先设置数据库连接，再运行下述命令；脚本隐藏输入密码并要求确认（16–128 位，至少三类字符，拒绝默认密码）：
 
 ```sh
 npm run admin:create
 ```
 
-脚本不会把已有普通账户提升为管理员，也不会覆盖现有管理员密码。运行后清除管理员环境变量。
+脚本不会把已有普通账户提升为管理员，也不会覆盖现有管理员。已有管理员时初始化关闭；不要把 ADMIN_PASSWORD 放入 Render Web Service。自动化仅允许临时环境注入，用后清除。
 
 ## 功能
 
@@ -41,7 +42,7 @@ npm run admin:create
 - 配置 HTTPS 音频时优先播放，否则使用设备 Web Speech 的英文语音（慢速 0.65）；设备是否有英文语音及离线可用性由浏览器决定。
 - 免费账号只获取 `is_free=true` 教材及课程对话（前两场景 50 单词、20 短句、10 对话）。试用和永久会员可访问完整教材。过期后回到免费权限，保留已有记录。
 - 管理后台：创建 1–90 天试用、密码随机生成并仅显示一次、强制更改临时密码、延长 1–90 天试用、禁用/启用、升级永久会员、操作审计。管理员账号受保护。
-- 订单固定为 9900 分 CNY（人民币 99 元），待处理订单去重。模拟确认事务化、幂等、校验订单归属。**没有接入真实支付。** `ALLOW_MOCK_CHECKOUT=true` 时允许账号通过模拟确认升级；公开生产环境应设为 false，由管理员审核升级。
+- 订单固定为 9900 分 CNY（人民币 99 元），待处理订单去重。模拟确认事务化、幂等、校验订单归属。**没有接入真实支付。** 仅非生产环境设置 `ALLOW_MOCK_CHECKOUT=true` 才允许模拟确认升级；生产必须为 false，否则拒绝启动。生产页面隐藏下单/模拟确认按钮，服务端同时拒绝，由管理员授权试用或会员。
 
 ## 教材安装与数据保护
 
@@ -66,7 +67,11 @@ node tests/integration.test.ts
 
 ## 免费测试部署
 
-详见 [docs/deployment.md](docs/deployment.md)，包含免费测试服务、PostgreSQL、邮件配置和 HTTPS。仓库提供 Dockerfile 及数据库 Compose 配置。此交付包含源码和部署说明，尚未连接真实云数据库、邮件服务，也未部署公开站点。
+Render 配置已提供在 [render.yaml](render.yaml)，选择 Free Node Web Service。Build：`npm install --omit=dev && npm run content:validate`；Start：`npm run start:render`；健康检查：`/health`。启动前自动进行安全迁移与教材准备，重复冷启动不会重置数据。
+
+生产必需数据库连接和 TLS，站点地址优先 APP_URL，否则使用 Render 的 RENDER_EXTERNAL_URL。邮件推荐 MAIL_PROVIDER=resend、RESEND_API_KEY、MAIL_FROM；也可明确 disabled 做无邮件测试。秘密只填 Render 环境变量，禁止默认管理员密码。详细八步说明、免费数据库选择、一次性管理员初始化和部署后 `npm run smoke -- https://实际域名` 检查见 [部署文档](docs/deployment.md)。
+
+没有使用 Render 授权，未创建真实服务、数据库或邮件账户，不能声称已经上线。
 
 ## 安全设计与限制
 
@@ -74,7 +79,7 @@ node tests/integration.test.ts
 
 数据库共享限流防重启绕过，按服务端所见 IP 限制认证尝试。应用默认不信任 X-Forwarded-For；反向代理下多个用户可能共享限流额度。正式上线需在可信入口增加单账号/入口限流和监控，并定期清理过期 `sessions`、`password_resets`、`rate_limits`。后台用户列表目前显示最近 500 个账号。
 
-密码重置需要 SMTP；未配置或发送失败时仍返回统一信息，防止邮箱枚举。SMTP 故障应在部署时实际发送验证。当前版本尚无邮件验证、真实支付、多因素认证、审计查看页面或教材编辑 UI。
+密码重置支持 Resend HTTPS API（Render 免费服务推荐）或允许出站 SMTP 的环境。明确设置 MAIL_PROVIDER=disabled 时隐藏找回密码，接口拒绝请求；已启用但发送失败时返回统一信息防邮箱枚举，并记录不含秘密的失败日志。部署后需要实际验证收信。当前版本尚无邮件验证、真实支付、多因素认证、审计查看页面或教材编辑 UI。
 
 ## 简单英语学习方法（听说学习版）
 

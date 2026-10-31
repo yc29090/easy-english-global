@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24 <25"
   },
   "scripts": {
     "dev": "node --env-file-if-exists=.env src/server.ts",
@@ -15,7 +15,10 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.ts tests/*.test.js",
     "check": "npm run typecheck && npm test",
-    "content:validate": "node scripts/validate-content.ts"
+    "content:validate": "node scripts/validate-content.ts",
+    "start:render": "node scripts/render-start.ts",
+    "config:check": "node --env-file-if-exists=.env scripts/check-env.ts",
+    "smoke": "node --env-file-if-exists=.env scripts/smoke.ts"
   },
   "dependencies": {
     "pg": "^8.16.3",
@@ -27,6 +30,7 @@
     "@types/pg": "^8.15.6",
     "@types/nodemailer": "^7.0.3",
     "typescript": "^5.9.3",
-    "linkedom": "^0.18.12"
+    "linkedom": "^0.18.12",
+    "yaml": "^2.8.1"
   }
 }

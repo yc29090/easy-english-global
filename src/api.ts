@@ -3,7 +3,7 @@ import type {DB} from './db.ts';
 import {reviewSchedule} from './review.ts';
 import {dialogues} from './dialogues.ts';
 import {token,digest,hashPassword,verifyPassword,member,publicUser,HttpError,requireValue,email,password,days} from './security.ts';
-export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean};
+export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void};
 export async function api(c:Context):Promise<any>{
  const {db,method,path,body:b}=c;
  const one=async(sql:string,v:any[]=[])=> (await db.query(sql,v)).rows[0];
@@ -16,7 +16,7 @@ export async function api(c:Context):Promise<any>{
   const counts=(await db.query('SELECT kind,count(*)::int AS count FROM materials GROUP BY kind')).rows;
   const curriculumDialogues=(await db.query('SELECT * FROM curriculum_dialogues WHERE is_free=true OR $1::boolean ORDER BY difficulty,sort_order,id',[!!full])).rows;
   const dialogueCounts=(await db.query('SELECT scene_id,count(*)::int AS count FROM curriculum_dialogues GROUP BY scene_id')).rows;
-  return {dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
+  return {features:{mockCheckout:c.mock,passwordReset:c.passwordResetEnabled!==false},dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
  }
  if(method==='POST'&&path==='/api/auth/register'){
   await limit('auth',20);const address=email(b.email), hash=await hashPassword(password(b.password));
@@ -31,8 +31,9 @@ export async function api(c:Context):Promise<any>{
   if(!u||!valid||u.disabled)throw new HttpError(401,'Invalid email or password');return issueSession(u);
  }
  if(method==='POST'&&path==='/api/auth/forgot'){
+  if(c.passwordResetEnabled===false)throw new HttpError(503,'Password reset is temporarily unavailable');
   await limit('reset',5);const address=email(b.email);const u=await one('SELECT * FROM users WHERE email=$1 AND disabled=false',[address]);
-  if(u){const raw=token();await db.query("INSERT INTO password_resets VALUES($1,$2,now()+interval '30 minutes')",[digest(raw),u.id]);try{await c.sendReset(address,c.appUrl+'/?reset='+encodeURIComponent(raw));}catch{await db.query('DELETE FROM password_resets WHERE token_hash=$1',[digest(raw)]);}}
+  if(u){const raw=token();await db.query("INSERT INTO password_resets VALUES($1,$2,now()+interval '30 minutes')",[digest(raw),u.id]);try{await c.sendReset(address,c.appUrl+'/?reset='+encodeURIComponent(raw));}catch{c.onMailError?.();await db.query('DELETE FROM password_resets WHERE token_hash=$1',[digest(raw)]);}}
   return {message:'If the account exists, a reset link will be sent.'};
  }
  if(method==='POST'&&path==='/api/auth/reset'){
@@ -95,6 +96,7 @@ export async function api(c:Context):Promise<any>{
  }
  if(path==='/api/orders'&&method==='GET')return {orders:(await db.query('SELECT * FROM orders WHERE user_id=$1 ORDER BY created_at DESC',[u.id])).rows};
  if(path==='/api/orders'&&method==='POST'){
+  if(!c.mock)throw new HttpError(403,'Online checkout is unavailable');
   if(u.membership==='lifetime')throw new HttpError(409,'Already a lifetime member');
   return {order:await one("INSERT INTO orders(id,user_id) VALUES($1,$2) ON CONFLICT(user_id) WHERE status='pending' DO UPDATE SET user_id=EXCLUDED.user_id RETURNING *",[randomUUID(),u.id])};
  }

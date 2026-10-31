@@ -1,0 +1,32 @@
+# Connect this repository as a Render Blueprint, or use these values for a Node Web Service.
+# External PostgreSQL avoids implicitly creating a paid or expiring database.
+services:
+  - type: web
+    name: easy-english-global
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install --omit=dev && npm run content:validate
+    startCommand: npm run start:render
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_VERSION
+        value: 24.22.1
+      - key: NODE_ENV
+        value: production
+      - key: ALLOW_MOCK_CHECKOUT
+        value: 'false'
+      - key: DATABASE_SSL
+        value: verify-full
+      - key: DATABASE_URL
+        sync: false
+      - key: MAIL_PROVIDER
+        value: resend
+      - key: RESEND_API_KEY
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+# APP_URL is optional on Render: the injected RENDER_EXTERNAL_URL supplies the actual HTTPS origin.
+# Set APP_URL explicitly when using a custom domain. Never add ADMIN_PASSWORD to web-service envVars.
