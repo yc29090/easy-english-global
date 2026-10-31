@@ -69,7 +69,7 @@ node tests/integration.test.ts
 
 Render 配置已提供在 [render.yaml](render.yaml)，选择 Free Node Web Service。Build：`npm install --omit=dev && npm run content:validate`；Start：`npm run start:render`；健康检查：`/health`。启动前自动进行安全迁移与教材准备，重复冷启动不会重置数据。
 
-生产必需数据库连接和 TLS，站点地址优先 APP_URL，否则使用 Render 的 RENDER_EXTERNAL_URL。邮件推荐 MAIL_PROVIDER=resend、RESEND_API_KEY、MAIL_FROM；也可明确 disabled 做无邮件测试。秘密只填 Render 环境变量，禁止默认管理员密码。详细八步说明、免费数据库选择、一次性管理员初始化和部署后 `npm run smoke -- https://实际域名` 检查见 [部署文档](docs/deployment.md)。
+生产必需数据库连接和 TLS，站点地址优先 APP_URL，否则使用 Render 的 RENDER_EXTERNAL_URL。Blueprint 测试默认 MAIL_PROVIDER=disabled，无需邮件密钥；找回密码暂不可用，后续可配置 MAIL_PROVIDER=resend、RESEND_API_KEY、MAIL_FROM 启用。秘密只填 Render 环境变量，禁止默认管理员密码。详细八步说明、免费数据库选择、一次性管理员初始化和部署后 `npm run smoke -- https://实际域名` 检查见 [部署文档](docs/deployment.md)。
 
 没有使用 Render 授权，未创建真实服务、数据库或邮件账户，不能声称已经上线。
 

@@ -23,10 +23,8 @@ services:
       - key: DATABASE_URL
         sync: false
       - key: MAIL_PROVIDER
-        value: resend
-      - key: RESEND_API_KEY
-        sync: false
-      - key: MAIL_FROM
-        sync: false
+        value: disabled
 # APP_URL is optional on Render: the injected RENDER_EXTERNAL_URL supplies the actual HTTPS origin.
 # Set APP_URL explicitly when using a custom domain. Never add ADMIN_PASSWORD to web-service envVars.
+# Public testing starts without email credentials. To enable password reset later,
+# set MAIL_PROVIDER=resend, RESEND_API_KEY and a verified MAIL_FROM in Render only.

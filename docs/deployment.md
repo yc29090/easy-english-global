@@ -8,7 +8,7 @@
 
 可用以下任一方式：
 
-- Render → New → Blueprint → 连接 GitHub → 授权访问 `yc29090/easy-english-global` → 分支 `main` → 使用仓库根目录 `render.yaml`，在 Render 表单填写标记为 `sync: false` 的秘密。
+- Render → New → Blueprint → 连接 GitHub → 授权访问 `yc29090/easy-english-global` → 分支 `main` → 使用仓库根目录 `render.yaml`，在 Render 表单安全填写 DATABASE_URL；测试阶段邮件默认关闭，不需要邮件密钥。
 - Render → New → Web Service → Git Provider → 选择上述仓库及 `main`，手工填写下表命令与环境变量。Root Directory 留空。
 
 配置如下：
@@ -52,12 +52,12 @@
 | `ALLOW_MOCK_CHECKOUT` | `false` | Blueprint 已配置；生产设 true 会拒绝启动 |
 | `APP_URL` | 实际 HTTPS 网站根地址，无路径、查询或用户名密码 | Render 可不填，自动使用注入的 `RENDER_EXTERNAL_URL`；自定义域名时手填 |
 | `PORT` | Render 自动提供 | 不手工固定 |
-| `MAIL_PROVIDER` | 推荐 `resend` | Blueprint 已配置 |
+| `MAIL_PROVIDER` | 测试默认 `disabled`，启用邮件可改 `resend` | Blueprint 已配置为 disabled |
 | `RESEND_API_KEY` | 邮件服务自己的真实 API key | 使用 resend 时**必须，秘密** |
 | `MAIL_FROM` | 已验证的发信地址，如 `Easy English <你的发信地址>` | 启用邮件时**必须** |
 | `DATABASE_CA_CERT` | 可选 PostgreSQL 私有 CA 的完整 PEM 文本 | 公共 CA 通常不需要；真实证书不要提交 Git |
 
-为了先做不含邮件的测试，也可以**明确**设置 `MAIL_PROVIDER=disabled`，此时无需 Resend key 和发信地址；前端会隐藏“忘记密码”，接口返回不可用，不能声称密码重置已测试。若需要完整注册登录与找回密码体验，应配置邮件。
+本轮公开测试 Blueprint 已设置 `MAIL_PROVIDER=disabled`，此时无需 Resend key 和发信地址；前端会隐藏“忘记密码”，接口返回不可用，不能声称密码重置已测试。若需要完整注册登录与找回密码体验，应配置邮件。
 
 免费 Render 服务对标准 SMTP 出站端口有限制；推荐使用 HTTPS 邮件 API。申请 Resend key 并验证自己的发信域名和地址；仅使用其默认测试发信地址时，收件人通常限于账号所有者，不能据此认为所有用户均可收到邮件。免费额度和发信规则以提供方为准。
 
