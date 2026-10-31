@@ -6,8 +6,9 @@ const curriculum=JSON.parse(readFileSync(new URL('../data/curriculum.json',impor
 test('shipped curriculum contains 500 words, 200 phrases, 20 scenes, 100 complete dialogues',()=>{
  const d=validateContent(curriculum);
  assert.equal(d.materials.filter(m=>m.kind==='word').length,500);assert.equal(d.materials.filter(m=>m.kind==='phrase').length,200);assert.equal(d.scenes.length,20);assert.equal(d.dialogues.length,100);
+ for(const x of d.dialogues)assert.ok(!x.turns.at(-1)!.english.endsWith('?'),'Conversation ends with an unanswered question: '+x.id);
  for(const s of d.scenes){assert.equal(d.materials.filter(m=>m.scene_id===s.id&&m.kind==='word').length,25);assert.equal(d.materials.filter(m=>m.scene_id===s.id&&m.kind==='phrase').length,10);assert.equal(d.dialogues.filter(x=>x.scene_id===s.id).length,5);}
- assert.equal(d.dialogues.reduce((n,x)=>n+x.turns.length,0),400);
+ assert.equal(d.dialogues.reduce((n,x)=>n+x.turns.length,0),406);
 });
 test('headwords and phrases have no case/spacing/punctuation-normalized duplicates',()=>{
  assert.equal(new Set(curriculum.materials.map((m:any)=>normalizeEnglish(m.english))).size,700);

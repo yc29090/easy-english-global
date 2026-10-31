@@ -22,8 +22,16 @@ test('full curriculum import is idempotent, preserves user records, and enforces
    await db.query("INSERT INTO sessions(token_hash,user_id,expires_at) VALUES($1,$2,now()+interval '1 day')",[digest(id),id]);
   }
   const call=(path:string,session?:string,body?:any)=>api({db,method:body?'PUT':'GET',path:'/api'+path,body:body||{},session,ip:'content-test',sendReset:async()=>{},appUrl:'https://example.com',mock:false});
+  // This unrelated learning record exists BEFORE the first curriculum installation.
+  await db.query("INSERT INTO scenes(id,title_en,title_zh,category) VALUES('legacy-scene','Previous','旧教材','life')");
+  await db.query("INSERT INTO materials(id,kind,english,chinese,scene_id,is_free) VALUES('legacy-material','word','legacyheadword','旧词条','legacy-scene',true)");
+  await call('/progress',freeId,{material_id:'legacy-material',status:'mastered'});
+  const old=(await db.query("SELECT * FROM progress WHERE material_id='legacy-material'")).rows;
+  const originalUsers=(await db.query('SELECT * FROM users ORDER BY id')).rows;
   const install=await installContent(db,data);assert.deepEqual(install.inserted,{scenes:20,words:500,phrases:200,dialogues:100});
-  assert.equal((await db.query('SELECT count(*)::int AS n FROM materials')).rows[0].n,700);
+  assert.equal((await db.query('SELECT count(*)::int AS n FROM materials')).rows[0].n,701);
+  assert.deepEqual((await db.query("SELECT * FROM progress WHERE material_id='legacy-material'")).rows,old);
+  assert.deepEqual((await db.query('SELECT * FROM users ORDER BY id')).rows,originalUsers);
   assert.equal((await db.query('SELECT count(*)::int AS n FROM curriculum_dialogues')).rows[0].n,100);
   const freeWord=data.materials.find((m:any)=>m.is_free).id,paidWord=data.materials.find((m:any)=>!m.is_free).id,paidDialogue=data.dialogues.find((d:any)=>!d.is_free);
   await call('/progress',freeId,{material_id:freeWord,status:'unmastered'});
@@ -34,9 +42,9 @@ test('full curriculum import is idempotent, preserves user records, and enforces
   const again=await installContent(db,data);assert.deepEqual(again.inserted,{scenes:0,words:0,phrases:0,dialogues:0});
   for(const [table,expected] of [['users',before.users],['progress',before.progress],['learning_state',before.state],['practice_progress',before.practice]] as const){assert.deepEqual((await db.query('SELECT * FROM '+table+(table==='users'?' ORDER BY id':''))).rows,expected);}
   const guest=await call('/catalog'),free=await call('/catalog',freeId),trial=await call('/catalog',trialId),lifetime=await call('/catalog',lifetimeId);
-  assert.equal(guest.materials.length,70);assert.equal(free.materials.length,70);assert.equal(trial.materials.length,700);assert.equal(lifetime.materials.length,700);
+  assert.equal(guest.materials.filter((m:any)=>m.id.startsWith('ee-v1-')).length,70);assert.equal(free.materials.filter((m:any)=>m.id.startsWith('ee-v1-')).length,70);assert.equal(trial.materials.filter((m:any)=>m.id.startsWith('ee-v1-')).length,700);assert.equal(lifetime.materials.filter((m:any)=>m.id.startsWith('ee-v1-')).length,700);
   assert.equal(guest.dialogues.filter((d:any)=>d.scene_id).length,10);assert.equal(trial.dialogues.filter((d:any)=>d.scene_id).length,100);assert.equal(lifetime.dialogues.filter((d:any)=>d.scene_id).length,100);
-  assert.equal(lifetime.scenes.length,20);for(const s of lifetime.scenes)assert.equal(lifetime.dialogues.filter((d:any)=>d.scene_id===s.id).length,5);
+  assert.equal(lifetime.scenes.filter((s:any)=>s.id.startsWith('ee-v1-')).length,20);for(const s of lifetime.scenes.filter((s:any)=>s.id.startsWith('ee-v1-')))assert.equal(lifetime.dialogues.filter((d:any)=>d.scene_id===s.id).length,5);
   assert.equal(lifetime.dialogues.length,103); // The three legacy free presets keep their IDs and progress.
   assert.ok(!JSON.stringify(guest.dialogues).includes(paidDialogue.id));
   await assert.rejects(()=>call('/progress',freeId,{material_id:paidWord,status:'learned'}),{status:403});
@@ -47,16 +55,11 @@ test('full curriculum import is idempotent, preserves user records, and enforces
   assert.equal((await call('/practice-progress',lifetimeId)).practice.length,0);
   assert.equal((await call('/progress',lifetimeId)).progress.length,0);
   await db.query("UPDATE users SET trial_until=now()-interval '1 minute' WHERE id=$1",[trialId]);
-  assert.equal((await call('/catalog',trialId)).materials.length,70);
+  assert.equal((await call('/catalog',trialId)).materials.filter((m:any)=>m.id.startsWith('ee-v1-')).length,70);
   assert.equal((await call('/progress',trialId)).progress.length,1);assert.equal((await call('/practice-progress',trialId)).practice.length,1);
   assert.ok(!(await call('/review/all',trialId)).items.some((m:any)=>m.id===paidWord));
   await assert.rejects(()=>call('/practice-progress',trialId,{dialogue_id:paidDialogue.id,role:'b',turn_index:2}),{status:403});
   await db.query('UPDATE users SET disabled=true WHERE id=$1',[lifetimeId]);await assert.rejects(()=>call('/progress',lifetimeId,{material_id:paidWord,status:'learned'}),{status:401});
-  // An old unrelated record must survive installing/validating a complete curriculum.
-  await db.query("INSERT INTO scenes(id,title_en,title_zh,category) VALUES('legacy-scene','Previous','旧教材','life')");
-  await db.query("INSERT INTO materials(id,kind,english,chinese,scene_id,is_free) VALUES('legacy-material','word','legacyheadword','旧词条','legacy-scene',true)");
-  await call('/progress',freeId,{material_id:'legacy-material',status:'mastered'});
-  const old=(await db.query("SELECT * FROM progress WHERE material_id='legacy-material'")).rows;
   await installContent(db,data);assert.deepEqual((await db.query("SELECT * FROM progress WHERE material_id='legacy-material'")).rows,old);
   // Force a late conflict after an extra scene has been inserted; all changes must roll back.
   const conflict=structuredClone(data);conflict.version='conflict-test';const originalScene=conflict.scenes[0].id;conflict.scenes[0].id='new-conflicting-scene';

@@ -1,6 +1,6 @@
 export type Dialogue={id:string;title_zh:string;title_en:string;category:'life'|'business';roles:{a:{zh:string;en:string};b:{zh:string;en:string}};turns:{role:'a'|'b';english:string;chinese:string}[]};
-// Newly authored practice scripts, separate from the unavailable original curriculum.
-// Free to all learners; never counted toward the original 700 items or 20 scenes.
+// Legacy supplementary scripts: stable IDs and turn order preserve existing practice progress.
+// Free to all learners; separate from the 100 database-backed curriculum dialogues.
 export const dialogues:Dialogue[]=[
  {id:'practice-greeting-v1',title_zh:'第一次见面',title_en:'Meeting someone',category:'life',roles:{a:{zh:'你',en:'You'},b:{zh:'新朋友',en:'New friend'}},turns:[
   {role:'b',english:'Hello!',chinese:'你好！'},

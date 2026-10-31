@@ -8908,6 +8908,16 @@
           "role": "b",
           "english": "Great. Is that all?",
           "chinese": "好的，就这些吗？"
+        },
+        {
+          "role": "a",
+          "english": "Yes, that is all. Thank you.",
+          "chinese": "是的，就这些，谢谢。"
+        },
+        {
+          "role": "b",
+          "english": "You are welcome. Please pay here.",
+          "chinese": "不客气，请在这里付款。"
         }
       ]
     },
@@ -10507,6 +10517,16 @@
           "role": "b",
           "english": "Of course. May I have your number?",
           "chinese": "当然，请问您的号码是多少？"
+        },
+        {
+          "role": "a",
+          "english": "Yes. It is five five five, zero one zero two.",
+          "chinese": "可以，号码是五五五、零一零二。"
+        },
+        {
+          "role": "b",
+          "english": "Thank you. I will pass on your message.",
+          "chinese": "谢谢，我会转达您的留言。"
         }
       ]
     },
@@ -11204,6 +11224,16 @@
           "role": "b",
           "english": "Certainly. Could you confirm the address?",
           "chinese": "好的，您能确认一下地址吗？"
+        },
+        {
+          "role": "a",
+          "english": "Ten King Street, please.",
+          "chinese": "请送到国王街十号。"
+        },
+        {
+          "role": "b",
+          "english": "Thank you. We will deliver it on Tuesday.",
+          "chinese": "谢谢，我们会在星期二交货。"
         }
       ]
     },
