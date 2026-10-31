@@ -8,7 +8,7 @@
 4. 设置 `APP_URL=https://你的实际域名`、`NODE_ENV=production`、`ALLOW_MOCK_CHECKOUT=true`（仅封闭测试，公开服务设 false）、`MAIL_FROM` 和 SMTP 变量。平台自动提供的 `PORT` 会被应用读取。
 5. 在可以连接该数据库的受信任机器或平台一次性控制台执行 `npm run db:migrate`。不要把迁移数据库凭证提交到 GitHub。将实际生产环境变量配置到控制台，`.env.example` 只用于说明。
 6. 通过临时环境变量提供 `ADMIN_EMAIL`、`ADMIN_PASSWORD`，运行 `npm run admin:create`，完成后移除这两个变量。不要在公开网页初始化管理员。
-7. 如果有原版教材，执行 `npm run content:import -- /path/original.json`；缺失时保持等待导入状态。不要使用测试夹具。
+7. 执行 `npm run content:validate` 和 `npm run content:import` 安装随源码附带的新编完整教材（500 单词、200 短句、20 场景、100 对话）。导入幂等，只插入缺失记录，发现冲突则回滚；保留所有旧学习记录。
 8. 配置 SMTP。测试可用邮件沙箱（例如 Mailtrap；免费额度以其当前规则为准），确认忘记密码邮件可在沙箱收到。要让真实用户收信，需可向外发送邮件的 SMTP 和通过验证的发信地址。`SMTP_PORT=465` 为 TLS，587 为 STARTTLS；账号密码设置 `SMTP_USER` / `SMTP_PASS`。
 9. 检查 `https://域名/health` 返回 `ok`。免费服务休眠后首次访问可能较慢。
 
@@ -41,3 +41,7 @@ DELETE FROM rate_limits WHERE expires_at < now();
 先备份数据库，然后拉取新源码、安装依赖，运行 `npm run db:migrate`，再启动新应用。迁移 `002_learning_method.sql` 为增量操作：保留用户、角色、试用期限、会员、订单、教材和原学习状态，只增加复习计划、课程顺序、继续学习位置和陪练进度。旧学习记录会按原状态和最后更新时间补齐下次复习时间。编号迁移只执行一次，并用事务和数据库锁保护；再次执行不会重置复习时间。
 
 新应用依赖新字段，应先完成迁移再切换应用版本。不要手工删除学习表或重新填充教材。当前部署仍需人工配置数据库及 SMTP。
+
+## 完整教材版本升级
+
+先备份，再运行 `npm run db:migrate` 执行增量迁移 `003_curriculum.sql`，然后 `npm run content:validate`、`npm run content:import`。迁移新增旅游分类、难度字段和课程对话表，不会删除用户数据。导入报告区分新增数与教材计划数；全新库实际新增为 500 单词、200 短句、20 场景、100 对话。再运行一次应全部新增数为 0。已有其他教材或用户记录的库不要重置，遇到冲突应审核。

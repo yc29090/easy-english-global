@@ -14,7 +14,9 @@ export async function api(c:Context):Promise<any>{
  if(method==='GET'&&path==='/api/catalog'){
   const u=await sessionUser();const full=u&&!u.must_change_password&&member(u);
   const counts=(await db.query('SELECT kind,count(*)::int AS count FROM materials GROUP BY kind')).rows;
-  return {dialogues,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,sort_order,id`,[!!full])).rows,locked:!full};
+  const curriculumDialogues=(await db.query('SELECT * FROM curriculum_dialogues WHERE is_free=true OR $1::boolean ORDER BY difficulty,sort_order,id',[!!full])).rows;
+  const dialogueCounts=(await db.query('SELECT scene_id,count(*)::int AS count FROM curriculum_dialogues GROUP BY scene_id')).rows;
+  return {dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
  }
  if(method==='POST'&&path==='/api/auth/register'){
   await limit('auth',20);const address=email(b.email), hash=await hashPassword(password(b.password));
@@ -80,7 +82,10 @@ export async function api(c:Context):Promise<any>{
  }
  if(method==='GET'&&path==='/api/practice-progress')return {practice:(await db.query('SELECT * FROM practice_progress WHERE user_id=$1',[u.id])).rows};
  if(method==='PUT'&&path==='/api/practice-progress'){
-  const d=dialogues.find(d=>d.id===b.dialogue_id);
+  requireValue(typeof b.dialogue_id==='string');
+  const stored=await one('SELECT * FROM curriculum_dialogues WHERE id=$1',[b.dialogue_id]);
+  if(stored&&!stored.is_free&&!member(u))throw new HttpError(403,'Membership required');
+  const d=stored||dialogues.find(d=>d.id===b.dialogue_id);
   requireValue(d&&['a','b'].includes(b.role)&&Number.isInteger(b.turn_index)&&b.turn_index>=0&&b.turn_index<=d.turns.length,'Invalid dialogue progress');
   await db.query(`INSERT INTO practice_progress(user_id,dialogue_id,role,turn_index,completed_count) VALUES($1,$2,$3,$4,$5)
    ON CONFLICT(user_id,dialogue_id) DO UPDATE SET role=$3,turn_index=$4,

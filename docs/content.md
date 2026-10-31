@@ -1,31 +1,28 @@
-# 原版教材 JSON 规范
+# 教材校验与安全导入
 
-根对象包含 `scenes` 数组（20 条）与 `materials` 数组（700 条）。此处只说明结构，不提供冒充原版的内容。
+项目已提供 `data/curriculum.json`：500 单词、200 短句、20 场景、100 段双人对话。编排、来源及许可见 [教材说明](../data/README.md)。
 
-场景字段：
+```sh
+npm run content:validate
+npm run db:migrate
+npm run content:import
+# 或导入经过校验的外部完整 JSON
+npm run content:import -- /absolute/path/curriculum.json
+```
 
-| 字段 | 类型与要求 |
-|---|---|
-| id | 非空唯一字符串 |
-| title_en | 原版英文场景名 |
-| title_zh | 原版中文场景名 |
-| category | life 或 business，完整集合必须同时包含两类 |
+导入使用独立数据库连接、事务、数据库锁和版本哈希。只插入缺失行，不更新或删除现有行。再次导入相同版本返回零新增；发现 ID、英文词条、翻译或版本冲突时整体回滚。它不会删除、覆盖或重置 `progress`、`learning_state`、`practice_progress`、用户、试用、会员或订单。已有无关教材也会保留，因此已有数据库的总条数可能大于本套教材的 700 条。
 
-教材字段：
+已有同名英文、不同 ID 的教材不会被强制替换。如果遇到冲突，应审核原数据和稳定 ID 的对应关系，再制定单独迁移；不要删除原记录“解决”冲突。已安装版本不接受静默修改；教材修订需显式版本管理和保留学习记录的迁移方案。
 
-| 字段 | 类型与要求 |
-|---|---|
-| id | 非空唯一稳定字符串，导入后用于保存学习记录 |
-| kind | word（恰好 500 条）或 phrase（恰好 200 条） |
-| english | 原版英文；忽略大小写和多余空白后不可重复 |
-| chinese | 对应中文翻译 |
-| scene_id | 已存在的场景 id；所有场景至少关联一条教材 |
-| is_free | 布尔值，决定免费账号访问范围 |
-| audio_normal | 可选，正常速度原版音频 HTTPS URL |
-| audio_slow | 可选，慢速原版音频 HTTPS URL |
+## JSON 结构
 
-缺少音频时，应用使用设备英文语音合成。文字字段最长 2000 字符。请自行审核内容版权、准确性和免费教材范围，再由受信任的管理员执行导入脚本。
+根字段：`version`、`source`、`license`、`scenes`、`materials`、`dialogues`。
 
-导入数组顺序同时保存到 `materials.sort_order`，供“单词→短句”的循序学习使用。请按原版建议难度排列，同类教材内部按数组顺序呈现；已有教材不会重排或覆盖，原来的同序号内容以 id 稳定排序。
+- 场景：`id`, `title_en`, `title_zh`, `category`（life/travel/business）, `difficulty`（1/2/3）。
+- 教材：`id`, `kind`（word/phrase）, `english`, `chinese`, `scene_id`, `is_free`, `difficulty`, `sort_order`；可选 `audio_normal` / `audio_slow`（HTTPS URL）。
+- 对话：`id`, `scene_id`, `title_en`, `title_zh`, `category`, `difficulty`, `is_free`, `roles`, `turns`。
+- `roles.a` / `roles.b` 各包含 `zh` 和 `en`；`turns` 中每条包含 `role`、`english`、`chinese`。
 
-`src/dialogues.ts` 中 3 个新编预设陪练是独立免费练习，覆盖见面问候、买水、工作求助，不属于原版 700 条教材或 20 个场景；后续可新增带版本的稳定 id，避免改变用户已保存的句子索引。
+校验要求：恰好 500 单词、200 短句、20 场景，每场景至少 5 段完整对话；每段至少 4 句、偶数句，两人轮流发言，英中字段完整。内容、场景分类和难度一致。英文按大小写、空格和标点标准化去重，不能重复整段对话。对话中常见的礼貌回应可自然复用。
+
+课程对话存入 PostgreSQL `curriculum_dialogues`，经服务端权限过滤后接入原有陪练界面；免费账号和未登录访客不能通过目录 API 获取会员对话台词，也不能伪造陪练保存请求绕过权限。原有 3 个补充陪练及其进度 ID 保持不变。
