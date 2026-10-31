@@ -6,9 +6,9 @@
     "plan": "free",
     "workspace": "My Workspace",
     "region": "oregon",
-    "deploy_id": "dep-dbj2fmnlk1mc73837qvg",
-    "deployed_commit": "f7e3d54aea1bde1f0f61cce1ba044ff3db24c05c",
-    "status": "live",
+    "deploy_id": "dep-dbj76cm7bikc73ek23ug",
+    "deployed_commit": "a18c5ac2f5ee48919ed48873a1781471e738e85c",
+    "status": "verification_pending",
     "platform_health_probe": "TCP; HTTP /health verified separately; platform path needs Dashboard configuration"
   },
   "database": {
@@ -32,17 +32,29 @@
     "live_acceptance_checks": 19,
     "baseline_smoke_checks": 14,
     "live_acceptance_run": "https://github.com/yc29090/easy-english-global/actions/runs/41225191888",
-    "ci_run": "https://github.com/yc29090/easy-english-global/actions/runs/41225416799",
-    "ci_tests": 32,
+    "ci_run": "https://github.com/yc29090/easy-english-global/actions/runs/41250621833",
+    "ci_tests": 50,
     "qa_accounts": "two dedicated accounts disabled and sessions expired; no existing user data deleted",
     "mobile_device_audio_and_layout": "not yet verified on physical Android/iPhone devices",
     "owner_administrator": "not initialized; no default password created",
-    "positive_admin_operations": "covered by isolated CI; owner-admin production acceptance pending"
+    "positive_admin_operations": "covered by isolated CI; owner-admin production acceptance pending",
+    "admin_terminal_tests": 9,
+    "startup_tests": 14,
+    "embedded_postgres_tests": 4,
+    "repeated_boot_checks": 28,
+    "post_repair_live_smoke": "pending"
   },
   "production": {
     "mock_checkout": false,
     "mail_provider": "disabled",
     "paid_resources_created": false
   },
-  "verification_time_utc": "2026-10-31T17:40:25Z"
+  "verification_time_utc": "2026-10-31T23:01:06Z",
+  "incident_2026_10_31": {
+    "confirmed_failure": "database-connect / PostgreSQL 28P01",
+    "repair": "Current Neon credentials synchronized directly to Render secure DATABASE_URL; no password reset",
+    "tls": "TLSv1.3 verified after credential sync",
+    "existing_data_preserved": true,
+    "details": "docs/startup-incident-2026-10-31.md"
+  }
 }
