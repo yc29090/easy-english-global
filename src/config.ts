@@ -1,6 +1,10 @@
 export type RuntimeConfig={production:boolean;appUrl:string;port:number;mockCheckout:boolean;mailProvider:'disabled'|'resend'|'smtp';mailFrom:string;resendKey?:string;smtp?:{host:string;port:number;user:string;pass:string}};
 type Env=Record<string,string|undefined>;
-function fail(name:string):never{throw new Error('Invalid or missing environment variable: '+name);}
+export class ConfigError extends Error {
+ variable:string;
+ constructor(variable:string){super('Invalid or missing environment variable: '+variable);this.variable=variable;}
+}
+function fail(name:string):never{throw new ConfigError(name);}
 export function canonicalOrigin(value:string|undefined,production:boolean):string{
  if(!value)fail('APP_URL (or Render RENDER_EXTERNAL_URL)');
  try{const url=new URL(value!);if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash||url.pathname!=='/'||(production&&url.protocol!=='https:'))fail('APP_URL');return url.origin;}catch{fail('APP_URL');}
@@ -36,7 +40,8 @@ export function databaseOptions(env:Env=process.env){
  if(!['postgres:','postgresql:'].includes(url!.protocol)||!url!.hostname||url!.pathname.length<=1)fail('DATABASE_URL');
  const production=env.NODE_ENV==='production';
  if(production&&env.NODE_TLS_REJECT_UNAUTHORIZED==='0')fail('NODE_TLS_REJECT_UNAUTHORIZED (must not disable certificate verification)');
- if(production&&(!url!.username||!url!.password||/local-development-only|changeme|password$|^postgres$/i.test(decodeURIComponent(url!.password))))fail('DATABASE_URL (unique database credentials required)');
+ let decodedPassword:string;try{decodedPassword=decodeURIComponent(url!.password);}catch{fail('DATABASE_URL');}
+ if(production&&(!url!.username||!url!.password||/local-development-only|changeme|password$|^postgres$/i.test(decodedPassword!)))fail('DATABASE_URL (unique database credentials required)');
  const requested=env.DATABASE_SSL||url!.searchParams.get('sslmode')||(production?'verify-full':'disable');
  if(!['disable','require','verify-ca','verify-full'].includes(requested))fail('DATABASE_SSL');
  if(production&&requested==='disable')fail('DATABASE_SSL (TLS is required in production)');

@@ -17,3 +17,7 @@ jobs:
           node-version: '24'
       - name: Verify the real public deployment
         run: npm run smoke -- https://easy-english-global.onrender.com
+      - name: Verify actual registration and login with a dedicated QA account
+        run: node scripts/live-login-check.ts
+        env:
+          LIVE_BASE_URL: https://easy-english-global.onrender.com

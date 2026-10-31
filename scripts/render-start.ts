@@ -1,16 +1,12 @@
 import {database} from '../src/db.ts';
 import {loadConfig} from '../src/config.ts';
-import {prepareDatabase} from '../src/setup.ts';
-// Free Render services do not require a shell or a paid pre-deploy command.
+import {runStartup} from '../src/startup.ts';
+// Uses existing credentials. Only safe stages/codes are logged, never driver error text.
 try{
- const config=loadConfig();
- const pool=database();
- try{const client=await pool.connect();try{
-  if(config.production){
-   const stream=(client as unknown as {connection:{stream:import('node:tls').TLSSocket}}).connection.stream;
-   if(!stream.encrypted||!stream.authorized)throw new Error('Database TLS certificate verification failed');
-   console.log('Database TLS verified: '+stream.getProtocol());
-  }
-  const result=await prepareDatabase(client);console.log(result.alreadyInstalled?'Database and curriculum ready':'Database migrations and curriculum installed');}finally{client.release();}}finally{await pool.end();}
- await import('../src/server.ts');
-}catch(error){if(error instanceof Error&&error.message.startsWith('Invalid or missing environment variable:'))console.error(error.message);console.error('Startup failed. Check environment variables, database access, migration/import conflicts and deployment documentation. No secret values are logged.');process.exitCode=1;}
+ await runStartup({
+  config:loadConfig,pool:database,
+  prepare:async(client)=>{const {prepareDatabase}=await import('../src/setup.ts');return prepareDatabase(client);},
+  start:()=>import('../src/server.ts'),
+  log:event=>{const output=JSON.stringify(event);if(event.event==='startup_failure')console.error(output);else console.log(output);}
+ });
+}catch{process.exitCode=1;}
