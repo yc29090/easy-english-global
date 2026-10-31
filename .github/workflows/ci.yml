@@ -29,3 +29,9 @@ jobs:
           TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test
       - name: Test embedded PostgreSQL engine
         run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts
+      - name: Install production dependencies only
+        run: npm install --omit=dev
+      - name: Verify Render start command and repeated boot with runtime dependencies
+        run: npm run test:runtime
+        env:
+          TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test

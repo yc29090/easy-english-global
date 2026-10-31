@@ -18,7 +18,8 @@
     "content:validate": "node scripts/validate-content.ts",
     "start:render": "node scripts/render-start.ts",
     "config:check": "node --env-file-if-exists=.env scripts/check-env.ts",
-    "smoke": "node --env-file-if-exists=.env scripts/smoke.ts"
+    "smoke": "node --env-file-if-exists=.env scripts/smoke.ts",
+    "test:runtime": "node scripts/check-runtime.ts"
   },
   "dependencies": {
     "pg": "^8.16.3",

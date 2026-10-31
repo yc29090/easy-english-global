@@ -15,6 +15,7 @@ test('adult-beginner UI: continue, hide text, review, role-play and cloud resume
   if(body)writes.push({path,body});
   let data={};
   if(path==='/api/me')data={user:learner};
+  else if(path==='/api/orders')data={orders:[]};
   else if(path==='/api/catalog')data={counts:[{kind:'word',count:1},{kind:'phrase',count:1}],scenes:[{id:'s',title_zh:'招呼',title_en:'Greetings'}],materials:items,dialogues:[dialogue],locked:true,features:{mockCheckout:false,passwordReset:true}};
   else if(path==='/api/progress')data={progress:[{material_id:'word',status:'unmastered',next_review_at:'2020-01-01T00:00:00Z'}]};
   else if(path==='/api/learning-state')data={state:{last_material_id:'phrase'}};
@@ -35,7 +36,7 @@ test('adult-beginner UI: continue, hide text, review, role-play and cloud resume
   await click('#advance-dialogue');assert.match(document.querySelector('.dialogue-turn').textContent,/轮到你/);assert.equal(savedPractice[0].turn_index,1);
   await click('[data-page="scenes"]');await click('[data-dialogue="d"]');assert.match(document.querySelector('.dialogue-turn').textContent,/轮到你/);
   await click('#advance-dialogue');assert.match(document.querySelector('.empty').textContent,/完成了一次简单交流/);assert.equal(savedPractice[0].turn_index,2);
-  await click('[data-page="membership"]');assert.equal(document.querySelector('#create-order'),null);assert.equal(document.querySelector('[data-confirm]'),null);
+  await click('[data-page="membership"]');assert.match(document.querySelector('h1').textContent,/一次选择/);assert.equal(document.querySelector('#create-order'),null);assert.equal(document.querySelector('[data-confirm]'),null);
   await click('[data-page="home"]');await click('#language');assert.equal(document.documentElement.lang,'en');assert.match(document.querySelector('h1').textContent,/Listen first/);
  }finally{for(const [k,v]of Object.entries(old)){if(v===undefined)delete globalThis[k];else globalThis[k]=v;}}
 });

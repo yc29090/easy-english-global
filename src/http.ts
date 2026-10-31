@@ -9,13 +9,14 @@ import {ready} from './setup.ts';
 export type ConnectionPool=DB&{connect:()=>Promise<DB&{release:()=>void}>};
 const assets:Record<string,[string,string]>={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/playback.js':['playback.js','text/javascript; charset=utf-8'],'/styles.css':['styles.css','text/css; charset=utf-8']};
 export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendReset:(to:string,url:string)=>Promise<void>){
- const {production,appUrl}=config;
+ const {production}=config;
  const server=createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');res.setHeader('X-Frame-Options','DENY');
   res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self' https:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'");
   if(production)res.setHeader('Strict-Transport-Security','max-age=31536000; includeSubDomains');
   res.setHeader('Cache-Control','no-store');
   try{
+   const appUrl=config.appUrl;
    const url=new URL(req.url||'/',appUrl);
    if(url.pathname==='/health'){
     if(!['GET','HEAD'].includes(req.method||''))throw new HttpError(405,'Method not allowed');
