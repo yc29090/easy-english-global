@@ -1,5 +1,7 @@
 import {randomUUID} from 'node:crypto';
 import type {DB} from './db.ts';
+import {reviewSchedule} from './review.ts';
+import {dialogues} from './dialogues.ts';
 import {token,digest,hashPassword,verifyPassword,member,publicUser,HttpError,requireValue,email,password,days} from './security.ts';
 export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean};
 export async function api(c:Context):Promise<any>{
@@ -12,7 +14,7 @@ export async function api(c:Context):Promise<any>{
  if(method==='GET'&&path==='/api/catalog'){
   const u=await sessionUser();const full=u&&!u.must_change_password&&member(u);
   const counts=(await db.query('SELECT kind,count(*)::int AS count FROM materials GROUP BY kind')).rows;
-  return {counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY id')).rows,materials:(await db.query('SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY id',[!!full])).rows,locked:!full};
+  return {dialogues,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,sort_order,id`,[!!full])).rows,locked:!full};
  }
  if(method==='POST'&&path==='/api/auth/register'){
   await limit('auth',20);const address=email(b.email), hash=await hashPassword(password(b.password));
@@ -47,7 +49,44 @@ export async function api(c:Context):Promise<any>{
  if(method==='PUT'&&path==='/api/progress'){
   requireValue(typeof b.material_id==='string'&&['learned','unmastered','mastered','review'].includes(b.status));
   const material=await one('SELECT * FROM materials WHERE id=$1',[b.material_id]);if(!material)throw new HttpError(404,'Material not found');if(!material.is_free&&!member(u))throw new HttpError(403,'Membership required');
-  await db.query('INSERT INTO progress(user_id,material_id,status) VALUES($1,$2,$3) ON CONFLICT(user_id,material_id) DO UPDATE SET status=$3,updated_at=now()',[u.id,b.material_id,b.status]);return {ok:true};
+  return transaction(async()=>{
+   // Serialize updates per learner so concurrent devices cannot lose mastery steps.
+   await db.query('SELECT id FROM users WHERE id=$1 FOR UPDATE',[u.id]);
+   const old=await one('SELECT mastery_streak FROM progress WHERE user_id=$1 AND material_id=$2',[u.id,b.material_id]);
+   const schedule=reviewSchedule(b.status,old?.mastery_streak||0);
+   await db.query(`INSERT INTO progress(user_id,material_id,status,next_review_at,mastery_streak) VALUES($1,$2,$3,$4,$5)
+    ON CONFLICT(user_id,material_id) DO UPDATE SET status=$3,next_review_at=$4,mastery_streak=$5,updated_at=now()`,[u.id,b.material_id,b.status,schedule.nextReviewAt,schedule.masteryStreak]);
+   await db.query(`INSERT INTO learning_state(user_id,last_material_id) VALUES($1,$2) ON CONFLICT(user_id) DO UPDATE SET last_material_id=$2,updated_at=now()`,[u.id,b.material_id]);
+   return {ok:true,next_review_at:schedule.nextReviewAt};
+  });
+ }
+ if(method==='GET'&&(path==='/api/review'||path==='/api/review/all')){
+  const full=member(u);
+  const items=(await db.query(`SELECT m.*,p.status,p.next_review_at FROM progress p JOIN materials m ON m.id=p.material_id
+   WHERE p.user_id=$1 AND (m.is_free=true OR $2::boolean) AND ($3::boolean OR p.next_review_at<=now())
+   ORDER BY CASE p.status WHEN 'unmastered' THEN 0 WHEN 'review' THEN 1 WHEN 'learned' THEN 2 ELSE 3 END,p.next_review_at,m.id`,[u.id,full,path.endsWith('/all')])).rows;
+  return {items};
+ }
+ if(method==='GET'&&path==='/api/learning-state'){
+  const state=await one('SELECT * FROM learning_state WHERE user_id=$1',[u.id]);
+  return {state:state||null};
+ }
+ if(method==='PUT'&&path==='/api/learning-state'){
+  requireValue(typeof b.material_id==='string');
+  const m=await one('SELECT * FROM materials WHERE id=$1',[b.material_id]);
+  if(!m)throw new HttpError(404,'Material not found');
+  if(!m.is_free&&!member(u))throw new HttpError(403,'Membership required');
+  await db.query(`INSERT INTO learning_state(user_id,last_material_id) VALUES($1,$2) ON CONFLICT(user_id) DO UPDATE SET last_material_id=$2,updated_at=now()`,[u.id,m.id]);return {ok:true};
+ }
+ if(method==='GET'&&path==='/api/practice-progress')return {practice:(await db.query('SELECT * FROM practice_progress WHERE user_id=$1',[u.id])).rows};
+ if(method==='PUT'&&path==='/api/practice-progress'){
+  const d=dialogues.find(d=>d.id===b.dialogue_id);
+  requireValue(d&&['a','b'].includes(b.role)&&Number.isInteger(b.turn_index)&&b.turn_index>=0&&b.turn_index<=d.turns.length,'Invalid dialogue progress');
+  await db.query(`INSERT INTO practice_progress(user_id,dialogue_id,role,turn_index,completed_count) VALUES($1,$2,$3,$4,$5)
+   ON CONFLICT(user_id,dialogue_id) DO UPDATE SET role=$3,turn_index=$4,
+   completed_count=practice_progress.completed_count+CASE WHEN practice_progress.turn_index<$6 AND $4=$6 THEN 1 ELSE 0 END,updated_at=now()`,
+   [u.id,d.id,b.role,b.turn_index,b.turn_index===d.turns.length?1:0,d.turns.length]);
+  return {ok:true};
  }
  if(path==='/api/orders'&&method==='GET')return {orders:(await db.query('SELECT * FROM orders WHERE user_id=$1 ORDER BY created_at DESC',[u.id])).rows};
  if(path==='/api/orders'&&method==='POST'){

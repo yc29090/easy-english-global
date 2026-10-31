@@ -26,3 +26,5 @@ jobs:
       - run: npm run check
         env:
           TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test
+      - name: Test embedded PostgreSQL engine
+        run: node tests/integration.test.ts
