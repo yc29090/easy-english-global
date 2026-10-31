@@ -13,7 +13,7 @@ export function loadConfig(env:Env=process.env):RuntimeConfig{
  const port=Number(env.PORT||3000);if(!Number.isInteger(port)||port<1||port>65535)fail('PORT');
  if(env.ALLOW_MOCK_CHECKOUT&&!['true','false'].includes(env.ALLOW_MOCK_CHECKOUT))fail('ALLOW_MOCK_CHECKOUT');
  if(production&&env.ALLOW_MOCK_CHECKOUT==='true')fail('ALLOW_MOCK_CHECKOUT (must be false in production)');
- if(production&&(env.ADMIN_EMAIL||env.ADMIN_PASSWORD))fail('ADMIN_EMAIL/ADMIN_PASSWORD (one-time CLI only; remove from web service)');
+ if(production&&(env.ADMIN_EMAIL||env.ADMIN_PASSWORD))fail('ADMIN_EMAIL/ADMIN_PASSWORD (unsupported; remove from web service)');
  const appUrl=canonicalOrigin(env.APP_URL||env.RENDER_EXTERNAL_URL||(!production?'http://localhost:3000':undefined),production);
  const mailProvider=env.MAIL_PROVIDER||(!production?'disabled':'resend');
  if(!['disabled','resend','smtp'].includes(mailProvider))fail('MAIL_PROVIDER');

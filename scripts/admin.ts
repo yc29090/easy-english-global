@@ -1,26 +1,27 @@
-import {createInterface} from 'node:readline/promises';
-import {Writable} from 'node:stream';
-import {database} from '../src/db.ts';
+import {promptAdminInput,adminConnectionOptions,adminErrorMessage,AdminInputError} from '../src/admin-terminal.ts';
 import {initializeAdmin} from '../src/admin-init.ts';
-import {HttpError} from '../src/security.ts';
-async function credentials(){
- if(process.env.ADMIN_EMAIL&&process.env.ADMIN_PASSWORD)return {email:process.env.ADMIN_EMAIL,password:process.env.ADMIN_PASSWORD};
- if(process.env.ADMIN_EMAIL||process.env.ADMIN_PASSWORD)throw new Error('Provide both ADMIN_EMAIL and ADMIN_PASSWORD for non-interactive initialization');
- if(!process.stdin.isTTY||!process.stdout.isTTY)throw new Error('Run in a trusted interactive terminal, or provide temporary ADMIN_EMAIL and ADMIN_PASSWORD environment variables');
- let muted=false;
- const output=new Writable({write(chunk,_encoding,callback){if(!muted)process.stdout.write(chunk);callback();}});
- const rl=createInterface({input:process.stdin,output,terminal:true});
- try{
-  const email=await rl.question('Administrator email: ');
-  process.stdout.write('Unique password (16–128 characters, input hidden): ');muted=true;
-  const password=await rl.question('');process.stdout.write('\n');
-  process.stdout.write('Confirm password (input hidden): ');
-  const confirmation=await rl.question('');process.stdout.write('\n');
-  if(password!==confirmation)throw new Error('Password confirmation did not match');
-  return {email,password};
- }finally{rl.close();output.end();}
-}
+import type {AdminInput} from '../src/admin-terminal.ts';
+
+let values:AdminInput|undefined;
 try{
- const values=await credentials(),pool=database();
- try{const client=await pool.connect();try{await initializeAdmin(client,values.email,values.password);console.log('First administrator created. No password is printed or saved to a file.');}finally{client.release();}}finally{await pool.end();}
-}catch(error){console.error(error instanceof HttpError?error.message:'Administrator initialization failed. Check terminal input, database configuration and connectivity. Existing accounts were not overwritten.');process.exitCode=1;}
+ if(Number(process.versions.node.split('.')[0])!==24)throw new AdminInputError('version');
+ if(process.argv.length!==2)throw new AdminInputError('tty');
+ if(process.env.NODE_TLS_REJECT_UNAUTHORIZED==='0')throw new AdminInputError('configuration');
+ // No dotenv loading, argv credentials, ADMIN_* or DATABASE_URL environment fallback.
+ values=await promptAdminInput();
+ const {default:pg}=await import('pg');
+ const pool=new pg.Pool(adminConnectionOptions(values.databaseUrl));
+ pool.on('error',()=>{}); // Never let an idle-client error print sensitive driver details.
+ try{
+  const client=await pool.connect();
+  try{
+   const stream=(client as unknown as {connection:{stream:import('node:tls').TLSSocket}}).connection.stream;
+   if(!stream.encrypted||!stream.authorized)throw new AdminInputError('configuration');
+   await initializeAdmin(client,values.email,values.password);
+   console.log('管理员创建成功。连接已通过 TLS 证书验证；请到网站登录，不要再次初始化。');
+  }finally{client.release();}
+ }finally{await pool.end();}
+}catch(error){
+ console.error(adminErrorMessage(error));
+ process.exitCode=error instanceof AdminInputError&&error.kind==='cancelled'?130:1;
+}finally{if(values){values.databaseUrl='';values.email='';values.password='';values=undefined;}}

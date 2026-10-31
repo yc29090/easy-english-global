@@ -10,7 +10,7 @@
     "dev": "node --env-file-if-exists=.env src/server.ts",
     "start": "node --env-file-if-exists=.env src/server.ts",
     "db:migrate": "node --env-file-if-exists=.env scripts/migrate.ts",
-    "admin:create": "node --env-file-if-exists=.env scripts/admin.ts",
+    "admin:create": "node scripts/admin.ts",
     "content:import": "node --env-file-if-exists=.env scripts/import.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.ts tests/*.test.js",
@@ -19,7 +19,8 @@
     "start:render": "node scripts/render-start.ts",
     "config:check": "node --env-file-if-exists=.env scripts/check-env.ts",
     "smoke": "node --env-file-if-exists=.env scripts/smoke.ts",
-    "test:runtime": "node scripts/check-runtime.ts"
+    "test:runtime": "node scripts/check-runtime.ts",
+    "test:admin-terminal": "python3 tests/admin-terminal-pty.py"
   },
   "dependencies": {
     "pg": "^8.16.3",

@@ -27,6 +27,8 @@ jobs:
       - run: npm run check
         env:
           TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test
+      - name: Verify hidden administrator input on a real pseudo-terminal
+        run: npm run test:admin-terminal
       - name: Test embedded PostgreSQL engine
         run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts
       - name: Verify Render build with production dependencies only
