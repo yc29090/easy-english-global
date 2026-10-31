@@ -1,6 +1,6 @@
 # 简单英语 Easy English
 
-面向零基础用户的中英双语响应式学习网站。TypeScript 服务端、PostgreSQL 持久化、原生轻量浏览器界面。Node.js 24 原生运行 TypeScript，无需构建服务。
+面向英语零基础成年人的中英双语听说学习网站：单词 → 短句 → 场景交流，数量自由，不强制打卡。TypeScript 服务端、PostgreSQL 持久化、原生轻量浏览器界面。Node.js 24 原生运行 TypeScript，无需构建服务。
 
 ## 教材状态
 
@@ -60,9 +60,9 @@ node tests/security.test.ts
 node tests/integration.test.ts
 ```
 
-`TEST_DATABASE_URL` 可指定专用 PostgreSQL 测试数据库，切勿使用生产数据库。集成测试会创建测试账户和教材。GitHub Actions 自动启动 PostgreSQL 16 并执行类型检查和测试，验证认证、权限、数据隔离、试用到期、密码更新、禁用会话、订单归属/幂等和密码重置单次使用。
+`TEST_DATABASE_URL` 可指定专用 PostgreSQL 测试数据库，切勿使用生产数据库。集成测试在独立临时 schema 中创建测试账户和教材，结束时清理，可重复运行。GitHub Actions 自动启动 PostgreSQL 16 并执行类型检查和测试，验证认证、权限、数据隔离、试用到期、密码更新、禁用会话、订单归属/幂等和密码重置单次使用。
 
-验证结果：本地 7 项核心测试和前后端语法检查通过；GitHub Actions 已成功安装依赖，TypeScript 类型检查及 PostgreSQL 16 全套测试共 8 项通过（运行 #1）。实际浏览器交互和真实 SMTP 发送尚未验收。最新结果见仓库 Actions。
+验证结果：本地 7 项核心测试和前后端语法检查通过；GitHub Actions 已成功安装依赖，TypeScript 类型检查及 PostgreSQL 16 全套测试共 14 项通过（听说学习版运行 #3），并额外通过内嵌 PostgreSQL 引擎测试及生产依赖安全审计。实际浏览器交互和真实 SMTP 发送尚未验收。最新结果见仓库 Actions。
 
 ## 免费测试部署
 

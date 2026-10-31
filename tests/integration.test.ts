@@ -11,9 +11,12 @@ import type {DB} from '../src/db.ts';
 test('PostgreSQL: account lifecycle, ownership, expiry, admin, reset and mock orders',async()=>{
  let db:DB,close:()=>Promise<void>;
  if(process.env.TEST_DATABASE_URL){const {default:pg}=await import('pg');const client=new pg.Client({connectionString:process.env.TEST_DATABASE_URL});await client.connect();db=client;close=()=>client.end();}
- else{const {PGlite}=await import('@electric-sql/pglite');const engine=new PGlite();db={query:async(sql,v)=>{if(!v&&sql.includes(';')){await engine.exec(sql);return {rows:[]};}const r=await engine.query(sql,v);return {rows:r.rows as any[],rowCount:r.affectedRows};}};close=()=>engine.close();await engine.exec(await readFile(new URL('../db/001_init.sql',import.meta.url),'utf8'));}
+ else{const {PGlite}=await import('@electric-sql/pglite');const engine=new PGlite();db={query:async(sql,v)=>{if(!v&&sql.includes(';')){await engine.exec(sql);return {rows:[]};}const r=await engine.query(sql,v);return {rows:r.rows as any[],rowCount:r.affectedRows};}};close=()=>engine.close();}
+ const schema='ee_test_'+randomUUID().replaceAll('-','');
  try{
-  if(process.env.TEST_DATABASE_URL)await db.query(await readFile(new URL('../db/001_init.sql',import.meta.url),'utf8'));
+  await db.query('CREATE SCHEMA '+schema);
+  await db.query('SET search_path TO '+schema);
+  await db.query(await readFile(new URL('../db/001_init.sql',import.meta.url),'utf8'));
   // Simulate upgrading a populated v1 database; these rows must survive unchanged.
   const legacy=randomUUID(),legacyScene='legacy-scene-'+legacy,legacyMaterial='legacy-material-'+legacy;
   await db.query("INSERT INTO users(id,email,password_hash,membership) VALUES($1,$2,'legacy-hash','lifetime')",[legacy,'legacy-'+legacy+'@example.com']);
@@ -87,5 +90,5 @@ test('PostgreSQL: account lifecycle, ownership, expiry, admin, reset and mock or
   assert.ok((await call('POST','/auth/login',{email:address,password:'new-secure-password-123'})).session);
   await call('POST','/auth/logout',{},other.session);await assert.rejects(()=>call('GET','/me',{},other.session),{status:401});
   assert.ok((await db.query('SELECT * FROM audit_log WHERE actor_id=$1',[adminId])).rows.length>=5);
- }finally{await close();}
+ }finally{try{await db.query('SET search_path TO public');await db.query('DROP SCHEMA IF EXISTS '+schema+' CASCADE');}finally{await close();}}
 });

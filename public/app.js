@@ -126,7 +126,7 @@ function bindLearning(){
   document.querySelectorAll('.playback-phase').forEach(node=>node.textContent='');
   const output=el.closest('.material')?.querySelector('.playback-phase');
   playback.play(item,{slow:el.dataset.speed?el.dataset.speed==='slow':slowAudio,repeat,shadow,
-   onPhase:phase=>{if(output)output.textContent=phase==='listen'?t('正在播放，先听一听…','Listening…'):phase==='speak'?t('轮到你跟读。准备好后可再次播放。','Your turn. Say it aloud; play again when ready.'):phase==='pause'?t('稍停一下，马上重复…','A short pause before repeating…'):t('听完了，可以自己说一遍。','Now try saying it aloud.');},
+   onPhase:phase=>{if(output)output.textContent=phase==='listen'?t('正在播放，先听一听…','Listening…'):phase==='speak'?t('轮到你跟读，稍后自动重复。随时可以停止。','Your turn to speak. Audio repeats after a pause; stop anytime.'):phase==='pause'?t('稍停一下，马上重复…','A short pause before repeating…'):t('听完了，可以自己说一遍。','Now try saying it aloud.');},
    onError:()=>{if(output)output.textContent=t('播放不可用，请重试或更换浏览器。','Playback unavailable. Please retry or use another browser.');}
   });
  };
