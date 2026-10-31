@@ -18,7 +18,7 @@ test('production HTTP: startup setup repeats safely, bootstrap is first-only, he
   await prepareDatabase(db);assert.equal(await ready(db),true);assert.equal((await fetch(base+'/health')).status,200);assert.equal((await fetch(base+'/health',{method:'HEAD'})).status,200);
   const post=async(path:string,body:any,cookie?:string,origin=base)=>fetch(base+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',...(cookie?{Cookie:cookie}:{})},body:JSON.stringify(body)});
   const email='smoke@example.com',password='Sample-user9!for-test-only';
-  const register=await post('/api/auth/register',{email,password});assert.equal(register.status,200);const user=(await register.json()).user;
+  const register=await post('/api/auth/register',{email,password,role:'admin',membership:'lifetime'});assert.equal(register.status,200);const user=(await register.json()).user;assert.equal(user.role,'user');assert.equal(user.membership,'free');
   const cookie=register.headers.get('set-cookie')!;assert.match(cookie,/HttpOnly/);assert.match(cookie,/SameSite=Lax/);assert.match(cookie,/; Secure/);
   const session=cookie.split(';')[0];const catalog=await (await fetch(base+'/api/catalog')).json();assert.equal(catalog.features.mockCheckout,false);
   const material=catalog.materials[0];
