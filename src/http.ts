@@ -31,7 +31,7 @@ export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendR
    let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>16384)throw new HttpError(413,'Request too large');}
    let body={};try{body=raw?JSON.parse(raw):{};}catch{throw new HttpError(400,'Invalid JSON');}if(!body||typeof body!=='object'||Array.isArray(body))throw new HttpError(400,'Invalid JSON object');
    const cookie=req.headers.cookie?.split(';').map(v=>v.trim()).find(v=>v.startsWith('ee_session='))?.slice(11);
-   const client=await pool.connect();let data;try{data=await api({db:client,method:req.method!,path:url.pathname,body,session:cookie,ip:req.socket.remoteAddress||'unknown',appUrl,sendReset,notifyOrder,mock:config.mockCheckout,passwordResetEnabled:config.mailProvider!=='disabled',onMailError:()=>console.error('Password reset delivery failed; check mail provider configuration')});}finally{client.release();}
+   const client=await pool.connect();let data;try{data=await api({db:client,method:req.method!,path:url.pathname,body,session:cookie,ip:req.socket.remoteAddress||'unknown',appUrl,sendReset,notifyOrder,mock:config.mockCheckout,passwordResetEnabled:config.mailProvider!=='disabled',onMailError:()=>console.error('Email delivery failed; check mail provider configuration')});}finally{client.release();}
    if(data.session){res.setHeader('Set-Cookie',`ee_session=${data.session}; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800${production?'; Secure':''}`);delete data.session;}
    if(data.logout)res.setHeader('Set-Cookie',`ee_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0${production?'; Secure':''}`);
    res.setHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify(data));
