@@ -3,7 +3,7 @@ import type {RuntimeConfig} from './config.ts';
 import type {DB} from './db.ts';
 export type StartupStage='configuration'|'database-options'|'database-connect'|'database-tls'|'database-prepare'|'database-close'|'http-server';
 type Client=DB&{release:(destroy?:boolean)=>void;connection?:{stream?:unknown}};
-type Pool={connect:()=>Promise<Client>;end:()=>Promise<unknown>;on?:(event:string,listener:()=>void)=>unknown};
+type Pool={connect:()=>Promise<Client>;end:()=>Promise<unknown>;on?:(event:'error',listener:()=>void)=>unknown};
 export type StartupEvent={event:'startup_phase'|'startup_failure'|'startup_retry'|'startup_cleanup_failure';stage:StartupStage;attempt:number;status?:'started'|'complete'|'verified';code?:string;sourceCode?:string;willRetry?:boolean;delayMs?:number;variable?:string;protocol?:string;alreadyInstalled?:boolean};
 export type StartupDependencies={
  config:()=>RuntimeConfig;pool:()=>Pool;prepare:(client:DB)=>Promise<{alreadyInstalled:boolean}>;
