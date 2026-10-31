@@ -2,7 +2,7 @@ import {ConfigError} from './config.ts';
 import type {RuntimeConfig} from './config.ts';
 import type {DB} from './db.ts';
 export type StartupStage='configuration'|'database-options'|'database-connect'|'database-tls'|'database-prepare'|'database-close'|'http-server';
-type Client=DB&{release:(destroy?:boolean)=>void;connection?:{stream?:{encrypted?:boolean;authorized?:boolean;getProtocol?:()=>string|null}}};
+type Client=DB&{release:(destroy?:boolean)=>void;connection?:{stream?:unknown}};
 type Pool={connect:()=>Promise<Client>;end:()=>Promise<unknown>;on?:(event:string,listener:()=>void)=>unknown};
 export type StartupEvent={event:'startup_phase'|'startup_failure'|'startup_retry'|'startup_cleanup_failure';stage:StartupStage;attempt:number;status?:'started'|'complete'|'verified';code?:string;sourceCode?:string;willRetry?:boolean;delayMs?:number;variable?:string;protocol?:string;alreadyInstalled?:boolean};
 export type StartupDependencies={
@@ -51,7 +51,7 @@ export async function runStartup(deps:StartupDependencies){
    stage='database-connect';deps.log({event:'startup_phase',stage,attempt,status:'started'});client=await pool.connect();
    stage='database-tls';
    if(config.production){
-    const stream=client.connection?.stream;
+    const stream=client.connection?.stream as {encrypted?:boolean;authorized?:boolean;getProtocol?:()=>string|null}|undefined;
     if(!stream?.encrypted||stream.authorized!==true)throw new Error('TLS verification is required');
     const protocol=stream.getProtocol?.();deps.log({event:'startup_phase',stage,attempt,status:'verified',...protocol&&['TLSv1.2','TLSv1.3'].includes(protocol)?{protocol}:{}});
    }
