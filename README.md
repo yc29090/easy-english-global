@@ -63,7 +63,7 @@ node tests/integration.test.ts
 
 `TEST_DATABASE_URL` 可指定专用 PostgreSQL 测试数据库，切勿使用生产数据库。集成测试在独立临时 schema 中创建测试账户和教材，结束时清理，可重复运行。GitHub Actions 自动启动 PostgreSQL 16 并执行类型检查和测试，验证认证、权限、数据隔离、试用到期、密码更新、禁用会话、订单归属/幂等和密码重置单次使用。
 
-验证结果：本地 21 项核心、内容及播放测试和脚本语法检查通过；GitHub Actions 已成功安装依赖，TypeScript 类型检查及 PostgreSQL 16 全套测试共 24 项通过（完整教材版本），并额外通过内嵌 PostgreSQL 引擎测试及生产依赖安全审计。实际浏览器交互和真实 SMTP 发送尚未验收。最新结果见仓库 Actions。
+验证结果：本地 26 项核心、内容、播放及生产配置测试和脚本语法检查通过；GitHub Actions 已成功安装依赖，TypeScript 类型检查及 PostgreSQL 16 全套测试共 32 项通过（Render 部署准备版本），并额外通过内嵌 PostgreSQL 引擎测试及生产依赖安全审计。另外已用仅生产依赖连续执行两次实际启动命令，并通过 HTTP 基本检查；未连接真实 Render 服务，实际浏览器交互和真实邮件发送尚未验收。最新结果见仓库 Actions。
 
 ## 免费测试部署
 

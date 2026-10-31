@@ -8,7 +8,7 @@ test('Render production uses its real external origin, PORT and safe defaults',(
  const config=loadConfig({...environment,PORT:'10000'});assert.equal(config.appUrl,'https://example.onrender.com');assert.equal(config.port,10000);assert.equal(config.mockCheckout,false);assert.equal(config.mailProvider,'resend');assert.equal(loadConfig({NODE_ENV:'test'}).mailProvider,'disabled');
 });
 test('unsafe production overrides and incomplete variables fail without exposing values',()=>{
- for(const overrides of [{ALLOW_MOCK_CHECKOUT:'true'},{PORT:'not-a-port'},{APP_URL:'http://unsafe.example.com'},{APP_URL:'https://example.com/path'},{APP_URL:'https://example.com/?token=secret'},{ADMIN_PASSWORD:'never-print-this-secret'},{MAIL_PROVIDER:'resend',RESEND_API_KEY:''},{MAIL_PROVIDER:'smtp',SMTP_HOST:'smtp.example.com'},{NODE_ENV:'development',RENDER:'true'}])assert.throws(()=>loadConfig({...environment,...overrides}));
+ for(const overrides of [{NODE_TLS_REJECT_UNAUTHORIZED:'0'},{ALLOW_MOCK_CHECKOUT:'true'},{PORT:'not-a-port'},{APP_URL:'http://unsafe.example.com'},{APP_URL:'https://example.com/path'},{APP_URL:'https://example.com/?token=secret'},{ADMIN_PASSWORD:'never-print-this-secret'},{MAIL_PROVIDER:'resend',RESEND_API_KEY:''},{MAIL_PROVIDER:'smtp',SMTP_HOST:'smtp.example.com'},{NODE_ENV:'development',RENDER:'true'}])assert.throws(()=>loadConfig({...environment,...overrides}));
  assert.throws(()=>loadConfig({...environment,APP_URL:'https://user:never-print-this-secret@example.com'}),e=>!String(e).includes('never-print-this-secret'));
  assert.throws(()=>loadConfig({NODE_ENV:'production',MAIL_PROVIDER:'disabled'}),/APP_URL/);
  assert.equal(loadConfig({...environment,MAIL_PROVIDER:'disabled'}).mailProvider,'disabled');

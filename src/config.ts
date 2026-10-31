@@ -8,6 +8,7 @@ export function canonicalOrigin(value:string|undefined,production:boolean):strin
 export function loadConfig(env:Env=process.env):RuntimeConfig{
  if(env.NODE_ENV&&!['development','test','production'].includes(env.NODE_ENV))fail('NODE_ENV');
  const production=env.NODE_ENV==='production';
+ if(production&&env.NODE_TLS_REJECT_UNAUTHORIZED==='0')fail('NODE_TLS_REJECT_UNAUTHORIZED (must not disable certificate verification)');
  if(env.RENDER==='true'&&!production)fail('NODE_ENV (Render requires production)');
  const port=Number(env.PORT||3000);if(!Number.isInteger(port)||port<1||port>65535)fail('PORT');
  if(env.ALLOW_MOCK_CHECKOUT&&!['true','false'].includes(env.ALLOW_MOCK_CHECKOUT))fail('ALLOW_MOCK_CHECKOUT');
@@ -34,6 +35,7 @@ export function databaseOptions(env:Env=process.env){
  let url:URL;try{url=new URL(value!);}catch{fail('DATABASE_URL');}
  if(!['postgres:','postgresql:'].includes(url!.protocol)||!url!.hostname||url!.pathname.length<=1)fail('DATABASE_URL');
  const production=env.NODE_ENV==='production';
+ if(production&&env.NODE_TLS_REJECT_UNAUTHORIZED==='0')fail('NODE_TLS_REJECT_UNAUTHORIZED (must not disable certificate verification)');
  if(production&&(!url!.username||!url!.password||/local-development-only|changeme|password$|^postgres$/i.test(decodeURIComponent(url!.password))))fail('DATABASE_URL (unique database credentials required)');
  const requested=env.DATABASE_SSL||url!.searchParams.get('sslmode')||(production?'verify-full':'disable');
  if(!['disable','require','verify-ca','verify-full'].includes(requested))fail('DATABASE_SSL');
