@@ -1,7 +1,7 @@
 export type RuntimeConfig={production:boolean;appUrl:string;port:number;mockCheckout:boolean;mailProvider:'disabled'|'resend'|'smtp';mailFrom:string;resendKey?:string;smtp?:{host:string;port:number;user:string;pass:string}};
 type Env=Record<string,string|undefined>;
-const fail=(name:string):never=>{throw new Error('Invalid or missing environment variable: '+name);};
-export function canonicalOrigin(value:string|undefined,production:boolean){
+function fail(name:string):never{throw new Error('Invalid or missing environment variable: '+name);}
+export function canonicalOrigin(value:string|undefined,production:boolean):string{
  if(!value)fail('APP_URL (or Render RENDER_EXTERNAL_URL)');
  try{const url=new URL(value!);if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash||url.pathname!=='/'||(production&&url.protocol!=='https:'))fail('APP_URL');return url.origin;}catch{fail('APP_URL');}
 }
