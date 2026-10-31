@@ -1,0 +1,19 @@
+name: Public deployment smoke
+on:
+  push:
+    branches: [main]
+    paths: ['deployments/public-test.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify the real public deployment
+        run: npm run smoke -- https://easy-english-global.onrender.com
