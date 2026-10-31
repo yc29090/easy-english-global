@@ -8,7 +8,7 @@
     "region": "oregon",
     "deploy_id": "dep-dbj76cm7bikc73ek23ug",
     "deployed_commit": "a18c5ac2f5ee48919ed48873a1781471e738e85c",
-    "status": "verification_pending",
+    "status": "live",
     "platform_health_probe": "TCP; HTTP /health verified separately; platform path needs Dashboard configuration"
   },
   "database": {
@@ -34,7 +34,7 @@
     "live_acceptance_run": "https://github.com/yc29090/easy-english-global/actions/runs/41225191888",
     "ci_run": "https://github.com/yc29090/easy-english-global/actions/runs/41250621833",
     "ci_tests": 50,
-    "qa_accounts": "two dedicated accounts disabled and sessions expired; no existing user data deleted",
+    "qa_accounts": "Original two QA accounts remain disabled; post-repair dedicated QA account disabled after actual registration/login checks; no existing user data deleted",
     "mobile_device_audio_and_layout": "not yet verified on physical Android/iPhone devices",
     "owner_administrator": "not initialized; no default password created",
     "positive_admin_operations": "covered by isolated CI; owner-admin production acceptance pending",
@@ -42,14 +42,15 @@
     "startup_tests": 14,
     "embedded_postgres_tests": 4,
     "repeated_boot_checks": 28,
-    "post_repair_live_smoke": "pending"
+    "post_repair_live_smoke": "passed: 14 public checks and 18 authenticated checks, plus successful dedicated-user registration",
+    "post_repair_live_run": "https://github.com/yc29090/easy-english-global/actions/runs/41250751838"
   },
   "production": {
     "mock_checkout": false,
     "mail_provider": "disabled",
     "paid_resources_created": false
   },
-  "verification_time_utc": "2026-10-31T23:01:06Z",
+  "verification_time_utc": "2026-10-31T23:02:00Z",
   "incident_2026_10_31": {
     "confirmed_failure": "database-connect / PostgreSQL 28P01",
     "repair": "Current Neon credentials synchronized directly to Render secure DATABASE_URL; no password reset",

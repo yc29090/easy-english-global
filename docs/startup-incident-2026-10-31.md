@@ -21,3 +21,13 @@ Render Free 服务在 17:40 UTC 成功启动，从 22:01 UTC 起反复以状态�
 `DB_TLS_VERIFICATION_FAILED` 必须检查证书链或主机名，不能将 `NODE_TLS_REJECT_UNAUTHORIZED` 设置为 0。`DB_TEMPORARILY_UNAVAILABLE` 会有限重试；持续失败时检查 Neon 端点及网络状态。
 
 Render 自动部署保持关闭，后续代码变更需要显式部署。免费实例会休眠，冷启动仍可能较慢。当前连接器不提供修改平台 HTTP 健康检查路径的操作；仓库的 Blueprint 使用 `/health`，线上应用也提供数据库就绪检查，但平台现有 TCP 探针需要在 Dashboard 中另外改为 `/health`。
+
+## 验证结果
+
+最终生产代码 `a18c5ac2f5ee48919ed48873a1781471e738e85c` 已手动部署，Render 部署 `dep-dbj76cm7bikc73ek23ug` 于 23:02 UTC 标记为 Live。自动部署仍关闭，服务仍是 Free。
+
+[完整 CI](https://github.com/yc29090/easy-english-global/actions/runs/41250621833) 全部通过：50 项测试、9 项管理员终端测试、4 项嵌入式 PostgreSQL 集成测试、生产依赖构建及连续两次启动的 28 项检查。生产依赖审计未发现漏洞。
+
+[真实线上检查](https://github.com/yc29090/easy-english-global/actions/runs/41250751838) 通过：14 项公开 smoke 检查，专用账号注册成功，18 项含登录的检查通过，覆盖 HTTPS 首页、数据库就绪健康检查、教材目录、静态资源、云端记录读取、会话标志、匿名权限及关闭模拟支付。专用 QA 账号已禁用。
+
+数据库复核：500 单词、200 短句、20 场景、100 段对话、406 条双语台词、3 项迁移，教材哈希与修复前一致。原有 2 个账号、2 条学习记录、1 条场景练习记录保留，只有用于验证的专用 QA 账号新增。未进行 Android/iPhone 实机界面和发音测试；本次不声称完成这些验证。
