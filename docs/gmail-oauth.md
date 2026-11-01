@@ -35,3 +35,9 @@ Google External 应用若保持 Testing，涉及 Gmail 权限的刷新令牌通�
 - https://developers.google.com/identity/protocols/oauth2#expiration
 - https://developers.google.com/workspace/gmail/api/auth/scopes
 - https://developers.google.com/workspace/gmail/api/guides/sending
+
+## 代码与部署验证
+
+2026-11-01，PR #4 已合并，完整 CI：https://github.com/yc29090/easy-english-global/actions/runs/41294856477 ，75 项主测试全部通过，嵌入式数据库 12 项通过（真实多连接并发在主套件验证）。部署 `dep-dbjgnnc9v7es73a2826g` / `c16ccd1` 于 09:53:04 UTC 成为 live。006 迁移已在生产副本和生产执行，8 张业务表内容指纹保持一致，7 用户、1 管理员、75 学习进度、700 教材全部保留。
+
+Google OAuth 客户端和实际账号同意尚未提供，本次未声称授权完成或通过 Gmail API 实际送达；此前实际收到的邮件属于 Resend 测试。人工支付仍关闭。

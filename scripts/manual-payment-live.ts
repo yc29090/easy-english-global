@@ -12,10 +12,10 @@ for(let attempt=0;attempt<12;attempt++){
   for(const path of ['/payments/wechat.jpg','/payments/alipay.jpg']){
    const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,404);
   }
-  for(const path of ['/api/admin/orders','/api/orders']){
+  for(const path of ['/api/admin/orders','/api/orders','/api/admin/mail/gmail/status','/api/admin/mail/gmail/callback']){
    const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,401);
   }
-  for(const path of ['/api/orders/manual','/api/orders/manual/claim','/api/admin/orders/review','/api/admin/orders/notify']){
+  for(const path of ['/api/orders/manual','/api/orders/manual/claim','/api/admin/orders/review','/api/admin/orders/notify','/api/admin/mail/gmail/start','/api/admin/mail/gmail/test','/api/admin/mail/gmail/disconnect']){
    const response=await fetch(origin+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'{}',signal:AbortSignal.timeout(30000)});
    assert.equal(response.status,401);
    const cross=await fetch(origin+path,{method:'POST',headers:{Origin:'https://untrusted.invalid','Content-Type':'application/json'},body:'{}',signal:AbortSignal.timeout(30000)});
