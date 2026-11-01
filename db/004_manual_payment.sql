@@ -5,5 +5,9 @@ ALTER TABLE orders ADD COLUMN IF NOT EXISTS payment_method text;
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS claimed_at timestamptz;
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS reviewed_by uuid REFERENCES users(id);
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS reviewed_at timestamptz;
-ALTER TABLE orders ADD CONSTRAINT orders_payment_method_check CHECK(payment_method IS NULL OR payment_method IN ('wechat','alipay'));
+DO $$ BEGIN
+ IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid='orders'::regclass AND conname='orders_payment_method_check') THEN
+  ALTER TABLE orders ADD CONSTRAINT orders_payment_method_check CHECK(payment_method IS NULL OR payment_method IN ('wechat','alipay'));
+ END IF;
+END $$;
 CREATE INDEX IF NOT EXISTS orders_manual_review_idx ON orders(claimed_at DESC) WHERE status='payment_claimed';

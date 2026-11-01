@@ -21,7 +21,7 @@ test('order notification: verified destination, fixed amount and no secrets in m
 test('order notification: disabled provider does not send',async()=>{
  let called=false;
  const send=orderMailer({...config,mailProvider:'disabled'},async()=>{called=true;throw new Error('should not send');});
- await send({id:'order-123',email:'learner@example.com',method:'alipay'});
+ await assert.rejects(()=>send({id:'order-123',email:'learner@example.com',method:'alipay'}),/disabled/);
  assert.equal(called,false);
 });
 test('order notification: provider failure surfaces to caller',async()=>{

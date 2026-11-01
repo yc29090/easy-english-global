@@ -17,11 +17,11 @@ try{
   try{
    const stream=(client as unknown as {connection:{stream:import('node:tls').TLSSocket}}).connection.stream;
    if(!stream.encrypted||!stream.authorized)throw new AdminInputError('configuration');
-   await initializeAdmin(client,values.email,values.password);
+   await initializeAdmin(client,values.email,values.password,values.currentPassword);
    console.log('管理员创建成功。连接已通过 TLS 证书验证；请到网站登录，不要再次初始化。');
   }finally{client.release();}
  }finally{await pool.end();}
 }catch(error){
  console.error(adminErrorMessage(error));
  process.exitCode=error instanceof AdminInputError&&error.kind==='cancelled'?130:1;
-}finally{if(values){values.databaseUrl='';values.email='';values.password='';values=undefined;}}
+}finally{if(values){values.databaseUrl='';values.email='';values.password='';values.currentPassword='';values=undefined;}}

@@ -30,7 +30,7 @@ test('PostgreSQL: account lifecycle, ownership, expiry, admin, reset and mock or
   assert.equal(new Date((await db.query('SELECT * FROM progress WHERE user_id=$1',[legacy])).rows[0].next_review_at).toISOString(),originalDate);
   assert.equal((await db.query('SELECT * FROM users WHERE id=$1',[legacy])).rows[0].membership,'lifetime');
   let ip=0;const resetUrls:string[]=[];
-  const call=(method:string,path:string,body:any={},session?:string,mock=true)=>api({db,method,path:'/api'+path,body,session,ip:'integration-'+(++ip),appUrl:'https://example.com',mock,sendReset:async(_email,url)=>{resetUrls.push(url);}});
+  const call=(method:string,path:string,body:any={},session?:string,mock=true)=>api({db,method,path:'/api'+path,body,session,ip:'integration-'+(++ip),appUrl:'https://example.com',manualPayment:true,mock,sendReset:async(_email,url)=>{resetUrls.push(url);}});
   const suffix=randomUUID(),address='learner-'+suffix+'@example.com',secret='a-secure-password-123';
   const a=await call('POST','/auth/register',{email:address,password:secret});assert.equal(a.user.membership,'free');assert.ok(a.session);
   await assert.rejects(()=>call('POST','/auth/register',{email:address,password:secret}),{status:409});
@@ -98,12 +98,12 @@ test('PostgreSQL: account lifecycle, ownership, expiry, admin, reset and mock or
   assert.equal(claimed.order.status,'payment_claimed');
   assert.equal((await call('GET','/me',{},manualUser.session,false)).user.membership,'free');
   await assert.rejects(()=>call('GET','/admin/orders',{},manualUser.session,false),{status:403});
-  await assert.rejects(()=>call('POST','/admin/orders/review',{id:manual.id,action:'approve'},manualUser.session,false),{status:403});
+  await assert.rejects(()=>call('POST','/admin/orders/review',{id:manual.id,action:'approve',verified:true},manualUser.session,false),{status:403});
   assert.ok((await call('GET','/admin/orders',{},admin.session,false)).orders.some((o:any)=>o.id===manual.id));
-  await call('POST','/admin/orders/review',{id:manual.id,action:'approve'},admin.session,false);
-  await call('POST','/admin/orders/review',{id:manual.id,action:'approve'},admin.session,false);
+  await call('POST','/admin/orders/review',{id:manual.id,action:'approve',verified:true},admin.session,false);
+  await call('POST','/admin/orders/review',{id:manual.id,action:'approve',verified:true},admin.session,false);
   assert.equal((await call('GET','/me',{},manualUser.session,false)).user.membership,'lifetime');
-  assert.equal((await db.query("SELECT count(*)::int AS n FROM audit_log WHERE target_id=$1 AND action='manual_order_approve'",[manualUser.user.id])).rows[0].n,1);
+  assert.equal((await db.query("SELECT count(*)::int AS n FROM audit_log WHERE target_id=$1 AND action LIKE 'manual_order_approve:%'",[manualUser.user.id])).rows[0].n,1);
   await assert.rejects(()=>call('POST','/admin/orders/review',{id:manual.id,action:'reject'},admin.session,false),{status:409});
   const rejectedUser=await call('POST','/auth/register',{email:'rejected-'+suffix+'@example.com',password:secret});
   const rejected=(await call('POST','/orders/manual',{method:'alipay'},rejectedUser.session,false)).order;
