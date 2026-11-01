@@ -21,5 +21,5 @@ try{
    finally{await client.query('ROLLBACK');}
   }finally{client.release();}
  }finally{await pool.end();}
-}catch(error){console.error('检查未完成。'+adminErrorMessage(error));process.exitCode=error instanceof AdminInputError&&error.kind==='cancelled'?130:1;}
+}catch(error){console.error(error instanceof AdminInputError?'检查未完成。'+adminErrorMessage(error):'检查未完成。请检查网络和数据库连接；没有修改账号，不要重新初始化管理员。');process.exitCode=error instanceof AdminInputError&&error.kind==='cancelled'?130:1;}
 finally{if(input){input.databaseUrl='';input.email='';input.password='';input=undefined;}}
