@@ -30,7 +30,7 @@ jobs:
       - name: Verify hidden administrator input on a real pseudo-terminal
         run: npm run test:admin-terminal
       - name: Test embedded PostgreSQL engine
-        run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts
+        run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts tests/admin-init.test.ts
       - name: Verify Render build with production dependencies only
         run: npm install --omit=dev && npm run content:validate
       - name: Verify Render start command and repeated boot with runtime dependencies
