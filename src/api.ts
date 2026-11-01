@@ -3,12 +3,27 @@ import type {DB} from './db.ts';
 import {reviewSchedule} from './review.ts';
 import {dialogues} from './dialogues.ts';
 import {token,digest,hashPassword,verifyPassword,member,publicUser,HttpError,requireValue,email,password,days} from './security.ts';
-export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void};
+export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;manualPayment?:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>};
 export async function api(c:Context):Promise<any>{
  const {db,method,path,body:b}=c;
  const one=async(sql:string,v:any[]=[])=> (await db.query(sql,v)).rows[0];
  const transaction=async(fn:()=>Promise<any>)=>{await db.query('BEGIN');try{const result=await fn();await db.query('COMMIT');return result;}catch(e){await db.query('ROLLBACK');throw e;}};
  async function limit(scope:string,max:number){const key=digest(scope+':'+c.ip);const r=await one(`INSERT INTO rate_limits(key,hits,expires_at) VALUES($1,1,now()+interval '15 minutes') ON CONFLICT(key) DO UPDATE SET hits=CASE WHEN rate_limits.expires_at<now() THEN 1 ELSE rate_limits.hits+1 END, expires_at=CASE WHEN rate_limits.expires_at<now() THEN now()+interval '15 minutes' ELSE rate_limits.expires_at END RETURNING hits`,[key]);if(r.hits>max)throw new HttpError(429,'Too many attempts. Try again later.');}
+ // Persist a claim before attempting mail. A lease permits recovery after process death.
+ async function deliverNotification(id:string){
+  const job=await one("UPDATE order_notifications SET status='sending',attempts=attempts+1,updated_at=now() WHERE order_id=$1 AND (status IN ('pending','failed') OR (status='sending' AND updated_at<now()-interval '2 minutes')) RETURNING order_id",[id]);
+  if(!job)return 'unchanged';
+  try{
+   if(!c.notifyOrder)throw new Error('Notifications unavailable');
+   const order=await one('SELECT o.id,u.email,o.payment_method AS method FROM orders o JOIN users u ON u.id=o.user_id WHERE o.id=$1',[id]);
+   await c.notifyOrder(order);
+   await db.query("UPDATE order_notifications SET status='sent',updated_at=now() WHERE order_id=$1",[id]);
+   return 'sent';
+  }catch{
+   await db.query("UPDATE order_notifications SET status='failed',updated_at=now() WHERE order_id=$1",[id]);
+   c.onMailError?.();return 'failed';
+  }
+ }
  const sessionUser=async()=>c.session?await one('SELECT u.* FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=$1 AND s.expires_at>now() AND u.disabled=false',[digest(c.session)]):null;
  const issueSession=async(u:any)=>{const raw=token();await db.query("INSERT INTO sessions VALUES($1,$2,now()+interval '7 days')",[digest(raw),u.id]);return {user:publicUser(u),session:raw};};
  if(method==='GET'&&path==='/api/catalog'){
@@ -16,7 +31,7 @@ export async function api(c:Context):Promise<any>{
   const counts=(await db.query('SELECT kind,count(*)::int AS count FROM materials GROUP BY kind')).rows;
   const curriculumDialogues=(await db.query('SELECT * FROM curriculum_dialogues WHERE is_free=true OR $1::boolean ORDER BY difficulty,sort_order,id',[!!full])).rows;
   const dialogueCounts=(await db.query('SELECT scene_id,count(*)::int AS count FROM curriculum_dialogues GROUP BY scene_id')).rows;
-  return {features:{mockCheckout:c.mock,passwordReset:c.passwordResetEnabled!==false},dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
+  return {features:{manualPayment:c.manualPayment===true,mockCheckout:c.mock,passwordReset:c.passwordResetEnabled!==false},dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
  }
  if(method==='POST'&&path==='/api/auth/register'){
   await limit('auth',20);const address=email(b.email), hash=await hashPassword(password(b.password));
@@ -98,14 +113,77 @@ export async function api(c:Context):Promise<any>{
  if(path==='/api/orders'&&method==='POST'){
   if(!c.mock)throw new HttpError(403,'Online checkout is unavailable');
   if(u.membership==='lifetime')throw new HttpError(409,'Already a lifetime member');
-  return {order:await one("INSERT INTO orders(id,user_id) VALUES($1,$2) ON CONFLICT(user_id) WHERE status='pending' DO UPDATE SET user_id=EXCLUDED.user_id RETURNING *",[randomUUID(),u.id])};
+  return {order:await one("INSERT INTO orders(id,user_id) VALUES($1,$2) ON CONFLICT(user_id) WHERE status='pending' AND payment_method IS NULL DO UPDATE SET user_id=EXCLUDED.user_id RETURNING *",[randomUUID(),u.id])};
  }
  if(path==='/api/orders/confirm'&&method==='POST'){
   if(!c.mock)throw new HttpError(403,'Mock checkout is disabled');requireValue(typeof b.id==='string');
-  return transaction(async()=>{const o=await one('SELECT * FROM orders WHERE id::text=$1 AND user_id=$2 FOR UPDATE',[b.id,u.id]);if(!o)throw new HttpError(404,'Order not found');await db.query("UPDATE orders SET status='mock_paid',paid_at=COALESCE(paid_at,now()) WHERE id=$1",[o.id]);await db.query("UPDATE users SET membership='lifetime',trial_until=NULL WHERE id=$1",[u.id]);return {ok:true};});
+  return transaction(async()=>{const o=await one('SELECT * FROM orders WHERE id::text=$1 AND user_id=$2 FOR UPDATE',[b.id,u.id]);if(!o)throw new HttpError(404,'Order not found');if(o.payment_method||!['pending','mock_paid'].includes(o.status))throw new HttpError(409,'Not a mock order');await db.query("UPDATE orders SET status='mock_paid',paid_at=COALESCE(paid_at,now()) WHERE id=$1",[o.id]);await db.query("UPDATE users SET membership='lifetime',trial_until=NULL WHERE id=$1",[u.id]);return {ok:true};});
+ }
+
+ // Manual transfer: a customer's claim is not evidence of payment.
+ if(path==='/api/orders/manual'&&method==='POST'){
+  if(c.manualPayment!==true)throw new HttpError(503,'Manual payments are disabled');
+  if(u.role==='admin')throw new HttpError(403,'Cannot create administrator payment orders');
+  requireValue(['wechat','alipay'].includes(b.method));
+  if(u.membership==='lifetime')throw new HttpError(409,'Already a lifetime member');
+  await limit('manual-order',30);
+  return transaction(async()=>{
+   const current=await one('SELECT * FROM users WHERE id=$1 FOR UPDATE',[u.id]);
+   if(!current||current.disabled||current.role==='admin')throw new HttpError(403,'Account unavailable');
+   if(current.membership==='lifetime')throw new HttpError(409,'Already a lifetime member');
+   const existing=await one("SELECT * FROM orders WHERE user_id=$1 AND payment_method IS NOT NULL AND status IN ('pending','payment_claimed') ORDER BY created_at DESC LIMIT 1",[u.id]);
+   if(existing)return {order:existing};
+   const order=await one("INSERT INTO orders(id,user_id,payment_method) VALUES($1,$2,$3) RETURNING *",[randomUUID(),u.id,b.method]);
+   return {order};
+  });
+ }
+ if(path==='/api/orders/manual/claim'&&method==='POST'){
+  if(c.manualPayment!==true)throw new HttpError(503,'Manual payments are disabled');
+  requireValue(typeof b.id==='string'&&/^[0-9a-f-]{36}$/i.test(b.id));
+  await limit('manual-claim',20);
+  const result=await transaction(async()=>{
+   const order=await one('SELECT * FROM orders WHERE id=$1 AND user_id=$2 FOR UPDATE',[b.id,u.id]);
+   if(!order)throw new HttpError(404,'Order not found');
+   if(!order.payment_method)throw new HttpError(400,'Not a manual payment order');
+   if(order.status==='payment_claimed')return {order,notify:false};
+   if(order.status!=='pending')throw new HttpError(409,'Order cannot be claimed');
+   const changed=await one("UPDATE orders SET status='payment_claimed',claimed_at=now() WHERE id=$1 RETURNING *",[order.id]);
+   await db.query('INSERT INTO order_notifications(order_id) VALUES($1) ON CONFLICT DO NOTHING',[order.id]);
+   return {order:changed,notify:true};
+  });
+  await deliverNotification(result.order.id);
+  return {order:result.order};
  }
  if(path.startsWith('/api/admin/')){
   if(u.role!=='admin')throw new HttpError(403,'Administrator access required');
+
+  if(path==='/api/admin/orders/notify'&&method==='POST'){
+   requireValue(typeof b.id==='string'&&/^[0-9a-f-]{36}$/i.test(b.id));
+   await limit('order-notification-retry',20);
+   return {notification:await deliverNotification(b.id)};
+  }
+  if(path==='/api/admin/orders'&&method==='GET'){
+   return {orders:(await db.query("SELECT o.id,o.user_id,u.email,o.amount_fen,o.currency,o.status,o.payment_method,o.created_at,o.claimed_at,o.reviewed_at,n.status AS notification_status,n.attempts AS notification_attempts FROM orders o LEFT JOIN order_notifications n ON n.order_id=o.id JOIN users u ON u.id=o.user_id WHERE o.payment_method IS NOT NULL ORDER BY o.created_at DESC LIMIT 200")).rows};
+  }
+  if(path==='/api/admin/orders/review'&&method==='POST'){
+   requireValue(typeof b.id==='string'&&/^[0-9a-f-]{36}$/i.test(b.id)&&['approve','reject'].includes(b.action));
+   return transaction(async()=>{
+    const o=await one('SELECT * FROM orders WHERE id=$1 FOR UPDATE',[b.id]);
+    if(!o||!o.payment_method)throw new HttpError(404,'Order not found');
+    if(o.status==='paid'&&b.action==='approve')return {ok:true,alreadyReviewed:true};
+    if(o.status==='rejected'&&b.action==='reject')return {ok:true,alreadyReviewed:true};
+    if(o.status!=='payment_claimed')throw new HttpError(409,'Order is not awaiting verification');
+    if(b.action==='approve'&&(c.manualPayment!==true||b.verified!==true))throw new HttpError(403,'Manual payments disabled or settlement not explicitly verified');
+    const target=await one('SELECT * FROM users WHERE id=$1 FOR UPDATE',[o.user_id]);
+    if(!target||target.disabled||target.role==='admin')throw new HttpError(403,'Cannot modify administrator membership');
+    if(b.action==='approve'&&target.membership==='lifetime')throw new HttpError(409,'Already lifetime; check duplicate payment');
+    const status=b.action==='approve'?'paid':'rejected';
+    await db.query("UPDATE orders SET status=$1,reviewed_by=$2,reviewed_at=now(),paid_at=CASE WHEN $1='paid' THEN now() ELSE paid_at END WHERE id=$3",[status,u.id,o.id]);
+    if(b.action==='approve')await db.query("UPDATE users SET membership='lifetime',trial_until=NULL WHERE id=$1",[o.user_id]);
+    await db.query('INSERT INTO audit_log(id,actor_id,target_id,action) VALUES($1,$2,$3,$4)',[randomUUID(),u.id,o.user_id,'manual_order_'+b.action+':'+o.id]);
+    return {ok:true};
+   });
+  }
   if(path==='/api/admin/users'&&method==='GET')return {users:(await db.query('SELECT id,email,role,membership,trial_until,disabled,must_change_password FROM users ORDER BY created_at DESC LIMIT 500')).rows};
   if(path==='/api/admin/trials'&&method==='POST'){
    const address=email(b.email),period=days(b.days),temporaryPassword=token().slice(0,20),hash=await hashPassword(temporaryPassword);

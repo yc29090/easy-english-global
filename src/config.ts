@@ -1,4 +1,4 @@
-export type RuntimeConfig={production:boolean;appUrl:string;port:number;mockCheckout:boolean;mailProvider:'disabled'|'resend'|'smtp';mailFrom:string;resendKey?:string;smtp?:{host:string;port:number;user:string;pass:string}};
+export type RuntimeConfig={production:boolean;appUrl:string;port:number;mockCheckout:boolean;manualPayment?:boolean;mailProvider:'disabled'|'resend'|'smtp';mailFrom:string;resendKey?:string;smtp?:{host:string;port:number;user:string;pass:string}};
 type Env=Record<string,string|undefined>;
 export class ConfigError extends Error {
  variable:string;
@@ -21,6 +21,9 @@ export function loadConfig(env:Env=process.env):RuntimeConfig{
  const appUrl=canonicalOrigin(env.APP_URL||env.RENDER_EXTERNAL_URL||(!production?'http://localhost:3000':undefined),production);
  const mailProvider=env.MAIL_PROVIDER||(!production?'disabled':'resend');
  if(!['disabled','resend','smtp'].includes(mailProvider))fail('MAIL_PROVIDER');
+ const manualPayment=env.MANUAL_PAYMENT_ENABLED==='true';
+ if(env.MANUAL_PAYMENT_ENABLED&&!['true','false'].includes(env.MANUAL_PAYMENT_ENABLED))fail('MANUAL_PAYMENT_ENABLED');
+ if(manualPayment&&(env.MANUAL_PAYMENT_ACCEPTANCE_VERIFIED!=='true'||mailProvider==='disabled'))fail('MANUAL_PAYMENT_ACCEPTANCE_VERIFIED (receiving account, QR, delivery and security acceptance required)');
  const mailFrom=env.MAIL_FROM||'';
  if(mailProvider!=='disabled'&&(!mailFrom||/[\r\n]/.test(mailFrom)||!/@/.test(mailFrom)))fail('MAIL_FROM');
  if(mailProvider==='resend'&&(!env.RESEND_API_KEY||!/^[A-Za-z0-9_-]{10,}$/.test(env.RESEND_API_KEY)))fail('RESEND_API_KEY');
@@ -32,7 +35,7 @@ export function loadConfig(env:Env=process.env):RuntimeConfig{
   if(!env.SMTP_USER||!env.SMTP_PASS)fail('SMTP_USER/SMTP_PASS');
   smtp={host:env.SMTP_HOST,port:smtpPort,user:env.SMTP_USER,pass:env.SMTP_PASS};
  }
- return {production,appUrl,port,mockCheckout:!production&&env.ALLOW_MOCK_CHECKOUT==='true',mailProvider:mailProvider as RuntimeConfig['mailProvider'],mailFrom,resendKey:env.RESEND_API_KEY,smtp};
+ return {production,appUrl,port,manualPayment,mockCheckout:!production&&env.ALLOW_MOCK_CHECKOUT==='true',mailProvider:mailProvider as RuntimeConfig['mailProvider'],mailFrom,resendKey:env.RESEND_API_KEY,smtp};
 }
 export function databaseOptions(env:Env=process.env){
  const value=env.DATABASE_URL;if(!value)fail('DATABASE_URL');
