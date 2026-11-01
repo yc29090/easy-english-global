@@ -65,6 +65,6 @@ export async function promptAdminInput(input:NodeJS.ReadStream=process.stdin,out
   rl.close();muted.end();
   input.setRawMode(wasRaw);if(wasPaused)input.pause();
   // Drop references; JavaScript strings are not claimed to be physically zeroized.
-  databaseUrl='';address='';password='';confirmation='';
+  databaseUrl='';address='';password='';confirmation='';currentPassword='';
  }
 }
