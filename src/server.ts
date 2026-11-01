@@ -6,8 +6,11 @@ import {gmailMailer} from './gmail.ts';
 import {mailAcceptance} from './mail-acceptance.ts';
 const config=loadConfig(),pool=database();
 pool.on('error',()=>console.error('Idle database connection failed'));
-const gmailSend=gmailMailer(pool,config.gmail);
-const server=createApplication(pool,config,resetMailer(config,fetch,gmailSend),orderMailer(config,fetch,gmailSend));
+const server=createApplication(pool,config,resetMailer(config),orderMailer(config),db=>{
+ // Reuse the request connection; nested pool checkout can exhaust all Free-tier slots.
+ const gmailSend=gmailMailer(db,config.gmail);
+ return {sendReset:resetMailer(config,fetch,gmailSend),notifyOrder:orderMailer(config,fetch,gmailSend)};
+});
 server.listen(config.port,'0.0.0.0',()=>{
  console.log('Easy English listening on port '+config.port);
  const testId=process.env.MAIL_ACCEPTANCE_TEST_ID;
