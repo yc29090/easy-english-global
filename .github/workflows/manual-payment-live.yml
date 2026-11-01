@@ -1,0 +1,19 @@
+name: Manual payment disabled live acceptance
+on:
+  push:
+    branches: [main]
+    paths: ['deployments/manual-payment.json']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify deployed manual payments stay closed without changing user data
+        run: node scripts/manual-payment-live.ts

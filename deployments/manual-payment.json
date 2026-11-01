@@ -1,0 +1,57 @@
+{
+  "site_url": "https://easy-english-global.onrender.com",
+  "source_commit": "e73c2215a888e02e39f731f06ee6d0a7fff8c26e",
+  "pr": 1,
+  "render": {
+    "service_id": "srv-dbj23vmtlv9c73c1jpo0",
+    "deploy_id": "dep-dbj9l98u01pc73erdpfg",
+    "status": "live",
+    "plan": "free",
+    "live_at_utc": "2026-11-01T01:49:59Z",
+    "tls": "TLSv1.3 verified at startup",
+    "health_probe": "platform TCP; application HTTP verified by read-only workflow"
+  },
+  "neon": {
+    "project_id": "soft-tooth-72285618",
+    "plan": "free",
+    "migrations": 5,
+    "migration_test_branch": "br-spring-sky-b5us68jf",
+    "production_data_fingerprints_unchanged": true,
+    "tables_verified": [
+      "users",
+      "progress",
+      "learning_state",
+      "practice_progress",
+      "materials",
+      "scenes",
+      "curriculum_dialogues",
+      "curriculum_installs"
+    ],
+    "users": 7,
+    "administrators": 1,
+    "progress": 75,
+    "materials": 700,
+    "scenes": 20,
+    "dialogues": 100
+  },
+  "verification": {
+    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41262556588",
+    "tests_passed": 67,
+    "pty_tests_passed": 13,
+    "embedded_tests_passed": 8,
+    "embedded_concurrency_test": "skipped here; passed using real PostgreSQL in primary suite",
+    "runtime_boot_checks_passed": 28,
+    "production_audit_vulnerabilities": 0,
+    "live_read_only_workflow": "https://github.com/yc29090/easy-english-global/actions/workflows/manual-payment-live.yml"
+  },
+  "payment": {
+    "enabled": false,
+    "acceptance_verified": false,
+    "qr_image": "missing",
+    "receiving_account_ownership": "unverified",
+    "sender_authorization": "unverified",
+    "real_gmail_delivery": "unverified",
+    "mobile_device_acceptance": "pending"
+  },
+  "paid_resources_created": false
+}
