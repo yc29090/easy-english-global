@@ -3,7 +3,7 @@ import type {DB} from './db.ts';
 import {reviewSchedule} from './review.ts';
 import {dialogues} from './dialogues.ts';
 import {token,digest,hashPassword,verifyPassword,member,publicUser,HttpError,requireValue,email,password,days} from './security.ts';
-export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>;manualPaymentEnabled?:boolean};
+export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>};
 export async function api(c:Context):Promise<any>{
  const {db,method,path,body:b}=c;
  const one=async(sql:string,v:any[]=[])=> (await db.query(sql,v)).rows[0];
@@ -16,7 +16,7 @@ export async function api(c:Context):Promise<any>{
   const counts=(await db.query('SELECT kind,count(*)::int AS count FROM materials GROUP BY kind')).rows;
   const curriculumDialogues=(await db.query('SELECT * FROM curriculum_dialogues WHERE is_free=true OR $1::boolean ORDER BY difficulty,sort_order,id',[!!full])).rows;
   const dialogueCounts=(await db.query('SELECT scene_id,count(*)::int AS count FROM curriculum_dialogues GROUP BY scene_id')).rows;
-  return {features:{manualPaymentEnabled:c.manualPaymentEnabled===true,mockCheckout:c.mock,passwordReset:c.passwordResetEnabled!==false},dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
+  return {features:{mockCheckout:c.mock,passwordReset:c.passwordResetEnabled!==false},dialogues:[...curriculumDialogues,...dialogues],dialogueCounts,counts,scenes:(await db.query('SELECT * FROM scenes ORDER BY difficulty,sort_order,id')).rows,materials:(await db.query(`SELECT * FROM materials WHERE is_free=true OR $1::boolean ORDER BY CASE kind WHEN 'word' THEN 0 ELSE 1 END,difficulty,sort_order,id`,[!!full])).rows,locked:!full};
  }
  if(method==='POST'&&path==='/api/auth/register'){
   await limit('auth',20);const address=email(b.email), hash=await hashPassword(password(b.password));
@@ -107,7 +107,6 @@ export async function api(c:Context):Promise<any>{
 
  // Manual transfer: a customer's claim is not evidence of payment.
  if(path==='/api/orders/manual'&&method==='POST'){
-  if(!c.manualPaymentEnabled)throw new HttpError(503,'Manual payment is not yet enabled');
   requireValue(['wechat','alipay'].includes(b.method));
   if(u.membership==='lifetime')throw new HttpError(409,'Already a lifetime member');
   await limit('manual-order',30);
@@ -119,7 +118,6 @@ export async function api(c:Context):Promise<any>{
   });
  }
  if(path==='/api/orders/manual/claim'&&method==='POST'){
-  if(!c.manualPaymentEnabled)throw new HttpError(503,'Manual payment is not yet enabled');
   requireValue(typeof b.id==='string'&&/^[0-9a-f-]{36}$/i.test(b.id));
   await limit('manual-claim',20);
   const result=await transaction(async()=>{
