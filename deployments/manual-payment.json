@@ -1,13 +1,13 @@
 {
   "site_url": "https://easy-english-global.onrender.com",
-  "source_commit": "298168b9356089d139c8b44c0ef294315ef9b52e",
-  "pr": 4,
+  "source_commit": "8b90ac2dee9d7a82cc34c651e16cd49829e3d50c",
+  "pr": 5,
   "render": {
     "service_id": "srv-dbj23vmtlv9c73c1jpo0",
-    "deploy_id": "dep-dbji798ae00c73eaaip0",
+    "deploy_id": "dep-dbjijhu7bikc73findv0",
     "status": "live",
     "plan": "free",
-    "live_at_utc": "2026-11-01T11:34:31Z",
+    "live_at_utc": "2026-11-01T12:01:46.454241Z",
     "tls": "TLSv1.3 verified at startup",
     "health_probe": "platform TCP; application HTTP verified by read-only workflow"
   },
@@ -35,23 +35,27 @@
     "dialogues": 100
   },
   "verification": {
-    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41294856477",
-    "tests_passed": 75,
+    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41304251684",
+    "tests_passed": 77,
     "pty_tests_passed": 13,
     "embedded_tests_passed": 12,
     "embedded_concurrency_test": "skipped here; passed using real PostgreSQL in primary suite",
     "runtime_boot_checks_passed": 28,
     "production_audit_vulnerabilities": 0,
-    "live_read_only_workflow": "https://github.com/yc29090/easy-english-global/actions/workflows/manual-payment-live.yml"
+    "live_read_only_workflow": "https://github.com/yc29090/easy-english-global/actions/workflows/manual-payment-live.yml",
+    "order_live_acceptance": "requested; results and dedicated QA cleanup pending"
   },
   "payment": {
-    "enabled": false,
-    "acceptance_verified": false,
+    "enabled": true,
+    "acceptance_verified": true,
     "qr_image": "owner-provided original images integrated; hidden while disabled",
     "receiving_account_ownership": "owner confirmed personal ownership in conversation; platform scanning pending",
-    "sender_authorization": "Google OAuth granted by owner; Gmail API sender enabled; Google application publishing status still requires confirmation",
+    "sender_authorization": "Google owner OAuth granted; Gmail API sending enabled; Google app remains Testing with limited token lifetime",
     "real_gmail_delivery": "passed for Gmail API test 42a3d12c-dbd9-4c69-a30b-03bb606aaba6, owner-confirmed",
-    "mobile_device_acceptance": "passed: owner confirmed both payment codes scan normally in conversation"
+    "mobile_device_acceptance": "passed: owner confirmed both payment codes scan normally in conversation",
+    "google_publishing_status": "Testing; screenshot confirms branding incomplete and Publish button disabled",
+    "google_testing_token_expiry_estimate_utc": "2026-11-08T11:27:52Z",
+    "operational_note": "Owner explicitly requested immediate launch after ownership, mobile scan, real Gmail API receipt and security tests passed. Complete Google branding/publication and authorize again before current Testing grant expires; Google application is not recorded as published."
   },
   "paid_resources_created": false,
   "mail_acceptance": {
