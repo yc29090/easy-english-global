@@ -55,3 +55,7 @@ PR #6 合并，78 项主测试和完整 CI 通过：https://github.com/yc29090/e
 通过固定静态路由 /googleddf3db021b6b2ec7.html 提供，不开放任意静态文件、不执行上传脚本、不请求新 Google 权限。只有实际公开地址返回 HTTP 200 和上述内容后，才提示所有者在 Search Console 重试；文件可访问不等于 Google 已确认所有权。品牌、发布和重新授权的结果仍分别待核实。
 
 FILE 格式官方依据：https://developers.google.com/site-verification/v1/getting_started
+
+## 验证文件部署结果
+
+PR #7 已合并，79 项主测试及完整 CI 通过：https://github.com/yc29090/easy-english-global/actions/runs/41307926039 。部署 dep-dbjj970ae00c73edal60 于 2026-11-01T12:47:14.084942Z 成为 live，固定验证文件已进入运行版本。线上只读验收检查该路径 HTTP 200 和整行文本完全一致；Google Search Console 的实际所有权确认仍需本人点击“验证”后反馈，不能用网站返回文件冒充 Google 已验证成功。

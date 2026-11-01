@@ -1,13 +1,13 @@
 {
   "site_url": "https://easy-english-global.onrender.com",
-  "source_commit": "d65ddd235dbf593b26a4027697aa9d249287f2df",
-  "pr": 6,
+  "source_commit": "7caea60a3a13d2ae28d6191be8d5cda0cb028beb",
+  "pr": 7,
   "render": {
     "service_id": "srv-dbj23vmtlv9c73c1jpo0",
-    "deploy_id": "dep-dbjis0g473hc739vqss0",
+    "deploy_id": "dep-dbjj970ae00c73edal60",
     "status": "live",
     "plan": "free",
-    "live_at_utc": "2026-11-01T12:18:45.539595Z",
+    "live_at_utc": "2026-11-01T12:47:14.084942Z",
     "tls": "TLSv1.3 verified at startup",
     "health_probe": "platform TCP; application HTTP verified by read-only workflow"
   },
@@ -35,8 +35,8 @@
     "dialogues": 100
   },
   "verification": {
-    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41305531761",
-    "tests_passed": 78,
+    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41307926039",
+    "tests_passed": 79,
     "pty_tests_passed": 13,
     "embedded_tests_passed": 12,
     "embedded_concurrency_test": "skipped here; passed using real PostgreSQL in primary suite",
@@ -105,8 +105,15 @@
     "about": "https://easy-english-global.onrender.com/about",
     "privacy": "https://easy-english-global.onrender.com/privacy",
     "terms": "https://easy-english-global.onrender.com/terms",
-    "cloud_console_fields": "not yet confirmed saved; owner management session required",
+    "cloud_console_fields": "Owner reports saved; screenshots show populated brand name/contact/links, Google verification still pending",
     "production_publishing_verified": false,
-    "reauthorization_after_publication_verified": false
+    "reauthorization_after_publication_verified": false,
+    "site_verification_file": {
+      "url": "https://easy-english-global.onrender.com/googleddf3db021b6b2ec7.html",
+      "content": "google-site-verification: googleddf3db021b6b2ec7.html",
+      "source": "User-provided filename; uploaded file was a Google sign-in page, so standard Google FILE content was reconstructed",
+      "deployment_status": "live",
+      "google_ownership_verification": "awaiting owner Search Console result"
+    }
   }
 }
