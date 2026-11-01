@@ -41,3 +41,11 @@ Google External 应用若保持 Testing，涉及 Gmail 权限的刷新令牌通�
 2026-11-01，PR #4 已合并，完整 CI：https://github.com/yc29090/easy-english-global/actions/runs/41294856477 ，75 项主测试全部通过，嵌入式数据库 12 项通过（真实多连接并发在主套件验证）。部署 `dep-dbjgnnc9v7es73a2826g` / `c16ccd1` 于 09:53:04 UTC 成为 live。006 迁移已在生产副本和生产执行，8 张业务表内容指纹保持一致，7 用户、1 管理员、75 学习进度、700 教材全部保留。
 
 Google OAuth 客户端和实际账号同意尚未提供，本次未声称授权完成或通过 Gmail API 实际送达；此前实际收到的邮件属于 Resend 测试。人工支付仍关闭。
+
+## 本人授权与 Gmail API 实际收件（2026-11-01）
+
+Google 官方回调已保存本人 sdqtyc@gmail.com 的授权（11:27:52 UTC），11:30:58 UTC Gmail API 接受测试，验收编号 `42a3d12c-dbd9-4c69-a30b-03bb606aaba6`。所有者明确确认编号来自 Gmail 收到的邮件正文，因此本次真实 Gmail API 送达验收通过。
+
+网站 MAIL_PROVIDER 已切换为 gmail，MAIL_FROM 为本人 Gmail，部署 `dep-dbji798ae00c73eaaip0` 于 11:34:31 UTC 成为 live。没有读取或记录客户端秘密及明文刷新令牌。
+
+人工支付仍关闭；Google 应用此前实际显示为 Testing，其七日刷新令牌限制尚未解除。正式运行前须本人确认 Google 发布状态，并在适用时发布后重新授权，不能宣称现有 Testing 授权可长期有效。扫码及收款码归属已由本人确认，不必重复提供。
