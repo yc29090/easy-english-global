@@ -104,4 +104,23 @@ class Noninteractive(unittest.TestCase):
         self.assertIn('交互终端',result.stdout+result.stderr)
         self.assertNotIn('unused-argument-marker',result.stdout+result.stderr)
 
+class VerificationInput(unittest.TestCase):
+    def setUp(self):
+        self.session=Session(extra_env={'EE_TEST_VERIFY':'1'})
+        self.secret='Z9!'+secrets.token_hex(16)
+        self.url='postgres://owner:'+secrets.token_hex(16)+'@db.example.com/test'
+    def tearDown(self):self.session.close()
+    def test_three_hidden_fields_never_echo(self):
+        self.session.expect('[1/3]');self.session.line(self.url)
+        self.session.expect('[2/3]');self.session.line('owner@example.com')
+        self.session.expect('[3/3]');self.session.line(self.secret)
+        self.session.expect('[INPUT_ACCEPTED]');self.assertEqual(self.session.finish(),0)
+        for value in [self.url,self.secret,'owner@example.com']:self.assertNotIn(value.encode(),self.session.output)
+    def test_check_password_can_be_cancelled_without_echo(self):
+        self.session.expect('[1/3]');self.session.line(self.url)
+        self.session.expect('[2/3]');self.session.line('owner@example.com')
+        self.session.expect('[3/3]');os.write(self.session.master,self.secret.encode());self.session.collect();os.write(self.session.master,b'\x03')
+        self.session.expect('[INPUT_REJECTED]');self.assertNotEqual(self.session.finish(),0)
+        self.assertNotIn(self.secret.encode(),self.session.output)
+
 if __name__=='__main__':unittest.main(verbosity=2)
