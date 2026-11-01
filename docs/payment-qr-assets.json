@@ -9,8 +9,8 @@
       1280
     ],
     "ownership": "Owner supplied original image and confirmed personal ownership in conversation on 2026-11-01",
-    "platform_scan": "not verified",
-    "real_transfer": "not performed"
+    "platform_scan": "Owner confirmed both codes scan normally in conversation",
+    "real_transfer": "not performed; not required for scan acceptance"
   },
   {
     "method": "alipay",
@@ -22,7 +22,7 @@
       1280
     ],
     "ownership": "Owner supplied original image and confirmed personal ownership in conversation on 2026-11-01",
-    "platform_scan": "not verified",
-    "real_transfer": "not performed"
+    "platform_scan": "Owner confirmed both codes scan normally in conversation",
+    "real_transfer": "not performed; not required for scan acceptance"
   }
 ]

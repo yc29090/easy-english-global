@@ -51,7 +51,7 @@
     "receiving_account_ownership": "owner confirmed personal ownership in conversation; platform scanning pending",
     "sender_authorization": "Resend accepted one-time test to account owner; no verified custom sender domain",
     "real_gmail_delivery": "passed: owner confirmed inbox receipt and matching acceptance ID in conversation",
-    "mobile_device_acceptance": "pending"
+    "mobile_device_acceptance": "passed: owner confirmed both payment codes scan normally in conversation"
   },
   "paid_resources_created": false,
   "mail_acceptance": {
