@@ -29,7 +29,8 @@ for(let attempt=0;attempt<12;attempt++){
    const cross=await fetch(origin+path,{method:'POST',headers:{Origin:'https://untrusted.invalid','Content-Type':'application/json'},body:'{}',signal:AbortSignal.timeout(30000)});
    assert.equal(cross.status,403);
   }
-  console.log(JSON.stringify({ok:true,baselineChecks:checks.length,manualPayment:expectedPayment,mockCheckout:false,anonymousAndCrossOriginWritesDenied:true,readOnly:true,brandPagesAvailable:true}));
+  const verification=await fetch(origin+'/googleddf3db021b6b2ec7.html',{signal:AbortSignal.timeout(30000)});assert.equal(verification.status,200);assert.equal((await verification.text()).trim(),'google-site-verification: googleddf3db021b6b2ec7.html');
+  console.log(JSON.stringify({ok:true,baselineChecks:checks.length,manualPayment:expectedPayment,mockCheckout:false,anonymousAndCrossOriginWritesDenied:true,readOnly:true,brandPagesAvailable:true,siteVerificationFileAvailable:true}));
   process.exit(0);
  }catch(error){last=error;if(attempt<11)await new Promise(resolve=>setTimeout(resolve,5000));}
 }

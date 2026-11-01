@@ -45,3 +45,13 @@ Public Suffix List 参考：https://publicsuffix.org/list/public_suffix_list.dat
 ## 网站资料部署结果
 
 PR #6 合并，78 项主测试和完整 CI 通过：https://github.com/yc29090/easy-english-global/actions/runs/41305531761 。部署 dep-dbjis0g473hc739vqss0 于 2026-11-01T12:18:45.539595Z 成为 live。公开首页、/about、/privacy、/terms 与页脚入口已上线。没有 Google Cloud 管理会话，品牌字段写入、发布以及发布后的重新授权仍未验证，不标记完成。当前收款和原 Gmail 授权保持可用，没有重建账号或修改学习记录。
+
+## Search Console HTML 文件准备
+
+所有者提供文件名 googleddf3db021b6b2ec7.html。上传文件实际为约 955 KB 的 Google 登录页面，而非验证文本，因此没有原样发布该登录页。依据用户提供的验证文件名和 Google Site Verification 官方 FILE 格式，恢复为一行公开文本：
+
+`google-site-verification: googleddf3db021b6b2ec7.html`
+
+通过固定静态路由 /googleddf3db021b6b2ec7.html 提供，不开放任意静态文件、不执行上传脚本、不请求新 Google 权限。只有实际公开地址返回 HTTP 200 和上述内容后，才提示所有者在 Search Console 重试；文件可访问不等于 Google 已确认所有权。品牌、发布和重新授权的结果仍分别待核实。
+
+FILE 格式官方依据：https://developers.google.com/site-verification/v1/getting_started
