@@ -47,6 +47,8 @@ test('manual orders require enabled flag, ownership and administrator verified s
   await assert.rejects(()=>call('/orders/manual',{method:'wechat'},user,false),{status:503});
   assert.equal((await call('/catalog',{},user,false,'GET')).features.manualPayment,false);
   await assert.rejects(()=>call('/orders/manual',{method:'wechat'},admin),{status:403});
+  // Historical mock orders must neither block nor masquerade as manual orders.
+  await db.query('INSERT INTO orders(id,user_id) VALUES($1,$2)',[randomUUID(),user]);
   const order=(await call('/orders/manual',{method:'wechat',amount_fen:1,status:'paid'})).order;
   assert.equal(order.amount_fen,9900);assert.equal(order.currency,'CNY');
   assert.equal((await call('/orders/manual',{method:'alipay'})).order.id,order.id);

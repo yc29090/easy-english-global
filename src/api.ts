@@ -113,7 +113,7 @@ export async function api(c:Context):Promise<any>{
  if(path==='/api/orders'&&method==='POST'){
   if(!c.mock)throw new HttpError(403,'Online checkout is unavailable');
   if(u.membership==='lifetime')throw new HttpError(409,'Already a lifetime member');
-  return {order:await one("INSERT INTO orders(id,user_id) VALUES($1,$2) ON CONFLICT(user_id) WHERE status='pending' DO UPDATE SET user_id=EXCLUDED.user_id RETURNING *",[randomUUID(),u.id])};
+  return {order:await one("INSERT INTO orders(id,user_id) VALUES($1,$2) ON CONFLICT(user_id) WHERE status='pending' AND payment_method IS NULL DO UPDATE SET user_id=EXCLUDED.user_id RETURNING *",[randomUUID(),u.id])};
  }
  if(path==='/api/orders/confirm'&&method==='POST'){
   if(!c.mock)throw new HttpError(403,'Mock checkout is disabled');requireValue(typeof b.id==='string');
