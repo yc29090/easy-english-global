@@ -8,7 +8,7 @@ import {HttpError} from './security.ts';
 import {ready} from './setup.ts';
 export type ConnectionPool=DB&{connect:()=>Promise<DB&{release:()=>void}>};
 const assets:Record<string,[string,string]>={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/playback.js':['playback.js','text/javascript; charset=utf-8'],'/styles.css':['styles.css','text/css; charset=utf-8'],'/payments/wechat.jpg':['payments/wechat.jpg','image/jpeg'],'/payments/alipay.jpg':['payments/alipay.jpg','image/jpeg']};
-export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendReset:(to:string,url:string)=>Promise<void>,notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>){
+export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendReset:(to:string,url:string)=>Promise<void>,notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>,mailersForDb?:(db:DB)=>{sendReset:(to:string,url:string)=>Promise<void>;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>}){
  const {production}=config;
  const server=createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');res.setHeader('X-Frame-Options','DENY');
@@ -31,7 +31,7 @@ export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendR
    let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>16384)throw new HttpError(413,'Request too large');}
    let body={};try{body=raw?JSON.parse(raw):{};}catch{throw new HttpError(400,'Invalid JSON');}if(!body||typeof body!=='object'||Array.isArray(body))throw new HttpError(400,'Invalid JSON object');
    const cookie=req.headers.cookie?.split(';').map(v=>v.trim()).find(v=>v.startsWith('ee_session='))?.slice(11);
-   const client=await pool.connect();let data;try{data=await api({db:client,method:req.method!,path:url.pathname,query:url.searchParams,gmailConfig:config.gmail,body,session:cookie,ip:req.socket.remoteAddress||'unknown',appUrl,sendReset,notifyOrder,manualPayment:config.manualPayment===true,mock:config.mockCheckout,passwordResetEnabled:config.mailProvider!=='disabled',onMailError:()=>console.error('Email delivery failed; check mail provider configuration')});}finally{client.release();}
+   const client=await pool.connect();let data;try{const mailers=mailersForDb?.(client);data=await api({db:client,method:req.method!,path:url.pathname,query:url.searchParams,gmailConfig:config.gmail,body,session:cookie,ip:req.socket.remoteAddress||'unknown',appUrl,sendReset:mailers?.sendReset??sendReset,notifyOrder:mailers?.notifyOrder??notifyOrder,manualPayment:config.manualPayment===true,mock:config.mockCheckout,passwordResetEnabled:config.mailProvider!=='disabled',onMailError:()=>console.error('Email delivery failed; check mail provider configuration')});}finally{client.release();}
    if(data.gmailRedirect){res.writeHead(303,{Location:'/?gmail=connected'});res.end();return;}
    if(data.session){res.setHeader('Set-Cookie',`ee_session=${data.session}; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800${production?'; Secure':''}`);delete data.session;}
    if(data.logout)res.setHeader('Set-Cookie',`ee_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0${production?'; Secure':''}`);

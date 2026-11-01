@@ -1,5 +1,9 @@
 // Read-only acceptance: never registers users or changes orders, memberships or learning data.
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const expectedPayment=JSON.parse(await readFile(new URL('../deployments/manual-payment.json',import.meta.url),'utf8')).payment.enabled===true;
+const qrManifest=JSON.parse(await readFile(new URL('../docs/payment-qr-assets.json',import.meta.url),'utf8'));
 import {smoke} from '../src/smoke.ts';
 const origin='https://easy-english-global.onrender.com';
 let last:unknown;
@@ -8,9 +12,10 @@ for(let attempt=0;attempt<12;attempt++){
   const checks=await smoke(origin);
   const get=await fetch(origin+'/api/catalog',{signal:AbortSignal.timeout(60000)});
   assert.equal(get.status,200);const catalog=await get.json();
-  assert.equal(catalog.features.manualPayment,false);assert.equal(catalog.features.mockCheckout,false);
+  assert.equal(catalog.features.manualPayment,expectedPayment);assert.equal(catalog.features.mockCheckout,false);
   for(const path of ['/payments/wechat.jpg','/payments/alipay.jpg']){
-   const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,404);
+   const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,expectedPayment?200:404);
+   if(expectedPayment){assert.equal(response.headers.get('content-type'),'image/jpeg');const asset=qrManifest.find((a:any)=>path.endsWith('/'+a.method+'.jpg'));assert.ok(asset);assert.equal(createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex'),asset.sha256);}
   }
   for(const path of ['/api/admin/orders','/api/orders','/api/admin/mail/gmail/status','/api/admin/mail/gmail/callback']){
    const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,401);
@@ -21,7 +26,7 @@ for(let attempt=0;attempt<12;attempt++){
    const cross=await fetch(origin+path,{method:'POST',headers:{Origin:'https://untrusted.invalid','Content-Type':'application/json'},body:'{}',signal:AbortSignal.timeout(30000)});
    assert.equal(cross.status,403);
   }
-  console.log(JSON.stringify({ok:true,baselineChecks:checks.length,manualPayment:false,mockCheckout:false,anonymousAndCrossOriginWritesDenied:true,readOnly:true}));
+  console.log(JSON.stringify({ok:true,baselineChecks:checks.length,manualPayment:expectedPayment,mockCheckout:false,anonymousAndCrossOriginWritesDenied:true,readOnly:true}));
   process.exit(0);
  }catch(error){last=error;if(attempt<11)await new Promise(resolve=>setTimeout(resolve,5000));}
 }

@@ -1,4 +1,4 @@
-name: Manual payment disabled live acceptance
+name: Manual payment live acceptance
 on:
   push:
     branches: [main]
@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Verify deployed manual payments stay closed without changing user data
+      - name: Verify configured manual payment state and access controls without changing user data
         run: node scripts/manual-payment-live.ts
