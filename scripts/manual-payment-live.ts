@@ -9,6 +9,9 @@ for(let attempt=0;attempt<12;attempt++){
   const get=await fetch(origin+'/api/catalog',{signal:AbortSignal.timeout(60000)});
   assert.equal(get.status,200);const catalog=await get.json();
   assert.equal(catalog.features.manualPayment,false);assert.equal(catalog.features.mockCheckout,false);
+  for(const path of ['/payments/wechat.jpg','/payments/alipay.jpg']){
+   const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,404);
+  }
   for(const path of ['/api/admin/orders','/api/orders']){
    const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,401);
   }

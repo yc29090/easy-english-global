@@ -1,13 +1,13 @@
 {
   "site_url": "https://easy-english-global.onrender.com",
-  "source_commit": "e73c2215a888e02e39f731f06ee6d0a7fff8c26e",
-  "pr": 1,
+  "source_commit": "48038563dc894556714b120ca7587edd99710cb7",
+  "pr": 2,
   "render": {
     "service_id": "srv-dbj23vmtlv9c73c1jpo0",
-    "deploy_id": "dep-dbj9l98u01pc73erdpfg",
+    "deploy_id": "dep-dbjg5ss9v7es73a0rgv0",
     "status": "live",
     "plan": "free",
-    "live_at_utc": "2026-11-01T01:49:59Z",
+    "live_at_utc": "2026-11-01T09:15:02Z",
     "tls": "TLSv1.3 verified at startup",
     "health_probe": "platform TCP; application HTTP verified by read-only workflow"
   },
@@ -35,8 +35,8 @@
     "dialogues": 100
   },
   "verification": {
-    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41262556588",
-    "tests_passed": 67,
+    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41292165326",
+    "tests_passed": 68,
     "pty_tests_passed": 13,
     "embedded_tests_passed": 8,
     "embedded_concurrency_test": "skipped here; passed using real PostgreSQL in primary suite",
@@ -47,8 +47,8 @@
   "payment": {
     "enabled": false,
     "acceptance_verified": false,
-    "qr_image": "missing",
-    "receiving_account_ownership": "unverified",
+    "qr_image": "owner-provided original images integrated; hidden while disabled",
+    "receiving_account_ownership": "owner confirmed personal ownership in conversation; platform scanning pending",
     "sender_authorization": "unverified",
     "real_gmail_delivery": "unverified",
     "mobile_device_acceptance": "pending"

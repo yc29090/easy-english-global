@@ -32,3 +32,7 @@ Render 现有服务为 Free；复用现有 Neon 项目，不创建付费资源�
 - 线上只读验收由 `.github/workflows/manual-payment-live.yml` 执行，结果见 GitHub Actions；不会创建 QA 账号或修改业务数据。
 - 实际 Render 健康探针仍为 TCP；HTTP /health 由上述线上验收单独检查。
 - 迁移测试副本保留在 Free 项目内，未替换生产数据库。
+
+## 收款码补充发布
+
+2026-11-01：用户提供原图并确认本人归属，PR #2 集成。68 项主测试通过（含原图字节完整性和关闭时 404），完整 CI：https://github.com/yc29090/easy-english-global/actions/runs/41292165326 。Render `dep-dbjg5ss9v7es73a0rgv0` 于 09:15:02 UTC 成为 live，源码 `4803856`。两张图片未修改；开关仍关闭。生产 8 张业务表指纹与此前基线相同。邮件发件授权、实际 Gmail 到达及手机扫码验收继续待完成。
