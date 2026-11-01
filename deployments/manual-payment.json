@@ -1,13 +1,13 @@
 {
   "site_url": "https://easy-english-global.onrender.com",
-  "source_commit": "48038563dc894556714b120ca7587edd99710cb7",
-  "pr": 2,
+  "source_commit": "9a99dba97e08fd842c1d5e00bd0bb019122a52cf",
+  "pr": 3,
   "render": {
     "service_id": "srv-dbj23vmtlv9c73c1jpo0",
-    "deploy_id": "dep-dbjg5ss9v7es73a0rgv0",
+    "deploy_id": "dep-dbjgh0gu01pc73fdfkr0",
     "status": "live",
     "plan": "free",
-    "live_at_utc": "2026-11-01T09:15:02Z",
+    "live_at_utc": "2026-11-01T09:38:44Z",
     "tls": "TLSv1.3 verified at startup",
     "health_probe": "platform TCP; application HTTP verified by read-only workflow"
   },
@@ -35,8 +35,8 @@
     "dialogues": 100
   },
   "verification": {
-    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41292165326",
-    "tests_passed": 68,
+    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41293760432",
+    "tests_passed": 71,
     "pty_tests_passed": 13,
     "embedded_tests_passed": 8,
     "embedded_concurrency_test": "skipped here; passed using real PostgreSQL in primary suite",
@@ -49,9 +49,19 @@
     "acceptance_verified": false,
     "qr_image": "owner-provided original images integrated; hidden while disabled",
     "receiving_account_ownership": "owner confirmed personal ownership in conversation; platform scanning pending",
-    "sender_authorization": "unverified",
-    "real_gmail_delivery": "unverified",
+    "sender_authorization": "Resend accepted one-time test to account owner; no verified custom sender domain",
+    "real_gmail_delivery": "awaiting owner inbox confirmation",
     "mobile_device_acceptance": "pending"
   },
-  "paid_resources_created": false
+  "paid_resources_created": false,
+  "mail_acceptance": {
+    "test_id": "85d50482-c185-42be-acf4-29040e9ace78",
+    "provider_status": "provider_accepted",
+    "provider_message_id": "01a19679-a409-75b4-a7f6-8695f41d5493",
+    "accepted_at_utc": "2026-11-01T09:38:36Z",
+    "recipient": "sdqtyc@gmail.com",
+    "sender": "Easy English <onboarding@resend.dev>",
+    "inbox_delivery": "not confirmed",
+    "public_mail_provider": "disabled"
+  }
 }
