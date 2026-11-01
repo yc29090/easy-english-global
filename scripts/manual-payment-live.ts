@@ -17,6 +17,9 @@ for(let attempt=0;attempt<12;attempt++){
    const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,expectedPayment?200:404);
    if(expectedPayment){assert.equal(response.headers.get('content-type'),'image/jpeg');const asset=qrManifest.find((a:any)=>path.endsWith('/'+a.method+'.jpg'));assert.ok(asset);assert.equal(createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex'),asset.sha256);}
   }
+  for(const path of ['/about','/privacy','/terms']){
+   const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,200);const html=await response.text();assert.ok(html.includes('Easy English Global'));assert.ok(html.includes('sdqtyc@gmail.com'));assert.ok(html.includes('href="/privacy"'));assert.ok(html.includes('href="/terms"'));
+  }
   for(const path of ['/api/admin/orders','/api/orders','/api/admin/mail/gmail/status','/api/admin/mail/gmail/callback']){
    const response=await fetch(origin+path,{signal:AbortSignal.timeout(30000)});assert.equal(response.status,401);
   }
@@ -26,7 +29,7 @@ for(let attempt=0;attempt<12;attempt++){
    const cross=await fetch(origin+path,{method:'POST',headers:{Origin:'https://untrusted.invalid','Content-Type':'application/json'},body:'{}',signal:AbortSignal.timeout(30000)});
    assert.equal(cross.status,403);
   }
-  console.log(JSON.stringify({ok:true,baselineChecks:checks.length,manualPayment:expectedPayment,mockCheckout:false,anonymousAndCrossOriginWritesDenied:true,readOnly:true}));
+  console.log(JSON.stringify({ok:true,baselineChecks:checks.length,manualPayment:expectedPayment,mockCheckout:false,anonymousAndCrossOriginWritesDenied:true,readOnly:true,brandPagesAvailable:true}));
   process.exit(0);
  }catch(error){last=error;if(attempt<11)await new Promise(resolve=>setTimeout(resolve,5000));}
 }

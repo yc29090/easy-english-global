@@ -1,13 +1,13 @@
 {
   "site_url": "https://easy-english-global.onrender.com",
-  "source_commit": "8b90ac2dee9d7a82cc34c651e16cd49829e3d50c",
-  "pr": 5,
+  "source_commit": "d65ddd235dbf593b26a4027697aa9d249287f2df",
+  "pr": 6,
   "render": {
     "service_id": "srv-dbj23vmtlv9c73c1jpo0",
-    "deploy_id": "dep-dbjijhu7bikc73findv0",
+    "deploy_id": "dep-dbjis0g473hc739vqss0",
     "status": "live",
     "plan": "free",
-    "live_at_utc": "2026-11-01T12:01:46.454241Z",
+    "live_at_utc": "2026-11-01T12:18:45.539595Z",
     "tls": "TLSv1.3 verified at startup",
     "health_probe": "platform TCP; application HTTP verified by read-only workflow"
   },
@@ -29,14 +29,14 @@
     ],
     "users": 7,
     "administrators": 1,
-    "progress": 75,
+    "progress": 137,
     "materials": 700,
     "scenes": 20,
     "dialogues": 100
   },
   "verification": {
-    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41304251684",
-    "tests_passed": 77,
+    "ci_url": "https://github.com/yc29090/easy-english-global/actions/runs/41305531761",
+    "tests_passed": 78,
     "pty_tests_passed": 13,
     "embedded_tests_passed": 12,
     "embedded_concurrency_test": "skipped here; passed using real PostgreSQL in primary suite",
@@ -98,5 +98,15 @@
     "connected_at_utc": "2026-11-01T11:27:52Z",
     "test_id": "42a3d12c-dbd9-4c69-a30b-03bb606aaba6",
     "google_publishing_status": "last observed Testing; owner confirmation and production reauthorization pending"
+  },
+  "google_branding": {
+    "website_assets": "deployed",
+    "home": "https://easy-english-global.onrender.com/",
+    "about": "https://easy-english-global.onrender.com/about",
+    "privacy": "https://easy-english-global.onrender.com/privacy",
+    "terms": "https://easy-english-global.onrender.com/terms",
+    "cloud_console_fields": "not yet confirmed saved; owner management session required",
+    "production_publishing_verified": false,
+    "reauthorization_after_publication_verified": false
   }
 }

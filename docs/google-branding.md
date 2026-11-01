@@ -41,3 +41,7 @@ openid 和 email：核对网站所有者已验证的邮箱身份。gmail.send：
 - https://developers.google.com/identity/protocols/oauth2#expiration
 
 Public Suffix List 参考：https://publicsuffix.org/list/public_suffix_list.dat （onrender.com 条目）
+
+## 网站资料部署结果
+
+PR #6 合并，78 项主测试和完整 CI 通过：https://github.com/yc29090/easy-english-global/actions/runs/41305531761 。部署 dep-dbjis0g473hc739vqss0 于 2026-11-01T12:18:45.539595Z 成为 live。公开首页、/about、/privacy、/terms 与页脚入口已上线。没有 Google Cloud 管理会话，品牌字段写入、发布以及发布后的重新授权仍未验证，不标记完成。当前收款和原 Gmail 授权保持可用，没有重建账号或修改学习记录。
