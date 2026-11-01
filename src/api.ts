@@ -1,9 +1,10 @@
+import {gmailAdmin,type GmailConfig} from './gmail.ts';
 import {randomUUID} from 'node:crypto';
 import type {DB} from './db.ts';
 import {reviewSchedule} from './review.ts';
 import {dialogues} from './dialogues.ts';
 import {token,digest,hashPassword,verifyPassword,member,publicUser,HttpError,requireValue,email,password,days} from './security.ts';
-export type Context={db:DB;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;manualPayment?:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>};
+export type Context={db:DB;gmailConfig?:GmailConfig;query?:URLSearchParams;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;manualPayment?:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>};
 export async function api(c:Context):Promise<any>{
  const {db,method,path,body:b}=c;
  const one=async(sql:string,v:any[]=[])=> (await db.query(sql,v)).rows[0];
@@ -157,6 +158,10 @@ export async function api(c:Context):Promise<any>{
  if(path.startsWith('/api/admin/')){
   if(u.role!=='admin')throw new HttpError(403,'Administrator access required');
 
+  if(path.startsWith('/api/admin/mail/gmail/')){
+   if(method==='POST')await limit('gmail-admin',10);
+   return gmailAdmin({db,config:c.gmailConfig,user:u,session:c.session!,method,path,query:c.query,appUrl:c.appUrl});
+  }
   if(path==='/api/admin/orders/notify'&&method==='POST'){
    requireValue(typeof b.id==='string'&&/^[0-9a-f-]{36}$/i.test(b.id));
    await limit('order-notification-retry',20);
