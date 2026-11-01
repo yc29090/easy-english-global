@@ -1,0 +1,28 @@
+[
+  {
+    "method": "wechat",
+    "recipient_label": "杨超(*超)",
+    "path": "public/payments/wechat.jpg",
+    "sha256": "b8050f1b8583f684ee9a0e0d1ded5b9be6f154b1d7ecb2a89e207f14b665ab4f",
+    "dimensions": [
+      939,
+      1280
+    ],
+    "ownership": "Owner supplied original image and confirmed personal ownership in conversation on 2026-11-01",
+    "platform_scan": "not verified",
+    "real_transfer": "not performed"
+  },
+  {
+    "method": "alipay",
+    "recipient_label": "蜻蜓用车Dragonfly(*超)",
+    "path": "public/payments/alipay.jpg",
+    "sha256": "a8c6c844a66afdd8d60283fe74bbdc1b870f0c364d4da4351c5dd33fe0501a06",
+    "dimensions": [
+      853,
+      1280
+    ],
+    "ownership": "Owner supplied original image and confirmed personal ownership in conversation on 2026-11-01",
+    "platform_scan": "not verified",
+    "real_transfer": "not performed"
+  }
+]

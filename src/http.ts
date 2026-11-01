@@ -7,7 +7,7 @@ import {api} from './api.ts';
 import {HttpError} from './security.ts';
 import {ready} from './setup.ts';
 export type ConnectionPool=DB&{connect:()=>Promise<DB&{release:()=>void}>};
-const assets:Record<string,[string,string]>={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/playback.js':['playback.js','text/javascript; charset=utf-8'],'/styles.css':['styles.css','text/css; charset=utf-8']};
+const assets:Record<string,[string,string]>={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/playback.js':['playback.js','text/javascript; charset=utf-8'],'/styles.css':['styles.css','text/css; charset=utf-8'],'/payments/wechat.jpg':['payments/wechat.jpg','image/jpeg'],'/payments/alipay.jpg':['payments/alipay.jpg','image/jpeg']};
 export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendReset:(to:string,url:string)=>Promise<void>,notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>){
  const {production}=config;
  const server=createServer(async(req,res)=>{
@@ -23,7 +23,7 @@ export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendR
     let healthy=false;try{healthy=await ready(pool);}catch{/* A missing schema or unavailable database is not ready. */}
     res.statusCode=healthy?200:503;res.setHeader('Content-Type','application/json');res.end(req.method==='HEAD'?undefined:JSON.stringify({ok:healthy}));return;
    }
-   if(!url.pathname.startsWith('/api/')){const asset=assets[url.pathname];if(!asset||!['GET','HEAD'].includes(req.method||''))throw new HttpError(404,'Not found');res.setHeader('Content-Type',asset[1]);const file=await readFile(fileURLToPath(new URL('../public/'+asset[0],import.meta.url)));res.end(req.method==='HEAD'?undefined:file);return;}
+   if(!url.pathname.startsWith('/api/')){if(url.pathname.startsWith('/payments/')&&config.manualPayment!==true)throw new HttpError(404,'Not found');const asset=assets[url.pathname];if(!asset||!['GET','HEAD'].includes(req.method||''))throw new HttpError(404,'Not found');res.setHeader('Content-Type',asset[1]);const file=await readFile(fileURLToPath(new URL('../public/'+asset[0],import.meta.url)));res.end(req.method==='HEAD'?undefined:file);return;}
    if(!['GET','HEAD'].includes(req.method||'')){
     if(req.headers.origin!==appUrl)throw new HttpError(403,'Invalid request origin');
     if(!req.headers['content-type']?.startsWith('application/json'))throw new HttpError(415,'JSON required');
