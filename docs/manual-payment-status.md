@@ -19,3 +19,11 @@
 所有者最新截图显示 Google 应用仍为 Testing，品牌配置不完整导致“发布应用”不可用，不能声称 Google 已正式发布。所有者明确要求在已经完成真实送达和安全验收后尽快上线，故开启现有可用 Gmail 授权下的人工支付。
 
 Testing 涉及 Gmail 范围的刷新授权通常七天到期；本次授权保存于 2026-11-01 11:27:52 UTC，估计应在 2026-11-08 11:27:52 UTC 前完成品牌配置、发布及重新授权。不能承诺无限期有效。若邮件授权失效，任务记录失败并可重试，管理员后台仍保留订单，不能将客户申报或截图当作真实到账。相关配置见 docs/gmail-oauth.md。
+
+## 上线后的真实环境验证
+
+只读线上验收通过：https://github.com/yc29090/easy-english-global/actions/runs/41304573698 ，确认 manualPayment=true、mockCheckout=false、两张二维码原图 SHA-256 一致、匿名及跨域写入被拒绝。
+
+专用 QA 订单验收通过：https://github.com/yc29090/easy-english-global/actions/runs/41304573690 。固定 9900 分／CNY，重复创建复用同一订单，申报后会员仍为 free，普通用户审核被拒绝。Gmail 通知任务显示 sent、attempts=1（服务商已接受，不另行声称该封 QA 提醒已被所有者打开）。
+
+专用账号 ee-launch-41304573690@example.invalid 已禁用，测试订单 43e00bdf-7be9-45be-86e4-bc9917ea688b 已关闭为 rejected，未设置人为审核人、未转账、未批准会员。原有 7 个用户完整行内容指纹、75 条学习记录和 700 条教材指纹均保持不变；新测试账号及订单保留，不删除原数据。

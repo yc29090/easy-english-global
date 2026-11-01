@@ -43,7 +43,21 @@
     "runtime_boot_checks_passed": 28,
     "production_audit_vulnerabilities": 0,
     "live_read_only_workflow": "https://github.com/yc29090/easy-english-global/actions/workflows/manual-payment-live.yml",
-    "order_live_acceptance": "requested; results and dedicated QA cleanup pending"
+    "order_live_acceptance": "passed; synthetic QA account disabled and its order rejected without payment or membership approval",
+    "live_read_only_run": "https://github.com/yc29090/easy-english-global/actions/runs/41304573698",
+    "order_live_run": "https://github.com/yc29090/easy-english-global/actions/runs/41304573690",
+    "original_users_and_data_unchanged": true,
+    "synthetic_qa": {
+      "email": "ee-launch-41304573690@example.invalid",
+      "user_id": "4c554936-5919-4419-ada2-30509262de49",
+      "disabled": true,
+      "order_id": "43e00bdf-7be9-45be-86e4-bc9917ea688b",
+      "order_status": "rejected",
+      "membership": "free",
+      "no_real_transfer": true,
+      "notification_status": "sent",
+      "notification_attempts": 1
+    }
   },
   "payment": {
     "enabled": true,
