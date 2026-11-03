@@ -30,7 +30,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  function exercise(){
   if(!item)return `<p>${text('请选择一条教材。','Choose a lesson.')}</p>`;
   const isListening=mode==='listening',isPattern=mode==='pattern';
-  return `<article class="panel v2-exercise"><p class="eyebrow">${text(isListening?'先听声音，再看答案':isPattern?'固定句型，自由替换':'先看中文，试着开口',isListening?'Listen before revealing':isPattern?'Practise a validated pattern':'Try speaking before revealing')}</p>${isPattern?`<p>${esc(item.template_zh)} · ${esc(item.template_en)}</p>`:''}
+  return `<article class="panel v2-exercise"><p class="eyebrow">${text(isListening?'先听声音，再看答案':isPattern?'固定句型，自由替换':'先看中文，试着开口',isListening?'Listen before revealing':isPattern?'Practise a validated pattern':'Try speaking before revealing')}</p>${isPattern?`<p>${esc(text(item.template_zh,'Sentence pattern'))}${english?' · '+esc(item.template_en):''}</p>`:''}
    ${english?`<h2 lang="en">${isPattern?esc(item.english):tokenText()}</h2>`:`<p class="hidden-copy">${text('英文已隐藏','English hidden')}</p>`}
    ${chinese?`<p lang="zh-CN">${esc(item.chinese)}</p>`:`<p class="hidden-copy">${text('中文已隐藏','Chinese hidden')}</p>`}
    <div class="v2-actions"><button data-v2-play>${text('播放英文','Play English')}</button><button data-v2-slow aria-pressed="${slow}">${text(slow?'慢速':'正常语速',slow?'Slow':'Normal speed')}</button><button data-v2-repeat>${text('重复播放','Repeat')}</button><button data-v2-stop>${text('停止','Stop')}</button></div>

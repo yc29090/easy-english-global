@@ -20,6 +20,7 @@
     "start:render": "node scripts/render-start.ts",
     "config:check": "node --env-file-if-exists=.env scripts/check-env.ts",
     "smoke": "node --env-file-if-exists=.env scripts/smoke.ts",
+    "test:mobile": "playwright test --config=playwright.config.ts",
     "test:runtime": "node scripts/check-runtime.ts",
     "test:admin-terminal": "python3 tests/admin-terminal-pty.py"
   },
@@ -28,6 +29,7 @@
     "nodemailer": "^10.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "1.56.1",
     "@electric-sql/pglite": "^0.3.14",
     "@types/node": "^24.10.0",
     "@types/pg": "^8.15.6",
