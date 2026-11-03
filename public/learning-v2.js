@@ -1,5 +1,7 @@
 import {createSpeechPractice} from './speech-practice.js';
 const escapeHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/** Prefer the literal headword (meeting) over another lemma's form (meet). */
+export function findLinkedWord(materials,token){const key=token.normalize('NFKC').toLowerCase().replace(/[’‘]/g,"'");const words=materials.filter(m=>m.kind==='word');return words.find(w=>w.english.toLowerCase()===key)||words.find(w=>w.forms?.includes(key));}
 /** Independent listening/speaking records; ordinary mastery is never auto-updated. */
 export function createLearningV2({request,getUser,getCatalog,getLanguage,playback,signIn,openDialogue}){
  const speech=createSpeechPractice();let speechState={status:'idle'};
@@ -15,7 +17,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   if(!item)return '';
   const words=links?.materials.filter(m=>m.kind==='word')||[];
   return item.english.split(/([A-Za-z]+(?:['’-][A-Za-z]+)*)/g).map(token=>{
-   const key=token.toLowerCase().replace(/[’‘]/g,"'"),word=words.find(w=>w.forms?.includes(key));
+   const key=token.toLowerCase().replace(/[’‘]/g,"'"),word=findLinkedWord(words,key);
    return word?`<button class="v2-token" data-v2-definition="${esc(word.id)}" lang="en">${esc(token)}</button>`:esc(token);
   }).join('');
  }

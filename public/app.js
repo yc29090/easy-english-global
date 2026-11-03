@@ -1,6 +1,6 @@
 'use strict';
 import {createPlayback} from './playback.js';
-import {createLearningV2} from './learning-v2.js';
+import {createLearningV2,findLinkedWord} from './learning-v2.js';
 const playback=createPlayback();
 let hideEnglish=false,hideChinese=false,slowAudio=false,reviewAll=false,reviewItems=[],learningState=null,practiceProgress=[],trainingItems=[],trainingIndex=0,trainingReview=false,activeDialogue=null,practiceRole='a',practiceTurn=0;
 document.addEventListener('visibilitychange',()=>{if(document.hidden){playback.stop();learningV2.pause();}});
@@ -128,7 +128,7 @@ async function saveDialogue(role,index){
  render();
 }
 function bindLearning(){
- document.querySelectorAll('[data-v2-token]').forEach(el=>el.onclick=async()=>{if(!user)return auth('login');if(el.disabled)return;el.disabled=true;try{const data=await request('/learning-v2/links?material_id='+encodeURIComponent(el.dataset.v2Phrase));const token=el.dataset.v2Token.toLowerCase().replace(/[’‘]/g,"'");const word=data.materials.find(m=>m.kind==='word'&&m.forms?.includes(token));toast(word?word.english+' · '+word.chinese:t('现有基础词库暂无此词，请参考整句翻译。','This word is not in the basic dictionary yet. See the sentence translation.'));}catch(e){toast(e.message);}finally{el.disabled=false;}});
+ document.querySelectorAll('[data-v2-token]').forEach(el=>el.onclick=async()=>{if(!user)return auth('login');if(el.disabled)return;el.disabled=true;try{const data=await request('/learning-v2/links?material_id='+encodeURIComponent(el.dataset.v2Phrase));const token=el.dataset.v2Token.toLowerCase().replace(/[’‘]/g,"'");const word=findLinkedWord(data.materials,token);toast(word?word.english+' · '+word.chinese:t('现有基础词库暂无此词，请参考整句翻译。','This word is not in the basic dictionary yet. See the sentence translation.'));}catch(e){toast(e.message);}finally{el.disabled=false;}});
 
  for(const [attribute,mode] of [['data-v2-related','linked'],['data-v2-listen','listening'],['data-v2-expression','expression']])document.querySelectorAll('['+attribute+']').forEach(el=>el.onclick=()=>{if(!user)return auth('login');learningV2.open(mode,el.getAttribute(attribute));page='v2';render();});
  if($('#difficulty'))$('#difficulty').onchange=e=>{difficulty=e.target.value;render();};
