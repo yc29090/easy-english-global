@@ -30,10 +30,49 @@ jobs:
       - name: Verify hidden administrator input on a real pseudo-terminal
         run: npm run test:admin-terminal
       - name: Test embedded PostgreSQL engine
-        run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts tests/admin-init.test.ts tests/manual-payment.test.ts tests/gmail.test.ts
+        run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts tests/admin-init.test.ts tests/manual-payment.test.ts tests/gmail.test.ts tests/learning-v2-db.test.ts
       - name: Verify Render build with production dependencies only
         run: npm install --omit=dev && npm run content:validate
       - name: Verify Render start command and repeated boot with runtime dependencies
         run: npm run test:runtime
         env:
           TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test
+  mobile:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: easy
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: easy_mobile_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U easy -d easy_mobile_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      NODE_ENV: test
+      PORT: '3000'
+      APP_URL: http://127.0.0.1:3000
+      DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_mobile_test
+      DATABASE_SSL: disable
+      MAIL_PROVIDER: disabled
+      ALLOW_MOCK_CHECKOUT: 'false'
+      MANUAL_PAYMENT_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run test:mobile
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: learning-v2-mobile-results
+          path: |
+            playwright-report/
+            test-results/
