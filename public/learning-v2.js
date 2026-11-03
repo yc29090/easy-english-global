@@ -68,7 +68,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   else if(!item||!getCatalog().materials.some(m=>m.id===item.id))item=getCatalog().materials[0]||null;
   if(['listening','expression','linked'].includes(mode)&&item)await loadItem(item.id,mode);
  }
- function play(repeat=false,shadow=false){if(!item)return;speech.stop();speechState={status:'idle'};playback.play(item,{slow,repeat,shadow,onPhase:phase=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=phase==='listen'?text('正在播放…','Playing…'):text('可以再听或自己说一遍。','Listen again or try saying it.');},onError:()=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('发音暂不可用，请重试或更换浏览器。','Audio unavailable. Retry or use another browser.');}});}
+ function play(repeat=false,shadow=false){if(!item)return;speech.stop();speechState={status:'idle'};draw();playback.play(item,{slow,repeat,shadow,onPhase:phase=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=phase==='listen'?text('正在播放…','Playing…'):text('可以再听或自己说一遍。','Listen again or try saying it.');},onError:()=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('发音暂不可用，请重试或更换浏览器。','Audio unavailable. Retry or use another browser.');}});}
  function bind(){
   root.querySelector('[data-v2-mic]')?.addEventListener('click',()=>{if(!item)return;playback.stop();speechState={status:'idle'};speech.start(item.english,next=>{speechState=next.status==='ended'?{...speechState,status:speechState.status==='listening'?'ended':speechState.status}:next;draw();});});
   root.querySelector('[data-v2-mic-stop]')?.addEventListener('click',()=>{speech.stop();speechState={...speechState,status:'idle'};draw();});
@@ -95,5 +95,5 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   root.querySelectorAll('[data-v2-exercise]').forEach(el=>el.onclick=async()=>{if(el.dataset.exerciseMode==='pattern'){await enter('pattern');const selected=patterns.find(p=>p.id===el.dataset.v2Exercise);if(selected){item=selected;english=false;chinese=true;draw();}}else await loadItem(el.dataset.v2Exercise,el.dataset.exerciseMode);});
  }
  async function mount(){root=document.querySelector('#learning-v2-root');if(!root)return;if(['listening','expression','pattern'].includes(mode)){english=false;chinese=mode!=='listening';}draw();if(!getUser())return;if(mode==='pattern'||mode==='review'||mode==='analytics')await enter(mode);else if(item)await loadItem(item.id,mode);}
- return {mount,open,leave,pause:()=>{speech.stop();playback.stop();speechState={...speechState,status:'idle'};}};
+ return {mount,open,leave,pause:()=>{speech.stop();playback.stop();speechState={...speechState,status:'idle'};draw();}};
 }

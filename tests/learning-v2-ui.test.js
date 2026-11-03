@@ -48,7 +48,7 @@ test('V2 speech UI requests recognition only on click and never posts transcript
  try{
   view.open('expression','p');await view.mount();assert.equal(created,0);assert.match(document.body.textContent,/浏览器可能将语音发送/);assert.match(document.body.textContent,/不是专业发音评分/);
   document.querySelector('[data-v2-mic]').click();assert.equal(created,1);recognition.onresult({results:[[{transcript:'I want coffee'}]]});assert.match(document.body.textContent,/I want coffee/);assert.match(document.body.textContent,/water → coffee/);assert.equal(posts,0);
-  document.querySelector('[data-v2-mic]').click();const current=recognition;current.onerror({error:'not-allowed'});current.onend();assert.match(document.body.textContent,/权限被拒绝/);
+  document.querySelector('[data-v2-mic]').click();view.pause();assert.ok(!document.body.textContent.includes('正在听，请说英语'));document.querySelector('[data-v2-mic]').click();const current=recognition;current.onerror({error:'not-allowed'});current.onend();assert.match(document.body.textContent,/权限被拒绝/);
   view.leave();assert.ok(aborts>=1);
  }finally{for(const [key,value] of Object.entries(old)){if(value===undefined)delete globalThis[key];else globalThis[key]=value;}}
 });
