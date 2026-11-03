@@ -1,0 +1,15 @@
+{
+  "version": "learning-v2-1",
+  "site_url": "https://easy-english-global.onrender.com",
+  "application_commit": "6d6b75b863bc1c8a50cb9373fc662ecd7b80d53b",
+  "render_service_id": "srv-dbj23vmtlv9c73c1jpo0",
+  "render_deploy_id": "dep-dbl6ek49v7es73au2p2g",
+  "render_status": "live",
+  "released_at_utc": "2026-11-03T23:00:03.274561Z",
+  "database_migration": "007_learning_v2.sql",
+  "production_counts": {"words": 500, "phrases": 200, "scenes": 20, "dialogues": 100, "bilingual_turns": 406, "word_phrase_links": 717, "phrase_dialogue_links": 1000, "pattern_variants": 20},
+  "payment": {"manual_enabled": false, "mock_enabled": false},
+  "full_ci": "https://github.com/yc29090/easy-english-global/actions/runs/41734980794",
+  "live_acceptance": "See the Learning V2 live acceptance workflow triggered by this manifest",
+  "physical_device_microphone": "pending owner verification; browser recognition is optional"
+}
