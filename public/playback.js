@@ -31,10 +31,12 @@ export function createPlayback(env = globalThis) {
   function once() {
    if (!current()) return;
    phase('listen');
+   let completed=false;
+   const finish=()=>{if(completed||!current())return;completed=true;speech=null;audio=null;ended();};
    const url = options.slow ? (item.audio_slow || item.audio_normal) : item.audio_normal;
    const rate=options.slow?PLAYBACK_RATES.slow:PLAYBACK_RATES.normal;
    if (url && env.Audio) {
-    audio = new env.Audio(url); audio.onended = ended; audio.onerror = failed;
+    audio = new env.Audio(url); audio.onended = finish; audio.onerror = failed;
     const clip=audio,mediaRate=options.slow&&(!item.audio_slow||item.audio_slow===item.audio_normal)?rate:1;
     const applyRate=()=>{if(!current())return;clip.defaultPlaybackRate=mediaRate;clip.playbackRate=mediaRate;for(const key of ['preservesPitch','webkitPreservesPitch','mozPreservesPitch'])if(key in clip)clip[key]=true;};
     applyRate();clip.onloadedmetadata=applyRate;
@@ -47,7 +49,7 @@ export function createPlayback(env = globalThis) {
     if(voice)speech.voice=voice;
     speech.lang=voice?.lang||'en-US';speech.rate=rate;speech.pitch=1;speech.volume=1;
     if(env.speechSynthesis.paused)env.speechSynthesis.resume?.();
-    speech.onend = ended; speech.onerror = failed;
+    speech.onend = finish; speech.onerror = failed;
     env.speechSynthesis.speak(speech);
    } else failed();
   }

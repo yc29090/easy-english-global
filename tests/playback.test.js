@@ -13,7 +13,7 @@ test('slow speech repeats only after completion and a speaking pause; stop cance
  p.play({english:'Can you help me?'},{slow:true,repeat:true,shadow:true,onPhase:p=>phases.push(p)});
  assert.equal(f.spoken.length,1);assert.equal(f.spoken[0].rate,PLAYBACK_RATES.slow);assert.equal(f.spoken[0].lang,'en-US');assert.equal(f.jobs.size,0);
  f.spoken[0].onend();assert.deepEqual(phases,['listen','speak']);assert.ok([...f.jobs.values()][0].delay>=3000);
- p.stop();assert.equal(f.jobs.size,0);f.spoken[0].onend();assert.equal(f.jobs.size,0);assert.ok(f.cancels()>0);
+ p.stop();assert.equal(f.jobs.size,0);f.spoken[0].onend();assert.equal(f.jobs.size,0);assert.equal(f.cancels(),0);
 });
 test('starting another source cancels the old repeat and original HTTPS audio takes precedence',()=>{
  const f=fake(),p=createPlayback(f.env);p.play({english:'First'},{repeat:true});f.spoken[0].onend();assert.equal(f.jobs.size,1);
@@ -47,4 +47,9 @@ test('paused synthesis resumes for explicit playback and asynchronous English vo
  f.env.speechSynthesis.getVoices=()=>voices;f.env.speechSynthesis.addEventListener=(_event,fn)=>{changed=fn;};f.env.speechSynthesis.paused=true;f.env.speechSynthesis.resume=()=>{resumed++;};
  const p=createPlayback(f.env);assert.equal(f.spoken.length,0);voices=[{name:'English',lang:'en-GB',localService:true}];changed();
  p.play({english:'Can I have water?'},{slow:true});assert.equal(resumed,1);assert.equal(f.spoken[0].voice,voices[0]);assert.equal(f.spoken[0].rate,PLAYBACK_RATES.slow);
+});
+test('a finished utterance is not cancelled before the next slow word and completion is handled once',()=>{
+ const f=fake(),p=createPlayback(f.env);p.play({english:'water'},{repeat:true});const first=f.spoken[0];first.onend();first.onend();assert.equal(f.jobs.size,1);
+ p.play({english:'water'},{slow:true});assert.equal(f.cancels(),0);assert.equal(f.jobs.size,0);assert.equal(f.spoken.at(-1).rate,PLAYBACK_RATES.slow);
+ p.stop();assert.equal(f.cancels(),1);
 });
