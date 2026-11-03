@@ -41,6 +41,17 @@ export async function learningV2(c:Input){
    await db.query('COMMIT');return {ok:true,next_review_at:next};
   }catch(e){await db.query('ROLLBACK');throw e;}
  }
+ if(method==='GET'&&path==='/api/learning-v2/analytics'){
+  const ordinary=(await db.query(`SELECT m.kind,count(*)::int AS studied,count(*) FILTER(WHERE p.status='mastered')::int AS mastered,count(*) FILTER(WHERE p.status='unmastered')::int AS unmastered,count(*) FILTER(WHERE p.next_review_at<=now())::int AS due
+   FROM progress p JOIN materials m ON m.id=p.material_id WHERE p.user_id=$1 AND (m.is_free OR $2::boolean) GROUP BY m.kind`,[u.id,full])).rows;
+  const practice=(await db.query(`SELECT p.mode,count(*)::int AS practiced,sum(p.attempts)::int AS attempts,sum(p.successes)::int AS successes,count(*) FILTER(WHERE NOT p.last_succeeded)::int AS weak,count(*) FILTER(WHERE p.next_review_at<=now())::int AS due
+   FROM learning_exercise_progress p LEFT JOIN materials m ON m.id=p.target_id AND p.mode<>'pattern' LEFT JOIN learning_pattern_variants v ON v.id=p.target_id AND p.mode='pattern'
+   WHERE p.user_id=$1 AND (COALESCE(m.is_free,v.is_free,false) OR $2::boolean) GROUP BY p.mode`,[u.id,full])).rows;
+  const weaknesses=(await db.query(`SELECT p.mode,p.target_id,p.attempts,p.successes,p.next_review_at,COALESCE(m.english,v.english) AS english,COALESCE(m.chinese,v.chinese) AS chinese
+   FROM learning_exercise_progress p LEFT JOIN materials m ON m.id=p.target_id AND p.mode<>'pattern' LEFT JOIN learning_pattern_variants v ON v.id=p.target_id AND p.mode='pattern'
+   WHERE p.user_id=$1 AND NOT p.last_succeeded AND (COALESCE(m.is_free,v.is_free,false) OR $2::boolean) ORDER BY p.next_review_at,p.target_id LIMIT 20`,[u.id,full])).rows;
+  return {ordinary,practice,weaknesses};
+ }
  if(method==='GET'&&path==='/api/learning-v2/review'){
   const mode=query.get('mode')||'all';requireValue(['all','listening','expression','pattern'].includes(mode));
   const all=query.get('all')==='true';
