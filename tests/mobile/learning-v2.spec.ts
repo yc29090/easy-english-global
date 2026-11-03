@@ -20,5 +20,5 @@ test('mobile beginner flow: independent listening/speaking/pattern results and a
  await expect(page.locator('[data-v2-exercise]')).toHaveCount(1);
  await page.locator('#language').click();await expect(page.getByRole('heading',{name:'Your real learning records'})).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
- await page.screenshot({path:'test-results/v2-'+info.project.name+'.png',fullPage:true});expect(errors).toEqual([]);
+ await page.screenshot({path:'test-results/v2-'+info.project.name+'.png',fullPage:true});await page.locator('[data-page="phrases"]').first().click();await page.locator('[data-v2-token]').first().click();await expect(page.locator('#notice')).toContainText(' · ');expect(errors).toEqual([]);
 });

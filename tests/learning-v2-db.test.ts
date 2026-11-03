@@ -56,6 +56,8 @@ test('V2 database: additive repeatable install, access control, isolated idempot
   assert.ok((await call('GET','/learning-v2/review?all=true',{},a.session)).exercises.every((e:any)=>e.target_id!==paid.id));
   await assert.rejects(()=>call('POST','/learning-v2/results',{...result,target_id:paid.id,request_id:randomUUID()},a.session),{status:403});
   assert.equal((await db.query('SELECT count(*)::int AS n FROM learning_exercise_events WHERE user_id=$1 AND material_id=$2',[a.user.id,paid.id])).rows[0].n,1);
+  const anotherDevice=await call('POST','/auth/login',{email:'first@example.com',password:secret});
+  assert.deepEqual((await call('GET','/learning-v2/review?all=true',{},anotherDevice.session)).exercises,(await call('GET','/learning-v2/review?all=true',{},a.session)).exercises);
   const requestId=randomUUID(),failing={query:async(sql:string,values?:any[])=>{if(sql.startsWith('INSERT INTO learning_exercise_progress'))throw new Error('Synthetic learning write failure');return db.query(sql,values);}};
   const {learningV2}=await import('../src/learning-v2.ts');
   await assert.rejects(()=>learningV2({db:failing,user:b.user,method:'POST',path:'/api/learning-v2/results',body:{mode:'expression',target_id:free.id,succeeded:false,request_id:requestId},query:new URLSearchParams()}),/Synthetic learning write failure/);
