@@ -35,7 +35,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   return `<article class="panel v2-exercise"><p class="eyebrow">${text(isListening?'先听声音，再看答案':isPattern?'固定句型，自由替换':'先看中文，试着开口',isListening?'Listen before revealing':isPattern?'Practise a validated pattern':'Try speaking before revealing')}</p>${isPattern?`<p>${esc(text(item.template_zh,'Sentence pattern'))}${english?' · '+esc(item.template_en):''}</p>`:''}
    ${english?`<h2 lang="en">${isPattern?esc(item.english):tokenText()}</h2>`:`<p class="hidden-copy">${text('英文已隐藏','English hidden')}</p>`}
    ${chinese?`<p lang="zh-CN">${esc(item.chinese)}</p>`:`<p class="hidden-copy">${text('中文已隐藏','Chinese hidden')}</p>`}
-   <div class="v2-actions"><button data-v2-play>${text('播放英文','Play English')}</button><button data-v2-slow aria-pressed="${slow}">${text(slow?'慢速':'正常语速',slow?'Slow':'Normal speed')}</button><button data-v2-repeat>${text('重复播放','Repeat')}</button><button data-v2-shadow>${text('听一句，跟读一句','Listen and repeat aloud')}</button><button data-v2-stop>${text('停止','Stop')}</button></div>
+   <div class="v2-actions"><button data-v2-play aria-pressed="${!slow}">${text('正常播放','Play normally')}</button><button data-v2-slow aria-pressed="${slow}">${text('慢速播放','Play slowly')}</button><button data-v2-repeat>${text('重复播放','Repeat')}</button><button data-v2-shadow>${text('听一句，跟读一句','Listen and repeat aloud')}</button><button data-v2-stop>${text('停止','Stop')}</button></div>
    <p id="v2-playback" class="help" role="status"></p>
    <div class="v2-actions"><button data-v2-reveal="en" aria-pressed="${english}">${text(english?'隐藏英文':'显示英文',english?'Hide English':'Show English')}</button><button data-v2-reveal="zh" aria-pressed="${chinese}">${text(chinese?'隐藏中文':'显示中文',chinese?'Hide Chinese':'Show Chinese')}</button></div>
    <p id="v2-definition" class="help" role="status"></p>
@@ -68,7 +68,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   else if(!item||!getCatalog().materials.some(m=>m.id===item.id))item=getCatalog().materials[0]||null;
   if(['listening','expression','linked'].includes(mode)&&item)await loadItem(item.id,mode);
  }
- function play(repeat=false,shadow=false){if(!item)return;speech.stop();speechState={status:'idle'};draw();playback.play(item,{slow,repeat,shadow,onPhase:phase=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=phase==='listen'?text('正在播放…','Playing…'):text('可以再听或自己说一遍。','Listen again or try saying it.');},onError:()=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('发音暂不可用，请重试或更换浏览器。','Audio unavailable. Retry or use another browser.');}});}
+ function play(repeat=false,shadow=false){if(!item)return;speech.stop();speechState={status:'idle'};draw();playback.play(item,{slow,repeat,shadow,onPhase:phase=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=phase==='listen'?text(slow?'正在慢速播放…':'正在正常播放…',slow?'Playing slowly…':'Playing normally…'):text('可以再听或自己说一遍。','Listen again or try saying it.');},onError:()=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('发音暂不可用，请重试或更换浏览器。','Audio unavailable. Retry or use another browser.');}});}
  function bind(){
   root.querySelector('[data-v2-mic]')?.addEventListener('click',()=>{if(!item)return;playback.stop();speechState={status:'idle'};speech.start(item.english,next=>{speechState=next.status==='ended'?{...speechState,status:speechState.status==='listening'?'ended':speechState.status}:next;draw();});});
   root.querySelector('[data-v2-mic-stop]')?.addEventListener('click',()=>{speech.stop();speechState={...speechState,status:'idle'};draw();});
@@ -83,8 +83,8 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   root.querySelectorAll('[data-v2-dialogue]').forEach(el=>el.onclick=()=>openDialogue(el.dataset.v2Dialogue));
   root.querySelectorAll('[data-v2-definition]').forEach(el=>el.onclick=()=>{const word=links.materials.find(m=>m.id===el.dataset.v2Definition);const out=root.querySelector('#v2-definition');if(word&&out)out.textContent=word.english+' · '+word.chinese;});
   root.querySelectorAll('[data-v2-reveal]').forEach(el=>el.onclick=()=>{if(el.dataset.v2Reveal==='en')english=!english;else chinese=!chinese;draw();});
-  root.querySelector('[data-v2-play]')?.addEventListener('click',()=>play());root.querySelector('[data-v2-repeat]')?.addEventListener('click',()=>play(true));root.querySelector('[data-v2-shadow]')?.addEventListener('click',()=>play(true,true));root.querySelector('[data-v2-stop]')?.addEventListener('click',()=>playback.stop());
-  root.querySelector('[data-v2-slow]')?.addEventListener('click',()=>{playback.stop();slow=!slow;draw();});
+  root.querySelector('[data-v2-play]')?.addEventListener('click',()=>{slow=false;play();});root.querySelector('[data-v2-repeat]')?.addEventListener('click',()=>play(true));root.querySelector('[data-v2-shadow]')?.addEventListener('click',()=>play(true,true));root.querySelector('[data-v2-stop]')?.addEventListener('click',()=>playback.stop());
+  root.querySelector('[data-v2-slow]')?.addEventListener('click',()=>{slow=true;play();});
   root.querySelectorAll('[data-v2-answer]').forEach(el=>el.onclick=async()=>{
    if(saved||busy||!item)return;busy=true;error='';resultId||=globalThis.crypto.randomUUID();const target=item,practiceMode=mode==='linked'?'expression':mode;draw();
    try{await request('/learning-v2/results','POST',{request_id:resultId,target_id:target.id,mode:practiceMode,succeeded:el.dataset.v2Answer==='yes'});if(item===target)saved=true;}catch(e){error=e.message;}finally{busy=false;draw();}
