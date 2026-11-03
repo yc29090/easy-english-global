@@ -16,7 +16,7 @@ async function account(suffix:string){
  check(!!a.cookie&&/HttpOnly/i.test(login.headers.get('set-cookie')||'')&&/; Secure/i.test(login.headers.get('set-cookie')||''),'QA '+suffix+' secure session');return a;
 }
 try{
- for(const file of ['app.js','learning-v2.js','speech-practice.js','styles.css']){
+ for(const file of ['app.js','playback.js','learning-v2.js','speech-practice.js','styles.css']){
   phase='deployed asset '+file;const r=await request('/'+file);check(r.ok,'Deployed asset '+file+' available');
   const actual=createHash('sha256').update(await r.text()).digest('hex'),expected=createHash('sha256').update(await readFile(new URL('../public/'+file,import.meta.url))).digest('hex');
   check(actual===expected,'Deployed asset '+file+' matches release source');

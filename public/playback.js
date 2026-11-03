@@ -1,11 +1,15 @@
+export const PLAYBACK_RATES=Object.freeze({normal:1,slow:0.55});
 /** One audio source at a time. Repeats start only after playback and a speaking gap. */
 export function createPlayback(env = globalThis) {
- let generation = 0, audio = null, speech = null, timer = null;
+ let generation = 0, audio = null, speech = null, timer = null, voices=[];
+ function loadVoices(){try{voices=env.speechSynthesis?.getVoices?.()||[];}catch{voices=[];}}
+ // Loading the voice list is silent; it does not start speech or request a microphone.
+ loadVoices();env.speechSynthesis?.addEventListener?.('voiceschanged',loadVoices);
  function stop() {
   generation++;
   if (timer !== null) env.clearTimeout(timer);
   timer = null;
-  if (audio) { audio.onended = null; audio.onerror = null; audio.pause(); audio = null; }
+  if (audio) { audio.onended = null; audio.onerror = null; audio.onloadedmetadata = null; audio.pause(); audio = null; }
   if (speech && env.speechSynthesis) env.speechSynthesis.cancel();
   speech = null;
  }
@@ -27,14 +31,25 @@ export function createPlayback(env = globalThis) {
   function once() {
    if (!current()) return;
    phase('listen');
-   const url = options.slow ? item.audio_slow : item.audio_normal;
+   let completed=false;
+   const finish=()=>{if(completed||!current())return;completed=true;speech=null;audio=null;ended();};
+   const url = options.slow ? (item.audio_slow || item.audio_normal) : item.audio_normal;
+   const rate=options.slow?PLAYBACK_RATES.slow:PLAYBACK_RATES.normal;
    if (url && env.Audio) {
-    audio = new env.Audio(url); audio.onended = ended; audio.onerror = failed;
+    audio = new env.Audio(url); audio.onended = finish; audio.onerror = failed;
+    const clip=audio,mediaRate=options.slow&&(!item.audio_slow||item.audio_slow===item.audio_normal)?rate:1;
+    const applyRate=()=>{if(!current())return;clip.defaultPlaybackRate=mediaRate;clip.playbackRate=mediaRate;for(const key of ['preservesPitch','webkitPreservesPitch','mozPreservesPitch'])if(key in clip)clip[key]=true;};
+    applyRate();clip.onloadedmetadata=applyRate;
     Promise.resolve(audio.play()).catch(failed);
    } else if (env.speechSynthesis && env.SpeechSynthesisUtterance) {
     speech = new env.SpeechSynthesisUtterance(item.english);
-    speech.lang = 'en-US'; speech.rate = options.slow ? .65 : 1;
-    speech.onend = ended; speech.onerror = failed;
+    loadVoices();
+    const english=voices.filter(v=>/^en(?:[-_]|$)/i.test(v.lang));
+    const voice=english.find(v=>v.localService)||english.find(v=>v.default)||english[0];
+    if(voice)speech.voice=voice;
+    speech.lang=voice?.lang||'en-US';speech.rate=rate;speech.pitch=1;speech.volume=1;
+    if(env.speechSynthesis.paused)env.speechSynthesis.resume?.();
+    speech.onend = finish; speech.onerror = failed;
     env.speechSynthesis.speak(speech);
    } else failed();
   }
