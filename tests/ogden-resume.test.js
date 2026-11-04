@@ -12,3 +12,10 @@ test('recommend known-word and known-pattern tasks first without locking other t
  const result=prioritizeTasks(tasks,[{item_id:'w1',status:'mastered'},{item_id:'p',status:'mastered'}]);assert.deepEqual(result.map(x=>x.id),['ready','new']);assert.equal(JSON.stringify(tasks),copy);
  assert.equal(prioritizeTasks(tasks,[]).length,2);
 });
+test('recommendation requires one wholly core reference and its patterns; alternatives do not all need to be mastered',async()=>{
+ const {taskReadiness}=await import('../public/ogden/learning.js');
+ const task={patternIds:['p'],referenceCoverage:[{wordIds:['known','unknown'],allCore:true},{wordIds:['known'],allCore:true}]};
+ assert.equal(taskReadiness(task,[{item_id:'known',status:'mastered'},{item_id:'p',status:'mastered'}]).ready,true);
+ assert.equal(taskReadiness(task,[{item_id:'known',status:'mastered'}]).ready,false);
+ assert.equal(taskReadiness({...task,referenceCoverage:[{wordIds:['known'],allCore:false}]},[{item_id:'known',status:'mastered'},{item_id:'p',status:'mastered'}]).ready,false);
+});

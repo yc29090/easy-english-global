@@ -1,3 +1,4 @@
+import {expressionCoverage} from '../src/ogden-coverage.ts';
 import {loadOgden} from '../src/ogden-content.ts';
 import {readFile} from 'node:fs/promises';
 const c=await loadOgden(),index=JSON.parse(await readFile(new URL('../data/ogden/historical-index.json',import.meta.url),'utf8'));
@@ -9,4 +10,4 @@ const pronunciation=JSON.parse(await readFile(new URL('../data/ogden/pronunciati
 const words=c.items.filter(x=>x.kind==='word');
 if(Object.keys(pronunciation.entries).length!==words.length)throw new Error('Pronunciation subset differs from teaching core');
 for(const w of words){const p=pronunciation.entries[w.english];if(!p||p.entry!==w.pronunciation.dictionaryEntry||p.arpabet!==w.pronunciation.arpabet)throw new Error('Pronunciation source mismatch: '+w.id);}
-console.log(JSON.stringify({version:c.version,target:c.targetCoreCount,items:c.items.length,words:c.items.filter(x=>x.kind==='word').length,authoredVariants:c.items.reduce((n,x)=>n+(x.variants?.length||0),0),developerSelfChecked:c.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,originalVerification:'scholarly-reprint-cross-checked',historicalIndex:index.entries.length,notCompleteModern850:true}));
+console.log(JSON.stringify({version:c.version,target:c.targetCoreCount,items:c.items.length,words:c.items.filter(x=>x.kind==='word').length,authoredVariants:c.items.reduce((n,x)=>n+(x.variants?.length||0),0),developerSelfChecked:c.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,originalVerification:'scholarly-reprint-cross-checked',historicalIndex:index.entries.length,notCompleteModern850:words.length!==c.targetCoreCount,expressionCoverage:expressionCoverage(c.items)}));

@@ -10,9 +10,9 @@ import {migrations} from '../src/migrations.ts';
 import {isolatedDatabase} from './test-db.ts';
 const c=await loadOgden();
 async function learner(db:any){const id=randomUUID();await db.query("INSERT INTO users(id,email,password_hash) VALUES($1,$2,'fixture')",[id,id+'@example.invalid']);return id;}
-test('300 headwords, 12 functional domains, 18 complete operator families and one selected American dictionary reading',async()=>{
+test('850 headwords, 12 functional domains, 18 complete operator families and one selected American dictionary reading',async()=>{
  const words=c.items.filter(x=>x.kind==='word'),combos=c.items.filter(x=>x.kind==='combination'),tasks=c.items.filter(x=>x.kind==='expression');
- assert.equal(words.length,300);assert.equal(combos.length,73);assert.equal(tasks.length,72);assert.equal(c.domains.length,12);
+ assert.equal(words.length,850);assert.equal(combos.length,109);assert.equal(tasks.length,140);assert.equal(c.domains.length,12);
  for(const domain of c.domains)assert.ok(tasks.filter(x=>x.domain===domain.id).length>=3,domain.id);
  for(const op of OPERATORS){const family=combos.filter(x=>x.operatorWordId==='ow-'+op);assert.ok(family.length>=3,op);assert.deepEqual(new Set(c.items.find(x=>x.id==='op-'+op)!.practiceCombinationIds),new Set(family.map(x=>x.id)));}
  assert.ok(!words.some(x=>x.english==='people'),'irregular plural must not pad core count');assert.equal(c.wordForms.people,'person');

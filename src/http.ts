@@ -1,3 +1,7 @@
+import {gzip as gzipCallback} from 'node:zlib';
+import {promisify} from 'node:util';
+import {acceptsOgdenGzip} from './ogden-transfer.ts';
+const gzip=promisify(gzipCallback);
 import {createServer} from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
@@ -38,7 +42,9 @@ export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendR
    if(data.gmailRedirect){res.writeHead(303,{Location:'/?gmail=connected'});res.end();return;}
    if(data.session){res.setHeader('Set-Cookie',`ee_session=${data.session}; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800${production?'; Secure':''}`);delete data.session;}
    if(data.logout)res.setHeader('Set-Cookie',`ee_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0${production?'; Secure':''}`);
-   res.setHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify(data));
+   res.setHeader('Content-Type','application/json; charset=utf-8');const json=JSON.stringify(data);
+   if(url.pathname==='/api/ogden/catalog'){res.setHeader('Vary','Accept-Encoding');if(acceptsOgdenGzip(req.headers['accept-encoding'])){const compressed=await gzip(json);res.setHeader('Content-Encoding','gzip');res.setHeader('Content-Length',compressed.byteLength);res.end(compressed);return;}}
+   res.end(json);
   }catch(error){const e=error as Error;res.statusCode=e instanceof HttpError?e.status:500;res.setHeader('Content-Type','application/json');res.end(JSON.stringify({error:res.statusCode===500?'Service temporarily unavailable':e.message}));if(res.statusCode===500)console.error('Request failed:',e.name);}
  });
  server.requestTimeout=30000;server.headersTimeout=15000;

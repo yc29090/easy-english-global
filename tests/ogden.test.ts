@@ -9,8 +9,8 @@ import {prepareDatabase} from '../src/setup.ts';
 import {isolatedDatabase} from './test-db.ts';
 import {createApplication} from '../src/http.ts';
 const content=await loadOgden();
-test('modern 300-word core remains traceable and contains the distinct 18 operators',async()=>{
- assert.equal(content.items.length,490);assert.equal(content.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,490);
+test('modern 850-word core remains traceable and contains the distinct 18 operators',async()=>{
+ assert.equal(content.items.length,1165);assert.equal(content.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,1165);
  assert.deepEqual(content.items.filter(x=>x.kind==='operator').map(x=>x.english),OPERATORS);
  const raw=await readFile(new URL('../data/ogden/secondary-wordlist.txt',import.meta.url),'utf8');
  assert.equal(createHash('sha256').update(raw).digest('hex'),content.sources[0].sha256);
@@ -66,6 +66,9 @@ test('HTTP protects authentication, user identity, preview routes, CSRF and prod
   for(const path of ['/ogden','/ogden/words','/ogden/operators','/ogden/operators/get','/ogden/patterns','/ogden/build','/ogden/express','/ogden/listening','/ogden/speaking','/ogden/review','/ogden/progress','/ogden/app.js','/ogden/speech.js','/ogden/styles.css']){const r=await fetch(base+path);assert.equal(r.status,200,path);}
   assert.equal((await fetch(base+'/ogden/no-such-route')).status,404);assert.equal((await fetch(base+'/ogden',{method:'POST'})).status,404);
   assert.equal((await (await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie}})).json()).items.length,content.items.length);
+  const compressed=await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie,'Accept-Encoding':'gzip'}});assert.equal(compressed.headers.get('content-encoding'),'gzip');assert.equal(compressed.headers.get('vary'),'Accept-Encoding');const text=await compressed.text();assert.equal(JSON.parse(text).coverage.coreWords,850);assert.ok(Number(compressed.headers.get('content-length'))<Buffer.byteLength(text)/2);
+  const identity=await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie,'Accept-Encoding':'gzip;q=0'}});assert.equal(identity.headers.get('content-encoding'),null);assert.equal((await identity.json()).items.length,content.items.length);
+
   const result={item_id:'ow-get',status:'review',mode:'study',request_id:randomUUID()};assert.equal((await post('/api/ogden/results',result,cookie)).status,200);
   assert.equal((await post('/api/ogden/results',{...result,user_id:randomUUID()},cookie)).status,400);
   assert.equal((await fetch(base+'/api/ogden/results',{method:'POST',headers:{Origin:'https://attacker.example','Content-Type':'application/json',Cookie:cookie},body:JSON.stringify(result)})).status,403);

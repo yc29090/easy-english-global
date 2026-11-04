@@ -1,3 +1,4 @@
+import {expressionCoverage,OGDEN_PATH} from './ogden-coverage.ts';
 import {OGDEN_DOMAINS} from './ogden-content.ts';
 import {ogdenEntitlement} from './ogden-policy.ts';
 import type {DB} from './db.ts';
@@ -9,7 +10,7 @@ export async function ogden(c:{db:DB;userId:string;method:string;path:string;bod
  const query=c.query||new URLSearchParams(),preview=c.preview!==false;
  const active=preview?"i.review_status<>'retired'":"i.review_status='approved'";
  const validTarget=preview?"review_status<>'retired'":"review_status='approved'";
- if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'existing-members-both-versions',entitlement:ogdenEntitlement(c.user||{membership:'free'}),preview,domains:OGDEN_DOMAINS,items:(await db.query(`SELECT i.payload FROM ogden_items i WHERE ${active} AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND ${preview?"w.review_status<>'retired'":"w.review_status='approved'"})) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload)};
+ if(method==='GET'&&path==='/api/ogden/catalog'){const items=(await db.query(`SELECT i.payload FROM ogden_items i WHERE ${active} AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND ${preview?"w.review_status<>'retired'":"w.review_status='approved'"})) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload);return {release:'draft-preview',policy:'existing-members-both-versions',entitlement:ogdenEntitlement(c.user||{membership:'free'}),preview,domains:OGDEN_DOMAINS,items,coverage:expressionCoverage(items),learningPath:OGDEN_PATH};}
  if(method==='GET'&&path==='/api/ogden/progress')return {progress:(await db.query('SELECT * FROM ogden_progress WHERE user_id=$1 ORDER BY updated_at DESC,item_id',[userId])).rows,practice:(await db.query('SELECT item_id,mode,status,next_review_at,attempts FROM ogden_practice_progress WHERE user_id=$1 ORDER BY item_id,mode',[userId])).rows};
  if(method==='GET'&&path==='/api/ogden/review'){
   const mode=query.get('mode')||'all',kind=query.get('kind')||'all',all=query.get('all')==='true',status=query.get('status')||'all';

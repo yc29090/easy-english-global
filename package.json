@@ -27,7 +27,8 @@
     "ogden:validate": "node scripts/validate-ogden.ts",
     "test:ogden:mobile": "playwright test --config=playwright.ogden.config.ts",
     "ogden:readiness": "node scripts/ogden-readiness.ts",
-    "ogden:review-export": "node scripts/ogden-readiness.ts --export-review"
+    "ogden:review-export": "node scripts/ogden-readiness.ts --export-review",
+    "ogden:coverage": "node scripts/ogden-coverage.ts"
   },
   "dependencies": {
     "pg": "^8.16.3",

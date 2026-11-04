@@ -9,7 +9,15 @@ export function continueTarget(item,mode){
  return base+({pattern:'patterns',combination:'build',expression:'express'}[item.kind]||'words')+anchor;
 }
 export function prioritizeTasks(tasks,progress){
- const mastered=new Set(progress.filter(p=>p.status==='mastered').map(p=>p.item_id));
- const ready=x=>(x.wordIds||[]).every(id=>mastered.has(id))&&(x.patternIds||[]).every(id=>mastered.has(id));
+ const ready=x=>taskReadiness(x,progress).ready;
  return [...tasks].sort((a,b)=>Number(ready(b))-Number(ready(a))||a.level-b.level||a.order-b.order);
+}
+/** Recommendations use self-reported words and an authored reference, never evaluate free speech. */
+export function taskReadiness(task,progress){
+ const mastered=new Set(progress.filter(p=>p.status==='mastered').map(p=>p.item_id));
+ const patterns=(task.patternIds||[]).filter(id=>!mastered.has(id));
+ if(!task.referenceCoverage)return {ready:(task.wordIds||[]).every(id=>mastered.has(id))&&patterns.length===0,missingWordIds:(task.wordIds||[]).filter(id=>!mastered.has(id)),missingPatternIds:patterns,needsSupplemental:false};
+ const refs=[...task.referenceCoverage].sort((a,b)=>Number(b.allCore)-Number(a.allCore)||a.wordIds.filter(id=>!mastered.has(id)).length-b.wordIds.filter(id=>!mastered.has(id)).length);
+ const reference=refs[0],missing=reference?.wordIds.filter(id=>!mastered.has(id))||[];
+ return {ready:!!reference?.allCore&&missing.length===0&&patterns.length===0,missingWordIds:missing,missingPatternIds:patterns,needsSupplemental:!reference?.allCore};
 }
