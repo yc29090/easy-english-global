@@ -56,7 +56,7 @@ test('additive schema, repeat import, immutable versions and per-user isolated p
 test('HTTP protects authentication, user identity, preview routes, CSRF and production policy',async()=>{
  const {db,cleanup}=await isolatedDatabase();await prepareDatabase(db);await installOgden(db,content);
  const config={production:false,appUrl:'http://127.0.0.1:3100',port:3100,mockCheckout:false,mailProvider:'disabled' as const,mailFrom:''};
- let server=createApplication({...db,connect:async()=>({...db,release(){}})},config,async()=>{});
+ let server=createApplication({query:db.query.bind(db),connect:async()=>({query:db.query.bind(db),release(){}})},config,async()=>{});
  try{
   await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));const address=server.address();assert.ok(address&&typeof address!=='string');let base='http://127.0.0.1:'+address.port;config.appUrl=base;
   const post=(path:string,body:any,cookie='')=>fetch(base+path,{method:'POST',headers:{Origin:base,'Content-Type':'application/json',Cookie:cookie},body:JSON.stringify(body)});
@@ -71,7 +71,7 @@ test('HTTP protects authentication, user identity, preview routes, CSRF and prod
   assert.equal((await fetch(base+'/api/ogden/results',{method:'POST',headers:{Origin:'https://attacker.example','Content-Type':'application/json',Cookie:cookie},body:JSON.stringify(result)})).status,403);
   await db.query('UPDATE users SET must_change_password=true WHERE id=$1',[user.id]);assert.equal((await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie}})).status,403);
   server.closeAllConnections();await new Promise<void>(r=>server.close(()=>r()));config.production=true;
-  server=createApplication({...db,connect:async()=>({...db,release(){}})},config,async()=>{});await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));const prodAddress=server.address();assert.ok(prodAddress&&typeof prodAddress!=='string');base='http://127.0.0.1:'+prodAddress.port;config.appUrl=base;
+  server=createApplication({query:db.query.bind(db),connect:async()=>({query:db.query.bind(db),release(){}})},config,async()=>{});await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));const prodAddress=server.address();assert.ok(prodAddress&&typeof prodAddress!=='string');base='http://127.0.0.1:'+prodAddress.port;config.appUrl=base;
   for(const path of ['/ogden','/ogden/app.js','/api/ogden/catalog','/api/ogden/progress','/api/ogden/review'])assert.equal((await fetch(base+path,{headers:{Cookie:cookie}})).status,404,path);
   assert.equal((await fetch(base+'/')).status,200);assert.equal((await fetch(base+'/api/catalog')).status,200);
  }finally{server.closeAllConnections();await new Promise<void>(r=>server.close(()=>r()));await cleanup();}
