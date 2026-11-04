@@ -27,7 +27,7 @@ test('mobile isolated preview: existing login, shared operator state, combinatio
  await page.goto('/ogden/build');const combo=page.locator('article').first();for(const token of ['get','some','water'])await combo.locator('[data-token="'+token+'"]').click();await combo.getByRole('button',{name:'查看组合提示'}).click();await expect(page.locator('#feedback')).toContainText('一致');
  await page.goto('/ogden/express');const arrival=page.locator('article[data-item="ex-arrival"]');await arrival.locator('textarea').fill('When does the car come?');await arrival.locator('summary').click();await expect(arrival).toContainText('When will the car arrive?');await arrival.getByRole('button',{name:'已学习',exact:true}).click();await expect(page.locator('#feedback')).toContainText('已保存');
  await page.goto('/ogden/listening');const listening=page.locator('article').first();await expect(listening.locator('details')).not.toHaveAttribute('open');await listening.getByRole('button',{name:'慢速合成请求'}).first().click();await expect(page.locator('#feedback')).toContainText(/本地美式|本地语音列表|低速合成请求/);await listening.locator('summary').click();await expect(listening.locator('details')).toHaveAttribute('open','');await expect(listening.locator('[data-listening-en]')).toBeHidden();await expect(listening.locator('[data-listening-zh]')).toBeHidden();await listening.locator('[data-toggle-copy="en"]').click();await expect(listening.locator('[data-listening-en]')).toBeVisible();await expect(listening.locator('[data-listening-zh]')).toBeHidden();await listening.locator('[data-toggle-copy="zh"]').click();await expect(listening.locator('[data-listening-zh]')).toBeVisible();
- await page.screenshot({path:'/tmp/ogden-'+info.project.name+'.png',fullPage:true});expect(errors).toEqual([]);
+ await page.screenshot({path:'/tmp/ogden-'+info.project.name+'.png',fullPage:false});expect(errors).toEqual([]);
  const legacy=await page.request.get('/api/progress');expect((await legacy.json()).progress).toHaveLength(0);
 });
 test('daily domains, all operator families, selected reading, precise resume and independent listening review',async({page},info)=>{
@@ -47,7 +47,7 @@ test('daily domains, all operator families, selected reading, precise resume and
  await page.locator('#review-scope').selectOption('all');await expect(page.locator('article')).toHaveCount(1);
  await page.goto('/ogden/progress');await expect(page.locator('#content')).toContainText('听力：练习2次');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();expect(errors).toEqual([]);
- await page.screenshot({path:'/tmp/ogden-daily-'+info.project.name+'.png',fullPage:true});
+ await page.screenshot({path:'/tmp/ogden-daily-'+info.project.name+'.png',fullPage:false});
 });
 test('four expression stages, hidden replacement recall, paraphrases and delayed local voices',async({page},info)=>{
  await page.addInitScript(()=>{
@@ -70,5 +70,5 @@ test('four expression stages, hidden replacement recall, paraphrases and delayed
  const before=await page.evaluate(()=>(window as any).voiceTest.cancels());await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));expect(await page.evaluate(()=>(window as any).voiceTest.cancels())).toBeGreaterThan(before);
  const hiddenCancels=await page.evaluate(()=>(window as any).voiceTest.cancels());await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});expect(await page.evaluate(()=>(window as any).voiceTest.cancels())).toBeGreaterThan(hiddenCancels);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));});
  await page.locator('#task-level').selectOption('4');const paraphrase=page.locator('article[data-item="ex-paraphrase-pharmacy"]');await expect(paraphrase).toContainText('哪里可以买药');await paraphrase.locator('summary').click();await expect(paraphrase).toContainText('Where can I buy medicine?');await expect(paraphrase).toContainText('Is there a shop here that sells medicine?');
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await page.screenshot({path:'/tmp/ogden-round2-'+info.project.name+'.png',fullPage:true});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await page.screenshot({path:'/tmp/ogden-round2-'+info.project.name+'.png',fullPage:false});
 });
