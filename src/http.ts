@@ -18,12 +18,15 @@ export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendR
   try{
    const appUrl=config.appUrl;
    const url=new URL(req.url||'/',appUrl);
+   const ogdenRoute=url.pathname==='/ogden'||url.pathname.startsWith('/ogden/')||url.pathname.startsWith('/api/ogden/');
+   // Product access policy is unresolved: experimental routes are never served in production.
+   if(ogdenRoute&&production)throw new HttpError(404,'Not found');
    if(url.pathname==='/health'){
     if(!['GET','HEAD'].includes(req.method||''))throw new HttpError(405,'Method not allowed');
     let healthy=false;try{healthy=await ready(pool);}catch{/* A missing schema or unavailable database is not ready. */}
     res.statusCode=healthy?200:503;res.setHeader('Content-Type','application/json');res.end(req.method==='HEAD'?undefined:JSON.stringify({ok:healthy}));return;
    }
-   if(!url.pathname.startsWith('/api/')){if(url.pathname.startsWith('/payments/')&&config.manualPayment!==true)throw new HttpError(404,'Not found');const asset=assets[url.pathname];if(!asset||!['GET','HEAD'].includes(req.method||''))throw new HttpError(404,'Not found');res.setHeader('Content-Type',asset[1]);const file=await readFile(fileURLToPath(new URL('../public/'+asset[0],import.meta.url)));res.end(req.method==='HEAD'?undefined:file);return;}
+   if(!url.pathname.startsWith('/api/')){if(url.pathname.startsWith('/payments/')&&config.manualPayment!==true)throw new HttpError(404,'Not found');const ogdenPages=['','words','operators','patterns','build','express','listening','speaking','review','progress'];const part=url.pathname.replace(/^\/ogden\/?/,'');const ogdenAsset=url.pathname==='/ogden'||url.pathname.startsWith('/ogden/');const asset=ogdenAsset?((ogdenPages.includes(part)||/^operators\/(come|get|give|go|keep|let|make|put|seem|take|be|do|have|say|see|send|may|will)$/.test(part))?['ogden/index.html','text/html; charset=utf-8']:part==='app.js'?['ogden/app.js','text/javascript; charset=utf-8']:part==='speech.js'?['ogden/speech.js','text/javascript; charset=utf-8']:part==='styles.css'?['ogden/styles.css','text/css; charset=utf-8']:undefined):assets[url.pathname];if(!asset||!['GET','HEAD'].includes(req.method||''))throw new HttpError(404,'Not found');res.setHeader('Content-Type',asset[1]);const file=await readFile(fileURLToPath(new URL('../public/'+asset[0],import.meta.url)));res.end(req.method==='HEAD'?undefined:file);return;}
    if(!['GET','HEAD'].includes(req.method||'')){
     if(req.headers.origin!==appUrl)throw new HttpError(403,'Invalid request origin');
     if(!req.headers['content-type']?.startsWith('application/json'))throw new HttpError(415,'JSON required');

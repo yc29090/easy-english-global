@@ -1,3 +1,4 @@
+import {ogden} from './ogden.ts';
 import {learningV2} from './learning-v2.ts';
 import {gmailAdmin,type GmailConfig} from './gmail.ts';
 import {randomUUID} from 'node:crypto';
@@ -65,6 +66,7 @@ export async function api(c:Context):Promise<any>{
   return transaction(async()=>{await db.query('UPDATE users SET password_hash=$1,must_change_password=false WHERE id=$2',[hash,u.id]);await db.query('DELETE FROM sessions WHERE user_id=$1',[u.id]);await db.query('DELETE FROM password_resets WHERE user_id=$1',[u.id]);return {logout:true};});
  }
  if(u.must_change_password)throw new HttpError(403,'Change your temporary password first');
+ if(path.startsWith('/api/ogden/'))return ogden({db,userId:u.id,method,path,body:b});
  if(path.startsWith('/api/learning-v2/'))return learningV2({db,user:u,method,path,body:b,query:c.query||new URLSearchParams()});
  if(method==='GET'&&path==='/api/progress')return {progress:(await db.query('SELECT * FROM progress WHERE user_id=$1',[u.id])).rows};
  if(method==='PUT'&&path==='/api/progress'){

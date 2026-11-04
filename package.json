@@ -22,7 +22,10 @@
     "smoke": "node --env-file-if-exists=.env scripts/smoke.ts",
     "test:mobile": "playwright test --config=playwright.config.ts",
     "test:runtime": "node scripts/check-runtime.ts",
-    "test:admin-terminal": "python3 tests/admin-terminal-pty.py"
+    "test:admin-terminal": "python3 tests/admin-terminal-pty.py",
+    "ogden:preview": "node scripts/ogden-preview.ts",
+    "ogden:validate": "node scripts/validate-ogden.ts",
+    "test:ogden:mobile": "playwright test --config=playwright.ogden.config.ts"
   },
   "dependencies": {
     "pg": "^8.16.3",
