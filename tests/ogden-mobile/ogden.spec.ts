@@ -30,3 +30,22 @@ test('mobile isolated preview: existing login, shared operator state, combinatio
  await page.screenshot({path:'/tmp/ogden-'+info.project.name+'.png',fullPage:true});expect(errors).toEqual([]);
  const legacy=await page.request.get('/api/progress');expect((await legacy.json()).progress).toHaveLength(0);
 });
+test('daily domains, all operator families, selected reading, precise resume and independent listening review',async({page},info)=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ const registered=await page.request.post('/api/auth/register',{headers:{Origin:'http://127.0.0.1:3100'},data:{email:'daily-'+randomUUID()+'@example.invalid',password:'Daily9!Example'}});expect(registered.ok()).toBeTruthy();
+ await page.goto('/ogden/operators/let');await page.locator('article summary').click();await expect(page.locator('article')).toContainText('let me try');
+ await page.getByRole('link',{name:'练习这些组合'}).click();await expect(page.locator('article')).toHaveCount(3);
+ await page.locator('#build-operator').selectOption('be');await expect(page.locator('article')).toHaveCount(3);await expect(page.locator('article').first()).toContainText('be here');
+ await page.goto('/ogden/express');await page.locator('#task-domain').selectOption('people-things');await expect(page.locator('article')).toHaveCount(3);await page.locator('#task-level').selectOption('1');await expect(page.locator('article')).toHaveCount(1);await expect(page.locator('article')).toContainText('这个包是小的');
+ await page.goto('/ogden/listening?kind=word&item=ow-read#ow-read');const listening=page.locator('article[data-item="ow-read"]');await expect(listening).toBeVisible();await expect(listening.locator('[data-state]')).toContainText('本模式尚未记录');
+ await listening.getByRole('button',{name:'未掌握',exact:true}).click();await expect(page.locator('#feedback')).toContainText('已保存');
+ await page.goto('/ogden/words?q=read#ow-read');const reading=page.locator('article[data-item="ow-read"]');await reading.locator('summary').first().click();await expect(reading).toContainText('R IY1 D');await expect(reading.getByRole('link',{name:'词典许可'})).toBeVisible();
+ await reading.getByRole('button',{name:'已掌握',exact:true}).click();await expect(page.locator('#feedback')).toContainText('已保存');
+ await page.goto('/ogden');await expect(page.getByRole('link',{name:/继续学习/})).toHaveAttribute('href','/ogden/words?q=read#ow-read');
+ await page.goto('/ogden/review?mode=listening&kind=word');await expect(page.locator('article')).toHaveCount(1);await expect(page.locator('article[data-item="ow-read"] [data-state]')).toContainText('未掌握');
+ await page.locator('article').getByRole('button',{name:'已掌握',exact:true}).click();await expect(page.locator('#feedback')).toContainText('已保存');await expect(page.locator('article')).toHaveCount(0);
+ await page.locator('#review-scope').selectOption('all');await expect(page.locator('article')).toHaveCount(1);
+ await page.goto('/ogden/progress');await expect(page.locator('#content')).toContainText('听力：练习2次');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();expect(errors).toEqual([]);
+ await page.screenshot({path:'/tmp/ogden-daily-'+info.project.name+'.png',fullPage:true});
+});

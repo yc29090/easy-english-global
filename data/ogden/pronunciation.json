@@ -1,0 +1,873 @@
+{
+  "sourceId": "cmudict-74790861-v1",
+  "entries": {
+    "come": {
+      "entry": "come",
+      "arpabet": "K AH1 M"
+    },
+    "get": {
+      "entry": "get",
+      "arpabet": "G EH1 T"
+    },
+    "give": {
+      "entry": "give",
+      "arpabet": "G IH1 V"
+    },
+    "go": {
+      "entry": "go",
+      "arpabet": "G OW1"
+    },
+    "keep": {
+      "entry": "keep",
+      "arpabet": "K IY1 P"
+    },
+    "let": {
+      "entry": "let",
+      "arpabet": "L EH1 T"
+    },
+    "make": {
+      "entry": "make",
+      "arpabet": "M EY1 K"
+    },
+    "put": {
+      "entry": "put",
+      "arpabet": "P UH1 T"
+    },
+    "seem": {
+      "entry": "seem",
+      "arpabet": "S IY1 M"
+    },
+    "take": {
+      "entry": "take",
+      "arpabet": "T EY1 K"
+    },
+    "be": {
+      "entry": "be",
+      "arpabet": "B IY1"
+    },
+    "do": {
+      "entry": "do",
+      "arpabet": "D UW1"
+    },
+    "have": {
+      "entry": "have",
+      "arpabet": "HH AE1 V"
+    },
+    "say": {
+      "entry": "say",
+      "arpabet": "S EY1"
+    },
+    "see": {
+      "entry": "see",
+      "arpabet": "S IY1"
+    },
+    "send": {
+      "entry": "send",
+      "arpabet": "S EH1 N D"
+    },
+    "may": {
+      "entry": "may",
+      "arpabet": "M EY1"
+    },
+    "will": {
+      "entry": "will",
+      "arpabet": "W IH1 L"
+    },
+    "I": {
+      "entry": "i",
+      "arpabet": "AY1"
+    },
+    "you": {
+      "entry": "you",
+      "arpabet": "Y UW1"
+    },
+    "we": {
+      "entry": "we",
+      "arpabet": "W IY1"
+    },
+    "he": {
+      "entry": "he",
+      "arpabet": "HH IY1"
+    },
+    "she": {
+      "entry": "she",
+      "arpabet": "SH IY1"
+    },
+    "it": {
+      "entry": "it",
+      "arpabet": "IH1 T"
+    },
+    "they": {
+      "entry": "they",
+      "arpabet": "DH EY1"
+    },
+    "a": {
+      "entry": "a",
+      "arpabet": "AH0"
+    },
+    "the": {
+      "entry": "the",
+      "arpabet": "DH AH0"
+    },
+    "this": {
+      "entry": "this",
+      "arpabet": "DH IH1 S"
+    },
+    "that": {
+      "entry": "that",
+      "arpabet": "DH AE1 T"
+    },
+    "some": {
+      "entry": "some",
+      "arpabet": "S AH1 M"
+    },
+    "any": {
+      "entry": "any",
+      "arpabet": "EH1 N IY0"
+    },
+    "not": {
+      "entry": "not",
+      "arpabet": "N AA1 T"
+    },
+    "and": {
+      "entry": "and",
+      "arpabet": "AH0 N D"
+    },
+    "or": {
+      "entry": "or",
+      "arpabet": "AO1 R"
+    },
+    "but": {
+      "entry": "but",
+      "arpabet": "B AH1 T"
+    },
+    "in": {
+      "entry": "in",
+      "arpabet": "IH0 N"
+    },
+    "on": {
+      "entry": "on",
+      "arpabet": "AA1 N"
+    },
+    "at": {
+      "entry": "at",
+      "arpabet": "AE1 T"
+    },
+    "to": {
+      "entry": "to",
+      "arpabet": "T UW1"
+    },
+    "from": {
+      "entry": "from",
+      "arpabet": "F R AH1 M"
+    },
+    "with": {
+      "entry": "with",
+      "arpabet": "W IH1 DH"
+    },
+    "for": {
+      "entry": "for",
+      "arpabet": "F AO1 R"
+    },
+    "of": {
+      "entry": "of",
+      "arpabet": "AH1 V"
+    },
+    "here": {
+      "entry": "here",
+      "arpabet": "HH IY1 R"
+    },
+    "there": {
+      "entry": "there",
+      "arpabet": "DH EH1 R"
+    },
+    "now": {
+      "entry": "now",
+      "arpabet": "N AW1"
+    },
+    "when": {
+      "entry": "when",
+      "arpabet": "W EH1 N"
+    },
+    "where": {
+      "entry": "where",
+      "arpabet": "W EH1 R"
+    },
+    "how": {
+      "entry": "how",
+      "arpabet": "HH AW1"
+    },
+    "why": {
+      "entry": "why",
+      "arpabet": "W AY1"
+    },
+    "what": {
+      "entry": "what",
+      "arpabet": "W AH1 T"
+    },
+    "please": {
+      "entry": "please",
+      "arpabet": "P L IY1 Z"
+    },
+    "yes": {
+      "entry": "yes",
+      "arpabet": "Y EH1 S"
+    },
+    "no": {
+      "entry": "no",
+      "arpabet": "N OW1"
+    },
+    "name": {
+      "entry": "name",
+      "arpabet": "N EY1 M"
+    },
+    "person": {
+      "entry": "person",
+      "arpabet": "P ER1 S AH0 N"
+    },
+    "family": {
+      "entry": "family",
+      "arpabet": "F AE1 M AH0 L IY0"
+    },
+    "friend": {
+      "entry": "friend",
+      "arpabet": "F R EH1 N D"
+    },
+    "mother": {
+      "entry": "mother",
+      "arpabet": "M AH1 DH ER0"
+    },
+    "father": {
+      "entry": "father",
+      "arpabet": "F AA1 DH ER0"
+    },
+    "child": {
+      "entry": "child",
+      "arpabet": "CH AY1 L D"
+    },
+    "home": {
+      "entry": "home",
+      "arpabet": "HH OW1 M"
+    },
+    "house": {
+      "entry": "house",
+      "arpabet": "HH AW1 S"
+    },
+    "room": {
+      "entry": "room",
+      "arpabet": "R UW1 M"
+    },
+    "door": {
+      "entry": "door",
+      "arpabet": "D AO1 R"
+    },
+    "water": {
+      "entry": "water",
+      "arpabet": "W AO1 T ER0"
+    },
+    "food": {
+      "entry": "food",
+      "arpabet": "F UW1 D"
+    },
+    "bread": {
+      "entry": "bread",
+      "arpabet": "B R EH1 D"
+    },
+    "rice": {
+      "entry": "rice",
+      "arpabet": "R AY1 S"
+    },
+    "milk": {
+      "entry": "milk",
+      "arpabet": "M IH1 L K"
+    },
+    "coffee": {
+      "entry": "coffee",
+      "arpabet": "K AA1 F IY0"
+    },
+    "tea": {
+      "entry": "tea",
+      "arpabet": "T IY1"
+    },
+    "time": {
+      "entry": "time",
+      "arpabet": "T AY1 M"
+    },
+    "day": {
+      "entry": "day",
+      "arpabet": "D EY1"
+    },
+    "week": {
+      "entry": "week",
+      "arpabet": "W IY1 K"
+    },
+    "today": {
+      "entry": "today",
+      "arpabet": "T AH0 D EY1"
+    },
+    "tomorrow": {
+      "entry": "tomorrow",
+      "arpabet": "T AH0 M AA1 R OW2"
+    },
+    "money": {
+      "entry": "money",
+      "arpabet": "M AH1 N IY0"
+    },
+    "price": {
+      "entry": "price",
+      "arpabet": "P R AY1 S"
+    },
+    "ticket": {
+      "entry": "ticket",
+      "arpabet": "T IH1 K AH0 T"
+    },
+    "car": {
+      "entry": "car",
+      "arpabet": "K AA1 R"
+    },
+    "bus": {
+      "entry": "bus",
+      "arpabet": "B AH1 S"
+    },
+    "train": {
+      "entry": "train",
+      "arpabet": "T R EY1 N"
+    },
+    "airport": {
+      "entry": "airport",
+      "arpabet": "EH1 R P AO2 R T"
+    },
+    "hotel": {
+      "entry": "hotel",
+      "arpabet": "HH OW0 T EH1 L"
+    },
+    "phone": {
+      "entry": "phone",
+      "arpabet": "F OW1 N"
+    },
+    "email": {
+      "entry": "email",
+      "arpabet": "IY0 M EY1 L"
+    },
+    "computer": {
+      "entry": "computer",
+      "arpabet": "K AH0 M P Y UW1 T ER0"
+    },
+    "help": {
+      "entry": "help",
+      "arpabet": "HH EH1 L P"
+    },
+    "question": {
+      "entry": "question",
+      "arpabet": "K W EH1 S CH AH0 N"
+    },
+    "work": {
+      "entry": "work",
+      "arpabet": "W ER1 K"
+    },
+    "need": {
+      "entry": "need",
+      "arpabet": "N IY1 D"
+    },
+    "good": {
+      "entry": "good",
+      "arpabet": "G UH1 D"
+    },
+    "bad": {
+      "entry": "bad",
+      "arpabet": "B AE1 D"
+    },
+    "small": {
+      "entry": "small",
+      "arpabet": "S M AO1 L"
+    },
+    "big": {
+      "entry": "big",
+      "arpabet": "B IH1 G"
+    },
+    "new": {
+      "entry": "new",
+      "arpabet": "N UW1"
+    },
+    "old": {
+      "entry": "old",
+      "arpabet": "OW1 L D"
+    },
+    "open": {
+      "entry": "open",
+      "arpabet": "OW1 P AH0 N"
+    },
+    "ready": {
+      "entry": "ready",
+      "arpabet": "R EH1 D IY0"
+    },
+    "tired": {
+      "entry": "tired",
+      "arpabet": "T AY1 ER0 D"
+    },
+    "me": {
+      "entry": "me",
+      "arpabet": "M IY1"
+    },
+    "my": {
+      "entry": "my",
+      "arpabet": "M AY1"
+    },
+    "your": {
+      "entry": "your",
+      "arpabet": "Y AO1 R"
+    },
+    "our": {
+      "entry": "our",
+      "arpabet": "AW1 ER0"
+    },
+    "their": {
+      "entry": "their",
+      "arpabet": "DH EH1 R"
+    },
+    "his": {
+      "entry": "his",
+      "arpabet": "HH IH1 Z"
+    },
+    "her": {
+      "entry": "her",
+      "arpabet": "HH ER1"
+    },
+    "who": {
+      "entry": "who",
+      "arpabet": "HH UW1"
+    },
+    "can": {
+      "entry": "can",
+      "arpabet": "K AE1 N"
+    },
+    "want": {
+      "entry": "want",
+      "arpabet": "W AA1 N T"
+    },
+    "like": {
+      "entry": "like",
+      "arpabet": "L AY1 K"
+    },
+    "know": {
+      "entry": "know",
+      "arpabet": "N OW1"
+    },
+    "understand": {
+      "entry": "understand",
+      "arpabet": "AH2 N D ER0 S T AE1 N D"
+    },
+    "speak": {
+      "entry": "speak",
+      "arpabet": "S P IY1 K"
+    },
+    "read": {
+      "entry": "read(2)",
+      "arpabet": "R IY1 D"
+    },
+    "write": {
+      "entry": "write",
+      "arpabet": "R AY1 T"
+    },
+    "eat": {
+      "entry": "eat",
+      "arpabet": "IY1 T"
+    },
+    "drink": {
+      "entry": "drink",
+      "arpabet": "D R IH1 NG K"
+    },
+    "pay": {
+      "entry": "pay",
+      "arpabet": "P EY1"
+    },
+    "buy": {
+      "entry": "buy",
+      "arpabet": "B AY1"
+    },
+    "sell": {
+      "entry": "sell",
+      "arpabet": "S EH1 L"
+    },
+    "wait": {
+      "entry": "wait",
+      "arpabet": "W EY1 T"
+    },
+    "call": {
+      "entry": "call",
+      "arpabet": "K AO1 L"
+    },
+    "use": {
+      "entry": "use(2)",
+      "arpabet": "Y UW1 Z"
+    },
+    "find": {
+      "entry": "find",
+      "arpabet": "F AY1 N D"
+    },
+    "live": {
+      "entry": "live(2)",
+      "arpabet": "L IH1 V"
+    },
+    "ask": {
+      "entry": "ask",
+      "arpabet": "AE1 S K"
+    },
+    "try": {
+      "entry": "try",
+      "arpabet": "T R AY1"
+    },
+    "walk": {
+      "entry": "walk",
+      "arpabet": "W AO1 K"
+    },
+    "stay": {
+      "entry": "stay",
+      "arpabet": "S T EY1"
+    },
+    "meet": {
+      "entry": "meet",
+      "arpabet": "M IY1 T"
+    },
+    "man": {
+      "entry": "man",
+      "arpabet": "M AE1 N"
+    },
+    "woman": {
+      "entry": "woman",
+      "arpabet": "W UH1 M AH0 N"
+    },
+    "boy": {
+      "entry": "boy",
+      "arpabet": "B OY1"
+    },
+    "girl": {
+      "entry": "girl",
+      "arpabet": "G ER1 L"
+    },
+    "parent": {
+      "entry": "parent",
+      "arpabet": "P EH1 R AH0 N T"
+    },
+    "brother": {
+      "entry": "brother",
+      "arpabet": "B R AH1 DH ER0"
+    },
+    "sister": {
+      "entry": "sister",
+      "arpabet": "S IH1 S T ER0"
+    },
+    "husband": {
+      "entry": "husband",
+      "arpabet": "HH AH1 Z B AH0 N D"
+    },
+    "wife": {
+      "entry": "wife",
+      "arpabet": "W AY1 F"
+    },
+    "one": {
+      "entry": "one",
+      "arpabet": "W AH1 N"
+    },
+    "two": {
+      "entry": "two",
+      "arpabet": "T UW1"
+    },
+    "three": {
+      "entry": "three",
+      "arpabet": "TH R IY1"
+    },
+    "four": {
+      "entry": "four",
+      "arpabet": "F AO1 R"
+    },
+    "five": {
+      "entry": "five",
+      "arpabet": "F AY1 V"
+    },
+    "six": {
+      "entry": "six",
+      "arpabet": "S IH1 K S"
+    },
+    "seven": {
+      "entry": "seven",
+      "arpabet": "S EH1 V AH0 N"
+    },
+    "eight": {
+      "entry": "eight",
+      "arpabet": "EY1 T"
+    },
+    "nine": {
+      "entry": "nine",
+      "arpabet": "N AY1 N"
+    },
+    "ten": {
+      "entry": "ten",
+      "arpabet": "T EH1 N"
+    },
+    "zero": {
+      "entry": "zero",
+      "arpabet": "Z IH1 R OW0"
+    },
+    "more": {
+      "entry": "more",
+      "arpabet": "M AO1 R"
+    },
+    "less": {
+      "entry": "less",
+      "arpabet": "L EH1 S"
+    },
+    "many": {
+      "entry": "many",
+      "arpabet": "M EH1 N IY0"
+    },
+    "much": {
+      "entry": "much",
+      "arpabet": "M AH1 CH"
+    },
+    "little": {
+      "entry": "little",
+      "arpabet": "L IH1 T AH0 L"
+    },
+    "all": {
+      "entry": "all",
+      "arpabet": "AO1 L"
+    },
+    "every": {
+      "entry": "every",
+      "arpabet": "EH1 V ER0 IY0"
+    },
+    "first": {
+      "entry": "first",
+      "arpabet": "F ER1 S T"
+    },
+    "last": {
+      "entry": "last",
+      "arpabet": "L AE1 S T"
+    },
+    "next": {
+      "entry": "next",
+      "arpabet": "N EH1 K S T"
+    },
+    "early": {
+      "entry": "early",
+      "arpabet": "ER1 L IY0"
+    },
+    "late": {
+      "entry": "late",
+      "arpabet": "L EY1 T"
+    },
+    "morning": {
+      "entry": "morning",
+      "arpabet": "M AO1 R N IH0 NG"
+    },
+    "evening": {
+      "entry": "evening",
+      "arpabet": "IY1 V N IH0 NG"
+    },
+    "night": {
+      "entry": "night",
+      "arpabet": "N AY1 T"
+    },
+    "minute": {
+      "entry": "minute",
+      "arpabet": "M IH1 N AH0 T"
+    },
+    "hour": {
+      "entry": "hour",
+      "arpabet": "AW1 ER0"
+    },
+    "month": {
+      "entry": "month",
+      "arpabet": "M AH1 N TH"
+    },
+    "year": {
+      "entry": "year",
+      "arpabet": "Y IH1 R"
+    },
+    "left": {
+      "entry": "left",
+      "arpabet": "L EH1 F T"
+    },
+    "right": {
+      "entry": "right",
+      "arpabet": "R AY1 T"
+    },
+    "near": {
+      "entry": "near",
+      "arpabet": "N IH1 R"
+    },
+    "far": {
+      "entry": "far",
+      "arpabet": "F AA1 R"
+    },
+    "under": {
+      "entry": "under",
+      "arpabet": "AH1 N D ER0"
+    },
+    "over": {
+      "entry": "over",
+      "arpabet": "OW1 V ER0"
+    },
+    "behind": {
+      "entry": "behind",
+      "arpabet": "B IH0 HH AY1 N D"
+    },
+    "between": {
+      "entry": "between",
+      "arpabet": "B IH0 T W IY1 N"
+    },
+    "inside": {
+      "entry": "inside",
+      "arpabet": "IH2 N S AY1 D"
+    },
+    "outside": {
+      "entry": "outside",
+      "arpabet": "AW1 T S AY1 D"
+    },
+    "up": {
+      "entry": "up",
+      "arpabet": "AH1 P"
+    },
+    "down": {
+      "entry": "down",
+      "arpabet": "D AW1 N"
+    },
+    "back": {
+      "entry": "back",
+      "arpabet": "B AE1 K"
+    },
+    "front": {
+      "entry": "front",
+      "arpabet": "F R AH1 N T"
+    },
+    "table": {
+      "entry": "table",
+      "arpabet": "T EY1 B AH0 L"
+    },
+    "chair": {
+      "entry": "chair",
+      "arpabet": "CH EH1 R"
+    },
+    "bed": {
+      "entry": "bed",
+      "arpabet": "B EH1 D"
+    },
+    "bag": {
+      "entry": "bag",
+      "arpabet": "B AE1 G"
+    },
+    "bottle": {
+      "entry": "bottle",
+      "arpabet": "B AA1 T AH0 L"
+    },
+    "cup": {
+      "entry": "cup",
+      "arpabet": "K AH1 P"
+    },
+    "key": {
+      "entry": "key",
+      "arpabet": "K IY1"
+    },
+    "card": {
+      "entry": "card",
+      "arpabet": "K AA1 R D"
+    },
+    "cash": {
+      "entry": "cash",
+      "arpabet": "K AE1 SH"
+    },
+    "passport": {
+      "entry": "passport",
+      "arpabet": "P AE1 S P AO2 R T"
+    },
+    "station": {
+      "entry": "station",
+      "arpabet": "S T EY1 SH AH0 N"
+    },
+    "street": {
+      "entry": "street",
+      "arpabet": "S T R IY1 T"
+    },
+    "shop": {
+      "entry": "shop",
+      "arpabet": "SH AA1 P"
+    },
+    "restaurant": {
+      "entry": "restaurant",
+      "arpabet": "R EH1 S T ER0 AA2 N T"
+    },
+    "toilet": {
+      "entry": "toilet",
+      "arpabet": "T OY1 L AH0 T"
+    },
+    "bathroom": {
+      "entry": "bathroom",
+      "arpabet": "B AE1 TH R UW2 M"
+    },
+    "doctor": {
+      "entry": "doctor",
+      "arpabet": "D AA1 K T ER0"
+    },
+    "hospital": {
+      "entry": "hospital",
+      "arpabet": "HH AA1 S P IH2 T AH0 L"
+    },
+    "problem": {
+      "entry": "problem",
+      "arpabet": "P R AA1 B L AH0 M"
+    },
+    "message": {
+      "entry": "message",
+      "arpabet": "M EH1 S AH0 JH"
+    },
+    "address": {
+      "entry": "address",
+      "arpabet": "AE1 D R EH2 S"
+    },
+    "number": {
+      "entry": "number",
+      "arpabet": "N AH1 M B ER0"
+    },
+    "internet": {
+      "entry": "internet",
+      "arpabet": "IH1 N T ER0 N EH2 T"
+    },
+    "password": {
+      "entry": "password",
+      "arpabet": "P AE1 S W ER2 D"
+    },
+    "happy": {
+      "entry": "happy",
+      "arpabet": "HH AE1 P IY0"
+    },
+    "cold": {
+      "entry": "cold",
+      "arpabet": "K OW1 L D"
+    },
+    "hot": {
+      "entry": "hot",
+      "arpabet": "HH AA1 T"
+    },
+    "sick": {
+      "entry": "sick",
+      "arpabet": "S IH1 K"
+    },
+    "hungry": {
+      "entry": "hungry",
+      "arpabet": "HH AH1 NG G R IY0"
+    },
+    "thirsty": {
+      "entry": "thirsty",
+      "arpabet": "TH ER1 S T IY0"
+    },
+    "sorry": {
+      "entry": "sorry",
+      "arpabet": "S AA1 R IY0"
+    },
+    "thanks": {
+      "entry": "thanks",
+      "arpabet": "TH AE1 NG K S"
+    }
+  }
+}

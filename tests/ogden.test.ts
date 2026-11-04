@@ -9,8 +9,8 @@ import {prepareDatabase} from '../src/setup.ts';
 import {isolatedDatabase} from './test-db.ts';
 import {createApplication} from '../src/http.ts';
 const content=await loadOgden();
-test('modern 101-word core remains traceable and contains the distinct 18 operators',async()=>{
- assert.equal(content.items.length,165);assert.equal(content.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,165);
+test('modern 217-word core remains traceable and contains the distinct 18 operators',async()=>{
+ assert.equal(content.items.length,373);assert.equal(content.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,373);
  assert.deepEqual(content.items.filter(x=>x.kind==='operator').map(x=>x.english),OPERATORS);
  const raw=await readFile(new URL('../data/ogden/secondary-wordlist.txt',import.meta.url),'utf8');
  assert.equal(createHash('sha256').update(raw).digest('hex'),content.sources[0].sha256);
