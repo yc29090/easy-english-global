@@ -1,3 +1,7 @@
+# 第六轮当前验证
+
+当前教材mbe-modern-850-v8-preflight；最终CI计数及证据见[第六轮验收](round6-acceptance.md)与PR #10最新提交。以下第四轮、第三轮结果仅作历史记录，不代替本轮验收。
+
 # 第四轮当前验证
 
 mbe-modern-850-v7-final-audit：本地144项中140通过、0失败、4项真实PostgreSQL专属跳过；手机尺寸Chromium10项通过，管理员13项通过。最终CI包括真实连接中断及pg_dump/pg_restore，实际结果见PR当前提交与round4-acceptance.md。以下为历史记录，不替代本轮结果。

@@ -33,10 +33,12 @@ export async function ogdenPublicationReady(db:DB){
  const {content,hash}=await publicationBundle();
  const r=(await db.query(`SELECT
   (SELECT content_hash FROM ogden_installs WHERE version=$1) AS hash,
-  (SELECT count(*)::int FROM ogden_items i WHERE i.id=ANY($2::text[]) AND i.review_status='approved') AS items,
-  (SELECT count(*)::int FROM ogden_items i WHERE i.id=ANY($2::text[]) AND EXISTS(
+  (SELECT count(*)::int FROM ogden_items i JOIN unnest($2::text[],$3::int[]) e(id,version)
+   ON i.id=e.id AND i.version=e.version WHERE i.review_status='approved') AS items,
+  (SELECT count(*)::int FROM ogden_items i JOIN unnest($2::text[],$3::int[]) e(id,version)
+   ON i.id=e.id AND i.version=e.version WHERE i.review_status='approved' AND EXISTS(
    SELECT 1 FROM ogden_content_reviews r WHERE r.item_id=i.id AND r.version=i.version AND r.status='approved'
-  )) AS reviewed`,[content.version,content.items.map(x=>x.id)])).rows[0];
+  )) AS reviewed`,[content.version,content.items.map(x=>x.id),content.items.map(x=>x.version)])).rows[0];
  return r?.hash===hash&&r.items===content.items.length&&r.reviewed===content.items.length;
 }
 export async function prepareOgdenPublication(db:DB,enabled:boolean){

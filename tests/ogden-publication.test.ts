@@ -1,6 +1,10 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
+import {readFile} from 'node:fs/promises';
+import {loadOgden} from '../src/ogden-content.ts';
+import {installOgden} from '../src/install-ogden.ts';
+import {ogden} from '../src/ogden.ts';
 import {ogdenPublished,prepareOgdenPublication,ogdenPublicationReady} from '../src/ogden-publication.ts';
 import {prepareDatabase} from '../src/setup.ts';
 import {createApplication} from '../src/http.ts';
@@ -78,5 +82,38 @@ test('publication import failure rolls back all 2.0 content, keeps readiness fal
   assert.equal(await ogdenPublicationReady(db),false);assert.equal((await db.query('SELECT count(*)::int n FROM ogden_items')).rows[0].n,0);assert.equal((await db.query('SELECT count(*)::int n FROM ogden_installs')).rows[0].n,0);
   assert.deepEqual((await db.query('SELECT * FROM users ORDER BY id')).rows,before);
   assert.equal((await prepareOgdenPublication(db,true)).installed,true);assert.equal(await ogdenPublicationReady(db),true);assert.deepEqual((await db.query('SELECT * FROM users ORDER BY id')).rows,before);
+ }finally{await cleanup();}
+});
+
+test('publication readiness rejects version drift even when install hash, approved count and current reviews still match',async()=>{
+ const {db,cleanup}=await isolatedDatabase();try{
+  await prepareDatabase(db);await prepareOgdenPublication(db,true);assert.equal(await ogdenPublicationReady(db),true);
+  const item=(await db.query("SELECT * FROM ogden_items WHERE id='ow-get'")).rows[0];
+  const version=item.version+100;
+  await db.query('INSERT INTO ogden_item_versions VALUES($1,$2,$3)',[item.id,version,JSON.stringify({...item.payload,version})]);
+  await db.query("INSERT INTO ogden_content_reviews(id,item_id,version,status,reviewer,notes) VALUES('round6-version-fixture',$1,$2,'approved','test fixture, not a human reviewer','test-only version drift')",[item.id,version]);
+  await db.query('UPDATE ogden_items SET version=$1 WHERE id=$2',[version,item.id]);
+  assert.equal(await ogdenPublicationReady(db),false);
+  await assert.rejects(()=>prepareOgdenPublication(db,true),/not ready/,'a stale application must not downgrade newer content or claim readiness');
+  assert.equal((await db.query('SELECT version FROM ogden_items WHERE id=$1',[item.id])).rows[0].version,version);
+  assert.equal((await db.query('SELECT count(*)::int n FROM ogden_item_versions WHERE item_id=$1',[item.id])).rows[0].n,2);
+ }finally{await cleanup();}
+});
+
+test('actual v7 seem teaching history and review survive the v8 correction without changing learner records',async()=>{
+ const {db,cleanup}=await isolatedDatabase();try{
+  await prepareDatabase(db);const current=await loadOgden();
+  const fixture=JSON.parse(await readFile(new URL('./fixtures/ogden-v7-seem.json',import.meta.url),'utf8'));
+  const previous=structuredClone(current);previous.version=fixture.contentVersion;previous.items[previous.items.findIndex(x=>x.id==='op-seem')]=fixture.item;
+  const oldReviews=JSON.parse(await readFile(new URL('../data/ogden/review-history/mbe-modern-850-v7-final-audit.json',import.meta.url),'utf8'));
+  await installOgden(db,previous,oldReviews);const id=randomUUID();await db.query("INSERT INTO users(id,email,password_hash) VALUES($1,$2,'fixture-only')",[id,id+'@example.invalid']);
+  await ogden({db,userId:id,method:'POST',path:'/api/ogden/results',body:{item_id:'ow-seem',mode:'study',status:'mastered',request_id:randomUUID()}});
+  const snapshot=async()=>({progress:(await db.query('SELECT * FROM ogden_progress')).rows,practice:(await db.query('SELECT * FROM ogden_practice_progress')).rows,events:(await db.query('SELECT * FROM ogden_practice_events')).rows});const before=await snapshot();
+  const oldReview=(await db.query('SELECT * FROM ogden_content_reviews WHERE item_id=$1 AND version=$2',['op-seem',fixture.item.version])).rows;
+  const reviews=JSON.parse(await readFile(new URL('../data/ogden/reviews.json',import.meta.url),'utf8'));await installOgden(db,current,reviews);await installOgden(db,current,reviews);
+  assert.deepEqual(await snapshot(),before);
+  assert.deepEqual((await db.query('SELECT * FROM ogden_content_reviews WHERE item_id=$1 AND version=$2',['op-seem',fixture.item.version])).rows,oldReview);
+  assert.deepEqual((await db.query('SELECT payload FROM ogden_item_versions WHERE item_id=$1 AND version=$2',['op-seem',fixture.item.version])).rows[0].payload,fixture.item);
+  const next=(await db.query("SELECT * FROM ogden_items WHERE id='op-seem'")).rows[0];assert.equal(next.version,fixture.item.version+1);assert.match(next.payload.note,/seem to be/);assert.doesNotMatch(next.payload.note,/不要加 be/);
  }finally{await cleanup();}
 });

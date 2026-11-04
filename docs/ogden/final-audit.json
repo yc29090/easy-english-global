@@ -1,6 +1,6 @@
 {
-  "version": "mbe-modern-850-v7-final-audit",
-  "contentDigest": "50e7e408ac909977096d95cfc10c99c0ce994070da00f3edab62b2450340e9aa",
+  "version": "mbe-modern-850-v8-preflight",
+  "contentDigest": "eb29402c7482cb37604e5f034db6daeb91cec01cb2c6f7025117bc44a64181e0",
   "auditIdentity": "Codex (AI developer)",
   "independentHumanReviews": 0,
   "counts": {
@@ -59,7 +59,7 @@
   "limitations": [
     "Structure and provenance checks are automated; language decisions are developer self-check, not independent teacher approval.",
     "Core token coverage is not semantic scoring or learner mastery.",
-    "Android/iPhone real-device, actual Neon branch and production acceptance remain unexecuted."
+    "This content audit does not execute device, Neon restore or production acceptance; consult the separately dated infrastructure and device records."
   ],
   "items": [
     {
@@ -350,14 +350,14 @@
     },
     {
       "id": "op-seem",
-      "version": 5,
-      "digest": "ed011bfc3caa6d05328b05685025b58675e2d885727270fca5d338105afe7f9b",
+      "version": 6,
+      "digest": "fa2bef1733a56d2b62d03e07ecf35a3e673629a02d81bfb71f1a9156a420565c",
       "kind": "operator",
       "structure": "validated",
       "languageReview": "Codex developer self-check",
       "independentHuman": false,
-      "reviewedAt": "2026-11-04T10:23:33.736Z",
-      "notes": "已逐条检查基础含义、功能差异、组合、完整例句；区分be/do/have辅助作用及may/will情态功能。"
+      "reviewedAt": "2026-11-04T14:05:55.172Z",
+      "notes": "已逐条检查基础含义、功能差异、组合、完整例句；区分be/do/have辅助作用及may/will情态功能。 第六轮Codex开发者复查：seem可直接接形容词，也可接to be加形容词；删除绝对禁止be的说明。独立真人复核未执行。"
     },
     {
       "id": "op-take",

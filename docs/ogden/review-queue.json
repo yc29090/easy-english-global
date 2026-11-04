@@ -1,6 +1,6 @@
 {
-  "version": "mbe-modern-850-v7-final-audit",
-  "contentDigest": "50e7e408ac909977096d95cfc10c99c0ce994070da00f3edab62b2450340e9aa",
+  "version": "mbe-modern-850-v8-preflight",
+  "contentDigest": "eb29402c7482cb37604e5f034db6daeb91cec01cb2c6f7025117bc44a64181e0",
   "sources": [
     {
       "id": "secondary-bnspalding",
@@ -11158,17 +11158,17 @@
     },
     {
       "id": "op-seem",
-      "version": 5,
-      "digest": "ed011bfc3caa6d05328b05685025b58675e2d885727270fca5d338105afe7f9b",
+      "version": 6,
+      "digest": "fa2bef1733a56d2b62d03e07ecf35a3e673629a02d81bfb71f1a9156a420565c",
       "content": {
         "id": "op-seem",
         "kind": "operator",
-        "version": 5,
+        "version": 6,
         "english": "seem",
         "chinese": "似乎",
         "wordId": "ow-seem",
         "role": "联系",
-        "note": "描述印象，不等于确定事实；不要加 be。",
+        "note": "seem + 形容词：You seem tired。seem to be + 形容词：You seem to be tired。两种说法都正确，表示印象而非确认事实。",
         "examples": [
           {
             "english": "You seem tired.",
@@ -11285,7 +11285,8 @@
           "替换表达",
           "自主表达",
           "主动复习"
-        ]
+        ],
+        "reviewNote": "第六轮复查：修正“不要加be”的绝对化规则，明确seem tired和seem to be tired均正确。"
       },
       "humanReviewer": null,
       "decision": "pending",

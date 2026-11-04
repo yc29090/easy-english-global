@@ -1,0 +1,130 @@
+{
+  "contentVersion": "mbe-modern-850-v7-final-audit",
+  "item": {
+    "id": "op-seem",
+    "kind": "operator",
+    "version": 5,
+    "english": "seem",
+    "chinese": "似乎",
+    "wordId": "ow-seem",
+    "role": "联系",
+    "note": "描述印象，不等于确定事实；不要加 be。",
+    "examples": [
+      {
+        "english": "You seem tired.",
+        "chinese": "你似乎累了。"
+      }
+    ],
+    "combinations": [
+      {
+        "english": "seem tired",
+        "chinese": "似乎累了",
+        "examples": [
+          {
+            "english": "You seem tired.",
+            "chinese": "你似乎累了。"
+          }
+        ]
+      },
+      {
+        "english": "seem happy",
+        "chinese": "似乎很高兴",
+        "examples": [
+          {
+            "english": "You seem happy.",
+            "chinese": "你似乎很高兴。"
+          }
+        ]
+      },
+      {
+        "english": "seem ready",
+        "chinese": "似乎准备好了",
+        "examples": [
+          {
+            "english": "You seem ready.",
+            "chinese": "你似乎准备好了。"
+          }
+        ]
+      },
+      {
+        "english": "seem busy",
+        "chinese": "似乎很忙",
+        "examples": [
+          {
+            "english": "You seem busy.",
+            "chinese": "你似乎很忙。"
+          }
+        ]
+      },
+      {
+        "english": "seem to work",
+        "chinese": "似乎正常运作",
+        "examples": [
+          {
+            "english": "The phone seems to work now.",
+            "chinese": "手机现在似乎能用了。"
+          }
+        ]
+      },
+      {
+        "english": "seem to know",
+        "chinese": "似乎知道",
+        "examples": [
+          {
+            "english": "You seem to know the way.",
+            "chinese": "你似乎知道路。"
+          }
+        ]
+      }
+    ],
+    "reviewStatus": "approved",
+    "order": 9,
+    "reviewMethod": "developer-self-check",
+    "practiceCombinationIds": [
+      "cb-seem-tired",
+      "cb-seem-happy",
+      "cb-seem-ready",
+      "cb-seem-busy",
+      "cb-seem-to-work",
+      "cb-seem-to-know"
+    ],
+    "patternIds": [
+      "pt-seem",
+      "pt-state"
+    ],
+    "expressionTaskIds": [
+      "ex-op-seem-work"
+    ],
+    "variants": [
+      {
+        "id": "op-seem-variant-1",
+        "label": "似乎累了",
+        "english": "You seem tired.",
+        "chinese": "你似乎累了。",
+        "reviewStatus": "approved"
+      },
+      {
+        "id": "op-seem-variant-2",
+        "label": "似乎很高兴",
+        "english": "You seem happy.",
+        "chinese": "你似乎很高兴。",
+        "reviewStatus": "approved"
+      },
+      {
+        "id": "op-seem-variant-3",
+        "label": "似乎准备好了",
+        "english": "You seem ready.",
+        "chinese": "你似乎准备好了。",
+        "reviewStatus": "approved"
+      }
+    ],
+    "learningSteps": [
+      "基础功能",
+      "常见组合",
+      "完整例句",
+      "替换表达",
+      "自主表达",
+      "主动复习"
+    ]
+  }
+}

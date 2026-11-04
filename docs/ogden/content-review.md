@@ -1,6 +1,6 @@
 # 教材人工审查清单
 
-版本：mbe-modern-850-v7-final-audit。活动教材1165条，其中850个核心词；句型内含198条替换表达，不另计核心词。开发者自查通过1165条，独立真人审核0条。
+版本：mbe-modern-850-v8-preflight。活动教材1165条，其中850个核心词；句型内含198条替换表达，不另计核心词。开发者自查通过1165条，独立真人审核0条。
 
 已依用户明确授权逐条开发者自查自然度、准确性、中译、零基础难度、辅助词及发音策略；未冒称独立真人审阅或真机音质验收。完整数据与版本摘要见 review-queue.json。
 
@@ -56,10 +56,10 @@
 | op-put-variant-1 / 父版本5 | 受控替换 | Put it here, please. | 请把它放这里。 | 随父句型自查通过 |
 | op-put-variant-2 / 父版本5 | 受控替换 | Put it on the table, please. | 请把它放到桌上。 | 随父句型自查通过 |
 | op-put-variant-3 / 父版本5 | 受控替换 | Please put it in the bag. | 请把它放进包里。 | 随父句型自查通过 |
-| op-seem / 5 | operator | seem<br>You seem tired.<br>seem tired<br>seem happy<br>seem ready<br>seem busy<br>seem to work<br>seem to know | 似乎 | 开发者自查通过 |
-| op-seem-variant-1 / 父版本5 | 受控替换 | You seem tired. | 你似乎累了。 | 随父句型自查通过 |
-| op-seem-variant-2 / 父版本5 | 受控替换 | You seem happy. | 你似乎很高兴。 | 随父句型自查通过 |
-| op-seem-variant-3 / 父版本5 | 受控替换 | You seem ready. | 你似乎准备好了。 | 随父句型自查通过 |
+| op-seem / 6 | operator | seem<br>You seem tired.<br>seem tired<br>seem happy<br>seem ready<br>seem busy<br>seem to work<br>seem to know | 似乎 | 开发者自查通过 |
+| op-seem-variant-1 / 父版本6 | 受控替换 | You seem tired. | 你似乎累了。 | 随父句型自查通过 |
+| op-seem-variant-2 / 父版本6 | 受控替换 | You seem happy. | 你似乎很高兴。 | 随父句型自查通过 |
+| op-seem-variant-3 / 父版本6 | 受控替换 | You seem ready. | 你似乎准备好了。 | 随父句型自查通过 |
 | op-take / 5 | operator | take<br>Please take this bag.<br>take this bag<br>take a bus<br>take some time<br>take a taxi<br>take a break<br>take a picture | 拿；带；花费 | 开发者自查通过 |
 | op-take-variant-1 / 父版本5 | 受控替换 | Please take this bag. | 请拿这个包。 | 随父句型自查通过 |
 | op-take-variant-2 / 父版本5 | 受控替换 | We can take a bus. | 我们可以坐公交车。 | 随父句型自查通过 |

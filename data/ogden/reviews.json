@@ -313,14 +313,14 @@
   },
   {
     "id": "op-seem",
-    "version": 5,
-    "digest": "ed011bfc3caa6d05328b05685025b58675e2d885727270fca5d338105afe7f9b",
+    "version": 6,
+    "digest": "fa2bef1733a56d2b62d03e07ecf35a3e673629a02d81bfb71f1a9156a420565c",
     "reviewerKind": "developer-self-check",
     "reviewer": "Codex (AI developer)",
     "humanReviewer": null,
     "decision": "approved",
-    "notes": "已逐条检查基础含义、功能差异、组合、完整例句；区分be/do/have辅助作用及may/will情态功能。",
-    "reviewedAt": "2026-11-04T10:23:33.736Z",
+    "notes": "已逐条检查基础含义、功能差异、组合、完整例句；区分be/do/have辅助作用及may/will情态功能。 第六轮Codex开发者复查：seem可直接接形容词，也可接to be加形容词；删除绝对禁止be的说明。独立真人复核未执行。",
+    "reviewedAt": "2026-11-04T14:05:55.172Z",
     "authorization": "用户明确要求教材审核清单由开发者进行自查"
   },
   {

@@ -1,6 +1,6 @@
 {
-  "version": "mbe-modern-850-v7-final-audit",
-  "contentDigest": "50e7e408ac909977096d95cfc10c99c0ce994070da00f3edab62b2450340e9aa",
+  "version": "mbe-modern-850-v8-preflight",
+  "contentDigest": "eb29402c7482cb37604e5f034db6daeb91cec01cb2c6f7025117bc44a64181e0",
   "coreWords": 850,
   "taskItems": 140,
   "uniqueIntents": 131,
