@@ -20,3 +20,8 @@ test('broken device voice discovery or utterance constructor cannot crash the le
  const f=fixture();f.env.speechSynthesis.getVoices=()=>{throw Error('device');};const s=createOgdenSpeech(f.env);let notice='';assert.equal(s.play('Hello',{notify:x=>notice=x}),false);assert.match(notice,/语音列表/);s.stop();
  const g=fixture();g.env.SpeechSynthesisUtterance=class{constructor(){throw Error('device');}};assert.equal(createOgdenSpeech(g.env).play('Hello',{notify:x=>notice=x}),false);assert.match(notice,/无法启动/);
 });
+test('voice list reordering retains the local voice, every rate names it, removal stops repetition and old end events cannot overlap',()=>{
+ const f=fixture(),s=createOgdenSpeech(f.env);let notice='';s.play('One');const original=f.spoken.at(-1);original.onstart();
+ f.setVoices([{lang:'en-US',name:'Other US',localService:true},f.us]);s.play('Two',{slow:true,repeat:true,notify:x=>notice=x});assert.equal(f.spoken.at(-1).voice,f.us);assert.match(notice,/Local US/);
+ const u=f.spoken.at(-1);u.onstart();u.onend();const count=f.timers.size;u.onend();u.onerror();assert.equal(f.timers.size,count);const timer=[...f.timers.values()][0];f.setVoices([{lang:'en-US',localService:false,name:'Remote'}]);timer.fn();assert.equal(f.spoken.length,2);assert.match(notice,/已不可用/);assert.equal(f.timers.size,0);
+});
