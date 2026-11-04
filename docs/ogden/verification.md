@@ -1,3 +1,7 @@
+# 第四轮当前验证
+
+mbe-modern-850-v7-final-audit：本地144项中140通过、0失败、4项真实PostgreSQL专属跳过；手机尺寸Chromium10项通过，管理员13项通过。最终CI包括真实连接中断及pg_dump/pg_restore，实际结果见PR当前提交与round4-acceptance.md。以下为历史记录，不替代本轮结果。
+
 # 第三轮当前验证
 
 mbe-modern-850-v6：850词、1165教学条目、198受控替换。本地131项中128通过、0失败、3个真实多连接用例跳过；手机尺寸Chromium8项通过。最终CI见PR最新提交和round3-acceptance.md，不用旧124项代替。

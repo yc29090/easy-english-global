@@ -1,5 +1,5 @@
 {
-  "version": "mbe-modern-850-v6",
+  "version": "mbe-modern-850-v7-final-audit",
   "targetCoreCount": 850,
   "releaseStatus": "developer-self-checked-preview",
   "sources": [
@@ -8782,7 +8782,7 @@
     {
       "id": "ow-get",
       "kind": "word",
-      "version": 5,
+      "version": 6,
       "english": "get",
       "chinese": "得到；到达",
       "category": "动作",
@@ -8826,7 +8826,8 @@
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
       "forms": [
         "got",
-        "getting"
+        "getting",
+        "gets"
       ],
       "scenarioIds": [
         "daily-actions"
@@ -8916,7 +8917,7 @@
     {
       "id": "ow-go",
       "kind": "word",
-      "version": 5,
+      "version": 6,
       "english": "go",
       "chinese": "去",
       "category": "动作",
@@ -8961,7 +8962,8 @@
       "forms": [
         "went",
         "gone",
-        "going"
+        "going",
+        "goes"
       ],
       "scenarioIds": [
         "daily-actions"
@@ -13573,7 +13575,7 @@
     {
       "id": "ow-you",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "you",
       "chinese": "你；你们",
       "category": "代词",
@@ -13616,7 +13618,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "yourself"
+      ],
       "scenarioIds": [
         "self-introduction"
       ],
@@ -13635,7 +13639,7 @@
     {
       "id": "ow-we",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "we",
       "chinese": "我们",
       "category": "代词",
@@ -13678,7 +13682,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "us"
+      ],
       "scenarioIds": [
         "self-introduction"
       ],
@@ -13818,7 +13824,7 @@
     {
       "id": "ow-it",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "it",
       "chinese": "它；这件事",
       "category": "代词",
@@ -13861,7 +13867,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "its"
+      ],
       "scenarioIds": [
         "self-introduction"
       ],
@@ -13880,7 +13888,7 @@
     {
       "id": "ow-they",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "they",
       "chinese": "他们；她们；它们",
       "category": "代词",
@@ -13923,7 +13931,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "them"
+      ],
       "scenarioIds": [
         "self-introduction"
       ],
@@ -13941,7 +13951,7 @@
     {
       "id": "ow-a",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "a",
       "chinese": "一个；一件",
       "category": "限定词",
@@ -13984,7 +13994,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "an"
+      ],
       "scenarioIds": [
         "daily-actions"
       ],
@@ -14066,7 +14078,7 @@
     {
       "id": "ow-this",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "this",
       "chinese": "这；这个",
       "category": "限定词与代词",
@@ -14109,7 +14121,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "these"
+      ],
       "scenarioIds": [
         "daily-actions"
       ],
@@ -14130,7 +14144,7 @@
     {
       "id": "ow-that",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "that",
       "chinese": "那；那个",
       "category": "限定词与代词",
@@ -14173,7 +14187,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "those"
+      ],
       "scenarioIds": [
         "daily-actions"
       ],
@@ -16291,7 +16307,7 @@
     {
       "id": "ow-house",
       "kind": "word",
-      "version": 4,
+      "version": 5,
       "english": "house",
       "chinese": "房子",
       "category": "生活地点",
@@ -16334,7 +16350,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "houses"
+      ],
       "scenarioIds": [
         "time-place"
       ],
@@ -19973,7 +19991,7 @@
     {
       "id": "ow-my",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "my",
       "chinese": "我的",
       "category": "所属关系",
@@ -20005,7 +20023,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "mine"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -20036,7 +20056,7 @@
     {
       "id": "ow-your",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "your",
       "chinese": "你的；你们的",
       "category": "所属关系",
@@ -20068,7 +20088,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "yours"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -20099,7 +20121,7 @@
     {
       "id": "ow-our",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "our",
       "chinese": "我们的",
       "category": "所属关系",
@@ -20131,7 +20153,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "ours"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -20162,7 +20186,7 @@
     {
       "id": "ow-their",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "their",
       "chinese": "他们的；她们的；它们的",
       "category": "所属关系",
@@ -20194,7 +20218,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "theirs"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -20854,7 +20880,7 @@
     {
       "id": "ow-write",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "write",
       "chinese": "写",
       "category": "日常动作",
@@ -20887,7 +20913,9 @@
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
       "forms": [
-        "writing"
+        "writing",
+        "wrote",
+        "written"
       ],
       "pronunciation": {
         "locale": "en-US",
@@ -21499,7 +21527,7 @@
     {
       "id": "ow-live",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "live",
       "chinese": "居住（这里用动词读音）",
       "category": "人物介绍",
@@ -21531,7 +21559,10 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "lived",
+        "lives"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -21875,7 +21906,7 @@
     {
       "id": "ow-man",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "man",
       "chinese": "男人；成年男性",
       "category": "人物",
@@ -21907,7 +21938,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "men"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -21938,7 +21971,7 @@
     {
       "id": "ow-woman",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "woman",
       "chinese": "女人；成年女性",
       "category": "人物",
@@ -21970,7 +22003,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "women"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -25227,7 +25262,7 @@
     {
       "id": "ow-table",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "table",
       "chinese": "桌子",
       "category": "生活物品",
@@ -25259,7 +25294,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "tables"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -25997,7 +26034,7 @@
     {
       "id": "ow-shop",
       "kind": "word",
-      "version": 3,
+      "version": 4,
       "english": "shop",
       "chinese": "商店",
       "category": "购物地点",
@@ -26029,7 +26066,9 @@
       "reviewStatus": "approved",
       "reviewMethod": "developer-self-check",
       "reviewNote": "已逐条自查中译、词类、组合与例句，并按教学语境选定一个CMU主读（read/live/use显式选用动词用法）。CMU音素标记与本机合成声音分开，真机耳听尚未验收；词形不另计核心词。",
-      "forms": [],
+      "forms": [
+        "shops"
+      ],
       "pronunciation": {
         "locale": "en-US",
         "source": "browser-local-voice",
@@ -32180,7 +32219,7 @@
     {
       "id": "ow-color",
       "kind": "word",
-      "version": 2,
+      "version": 3,
       "english": "color",
       "chinese": "颜色",
       "category": "人物与事物",
@@ -32227,8 +32266,7 @@
         "contextPlayback": false
       },
       "forms": [
-        "colours",
-        "coloured"
+        "colors"
       ],
       "teachingStage": 6,
       "teachingOrder": 60236,
@@ -34768,7 +34806,7 @@
     {
       "id": "ow-close",
       "kind": "word",
-      "version": 2,
+      "version": 3,
       "english": "close",
       "chinese": "关闭",
       "category": "日常动作",
@@ -34815,7 +34853,8 @@
         "contextPlayback": true
       },
       "forms": [
-        "closes"
+        "closes",
+        "closed"
       ],
       "teachingStage": 6,
       "teachingOrder": 60276,
@@ -35094,7 +35133,7 @@
     {
       "id": "ow-return",
       "kind": "word",
-      "version": 2,
+      "version": 3,
       "english": "return",
       "chinese": "返回；退还",
       "category": "交通与旅行",
@@ -35141,7 +35180,8 @@
         "contextPlayback": false
       },
       "forms": [
-        "returned"
+        "returned",
+        "returns"
       ],
       "teachingStage": 6,
       "teachingOrder": 60281,
@@ -37173,7 +37213,7 @@
     {
       "id": "ex-swap-explain",
       "kind": "expression",
-      "version": 2,
+      "version": 3,
       "english": "It is a thing for opening doors.",
       "chinese": "这是用来开门的东西。",
       "level": 2,
@@ -37206,7 +37246,7 @@
       ],
       "supportWords": [],
       "answerComparison": "第一句说明用途；第二句从使用者动作说明。替换后的意思以上方中文为准。",
-      "intentId": "swap-explain",
+      "intentId": "explain-key-use",
       "referenceCoverage": [
         {
           "english": "It is a thing for opening doors.",
@@ -38548,7 +38588,7 @@
     {
       "id": "ow-body",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "body",
       "chinese": "身体",
       "category": "名词",
@@ -38594,7 +38634,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "bodies"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60312,
       "dependencies": {
@@ -38869,7 +38911,7 @@
     {
       "id": "ow-nose",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "nose",
       "chinese": "鼻子",
       "category": "名词",
@@ -38915,7 +38957,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "noses"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60317,
       "dependencies": {
@@ -39512,7 +39556,7 @@
     {
       "id": "ow-heart",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "heart",
       "chinese": "心脏；内心",
       "category": "名词",
@@ -39558,7 +39602,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "hearts"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60327,
       "dependencies": {
@@ -40849,7 +40895,7 @@
     {
       "id": "ow-bring",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "bring",
       "chinese": "带来",
       "category": "动词",
@@ -40895,7 +40941,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "brought"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60348,
       "dependencies": {
@@ -42709,7 +42757,7 @@
     {
       "id": "ow-onion",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "onion",
       "chinese": "洋葱",
       "category": "名词",
@@ -42755,7 +42803,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "onions"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60377,
       "dependencies": {
@@ -47104,7 +47154,7 @@
     {
       "id": "ow-kilometer",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "kilometer",
       "chinese": "千米；公里",
       "category": "名词",
@@ -47150,7 +47200,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "kilometers"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60445,
       "dependencies": {
@@ -48959,7 +49011,7 @@
     {
       "id": "ow-weekend",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "weekend",
       "chinese": "周末",
       "category": "名词",
@@ -49005,7 +49057,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "weekends"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60474,
       "dependencies": {
@@ -55344,7 +55398,7 @@
     {
       "id": "ow-both",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "both",
       "chinese": "两者都",
       "category": "限定词/代词",
@@ -55395,13 +55449,12 @@
       "teachingOrder": 60574,
       "dependencies": {
         "prerequisiteWordIds": [
+          "ow-color",
           "ow-i",
           "ow-like"
         ],
         "previewWordIds": [],
-        "supplementalTokens": [
-          "colors"
-        ]
+        "supplementalTokens": []
       }
     },
     {
@@ -64361,7 +64414,7 @@
     {
       "id": "ow-animal",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "animal",
       "chinese": "动物",
       "category": "名词",
@@ -64407,7 +64460,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "animals"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60714,
       "dependencies": {
@@ -64425,7 +64480,7 @@
     {
       "id": "ow-bird",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "bird",
       "chinese": "鸟",
       "category": "名词",
@@ -64471,7 +64526,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "birds"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60715,
       "dependencies": {
@@ -65268,7 +65325,7 @@
     {
       "id": "ow-look",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "look",
       "chinese": "看；看起来",
       "category": "动词",
@@ -65315,7 +65372,8 @@
         "contextPlayback": false
       },
       "forms": [
-        "looking"
+        "looking",
+        "looks"
       ],
       "teachingStage": 6,
       "teachingOrder": 60728,
@@ -65526,7 +65584,7 @@
     {
       "id": "ow-learn",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "learn",
       "chinese": "学习",
       "category": "动词",
@@ -65572,7 +65630,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "learned"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60732,
       "dependencies": {
@@ -67311,7 +67371,7 @@
     {
       "id": "ow-play",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "play",
       "chinese": "玩；演奏",
       "category": "动词",
@@ -67357,7 +67417,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "playing"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60760,
       "dependencies": {
@@ -68399,7 +68461,7 @@
     {
       "id": "ow-charge",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "charge",
       "chinese": "充电；收费",
       "category": "动词",
@@ -68445,7 +68507,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "charged"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60777,
       "dependencies": {
@@ -70462,7 +70526,7 @@
     {
       "id": "ow-line",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "line",
       "chinese": "行；队伍",
       "category": "名词",
@@ -70508,7 +70572,9 @@
         "dictionaryNote": "固定CMU词典的美式音素资料；不决定设备合成声音，不是录音。",
         "contextPlayback": false
       },
-      "forms": [],
+      "forms": [
+        "lines"
+      ],
       "teachingStage": 6,
       "teachingOrder": 60809,
       "dependencies": {
@@ -77017,21 +77083,21 @@
     {
       "id": "ex-describe-oven",
       "kind": "expression",
-      "version": 1,
-      "english": "It is a machine that cooks food with heat inside.",
+      "version": 2,
+      "english": "It is a box that gets hot inside. You use it to cook food.",
       "chinese": "忘了“烤箱”：描述把食物放在里面加热烹饪的机器。",
       "level": 4,
       "domain": "daily-actions",
       "scenario": "life",
       "answers": [
-        "It is a machine that cooks food with heat inside.",
+        "It is a box that gets hot inside. You use it to cook food.",
         "You put food inside it and use heat to cook the food."
       ],
       "patternIds": [
         "pt-used-for"
       ],
       "intentId": "paraphrase-oven",
-      "answerComparison": "两句描述内部加热做饭，与保持食物冷的机器区分；还可用大小或指物补充。",
+      "answerComparison": "第一句用两个短句说明内部加热和做饭用途，第二句说明把食物放入并用热量烹饪的动作；可结合指物补充。",
       "evaluation": "self-assessment",
       "order": 102,
       "reviewStatus": "approved",
@@ -77039,18 +77105,21 @@
       "reviewNote": "第三轮逐句自查需求与多参考的对应、自然度及差异；用途解释允许上下文补充，不冒称唯一精确术语定义。",
       "referenceCoverage": [
         {
-          "english": "It is a machine that cooks food with heat inside.",
+          "english": "It is a box that gets hot inside. You use it to cook food.",
           "wordIds": [
             "ow-a",
             "ow-be",
+            "ow-box",
             "ow-cook",
             "ow-food",
-            "ow-heat",
+            "ow-get",
+            "ow-hot",
             "ow-inside",
             "ow-it",
-            "ow-machine",
             "ow-that",
-            "ow-with"
+            "ow-to",
+            "ow-use",
+            "ow-you"
           ],
           "supplementalTokens": [],
           "allCore": true
@@ -77078,18 +77147,19 @@
         "ow-a",
         "ow-and",
         "ow-be",
+        "ow-box",
         "ow-cook",
         "ow-food",
+        "ow-get",
         "ow-heat",
+        "ow-hot",
         "ow-inside",
         "ow-it",
-        "ow-machine",
         "ow-put",
         "ow-that",
         "ow-the",
         "ow-to",
         "ow-use",
-        "ow-with",
         "ow-you"
       ],
       "supportWords": []
@@ -77169,7 +77239,7 @@
     {
       "id": "ex-describe-battery",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "It is a small thing inside a phone that gives the phone power.",
       "chinese": "忘了“电池”：描述给手机提供电力的小物品。",
       "level": 4,
@@ -77212,6 +77282,7 @@
           "english": "The phone gets power from this small thing inside it.",
           "wordIds": [
             "ow-from",
+            "ow-get",
             "ow-inside",
             "ow-it",
             "ow-phone",
@@ -77221,16 +77292,15 @@
             "ow-thing",
             "ow-this"
           ],
-          "supplementalTokens": [
-            "gets"
-          ],
-          "allCore": false
+          "supplementalTokens": [],
+          "allCore": true
         }
       ],
       "wordIds": [
         "ow-a",
         "ow-be",
         "ow-from",
+        "ow-get",
         "ow-give",
         "ow-inside",
         "ow-it",
@@ -77242,9 +77312,7 @@
         "ow-thing",
         "ow-this"
       ],
-      "supportWords": [
-        "gets"
-      ]
+      "supportWords": []
     },
     {
       "id": "ex-describe-socket",
@@ -78378,7 +78446,7 @@
     {
       "id": "ex-describe-broken-screen",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "The part of my phone that shows pictures and words is broken.",
       "chinese": "忘了“屏幕”：说明手机显示图片和文字的那部分坏了。",
       "level": 4,
@@ -78386,13 +78454,13 @@
       "scenario": "life",
       "answers": [
         "The part of my phone that shows pictures and words is broken.",
-        "My phone is broken where you see the pictures and words."
+        "The part of my phone where I see words and pictures does not work."
       ],
       "patternIds": [
         "pt-not-work"
       ],
       "intentId": "paraphrase-screen",
-      "answerComparison": "第一句通过部件用途描述，第二句更口语化地指出损坏位置。",
+      "answerComparison": "第一句说明显示图片文字的部件坏了；第二句从使用者看到文字图片的位置说明不能正常运作。",
       "evaluation": "self-assessment",
       "order": 119,
       "reviewStatus": "approved",
@@ -78419,19 +78487,22 @@
           "allCore": true
         },
         {
-          "english": "My phone is broken where you see the pictures and words.",
+          "english": "The part of my phone where I see words and pictures does not work.",
           "wordIds": [
             "ow-and",
-            "ow-be",
-            "ow-broken",
+            "ow-do",
+            "ow-i",
             "ow-my",
+            "ow-not",
+            "ow-of",
+            "ow-part",
             "ow-phone",
             "ow-picture",
             "ow-see",
             "ow-the",
             "ow-where",
             "ow-word",
-            "ow-you"
+            "ow-work"
           ],
           "supplementalTokens": [],
           "allCore": true
@@ -78441,7 +78512,10 @@
         "ow-and",
         "ow-be",
         "ow-broken",
+        "ow-do",
+        "ow-i",
         "ow-my",
+        "ow-not",
         "ow-of",
         "ow-part",
         "ow-phone",
@@ -78452,7 +78526,7 @@
         "ow-the",
         "ow-where",
         "ow-word",
-        "ow-you"
+        "ow-work"
       ],
       "supportWords": []
     },
@@ -79999,8 +80073,6 @@
     "longer": "long",
     "shorter": "short",
     "families": "family",
-    "colours": "color",
-    "coloured": "color",
     "cameras": "camera",
     "workers": "worker",
     "lights": "light",
@@ -80085,7 +80157,9 @@
     "playing": "play",
     "wrote": "write",
     "written": "write",
-    "brought": "bring"
+    "brought": "bring",
+    "gets": "get",
+    "colors": "color"
   },
   "editorialSelectionChanges": [
     {

@@ -32,6 +32,11 @@ jobs:
           TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test
       - name: Verify hidden administrator input on a real pseudo-terminal
         run: npm run test:admin-terminal
+      - name: Restore a synthetic Ogden backup inside the existing CI PostgreSQL service
+        run: npm run ogden:backup-drill
+        env:
+          TEST_DATABASE_URL: postgres://easy:ci-only-password@localhost:5432/easy_test
+          OGDEN_BACKUP_CONTAINER: ${{ job.services.postgres.id }}
       - name: Test embedded PostgreSQL engine
         run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts tests/admin-init.test.ts tests/manual-payment.test.ts tests/gmail.test.ts tests/learning-v2-db.test.ts
       - name: Verify Render build with production dependencies only

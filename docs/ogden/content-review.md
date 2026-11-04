@@ -1,15 +1,15 @@
 # 教材人工审查清单
 
-版本：mbe-modern-850-v6。活动教材1165条，其中850个核心词；句型内含198条替换表达，不另计核心词。开发者自查通过1165条，独立真人审核0条。
+版本：mbe-modern-850-v7-final-audit。活动教材1165条，其中850个核心词；句型内含198条替换表达，不另计核心词。开发者自查通过1165条，独立真人审核0条。
 
 已依用户明确授权逐条开发者自查自然度、准确性、中译、零基础难度、辅助词及发音策略；未冒称独立真人审阅或真机音质验收。完整数据与版本摘要见 review-queue.json。
 
 | ID / 版本 | 类型 | 英文与参考表达 | 中文提示 | 状态 |
 |---|---|---|---|---|
 | ow-come / 5 | word | come<br>Come here, please.<br>come here | 来 | 开发者自查通过 |
-| ow-get / 5 | word | get<br>Can you get some water?<br>get some water | 得到；到达 | 开发者自查通过 |
+| ow-get / 6 | word | get<br>Can you get some water?<br>get some water | 得到；到达 | 开发者自查通过 |
 | ow-give / 5 | word | give<br>Please give me some time.<br>give me some time | 给 | 开发者自查通过 |
-| ow-go / 5 | word | go<br>We can go now.<br>go now | 去 | 开发者自查通过 |
+| ow-go / 6 | word | go<br>We can go now.<br>go now | 去 | 开发者自查通过 |
 | ow-keep / 5 | word | keep<br>Please keep the door open.<br>keep the door open | 保持；保留 | 开发者自查通过 |
 | ow-let / 5 | word | let<br>Let me help you.<br>let me help | 让；允许 | 开发者自查通过 |
 | ow-make / 5 | word | make<br>I can make some food.<br>make some food | 制作；使 | 开发者自查通过 |
@@ -158,16 +158,16 @@
 | pt-permission-go / 父版本6 | 受控替换 | May I go now? | 我现在可以走吗？ | 随父句型自查通过 |
 | pt-permission-take / 父版本6 | 受控替换 | May I take this? | 我可以拿这个吗？ | 随父句型自查通过 |
 | ow-i / 4 | word | I<br>I am here.<br>I am | 我 | 开发者自查通过 |
-| ow-you / 4 | word | you<br>Can you help me?<br>you can | 你；你们 | 开发者自查通过 |
-| ow-we / 4 | word | we<br>We have time.<br>we have | 我们 | 开发者自查通过 |
+| ow-you / 5 | word | you<br>Can you help me?<br>you can | 你；你们 | 开发者自查通过 |
+| ow-we / 5 | word | we<br>We have time.<br>we have | 我们 | 开发者自查通过 |
 | ow-he / 4 | word | he<br>He is here.<br>he is | 他 | 开发者自查通过 |
 | ow-she / 4 | word | she<br>She is ready.<br>she is | 她 | 开发者自查通过 |
-| ow-it / 4 | word | it<br>How much is it?<br>it is | 它；这件事 | 开发者自查通过 |
-| ow-they / 4 | word | they<br>They are here.<br>they are | 他们；她们；它们 | 开发者自查通过 |
-| ow-a / 4 | word | a<br>I have a ticket.<br>a ticket | 一个；一件 | 开发者自查通过 |
+| ow-it / 5 | word | it<br>How much is it?<br>it is | 它；这件事 | 开发者自查通过 |
+| ow-they / 5 | word | they<br>They are here.<br>they are | 他们；她们；它们 | 开发者自查通过 |
+| ow-a / 5 | word | a<br>I have a ticket.<br>a ticket | 一个；一件 | 开发者自查通过 |
 | ow-the / 4 | word | the<br>Where is the door?<br>the door | 指已知或特定的人或事物 | 开发者自查通过 |
-| ow-this / 4 | word | this<br>May I take this?<br>this bag | 这；这个 | 开发者自查通过 |
-| ow-that / 4 | word | that<br>That is my room.<br>that room | 那；那个 | 开发者自查通过 |
+| ow-this / 5 | word | this<br>May I take this?<br>this bag | 这；这个 | 开发者自查通过 |
+| ow-that / 5 | word | that<br>That is my room.<br>that room | 那；那个 | 开发者自查通过 |
 | ow-some / 4 | word | some<br>I need some water.<br>some water | 一些 | 开发者自查通过 |
 | ow-any / 4 | word | any<br>Do you have any questions?<br>any questions | 一些；任何 | 开发者自查通过 |
 | ow-not / 4 | word | not<br>I am not ready.<br>not ready | 不；不是 | 开发者自查通过 |
@@ -201,7 +201,7 @@
 | ow-father / 4 | word | father<br>My father is here.<br>my father | 父亲；爸爸 | 开发者自查通过 |
 | ow-child / 4 | word | child<br>The child needs water.<br>the child | 孩子 | 开发者自查通过 |
 | ow-home / 4 | word | home<br>I will go home now.<br>go home | 家；在家 | 开发者自查通过 |
-| ow-house / 4 | word | house<br>This house is small.<br>a small house | 房子 | 开发者自查通过 |
+| ow-house / 5 | word | house<br>This house is small.<br>a small house | 房子 | 开发者自查通过 |
 | ow-room / 4 | word | room<br>I need a room.<br>a room | 房间；空间 | 开发者自查通过 |
 | ow-door / 4 | word | door<br>Please keep the door open.<br>the door | 门 | 开发者自查通过 |
 | ow-water / 4 | word | water<br>Can you get some water?<br>some water | 水 | 开发者自查通过 |
@@ -259,10 +259,10 @@
 | ex-vegetarian / 4 | expression | I do not eat meat.<br>Can I have food with no meat? | 忘了素食这个词，说明你不吃肉 | 开发者自查通过 |
 | ex-charger / 4 | expression | My phone needs power. Can you help me?<br>I need something to give my phone power. | 忘了充电器这个词，解释你的手机需要电 | 开发者自查通过 |
 | ow-me / 3 | word | me<br>Please help me.<br>help me | 我（作宾语） | 开发者自查通过 |
-| ow-my / 3 | word | my<br>This is my bag.<br>my bag | 我的 | 开发者自查通过 |
-| ow-your / 3 | word | your<br>Is this your ticket?<br>your ticket | 你的；你们的 | 开发者自查通过 |
-| ow-our / 3 | word | our<br>This is our room.<br>our room | 我们的 | 开发者自查通过 |
-| ow-their / 3 | word | their<br>Their car is here.<br>their car | 他们的；她们的；它们的 | 开发者自查通过 |
+| ow-my / 4 | word | my<br>This is my bag.<br>my bag | 我的 | 开发者自查通过 |
+| ow-your / 4 | word | your<br>Is this your ticket?<br>your ticket | 你的；你们的 | 开发者自查通过 |
+| ow-our / 4 | word | our<br>This is our room.<br>our room | 我们的 | 开发者自查通过 |
+| ow-their / 4 | word | their<br>Their car is here.<br>their car | 他们的；她们的；它们的 | 开发者自查通过 |
 | ow-his / 3 | word | his<br>This is his phone.<br>his phone | 他的 | 开发者自查通过 |
 | ow-her / 3 | word | her<br>Please give her some water.<br>her name | 她；她的 | 开发者自查通过 |
 | ow-who / 3 | word | who<br>Who can help me?<br>who can help | 谁 | 开发者自查通过 |
@@ -273,7 +273,7 @@
 | ow-understand / 3 | word | understand<br>I do not understand.<br>do not understand | 理解；明白 | 开发者自查通过 |
 | ow-speak / 3 | word | speak<br>Can you speak slowly?<br>speak slowly | 说；讲某种语言 | 开发者自查通过 |
 | ow-read / 3 | word | read<br>Can you read this message?<br>read a message | 阅读（这里用原形） | 开发者自查通过 |
-| ow-write / 3 | word | write<br>Please write your name here.<br>write your name | 写 | 开发者自查通过 |
+| ow-write / 4 | word | write<br>Please write your name here.<br>write your name | 写 | 开发者自查通过 |
 | ow-eat / 3 | word | eat<br>I need something to eat.<br>something to eat | 吃 | 开发者自查通过 |
 | ow-drink / 3 | word | drink<br>I need something to drink.<br>something to drink | 喝；饮料 | 开发者自查通过 |
 | ow-pay / 3 | word | pay<br>Can I pay by card?<br>pay by card | 付款 | 开发者自查通过 |
@@ -283,14 +283,14 @@
 | ow-call / 3 | word | call<br>Can you call me tomorrow?<br>call me | 打电话；叫 | 开发者自查通过 |
 | ow-use / 3 | word | use<br>May I use your phone?<br>use your phone | 使用（这里用动词读音） | 开发者自查通过 |
 | ow-find / 3 | word | find<br>I cannot find my ticket.<br>find my ticket | 找到 | 开发者自查通过 |
-| ow-live / 3 | word | live<br>I live here.<br>live here | 居住（这里用动词读音） | 开发者自查通过 |
+| ow-live / 4 | word | live<br>I live here.<br>live here | 居住（这里用动词读音） | 开发者自查通过 |
 | ow-ask / 3 | word | ask<br>May I ask a question?<br>ask a question | 问；请求 | 开发者自查通过 |
 | ow-try / 3 | word | try<br>May I try this?<br>try this | 尝试 | 开发者自查通过 |
 | ow-walk / 3 | word | walk<br>Can we walk there?<br>walk there | 走路；步行 | 开发者自查通过 |
 | ow-stay / 3 | word | stay<br>I will stay here tonight.<br>stay here | 停留；住宿 | 开发者自查通过 |
 | ow-meet / 3 | word | meet<br>Can we meet tomorrow?<br>meet tomorrow | 见面 | 开发者自查通过 |
-| ow-man / 3 | word | man<br>That man can help you.<br>that man | 男人；成年男性 | 开发者自查通过 |
-| ow-woman / 3 | word | woman<br>That woman is my friend.<br>that woman | 女人；成年女性 | 开发者自查通过 |
+| ow-man / 4 | word | man<br>That man can help you.<br>that man | 男人；成年男性 | 开发者自查通过 |
+| ow-woman / 4 | word | woman<br>That woman is my friend.<br>that woman | 女人；成年女性 | 开发者自查通过 |
 | ow-boy / 3 | word | boy<br>The boy needs some food.<br>the boy | 男孩 | 开发者自查通过 |
 | ow-girl / 3 | word | girl<br>The girl is here.<br>the girl | 女孩 | 开发者自查通过 |
 | ow-parent / 3 | word | parent<br>I am a parent.<br>my parents | 父亲或母亲 | 开发者自查通过 |
@@ -342,7 +342,7 @@
 | ow-down / 3 | word | down<br>Please sit down.<br>sit down | 向下；在下面 | 开发者自查通过 |
 | ow-back / 3 | word | back<br>I will come back tomorrow.<br>come back | 回来；后面 | 开发者自查通过 |
 | ow-front / 3 | word | front<br>Please wait in front of the hotel.<br>in front of the hotel | 前面；前部 | 开发者自查通过 |
-| ow-table / 3 | word | table<br>The water is on the table.<br>on the table | 桌子 | 开发者自查通过 |
+| ow-table / 4 | word | table<br>The water is on the table.<br>on the table | 桌子 | 开发者自查通过 |
 | ow-chair / 3 | word | chair<br>Can I have a chair?<br>a chair | 椅子 | 开发者自查通过 |
 | ow-bed / 3 | word | bed<br>This room has one bed.<br>one bed | 床 | 开发者自查通过 |
 | ow-bag / 3 | word | bag<br>Where is my bag?<br>my bag | 包 | 开发者自查通过 |
@@ -354,7 +354,7 @@
 | ow-passport / 3 | word | passport<br>Here is my passport.<br>my passport | 护照 | 开发者自查通过 |
 | ow-station / 3 | word | station<br>Where is the station?<br>the station | 车站 | 开发者自查通过 |
 | ow-street / 3 | word | street<br>The hotel is on this street.<br>this street | 街道 | 开发者自查通过 |
-| ow-shop / 3 | word | shop<br>Where is the shop?<br>the shop | 商店 | 开发者自查通过 |
+| ow-shop / 4 | word | shop<br>Where is the shop?<br>the shop | 商店 | 开发者自查通过 |
 | ow-restaurant / 3 | word | restaurant<br>Is there a restaurant near here?<br>a restaurant | 餐馆 | 开发者自查通过 |
 | ow-toilet / 3 | word | toilet<br>Where is the toilet?<br>the toilet | 厕所；马桶 | 开发者自查通过 |
 | ow-bathroom / 3 | word | bathroom<br>Where is the bathroom?<br>the bathroom | 洗手间；浴室 | 开发者自查通过 |
@@ -520,7 +520,7 @@
 | ow-expensive / 2 | word | expensive<br>This room is too expensive.<br>too expensive | 昂贵的 | 开发者自查通过 |
 | ow-free / 2 | word | free<br>Is the water free?<br>free water | 免费的；有空的 | 开发者自查通过 |
 | ow-size / 2 | word | size<br>Do you have this in a smaller size?<br>a smaller size | 尺寸；大小 | 开发者自查通过 |
-| ow-color / 2 | word | color<br>What color is your bag?<br>the same color | 颜色 | 开发者自查通过 |
+| ow-color / 3 | word | color<br>What color is your bag?<br>the same color | 颜色 | 开发者自查通过 |
 | ow-red / 2 | word | red<br>My bag is red.<br>a red bag | 红色；红色的 | 开发者自查通过 |
 | ow-blue / 2 | word | blue<br>I want the blue one.<br>a blue shirt | 蓝色；蓝色的 | 开发者自查通过 |
 | ow-black / 2 | word | black<br>This is my black bag.<br>a black bag | 黑色；黑色的 | 开发者自查通过 |
@@ -560,12 +560,12 @@
 | ow-copy / 2 | word | copy<br>Please send me a copy.<br>send a copy | 副本；复制 | 开发者自查通过 |
 | ow-check / 2 | word | check<br>Can you check the price?<br>check the price | 检查 | 开发者自查通过 |
 | ow-show / 2 | word | show<br>Please show me your ticket.<br>show me | 给……看；展示 | 开发者自查通过 |
-| ow-close / 2 | word | close<br>Please close the door.<br>close the door | 关闭 | 开发者自查通过 |
+| ow-close / 3 | word | close<br>Please close the door.<br>close the door | 关闭 | 开发者自查通过 |
 | ow-start / 2 | word | start<br>When does the meeting start?<br>start work | 开始 | 开发者自查通过 |
 | ow-finish / 2 | word | finish<br>I will finish this today.<br>finish work | 完成；结束 | 开发者自查通过 |
 | ow-leave / 2 | word | leave<br>When will the train leave?<br>leave now | 离开 | 开发者自查通过 |
 | ow-arrive / 2 | word | arrive<br>When will the bus arrive?<br>arrive at the hotel | 到达 | 开发者自查通过 |
-| ow-return / 2 | word | return<br>I will return tomorrow.<br>return home | 返回；退还 | 开发者自查通过 |
+| ow-return / 3 | word | return<br>I will return tomorrow.<br>return home | 返回；退还 | 开发者自查通过 |
 | ow-again / 2 | word | again<br>Please say it again.<br>try again | 再次 | 开发者自查通过 |
 | ow-slowly / 2 | word | slowly<br>Please speak slowly.<br>speak slowly | 慢慢地 | 开发者自查通过 |
 | ow-together / 2 | word | together<br>We can go together.<br>work together | 一起 | 开发者自查通过 |
@@ -622,7 +622,7 @@
 | ex-swap-book / 2 | expression | I want to book a room.<br>I would like to book a room. | 我想预订一个房间。 | 开发者自查通过 |
 | ex-swap-too / 2 | expression | This is too expensive.<br>The price is too high. | 这太贵了。 | 开发者自查通过 |
 | ex-swap-check / 2 | expression | Please check the price.<br>Can you check the price, please? | 请核对价格。 | 开发者自查通过 |
-| ex-swap-explain / 2 | expression | It is a thing for opening doors.<br>You use it to open a door. | 这是用来开门的东西。 | 开发者自查通过 |
+| ex-swap-explain / 3 | expression | It is a thing for opening doors.<br>You use it to open a door. | 这是用来开门的东西。 | 开发者自查通过 |
 | ex-paraphrase-receipt / 2 | expression | I need a piece of paper that shows how much I paid.<br>Please give me a piece of paper showing how much I paid. | 不会说“收据”：请用简单英语说明，你需要一张纸，显示你付了多少钱。 | 开发者自查通过 |
 | ex-paraphrase-elevator / 2 | expression | Where is the thing that takes people up and down between floors?<br>I need to go up. Where is the thing that takes people to other floors? | 不会说“电梯”：说明你要找一个能在楼层之间载人的房间一样的东西。 | 开发者自查通过 |
 | ex-paraphrase-reservation / 2 | expression | I want to book a room now for tomorrow.<br>Can you keep a room for me for tomorrow? | 不会说“预订”：说明你想现在订好房间，明天入住。 | 开发者自查通过 |
@@ -642,12 +642,12 @@
 | ow-pet / 1 | word | pet<br>Do you have a pet?<br>have a pet | 宠物 | 开发者自查通过 |
 | ow-dog / 1 | word | dog<br>The dog is outside.<br>a small dog | 狗 | 开发者自查通过 |
 | ow-cat / 1 | word | cat<br>My cat is under the bed.<br>a white cat | 猫 | 开发者自查通过 |
-| ow-body / 1 | word | body<br>My whole body hurts.<br>the human body | 身体 | 开发者自查通过 |
+| ow-body / 2 | word | body<br>My whole body hurts.<br>the human body | 身体 | 开发者自查通过 |
 | ow-head / 1 | word | head<br>My head hurts.<br>my head | 头 | 开发者自查通过 |
 | ow-face / 1 | word | face<br>Please wash your face.<br>wash your face | 脸 | 开发者自查通过 |
 | ow-eye / 1 | word | eye<br>My eyes are tired.<br>my eyes | 眼睛 | 开发者自查通过 |
 | ow-ear / 1 | word | ear<br>I have pain in my ear.<br>my ear | 耳朵 | 开发者自查通过 |
-| ow-nose / 1 | word | nose<br>My nose is cold.<br>my nose | 鼻子 | 开发者自查通过 |
+| ow-nose / 2 | word | nose<br>My nose is cold.<br>my nose | 鼻子 | 开发者自查通过 |
 | ow-mouth / 1 | word | mouth<br>Please open your mouth.<br>open your mouth | 嘴 | 开发者自查通过 |
 | ow-tooth / 1 | word | tooth<br>This tooth hurts.<br>a tooth | 牙齿 | 开发者自查通过 |
 | ow-hand / 1 | word | hand<br>Please wash your hands.<br>wash your hands | 手 | 开发者自查通过 |
@@ -657,7 +657,7 @@
 | ow-finger / 1 | word | finger<br>I hurt my finger.<br>my finger | 手指 | 开发者自查通过 |
 | ow-hair / 1 | word | hair<br>My hair is wet.<br>long hair | 头发 | 开发者自查通过 |
 | ow-skin / 1 | word | skin<br>My skin is dry.<br>dry skin | 皮肤 | 开发者自查通过 |
-| ow-heart / 1 | word | heart<br>The heart moves blood around the body.<br>the heart | 心脏；内心 | 开发者自查通过 |
+| ow-heart / 2 | word | heart<br>The heart moves blood around the body.<br>the heart | 心脏；内心 | 开发者自查通过 |
 | ow-blood / 1 | word | blood<br>There is blood on my hand.<br>some blood | 血液 | 开发者自查通过 |
 | ow-voice / 1 | word | voice<br>I know that voice.<br>a quiet voice | 嗓音 | 开发者自查通过 |
 | ow-sound / 1 | word | sound<br>I can hear a sound.<br>a loud sound | 声音 | 开发者自查通过 |
@@ -678,7 +678,7 @@
 | ow-move / 1 | word | move<br>Can you move this chair?<br>move the chair | 移动 | 开发者自查通过 |
 | ow-carry / 1 | word | carry<br>Can you carry this bag?<br>carry a bag | 携带；搬 | 开发者自查通过 |
 | ow-hold / 1 | word | hold<br>Please hold my bag.<br>hold my hand | 拿着；握住 | 开发者自查通过 |
-| ow-bring / 1 | word | bring<br>Please bring some water.<br>bring water | 带来 | 开发者自查通过 |
+| ow-bring / 2 | word | bring<br>Please bring some water.<br>bring water | 带来 | 开发者自查通过 |
 | ow-turn / 1 | word | turn<br>Turn left here.<br>turn left | 转动；转弯 | 开发者自查通过 |
 | ow-follow / 1 | word | follow<br>Please follow me.<br>follow me | 跟随 | 开发者自查通过 |
 | ow-reach / 1 | word | reach<br>I cannot reach the window.<br>reach the window | 到达；够到 | 开发者自查通过 |
@@ -707,7 +707,7 @@
 | ow-orange / 1 | word | orange<br>I want an orange.<br>an orange | 橙子；橙色 | 开发者自查通过 |
 | ow-potato / 1 | word | potato<br>Can I have some potatoes?<br>some potatoes | 土豆 | 开发者自查通过 |
 | ow-tomato / 1 | word | tomato<br>There is a tomato in the salad.<br>a tomato | 西红柿 | 开发者自查通过 |
-| ow-onion / 1 | word | onion<br>No onion, please.<br>some onion | 洋葱 | 开发者自查通过 |
+| ow-onion / 2 | word | onion<br>No onion, please.<br>some onion | 洋葱 | 开发者自查通过 |
 | ow-bean / 1 | word | bean<br>I like rice and beans.<br>rice and beans | 豆子 | 开发者自查通过 |
 | ow-noodle / 1 | word | noodle<br>I would like some noodles.<br>a bowl of noodles | 面条 | 开发者自查通过 |
 | ow-pasta / 1 | word | pasta<br>Do you have pasta?<br>some pasta | 意大利面 | 开发者自查通过 |
@@ -775,7 +775,7 @@
 | ow-distance / 1 | word | distance<br>What is the distance to the hotel?<br>a short distance | 距离 | 开发者自查通过 |
 | ow-speed / 1 | word | speed<br>Please drive at a safe speed.<br>a safe speed | 速度 | 开发者自查通过 |
 | ow-mile / 1 | word | mile<br>The hotel is one mile away.<br>one mile | 英里 | 开发者自查通过 |
-| ow-kilometer / 1 | word | kilometer<br>The station is two kilometers away.<br>two kilometers | 千米；公里 | 开发者自查通过 |
+| ow-kilometer / 2 | word | kilometer<br>The station is two kilometers away.<br>two kilometers | 千米；公里 | 开发者自查通过 |
 | ow-way / 1 | word | way<br>Is this the way to the station?<br>the way home | 路；方法 | 开发者自查通过 |
 | ow-direction / 1 | word | direction<br>Which direction is the hotel in?<br>the right direction | 方向 | 开发者自查通过 |
 | ow-north / 1 | word | north<br>The station is north of here.<br>north of here | 北；北方 | 开发者自查通过 |
@@ -804,7 +804,7 @@
 | ow-second / 1 | word | second<br>Please wait a few seconds.<br>a few seconds | 秒 | 开发者自查通过 |
 | ow-date / 1 | word | date<br>What is the date today?<br>today's date | 日期 | 开发者自查通过 |
 | ow-calendar / 1 | word | calendar<br>Please check the calendar.<br>on the calendar | 日历 | 开发者自查通过 |
-| ow-weekend / 1 | word | weekend<br>I work on weekends.<br>this weekend | 周末 | 开发者自查通过 |
+| ow-weekend / 2 | word | weekend<br>I work on weekends.<br>this weekend | 周末 | 开发者自查通过 |
 | ow-season / 1 | word | season<br>What is your favorite season?<br>the rainy season | 季节 | 开发者自查通过 |
 | ow-spring / 1 | word | spring<br>I like spring.<br>in spring | 春天 | 开发者自查通过 |
 | ow-summer / 1 | word | summer<br>It is hot here in summer.<br>in summer | 夏天 | 开发者自查通过 |
@@ -904,7 +904,7 @@
 | ow-always / 1 | word | always<br>I always keep my ticket.<br>always ready | 总是 | 开发者自查通过 |
 | ow-once / 1 | word | once<br>Please say it once more.<br>once more | 一次 | 开发者自查通过 |
 | ow-twice / 1 | word | twice<br>I called twice.<br>twice a day | 两次 | 开发者自查通过 |
-| ow-both / 1 | word | both<br>I like both colors.<br>both colors | 两者都 | 开发者自查通过 |
+| ow-both / 2 | word | both<br>I like both colors.<br>both colors | 两者都 | 开发者自查通过 |
 | ow-each / 1 | word | each<br>How much is each ticket?<br>each ticket | 每一个 | 开发者自查通过 |
 | ow-another / 1 | word | another<br>Can I have another cup?<br>another cup | 另一个；再一个 | 开发者自查通过 |
 | ow-other / 1 | word | other<br>Do you have any other rooms?<br>other rooms | 其他的 | 开发者自查通过 |
@@ -1044,8 +1044,8 @@
 | ow-cousin / 1 | word | cousin<br>My cousin is visiting today.<br>my cousin | 堂兄弟姐妹；表兄弟姐妹 | 开发者自查通过 |
 | ow-grandmother / 1 | word | grandmother<br>My grandmother is at home.<br>my grandmother | 祖母；外祖母 | 开发者自查通过 |
 | ow-grandfather / 1 | word | grandfather<br>My grandfather likes tea.<br>my grandfather | 祖父；外祖父 | 开发者自查通过 |
-| ow-animal / 1 | word | animal<br>Is this animal dangerous?<br>a small animal | 动物 | 开发者自查通过 |
-| ow-bird / 1 | word | bird<br>There is a bird in the tree.<br>a small bird | 鸟 | 开发者自查通过 |
+| ow-animal / 2 | word | animal<br>Is this animal dangerous?<br>a small animal | 动物 | 开发者自查通过 |
+| ow-bird / 2 | word | bird<br>There is a bird in the tree.<br>a small bird | 鸟 | 开发者自查通过 |
 | ow-insect / 1 | word | insect<br>There is an insect in my room.<br>an insect | 昆虫 | 开发者自查通过 |
 | ow-mosquito / 1 | word | mosquito<br>There are mosquitoes in the room.<br>a mosquito | 蚊子 | 开发者自查通过 |
 | ow-smoke / 1 | word | smoke<br>There is smoke in the room.<br>no smoking | 烟；吸烟 | 开发者自查通过 |
@@ -1058,11 +1058,11 @@
 | ow-environment / 1 | word | environment<br>We need to keep the environment clean.<br>a clean environment | 环境 | 开发者自查通过 |
 | ow-listen / 1 | word | listen<br>Please listen to me.<br>listen to me | 听（注意听） | 开发者自查通过 |
 | ow-hear / 1 | word | hear<br>I cannot hear you.<br>hear you | 听见 | 开发者自查通过 |
-| ow-look / 1 | word | look<br>Please look at this picture.<br>look at this | 看；看起来 | 开发者自查通过 |
+| ow-look / 2 | word | look<br>Please look at this picture.<br>look at this | 看；看起来 | 开发者自查通过 |
 | ow-tell / 1 | word | tell<br>Can you tell me the price?<br>tell me the price | 告诉 | 开发者自查通过 |
 | ow-talk / 1 | word | talk<br>Can we talk now?<br>talk to me | 交谈 | 开发者自查通过 |
 | ow-answer / 1 | word | answer<br>Please answer this question.<br>answer a question | 回答；答案 | 开发者自查通过 |
-| ow-learn / 1 | word | learn<br>I want to learn English.<br>learn English | 学习 | 开发者自查通过 |
+| ow-learn / 2 | word | learn<br>I want to learn English.<br>learn English | 学习 | 开发者自查通过 |
 | ow-teach / 1 | word | teach<br>Can you teach me this word?<br>teach me | 教 | 开发者自查通过 |
 | ow-study / 1 | word | study<br>I study English at home.<br>study at home | 学习；研究 | 开发者自查通过 |
 | ow-practice / 1 | word | practice<br>I practice English every day.<br>practice English | 练习 | 开发者自查通过 |
@@ -1090,7 +1090,7 @@
 | ow-swim / 1 | word | swim<br>Can you swim?<br>swim in the sea | 游泳 | 开发者自查通过 |
 | ow-dance / 1 | word | dance<br>I like to dance.<br>dance together | 跳舞 | 开发者自查通过 |
 | ow-sing / 1 | word | sing<br>Can you sing this song?<br>sing a song | 唱歌 | 开发者自查通过 |
-| ow-play / 1 | word | play<br>My children play outside.<br>play outside | 玩；演奏 | 开发者自查通过 |
+| ow-play / 2 | word | play<br>My children play outside.<br>play outside | 玩；演奏 | 开发者自查通过 |
 | ow-laugh / 1 | word | laugh<br>This story makes me laugh.<br>make me laugh | 笑 | 开发者自查通过 |
 | ow-smile / 1 | word | smile<br>She has a friendly smile.<br>a friendly smile | 微笑 | 开发者自查通过 |
 | ow-cry / 1 | word | cry<br>The baby is crying.<br>a baby crying | 哭 | 开发者自查通过 |
@@ -1107,7 +1107,7 @@
 | ow-search / 1 | word | search<br>Can you help me search for my bag?<br>search for a bag | 寻找；搜索 | 开发者自查通过 |
 | ow-share / 1 | word | share<br>Can we share this table?<br>share a table | 分享；共用 | 开发者自查通过 |
 | ow-connect / 1 | word | connect<br>How do I connect my phone?<br>connect my phone | 连接 | 开发者自查通过 |
-| ow-charge / 1 | word | charge<br>Can I charge my phone here?<br>charge a phone | 充电；收费 | 开发者自查通过 |
+| ow-charge / 2 | word | charge<br>Can I charge my phone here?<br>charge a phone | 充电；收费 | 开发者自查通过 |
 | ow-print / 1 | word | print<br>Can you print my ticket?<br>print a ticket | 打印 | 开发者自查通过 |
 | ow-download / 1 | word | download<br>Can I download this map?<br>download a map | 下载 | 开发者自查通过 |
 | ow-upload / 1 | word | upload<br>How do I upload a picture?<br>upload a picture | 上传 | 开发者自查通过 |
@@ -1139,7 +1139,7 @@
 | ow-sentence / 1 | word | sentence<br>Can you say this sentence slowly?<br>a short sentence | 句子 | 开发者自查通过 |
 | ow-meaning / 1 | word | meaning<br>What is the meaning of this word?<br>the meaning | 含义 | 开发者自查通过 |
 | ow-letter / 1 | word | letter<br>Please write your name in capital letters.<br>a letter | 字母；信 | 开发者自查通过 |
-| ow-line / 1 | word | line<br>Please stand in line.<br>stand in line | 行；队伍 | 开发者自查通过 |
+| ow-line / 2 | word | line<br>Please stand in line.<br>stand in line | 行；队伍 | 开发者自查通过 |
 | ow-list / 1 | word | list<br>Is my name on the list?<br>a shopping list | 清单 | 开发者自查通过 |
 | ow-form / 1 | word | form<br>Please fill in this form.<br>fill in a form | 表格 | 开发者自查通过 |
 | ow-note / 1 | word | note<br>Please leave me a note.<br>leave a note | 便条 | 开发者自查通过 |
@@ -1330,9 +1330,9 @@
 | ex-describe-umbrella / 1 | expression | You hold it above your head when it rains.<br>It is a thing you hold over your head to keep the rain off. | 忘了“伞”：描述下雨时举在头上方的物品。 | 开发者自查通过 |
 | ex-describe-towel / 1 | expression | It is a cloth you use to dry your hands or body.<br>You use this cloth to get water off your body after a shower. | 忘了“毛巾”：描述用来擦干手和身体的布。 | 开发者自查通过 |
 | ex-describe-fridge / 1 | expression | It is a machine that keeps food cold.<br>You put food in it to keep the food cold. | 忘了“冰箱”：描述让食物保持冷的机器。 | 开发者自查通过 |
-| ex-describe-oven / 1 | expression | It is a machine that cooks food with heat inside.<br>You put food inside it and use heat to cook the food. | 忘了“烤箱”：描述把食物放在里面加热烹饪的机器。 | 开发者自查通过 |
+| ex-describe-oven / 2 | expression | It is a box that gets hot inside. You use it to cook food.<br>You put food inside it and use heat to cook the food. | 忘了“烤箱”：描述把食物放在里面加热烹饪的机器。 | 开发者自查通过 |
 | ex-describe-washing-machine / 1 | expression | It is a machine that washes clothes.<br>You put dirty clothes in it, and it washes them. | 忘了“洗衣机”：描述清洗衣服的机器。 | 开发者自查通过 |
-| ex-describe-battery / 1 | expression | It is a small thing inside a phone that gives the phone power.<br>The phone gets power from this small thing inside it. | 忘了“电池”：描述给手机提供电力的小物品。 | 开发者自查通过 |
+| ex-describe-battery / 2 | expression | It is a small thing inside a phone that gives the phone power.<br>The phone gets power from this small thing inside it. | 忘了“电池”：描述给手机提供电力的小物品。 | 开发者自查通过 |
 | ex-describe-socket / 1 | expression | It is the place in the wall where you put a plug to get power.<br>You put the plug in this place in the wall to get power. | 忘了“插座”：描述墙上让电器插头接电的地方。 | 开发者自查通过 |
 | ex-describe-map / 1 | expression | It is a picture that shows roads and places.<br>You use this picture to find places and see which roads to take. | 忘了“地图”：描述显示道路和地点的图片。 | 开发者自查通过 |
 | ex-describe-platform / 1 | expression | It is the place at the station where you wait for a train.<br>You wait here at the station and get on the train here. | 忘了“站台”：描述在车站等待并上火车的地方。 | 开发者自查通过 |
@@ -1347,7 +1347,7 @@
 | ex-describe-discount / 1 | expression | Can you make the price lower?<br>Can I get this for less money? | 忘了“折扣”：询问价格能不能低一些。 | 开发者自查通过 |
 | ex-describe-spicy / 1 | expression | This food makes my mouth feel hot.<br>My mouth feels hot when I eat this food. | 忘了“辣”：描述吃了以后嘴里有灼热感觉的食物。 | 开发者自查通过 |
 | ex-describe-waterproof / 1 | expression | This bag keeps rain out and keeps the things inside dry.<br>The things inside this bag stay dry in the rain. | 忘了“防水”：说明这个包可以挡住雨水，不让里面的东西湿。 | 开发者自查通过 |
-| ex-describe-broken-screen / 1 | expression | The part of my phone that shows pictures and words is broken.<br>My phone is broken where you see the pictures and words. | 忘了“屏幕”：说明手机显示图片和文字的那部分坏了。 | 开发者自查通过 |
+| ex-describe-broken-screen / 2 | expression | The part of my phone that shows pictures and words is broken.<br>The part of my phone where I see words and pictures does not work. | 忘了“屏幕”：说明手机显示图片和文字的那部分坏了。 | 开发者自查通过 |
 | ex-describe-delivery-date / 1 | expression | What day will it get here?<br>When can you get it to this place? | 询问东西哪一天可以送到这里。 | 开发者自查通过 |
 | ex-op-come-back / 1 | expression | Please come back tomorrow.<br>Can you come back tomorrow? | 请对方明天回来。 | 开发者自查通过 |
 | ex-op-get-ready / 1 | expression | Please get ready to leave.<br>Can you get ready to go? | 请对方做好出发准备。 | 开发者自查通过 |

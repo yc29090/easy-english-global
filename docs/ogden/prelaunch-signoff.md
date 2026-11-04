@@ -56,3 +56,5 @@ npm run ogden:readiness -- --check
 6. 小屏、键盘、触摸操作：可选择替换、隐藏文本、保存自评及进入复习。
 
 结论与问题：待实际操作者填写。不能以自动化测试结果代填。
+
+第四轮最新设备逐项模板与操作者步骤见[device-acceptance.md](device-acceptance.md)，隔离预览见[preview-plan.md](preview-plan.md)，正式审批/回滚见[release-safety.md](release-safety.md)。32行设备模板全部NOT_RUN；不得用自动化结果代填。

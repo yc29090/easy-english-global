@@ -21,7 +21,7 @@ test('dependencies are explicit, acyclic in teaching order and cannot hide unkno
  assert.equal(analyzeReference('I need an example.',words,c.wordForms).allCore,true);
 });
 test('coverage is intent-deduplicated textbook capacity, excludes supplemental references and retired core words',async()=>{
- const r=expressionCoverage(c.items);assert.equal(r.taskItems,140);assert.equal(r.uniqueIntents,132);assert.equal(r.coreSupportedIndependentIntents,113);assert.equal(r.paraphraseItems,45);assert.equal(r.coreSupportedParaphraseIntents,41);assert.equal(r.isLearnerMastery,false);
+ const r=expressionCoverage(c.items);assert.equal(r.taskItems,140);assert.equal(r.uniqueIntents,131);assert.equal(r.coreSupportedIndependentIntents,113);assert.equal(r.paraphraseItems,45);assert.equal(r.coreSupportedParaphraseIntents,41);assert.equal(r.isLearnerMastery,false);
  const duplicate=structuredClone(c.items.find(x=>x.id==='ex-arrival')!);duplicate.id='fixture-duplicate';assert.equal(expressionCoverage([...c.items,duplicate]).coreSupportedIntents,r.coreSupportedIntents);
  const unsupported=structuredClone(duplicate);unsupported.intentId='fixture-new-intent';unsupported.referenceCoverage=unsupported.referenceCoverage.map((x:any)=>({...x,allCore:false,supplementalTokens:['unlisted']}));assert.equal(expressionCoverage([...c.items,unsupported]).coreSupportedIntents,r.coreSupportedIntents);
  const fixture=[...words, {...duplicate,intentId:'one-only',referenceCoverage:[{english:'Get help.',wordIds:['ow-get','ow-help'],supplementalTokens:[],allCore:true}]}];assert.equal(expressionCoverage(fixture).coreSupportedIntents,1);assert.equal(expressionCoverage(fixture.filter(x=>x.id!=='ow-help')).coreSupportedIntents,0);

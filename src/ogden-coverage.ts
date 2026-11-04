@@ -52,6 +52,7 @@ export function validateTeaching(content:OgdenContent){
  const byId=new Map(content.items.map(x=>[x.id,x]));
  const equal=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b);
  for(const x of expected.items){const actual=byId.get(x.id)!;
+  if(x.kind==='word'&&!equal([...Object.entries(content.wordForms).filter(([,base])=>base===x.english.toLowerCase()).map(([form])=>form)].sort(),[...(actual.forms||[])].sort()))throw Error('Ogden content: stale displayed forms '+x.id);
   if(x.kind==='word'&&(!equal(x.dependencies,actual.dependencies)||x.teachingOrder!==actual.teachingOrder||x.teachingStage!==actual.teachingStage))throw Error('Ogden content: stale word dependencies '+x.id);
   if(x.kind==='expression'){
    if(!/^[a-z0-9-]+$/.test(x.intentId)||typeof x.answerComparison!=='string'||!/[\u3400-\u9fff]/.test(x.answerComparison))throw Error('Ogden content: missing expression intent/comparison '+x.id);

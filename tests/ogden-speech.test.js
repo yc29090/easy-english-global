@@ -16,3 +16,7 @@ test('rapid clicks ignore old callbacks; paused engine, thrown errors and missin
  s.play('Four',{notify:x=>notice=x});[...f.timers.values()][0].fn();assert.match(notice,/未确认开始/);
  f.env.speechSynthesis.speak=()=>{throw Error('device');};s.play('Five',{notify:x=>notice=x});assert.match(notice,/无法启动/);assert.equal(f.timers.size,0);
 });
+test('broken device voice discovery or utterance constructor cannot crash the learning page',()=>{
+ const f=fixture();f.env.speechSynthesis.getVoices=()=>{throw Error('device');};const s=createOgdenSpeech(f.env);let notice='';assert.equal(s.play('Hello',{notify:x=>notice=x}),false);assert.match(notice,/语音列表/);s.stop();
+ const g=fixture();g.env.SpeechSynthesisUtterance=class{constructor(){throw Error('device');}};assert.equal(createOgdenSpeech(g.env).play('Hello',{notify:x=>notice=x}),false);assert.match(notice,/无法启动/);
+});

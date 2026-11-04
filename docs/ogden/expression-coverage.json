@@ -1,16 +1,16 @@
 {
-  "version": "mbe-modern-850-v6",
-  "contentDigest": "db365956bb75f3b48a70b822c0bef9181000ab784cd6e600b2148b2cf94b6344",
+  "version": "mbe-modern-850-v7-final-audit",
+  "contentDigest": "50e7e408ac909977096d95cfc10c99c0ce994070da00f3edab62b2450340e9aa",
   "coreWords": 850,
   "taskItems": 140,
-  "uniqueIntents": 132,
-  "coreSupportedIntents": 130,
+  "uniqueIntents": 131,
+  "coreSupportedIntents": 129,
   "independentIntents": 113,
   "coreSupportedIndependentIntents": 113,
   "paraphraseItems": 45,
   "coreSupportedParaphraseIntents": 41,
   "authoredReferences": 279,
-  "coreSupportedReferences": 266,
+  "coreSupportedReferences": 267,
   "method": "exact-core-and-reviewed-forms-at-least-one-reference-per-intent",
   "isLearnerMastery": false,
   "evidence": "developer-self-check; independent human reviews and real-device acceptance are separate",
@@ -2046,7 +2046,7 @@
     },
     {
       "id": "ex-swap-explain",
-      "intentId": "swap-explain",
+      "intentId": "explain-key-use",
       "level": 2,
       "references": [
         {
@@ -3461,18 +3461,21 @@
       "level": 4,
       "references": [
         {
-          "english": "It is a machine that cooks food with heat inside.",
+          "english": "It is a box that gets hot inside. You use it to cook food.",
           "wordIds": [
             "ow-a",
             "ow-be",
+            "ow-box",
             "ow-cook",
             "ow-food",
-            "ow-heat",
+            "ow-get",
+            "ow-hot",
             "ow-inside",
             "ow-it",
-            "ow-machine",
             "ow-that",
-            "ow-with"
+            "ow-to",
+            "ow-use",
+            "ow-you"
           ],
           "supplementalTokens": [],
           "allCore": true
@@ -3561,6 +3564,7 @@
           "english": "The phone gets power from this small thing inside it.",
           "wordIds": [
             "ow-from",
+            "ow-get",
             "ow-inside",
             "ow-it",
             "ow-phone",
@@ -3570,10 +3574,8 @@
             "ow-thing",
             "ow-this"
           ],
-          "supplementalTokens": [
-            "gets"
-          ],
-          "allCore": false
+          "supplementalTokens": [],
+          "allCore": true
         }
       ]
     },
@@ -4205,19 +4207,22 @@
           "allCore": true
         },
         {
-          "english": "My phone is broken where you see the pictures and words.",
+          "english": "The part of my phone where I see words and pictures does not work.",
           "wordIds": [
             "ow-and",
-            "ow-be",
-            "ow-broken",
+            "ow-do",
+            "ow-i",
             "ow-my",
+            "ow-not",
+            "ow-of",
+            "ow-part",
             "ow-phone",
             "ow-picture",
             "ow-see",
             "ow-the",
             "ow-where",
             "ow-word",
-            "ow-you"
+            "ow-work"
           ],
           "supplementalTokens": [],
           "allCore": true

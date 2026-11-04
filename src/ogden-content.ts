@@ -39,6 +39,7 @@ export function validateOgden(d:OgdenContent){
  }
  for(const x of d.items)for(const id of [...(x.wordIds||[]),...(x.patternIds||[]),...(x.wordId?[x.wordId]:[])])check(ids.has(id),'broken teaching reference: '+id);
  for(const op of d.items.filter(x=>x.kind==='operator')){
+  check(d.items.some(w=>w.kind==='word'&&w.id===op.wordId&&w.english===op.english),'operator canonical word mismatch');
   const combos=d.items.filter(x=>x.kind==='combination'&&x.operatorWordId===op.wordId);
   check(combos.length>=3,'operator requires three authored combinations: '+op.id);
   check(Array.isArray(op.practiceCombinationIds)&&op.practiceCombinationIds.length===combos.length&&op.practiceCombinationIds.every((id:string)=>combos.some(x=>x.id===id)),'broken operator combination link');

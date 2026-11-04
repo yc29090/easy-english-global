@@ -1,11 +1,12 @@
+import {ogdenRequest,pendingResults} from './requests.js';
 import {continueTarget,prioritizeTasks,taskReadiness,modeLabels} from './learning.js';
 import {createOgdenSpeech} from './speech.js';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const speech=createOgdenSpeech();let taskLimit=20,visibleTasks=[],coverage={},learningPath=[],items=[],progress=[],review=[],domains=[],modeProgress=[],analytics={shared:[],practice:[],recent:[]},savePending=false;let wordQuery=new URLSearchParams(location.search).get('q')||'',wordLimit=20;let listeningLimit=20;let buildOperator=new URLSearchParams(location.search).get('operator')||'';const retryRequests=new Map();
+const speech=createOgdenSpeech();let taskLimit=20,visibleTasks=[],coverage={},learningPath=[],items=[],progress=[],review=[],domains=[],modeProgress=[],analytics={shared:[],practice:[],recent:[]},savePending=false;let wordQuery=new URLSearchParams(location.search).get('q')||'',wordLimit=20;let listeningLimit=20;let buildOperator=new URLSearchParams(location.search).get('operator')||'';const retryRequests=pendingResults();
 const routes=[['','学习首页'],['words','核心词'],['operators','18操作词'],['patterns','简化句型'],['build','词语组合'],['express','我能表达什么'],['listening','听力'],['speaking','开口表达'],['review','待复习'],['progress','学习进度']];
 const page=location.pathname.split('/')[2]||'';
 const notify=s=>{$('#feedback').textContent=s;};
-async function request(path,method='GET',body){const r=await fetch('/api'+path,{method,headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined});const data=await r.json();if(!r.ok){const error=new Error(data.error);error.status=r.status;throw error;}return data;}
+const request=ogdenRequest;
 const state=id=>progress.find(p=>p.item_id===id);
 const states={learned:'已学习',mastered:'已掌握',unmastered:'未掌握',review:'待复习'};
 function sound(text){return `<div class="actions"><button data-say="${esc(text)}">正常播放</button><button data-say="${esc(text)}" data-slow>慢速合成请求</button><button data-say="${esc(text)}" data-repeat>重复播放</button><button data-stop>停止</button></div>`;}
@@ -79,14 +80,14 @@ function bind(){
  document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=()=>{speech.stop();notify('已停止播放。');});
  document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{
   if(savePending)return;savePending=true;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=true);
-  const key=b.dataset.save,pending=retryRequests.get(key);
-  if(!pending||pending.mode!==b.dataset.mode||pending.status!==b.dataset.status)retryRequests.set(key,{mode:b.dataset.mode,status:b.dataset.status,requestId:crypto.randomUUID()});
+  const key=b.dataset.save;
   try{
-   await request('/ogden/results','POST',{item_id:b.dataset.save,status:b.dataset.status,mode:b.dataset.mode,request_id:retryRequests.get(key).requestId});
-   retryRequests.delete(key);
+   const version=items.find(x=>x.id===key)?.version;
+   await request('/ogden/results','POST',retryRequests.get(key,b.dataset.mode,b.dataset.status,version));
+   retryRequests.confirm(key);
    const a=b.closest('article');a.querySelector('[data-state]').textContent='当前：'+states[b.dataset.status];a.querySelectorAll('[data-save]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
    try{await refresh();if(page==='review')render();notify('已保存2.0自评和复习时间。');}catch{notify('已保存；暂时无法刷新统计，请稍后刷新页面。');}
-  }catch(e){notify('尚未确认保存，请重试（重复请求不会重复计数）：'+e.message);}
+  }catch(e){notify('尚未确认保存，请重试（重复请求不会重复计数）：'+e.message+(!retryRequests.persistent?' 此浏览器阻止标签页存储，请留在当前页重试，刷新将无法沿用编号。':''));}
   finally{savePending=false;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=false);}
  });
  document.querySelectorAll('[data-variant]').forEach(select=>select.onchange=()=>{
@@ -103,6 +104,8 @@ function bind(){
  document.querySelectorAll('[data-reset]').forEach(b=>b.onclick=()=>{const a=b.closest('article');a.querySelector('[data-built]').textContent='';a.querySelectorAll('[data-token]').forEach(t=>t.disabled=false);});
  document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>notify(b.closest('article').querySelector('[data-built]').textContent===b.dataset.check?'与这条教材组合一致。':'这次排列与教材不同。可以重新排列或查看参考；这不是自由表达评分。'));
 }
-async function refresh(){[progress,review,analytics]=await Promise.all([request('/ogden/progress').then(r=>{modeProgress=r.practice||[];return r.progress;}),request('/ogden/review'+(page==='review'?location.search:'')).then(r=>r.items),request('/ogden/analytics')]);}
+async function refresh(){[progress,review,analytics]=await Promise.all([request('/ogden/progress').then(r=>{retryRequests.owner(r.ownerId);modeProgress=r.practice||[];return r.progress;}),request('/ogden/review'+(page==='review'?location.search:'')).then(r=>r.items),request('/ogden/analytics')]);}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)speech.stop();});addEventListener('pagehide',()=>speech.stop());
-(async()=>{try{const catalog=await request('/ogden/catalog');items=catalog.items;domains=catalog.domains||[];coverage=catalog.coverage||{};learningPath=catalog.learningPath||[];await refresh();render();}catch(e){$('#content').innerHTML=e.status===401?'<div class="panel"><h2>使用现有账号登录</h2><p>2.0开发预览共用1.0账号。请先在1.0登录，然后回到这里。</p><a href="/">前往1.0登录 / 注册</a></div>':`<div class="panel"><h2>暂时无法读取2.0预览</h2><p>${esc(e.message)}</p><p>请确认已运行本地预览初始化。未安装教材时不会生成虚假内容。</p></div>`;}})();
+(async()=>{try{const catalog=await request('/ogden/catalog');items=catalog.items;domains=catalog.domains||[];coverage=catalog.coverage||{};learningPath=catalog.learningPath||[];await refresh();render();}catch(e){$('#content').innerHTML=e.status===401?'<div class="panel"><h2>使用现有账号登录</h2><p>2.0开发预览共用1.0账号。请先在1.0登录，然后回到这里。</p><a href="/">前往1.0登录 / 注册</a></div>':`<div class="panel"><h2>暂时无法读取2.0预览</h2><p>${esc(e.message)}</p><p>请检查网络或预览服务，然后重试。已提交但未确认的保存会沿用原编号。</p><button id="retry-load">重新加载</button></div>`;if($('#retry-load'))$('#retry-load').onclick=()=>location.reload();}})();
+
+addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
