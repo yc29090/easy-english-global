@@ -3,7 +3,7 @@
   "primarySourceReview": "confirmed",
   "deviceVoiceReview": "pending",
   "deploymentAuthorization": "pending",
-  "note": "教材依用户授权由Codex开发者自查，独立真人审阅数另记；真机验收与合并/部署仍待最终确认。生产路由继续关闭。",
+  "note": "第五轮最新用户要求：完成发布接线与验证，保持OGDEN_PUBLISHED=false；正式开放前须再次明确确认。真机未执行，独立真人审核0。生产备份、关键测试和零新增费用仍是发布前置条件。",
   "membershipDecision": {
     "paidMembers": "1.0和2.0全部已发布教材，无额外收费",
     "lifetimePriceCny": 99,
@@ -14,5 +14,9 @@
   "editorialSelfReviewAuthorized": true,
   "editorialReviewMethod": "developer-self-check",
   "primarySourceReviewScope": "已核查学术重印词表、历史转录及原版书目；不是初版全书扫描核验",
-  "deviceTemplateDelivery": "after-all-development"
+  "deviceTemplateDelivery": "after-all-development",
+  "deviceAcceptanceDeferredByOwner": true,
+  "deviceDeferralAuthorization": "第五轮用户正式授权：Android及iPhone真机体验安排在上线后；不得声称通过。",
+  "publicationWiringAuthorized": true,
+  "productionOpeningAuthorization": "pending-final-confirmation"
 }

@@ -2,7 +2,7 @@ import {reviewDigest,type OgdenReview} from './ogden-readiness.ts';
 import {createHash} from 'node:crypto';
 import type {DB} from './db.ts';
 import {validateOgden,type OgdenContent} from './ogden-content.ts';
-/** Explicit preview import; intentionally not called by production startup/import. */
+/** Explicit import; production startup calls this only behind the publication switch. */
 export async function installOgden(db:DB,input:OgdenContent,reviews:OgdenReview[]=[]){
  const content=validateOgden(input),hash=createHash('sha256').update(JSON.stringify(content)).digest('hex');
  await db.query('BEGIN');
