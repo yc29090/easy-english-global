@@ -19,7 +19,7 @@ export function createApplication(pool:ConnectionPool,config:RuntimeConfig,sendR
    const appUrl=config.appUrl;
    const url=new URL(req.url||'/',appUrl);
    const ogdenRoute=url.pathname==='/ogden'||url.pathname.startsWith('/ogden/')||url.pathname.startsWith('/api/ogden/');
-   // Product access policy is unresolved: experimental routes are never served in production.
+   // Paid membership covers both versions; publication/device acceptance is still pending.
    if(ogdenRoute&&production)throw new HttpError(404,'Not found');
    if(url.pathname==='/health'){
     if(!['GET','HEAD'].includes(req.method||''))throw new HttpError(405,'Method not allowed');

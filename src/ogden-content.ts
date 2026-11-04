@@ -26,7 +26,7 @@ export function validateOgden(d:OgdenContent){
   if(x.kind==='pattern'){
    check(Array.isArray(x.variants)&&x.variants.length>=2,'pattern requires authored variants');
    const variantIds=new Set<string>();
-   for(const v of x.variants){check(typeof v.id==='string'&&v.id.startsWith(x.id+'-')&&!variantIds.has(v.id),'invalid/duplicate pattern variant');variantIds.add(v.id);check(v.label&&typeof v.english==='string'&&/[a-z]/i.test(v.english)&&typeof v.chinese==='string'&&/[\u3400-\u9fff]/.test(v.chinese),'invalid pattern variant text');check(['draft','approved'].includes(v.reviewStatus),'invalid variant review');if(x.reviewStatus==='approved')check(v.reviewStatus==='approved','unreviewed variant in approved pattern');}
+   for(const v of x.variants){check(typeof v.id==='string'&&/^[-a-z0-9]+$/.test(v.id)&&v.id.startsWith(x.id+'-')&&!variantIds.has(v.id),'invalid/duplicate pattern variant');variantIds.add(v.id);check(v.label&&typeof v.english==='string'&&/[a-z]/i.test(v.english)&&typeof v.chinese==='string'&&/[\u3400-\u9fff]/.test(v.chinese),'invalid pattern variant text');check(['draft','approved'].includes(v.reviewStatus),'invalid variant review');if(x.reviewStatus==='approved')check(v.reviewStatus==='approved','unreviewed variant in approved pattern');}
   }
   if(x.kind==='expression')check([1,2,3].includes(x.level)&&x.evaluation==='self-assessment'&&new Set(x.answers).size>=2,'expression requires multiple references and self-assessment');
   if(x.kind==='combination')check(x.tokens?.length>1&&x.tokens.join(' ')===x.english,'invalid authored combination');

@@ -1,7 +1,18 @@
 {
-  "membershipPolicy": "pending",
-  "primarySourceReview": "pending",
+  "membershipPolicy": "confirmed",
+  "primarySourceReview": "confirmed",
   "deviceVoiceReview": "pending",
   "deploymentAuthorization": "pending",
-  "note": "决定与人工验收均需用户或明确记录的审查者确认；自动测试不能替代。生产路由继续关闭。"
+  "note": "教材依用户授权由Codex开发者自查，独立真人审阅数另记；真机验收与合并/部署仍待最终确认。生产路由继续关闭。",
+  "membershipDecision": {
+    "paidMembers": "1.0和2.0全部已发布教材，无额外收费",
+    "lifetimePriceCny": 99,
+    "trial": "沿用现有试用有效期，不新增或延长",
+    "nonMemberScope": "未决定，不新增免费范围",
+    "authorization": "用户明确指令：付费会员1.0-2.0都免费"
+  },
+  "editorialSelfReviewAuthorized": true,
+  "editorialReviewMethod": "developer-self-check",
+  "primarySourceReviewScope": "已核查学术重印词表、历史转录及原版书目；不是初版全书扫描核验",
+  "deviceTemplateDelivery": "after-all-development"
 }

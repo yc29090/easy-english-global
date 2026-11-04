@@ -9,16 +9,16 @@ import {prepareDatabase} from '../src/setup.ts';
 import {isolatedDatabase} from './test-db.ts';
 import {createApplication} from '../src/http.ts';
 const content=await loadOgden();
-test('pilot is traceable, candid about draft status, and contains the distinct 18 operators',async()=>{
- assert.equal(content.items.length,64);assert.equal(content.items.filter(x=>x.reviewStatus==='approved').length,0);
+test('modern 101-word core remains traceable and contains the distinct 18 operators',async()=>{
+ assert.equal(content.items.length,165);assert.equal(content.items.filter(x=>x.reviewMethod==='developer-self-check'&&x.reviewStatus==='approved').length,165);
  assert.deepEqual(content.items.filter(x=>x.kind==='operator').map(x=>x.english),OPERATORS);
  const raw=await readFile(new URL('../data/ogden/secondary-wordlist.txt',import.meta.url),'utf8');
  assert.equal(createHash('sha256').update(raw).digest('hex'),content.sources[0].sha256);
  assert.equal(raw.trim().split('\n').length,852);
- for(const r of content.originalReferences){assert.equal(raw.split('\n')[Number(r.sourceLocator.slice(5))-1],r.english);assert.equal(r.verification,'pending-primary-review');}
- for(const x of content.items.filter(x=>x.kind==='word'))assert.equal(x.isOgdenOriginal,null);
- for(const mutate of [(d:any)=>d.items[0].isOgdenOriginal=true,(d:any)=>d.items[1].id=d.items[0].id,(d:any)=>d.items.pop(),(d:any)=>d.items.find((x:any)=>x.kind==='combination').tokens=['bad'],(d:any)=>d.items[0].patternIds=['missing']]){
-  const d=structuredClone(content);mutate(d);if(d.items.length===63){d.items.find((x:any)=>x.kind==='expression')!.answers=['one'];}assert.throws(()=>validateOgden(d));
+ for(const r of content.originalReferences.filter(r=>r.sourceId==='secondary-bnspalding')){assert.equal(raw.split('\n')[Number(r.sourceLocator.slice(5))-1],r.english);assert.equal(r.verification,'pending-primary-review');}
+ for(const x of content.items.filter(x=>x.kind==='word'))assert.equal(typeof x.isOgdenOriginal,'boolean');
+ for(const mutate of [(d:any)=>d.originalReferences.find((r:any)=>r.id===d.items[0].originalRef).verification='pending-primary-review',(d:any)=>d.items[1].id=d.items[0].id,(d:any)=>d.items.splice(d.items.findIndex((x:any)=>x.kind==='operator'),1),(d:any)=>d.items.find((x:any)=>x.kind==='combination').tokens=['bad'],(d:any)=>d.items[0].patternIds=['missing']]){
+  const d=structuredClone(content);mutate(d);assert.throws(()=>validateOgden(d));
  }
  for(const x of content.items.filter(x=>x.kind==='expression')){assert.ok(x.answers.length>=2);assert.equal(x.evaluation,'self-assessment');}
 });
@@ -48,7 +48,7 @@ test('additive schema, repeat import, immutable versions and per-user isolated p
   assert.equal((await db.query('SELECT * FROM ogden_practice_events')).rows.length,5);
   const changed=structuredClone(content);changed.items[0].chinese='改变';await assert.rejects(()=>installOgden(db,changed),/manifest version conflict/);
   changed.version='mbe-test-upgrade';await assert.rejects(()=>installOgden(db,changed),/item version conflict/);
-  changed.items[0].version=2;await installOgden(db,changed);assert.deepEqual((await call(users[0],'progress')).progress,saved);
+  changed.items[0].version++;await installOgden(db,changed);assert.deepEqual((await call(users[0],'progress')).progress,saved);
   assert.equal((await db.query("SELECT * FROM ogden_item_versions WHERE item_id='ow-come'")).rows.length,2);
   assert.deepEqual(await legacy(),before);await prepareDatabase(db);assert.deepEqual(await legacy(),before);
  }finally{await cleanup();}
@@ -65,7 +65,7 @@ test('HTTP protects authentication, user identity, preview routes, CSRF and prod
   assert.equal((await post('/api/auth/login',{email:user.email,password:'Preview9!Example'})).status,200);
   for(const path of ['/ogden','/ogden/words','/ogden/operators','/ogden/operators/get','/ogden/patterns','/ogden/build','/ogden/express','/ogden/listening','/ogden/speaking','/ogden/review','/ogden/progress','/ogden/app.js','/ogden/speech.js','/ogden/styles.css']){const r=await fetch(base+path);assert.equal(r.status,200,path);}
   assert.equal((await fetch(base+'/ogden/no-such-route')).status,404);assert.equal((await fetch(base+'/ogden',{method:'POST'})).status,404);
-  assert.equal((await (await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie}})).json()).items.length,64);
+  assert.equal((await (await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie}})).json()).items.length,content.items.length);
   const result={item_id:'ow-get',status:'review',mode:'study',request_id:randomUUID()};assert.equal((await post('/api/ogden/results',result,cookie)).status,200);
   assert.equal((await post('/api/ogden/results',{...result,user_id:randomUUID()},cookie)).status,400);
   assert.equal((await fetch(base+'/api/ogden/results',{method:'POST',headers:{Origin:'https://attacker.example','Content-Type':'application/json',Cookie:cookie},body:JSON.stringify(result)})).status,403);

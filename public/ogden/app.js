@@ -1,6 +1,6 @@
 import {createOgdenSpeech} from './speech.js';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const speech=createOgdenSpeech();let items=[],progress=[],review=[],savePending=false;const retryRequests=new Map();
+const speech=createOgdenSpeech();let items=[],progress=[],review=[],savePending=false;let wordQuery='',wordLimit=20;const retryRequests=new Map();
 const routes=[['','学习首页'],['words','核心词'],['operators','18操作词'],['patterns','简化句型'],['build','词语组合'],['express','我能表达什么'],['listening','听力'],['speaking','开口表达'],['review','待复习'],['progress','学习进度']];
 const page=location.pathname.split('/')[2]||'';
 const notify=s=>{$('#feedback').textContent=s;};
@@ -12,19 +12,21 @@ function assessment(x,mode){return `<p class="muted">我对这条内容的自评
 function references(x){return (x.answers||x.examples?.map(e=>e.english)||[x.english]).map(t=>`<p lang="en">${esc(t)}</p>${sound(t)}`).join('');}
 function patternPractice(x){
  const first=x.variants[0];
- return `<section class="pattern-practice" data-pattern="${x.id}"><h3>换一换，再自己说</h3><p>听例句 → 看意思 → 选择替换 → 隐藏英文 → 自己说 → 查看参考。</p><label>选择想表达的意思<select data-variant="${x.id}">${x.variants.map(v=>`<option value="${v.id}">${esc(v.label)}</option>`).join('')}</select></label><p data-variant-zh>${esc(first.chinese)}</p><p data-variant-en lang="en">${esc(first.english)}</p><div data-variant-audio>${sound(first.english)}</div><div class="actions"><button data-hide-variant aria-pressed="false">隐藏英文，自己说</button><button data-show-variant>查看参考表达</button></div><p class="muted">这些替换句均为教材草稿，不会把任意新组合当作正确答案。</p></section>`;
+ return `<section class="pattern-practice" data-pattern="${x.id}"><h3>换一换，再自己说</h3><p>听例句 → 看意思 → 选择替换 → 隐藏英文 → 自己说 → 查看参考。</p><label>选择想表达的意思<select data-variant="${x.id}">${x.variants.map(v=>`<option value="${esc(v.id)}">${esc(v.label)}</option>`).join('')}</select></label><p data-variant-zh>${esc(first.chinese)}</p><p data-variant-en lang="en">${esc(first.english)}</p><div data-variant-audio>${sound(first.english)}</div><div class="actions"><button data-hide-variant aria-pressed="false">隐藏英文，自己说</button><button data-show-variant>查看参考表达</button></div><p class="muted">这些替换句已由开发者逐条自查，不会把任意新组合当作正确答案。</p></section>`;
 }
 function card(x,mode='study'){
  const hide=mode==='listening',express=['express','speaking'].includes(mode),text=x.examples?.[0]?.english||x.english;
- return `<article data-item="${x.id}"><p class="tag">草稿 · ${esc(x.kind)}${x.level?' · 第'+x.level+'层':''}</p>${hide?'<h2>先听后看</h2>':`<h2 ${express?'':'lang="en"'}>${esc(express?x.chinese:x.english)}</h2>`}${hide?sound(text):''}${!hide&&!express?`<p>${esc(x.chinese)}</p>`:''}${x.note?`<p>${esc(x.note)}</p>`:''}${x.kind==='operator'?`<p><a href="/ogden/operators/${esc(x.english)}">打开 ${esc(x.english)} 独立学习页</a></p>`:''}${x.kind==='word'?'<p class="muted">美式主读音由本地语音提供；原版归属待核实。现代化候选保留。</p>':''}
+ return `<article data-item="${x.id}"><p class="tag">${x.reviewStatus==='approved'?(x.reviewMethod==='developer-self-check'?'开发者自查通过':'审核通过'):'草稿'} · ${esc(x.kind)}${x.level?' · 第'+x.level+'层':''}</p>${hide?'<h2>先听后看</h2>':`<h2 ${express?'':'lang="en"'}>${esc(express?x.chinese:x.english)}</h2>`}${hide?sound(text):''}${!hide&&!express?`<p>${esc(x.chinese)}</p>`:''}${x.note?`<p>${esc(x.note)}</p>`:''}${x.kind==='operator'?`<p><a href="/ogden/operators/${esc(x.english)}">打开 ${esc(x.english)} 独立学习页</a></p>`:''}${x.kind==='word'?`<p class="muted">${x.isOgdenOriginal?'历史词表对照：学术重印与转录已核查。':'现代单列词：未冒称历史850词的独立词头。'}美式主读音由本地语音提供；真机音质待验收。</p>`:''}
  ${express?`<label>先自己说，也可以写下表达（仅保留在当前页面）<textarea aria-label="我的英语表达" placeholder="试着用你会的英语表达"></textarea></label><p class="muted">不录音、不上传答案、不自动判错。参考句不是唯一答案。</p>`:''}
- ${x.kind==='expression'?`<p class="muted">练习可使用的辅助词：${esc(x.supportWords.join('、'))}。这些词不计入本批18个核心词。</p>`:''}
+ ${x.kind==='expression'?`<p class="muted">练习可使用的辅助词：${esc(x.supportWords.join('、'))}。其中可能有词形变化或未收录的词；练习出现的辅助词不会自动增加核心词统计。</p>`:''}
  ${x.kind==='pattern'&&mode==='study'?patternPractice(x):''}
  ${x.kind==='combination'&&mode==='build'?`<p>点选词块，排列出上面的组合；只使用这条已编写的组合。</p><div class="tokens">${[...x.tokens].reverse().map((t,i)=>`<button data-token="${esc(t)}" data-index="${i}">${esc(t)}</button>`).join('')}</div><p data-built aria-live="polite"></p><button data-reset>重新排列</button><button data-check="${esc(x.english)}">查看组合提示</button>`:''}
  <details><summary>${hide?'查看中英文与参考表达':express?'查看多种参考表达':'查看组合、例句与替换提示'}</summary>${hide?`<div class="actions"><button data-toggle-copy="en" aria-pressed="false">显示英文</button><button data-toggle-copy="zh" aria-pressed="false">显示中文</button></div><p data-listening-en lang="en" hidden>${esc(text)}</p><p data-listening-zh hidden>${esc(x.examples?.[0]?.chinese||x.chinese)}</p>`:''}${(x.combinations||[]).map(c=>`<p><span lang="en">${esc(c.english)}</span> · ${esc(c.chinese)}</p>`).join('')}${hide?'':references(x)}${x.kind==='pattern'?'<p>听句子 → 看意思 → 替换词 → 合上参考 → 自己说。先使用已经写好的例句，不把随意替换视为正确教材。</p>':''}</details>
  ${assessment(x,mode)}</article>`;
 }
 function list(values,mode){return values.length?`<div class="grid">${values.map(x=>card(x,mode)).join('')}</div>`:'<div class="panel">暂无内容。可以自由选择其他练习。</div>';}
+function matchingWords(){const q=wordQuery.trim().toLowerCase();return items.filter(x=>x.kind==='word'&&(!q||x.english.toLowerCase().includes(q)||x.chinese.includes(q)));}
+function wordResults(){const found=matchingWords();return `<p>${found.length}个核心词，当前显示${Math.min(wordLimit,found.length)}个。可自由继续学习，没有每日限额。</p>`+list(found.slice(0,wordLimit),'study');}
 function render(){
  speech.stop();$('#nav').innerHTML=routes.map(([r,label])=>`<a href="/ogden${r?'/'+r:''}" ${page===r?'aria-current="page"':''}>${label}</a>`).join('');
  let html='';
@@ -37,10 +39,14 @@ function render(){
  tasks.sort((a,b)=>Number(b.wordIds.every(id=>mastered.has(id))&&b.patternIds.every(id=>mastered.has(id)))-Number(a.wordIds.every(id=>mastered.has(id))&&a.patternIds.every(id=>mastered.has(id)))||a.level-b.level);
  html=`<h2>${page==='speaking'?'先尝试说，再看参考':'我能表达什么'}</h2><p>按本批已掌握的关联词与句型优先推荐；辅助词可能尚未学过，不保证全部用词已掌握。</p><p>第一层模仿表达 · 第二层独立组合 · 第三层用简单英语解释。允许多种正确表达，请对照意思自评。</p>`+list(tasks,page==='speaking'?'speaking':'express');
  }else if(page==='listening'){html='<h2>听懂意思，再试着说</h2><p>中英文默认隐藏，点击查看后自行判断是否理解。慢速是浏览器语速请求，不保证设备执行。</p>'+list(items.filter(x=>x.kind==='pattern'),'listening');}
- else {const kind={words:'word',operators:'operator',patterns:'pattern',build:'combination'}[page];let values=items.filter(x=>x.kind===kind);if(kind==='operator'){const selected=location.pathname.split('/')[3];if(selected)values=values.filter(x=>x.english===selected);values=values.map(x=>({...x,id:x.wordId,kind:'operator'}));}html=`<h2>${routes.find(r=>r[0]===page)?.[1]||''}</h2>${kind==='operator'?'<p>18操作词的功能不同：be、do、have 可有辅助作用；may、will 是情态词。各页与对应核心词共用状态。</p>':''}`+list(values,kind==='combination'?'build':'study');}
+ else {const kind={words:'word',operators:'operator',patterns:'pattern',build:'combination'}[page];let values=items.filter(x=>x.kind===kind);if(kind==='operator'){const selected=location.pathname.split('/')[3];if(selected)values=values.filter(x=>x.english===selected);values=values.map(x=>({...x,id:x.wordId,kind:'operator'}));}html=`<h2>${routes.find(r=>r[0]===page)?.[1]||''}</h2>${kind==='operator'?'<p>18操作词的功能不同：be、do、have 可有辅助作用；may、will 是情态词。各页与对应核心词共用状态。</p>':''}`+(kind==='word'?`<label>搜索核心词<input id="word-search" type="search" value="${esc(wordQuery)}" placeholder="输入英文或中文"></label><div id="word-results">${wordResults()}</div><button id="word-more" ${matchingWords().length<=wordLimit?'disabled':''}>继续显示更多核心词</button>`:list(values,kind==='combination'?'build':'study'));}
  $('#content').innerHTML=html;bind();
 }
 function bind(){
+ const updateWords=()=>{$('#word-results').innerHTML=wordResults();$('#word-more').disabled=matchingWords().length<=wordLimit;bind();};
+ if($('#word-search'))$('#word-search').oninput=e=>{wordQuery=e.target.value;wordLimit=20;updateWords();};
+ if($('#word-more'))$('#word-more').onclick=()=>{wordLimit+=20;updateWords();};
+
  document.querySelectorAll('[data-say]').forEach(b=>b.onclick=()=>speech.play(b.dataset.say,{slow:b.hasAttribute('data-slow'),repeat:b.hasAttribute('data-repeat'),notify}));
  document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=()=>{speech.stop();notify('已停止播放。');});
  document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{

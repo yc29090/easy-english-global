@@ -1,7 +1,7 @@
 {
-  "version": "mbe-pilot-2",
+  "version": "mbe-core-101-v3",
   "targetCoreCount": 850,
-  "releaseStatus": "draft-preview",
+  "releaseStatus": "developer-self-checked-preview",
   "sources": [
     {
       "id": "secondary-bnspalding",
@@ -18,6 +18,38 @@
       "accessed": "2026-11-04",
       "status": "unavailable",
       "note": "本环境访问返回403；未声称已核实完整性、原版分类或规则。"
+    },
+    {
+      "id": "clp-bucharest-2013-v1",
+      "url": "https://editura.mttlc.ro/ccount212/click.php?id=FW-lexicography-theoretical-backup-57",
+      "publication": "C. K. Ogden: Basic English, edited by C. George Sandulescu, University of Bucharest / Contemporary Literature Press, 2013",
+      "isbn": "978-606-8366-86-9",
+      "status": "scholarly-reprint-cross-checked",
+      "accessed": "2026-11-04",
+      "locator": "PDF pages 39-44 (1-based), printed pages 31-36",
+      "scope": "1930原文节选及历史词表的2013学术重印；不是1930初版完整扫描。与独立历史转录交叉核对；保留拼写变体差异。"
+    },
+    {
+      "id": "ogden-rules-transcription-v1",
+      "url": "https://zbenglish.net/sites/basic/be2.html",
+      "accessed": "2026-11-04",
+      "status": "historical-transcription",
+      "locator": "Chapter 2, Forms of Operators; Forms of Pronouns; Questions",
+      "scope": "规则转录有拼写/OCR问题；用于核对方法，不把其例句原样作为现代教材。"
+    },
+    {
+      "id": "mpi-ogden-catalogue-1930-v1",
+      "url": "https://www.mpi.nl/publications/item2366945/basic-english-general-introduction-rules-and-grammar",
+      "status": "bibliography-confirmed-file-unavailable",
+      "accessed": "2026-11-04",
+      "scope": "已核对1930书目信息；公开PDF入口403，未声称读取该原书PDF。"
+    },
+    {
+      "id": "modern-editorial-v3",
+      "url": "https://github.com/yc29090/easy-english-global",
+      "status": "original-modern-teaching",
+      "accessed": "2026-11-04",
+      "scope": "本项目独立编写的现代例句；不冒称Ogden原版例句；现代选择为产品编辑判断，不虚构词频统计。"
     }
   ],
   "originalReferences": [
@@ -164,19 +196,1029 @@
       "sourceLocator": "line 829",
       "verification": "pending-primary-review",
       "originalCategory": null
+    },
+    {
+      "id": "or-v3-come",
+      "english": "come",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword come",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-get",
+      "english": "get",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword get",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-give",
+      "english": "give",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword give",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-go",
+      "english": "go",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword go",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-keep",
+      "english": "keep",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword keep",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-let",
+      "english": "let",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword let",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-make",
+      "english": "make",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword make",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-put",
+      "english": "put",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword put",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-seem",
+      "english": "seem",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword seem",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-take",
+      "english": "take",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword take",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-be",
+      "english": "be",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword be",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-do",
+      "english": "do",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword do",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-have",
+      "english": "have",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword have",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-say",
+      "english": "say",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword say",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-see",
+      "english": "see",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword see",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-send",
+      "english": "send",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword send",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-may",
+      "english": "may",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword may",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-will",
+      "english": "will",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword will",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-i",
+      "english": "I",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword I",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-you",
+      "english": "you",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword you",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-we",
+      "english": "we",
+      "sourceId": "ogden-rules-transcription-v1",
+      "sourceLocator": "Chapter 2 pronoun/question forms: we",
+      "verification": "verified",
+      "verificationMethod": "grammar-derived-not-independent-headword",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-he",
+      "english": "he",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword he",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-she",
+      "english": "she",
+      "sourceId": "ogden-rules-transcription-v1",
+      "sourceLocator": "Chapter 2 pronoun/question forms: she",
+      "verification": "verified",
+      "verificationMethod": "grammar-derived-not-independent-headword",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-it",
+      "english": "it",
+      "sourceId": "ogden-rules-transcription-v1",
+      "sourceLocator": "Chapter 2 pronoun/question forms: it",
+      "verification": "verified",
+      "verificationMethod": "grammar-derived-not-independent-headword",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-they",
+      "english": "they",
+      "sourceId": "ogden-rules-transcription-v1",
+      "sourceLocator": "Chapter 2 pronoun/question forms: they",
+      "verification": "verified",
+      "verificationMethod": "grammar-derived-not-independent-headword",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-a",
+      "english": "a",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword a",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-the",
+      "english": "the",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword the",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-this",
+      "english": "this",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword this",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-that",
+      "english": "that",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword that",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-some",
+      "english": "some",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword some",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-any",
+      "english": "any",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword any",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-not",
+      "english": "not",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword not",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-and",
+      "english": "and",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword and",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-or",
+      "english": "or",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword or",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-but",
+      "english": "but",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword but",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-in",
+      "english": "in",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword in",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-on",
+      "english": "on",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword on",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-at",
+      "english": "at",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword at",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-to",
+      "english": "to",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword to",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-from",
+      "english": "from",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword from",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-with",
+      "english": "with",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword with",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-for",
+      "english": "for",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword for",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-of",
+      "english": "of",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword of",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-here",
+      "english": "here",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword here",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-there",
+      "english": "there",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword there",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-now",
+      "english": "now",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword now",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-when",
+      "english": "when",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword when",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-where",
+      "english": "where",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword where",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-how",
+      "english": "how",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword how",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-why",
+      "english": "why",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword why",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-what",
+      "english": "what",
+      "sourceId": "ogden-rules-transcription-v1",
+      "sourceLocator": "Chapter 2 pronoun/question forms: what",
+      "verification": "verified",
+      "verificationMethod": "grammar-derived-not-independent-headword",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-please",
+      "english": "please",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword please",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-yes",
+      "english": "yes",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword yes",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-no",
+      "english": "no",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword no",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-name",
+      "english": "name",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword name",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-person",
+      "english": "person",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword person",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-family",
+      "english": "family",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword family",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-friend",
+      "english": "friend",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword friend",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-mother",
+      "english": "mother",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword mother",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-father",
+      "english": "father",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword father",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-child",
+      "english": "child",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: child",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-home",
+      "english": "home",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: home",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-house",
+      "english": "house",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword house",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-picturable",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-room",
+      "english": "room",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword room",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-door",
+      "english": "door",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword door",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-picturable",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-water",
+      "english": "water",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword water",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-food",
+      "english": "food",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword food",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-bread",
+      "english": "bread",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword bread",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-rice",
+      "english": "rice",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword rice",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-milk",
+      "english": "milk",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword milk",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-coffee",
+      "english": "coffee",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: coffee",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-tea",
+      "english": "tea",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: tea",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-time",
+      "english": "time",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword time",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-day",
+      "english": "day",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword day",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-week",
+      "english": "week",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword week",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-today",
+      "english": "today",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: today",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-tomorrow",
+      "english": "tomorrow",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword tomorrow",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "operations",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-money",
+      "english": "money",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword money",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-price",
+      "english": "price",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword price",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-ticket",
+      "english": "ticket",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword ticket",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-picturable",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-car",
+      "english": "car",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: car",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-bus",
+      "english": "bus",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: bus",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-train",
+      "english": "train",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword train",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-picturable",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-airport",
+      "english": "airport",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: airport",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-hotel",
+      "english": "hotel",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: hotel",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-phone",
+      "english": "phone",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: phone",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-email",
+      "english": "email",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: email",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-computer",
+      "english": "computer",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: computer",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-help",
+      "english": "help",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword help",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-question",
+      "english": "question",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword question",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-work",
+      "english": "work",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword work",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-need",
+      "english": "need",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword need",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "things-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-good",
+      "english": "good",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword good",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-bad",
+      "english": "bad",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword bad",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-opposites",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-small",
+      "english": "small",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword small",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-opposites",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-big",
+      "english": "big",
+      "sourceId": "modern-editorial-v3",
+      "sourceLocator": "Modern core editorial decision: big",
+      "verification": "verified",
+      "verificationMethod": "absent-from-normalized-850-index-modern-addition",
+      "originalCategory": null,
+      "originalMembership": false
+    },
+    {
+      "id": "or-v3-new",
+      "english": "new",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword new",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-old",
+      "english": "old",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword old",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-opposites",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-open",
+      "english": "open",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword open",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-ready",
+      "english": "ready",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword ready",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-general",
+      "originalMembership": true
+    },
+    {
+      "id": "or-v3-tired",
+      "english": "tired",
+      "sourceId": "clp-bucharest-2013-v1",
+      "sourceLocator": "PDF pp.39-41 alphabetic list; pp.42-44 classified list; headword tired",
+      "verification": "verified",
+      "verificationMethod": "scholarly-reprint-and-independent-transcription",
+      "originalCategory": "qualities-general",
+      "originalMembership": true
     }
   ],
   "items": [
     {
       "id": "ow-come",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "come",
       "chinese": "来",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 1,
       "combinations": [
         {
@@ -202,19 +1244,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-come"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-come",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-get",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "get",
       "chinese": "得到；到达",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 2,
       "combinations": [
         {
@@ -240,19 +1285,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-get"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-get",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-give",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "give",
       "chinese": "给",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 3,
       "combinations": [
         {
@@ -278,19 +1326,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-give"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-give",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-go",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "go",
       "chinese": "去",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 4,
       "combinations": [
         {
@@ -316,19 +1367,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-go"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-go",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-keep",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "keep",
       "chinese": "保持；保留",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 5,
       "combinations": [
         {
@@ -354,19 +1408,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-keep"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-keep",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-let",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "let",
       "chinese": "让；允许",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 6,
       "combinations": [
         {
@@ -392,19 +1449,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-let"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-let",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-make",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "make",
       "chinese": "制作；使",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 7,
       "combinations": [
         {
@@ -430,19 +1490,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-make"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-make",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-put",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "put",
       "chinese": "放",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 8,
       "combinations": [
         {
@@ -468,19 +1531,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-put"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-put",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-seem",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "seem",
       "chinese": "似乎",
       "category": "联系",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 9,
       "combinations": [
         {
@@ -506,19 +1572,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-seem"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-seem",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-take",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "take",
       "chinese": "拿；带；花费",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 10,
       "combinations": [
         {
@@ -544,19 +1613,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-take"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-take",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-be",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "be",
       "chinese": "是；处于",
       "category": "系词与助动",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 11,
       "combinations": [
         {
@@ -582,19 +1654,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-be"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-be",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-do",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "do",
       "chinese": "做；辅助提问否定",
       "category": "动作与助动",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 12,
       "combinations": [
         {
@@ -620,19 +1695,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-do"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-do",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-have",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "have",
       "chinese": "有",
       "category": "拥有与助动",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 13,
       "combinations": [
         {
@@ -658,19 +1736,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-have"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-have",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-say",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "say",
       "chinese": "说",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 14,
       "combinations": [
         {
@@ -696,19 +1777,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-say"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-say",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-see",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "see",
       "chinese": "看见；明白",
       "category": "感知",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 15,
       "combinations": [
         {
@@ -734,19 +1818,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-see"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-see",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-send",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "send",
       "chinese": "发送；寄",
       "category": "动作",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 16,
       "combinations": [
         {
@@ -772,19 +1859,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-send"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-send",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-may",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "may",
       "chinese": "可以；可能",
       "category": "情态",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 17,
       "combinations": [
         {
@@ -810,19 +1900,22 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-may"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-may",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "ow-will",
       "kind": "word",
-      "version": 1,
+      "version": 2,
       "english": "will",
       "chinese": "将；愿意",
       "category": "情态",
-      "isOgdenOriginal": null,
+      "isOgdenOriginal": true,
       "modernStatus": "retained",
-      "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
       "order": 18,
       "combinations": [
         {
@@ -848,13 +1941,16 @@
         "primaryReading": "headword",
         "ipa": null
       },
-      "reviewStatus": "draft",
-      "originalRef": "or-will"
+      "reviewStatus": "approved",
+      "originalRef": "or-v3-will",
+      "originRelation": "listed-headword",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
     },
     {
       "id": "op-come",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "come",
       "chinese": "来",
       "wordId": "ow-come",
@@ -872,13 +1968,14 @@
           "chinese": "来到这里"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 1
+      "reviewStatus": "approved",
+      "order": 1,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-get",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "get",
       "chinese": "得到；到达",
       "wordId": "ow-get",
@@ -896,13 +1993,14 @@
           "chinese": "拿些水"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 2
+      "reviewStatus": "approved",
+      "order": 2,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-give",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "give",
       "chinese": "给",
       "wordId": "ow-give",
@@ -920,13 +2018,14 @@
           "chinese": "给我一点时间"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 3
+      "reviewStatus": "approved",
+      "order": 3,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-go",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "go",
       "chinese": "去",
       "wordId": "ow-go",
@@ -944,13 +2043,14 @@
           "chinese": "现在走"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 4
+      "reviewStatus": "approved",
+      "order": 4,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-keep",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "keep",
       "chinese": "保持；保留",
       "wordId": "ow-keep",
@@ -968,13 +2068,14 @@
           "chinese": "让门开着"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 5
+      "reviewStatus": "approved",
+      "order": 5,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-let",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "let",
       "chinese": "让；允许",
       "wordId": "ow-let",
@@ -992,13 +2093,14 @@
           "chinese": "让我帮忙"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 6
+      "reviewStatus": "approved",
+      "order": 6,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-make",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "make",
       "chinese": "制作；使",
       "wordId": "ow-make",
@@ -1016,13 +2118,14 @@
           "chinese": "做些吃的"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 7
+      "reviewStatus": "approved",
+      "order": 7,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-put",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "put",
       "chinese": "放",
       "wordId": "ow-put",
@@ -1040,13 +2143,14 @@
           "chinese": "把它放这里"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 8
+      "reviewStatus": "approved",
+      "order": 8,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-seem",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "seem",
       "chinese": "似乎",
       "wordId": "ow-seem",
@@ -1064,13 +2168,14 @@
           "chinese": "似乎累了"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 9
+      "reviewStatus": "approved",
+      "order": 9,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-take",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "take",
       "chinese": "拿；带；花费",
       "wordId": "ow-take",
@@ -1088,13 +2193,14 @@
           "chinese": "拿这个包"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 10
+      "reviewStatus": "approved",
+      "order": 10,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-be",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "be",
       "chinese": "是；处于",
       "wordId": "ow-be",
@@ -1112,13 +2218,14 @@
           "chinese": "在这里"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 11
+      "reviewStatus": "approved",
+      "order": 11,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-do",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "do",
       "chinese": "做；辅助提问否定",
       "wordId": "ow-do",
@@ -1136,13 +2243,14 @@
           "chinese": "你有……吗"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 12
+      "reviewStatus": "approved",
+      "order": 12,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-have",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "have",
       "chinese": "有",
       "wordId": "ow-have",
@@ -1160,13 +2268,14 @@
           "chinese": "有一个问题"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 13
+      "reviewStatus": "approved",
+      "order": 13,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-say",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "say",
       "chinese": "说",
       "wordId": "ow-say",
@@ -1184,13 +2293,14 @@
           "chinese": "再说一遍"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 14
+      "reviewStatus": "approved",
+      "order": 14,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-see",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "see",
       "chinese": "看见；明白",
       "wordId": "ow-see",
@@ -1208,13 +2318,14 @@
           "chinese": "看见门"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 15
+      "reviewStatus": "approved",
+      "order": 15,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-send",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "send",
       "chinese": "发送；寄",
       "wordId": "ow-send",
@@ -1232,13 +2343,14 @@
           "chinese": "把价格发给我"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 16
+      "reviewStatus": "approved",
+      "order": 16,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-may",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "may",
       "chinese": "可以；可能",
       "wordId": "ow-may",
@@ -1256,13 +2368,14 @@
           "chinese": "我可以进来吗"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 17
+      "reviewStatus": "approved",
+      "order": 17,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "op-will",
       "kind": "operator",
-      "version": 1,
+      "version": 2,
       "english": "will",
       "chinese": "将；愿意",
       "wordId": "ow-will",
@@ -1280,13 +2393,14 @@
           "chinese": "会帮忙"
         }
       ],
-      "reviewStatus": "draft",
-      "order": 18
+      "reviewStatus": "approved",
+      "order": 18,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-need",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "I need ___.",
       "chinese": "我需要……",
       "examples": [
@@ -1296,7 +2410,7 @@
         }
       ],
       "function": "表达需求",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 1,
       "variants": [
         {
@@ -1304,28 +2418,29 @@
           "label": "水",
           "english": "I need some water.",
           "chinese": "我需要一些水。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-need-help",
           "label": "帮助",
           "english": "I need help.",
           "chinese": "我需要帮助。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-need-time",
           "label": "更多时间",
           "english": "I need more time.",
           "chinese": "我需要更多时间。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-have",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "I have ___.",
       "chinese": "我有……",
       "examples": [
@@ -1335,7 +2450,7 @@
         }
       ],
       "function": "介绍事物",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 2,
       "variants": [
         {
@@ -1343,28 +2458,29 @@
           "label": "一个问题",
           "english": "I have a question.",
           "chinese": "我有一个问题。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-have-ticket",
           "label": "一张票",
           "english": "I have a ticket.",
           "chinese": "我有一张票。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-have-bag",
           "label": "一个包",
           "english": "I have a bag.",
           "chinese": "我有一个包。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-where",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "Where is ___?",
       "chinese": "……在哪里？",
       "examples": [
@@ -1374,7 +2490,7 @@
         }
       ],
       "function": "询问地点",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 3,
       "variants": [
         {
@@ -1382,28 +2498,29 @@
           "label": "门",
           "english": "Where is the door?",
           "chinese": "门在哪里？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-where-bag",
           "label": "包",
           "english": "Where is my bag?",
           "chinese": "我的包在哪里？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-where-water",
           "label": "水",
           "english": "Where is the water?",
           "chinese": "水在哪里？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-price",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "How much is ___?",
       "chinese": "……多少钱？",
       "examples": [
@@ -1413,7 +2530,7 @@
         }
       ],
       "function": "询问价格",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 4,
       "variants": [
         {
@@ -1421,28 +2538,29 @@
           "label": "它",
           "english": "How much is it?",
           "chinese": "它多少钱？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-price-ticket",
           "label": "这张票",
           "english": "How much is this ticket?",
           "chinese": "这张票多少钱？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-price-bag",
           "label": "这个包",
           "english": "How much is this bag?",
           "chinese": "这个包多少钱？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-request",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "Can you ___?",
       "chinese": "你能……吗？",
       "examples": [
@@ -1452,7 +2570,7 @@
         }
       ],
       "function": "请求帮助",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 5,
       "variants": [
         {
@@ -1460,28 +2578,29 @@
           "label": "帮助我",
           "english": "Can you help me?",
           "chinese": "你能帮我吗？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-request-water",
           "label": "拿些水",
           "english": "Can you get some water?",
           "chinese": "你能拿些水吗？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-request-price",
           "label": "发送价格",
           "english": "Can you send me the price?",
           "chinese": "你能把价格发给我吗？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-negative",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "I do not have ___.",
       "chinese": "我没有……",
       "examples": [
@@ -1491,7 +2610,7 @@
         }
       ],
       "function": "简单否定",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 6,
       "variants": [
         {
@@ -1499,28 +2618,29 @@
           "label": "时间",
           "english": "I do not have time.",
           "chinese": "我没有时间。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-negative-ticket",
           "label": "票",
           "english": "I do not have a ticket.",
           "chinese": "我没有票。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-negative-bag",
           "label": "包",
           "english": "I do not have a bag.",
           "chinese": "我没有包。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-when",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "When will ___?",
       "chinese": "……什么时候会……？",
       "examples": [
@@ -1530,7 +2650,7 @@
         }
       ],
       "function": "询问时间",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 7,
       "variants": [
         {
@@ -1538,28 +2658,29 @@
           "label": "车到这里",
           "english": "When will the car get here?",
           "chinese": "车什么时候会到这里？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-when-come",
           "label": "你来",
           "english": "When will you come?",
           "chinese": "你什么时候会来？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-when-go",
           "label": "我们走",
           "english": "When will we go?",
           "chinese": "我们什么时候走？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-choice",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "This is ___ than that.",
       "chinese": "这个比那个更……",
       "examples": [
@@ -1569,7 +2690,7 @@
         }
       ],
       "function": "比较选择",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 8,
       "variants": [
         {
@@ -1577,28 +2698,29 @@
           "label": "更小",
           "english": "This is smaller than that.",
           "chinese": "这个比那个更小。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-choice-bigger",
           "label": "更大",
           "english": "This is bigger than that.",
           "chinese": "这个比那个更大。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-choice-better",
           "label": "更好",
           "english": "This is better than that.",
           "chinese": "这个比那个更好。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-water",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "get some water",
       "chinese": "拿些水",
       "tokens": [
@@ -1615,13 +2737,14 @@
       "wordIds": [
         "ow-get"
       ],
-      "reviewStatus": "draft",
-      "order": 1
+      "reviewStatus": "approved",
+      "order": 1,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-help",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "get help",
       "chinese": "获得帮助",
       "tokens": [
@@ -1637,13 +2760,14 @@
       "wordIds": [
         "ow-get"
       ],
-      "reviewStatus": "draft",
-      "order": 2
+      "reviewStatus": "approved",
+      "order": 2,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-message",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "get a message",
       "chinese": "收到一条消息",
       "tokens": [
@@ -1660,13 +2784,14 @@
       "wordIds": [
         "ow-get"
       ],
-      "reviewStatus": "draft",
-      "order": 3
+      "reviewStatus": "approved",
+      "order": 3,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-ticket",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "get a ticket",
       "chinese": "拿到一张票",
       "tokens": [
@@ -1683,13 +2808,14 @@
       "wordIds": [
         "ow-get"
       ],
-      "reviewStatus": "draft",
-      "order": 4
+      "reviewStatus": "approved",
+      "order": 4,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-time",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "give me some time",
       "chinese": "给我一点时间",
       "tokens": [
@@ -1707,13 +2833,14 @@
       "wordIds": [
         "ow-give"
       ],
-      "reviewStatus": "draft",
-      "order": 5
+      "reviewStatus": "approved",
+      "order": 5,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-door",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "keep the door open",
       "chinese": "让门开着",
       "tokens": [
@@ -1731,13 +2858,14 @@
       "wordIds": [
         "ow-keep"
       ],
-      "reviewStatus": "draft",
-      "order": 6
+      "reviewStatus": "approved",
+      "order": 6,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-place",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "put it here",
       "chinese": "把它放这里",
       "tokens": [
@@ -1754,13 +2882,14 @@
       "wordIds": [
         "ow-put"
       ],
-      "reviewStatus": "draft",
-      "order": 7
+      "reviewStatus": "approved",
+      "order": 7,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "cb-price",
       "kind": "combination",
-      "version": 1,
+      "version": 2,
       "english": "send me the price",
       "chinese": "把价格发给我",
       "tokens": [
@@ -1778,13 +2907,14 @@
       "wordIds": [
         "ow-send"
       ],
-      "reviewStatus": "draft",
-      "order": 8
+      "reviewStatus": "approved",
+      "order": 8,
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "ex-help",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "Can you help me?",
       "chinese": "请别人帮你",
       "level": 1,
@@ -1793,31 +2923,28 @@
         "Please help me."
       ],
       "wordIds": [
-        "ow-give"
+        "ow-you",
+        "ow-help",
+        "ow-please"
       ],
       "patternIds": [
         "pt-request"
       ],
       "scenario": "life",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "can",
+        "me"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 1
+      "reviewStatus": "approved",
+      "order": 1,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-time",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "I need more time.",
       "chinese": "表达你需要更多时间",
       "level": 1,
@@ -1826,6 +2953,10 @@
         "Please give me more time."
       ],
       "wordIds": [
+        "ow-i",
+        "ow-need",
+        "ow-time",
+        "ow-please",
         "ow-give"
       ],
       "patternIds": [
@@ -1833,24 +2964,19 @@
       ],
       "scenario": "life",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "more",
+        "me"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 2
+      "reviewStatus": "approved",
+      "order": 2,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-question",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "I have a question.",
       "chinese": "说明你有一个问题",
       "level": 1,
@@ -1859,31 +2985,30 @@
         "I have something to ask."
       ],
       "wordIds": [
-        "ow-have"
+        "ow-i",
+        "ow-have",
+        "ow-a",
+        "ow-question",
+        "ow-to"
       ],
       "patternIds": [
         "pt-have"
       ],
       "scenario": "life",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "something",
+        "ask"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 3
+      "reviewStatus": "approved",
+      "order": 3,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-arrival",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "When will the car get here?",
       "chinese": "我想知道车什么时候能到",
       "level": 2,
@@ -1892,32 +3017,30 @@
         "When will the car arrive?"
       ],
       "wordIds": [
+        "ow-when",
         "ow-will",
-        "ow-get"
+        "ow-the",
+        "ow-car",
+        "ow-get",
+        "ow-here"
       ],
       "patternIds": [
         "pt-when"
       ],
       "scenario": "travel",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "arrive"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 4
+      "reviewStatus": "approved",
+      "order": 4,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-send-price",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "Can you send me the price?",
       "chinese": "请对方发送价格",
       "level": 2,
@@ -1926,31 +3049,30 @@
         "Please send me the price."
       ],
       "wordIds": [
-        "ow-send"
+        "ow-you",
+        "ow-send",
+        "ow-the",
+        "ow-price",
+        "ow-please"
       ],
       "patternIds": [
         "pt-request"
       ],
       "scenario": "work",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "can",
+        "me"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 5
+      "reviewStatus": "approved",
+      "order": 5,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-no-time",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "I do not have time.",
       "chinese": "说明你没有时间",
       "level": 2,
@@ -1959,32 +3081,28 @@
         "I have no time."
       ],
       "wordIds": [
+        "ow-i",
+        "ow-do",
+        "ow-not",
         "ow-have",
-        "ow-do"
+        "ow-time",
+        "ow-no"
       ],
       "patternIds": [
         "pt-negative"
       ],
       "scenario": "life",
-      "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
-      ],
+      "supportWords": [],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 6
+      "reviewStatus": "approved",
+      "order": 6,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-opener",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "I need something to open this bottle.",
       "chinese": "忘了开瓶器这个词，描述你需要的东西",
       "level": 3,
@@ -1993,6 +3111,12 @@
         "Can you give me something to open this bottle?"
       ],
       "wordIds": [
+        "ow-i",
+        "ow-need",
+        "ow-to",
+        "ow-open",
+        "ow-this",
+        "ow-you",
         "ow-give"
       ],
       "patternIds": [
@@ -2001,24 +3125,21 @@
       ],
       "scenario": "life",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
+        "something",
         "bottle",
-        "late",
-        "smaller"
+        "can",
+        "me"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 7
+      "reviewStatus": "approved",
+      "order": 7,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-late",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "The car will not get here on time.",
       "chinese": "忘了延误这个词，解释车不会按时到",
       "level": 3,
@@ -2027,32 +3148,33 @@
         "The car will be late."
       ],
       "wordIds": [
+        "ow-the",
+        "ow-car",
         "ow-will",
-        "ow-get"
+        "ow-not",
+        "ow-get",
+        "ow-here",
+        "ow-on",
+        "ow-time",
+        "ow-be"
       ],
       "patternIds": [
         "pt-when"
       ],
       "scenario": "travel",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "late"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 8
+      "reviewStatus": "approved",
+      "order": 8,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "ex-smaller",
       "kind": "expression",
-      "version": 1,
+      "version": 2,
       "english": "I need something smaller than this.",
       "chinese": "忘了小一号这个词，描述你想要的东西",
       "level": 3,
@@ -2061,31 +3183,34 @@
         "Do you have a smaller one?"
       ],
       "wordIds": [
-        "ow-have"
+        "ow-i",
+        "ow-need",
+        "ow-this",
+        "ow-do",
+        "ow-you",
+        "ow-have",
+        "ow-a"
       ],
       "patternIds": [
         "pt-choice"
       ],
       "scenario": "life",
       "supportWords": [
-        "help",
-        "need",
-        "time",
-        "car",
-        "arrive",
-        "open",
-        "bottle",
-        "late",
-        "smaller"
+        "something",
+        "smaller",
+        "than",
+        "one"
       ],
       "evaluation": "self-assessment",
-      "reviewStatus": "draft",
-      "order": 9
+      "reviewStatus": "approved",
+      "order": 9,
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     },
     {
       "id": "pt-state",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "I am ___.",
       "chinese": "我处于……状态；我在……",
       "examples": [
@@ -2095,7 +3220,7 @@
         }
       ],
       "function": "描述位置与状态",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 9,
       "variants": [
         {
@@ -2103,28 +3228,29 @@
           "label": "在这里",
           "english": "I am here.",
           "chinese": "我在这里。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-state-ready",
           "label": "准备好了",
           "english": "I am ready.",
           "chinese": "我准备好了。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-state-tired",
           "label": "累了",
           "english": "I am tired.",
           "chinese": "我累了。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-seem",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "You seem ___.",
       "chinese": "你似乎……",
       "examples": [
@@ -2134,7 +3260,7 @@
         }
       ],
       "function": "描述印象",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 10,
       "variants": [
         {
@@ -2142,28 +3268,29 @@
           "label": "累了",
           "english": "You seem tired.",
           "chinese": "你似乎累了。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-seem-happy",
           "label": "开心",
           "english": "You seem happy.",
           "chinese": "你似乎很开心。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-seem-ready",
           "label": "准备好了",
           "english": "You seem ready.",
           "chinese": "你似乎准备好了。",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
     },
     {
       "id": "pt-permission",
       "kind": "pattern",
-      "version": 2,
+      "version": 3,
       "english": "May I ___?",
       "chinese": "我可以……吗？",
       "examples": [
@@ -2173,7 +3300,7 @@
         }
       ],
       "function": "请求许可",
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "order": 11,
       "variants": [
         {
@@ -2181,23 +3308,4100 @@
           "label": "进来",
           "english": "May I come in?",
           "chinese": "我可以进来吗？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-permission-go",
           "label": "现在走",
           "english": "May I go now?",
           "chinese": "我现在可以走吗？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         },
         {
           "id": "pt-permission-take",
           "label": "拿这个",
           "english": "May I take this?",
           "chinese": "我可以拿这个吗？",
-          "reviewStatus": "draft"
+          "reviewStatus": "approved"
         }
-      ]
+      ],
+      "reviewMethod": "developer-self-check"
+    },
+    {
+      "id": "ow-i",
+      "kind": "word",
+      "version": 1,
+      "english": "I",
+      "chinese": "我",
+      "category": "代词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 19,
+      "combinations": [
+        {
+          "english": "I am",
+          "chinese": "我是；我处于"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I am here.",
+          "chinese": "我在这里。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-i",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-you",
+      "kind": "word",
+      "version": 1,
+      "english": "you",
+      "chinese": "你；你们",
+      "category": "代词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 20,
+      "combinations": [
+        {
+          "english": "you can",
+          "chinese": "你可以"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can you help me?",
+          "chinese": "你能帮我吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-you",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-we",
+      "kind": "word",
+      "version": 1,
+      "english": "we",
+      "chinese": "我们",
+      "category": "代词",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "原版规则可派生的常用代词/疑问形式；现代词库单列以降低零基础查阅难度，不冒称原表独立词头。",
+      "order": 21,
+      "combinations": [
+        {
+          "english": "we have",
+          "chinese": "我们有"
+        }
+      ],
+      "examples": [
+        {
+          "english": "We have time.",
+          "chinese": "我们有时间。"
+        }
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-we",
+      "originRelation": "grammatical-form",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-he",
+      "kind": "word",
+      "version": 1,
+      "english": "he",
+      "chinese": "他",
+      "category": "代词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 22,
+      "combinations": [
+        {
+          "english": "he is",
+          "chinese": "他是；他处于"
+        }
+      ],
+      "examples": [
+        {
+          "english": "He is here.",
+          "chinese": "他在这里。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-he",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-she",
+      "kind": "word",
+      "version": 1,
+      "english": "she",
+      "chinese": "她",
+      "category": "代词",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "原版规则可派生的常用代词/疑问形式；现代词库单列以降低零基础查阅难度，不冒称原表独立词头。",
+      "order": 23,
+      "combinations": [
+        {
+          "english": "she is",
+          "chinese": "她是；她处于"
+        }
+      ],
+      "examples": [
+        {
+          "english": "She is ready.",
+          "chinese": "她准备好了。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-she",
+      "originRelation": "grammatical-form",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-it",
+      "kind": "word",
+      "version": 1,
+      "english": "it",
+      "chinese": "它；这件事",
+      "category": "代词",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "原版规则可派生的常用代词/疑问形式；现代词库单列以降低零基础查阅难度，不冒称原表独立词头。",
+      "order": 24,
+      "combinations": [
+        {
+          "english": "it is",
+          "chinese": "它是"
+        }
+      ],
+      "examples": [
+        {
+          "english": "How much is it?",
+          "chinese": "它多少钱？"
+        }
+      ],
+      "patternIds": [
+        "pt-price"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-it",
+      "originRelation": "grammatical-form",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-they",
+      "kind": "word",
+      "version": 1,
+      "english": "they",
+      "chinese": "他们；她们；它们",
+      "category": "代词",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "原版规则可派生的常用代词/疑问形式；现代词库单列以降低零基础查阅难度，不冒称原表独立词头。",
+      "order": 25,
+      "combinations": [
+        {
+          "english": "they are",
+          "chinese": "他们是；他们处于"
+        }
+      ],
+      "examples": [
+        {
+          "english": "They are here.",
+          "chinese": "他们在这里。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-they",
+      "originRelation": "grammatical-form",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-a",
+      "kind": "word",
+      "version": 1,
+      "english": "a",
+      "chinese": "一个；一件",
+      "category": "限定词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 26,
+      "combinations": [
+        {
+          "english": "a ticket",
+          "chinese": "一张票"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I have a ticket.",
+          "chinese": "我有一张票。"
+        }
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "functions": [
+        "限定词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-a",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-the",
+      "kind": "word",
+      "version": 1,
+      "english": "the",
+      "chinese": "指已知或特定的人或事物",
+      "category": "限定词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 27,
+      "combinations": [
+        {
+          "english": "the door",
+          "chinese": "那扇门；特定的门"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Where is the door?",
+          "chinese": "门在哪里？"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "限定词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-the",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-this",
+      "kind": "word",
+      "version": 1,
+      "english": "this",
+      "chinese": "这；这个",
+      "category": "限定词与代词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 28,
+      "combinations": [
+        {
+          "english": "this bag",
+          "chinese": "这个包"
+        }
+      ],
+      "examples": [
+        {
+          "english": "May I take this?",
+          "chinese": "我可以拿这个吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-permission"
+      ],
+      "functions": [
+        "限定词与代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-this",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-that",
+      "kind": "word",
+      "version": 1,
+      "english": "that",
+      "chinese": "那；那个",
+      "category": "限定词与代词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 29,
+      "combinations": [
+        {
+          "english": "that room",
+          "chinese": "那个房间"
+        }
+      ],
+      "examples": [
+        {
+          "english": "That is my room.",
+          "chinese": "那是我的房间。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "限定词与代词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-that",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-some",
+      "kind": "word",
+      "version": 1,
+      "english": "some",
+      "chinese": "一些",
+      "category": "限定词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 30,
+      "combinations": [
+        {
+          "english": "some water",
+          "chinese": "一些水"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need some water.",
+          "chinese": "我需要一些水。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "限定词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-some",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-any",
+      "kind": "word",
+      "version": 1,
+      "english": "any",
+      "chinese": "一些；任何",
+      "category": "限定词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 31,
+      "combinations": [
+        {
+          "english": "any questions",
+          "chinese": "有什么问题"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Do you have any questions?",
+          "chinese": "你有什么问题吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "functions": [
+        "限定词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-any",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-not",
+      "kind": "word",
+      "version": 1,
+      "english": "not",
+      "chinese": "不；不是",
+      "category": "否定词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 32,
+      "combinations": [
+        {
+          "english": "not ready",
+          "chinese": "没准备好"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I am not ready.",
+          "chinese": "我还没准备好。"
+        }
+      ],
+      "patternIds": [
+        "pt-negative"
+      ],
+      "functions": [
+        "否定词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-not",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-and",
+      "kind": "word",
+      "version": 1,
+      "english": "and",
+      "chinese": "和；并且",
+      "category": "连接词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 33,
+      "combinations": [
+        {
+          "english": "bread and milk",
+          "chinese": "面包和牛奶"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need bread and milk.",
+          "chinese": "我需要面包和牛奶。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "连接词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-and",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-or",
+      "kind": "word",
+      "version": 1,
+      "english": "or",
+      "chinese": "或者",
+      "category": "连接词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 34,
+      "combinations": [
+        {
+          "english": "tea or coffee",
+          "chinese": "茶或者咖啡"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Do you want tea or coffee?",
+          "chinese": "你想要茶还是咖啡？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "连接词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-or",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-but",
+      "kind": "word",
+      "version": 1,
+      "english": "but",
+      "chinese": "但是",
+      "category": "连接词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 35,
+      "combinations": [
+        {
+          "english": "but I need help",
+          "chinese": "但是我需要帮助"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I have a ticket, but I need help.",
+          "chinese": "我有票，但是我需要帮助。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "连接词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-but",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-in",
+      "kind": "word",
+      "version": 1,
+      "english": "in",
+      "chinese": "在……里面",
+      "category": "位置关系",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 36,
+      "combinations": [
+        {
+          "english": "in the room",
+          "chinese": "在房间里"
+        }
+      ],
+      "examples": [
+        {
+          "english": "The water is in the room.",
+          "chinese": "水在房间里。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "位置关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-in",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-on",
+      "kind": "word",
+      "version": 1,
+      "english": "on",
+      "chinese": "在……上面",
+      "category": "位置关系",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 37,
+      "combinations": [
+        {
+          "english": "on the table",
+          "chinese": "在桌上"
+        }
+      ],
+      "examples": [
+        {
+          "english": "The ticket is on the table.",
+          "chinese": "票在桌上。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "位置关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-on",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-at",
+      "kind": "word",
+      "version": 1,
+      "english": "at",
+      "chinese": "在某地点或时刻",
+      "category": "位置与时间",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 38,
+      "combinations": [
+        {
+          "english": "at home",
+          "chinese": "在家"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I am at home.",
+          "chinese": "我在家。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "位置与时间",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-at",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-to",
+      "kind": "word",
+      "version": 1,
+      "english": "to",
+      "chinese": "向；到；不定式标记",
+      "category": "关系词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 39,
+      "combinations": [
+        {
+          "english": "to go",
+          "chinese": "去；离开"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need to go.",
+          "chinese": "我需要走了。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "关系词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-to",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-from",
+      "kind": "word",
+      "version": 1,
+      "english": "from",
+      "chinese": "从；来自",
+      "category": "关系词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 40,
+      "combinations": [
+        {
+          "english": "from China",
+          "chinese": "来自中国"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I am from China.",
+          "chinese": "我来自中国。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "关系词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-from",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-with",
+      "kind": "word",
+      "version": 1,
+      "english": "with",
+      "chinese": "和……一起；带有",
+      "category": "关系词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 41,
+      "combinations": [
+        {
+          "english": "with me",
+          "chinese": "和我一起"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Come with me.",
+          "chinese": "跟我来。"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "关系词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-with",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-for",
+      "kind": "word",
+      "version": 1,
+      "english": "for",
+      "chinese": "为；给；用于",
+      "category": "关系词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 42,
+      "combinations": [
+        {
+          "english": "for you",
+          "chinese": "给你；为你"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This is for you.",
+          "chinese": "这是给你的。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "关系词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-for",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-of",
+      "kind": "word",
+      "version": 1,
+      "english": "of",
+      "chinese": "……的",
+      "category": "关系词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 43,
+      "combinations": [
+        {
+          "english": "a cup of water",
+          "chinese": "一杯水"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need a cup of water.",
+          "chinese": "我需要一杯水。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "关系词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-of",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-here",
+      "kind": "word",
+      "version": 1,
+      "english": "here",
+      "chinese": "这里；到这里",
+      "category": "地点词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 44,
+      "combinations": [
+        {
+          "english": "get here",
+          "chinese": "到这里"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Put it here, please.",
+          "chinese": "请把它放这里。"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "地点词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-here",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-there",
+      "kind": "word",
+      "version": 1,
+      "english": "there",
+      "chinese": "那里；在那里",
+      "category": "地点词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 45,
+      "combinations": [
+        {
+          "english": "over there",
+          "chinese": "在那边"
+        }
+      ],
+      "examples": [
+        {
+          "english": "The car is there.",
+          "chinese": "车在那里。"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "地点词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-there",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-now",
+      "kind": "word",
+      "version": 1,
+      "english": "now",
+      "chinese": "现在",
+      "category": "时间词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 46,
+      "combinations": [
+        {
+          "english": "go now",
+          "chinese": "现在走"
+        }
+      ],
+      "examples": [
+        {
+          "english": "We can go now.",
+          "chinese": "我们现在可以走了。"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "时间词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-now",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-when",
+      "kind": "word",
+      "version": 1,
+      "english": "when",
+      "chinese": "什么时候",
+      "category": "疑问词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 47,
+      "combinations": [
+        {
+          "english": "when will",
+          "chinese": "什么时候会"
+        }
+      ],
+      "examples": [
+        {
+          "english": "When will you come?",
+          "chinese": "你什么时候来？"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "疑问词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-when",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-where",
+      "kind": "word",
+      "version": 1,
+      "english": "where",
+      "chinese": "在哪里",
+      "category": "疑问词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 48,
+      "combinations": [
+        {
+          "english": "where is",
+          "chinese": "……在哪里"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Where is my ticket?",
+          "chinese": "我的票在哪里？"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "疑问词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-where",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-how",
+      "kind": "word",
+      "version": 1,
+      "english": "how",
+      "chinese": "怎样；多么",
+      "category": "疑问词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 49,
+      "combinations": [
+        {
+          "english": "how much",
+          "chinese": "多少；多少钱"
+        }
+      ],
+      "examples": [
+        {
+          "english": "How much is this?",
+          "chinese": "这个多少钱？"
+        }
+      ],
+      "patternIds": [
+        "pt-price"
+      ],
+      "functions": [
+        "疑问词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-how",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-why",
+      "kind": "word",
+      "version": 1,
+      "english": "why",
+      "chinese": "为什么",
+      "category": "疑问词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 50,
+      "combinations": [
+        {
+          "english": "why do you",
+          "chinese": "你为什么"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Why do you need it?",
+          "chinese": "你为什么需要它？"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "疑问词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-why",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-what",
+      "kind": "word",
+      "version": 1,
+      "english": "what",
+      "chinese": "什么",
+      "category": "疑问词",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "原版规则可派生的常用代词/疑问形式；现代词库单列以降低零基础查阅难度，不冒称原表独立词头。",
+      "order": 51,
+      "combinations": [
+        {
+          "english": "what do you need",
+          "chinese": "你需要什么"
+        }
+      ],
+      "examples": [
+        {
+          "english": "What do you need?",
+          "chinese": "你需要什么？"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "疑问词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-what",
+      "originRelation": "grammatical-form",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-please",
+      "kind": "word",
+      "version": 1,
+      "english": "please",
+      "chinese": "请",
+      "category": "礼貌表达",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 52,
+      "combinations": [
+        {
+          "english": "please help",
+          "chinese": "请帮忙"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Please help me.",
+          "chinese": "请帮帮我。"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "礼貌表达",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-please",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-yes",
+      "kind": "word",
+      "version": 1,
+      "english": "yes",
+      "chinese": "是；好的",
+      "category": "回应词",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 53,
+      "combinations": [
+        {
+          "english": "yes, please",
+          "chinese": "好的，谢谢"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Yes, I have a ticket.",
+          "chinese": "是的，我有票。"
+        }
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "functions": [
+        "回应词",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-yes",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-no",
+      "kind": "word",
+      "version": 1,
+      "english": "no",
+      "chinese": "不；没有",
+      "category": "回应与否定",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 54,
+      "combinations": [
+        {
+          "english": "no time",
+          "chinese": "没有时间"
+        }
+      ],
+      "examples": [
+        {
+          "english": "No, I do not have a ticket.",
+          "chinese": "不，我没有票。"
+        }
+      ],
+      "patternIds": [
+        "pt-negative"
+      ],
+      "functions": [
+        "回应与否定",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-no",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-name",
+      "kind": "word",
+      "version": 1,
+      "english": "name",
+      "chinese": "名字",
+      "category": "人物信息",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 55,
+      "combinations": [
+        {
+          "english": "my name",
+          "chinese": "我的名字"
+        }
+      ],
+      "examples": [
+        {
+          "english": "My name is Ava.",
+          "chinese": "我的名字是Ava。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "人物信息",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-name",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-person",
+      "kind": "word",
+      "version": 1,
+      "english": "person",
+      "chinese": "人",
+      "category": "人物信息",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 56,
+      "combinations": [
+        {
+          "english": "this person",
+          "chinese": "这个人"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This person can help you.",
+          "chinese": "这个人能帮助你。"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "人物信息",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-person",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-family",
+      "kind": "word",
+      "version": 1,
+      "english": "family",
+      "chinese": "家人；家庭",
+      "category": "人物关系",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 57,
+      "combinations": [
+        {
+          "english": "my family",
+          "chinese": "我的家人"
+        }
+      ],
+      "examples": [
+        {
+          "english": "My family is here.",
+          "chinese": "我的家人在这里。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "人物关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-family",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-friend",
+      "kind": "word",
+      "version": 1,
+      "english": "friend",
+      "chinese": "朋友",
+      "category": "人物关系",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 58,
+      "combinations": [
+        {
+          "english": "my friend",
+          "chinese": "我的朋友"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This is my friend.",
+          "chinese": "这是我的朋友。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "人物关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-friend",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-mother",
+      "kind": "word",
+      "version": 1,
+      "english": "mother",
+      "chinese": "母亲；妈妈",
+      "category": "人物关系",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 59,
+      "combinations": [
+        {
+          "english": "my mother",
+          "chinese": "我的妈妈"
+        }
+      ],
+      "examples": [
+        {
+          "english": "My mother is at home.",
+          "chinese": "我妈妈在家。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "人物关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-mother",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-father",
+      "kind": "word",
+      "version": 1,
+      "english": "father",
+      "chinese": "父亲；爸爸",
+      "category": "人物关系",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 60,
+      "combinations": [
+        {
+          "english": "my father",
+          "chinese": "我的爸爸"
+        }
+      ],
+      "examples": [
+        {
+          "english": "My father is here.",
+          "chinese": "我爸爸在这里。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "人物关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-father",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-child",
+      "kind": "word",
+      "version": 1,
+      "english": "child",
+      "chinese": "孩子",
+      "category": "人物关系",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 61,
+      "combinations": [
+        {
+          "english": "the child",
+          "chinese": "这个孩子"
+        }
+      ],
+      "examples": [
+        {
+          "english": "The child needs water.",
+          "chinese": "这个孩子需要水。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "人物关系",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-child",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-home",
+      "kind": "word",
+      "version": 1,
+      "english": "home",
+      "chinese": "家；在家",
+      "category": "生活地点",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 62,
+      "combinations": [
+        {
+          "english": "go home",
+          "chinese": "回家"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I will go home now.",
+          "chinese": "我现在要回家。"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "生活地点",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-home",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-house",
+      "kind": "word",
+      "version": 1,
+      "english": "house",
+      "chinese": "房子",
+      "category": "生活地点",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 63,
+      "combinations": [
+        {
+          "english": "a small house",
+          "chinese": "一栋小房子"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This house is small.",
+          "chinese": "这栋房子很小。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "生活地点",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-house",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-room",
+      "kind": "word",
+      "version": 1,
+      "english": "room",
+      "chinese": "房间；空间",
+      "category": "生活地点",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 64,
+      "combinations": [
+        {
+          "english": "a room",
+          "chinese": "一个房间"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need a room.",
+          "chinese": "我需要一个房间。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "生活地点",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-room",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-door",
+      "kind": "word",
+      "version": 1,
+      "english": "door",
+      "chinese": "门",
+      "category": "生活物品",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 65,
+      "combinations": [
+        {
+          "english": "the door",
+          "chinese": "这扇门"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Please keep the door open.",
+          "chinese": "请让门开着。"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "生活物品",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-door",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-water",
+      "kind": "word",
+      "version": 1,
+      "english": "water",
+      "chinese": "水",
+      "category": "饮食",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 66,
+      "combinations": [
+        {
+          "english": "some water",
+          "chinese": "一些水"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can you get some water?",
+          "chinese": "你能拿些水吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-water",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-food",
+      "kind": "word",
+      "version": 1,
+      "english": "food",
+      "chinese": "食物",
+      "category": "饮食",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 67,
+      "combinations": [
+        {
+          "english": "some food",
+          "chinese": "一些食物"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need some food.",
+          "chinese": "我需要一些食物。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-food",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-bread",
+      "kind": "word",
+      "version": 1,
+      "english": "bread",
+      "chinese": "面包",
+      "category": "饮食",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 68,
+      "combinations": [
+        {
+          "english": "some bread",
+          "chinese": "一些面包"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need some bread.",
+          "chinese": "我需要一些面包。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-bread",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-rice",
+      "kind": "word",
+      "version": 1,
+      "english": "rice",
+      "chinese": "米饭；大米",
+      "category": "饮食",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 69,
+      "combinations": [
+        {
+          "english": "some rice",
+          "chinese": "一些米饭"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can I have some rice?",
+          "chinese": "我可以要一些米饭吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-rice",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-milk",
+      "kind": "word",
+      "version": 1,
+      "english": "milk",
+      "chinese": "牛奶",
+      "category": "饮食",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 70,
+      "combinations": [
+        {
+          "english": "some milk",
+          "chinese": "一些牛奶"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can I have some milk?",
+          "chinese": "我可以要一些牛奶吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-milk",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-coffee",
+      "kind": "word",
+      "version": 1,
+      "english": "coffee",
+      "chinese": "咖啡",
+      "category": "饮食",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 71,
+      "combinations": [
+        {
+          "english": "some coffee",
+          "chinese": "一些咖啡"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can I have some coffee?",
+          "chinese": "我可以要一些咖啡吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-coffee",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-tea",
+      "kind": "word",
+      "version": 1,
+      "english": "tea",
+      "chinese": "茶",
+      "category": "饮食",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 72,
+      "combinations": [
+        {
+          "english": "some tea",
+          "chinese": "一些茶"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can I have some tea?",
+          "chinese": "我可以要一些茶吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "饮食",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-tea",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-time",
+      "kind": "word",
+      "version": 1,
+      "english": "time",
+      "chinese": "时间",
+      "category": "时间数量",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 73,
+      "combinations": [
+        {
+          "english": "more time",
+          "chinese": "更多时间"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need more time.",
+          "chinese": "我需要更多时间。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "时间数量",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-time",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-day",
+      "kind": "word",
+      "version": 1,
+      "english": "day",
+      "chinese": "一天；白天",
+      "category": "时间数量",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 74,
+      "combinations": [
+        {
+          "english": "one more day",
+          "chinese": "再一天"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need one more day.",
+          "chinese": "我还需要一天。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "时间数量",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-day",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-week",
+      "kind": "word",
+      "version": 1,
+      "english": "week",
+      "chinese": "星期；一周",
+      "category": "时间数量",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 75,
+      "combinations": [
+        {
+          "english": "next week",
+          "chinese": "下周"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I will come next week.",
+          "chinese": "我下周来。"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "时间数量",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-week",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-today",
+      "kind": "word",
+      "version": 1,
+      "english": "today",
+      "chinese": "今天",
+      "category": "时间数量",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 76,
+      "combinations": [
+        {
+          "english": "here today",
+          "chinese": "今天在这里"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need it today.",
+          "chinese": "我今天需要它。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "时间数量",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-today",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-tomorrow",
+      "kind": "word",
+      "version": 1,
+      "english": "tomorrow",
+      "chinese": "明天",
+      "category": "时间数量",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 77,
+      "combinations": [
+        {
+          "english": "come tomorrow",
+          "chinese": "明天来"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I will come tomorrow.",
+          "chinese": "我明天来。"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "时间数量",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-tomorrow",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-money",
+      "kind": "word",
+      "version": 1,
+      "english": "money",
+      "chinese": "钱",
+      "category": "购物价格",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 78,
+      "combinations": [
+        {
+          "english": "enough money",
+          "chinese": "足够的钱"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I do not have enough money.",
+          "chinese": "我的钱不够。"
+        }
+      ],
+      "patternIds": [
+        "pt-negative"
+      ],
+      "functions": [
+        "购物价格",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-money",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-price",
+      "kind": "word",
+      "version": 1,
+      "english": "price",
+      "chinese": "价格",
+      "category": "购物价格",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 79,
+      "combinations": [
+        {
+          "english": "the price",
+          "chinese": "价格"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Please send me the price.",
+          "chinese": "请把价格发给我。"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "购物价格",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-price",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-ticket",
+      "kind": "word",
+      "version": 1,
+      "english": "ticket",
+      "chinese": "票",
+      "category": "交通旅行",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 80,
+      "combinations": [
+        {
+          "english": "get a ticket",
+          "chinese": "拿到一张票"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Where can I get a ticket?",
+          "chinese": "我在哪里可以拿到票？"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "交通旅行",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-ticket",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-car",
+      "kind": "word",
+      "version": 1,
+      "english": "car",
+      "chinese": "汽车",
+      "category": "交通旅行",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 81,
+      "combinations": [
+        {
+          "english": "the car",
+          "chinese": "这辆车"
+        }
+      ],
+      "examples": [
+        {
+          "english": "When will the car get here?",
+          "chinese": "车什么时候会到这里？"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "交通旅行",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-car",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-bus",
+      "kind": "word",
+      "version": 1,
+      "english": "bus",
+      "chinese": "公共汽车",
+      "category": "交通旅行",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 82,
+      "combinations": [
+        {
+          "english": "a bus ticket",
+          "chinese": "一张公交车票"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Where can I get a bus ticket?",
+          "chinese": "我在哪里可以买到公交车票？"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "交通旅行",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-bus",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-train",
+      "kind": "word",
+      "version": 1,
+      "english": "train",
+      "chinese": "火车",
+      "category": "交通旅行",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 83,
+      "combinations": [
+        {
+          "english": "the train",
+          "chinese": "这班火车"
+        }
+      ],
+      "examples": [
+        {
+          "english": "When will the train get here?",
+          "chinese": "火车什么时候到这里？"
+        }
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "functions": [
+        "交通旅行",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-train",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-airport",
+      "kind": "word",
+      "version": 1,
+      "english": "airport",
+      "chinese": "机场",
+      "category": "交通旅行",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 84,
+      "combinations": [
+        {
+          "english": "to the airport",
+          "chinese": "去机场"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Can you take me to the airport?",
+          "chinese": "你能带我去机场吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "交通旅行",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-airport",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-hotel",
+      "kind": "word",
+      "version": 1,
+      "english": "hotel",
+      "chinese": "酒店",
+      "category": "交通旅行",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 85,
+      "combinations": [
+        {
+          "english": "the hotel",
+          "chinese": "这家酒店"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Where is the hotel?",
+          "chinese": "酒店在哪里？"
+        }
+      ],
+      "patternIds": [
+        "pt-where"
+      ],
+      "functions": [
+        "交通旅行",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-hotel",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-phone",
+      "kind": "word",
+      "version": 1,
+      "english": "phone",
+      "chinese": "电话；手机",
+      "category": "现代生活",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 86,
+      "combinations": [
+        {
+          "english": "your phone",
+          "chinese": "你的电话；你的手机"
+        }
+      ],
+      "examples": [
+        {
+          "english": "May I use your phone?",
+          "chinese": "我可以用一下你的电话吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-permission"
+      ],
+      "functions": [
+        "现代生活",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-phone",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-email",
+      "kind": "word",
+      "version": 1,
+      "english": "email",
+      "chinese": "电子邮件",
+      "category": "现代生活",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 87,
+      "combinations": [
+        {
+          "english": "send an email",
+          "chinese": "发一封电子邮件"
+        }
+      ],
+      "examples": [
+        {
+          "english": "Please send me an email.",
+          "chinese": "请给我发一封电子邮件。"
+        }
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "functions": [
+        "现代生活",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-email",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-computer",
+      "kind": "word",
+      "version": 1,
+      "english": "computer",
+      "chinese": "电脑",
+      "category": "现代生活",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 88,
+      "combinations": [
+        {
+          "english": "this computer",
+          "chinese": "这台电脑"
+        }
+      ],
+      "examples": [
+        {
+          "english": "May I use this computer?",
+          "chinese": "我可以用这台电脑吗？"
+        }
+      ],
+      "patternIds": [
+        "pt-permission"
+      ],
+      "functions": [
+        "现代生活",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-computer",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-help",
+      "kind": "word",
+      "version": 1,
+      "english": "help",
+      "chinese": "帮助",
+      "category": "需求求助",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 89,
+      "combinations": [
+        {
+          "english": "get help",
+          "chinese": "获得帮助"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need help.",
+          "chinese": "我需要帮助。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "需求求助",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-help",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-question",
+      "kind": "word",
+      "version": 1,
+      "english": "question",
+      "chinese": "问题；提问",
+      "category": "需求求助",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 90,
+      "combinations": [
+        {
+          "english": "a question",
+          "chinese": "一个问题"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I have a question.",
+          "chinese": "我有一个问题。"
+        }
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "functions": [
+        "需求求助",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-question",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-work",
+      "kind": "word",
+      "version": 1,
+      "english": "work",
+      "chinese": "工作",
+      "category": "工作交流",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 91,
+      "combinations": [
+        {
+          "english": "work today",
+          "chinese": "今天工作"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I have work today.",
+          "chinese": "我今天有工作要做。"
+        }
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "functions": [
+        "工作交流",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-work",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-need",
+      "kind": "word",
+      "version": 1,
+      "english": "need",
+      "chinese": "需要",
+      "category": "需求表达",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。 历史表中need归于事物类；现代教材也教授自然的动词用法I need，明确属于现代适配，不冒称原版词性规则。",
+      "order": 92,
+      "combinations": [
+        {
+          "english": "need help",
+          "chinese": "需要帮助"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need some water.",
+          "chinese": "我需要一些水。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "需求表达",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-need",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-good",
+      "kind": "word",
+      "version": 1,
+      "english": "good",
+      "chinese": "好的",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 93,
+      "combinations": [
+        {
+          "english": "a good price",
+          "chinese": "一个不错的价格"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This is good.",
+          "chinese": "这个很好。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-good",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-bad",
+      "kind": "word",
+      "version": 1,
+      "english": "bad",
+      "chinese": "不好的；糟糕的",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 94,
+      "combinations": [
+        {
+          "english": "a bad time",
+          "chinese": "不合适的时候"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This is a bad time.",
+          "chinese": "现在不是合适的时候。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-bad",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-small",
+      "kind": "word",
+      "version": 1,
+      "english": "small",
+      "chinese": "小的",
+      "category": "比较选择",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 95,
+      "combinations": [
+        {
+          "english": "a small room",
+          "chinese": "一个小房间"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I need a small room.",
+          "chinese": "我需要一个小房间。"
+        }
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "functions": [
+        "比较选择",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-small",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-big",
+      "kind": "word",
+      "version": 1,
+      "english": "big",
+      "chinese": "大的",
+      "category": "比较选择",
+      "isOgdenOriginal": false,
+      "modernStatus": "added",
+      "changeReason": "现代日常交流直接实用，避免难以理解的迂回表达；明确标为现代新增，不冒称原版词。",
+      "order": 96,
+      "combinations": [
+        {
+          "english": "a big room",
+          "chinese": "一个大房间"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This room is big.",
+          "chinese": "这个房间很大。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "比较选择",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-big",
+      "originRelation": "modern-addition",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-new",
+      "kind": "word",
+      "version": 1,
+      "english": "new",
+      "chinese": "新的",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 97,
+      "combinations": [
+        {
+          "english": "a new phone",
+          "chinese": "一部新手机"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This is my new phone.",
+          "chinese": "这是我的新手机。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-new",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-old",
+      "kind": "word",
+      "version": 1,
+      "english": "old",
+      "chinese": "旧的；年老的",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 98,
+      "combinations": [
+        {
+          "english": "an old house",
+          "chinese": "一栋老房子"
+        }
+      ],
+      "examples": [
+        {
+          "english": "This is an old house.",
+          "chinese": "这是一栋老房子。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-old",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-open",
+      "kind": "word",
+      "version": 1,
+      "english": "open",
+      "chinese": "开着的；打开",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 99,
+      "combinations": [
+        {
+          "english": "keep it open",
+          "chinese": "让它开着"
+        }
+      ],
+      "examples": [
+        {
+          "english": "The door is open.",
+          "chinese": "门开着。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-open",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-ready",
+      "kind": "word",
+      "version": 1,
+      "english": "ready",
+      "chinese": "准备好的",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 100,
+      "combinations": [
+        {
+          "english": "get ready",
+          "chinese": "准备好"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I am ready.",
+          "chinese": "我准备好了。"
+        }
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-ready",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ow-tired",
+      "kind": "word",
+      "version": 1,
+      "english": "tired",
+      "chinese": "疲倦的",
+      "category": "状态描述",
+      "isOgdenOriginal": true,
+      "modernStatus": "retained",
+      "changeReason": "保留可组合的历史基础词；现代例句及中文释义由项目重写。",
+      "order": 101,
+      "combinations": [
+        {
+          "english": "seem tired",
+          "chinese": "似乎累了"
+        }
+      ],
+      "examples": [
+        {
+          "english": "I am tired.",
+          "chinese": "我累了。"
+        }
+      ],
+      "patternIds": [
+        "pt-seem"
+      ],
+      "functions": [
+        "状态描述",
+        "日常交流"
+      ],
+      "pronunciation": {
+        "locale": "en-US",
+        "source": "browser-local-voice",
+        "primaryReading": "headword",
+        "ipa": null
+      },
+      "originalRef": "or-v3-tired",
+      "originRelation": "listed-headword",
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "逐条检查中译、词性/功能、组合和例句；保留标准现代英语的词形和冠词。发音元数据不代表已完成真机耳听。"
+    },
+    {
+      "id": "ex-introduce",
+      "kind": "expression",
+      "version": 1,
+      "english": "My name is Ava.",
+      "chinese": "说出你的名字",
+      "level": 1,
+      "answers": [
+        "My name is Ava.",
+        "I am Ava."
+      ],
+      "wordIds": [
+        "ow-name",
+        "ow-i"
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "my",
+        "is",
+        "ava",
+        "am"
+      ],
+      "evaluation": "self-assessment",
+      "order": 10,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-origin",
+      "kind": "expression",
+      "version": 1,
+      "english": "I am from China.",
+      "chinese": "说你来自中国",
+      "level": 1,
+      "answers": [
+        "I am from China.",
+        "I come from China."
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-from",
+        "ow-come"
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "am",
+        "china"
+      ],
+      "evaluation": "self-assessment",
+      "order": 11,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-friend",
+      "kind": "expression",
+      "version": 1,
+      "english": "This is my friend.",
+      "chinese": "介绍你的朋友",
+      "level": 1,
+      "answers": [
+        "This is my friend.",
+        "This person is my friend."
+      ],
+      "wordIds": [
+        "ow-this",
+        "ow-friend",
+        "ow-person"
+      ],
+      "patternIds": [
+        "pt-state"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "is",
+        "my"
+      ],
+      "evaluation": "self-assessment",
+      "order": 12,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-food",
+      "kind": "expression",
+      "version": 1,
+      "english": "I need some food.",
+      "chinese": "告诉别人你需要一些食物",
+      "level": 1,
+      "answers": [
+        "I need some food.",
+        "Can I have some food, please?"
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-need",
+        "ow-some",
+        "ow-food",
+        "ow-have",
+        "ow-please"
+      ],
+      "patternIds": [
+        "pt-need",
+        "pt-request"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "can"
+      ],
+      "evaluation": "self-assessment",
+      "order": 13,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-drink",
+      "kind": "expression",
+      "version": 1,
+      "english": "Can I have some tea, please?",
+      "chinese": "礼貌地要一些茶",
+      "level": 1,
+      "answers": [
+        "Can I have some tea, please?",
+        "I would like some tea, please."
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-have",
+        "ow-some",
+        "ow-tea",
+        "ow-please"
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "can",
+        "would",
+        "like"
+      ],
+      "evaluation": "self-assessment",
+      "order": 14,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-ticket",
+      "kind": "expression",
+      "version": 1,
+      "english": "I have a ticket.",
+      "chinese": "说明你已经有票",
+      "level": 1,
+      "answers": [
+        "I have a ticket.",
+        "I already have a ticket."
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-have",
+        "ow-a",
+        "ow-ticket"
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "scenario": "travel",
+      "supportWords": [
+        "already"
+      ],
+      "evaluation": "self-assessment",
+      "order": 15,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-room",
+      "kind": "expression",
+      "version": 1,
+      "english": "Do you have a room?",
+      "chinese": "在酒店询问有没有房间",
+      "level": 2,
+      "answers": [
+        "Do you have a room?",
+        "Do you have any rooms?"
+      ],
+      "wordIds": [
+        "ow-do",
+        "ow-you",
+        "ow-have",
+        "ow-a",
+        "ow-room",
+        "ow-any"
+      ],
+      "patternIds": [
+        "pt-have"
+      ],
+      "scenario": "travel",
+      "supportWords": [
+        "rooms"
+      ],
+      "evaluation": "self-assessment",
+      "order": 16,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-airport",
+      "kind": "expression",
+      "version": 1,
+      "english": "Can you take me to the airport?",
+      "chinese": "请对方带你去机场",
+      "level": 2,
+      "answers": [
+        "Can you take me to the airport?",
+        "Please take me to the airport."
+      ],
+      "wordIds": [
+        "ow-you",
+        "ow-take",
+        "ow-to",
+        "ow-the",
+        "ow-airport",
+        "ow-please"
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "scenario": "travel",
+      "supportWords": [
+        "can",
+        "me"
+      ],
+      "evaluation": "self-assessment",
+      "order": 17,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-payment",
+      "kind": "expression",
+      "version": 1,
+      "english": "Can I pay by card?",
+      "chinese": "询问能不能用银行卡付款",
+      "level": 2,
+      "answers": [
+        "Can I pay by card?",
+        "Can I use a card to pay?"
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-a",
+        "ow-to"
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "can",
+        "pay",
+        "by",
+        "card",
+        "use"
+      ],
+      "evaluation": "self-assessment",
+      "order": 18,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-price-choice",
+      "kind": "expression",
+      "version": 1,
+      "english": "How much is this bag?",
+      "chinese": "想知道这个包多少钱",
+      "level": 2,
+      "answers": [
+        "How much is this bag?",
+        "What is the price of this bag?"
+      ],
+      "wordIds": [
+        "ow-how",
+        "ow-this",
+        "ow-what",
+        "ow-the",
+        "ow-price",
+        "ow-of"
+      ],
+      "patternIds": [
+        "pt-price"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "much",
+        "is",
+        "bag"
+      ],
+      "evaluation": "self-assessment",
+      "order": 19,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-arrival-place",
+      "kind": "expression",
+      "version": 1,
+      "english": "When will the train get here?",
+      "chinese": "询问火车什么时候到这里",
+      "level": 2,
+      "answers": [
+        "When will the train get here?",
+        "When will the train arrive?"
+      ],
+      "wordIds": [
+        "ow-when",
+        "ow-will",
+        "ow-the",
+        "ow-train",
+        "ow-get",
+        "ow-here"
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "scenario": "travel",
+      "supportWords": [
+        "arrive"
+      ],
+      "evaluation": "self-assessment",
+      "order": 20,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-send-email",
+      "kind": "expression",
+      "version": 1,
+      "english": "Can you send me an email?",
+      "chinese": "请对方给你发一封邮件",
+      "level": 2,
+      "answers": [
+        "Can you send me an email?",
+        "Please send me an email."
+      ],
+      "wordIds": [
+        "ow-you",
+        "ow-send",
+        "ow-email",
+        "ow-please"
+      ],
+      "patternIds": [
+        "pt-request"
+      ],
+      "scenario": "work",
+      "supportWords": [
+        "can",
+        "me",
+        "an"
+      ],
+      "evaluation": "self-assessment",
+      "order": 21,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-delivery",
+      "kind": "expression",
+      "version": 1,
+      "english": "When can I get it?",
+      "chinese": "问你什么时候能收到东西",
+      "level": 2,
+      "answers": [
+        "When can I get it?",
+        "When will I get it?"
+      ],
+      "wordIds": [
+        "ow-when",
+        "ow-i",
+        "ow-get",
+        "ow-it",
+        "ow-will"
+      ],
+      "patternIds": [
+        "pt-when"
+      ],
+      "scenario": "work",
+      "supportWords": [
+        "can"
+      ],
+      "evaluation": "self-assessment",
+      "order": 22,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-phone-problem",
+      "kind": "expression",
+      "version": 1,
+      "english": "My phone does not work.",
+      "chinese": "忘了故障这个词，解释手机不能用了",
+      "level": 3,
+      "answers": [
+        "My phone does not work.",
+        "I cannot use my phone."
+      ],
+      "wordIds": [
+        "ow-phone",
+        "ow-not",
+        "ow-work",
+        "ow-i"
+      ],
+      "patternIds": [
+        "pt-negative"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "my",
+        "does",
+        "cannot",
+        "use"
+      ],
+      "evaluation": "self-assessment",
+      "order": 23,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-lost-ticket",
+      "kind": "expression",
+      "version": 1,
+      "english": "I cannot find my ticket.",
+      "chinese": "忘了遗失这个词，解释你找不到票",
+      "level": 3,
+      "answers": [
+        "I cannot find my ticket.",
+        "I do not know where my ticket is."
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-ticket",
+        "ow-do",
+        "ow-not",
+        "ow-where"
+      ],
+      "patternIds": [
+        "pt-negative",
+        "pt-where"
+      ],
+      "scenario": "travel",
+      "supportWords": [
+        "cannot",
+        "find",
+        "my",
+        "know",
+        "is"
+      ],
+      "evaluation": "self-assessment",
+      "order": 24,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-thirsty",
+      "kind": "expression",
+      "version": 1,
+      "english": "I need some water.",
+      "chinese": "忘了口渴这个词，用需要水说明需求",
+      "level": 3,
+      "answers": [
+        "I need some water.",
+        "Can I have some water to drink?"
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-need",
+        "ow-some",
+        "ow-water",
+        "ow-have",
+        "ow-to"
+      ],
+      "patternIds": [
+        "pt-need"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "can",
+        "drink"
+      ],
+      "evaluation": "self-assessment",
+      "order": 25,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-vegetarian",
+      "kind": "expression",
+      "version": 1,
+      "english": "I do not eat meat.",
+      "chinese": "忘了素食这个词，说明你不吃肉",
+      "level": 3,
+      "answers": [
+        "I do not eat meat.",
+        "Can I have food with no meat?"
+      ],
+      "wordIds": [
+        "ow-i",
+        "ow-do",
+        "ow-not",
+        "ow-have",
+        "ow-food",
+        "ow-with",
+        "ow-no"
+      ],
+      "patternIds": [
+        "pt-negative"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "eat",
+        "meat",
+        "can"
+      ],
+      "evaluation": "self-assessment",
+      "order": 26,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
+    },
+    {
+      "id": "ex-charger",
+      "kind": "expression",
+      "version": 1,
+      "english": "My phone needs power. Can you help me?",
+      "chinese": "忘了充电器这个词，解释你的手机需要电",
+      "level": 3,
+      "answers": [
+        "My phone needs power. Can you help me?",
+        "I need something to give my phone power."
+      ],
+      "wordIds": [
+        "ow-phone",
+        "ow-you",
+        "ow-help",
+        "ow-i",
+        "ow-need",
+        "ow-to",
+        "ow-give"
+      ],
+      "patternIds": [
+        "pt-need",
+        "pt-request"
+      ],
+      "scenario": "life",
+      "supportWords": [
+        "my",
+        "needs",
+        "power",
+        "can",
+        "me",
+        "something"
+      ],
+      "evaluation": "self-assessment",
+      "order": 27,
+      "reviewStatus": "approved",
+      "reviewMethod": "developer-self-check",
+      "reviewNote": "参考表达表达同一主要意图，不是穷尽答案；允许其他正确表达。第三层允许辅助词，界面不声称全部用词已掌握。"
     }
   ]
 }

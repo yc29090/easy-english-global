@@ -1,8 +1,9 @@
+import {reviewDigest,type OgdenReview} from './ogden-readiness.ts';
 import {createHash} from 'node:crypto';
 import type {DB} from './db.ts';
 import {validateOgden,type OgdenContent} from './ogden-content.ts';
 /** Explicit preview import; intentionally not called by production startup/import. */
-export async function installOgden(db:DB,input:OgdenContent){
+export async function installOgden(db:DB,input:OgdenContent,reviews:OgdenReview[]=[]){
  const content=validateOgden(input),hash=createHash('sha256').update(JSON.stringify(content)).digest('hex');
  await db.query('BEGIN');
  try{
@@ -32,6 +33,14 @@ export async function installOgden(db:DB,input:OgdenContent){
    }
    await db.query(`INSERT INTO ogden_items VALUES($1,$2,$3,$4,$5) ON CONFLICT(id) DO UPDATE SET version=EXCLUDED.version,payload=EXCLUDED.payload,review_status=EXCLUDED.review_status WHERE ogden_items.version<EXCLUDED.version`,[x.id,x.kind,x.version,JSON.stringify(x),x.reviewStatus]);
    await db.query('INSERT INTO ogden_item_versions VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[x.id,x.version,JSON.stringify(x)]);
+  }
+  for(const r of reviews){
+   const item=content.items.find(x=>x.id===r.id&&x.version===r.version);
+   if(!item||r.digest!==reviewDigest(item))throw new Error('Ogden stale review: '+r.id);
+   const reviewer=r.reviewerKind==='developer-self-check'?r.reviewer:r.humanReviewer;
+   if(!reviewer||!r.notes||!Number.isFinite(Date.parse(r.reviewedAt))||!['approved','rejected'].includes(r.decision))throw new Error('Ogden invalid review: '+r.id);
+   const id=[r.id,r.version,r.digest,r.reviewerKind||'human'].join(':');
+   await db.query('INSERT INTO ogden_content_reviews(id,item_id,version,status,reviewer,notes,reviewed_at) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING',[id,r.id,r.version,r.decision,reviewer,JSON.stringify({method:r.reviewerKind||'human',notes:r.notes,digest:r.digest}),r.reviewedAt]);
   }
   await db.query('INSERT INTO ogden_installs VALUES($1,$2) ON CONFLICT DO NOTHING',[content.version,hash]);
   await db.query('COMMIT');return {items:content.items.length,approved:content.items.filter(x=>x.reviewStatus==='approved').length};

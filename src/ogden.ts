@@ -1,9 +1,10 @@
+import {ogdenEntitlement} from './ogden-policy.ts';
 import type {DB} from './db.ts';
 import {HttpError,requireValue} from './security.ts';
 import {reviewSchedule} from './review.ts';
-export async function ogden(c:{db:DB;userId:string;method:string;path:string;body:any}):Promise<any>{
+export async function ogden(c:{db:DB;userId:string;method:string;path:string;body:any;user?:{membership:string;trial_until?:string}}):Promise<any>{
  const {db,userId,method,path,body:b}=c;
- if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'production-pending',items:(await db.query(`SELECT i.payload FROM ogden_items i WHERE i.review_status<>'retired' AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND w.review_status<>'retired')) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload)};
+ if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'existing-members-both-versions',entitlement:ogdenEntitlement(c.user||{membership:'free'}),preview:true,items:(await db.query(`SELECT i.payload FROM ogden_items i WHERE i.review_status<>'retired' AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND w.review_status<>'retired')) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload)};
  if(method==='GET'&&path==='/api/ogden/progress')return {progress:(await db.query('SELECT * FROM ogden_progress WHERE user_id=$1 ORDER BY updated_at DESC,item_id',[userId])).rows};
  if(method==='GET'&&path==='/api/ogden/review')return {items:(await db.query(`SELECT i.payload,p.status,p.next_review_at FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND i.review_status<>'retired' AND (p.status IN ('unmastered','review') OR p.next_review_at<=now()) ORDER BY CASE p.status WHEN 'unmastered' THEN 0 ELSE 1 END,p.next_review_at,i.id`,[userId])).rows};
  if(method==='POST'&&path==='/api/ogden/results'){

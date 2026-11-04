@@ -1,3 +1,4 @@
+import {readFile} from 'node:fs/promises';
 // A local-only, ephemeral preview; never reads DATABASE_URL or .env.
 import {PGlite} from '@electric-sql/pglite';
 import type {DB} from '../src/db.ts';
@@ -7,7 +8,7 @@ import {loadOgden} from '../src/ogden-content.ts';
 import {createApplication} from '../src/http.ts';
 if(process.env.NODE_ENV==='production')throw new Error('Ogden preview is local-only');
 const engine=new PGlite(),db:DB={query:async(sql,v)=>{if(!v&&sql.includes(';')){await engine.exec(sql);return {rows:[]};}const r=await engine.query(sql,v);return {rows:r.rows as any[],rowCount:r.affectedRows};}};
-await prepareDatabase(db);await installOgden(db,await loadOgden());
+await prepareDatabase(db);await installOgden(db,await loadOgden(),JSON.parse(await readFile(new URL('../data/ogden/reviews.json',import.meta.url),'utf8')));
 // HTTP transactions must not overlap on the single embedded connection.
 let tail=Promise.resolve();
 const pool={...db,connect:async()=>{const previous=tail;let release!:()=>void;tail=new Promise<void>(r=>release=r);await previous;return {...db,release};}};

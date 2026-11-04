@@ -10,6 +10,7 @@ test('mobile isolated preview: existing login, shared operator state, combinatio
  }
  await page.goto('/ogden/operators');const get=page.locator('article[data-item="ow-get"]');await get.getByRole('button',{name:'已掌握',exact:true}).click();await expect(page.locator('#feedback')).toContainText('已保存');
  await page.goto('/ogden/words');await expect(page.locator('article[data-item="ow-get"] [data-state]')).toContainText('已掌握');
+ await page.locator('#word-search').fill('phone');await expect(page.locator('#word-results article')).toHaveCount(1);await expect(page.locator('#word-results')).toContainText('手机');await page.locator('#word-search').fill('');
  await page.goto('/ogden/patterns');const pattern=page.locator('article[data-item="pt-need"]');
  await pattern.locator('[data-hide-variant]').click();await expect(pattern.locator('[data-variant-en]')).toBeHidden();
  await pattern.locator('select').selectOption('pt-need-help');await expect(pattern.locator('[data-variant-zh]')).toHaveText('我需要帮助。');await expect(pattern.locator('[data-variant-en]')).toBeHidden();

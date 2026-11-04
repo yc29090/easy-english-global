@@ -16,15 +16,15 @@ test('controlled variants are authored, unique, bilingual and cannot bypass draf
   if(change==='missing')p.variants=[];
   if(change==='duplicate')p.variants[1].id=p.variants[0].id;
   if(change==='untranslated')p.variants[1].chinese='';
-  if(change==='unreviewed')p.reviewStatus='approved';
+  if(change==='unreviewed')p.variants[0].reviewStatus='draft';
   assert.throws(()=>validateOgden(d));
  }
 });
 test('readiness requires version-bound review evidence and never grants deployment access',async()=>{
  const exported=JSON.parse(await readFile(new URL('../docs/ogden/review-queue.json',import.meta.url),'utf8'));assert.equal(exported.contentDigest,contentDigest(c));assert.deepEqual(exported.items,ogdenReviewQueue(c));
  const r=ogdenReadiness(c,{});assert.equal(r.readyForProduction,false);assert.equal(r.checksPassed,false);assert.equal(r.checks.length,5);
- assert.equal(r.counts.authoredVariants,33);assert.equal(r.counts.approved,0);
- const queue=ogdenReviewQueue(c);assert.equal(queue.length,64);assert.ok(queue.every(x=>x.humanReviewer===null&&x.decision==='pending'));assert.equal(queue[0].digest,reviewDigest(c.items[0]));
+ assert.equal(r.counts.authoredVariants,33);assert.equal(r.counts.approved,165);
+ const queue=ogdenReviewQueue(c);assert.equal(queue.length,165);assert.ok(queue.every(x=>x.humanReviewer===null&&x.decision==='pending'));assert.equal(queue[0].digest,reviewDigest(c.items[0]));
  assert.equal(contentDigest({a:1,b:2}),contentDigest({b:2,a:1}));
  const approved=structuredClone(c);approved.items.forEach(x=>{x.reviewStatus='approved';for(const v of x.variants||[])v.reviewStatus='approved';});
  assert.equal(ogdenReadiness(approved,{}).checks[0].passed,false,'JSON status is not a human review record');
@@ -62,7 +62,7 @@ test('v1 stored pattern and practice history survive installation of v2 controll
   const progress=(await db.query('SELECT * FROM ogden_progress')).rows,events=(await db.query('SELECT * FROM ogden_practice_events')).rows;
   await installOgden(db,c);await installOgden(db,c);
   assert.deepEqual((await db.query('SELECT * FROM ogden_progress')).rows,progress);assert.deepEqual((await db.query('SELECT * FROM ogden_practice_events')).rows,events);
-  const versions=(await db.query('SELECT version FROM ogden_item_versions WHERE item_id=$1 ORDER BY version',[prior.id])).rows;assert.deepEqual(versions.map(x=>x.version),[1,2]);
+  const versions=(await db.query('SELECT version FROM ogden_item_versions WHERE item_id=$1 ORDER BY version',[prior.id])).rows;assert.deepEqual(versions.map(x=>x.version),[1,pattern.version]);
   assert.equal((await db.query('SELECT payload FROM ogden_items WHERE id=$1',[prior.id])).rows[0].payload.variants.length,3);
  }finally{await cleanup();}
 });
