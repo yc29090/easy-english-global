@@ -1,0 +1,7 @@
+{
+  "membershipPolicy": "pending",
+  "primarySourceReview": "pending",
+  "deviceVoiceReview": "pending",
+  "deploymentAuthorization": "pending",
+  "note": "决定与人工验收均需用户或明确记录的审查者确认；自动测试不能替代。生产路由继续关闭。"
+}

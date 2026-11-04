@@ -1,5 +1,5 @@
 {
-  "version": "mbe-pilot-1",
+  "version": "mbe-pilot-2",
   "targetCoreCount": 850,
   "releaseStatus": "draft-preview",
   "sources": [
@@ -1286,7 +1286,7 @@
     {
       "id": "pt-need",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "I need ___.",
       "chinese": "我需要……",
       "examples": [
@@ -1297,12 +1297,35 @@
       ],
       "function": "表达需求",
       "reviewStatus": "draft",
-      "order": 1
+      "order": 1,
+      "variants": [
+        {
+          "id": "pt-need-water",
+          "label": "水",
+          "english": "I need some water.",
+          "chinese": "我需要一些水。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-need-help",
+          "label": "帮助",
+          "english": "I need help.",
+          "chinese": "我需要帮助。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-need-time",
+          "label": "更多时间",
+          "english": "I need more time.",
+          "chinese": "我需要更多时间。",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-have",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "I have ___.",
       "chinese": "我有……",
       "examples": [
@@ -1313,12 +1336,35 @@
       ],
       "function": "介绍事物",
       "reviewStatus": "draft",
-      "order": 2
+      "order": 2,
+      "variants": [
+        {
+          "id": "pt-have-question",
+          "label": "一个问题",
+          "english": "I have a question.",
+          "chinese": "我有一个问题。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-have-ticket",
+          "label": "一张票",
+          "english": "I have a ticket.",
+          "chinese": "我有一张票。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-have-bag",
+          "label": "一个包",
+          "english": "I have a bag.",
+          "chinese": "我有一个包。",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-where",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "Where is ___?",
       "chinese": "……在哪里？",
       "examples": [
@@ -1329,12 +1375,35 @@
       ],
       "function": "询问地点",
       "reviewStatus": "draft",
-      "order": 3
+      "order": 3,
+      "variants": [
+        {
+          "id": "pt-where-door",
+          "label": "门",
+          "english": "Where is the door?",
+          "chinese": "门在哪里？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-where-bag",
+          "label": "包",
+          "english": "Where is my bag?",
+          "chinese": "我的包在哪里？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-where-water",
+          "label": "水",
+          "english": "Where is the water?",
+          "chinese": "水在哪里？",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-price",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "How much is ___?",
       "chinese": "……多少钱？",
       "examples": [
@@ -1345,12 +1414,35 @@
       ],
       "function": "询问价格",
       "reviewStatus": "draft",
-      "order": 4
+      "order": 4,
+      "variants": [
+        {
+          "id": "pt-price-it",
+          "label": "它",
+          "english": "How much is it?",
+          "chinese": "它多少钱？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-price-ticket",
+          "label": "这张票",
+          "english": "How much is this ticket?",
+          "chinese": "这张票多少钱？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-price-bag",
+          "label": "这个包",
+          "english": "How much is this bag?",
+          "chinese": "这个包多少钱？",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-request",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "Can you ___?",
       "chinese": "你能……吗？",
       "examples": [
@@ -1361,12 +1453,35 @@
       ],
       "function": "请求帮助",
       "reviewStatus": "draft",
-      "order": 5
+      "order": 5,
+      "variants": [
+        {
+          "id": "pt-request-help",
+          "label": "帮助我",
+          "english": "Can you help me?",
+          "chinese": "你能帮我吗？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-request-water",
+          "label": "拿些水",
+          "english": "Can you get some water?",
+          "chinese": "你能拿些水吗？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-request-price",
+          "label": "发送价格",
+          "english": "Can you send me the price?",
+          "chinese": "你能把价格发给我吗？",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-negative",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "I do not have ___.",
       "chinese": "我没有……",
       "examples": [
@@ -1377,12 +1492,35 @@
       ],
       "function": "简单否定",
       "reviewStatus": "draft",
-      "order": 6
+      "order": 6,
+      "variants": [
+        {
+          "id": "pt-negative-time",
+          "label": "时间",
+          "english": "I do not have time.",
+          "chinese": "我没有时间。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-negative-ticket",
+          "label": "票",
+          "english": "I do not have a ticket.",
+          "chinese": "我没有票。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-negative-bag",
+          "label": "包",
+          "english": "I do not have a bag.",
+          "chinese": "我没有包。",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-when",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "When will ___?",
       "chinese": "……什么时候会……？",
       "examples": [
@@ -1393,12 +1531,35 @@
       ],
       "function": "询问时间",
       "reviewStatus": "draft",
-      "order": 7
+      "order": 7,
+      "variants": [
+        {
+          "id": "pt-when-car",
+          "label": "车到这里",
+          "english": "When will the car get here?",
+          "chinese": "车什么时候会到这里？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-when-come",
+          "label": "你来",
+          "english": "When will you come?",
+          "chinese": "你什么时候会来？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-when-go",
+          "label": "我们走",
+          "english": "When will we go?",
+          "chinese": "我们什么时候走？",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-choice",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "This is ___ than that.",
       "chinese": "这个比那个更……",
       "examples": [
@@ -1409,7 +1570,30 @@
       ],
       "function": "比较选择",
       "reviewStatus": "draft",
-      "order": 8
+      "order": 8,
+      "variants": [
+        {
+          "id": "pt-choice-smaller",
+          "label": "更小",
+          "english": "This is smaller than that.",
+          "chinese": "这个比那个更小。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-choice-bigger",
+          "label": "更大",
+          "english": "This is bigger than that.",
+          "chinese": "这个比那个更大。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-choice-better",
+          "label": "更好",
+          "english": "This is better than that.",
+          "chinese": "这个比那个更好。",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "cb-water",
@@ -1901,7 +2085,7 @@
     {
       "id": "pt-state",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "I am ___.",
       "chinese": "我处于……状态；我在……",
       "examples": [
@@ -1912,12 +2096,35 @@
       ],
       "function": "描述位置与状态",
       "reviewStatus": "draft",
-      "order": 9
+      "order": 9,
+      "variants": [
+        {
+          "id": "pt-state-here",
+          "label": "在这里",
+          "english": "I am here.",
+          "chinese": "我在这里。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-state-ready",
+          "label": "准备好了",
+          "english": "I am ready.",
+          "chinese": "我准备好了。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-state-tired",
+          "label": "累了",
+          "english": "I am tired.",
+          "chinese": "我累了。",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-seem",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "You seem ___.",
       "chinese": "你似乎……",
       "examples": [
@@ -1928,12 +2135,35 @@
       ],
       "function": "描述印象",
       "reviewStatus": "draft",
-      "order": 10
+      "order": 10,
+      "variants": [
+        {
+          "id": "pt-seem-tired",
+          "label": "累了",
+          "english": "You seem tired.",
+          "chinese": "你似乎累了。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-seem-happy",
+          "label": "开心",
+          "english": "You seem happy.",
+          "chinese": "你似乎很开心。",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-seem-ready",
+          "label": "准备好了",
+          "english": "You seem ready.",
+          "chinese": "你似乎准备好了。",
+          "reviewStatus": "draft"
+        }
+      ]
     },
     {
       "id": "pt-permission",
       "kind": "pattern",
-      "version": 1,
+      "version": 2,
       "english": "May I ___?",
       "chinese": "我可以……吗？",
       "examples": [
@@ -1944,7 +2174,30 @@
       ],
       "function": "请求许可",
       "reviewStatus": "draft",
-      "order": 11
+      "order": 11,
+      "variants": [
+        {
+          "id": "pt-permission-come",
+          "label": "进来",
+          "english": "May I come in?",
+          "chinese": "我可以进来吗？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-permission-go",
+          "label": "现在走",
+          "english": "May I go now?",
+          "chinese": "我现在可以走吗？",
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "pt-permission-take",
+          "label": "拿这个",
+          "english": "May I take this?",
+          "chinese": "我可以拿这个吗？",
+          "reviewStatus": "draft"
+        }
+      ]
     }
   ]
 }

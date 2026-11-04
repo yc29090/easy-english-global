@@ -3,9 +3,9 @@ import {HttpError,requireValue} from './security.ts';
 import {reviewSchedule} from './review.ts';
 export async function ogden(c:{db:DB;userId:string;method:string;path:string;body:any}):Promise<any>{
  const {db,userId,method,path,body:b}=c;
- if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'production-pending',items:(await db.query('SELECT payload FROM ogden_items ORDER BY kind,(payload->>\'order\')::int,id')).rows.map(r=>r.payload)};
+ if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'production-pending',items:(await db.query(`SELECT i.payload FROM ogden_items i WHERE i.review_status<>'retired' AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND w.review_status<>'retired')) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload)};
  if(method==='GET'&&path==='/api/ogden/progress')return {progress:(await db.query('SELECT * FROM ogden_progress WHERE user_id=$1 ORDER BY updated_at DESC,item_id',[userId])).rows};
- if(method==='GET'&&path==='/api/ogden/review')return {items:(await db.query(`SELECT i.payload,p.status,p.next_review_at FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND (p.status IN ('unmastered','review') OR p.next_review_at<=now()) ORDER BY CASE p.status WHEN 'unmastered' THEN 0 ELSE 1 END,p.next_review_at,i.id`,[userId])).rows};
+ if(method==='GET'&&path==='/api/ogden/review')return {items:(await db.query(`SELECT i.payload,p.status,p.next_review_at FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND i.review_status<>'retired' AND (p.status IN ('unmastered','review') OR p.next_review_at<=now()) ORDER BY CASE p.status WHEN 'unmastered' THEN 0 ELSE 1 END,p.next_review_at,i.id`,[userId])).rows};
  if(method==='POST'&&path==='/api/ogden/results'){
   requireValue(!('user_id' in b),'User comes from the session');
   requireValue(typeof b.item_id==='string'&&b.item_id.length<=120&&['study','build','express','listening','speaking'].includes(b.mode)&&['learned','mastered','unmastered','review'].includes(b.status)&&typeof b.request_id==='string'&&/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(b.request_id),'Invalid Ogden result');
@@ -13,7 +13,8 @@ export async function ogden(c:{db:DB;userId:string;method:string;path:string;bod
   try{
    await db.query('SELECT id FROM users WHERE id=$1 FOR UPDATE',[userId]);
    let item=(await db.query('SELECT * FROM ogden_items WHERE id=$1 AND review_status<>\'retired\'',[b.item_id])).rows[0];if(!item)throw new HttpError(404,'教材不存在');
-   if(item.kind==='operator')item=(await db.query('SELECT * FROM ogden_items WHERE id=$1',[item.payload.wordId])).rows[0];
+   if(item.kind==='operator')item=(await db.query("SELECT * FROM ogden_items WHERE id=$1 AND review_status<>'retired'",[item.payload.wordId])).rows[0];
+   if(!item)throw new HttpError(404,'教材不存在');
    requireValue(b.mode!=='build'||item.kind==='combination');requireValue(b.mode!=='express'||item.kind==='expression');
    const prior=(await db.query('SELECT * FROM ogden_practice_events WHERE user_id=$1 AND request_id=$2',[userId,b.request_id])).rows[0];
    if(prior){if(prior.item_id!==item.id||prior.mode!==b.mode||prior.status!==b.status)throw new HttpError(409,'请求编号已使用');await db.query('COMMIT');return {ok:true,duplicate:true};}

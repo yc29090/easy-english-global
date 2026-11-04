@@ -1,10 +1,10 @@
 # 教材人工审查清单
 
-版本：`mbe-pilot-1`。所有条目均为草稿；人工审核通过数为 **0**。程序校验不等于教学审核。
+版本：mbe-pilot-2。活动教材64条，其中18个核心词；句型内含33条替换表达，不另计核心词。人工审核通过0条。
 
-审查人需逐条检查：自然度、准确性、中译、零基础负担、组合能力、超出本批词库的用词、文化适用性、General American主读音。核对原版来源是另一项审核，不能用例句审核替代。
+每条检查自然度、准确性、中译、零基础难度、辅助词与美式发音。程序校验不代替人工审核。完整数据与版本摘要见 review-queue.json。
 
-| ID / 版本 | 类型 | 英文 / 参考表达 | 中文 / 提示 | 人工结论 |
+| ID / 版本 | 类型 | 英文与参考表达 | 中文提示 | 状态 |
 |---|---|---|---|---|
 | ow-come / 1 | word | come<br>Come here, please.<br>come here | 来 | 待审核 |
 | ow-get / 1 | word | get<br>Can you get some water?<br>get some water | 得到；到达 | 待审核 |
@@ -42,14 +42,38 @@
 | op-send / 1 | operator | send<br>Please send me the price.<br>send me the price | 发送；寄 | 待审核 |
 | op-may / 1 | operator | may<br>May I come in?<br>may I come in | 可以；可能 | 待审核 |
 | op-will / 1 | operator | will<br>I will help you.<br>will help | 将；愿意 | 待审核 |
-| pt-need / 1 | pattern | I need ___.<br>I need more time. | 我需要…… | 待审核 |
-| pt-have / 1 | pattern | I have ___.<br>I have a question. | 我有…… | 待审核 |
-| pt-where / 1 | pattern | Where is ___?<br>Where is the door? | ……在哪里？ | 待审核 |
-| pt-price / 1 | pattern | How much is ___?<br>How much is it? | ……多少钱？ | 待审核 |
-| pt-request / 1 | pattern | Can you ___?<br>Can you help me? | 你能……吗？ | 待审核 |
-| pt-negative / 1 | pattern | I do not have ___.<br>I do not have time. | 我没有…… | 待审核 |
-| pt-when / 1 | pattern | When will ___?<br>When will the car get here? | ……什么时候会……？ | 待审核 |
-| pt-choice / 1 | pattern | This is ___ than that.<br>This is smaller than that. | 这个比那个更…… | 待审核 |
+| pt-need / 2 | pattern | I need ___.<br>I need more time. | 我需要…… | 待审核 |
+| pt-need-water / 父版本2 | 受控替换 | I need some water. | 我需要一些水。 | 待审核 |
+| pt-need-help / 父版本2 | 受控替换 | I need help. | 我需要帮助。 | 待审核 |
+| pt-need-time / 父版本2 | 受控替换 | I need more time. | 我需要更多时间。 | 待审核 |
+| pt-have / 2 | pattern | I have ___.<br>I have a question. | 我有…… | 待审核 |
+| pt-have-question / 父版本2 | 受控替换 | I have a question. | 我有一个问题。 | 待审核 |
+| pt-have-ticket / 父版本2 | 受控替换 | I have a ticket. | 我有一张票。 | 待审核 |
+| pt-have-bag / 父版本2 | 受控替换 | I have a bag. | 我有一个包。 | 待审核 |
+| pt-where / 2 | pattern | Where is ___?<br>Where is the door? | ……在哪里？ | 待审核 |
+| pt-where-door / 父版本2 | 受控替换 | Where is the door? | 门在哪里？ | 待审核 |
+| pt-where-bag / 父版本2 | 受控替换 | Where is my bag? | 我的包在哪里？ | 待审核 |
+| pt-where-water / 父版本2 | 受控替换 | Where is the water? | 水在哪里？ | 待审核 |
+| pt-price / 2 | pattern | How much is ___?<br>How much is it? | ……多少钱？ | 待审核 |
+| pt-price-it / 父版本2 | 受控替换 | How much is it? | 它多少钱？ | 待审核 |
+| pt-price-ticket / 父版本2 | 受控替换 | How much is this ticket? | 这张票多少钱？ | 待审核 |
+| pt-price-bag / 父版本2 | 受控替换 | How much is this bag? | 这个包多少钱？ | 待审核 |
+| pt-request / 2 | pattern | Can you ___?<br>Can you help me? | 你能……吗？ | 待审核 |
+| pt-request-help / 父版本2 | 受控替换 | Can you help me? | 你能帮我吗？ | 待审核 |
+| pt-request-water / 父版本2 | 受控替换 | Can you get some water? | 你能拿些水吗？ | 待审核 |
+| pt-request-price / 父版本2 | 受控替换 | Can you send me the price? | 你能把价格发给我吗？ | 待审核 |
+| pt-negative / 2 | pattern | I do not have ___.<br>I do not have time. | 我没有…… | 待审核 |
+| pt-negative-time / 父版本2 | 受控替换 | I do not have time. | 我没有时间。 | 待审核 |
+| pt-negative-ticket / 父版本2 | 受控替换 | I do not have a ticket. | 我没有票。 | 待审核 |
+| pt-negative-bag / 父版本2 | 受控替换 | I do not have a bag. | 我没有包。 | 待审核 |
+| pt-when / 2 | pattern | When will ___?<br>When will the car get here? | ……什么时候会……？ | 待审核 |
+| pt-when-car / 父版本2 | 受控替换 | When will the car get here? | 车什么时候会到这里？ | 待审核 |
+| pt-when-come / 父版本2 | 受控替换 | When will you come? | 你什么时候会来？ | 待审核 |
+| pt-when-go / 父版本2 | 受控替换 | When will we go? | 我们什么时候走？ | 待审核 |
+| pt-choice / 2 | pattern | This is ___ than that.<br>This is smaller than that. | 这个比那个更…… | 待审核 |
+| pt-choice-smaller / 父版本2 | 受控替换 | This is smaller than that. | 这个比那个更小。 | 待审核 |
+| pt-choice-bigger / 父版本2 | 受控替换 | This is bigger than that. | 这个比那个更大。 | 待审核 |
+| pt-choice-better / 父版本2 | 受控替换 | This is better than that. | 这个比那个更好。 | 待审核 |
 | cb-water / 1 | combination | get some water<br>Can you get some water? | 拿些水 | 待审核 |
 | cb-help / 1 | combination | get help<br>I need to get help. | 获得帮助 | 待审核 |
 | cb-message / 1 | combination | get a message<br>I will get a message. | 收到一条消息 | 待审核 |
@@ -67,18 +91,21 @@
 | ex-opener / 1 | expression | I need something to open this bottle.<br>Can you give me something to open this bottle? | 忘了开瓶器这个词，描述你需要的东西 | 待审核 |
 | ex-late / 1 | expression | The car will not get here on time.<br>The car will be late. | 忘了延误这个词，解释车不会按时到 | 待审核 |
 | ex-smaller / 1 | expression | I need something smaller than this.<br>Do you have a smaller one? | 忘了小一号这个词，描述你想要的东西 | 待审核 |
-| pt-state / 1 | pattern | I am ___.<br>I am here. | 我处于……状态；我在…… | 待审核 |
-| pt-seem / 1 | pattern | You seem ___.<br>You seem tired. | 你似乎…… | 待审核 |
-| pt-permission / 1 | pattern | May I ___?<br>May I come in? | 我可以……吗？ | 待审核 |
+| pt-state / 2 | pattern | I am ___.<br>I am here. | 我处于……状态；我在…… | 待审核 |
+| pt-state-here / 父版本2 | 受控替换 | I am here. | 我在这里。 | 待审核 |
+| pt-state-ready / 父版本2 | 受控替换 | I am ready. | 我准备好了。 | 待审核 |
+| pt-state-tired / 父版本2 | 受控替换 | I am tired. | 我累了。 | 待审核 |
+| pt-seem / 2 | pattern | You seem ___.<br>You seem tired. | 你似乎…… | 待审核 |
+| pt-seem-tired / 父版本2 | 受控替换 | You seem tired. | 你似乎累了。 | 待审核 |
+| pt-seem-happy / 父版本2 | 受控替换 | You seem happy. | 你似乎很开心。 | 待审核 |
+| pt-seem-ready / 父版本2 | 受控替换 | You seem ready. | 你似乎准备好了。 | 待审核 |
+| pt-permission / 2 | pattern | May I ___?<br>May I come in? | 我可以……吗？ | 待审核 |
+| pt-permission-come / 父版本2 | 受控替换 | May I come in? | 我可以进来吗？ | 待审核 |
+| pt-permission-go / 父版本2 | 受控替换 | May I go now? | 我现在可以走吗？ | 待审核 |
+| pt-permission-take / 父版本2 | 受控替换 | May I take this? | 我可以拿这个吗？ | 待审核 |
 
-## 表达任务注意事项
+## 审核提交要求
 
-- 所有参考表达都是可能的说法，不是穷尽答案集。到达任务使用 arrive 作为现代辅助词；没有冒称它属于本批核心词。
-- 第三层开瓶器任务允许用 something to open this bottle 解释概念。辅助词不计入核心词数量。
-- 商务场景只有发送价格一题，占9项表达任务中的1项；不含复杂贸易、合同或物流术语。
-- be 的 am/is/are、do 的助动功能、seem 的联系功能、may/will 的情态功能要分开讲解。
-- 英文语音缺少本地 en-US 时应明确降级；不得以其他口音代替后仍标为美式。
+在 data/ogden/reviews.json 保存 id、version、digest、humanReviewer、decision（approved/rejected）、reviewedAt和审查理由；必须由实际审查者签署。review-queue.json 是待审核导出，不是审核结论。教材更新后必须重新核对摘要，旧版本审核不能覆盖新版本。程序不验证审查者真实身份，仍需项目负责人核验。不得自动填写审核人或批准结论。
 
-## 审核落库流程
-
-人工批准需留下审核人、版本、结论和理由；通过 `ogden_content_reviews` 保存。当前没有任何批准记录，也没有自动批准脚本。修改教材应增加条目版本及总 manifest 版本；不重用旧ID表示不同概念。正式发布前补充经确认的审核人身份和发布审批流程。
+原版对照的来源、分类及规则需另行核对权威原始资料；当前全部待核实。自由表达允许多种说法；不将参考答案当唯一标准。来源或原版对照更正必须使用新的来源/对照ID，避免改写历史证据。

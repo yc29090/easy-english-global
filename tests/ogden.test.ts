@@ -47,7 +47,7 @@ test('additive schema, repeat import, immutable versions and per-user isolated p
   const saved=(await call(users[0],'progress')).progress;await installOgden(db,content);assert.deepEqual((await call(users[0],'progress')).progress,saved);
   assert.equal((await db.query('SELECT * FROM ogden_practice_events')).rows.length,5);
   const changed=structuredClone(content);changed.items[0].chinese='改变';await assert.rejects(()=>installOgden(db,changed),/manifest version conflict/);
-  changed.version='mbe-pilot-2';await assert.rejects(()=>installOgden(db,changed),/item version conflict/);
+  changed.version='mbe-test-upgrade';await assert.rejects(()=>installOgden(db,changed),/item version conflict/);
   changed.items[0].version=2;await installOgden(db,changed);assert.deepEqual((await call(users[0],'progress')).progress,saved);
   assert.equal((await db.query("SELECT * FROM ogden_item_versions WHERE item_id='ow-come'")).rows.length,2);
   assert.deepEqual(await legacy(),before);await prepareDatabase(db);assert.deepEqual(await legacy(),before);

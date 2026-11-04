@@ -1,6 +1,6 @@
 import {createOgdenSpeech} from './speech.js';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const speech=createOgdenSpeech();let items=[],progress=[],review=[],savePending=false;
+const speech=createOgdenSpeech();let items=[],progress=[],review=[],savePending=false;const retryRequests=new Map();
 const routes=[['','学习首页'],['words','核心词'],['operators','18操作词'],['patterns','简化句型'],['build','词语组合'],['express','我能表达什么'],['listening','听力'],['speaking','开口表达'],['review','待复习'],['progress','学习进度']];
 const page=location.pathname.split('/')[2]||'';
 const notify=s=>{$('#feedback').textContent=s;};
@@ -10,13 +10,18 @@ const states={learned:'已学习',mastered:'已掌握',unmastered:'未掌握',re
 function sound(text){return `<div class="actions"><button data-say="${esc(text)}">正常播放</button><button data-say="${esc(text)}" data-slow>慢速合成请求</button><button data-say="${esc(text)}" data-repeat>重复播放</button><button data-stop>停止</button></div>`;}
 function assessment(x,mode){return `<p class="muted">我对这条内容的自评（与1.0分开保存）</p><div class="actions">${Object.entries(states).map(([v,l])=>`<button data-save="${x.id}" data-status="${v}" data-mode="${mode}" ${state(x.id)?.status===v?'aria-pressed="true"':''}>${l}</button>`).join('')}</div><p class="tag" data-state="${x.id}">${state(x.id)?'当前：'+states[state(x.id).status]:'尚未记录'}</p>`;}
 function references(x){return (x.answers||x.examples?.map(e=>e.english)||[x.english]).map(t=>`<p lang="en">${esc(t)}</p>${sound(t)}`).join('');}
+function patternPractice(x){
+ const first=x.variants[0];
+ return `<section class="pattern-practice" data-pattern="${x.id}"><h3>换一换，再自己说</h3><p>听例句 → 看意思 → 选择替换 → 隐藏英文 → 自己说 → 查看参考。</p><label>选择想表达的意思<select data-variant="${x.id}">${x.variants.map(v=>`<option value="${v.id}">${esc(v.label)}</option>`).join('')}</select></label><p data-variant-zh>${esc(first.chinese)}</p><p data-variant-en lang="en">${esc(first.english)}</p><div data-variant-audio>${sound(first.english)}</div><div class="actions"><button data-hide-variant aria-pressed="false">隐藏英文，自己说</button><button data-show-variant>查看参考表达</button></div><p class="muted">这些替换句均为教材草稿，不会把任意新组合当作正确答案。</p></section>`;
+}
 function card(x,mode='study'){
  const hide=mode==='listening',express=['express','speaking'].includes(mode),text=x.examples?.[0]?.english||x.english;
  return `<article data-item="${x.id}"><p class="tag">草稿 · ${esc(x.kind)}${x.level?' · 第'+x.level+'层':''}</p>${hide?'<h2>先听后看</h2>':`<h2 ${express?'':'lang="en"'}>${esc(express?x.chinese:x.english)}</h2>`}${hide?sound(text):''}${!hide&&!express?`<p>${esc(x.chinese)}</p>`:''}${x.note?`<p>${esc(x.note)}</p>`:''}${x.kind==='operator'?`<p><a href="/ogden/operators/${esc(x.english)}">打开 ${esc(x.english)} 独立学习页</a></p>`:''}${x.kind==='word'?'<p class="muted">美式主读音由本地语音提供；原版归属待核实。现代化候选保留。</p>':''}
  ${express?`<label>先自己说，也可以写下表达（仅保留在当前页面）<textarea aria-label="我的英语表达" placeholder="试着用你会的英语表达"></textarea></label><p class="muted">不录音、不上传答案、不自动判错。参考句不是唯一答案。</p>`:''}
  ${x.kind==='expression'?`<p class="muted">练习可使用的辅助词：${esc(x.supportWords.join('、'))}。这些词不计入本批18个核心词。</p>`:''}
+ ${x.kind==='pattern'&&mode==='study'?patternPractice(x):''}
  ${x.kind==='combination'&&mode==='build'?`<p>点选词块，排列出上面的组合；只使用这条已编写的组合。</p><div class="tokens">${[...x.tokens].reverse().map((t,i)=>`<button data-token="${esc(t)}" data-index="${i}">${esc(t)}</button>`).join('')}</div><p data-built aria-live="polite"></p><button data-reset>重新排列</button><button data-check="${esc(x.english)}">查看组合提示</button>`:''}
- <details><summary>${hide?'查看中英文与参考表达':express?'查看多种参考表达':'查看组合、例句与替换提示'}</summary>${hide?`<p>${esc(x.chinese)}</p>`:''}${(x.combinations||[]).map(c=>`<p><span lang="en">${esc(c.english)}</span> · ${esc(c.chinese)}</p>`).join('')}${references(x)}${x.kind==='pattern'?'<p>听句子 → 看意思 → 替换词 → 合上参考 → 自己说。先使用已经写好的例句，不把随意替换视为正确教材。</p>':''}</details>
+ <details><summary>${hide?'查看中英文与参考表达':express?'查看多种参考表达':'查看组合、例句与替换提示'}</summary>${hide?`<div class="actions"><button data-toggle-copy="en" aria-pressed="false">显示英文</button><button data-toggle-copy="zh" aria-pressed="false">显示中文</button></div><p data-listening-en lang="en" hidden>${esc(text)}</p><p data-listening-zh hidden>${esc(x.examples?.[0]?.chinese||x.chinese)}</p>`:''}${(x.combinations||[]).map(c=>`<p><span lang="en">${esc(c.english)}</span> · ${esc(c.chinese)}</p>`).join('')}${hide?'':references(x)}${x.kind==='pattern'?'<p>听句子 → 看意思 → 替换词 → 合上参考 → 自己说。先使用已经写好的例句，不把随意替换视为正确教材。</p>':''}</details>
  ${assessment(x,mode)}</article>`;
 }
 function list(values,mode){return values.length?`<div class="grid">${values.map(x=>card(x,mode)).join('')}</div>`:'<div class="panel">暂无内容。可以自由选择其他练习。</div>';}
@@ -38,7 +43,27 @@ function render(){
 function bind(){
  document.querySelectorAll('[data-say]').forEach(b=>b.onclick=()=>speech.play(b.dataset.say,{slow:b.hasAttribute('data-slow'),repeat:b.hasAttribute('data-repeat'),notify}));
  document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=()=>{speech.stop();notify('已停止播放。');});
- document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{if(savePending)return;savePending=true;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=true);try{await request('/ogden/results','POST',{item_id:b.dataset.save,status:b.dataset.status,mode:b.dataset.mode,request_id:crypto.randomUUID()});await refresh();const a=b.closest('article');a.querySelector('[data-state]').textContent='当前：'+states[b.dataset.status];a.querySelectorAll('[data-save]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));notify('已保存2.0自评和复习时间。');}catch(e){notify('保存失败：'+e.message);}finally{savePending=false;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=false);}});
+ document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{
+  if(savePending)return;savePending=true;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=true);
+  const key=[b.dataset.save,b.dataset.mode,b.dataset.status].join(':');
+  if(!retryRequests.has(key))retryRequests.set(key,crypto.randomUUID());
+  try{
+   await request('/ogden/results','POST',{item_id:b.dataset.save,status:b.dataset.status,mode:b.dataset.mode,request_id:retryRequests.get(key)});
+   retryRequests.delete(key);
+   const a=b.closest('article');a.querySelector('[data-state]').textContent='当前：'+states[b.dataset.status];a.querySelectorAll('[data-save]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+   try{await refresh();notify('已保存2.0自评和复习时间。');}catch{notify('已保存；暂时无法刷新统计，请稍后刷新页面。');}
+  }catch(e){notify('尚未确认保存，请重试（重复请求不会重复计数）：'+e.message);}
+  finally{savePending=false;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=false);}
+ });
+ document.querySelectorAll('[data-variant]').forEach(select=>select.onchange=()=>{
+  speech.stop();const x=items.find(x=>x.id===select.dataset.variant),v=x.variants.find(v=>v.id===select.value),section=select.closest('[data-pattern]');
+  section.querySelector('[data-variant-zh]').textContent=v.chinese;section.querySelector('[data-variant-en]').textContent=v.english;
+  section.querySelectorAll('[data-say]').forEach(b=>b.dataset.say=v.english);
+  // Changing the meaning keeps English hidden until the learner chooses to reveal it.
+ });
+ document.querySelectorAll('[data-hide-variant]').forEach(b=>b.onclick=()=>{const en=b.closest('[data-pattern]').querySelector('[data-variant-en]');en.hidden=!en.hidden;b.setAttribute('aria-pressed',String(en.hidden));b.textContent=en.hidden?'显示英文':'隐藏英文，自己说';});
+ document.querySelectorAll('[data-show-variant]').forEach(b=>b.onclick=()=>{const section=b.closest('[data-pattern]');section.querySelector('[data-variant-en]').hidden=false;section.querySelector('[data-hide-variant]').setAttribute('aria-pressed','false');section.querySelector('[data-hide-variant]').textContent='隐藏英文，自己说';});
+ document.querySelectorAll('[data-toggle-copy]').forEach(b=>b.onclick=()=>{const node=b.closest('article').querySelector(b.dataset.toggleCopy==='en'?'[data-listening-en]':'[data-listening-zh]');node.hidden=!node.hidden;b.setAttribute('aria-pressed',String(!node.hidden));b.textContent=(node.hidden?'显示':'隐藏')+(b.dataset.toggleCopy==='en'?'英文':'中文');});
  document.querySelectorAll('[data-token]').forEach(b=>b.onclick=()=>{b.disabled=true;const out=b.closest('article').querySelector('[data-built]');out.textContent+=(out.textContent?' ':'')+b.dataset.token;});
  document.querySelectorAll('[data-reset]').forEach(b=>b.onclick=()=>{const a=b.closest('article');a.querySelector('[data-built]').textContent='';a.querySelectorAll('[data-token]').forEach(t=>t.disabled=false);});
  document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>notify(b.closest('article').querySelector('[data-built]').textContent===b.dataset.check?'与这条教材组合一致。':'这次排列与教材不同。可以重新排列或查看参考；这不是自由表达评分。'));

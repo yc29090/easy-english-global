@@ -1,0 +1,2778 @@
+{
+  "version": "mbe-pilot-2",
+  "contentDigest": "223c46afdf73af34c235ac2a531ce60a228b5868bd0be3fa190e12343b697c95",
+  "sources": [
+    {
+      "id": "secondary-bnspalding",
+      "url": "https://github.com/bnspalding/wordlists/blob/578c6b902de88d8bc394d6aa943549de8ca25e54/ogden850.words",
+      "accessed": "2026-11-04",
+      "status": "secondary-only",
+      "sha256": "243d5b45f18b3f6b921d6e4a0c009d3e607624dffce5a6471221f44c30827a0c",
+      "observedLines": 852,
+      "note": "文件实际852行；不当作已核实的原版850词表。"
+    },
+    {
+      "id": "primary-ogden",
+      "url": "https://ogden.basic-english.org/words.html",
+      "accessed": "2026-11-04",
+      "status": "unavailable",
+      "note": "本环境访问返回403；未声称已核实完整性、原版分类或规则。"
+    }
+  ],
+  "originalReferences": [
+    {
+      "id": "or-come",
+      "english": "come",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 144",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-get",
+      "english": "get",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 299",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-give",
+      "english": "give",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 301",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-go",
+      "english": "go",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 304",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-keep",
+      "english": "keep",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 376",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-let",
+      "english": "let",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 398",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-make",
+      "english": "make",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 422",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-put",
+      "english": "put",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 569",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-seem",
+      "english": "seem",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 633",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-take",
+      "english": "take",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 738",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-be",
+      "english": "be",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 56",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-do",
+      "english": "do",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 209",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-have",
+      "english": "have",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 330",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-say",
+      "english": "say",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 620",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-see",
+      "english": "see",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 631",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-send",
+      "english": "send",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 636",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-may",
+      "english": "may",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 433",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    },
+    {
+      "id": "or-will",
+      "english": "will",
+      "sourceId": "secondary-bnspalding",
+      "sourceLocator": "line 829",
+      "verification": "pending-primary-review",
+      "originalCategory": null
+    }
+  ],
+  "items": [
+    {
+      "id": "ow-come",
+      "version": 1,
+      "digest": "ff68a245ec39e2ab4dc3345353909fa13ea3f88ee1202a6b4f296077dcdc380a",
+      "content": {
+        "id": "ow-come",
+        "kind": "word",
+        "version": 1,
+        "english": "come",
+        "chinese": "来",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 1,
+        "combinations": [
+          {
+            "english": "come here",
+            "chinese": "来到这里"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Come here, please.",
+            "chinese": "请到这里来。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-come"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-get",
+      "version": 1,
+      "digest": "29779969339df5718eabd512a7c16efb7f15a2154209f332ae7b2ecb73549117",
+      "content": {
+        "id": "ow-get",
+        "kind": "word",
+        "version": 1,
+        "english": "get",
+        "chinese": "得到；到达",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 2,
+        "combinations": [
+          {
+            "english": "get some water",
+            "chinese": "拿些水"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Can you get some water?",
+            "chinese": "你能拿些水来吗？"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-get"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-give",
+      "version": 1,
+      "digest": "e17b23a35cdb7c877f951a34701f4a629225a3dea3520971c2fbc34a6e9dfd46",
+      "content": {
+        "id": "ow-give",
+        "kind": "word",
+        "version": 1,
+        "english": "give",
+        "chinese": "给",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 3,
+        "combinations": [
+          {
+            "english": "give me some time",
+            "chinese": "给我一点时间"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Please give me some time.",
+            "chinese": "请给我一点时间。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-give"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-go",
+      "version": 1,
+      "digest": "d4993dd03334d3ef90ca464992fcde6c91e425512cb6729212221b9a89a713f7",
+      "content": {
+        "id": "ow-go",
+        "kind": "word",
+        "version": 1,
+        "english": "go",
+        "chinese": "去",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 4,
+        "combinations": [
+          {
+            "english": "go now",
+            "chinese": "现在走"
+          }
+        ],
+        "examples": [
+          {
+            "english": "We can go now.",
+            "chinese": "我们现在可以走了。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-go"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-keep",
+      "version": 1,
+      "digest": "544aa1b039b046e89437109013937301b1132bcd830d7acb82c4434fd7b06323",
+      "content": {
+        "id": "ow-keep",
+        "kind": "word",
+        "version": 1,
+        "english": "keep",
+        "chinese": "保持；保留",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 5,
+        "combinations": [
+          {
+            "english": "keep the door open",
+            "chinese": "让门开着"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Please keep the door open.",
+            "chinese": "请让门开着。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-keep"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-let",
+      "version": 1,
+      "digest": "1b37ca9ccdcbc7d8492897185145b0b24368b5d7ab154ce55ce69e586b189f67",
+      "content": {
+        "id": "ow-let",
+        "kind": "word",
+        "version": 1,
+        "english": "let",
+        "chinese": "让；允许",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 6,
+        "combinations": [
+          {
+            "english": "let me help",
+            "chinese": "让我帮忙"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Let me help you.",
+            "chinese": "让我帮你。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-let"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-make",
+      "version": 1,
+      "digest": "4a94a261ed0cfda5f729f6d6b20a39e69829a43cf767df350ef9f1b723be1280",
+      "content": {
+        "id": "ow-make",
+        "kind": "word",
+        "version": 1,
+        "english": "make",
+        "chinese": "制作；使",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 7,
+        "combinations": [
+          {
+            "english": "make some food",
+            "chinese": "做些吃的"
+          }
+        ],
+        "examples": [
+          {
+            "english": "I can make some food.",
+            "chinese": "我会做些吃的。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-make"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-put",
+      "version": 1,
+      "digest": "7a1e30a2c9d78ca03d64f9d32c88e623ad3c67f876ac509ab06becdfd446970a",
+      "content": {
+        "id": "ow-put",
+        "kind": "word",
+        "version": 1,
+        "english": "put",
+        "chinese": "放",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 8,
+        "combinations": [
+          {
+            "english": "put it here",
+            "chinese": "把它放这里"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Put it here, please.",
+            "chinese": "请把它放这里。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-put"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-seem",
+      "version": 1,
+      "digest": "e913e3e0a8c62ed3a3fb5135064d516827b25ea67b2a38efbf6074cb139591ba",
+      "content": {
+        "id": "ow-seem",
+        "kind": "word",
+        "version": 1,
+        "english": "seem",
+        "chinese": "似乎",
+        "category": "联系",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 9,
+        "combinations": [
+          {
+            "english": "seem tired",
+            "chinese": "似乎累了"
+          }
+        ],
+        "examples": [
+          {
+            "english": "You seem tired.",
+            "chinese": "你似乎累了。"
+          }
+        ],
+        "patternIds": [
+          "pt-seem"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-seem"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-take",
+      "version": 1,
+      "digest": "a70ce7730720773a92b02b7e6dd74433cebf91466fbfa8418d583a607a457c1b",
+      "content": {
+        "id": "ow-take",
+        "kind": "word",
+        "version": 1,
+        "english": "take",
+        "chinese": "拿；带；花费",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 10,
+        "combinations": [
+          {
+            "english": "take this bag",
+            "chinese": "拿这个包"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Please take this bag.",
+            "chinese": "请拿这个包。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-take"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-be",
+      "version": 1,
+      "digest": "6833d0a1ef7f215cf4069c33aa498b1110213a7d93c332f119efda5d9510d6de",
+      "content": {
+        "id": "ow-be",
+        "kind": "word",
+        "version": 1,
+        "english": "be",
+        "chinese": "是；处于",
+        "category": "系词与助动",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 11,
+        "combinations": [
+          {
+            "english": "be here",
+            "chinese": "在这里"
+          }
+        ],
+        "examples": [
+          {
+            "english": "I am here.",
+            "chinese": "我在这里。"
+          }
+        ],
+        "patternIds": [
+          "pt-state"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-be"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-do",
+      "version": 1,
+      "digest": "b2a6341f8de9c740cab88c15a1051185325163fce4a5241a668e0558325af19e",
+      "content": {
+        "id": "ow-do",
+        "kind": "word",
+        "version": 1,
+        "english": "do",
+        "chinese": "做；辅助提问否定",
+        "category": "动作与助动",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 12,
+        "combinations": [
+          {
+            "english": "do you have",
+            "chinese": "你有……吗"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Do you have time?",
+            "chinese": "你有时间吗？"
+          }
+        ],
+        "patternIds": [
+          "pt-negative"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-do"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-have",
+      "version": 1,
+      "digest": "e3b0708a55ef2d36122a5e7d8458507dc50dc99bb03036c5b84291fdc7e3c70b",
+      "content": {
+        "id": "ow-have",
+        "kind": "word",
+        "version": 1,
+        "english": "have",
+        "chinese": "有",
+        "category": "拥有与助动",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 13,
+        "combinations": [
+          {
+            "english": "have a question",
+            "chinese": "有一个问题"
+          }
+        ],
+        "examples": [
+          {
+            "english": "I have a question.",
+            "chinese": "我有一个问题。"
+          }
+        ],
+        "patternIds": [
+          "pt-have"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-have"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-say",
+      "version": 1,
+      "digest": "5d9371cf941832f7ea9b1e15ebb1f8bc283bff7aaf0d07e36233516e00720092",
+      "content": {
+        "id": "ow-say",
+        "kind": "word",
+        "version": 1,
+        "english": "say",
+        "chinese": "说",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 14,
+        "combinations": [
+          {
+            "english": "say it again",
+            "chinese": "再说一遍"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Please say it again.",
+            "chinese": "请再说一遍。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-say"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-see",
+      "version": 1,
+      "digest": "a2cdd85c3bc246e24a2140a1ca395649a65065ef5d06a31a1656c19402ca4f66",
+      "content": {
+        "id": "ow-see",
+        "kind": "word",
+        "version": 1,
+        "english": "see",
+        "chinese": "看见；明白",
+        "category": "感知",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 15,
+        "combinations": [
+          {
+            "english": "see the door",
+            "chinese": "看见门"
+          }
+        ],
+        "examples": [
+          {
+            "english": "I can see the door.",
+            "chinese": "我能看见门。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-see"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-send",
+      "version": 1,
+      "digest": "666d56eb2adbfe49a66683a0fe25aef6c8718b1197f6d9ce30545cc8bf38293c",
+      "content": {
+        "id": "ow-send",
+        "kind": "word",
+        "version": 1,
+        "english": "send",
+        "chinese": "发送；寄",
+        "category": "动作",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 16,
+        "combinations": [
+          {
+            "english": "send me the price",
+            "chinese": "把价格发给我"
+          }
+        ],
+        "examples": [
+          {
+            "english": "Please send me the price.",
+            "chinese": "请把价格发给我。"
+          }
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-send"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-may",
+      "version": 1,
+      "digest": "61c50548933f556c4b00cd74e7137417cc2a5801fd04fb81ad9a61d1e8c0f20a",
+      "content": {
+        "id": "ow-may",
+        "kind": "word",
+        "version": 1,
+        "english": "may",
+        "chinese": "可以；可能",
+        "category": "情态",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 17,
+        "combinations": [
+          {
+            "english": "may I come in",
+            "chinese": "我可以进来吗"
+          }
+        ],
+        "examples": [
+          {
+            "english": "May I come in?",
+            "chinese": "我可以进来吗？"
+          }
+        ],
+        "patternIds": [
+          "pt-permission"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-may"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ow-will",
+      "version": 1,
+      "digest": "dafd10734429f3f7ee6f270443fc497951e6903b0e6d180c7012442420c6f1ca",
+      "content": {
+        "id": "ow-will",
+        "kind": "word",
+        "version": 1,
+        "english": "will",
+        "chinese": "将；愿意",
+        "category": "情态",
+        "isOgdenOriginal": null,
+        "modernStatus": "retained",
+        "changeReason": "高组合能力的18操作词候选保留；原版归属待权威资料复核。",
+        "order": 18,
+        "combinations": [
+          {
+            "english": "will help",
+            "chinese": "会帮忙"
+          }
+        ],
+        "examples": [
+          {
+            "english": "I will help you.",
+            "chinese": "我会帮你。"
+          }
+        ],
+        "patternIds": [
+          "pt-when"
+        ],
+        "functions": [
+          "日常表达"
+        ],
+        "pronunciation": {
+          "locale": "en-US",
+          "source": "browser-local-voice",
+          "primaryReading": "headword",
+          "ipa": null
+        },
+        "reviewStatus": "draft",
+        "originalRef": "or-will"
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-come",
+      "version": 1,
+      "digest": "45da8ec3a36bc70da3532cd83ac0d0dd31514fb494509058eaeb5fc9914f12b8",
+      "content": {
+        "id": "op-come",
+        "kind": "operator",
+        "version": 1,
+        "english": "come",
+        "chinese": "来",
+        "wordId": "ow-come",
+        "role": "动作",
+        "note": "用于朝说话者或指定地点移动。",
+        "examples": [
+          {
+            "english": "Come here, please.",
+            "chinese": "请到这里来。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "come here",
+            "chinese": "来到这里"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 1
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-get",
+      "version": 1,
+      "digest": "904824b8093602897c2e62e9dad7e1a153f435e8fd0f4dfbfa04e546ac34fd8f",
+      "content": {
+        "id": "op-get",
+        "kind": "operator",
+        "version": 1,
+        "english": "get",
+        "chinese": "得到；到达",
+        "wordId": "ow-get",
+        "role": "动作",
+        "note": "组合决定意思；get here 表示到这里。",
+        "examples": [
+          {
+            "english": "Can you get some water?",
+            "chinese": "你能拿些水来吗？"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "get some water",
+            "chinese": "拿些水"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 2
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-give",
+      "version": 1,
+      "digest": "d0c674764ceb5373408679248390d9d9f76574065bf885dfba2f93263e601420",
+      "content": {
+        "id": "op-give",
+        "kind": "operator",
+        "version": 1,
+        "english": "give",
+        "chinese": "给",
+        "wordId": "ow-give",
+        "role": "动作",
+        "note": "give + 人 + 事物。",
+        "examples": [
+          {
+            "english": "Please give me some time.",
+            "chinese": "请给我一点时间。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "give me some time",
+            "chinese": "给我一点时间"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 3
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-go",
+      "version": 1,
+      "digest": "2da435c92741b0eb7e2e2d4a40e70a9a7952eee0573a55c540913c298cb41e57",
+      "content": {
+        "id": "op-go",
+        "kind": "operator",
+        "version": 1,
+        "english": "go",
+        "chinese": "去",
+        "wordId": "ow-go",
+        "role": "动作",
+        "note": "用于离开或去其他地方。",
+        "examples": [
+          {
+            "english": "We can go now.",
+            "chinese": "我们现在可以走了。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "go now",
+            "chinese": "现在走"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 4
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-keep",
+      "version": 1,
+      "digest": "01c093f9882e15cc8ccb5290b9695552121f760807a538c373d560f5c4953621",
+      "content": {
+        "id": "op-keep",
+        "kind": "operator",
+        "version": 1,
+        "english": "keep",
+        "chinese": "保持；保留",
+        "wordId": "ow-keep",
+        "role": "动作",
+        "note": "keep + 事物 + 状态。",
+        "examples": [
+          {
+            "english": "Please keep the door open.",
+            "chinese": "请让门开着。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "keep the door open",
+            "chinese": "让门开着"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 5
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-let",
+      "version": 1,
+      "digest": "6930884b44797bc348b9fef46769bb16ec4b7ec1e9512a1b5a62fc8bffa38a15",
+      "content": {
+        "id": "op-let",
+        "kind": "operator",
+        "version": 1,
+        "english": "let",
+        "chinese": "让；允许",
+        "wordId": "ow-let",
+        "role": "动作",
+        "note": "let 后接人，再接动词原形。",
+        "examples": [
+          {
+            "english": "Let me help you.",
+            "chinese": "让我帮你。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "let me help",
+            "chinese": "让我帮忙"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 6
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-make",
+      "version": 1,
+      "digest": "4dff35c08b3af2a56ff9a071147c3b1196b3c6d152f84465bab707f15f4ef5b1",
+      "content": {
+        "id": "op-make",
+        "kind": "operator",
+        "version": 1,
+        "english": "make",
+        "chinese": "制作；使",
+        "wordId": "ow-make",
+        "role": "动作",
+        "note": "先学习制作含义，再扩展使某物变化。",
+        "examples": [
+          {
+            "english": "I can make some food.",
+            "chinese": "我会做些吃的。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "make some food",
+            "chinese": "做些吃的"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 7
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-put",
+      "version": 1,
+      "digest": "c27934c60aad37a98cbf2c1dbdb2ccc07162393b0e8c8446456433e3035675c5",
+      "content": {
+        "id": "op-put",
+        "kind": "operator",
+        "version": 1,
+        "english": "put",
+        "chinese": "放",
+        "wordId": "ow-put",
+        "role": "动作",
+        "note": "通常需要说明放置的位置。",
+        "examples": [
+          {
+            "english": "Put it here, please.",
+            "chinese": "请把它放这里。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "put it here",
+            "chinese": "把它放这里"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 8
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-seem",
+      "version": 1,
+      "digest": "b5fc62ad85018018d970861bf7ad793a2bd27291ada27661943e1e318d50e20d",
+      "content": {
+        "id": "op-seem",
+        "kind": "operator",
+        "version": 1,
+        "english": "seem",
+        "chinese": "似乎",
+        "wordId": "ow-seem",
+        "role": "联系",
+        "note": "描述印象，不等于确定事实；不要加 be。",
+        "examples": [
+          {
+            "english": "You seem tired.",
+            "chinese": "你似乎累了。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "seem tired",
+            "chinese": "似乎累了"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 9
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-take",
+      "version": 1,
+      "digest": "97fed1a2341e65bbaef6427598394d1790197851ac7695f3dd62bf3c3009f315",
+      "content": {
+        "id": "op-take",
+        "kind": "operator",
+        "version": 1,
+        "english": "take",
+        "chinese": "拿；带；花费",
+        "wordId": "ow-take",
+        "role": "动作",
+        "note": "先学习拿、带；时间用法另列组合。",
+        "examples": [
+          {
+            "english": "Please take this bag.",
+            "chinese": "请拿这个包。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "take this bag",
+            "chinese": "拿这个包"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 10
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-be",
+      "version": 1,
+      "digest": "954862e1c3c2bb62a48d72a98c30ba7282fae7b8ae52d8265b085e3fc2fff21a",
+      "content": {
+        "id": "op-be",
+        "kind": "operator",
+        "version": 1,
+        "english": "be",
+        "chinese": "是；处于",
+        "wordId": "ow-be",
+        "role": "系词与助动",
+        "note": "am/is/are 是 be 的变化；此处 am 表示所处位置。",
+        "examples": [
+          {
+            "english": "I am here.",
+            "chinese": "我在这里。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "be here",
+            "chinese": "在这里"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 11
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-do",
+      "version": 1,
+      "digest": "bc2e48b8e583e2474e5685f945afda32ecd986828321968c7a0e390fb9715f56",
+      "content": {
+        "id": "op-do",
+        "kind": "operator",
+        "version": 1,
+        "english": "do",
+        "chinese": "做；辅助提问否定",
+        "wordId": "ow-do",
+        "role": "动作与助动",
+        "note": "这里 do 帮助提问；不能把所有 do 都解释为做。",
+        "examples": [
+          {
+            "english": "Do you have time?",
+            "chinese": "你有时间吗？"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "do you have",
+            "chinese": "你有……吗"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 12
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-have",
+      "version": 1,
+      "digest": "3f801c2ad64c053b9cb91a987a3f4e55e0f50e06f72d3ba0ea2808dcb34e5571",
+      "content": {
+        "id": "op-have",
+        "kind": "operator",
+        "version": 1,
+        "english": "have",
+        "chinese": "有",
+        "wordId": "ow-have",
+        "role": "拥有与助动",
+        "note": "先教拥有；不在本阶段扩展完成时。",
+        "examples": [
+          {
+            "english": "I have a question.",
+            "chinese": "我有一个问题。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "have a question",
+            "chinese": "有一个问题"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 13
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-say",
+      "version": 1,
+      "digest": "2fcf5016805708e07ad1d0741ad2841bda3217159d39dea35c1b1ed917992931",
+      "content": {
+        "id": "op-say",
+        "kind": "operator",
+        "version": 1,
+        "english": "say",
+        "chinese": "说",
+        "wordId": "ow-say",
+        "role": "动作",
+        "note": "say 后可以接说出的内容。",
+        "examples": [
+          {
+            "english": "Please say it again.",
+            "chinese": "请再说一遍。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "say it again",
+            "chinese": "再说一遍"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 14
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-see",
+      "version": 1,
+      "digest": "71e421c619ab5f1103851d4c33b83d511d72ac87c9886793d7663d8bc5e84b57",
+      "content": {
+        "id": "op-see",
+        "kind": "operator",
+        "version": 1,
+        "english": "see",
+        "chinese": "看见；明白",
+        "wordId": "ow-see",
+        "role": "感知",
+        "note": "先教看见；I see 也可以表示明白。",
+        "examples": [
+          {
+            "english": "I can see the door.",
+            "chinese": "我能看见门。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "see the door",
+            "chinese": "看见门"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 15
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-send",
+      "version": 1,
+      "digest": "0b3731c2c77e5374f21ca09aa0a49d37fb45ce1138cc15936b34dea835bfaae2",
+      "content": {
+        "id": "op-send",
+        "kind": "operator",
+        "version": 1,
+        "english": "send",
+        "chinese": "发送；寄",
+        "wordId": "ow-send",
+        "role": "动作",
+        "note": "简单工作应用；不扩展合同或物流术语。",
+        "examples": [
+          {
+            "english": "Please send me the price.",
+            "chinese": "请把价格发给我。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "send me the price",
+            "chinese": "把价格发给我"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 16
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-may",
+      "version": 1,
+      "digest": "10d47ddd93109391ad30b215b43fc8b9b118309ded255810f718a1fcb28a1363",
+      "content": {
+        "id": "op-may",
+        "kind": "operator",
+        "version": 1,
+        "english": "may",
+        "chinese": "可以；可能",
+        "wordId": "ow-may",
+        "role": "情态",
+        "note": "may 后接原形；这里是礼貌请求许可。",
+        "examples": [
+          {
+            "english": "May I come in?",
+            "chinese": "我可以进来吗？"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "may I come in",
+            "chinese": "我可以进来吗"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 17
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "op-will",
+      "version": 1,
+      "digest": "bff9f70d2be86c9cb3c19ea54a3ef4f62d77d51f09427977a7987a47498b99a5",
+      "content": {
+        "id": "op-will",
+        "kind": "operator",
+        "version": 1,
+        "english": "will",
+        "chinese": "将；愿意",
+        "wordId": "ow-will",
+        "role": "情态",
+        "note": "will 后接原形，不加 to；此句表达意愿。",
+        "examples": [
+          {
+            "english": "I will help you.",
+            "chinese": "我会帮你。"
+          }
+        ],
+        "combinations": [
+          {
+            "english": "will help",
+            "chinese": "会帮忙"
+          }
+        ],
+        "reviewStatus": "draft",
+        "order": 18
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-need",
+      "version": 2,
+      "digest": "e1842777e791083e9445848cc6cd8323ed9680b051117c73ed304e1326a5766e",
+      "content": {
+        "id": "pt-need",
+        "kind": "pattern",
+        "version": 2,
+        "english": "I need ___.",
+        "chinese": "我需要……",
+        "examples": [
+          {
+            "english": "I need more time.",
+            "chinese": "我需要更多时间。"
+          }
+        ],
+        "function": "表达需求",
+        "reviewStatus": "draft",
+        "order": 1,
+        "variants": [
+          {
+            "id": "pt-need-water",
+            "label": "水",
+            "english": "I need some water.",
+            "chinese": "我需要一些水。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-need-help",
+            "label": "帮助",
+            "english": "I need help.",
+            "chinese": "我需要帮助。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-need-time",
+            "label": "更多时间",
+            "english": "I need more time.",
+            "chinese": "我需要更多时间。",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-have",
+      "version": 2,
+      "digest": "621613f8954600a600d46e914c0b80a59ecba7cc967bf7e7db96c3738c17fc07",
+      "content": {
+        "id": "pt-have",
+        "kind": "pattern",
+        "version": 2,
+        "english": "I have ___.",
+        "chinese": "我有……",
+        "examples": [
+          {
+            "english": "I have a question.",
+            "chinese": "我有一个问题。"
+          }
+        ],
+        "function": "介绍事物",
+        "reviewStatus": "draft",
+        "order": 2,
+        "variants": [
+          {
+            "id": "pt-have-question",
+            "label": "一个问题",
+            "english": "I have a question.",
+            "chinese": "我有一个问题。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-have-ticket",
+            "label": "一张票",
+            "english": "I have a ticket.",
+            "chinese": "我有一张票。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-have-bag",
+            "label": "一个包",
+            "english": "I have a bag.",
+            "chinese": "我有一个包。",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-where",
+      "version": 2,
+      "digest": "3a8c3c1b361af1e16ee29e289f602fd2b7dbeee0c963e7e69807d4a34bb7867f",
+      "content": {
+        "id": "pt-where",
+        "kind": "pattern",
+        "version": 2,
+        "english": "Where is ___?",
+        "chinese": "……在哪里？",
+        "examples": [
+          {
+            "english": "Where is the door?",
+            "chinese": "门在哪里？"
+          }
+        ],
+        "function": "询问地点",
+        "reviewStatus": "draft",
+        "order": 3,
+        "variants": [
+          {
+            "id": "pt-where-door",
+            "label": "门",
+            "english": "Where is the door?",
+            "chinese": "门在哪里？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-where-bag",
+            "label": "包",
+            "english": "Where is my bag?",
+            "chinese": "我的包在哪里？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-where-water",
+            "label": "水",
+            "english": "Where is the water?",
+            "chinese": "水在哪里？",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-price",
+      "version": 2,
+      "digest": "adcfa00912b3f0bc9d3b6a2a34be7af98da23f760a329f86ae3e456b282eca7b",
+      "content": {
+        "id": "pt-price",
+        "kind": "pattern",
+        "version": 2,
+        "english": "How much is ___?",
+        "chinese": "……多少钱？",
+        "examples": [
+          {
+            "english": "How much is it?",
+            "chinese": "它多少钱？"
+          }
+        ],
+        "function": "询问价格",
+        "reviewStatus": "draft",
+        "order": 4,
+        "variants": [
+          {
+            "id": "pt-price-it",
+            "label": "它",
+            "english": "How much is it?",
+            "chinese": "它多少钱？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-price-ticket",
+            "label": "这张票",
+            "english": "How much is this ticket?",
+            "chinese": "这张票多少钱？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-price-bag",
+            "label": "这个包",
+            "english": "How much is this bag?",
+            "chinese": "这个包多少钱？",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-request",
+      "version": 2,
+      "digest": "5a8c5db5bd8ad53115543acac8a4d1d6f245bdf646f9116177a3a455a5922043",
+      "content": {
+        "id": "pt-request",
+        "kind": "pattern",
+        "version": 2,
+        "english": "Can you ___?",
+        "chinese": "你能……吗？",
+        "examples": [
+          {
+            "english": "Can you help me?",
+            "chinese": "你能帮我吗？"
+          }
+        ],
+        "function": "请求帮助",
+        "reviewStatus": "draft",
+        "order": 5,
+        "variants": [
+          {
+            "id": "pt-request-help",
+            "label": "帮助我",
+            "english": "Can you help me?",
+            "chinese": "你能帮我吗？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-request-water",
+            "label": "拿些水",
+            "english": "Can you get some water?",
+            "chinese": "你能拿些水吗？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-request-price",
+            "label": "发送价格",
+            "english": "Can you send me the price?",
+            "chinese": "你能把价格发给我吗？",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-negative",
+      "version": 2,
+      "digest": "83d5e2bff96334e63dd3b110556ced0b77f43b4e0f808adbe10ebd7a2af3d7e4",
+      "content": {
+        "id": "pt-negative",
+        "kind": "pattern",
+        "version": 2,
+        "english": "I do not have ___.",
+        "chinese": "我没有……",
+        "examples": [
+          {
+            "english": "I do not have time.",
+            "chinese": "我没有时间。"
+          }
+        ],
+        "function": "简单否定",
+        "reviewStatus": "draft",
+        "order": 6,
+        "variants": [
+          {
+            "id": "pt-negative-time",
+            "label": "时间",
+            "english": "I do not have time.",
+            "chinese": "我没有时间。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-negative-ticket",
+            "label": "票",
+            "english": "I do not have a ticket.",
+            "chinese": "我没有票。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-negative-bag",
+            "label": "包",
+            "english": "I do not have a bag.",
+            "chinese": "我没有包。",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-when",
+      "version": 2,
+      "digest": "512d7bbbad655d634fad12aa02593174674563b97255848515e507b2a05f2969",
+      "content": {
+        "id": "pt-when",
+        "kind": "pattern",
+        "version": 2,
+        "english": "When will ___?",
+        "chinese": "……什么时候会……？",
+        "examples": [
+          {
+            "english": "When will the car get here?",
+            "chinese": "车什么时候会到这里？"
+          }
+        ],
+        "function": "询问时间",
+        "reviewStatus": "draft",
+        "order": 7,
+        "variants": [
+          {
+            "id": "pt-when-car",
+            "label": "车到这里",
+            "english": "When will the car get here?",
+            "chinese": "车什么时候会到这里？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-when-come",
+            "label": "你来",
+            "english": "When will you come?",
+            "chinese": "你什么时候会来？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-when-go",
+            "label": "我们走",
+            "english": "When will we go?",
+            "chinese": "我们什么时候走？",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-choice",
+      "version": 2,
+      "digest": "639e91ceca42a3ccc0ee7a265a9f131f41623181a1cc75096fb304d7cb23011d",
+      "content": {
+        "id": "pt-choice",
+        "kind": "pattern",
+        "version": 2,
+        "english": "This is ___ than that.",
+        "chinese": "这个比那个更……",
+        "examples": [
+          {
+            "english": "This is smaller than that.",
+            "chinese": "这个比那个更小。"
+          }
+        ],
+        "function": "比较选择",
+        "reviewStatus": "draft",
+        "order": 8,
+        "variants": [
+          {
+            "id": "pt-choice-smaller",
+            "label": "更小",
+            "english": "This is smaller than that.",
+            "chinese": "这个比那个更小。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-choice-bigger",
+            "label": "更大",
+            "english": "This is bigger than that.",
+            "chinese": "这个比那个更大。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-choice-better",
+            "label": "更好",
+            "english": "This is better than that.",
+            "chinese": "这个比那个更好。",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-water",
+      "version": 1,
+      "digest": "8b86f47b1b29a060f486dd49b82ffac8632224c45e1ebf076d40b493a736a3ff",
+      "content": {
+        "id": "cb-water",
+        "kind": "combination",
+        "version": 1,
+        "english": "get some water",
+        "chinese": "拿些水",
+        "tokens": [
+          "get",
+          "some",
+          "water"
+        ],
+        "examples": [
+          {
+            "english": "Can you get some water?",
+            "chinese": "你能拿些水吗？"
+          }
+        ],
+        "wordIds": [
+          "ow-get"
+        ],
+        "reviewStatus": "draft",
+        "order": 1
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-help",
+      "version": 1,
+      "digest": "25ab989cce5a9615b45f9be968f8e0c729c25d48ea47fe361ce5957f7e6e3cd4",
+      "content": {
+        "id": "cb-help",
+        "kind": "combination",
+        "version": 1,
+        "english": "get help",
+        "chinese": "获得帮助",
+        "tokens": [
+          "get",
+          "help"
+        ],
+        "examples": [
+          {
+            "english": "I need to get help.",
+            "chinese": "我需要得到帮助。"
+          }
+        ],
+        "wordIds": [
+          "ow-get"
+        ],
+        "reviewStatus": "draft",
+        "order": 2
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-message",
+      "version": 1,
+      "digest": "70b10d9dbdb3c4ccadef822b8910794c852776322366e2298bdac83439c772a9",
+      "content": {
+        "id": "cb-message",
+        "kind": "combination",
+        "version": 1,
+        "english": "get a message",
+        "chinese": "收到一条消息",
+        "tokens": [
+          "get",
+          "a",
+          "message"
+        ],
+        "examples": [
+          {
+            "english": "I will get a message.",
+            "chinese": "我会收到一条消息。"
+          }
+        ],
+        "wordIds": [
+          "ow-get"
+        ],
+        "reviewStatus": "draft",
+        "order": 3
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-ticket",
+      "version": 1,
+      "digest": "a33334f091ea8bc4b100832c42de359397a3a864f7441dc1baecabc1f454a7aa",
+      "content": {
+        "id": "cb-ticket",
+        "kind": "combination",
+        "version": 1,
+        "english": "get a ticket",
+        "chinese": "拿到一张票",
+        "tokens": [
+          "get",
+          "a",
+          "ticket"
+        ],
+        "examples": [
+          {
+            "english": "Where can I get a ticket?",
+            "chinese": "我在哪里可以拿到票？"
+          }
+        ],
+        "wordIds": [
+          "ow-get"
+        ],
+        "reviewStatus": "draft",
+        "order": 4
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-time",
+      "version": 1,
+      "digest": "86d562a92075bbfdf223f700e85576d67026645a1900cfca446b8a8c6351eebc",
+      "content": {
+        "id": "cb-time",
+        "kind": "combination",
+        "version": 1,
+        "english": "give me some time",
+        "chinese": "给我一点时间",
+        "tokens": [
+          "give",
+          "me",
+          "some",
+          "time"
+        ],
+        "examples": [
+          {
+            "english": "Please give me some time.",
+            "chinese": "请给我一点时间。"
+          }
+        ],
+        "wordIds": [
+          "ow-give"
+        ],
+        "reviewStatus": "draft",
+        "order": 5
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-door",
+      "version": 1,
+      "digest": "f57030aab257e640dd3076b845bea24f8784364fd5c48994ab430cb022cda3e3",
+      "content": {
+        "id": "cb-door",
+        "kind": "combination",
+        "version": 1,
+        "english": "keep the door open",
+        "chinese": "让门开着",
+        "tokens": [
+          "keep",
+          "the",
+          "door",
+          "open"
+        ],
+        "examples": [
+          {
+            "english": "Please keep the door open.",
+            "chinese": "请让门开着。"
+          }
+        ],
+        "wordIds": [
+          "ow-keep"
+        ],
+        "reviewStatus": "draft",
+        "order": 6
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-place",
+      "version": 1,
+      "digest": "c96ba009ea20b5a7e60d826e237a38d78774613ad888aec768ef455f1d4ca1ea",
+      "content": {
+        "id": "cb-place",
+        "kind": "combination",
+        "version": 1,
+        "english": "put it here",
+        "chinese": "把它放这里",
+        "tokens": [
+          "put",
+          "it",
+          "here"
+        ],
+        "examples": [
+          {
+            "english": "Put it here, please.",
+            "chinese": "请把它放这里。"
+          }
+        ],
+        "wordIds": [
+          "ow-put"
+        ],
+        "reviewStatus": "draft",
+        "order": 7
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "cb-price",
+      "version": 1,
+      "digest": "cb175b9b21e6737afd9e91daef4b9f705d853256dadc3ff577f219af5de2268f",
+      "content": {
+        "id": "cb-price",
+        "kind": "combination",
+        "version": 1,
+        "english": "send me the price",
+        "chinese": "把价格发给我",
+        "tokens": [
+          "send",
+          "me",
+          "the",
+          "price"
+        ],
+        "examples": [
+          {
+            "english": "Please send me the price.",
+            "chinese": "请把价格发给我。"
+          }
+        ],
+        "wordIds": [
+          "ow-send"
+        ],
+        "reviewStatus": "draft",
+        "order": 8
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-help",
+      "version": 1,
+      "digest": "b838a292fd31e5fbaa43655a900ba531d6f0a83c5b2a46a5b82d8bab5e56dbfc",
+      "content": {
+        "id": "ex-help",
+        "kind": "expression",
+        "version": 1,
+        "english": "Can you help me?",
+        "chinese": "请别人帮你",
+        "level": 1,
+        "answers": [
+          "Can you help me?",
+          "Please help me."
+        ],
+        "wordIds": [
+          "ow-give"
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "scenario": "life",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 1
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-time",
+      "version": 1,
+      "digest": "eff5813ca74ba4273797b95a942631d97a088cccd11d918ded58ad201131cc41",
+      "content": {
+        "id": "ex-time",
+        "kind": "expression",
+        "version": 1,
+        "english": "I need more time.",
+        "chinese": "表达你需要更多时间",
+        "level": 1,
+        "answers": [
+          "I need more time.",
+          "Please give me more time."
+        ],
+        "wordIds": [
+          "ow-give"
+        ],
+        "patternIds": [
+          "pt-need"
+        ],
+        "scenario": "life",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 2
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-question",
+      "version": 1,
+      "digest": "4e890be7b38d223e5242b35b96cfead274ce5b5f711d878b0ef617b905b72377",
+      "content": {
+        "id": "ex-question",
+        "kind": "expression",
+        "version": 1,
+        "english": "I have a question.",
+        "chinese": "说明你有一个问题",
+        "level": 1,
+        "answers": [
+          "I have a question.",
+          "I have something to ask."
+        ],
+        "wordIds": [
+          "ow-have"
+        ],
+        "patternIds": [
+          "pt-have"
+        ],
+        "scenario": "life",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 3
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-arrival",
+      "version": 1,
+      "digest": "0b76a4718efa23fb7499c2d390adea195338043c979dda8191fcc581cebf3fe1",
+      "content": {
+        "id": "ex-arrival",
+        "kind": "expression",
+        "version": 1,
+        "english": "When will the car get here?",
+        "chinese": "我想知道车什么时候能到",
+        "level": 2,
+        "answers": [
+          "When will the car get here?",
+          "When will the car arrive?"
+        ],
+        "wordIds": [
+          "ow-will",
+          "ow-get"
+        ],
+        "patternIds": [
+          "pt-when"
+        ],
+        "scenario": "travel",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 4
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-send-price",
+      "version": 1,
+      "digest": "507ef2294087e1688bb51ef2573332e1af2ed2a3a981dcbe31f1053d4265bebe",
+      "content": {
+        "id": "ex-send-price",
+        "kind": "expression",
+        "version": 1,
+        "english": "Can you send me the price?",
+        "chinese": "请对方发送价格",
+        "level": 2,
+        "answers": [
+          "Can you send me the price?",
+          "Please send me the price."
+        ],
+        "wordIds": [
+          "ow-send"
+        ],
+        "patternIds": [
+          "pt-request"
+        ],
+        "scenario": "work",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 5
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-no-time",
+      "version": 1,
+      "digest": "4196a1c4d9c3cfc0197f5f1a136de5c1a73fec999d4a3c4568293f7c811cce9d",
+      "content": {
+        "id": "ex-no-time",
+        "kind": "expression",
+        "version": 1,
+        "english": "I do not have time.",
+        "chinese": "说明你没有时间",
+        "level": 2,
+        "answers": [
+          "I do not have time.",
+          "I have no time."
+        ],
+        "wordIds": [
+          "ow-have",
+          "ow-do"
+        ],
+        "patternIds": [
+          "pt-negative"
+        ],
+        "scenario": "life",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 6
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-opener",
+      "version": 1,
+      "digest": "e7f734196f16026adb1be97e339166e390014e025e00c72ddc79ed4e8186b6a5",
+      "content": {
+        "id": "ex-opener",
+        "kind": "expression",
+        "version": 1,
+        "english": "I need something to open this bottle.",
+        "chinese": "忘了开瓶器这个词，描述你需要的东西",
+        "level": 3,
+        "answers": [
+          "I need something to open this bottle.",
+          "Can you give me something to open this bottle?"
+        ],
+        "wordIds": [
+          "ow-give"
+        ],
+        "patternIds": [
+          "pt-need",
+          "pt-request"
+        ],
+        "scenario": "life",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 7
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-late",
+      "version": 1,
+      "digest": "6c3c004254607553190dc200f0c72f30a43877f7d9bf857eba1d1823a9e00dc3",
+      "content": {
+        "id": "ex-late",
+        "kind": "expression",
+        "version": 1,
+        "english": "The car will not get here on time.",
+        "chinese": "忘了延误这个词，解释车不会按时到",
+        "level": 3,
+        "answers": [
+          "The car will not get here on time.",
+          "The car will be late."
+        ],
+        "wordIds": [
+          "ow-will",
+          "ow-get"
+        ],
+        "patternIds": [
+          "pt-when"
+        ],
+        "scenario": "travel",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 8
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "ex-smaller",
+      "version": 1,
+      "digest": "a39d87fd7061f3bfd049265695f6f36045d2d4812fb99098fc0e3dab16c951d9",
+      "content": {
+        "id": "ex-smaller",
+        "kind": "expression",
+        "version": 1,
+        "english": "I need something smaller than this.",
+        "chinese": "忘了小一号这个词，描述你想要的东西",
+        "level": 3,
+        "answers": [
+          "I need something smaller than this.",
+          "Do you have a smaller one?"
+        ],
+        "wordIds": [
+          "ow-have"
+        ],
+        "patternIds": [
+          "pt-choice"
+        ],
+        "scenario": "life",
+        "supportWords": [
+          "help",
+          "need",
+          "time",
+          "car",
+          "arrive",
+          "open",
+          "bottle",
+          "late",
+          "smaller"
+        ],
+        "evaluation": "self-assessment",
+        "reviewStatus": "draft",
+        "order": 9
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-state",
+      "version": 2,
+      "digest": "f7a101e9227bb2c9285de9337c077dd1e35de18a1a6e109e1df8a8bf27ac7d60",
+      "content": {
+        "id": "pt-state",
+        "kind": "pattern",
+        "version": 2,
+        "english": "I am ___.",
+        "chinese": "我处于……状态；我在……",
+        "examples": [
+          {
+            "english": "I am here.",
+            "chinese": "我在这里。"
+          }
+        ],
+        "function": "描述位置与状态",
+        "reviewStatus": "draft",
+        "order": 9,
+        "variants": [
+          {
+            "id": "pt-state-here",
+            "label": "在这里",
+            "english": "I am here.",
+            "chinese": "我在这里。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-state-ready",
+            "label": "准备好了",
+            "english": "I am ready.",
+            "chinese": "我准备好了。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-state-tired",
+            "label": "累了",
+            "english": "I am tired.",
+            "chinese": "我累了。",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-seem",
+      "version": 2,
+      "digest": "6bee572440b3ec77d996e6fba18763a625d44bd921f024a0a7695597e4d92c14",
+      "content": {
+        "id": "pt-seem",
+        "kind": "pattern",
+        "version": 2,
+        "english": "You seem ___.",
+        "chinese": "你似乎……",
+        "examples": [
+          {
+            "english": "You seem tired.",
+            "chinese": "你似乎累了。"
+          }
+        ],
+        "function": "描述印象",
+        "reviewStatus": "draft",
+        "order": 10,
+        "variants": [
+          {
+            "id": "pt-seem-tired",
+            "label": "累了",
+            "english": "You seem tired.",
+            "chinese": "你似乎累了。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-seem-happy",
+            "label": "开心",
+            "english": "You seem happy.",
+            "chinese": "你似乎很开心。",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-seem-ready",
+            "label": "准备好了",
+            "english": "You seem ready.",
+            "chinese": "你似乎准备好了。",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "pt-permission",
+      "version": 2,
+      "digest": "8e805cdfb9f8b5c7c283aa9196a4e38907da2d6458b9bac357abfaf80166280d",
+      "content": {
+        "id": "pt-permission",
+        "kind": "pattern",
+        "version": 2,
+        "english": "May I ___?",
+        "chinese": "我可以……吗？",
+        "examples": [
+          {
+            "english": "May I come in?",
+            "chinese": "我可以进来吗？"
+          }
+        ],
+        "function": "请求许可",
+        "reviewStatus": "draft",
+        "order": 11,
+        "variants": [
+          {
+            "id": "pt-permission-come",
+            "label": "进来",
+            "english": "May I come in?",
+            "chinese": "我可以进来吗？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-permission-go",
+            "label": "现在走",
+            "english": "May I go now?",
+            "chinese": "我现在可以走吗？",
+            "reviewStatus": "draft"
+          },
+          {
+            "id": "pt-permission-take",
+            "label": "拿这个",
+            "english": "May I take this?",
+            "chinese": "我可以拿这个吗？",
+            "reviewStatus": "draft"
+          }
+        ]
+      },
+      "humanReviewer": null,
+      "decision": "pending",
+      "reviewedAt": null,
+      "notes": ""
+    }
+  ]
+}

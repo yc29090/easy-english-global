@@ -9,8 +9,17 @@ export async function installOgden(db:DB,input:OgdenContent){
   await db.query('SELECT pg_advisory_xact_lock(684013212)');
   const previous=(await db.query('SELECT content_hash FROM ogden_installs WHERE version=$1',[content.version])).rows[0];
   if(previous&&previous.content_hash!==hash)throw new Error('Ogden manifest version conflict; increment version');
-  for(const s of content.sources)await db.query('INSERT INTO ogden_sources VALUES($1,$2) ON CONFLICT(id) DO UPDATE SET details=EXCLUDED.details',[s.id,JSON.stringify(s)]);
-  for(const r of content.originalReferences)await db.query('INSERT INTO ogden_original_references VALUES($1,$2,$3) ON CONFLICT(id) DO UPDATE SET source_id=EXCLUDED.source_id,details=EXCLUDED.details',[r.id,r.sourceId,JSON.stringify(r)]);
+  // Provenance IDs are immutable too; corrections must use a new source/reference ID.
+  for(const source of content.sources){
+   const old=(await db.query('SELECT details=$2::jsonb AS same FROM ogden_sources WHERE id=$1',[source.id,JSON.stringify(source)])).rows[0];
+   if(old&&!old.same)throw new Error('Ogden source identity conflict: '+source.id);
+   await db.query('INSERT INTO ogden_sources VALUES($1,$2) ON CONFLICT DO NOTHING',[source.id,JSON.stringify(source)]);
+  }
+  for(const ref of content.originalReferences){
+   const old=(await db.query('SELECT details=$2::jsonb AS same FROM ogden_original_references WHERE id=$1',[ref.id,JSON.stringify(ref)])).rows[0];
+   if(old&&!old.same)throw new Error('Ogden reference identity conflict: '+ref.id);
+   await db.query('INSERT INTO ogden_original_references VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[ref.id,ref.sourceId,JSON.stringify(ref)]);
+  }
   for(const x of content.items){
    const current=(await db.query('SELECT kind FROM ogden_items WHERE id=$1',[x.id])).rows[0];
    if(current&&current.kind!==x.kind)throw new Error('Ogden stable ID kind conflict: '+x.id);
