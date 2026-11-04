@@ -10,7 +10,7 @@ import {ogden} from '../src/ogden.ts';
 import {isolatedDatabase} from './test-db.ts';
 const c=await loadOgden();
 test('controlled variants are authored, unique, bilingual and cannot bypass draft review',()=>{
- assert.equal(c.items.reduce((n,x)=>n+(x.variants?.length||0),0),69);
+ assert.equal(c.items.reduce((n,x)=>n+(x.variants?.length||0),0),81);
  for(const change of ['missing','duplicate','untranslated','unreviewed']){
   const d=structuredClone(c),p=d.items.find(x=>x.kind==='pattern')!;
   if(change==='missing')p.variants=[];
@@ -23,8 +23,8 @@ test('controlled variants are authored, unique, bilingual and cannot bypass draf
 test('readiness requires version-bound review evidence and never grants deployment access',async()=>{
  const exported=JSON.parse(await readFile(new URL('../docs/ogden/review-queue.json',import.meta.url),'utf8'));assert.equal(exported.contentDigest,contentDigest(c));assert.deepEqual(exported.items,ogdenReviewQueue(c));
  const r=ogdenReadiness(c,{});assert.equal(r.readyForProduction,false);assert.equal(r.checksPassed,false);assert.equal(r.checks.length,5);
- assert.equal(r.counts.authoredVariants,69);assert.equal(r.counts.approved,373);
- const queue=ogdenReviewQueue(c);assert.equal(queue.length,373);assert.ok(queue.every(x=>x.humanReviewer===null&&x.decision==='pending'));assert.equal(queue[0].digest,reviewDigest(c.items[0]));
+ assert.equal(r.counts.authoredVariants,81);assert.equal(r.counts.approved,490);
+ const queue=ogdenReviewQueue(c);assert.equal(queue.length,490);assert.ok(queue.every(x=>x.humanReviewer===null&&x.decision==='pending'));assert.equal(queue[0].digest,reviewDigest(c.items[0]));
  assert.equal(contentDigest({a:1,b:2}),contentDigest({b:2,a:1}));
  const approved=structuredClone(c);approved.items.forEach(x=>{x.reviewStatus='approved';for(const v of x.variants||[])v.reviewStatus='approved';});
  assert.equal(ogdenReadiness(approved,{}).checks[0].passed,false,'JSON status is not a human review record');

@@ -1,0 +1,63 @@
+{
+  "version": "modern-850-plan-v1",
+  "status": "planning-not-completed-curriculum",
+  "target": 850,
+  "currentApprovedCore": 300,
+  "countingRule": "稳定词头ID；词形、句型替换与历史850索引不另算现代核心词。lift/elevator等同义词不为凑数并列；本批美式常用elevator优先。",
+  "batches": [
+    {
+      "id": "foundation-300",
+      "targetTotal": 300,
+      "status": "developer-self-checked",
+      "focus": "零基础句子、18操作词、生活旅行与简单工作"
+    },
+    {
+      "id": "daily-450",
+      "targetTotal": 450,
+      "status": "planned",
+      "focus": "家庭、健康、饮食、衣着、时间与常见描述"
+    },
+    {
+      "id": "life-600",
+      "targetTotal": 600,
+      "status": "planned",
+      "focus": "城市服务、旅行异常、居家与工作协作"
+    },
+    {
+      "id": "describe-725",
+      "targetTotal": 725,
+      "status": "planned",
+      "focus": "位置、形状、材料、变化与简单释义"
+    },
+    {
+      "id": "express-850",
+      "targetTotal": 850,
+      "status": "planned",
+      "focus": "填补日常表达覆盖缺口，优先组合能力与改述，不为凑数加入术语"
+    }
+  ],
+  "domainBudgets": {
+    "self-introduction": 50,
+    "people-things": 85,
+    "needs-wishes": 55,
+    "daily-actions": 80,
+    "time-place": 75,
+    "quantity-price": 75,
+    "problems-help": 80,
+    "family-friends": 50,
+    "food-shopping": 90,
+    "transport-travel": 90,
+    "hotels-airports": 75,
+    "simple-work": 45
+  },
+  "budgetRule": "这些是规划配额，不是已编写词条；每个词按主场景仅计一次，跨场景复用。可按审核结论调整预算，但不改变稳定ID。",
+  "admissionGates": [
+    "明确高频日常意图或释义价值，不仅因为在历史表中出现",
+    "自然组合、完整双语例句、功能句型和适用场景",
+    "历史词头匹配与现代词类区别，新增理由及可靠来源",
+    "固定CMU美式主读与异读上下文检查；不冒称录音",
+    "开发者逐条自然度及语义自查；无法确认留draft",
+    "重复导入、版本升级及用户记录保护测试"
+  ],
+  "notIncludedAsCompleted": "剩余550词尚未编写和审核；本计划不是伪造的850词成品或频率排名。"
+}

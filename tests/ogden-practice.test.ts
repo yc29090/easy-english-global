@@ -10,9 +10,9 @@ import {migrations} from '../src/migrations.ts';
 import {isolatedDatabase} from './test-db.ts';
 const c=await loadOgden();
 async function learner(db:any){const id=randomUUID();await db.query("INSERT INTO users(id,email,password_hash) VALUES($1,$2,'fixture')",[id,id+'@example.invalid']);return id;}
-test('217 headwords, 12 functional domains, 18 complete operator families and one selected American dictionary reading',async()=>{
+test('300 headwords, 12 functional domains, 18 complete operator families and one selected American dictionary reading',async()=>{
  const words=c.items.filter(x=>x.kind==='word'),combos=c.items.filter(x=>x.kind==='combination'),tasks=c.items.filter(x=>x.kind==='expression');
- assert.equal(words.length,217);assert.equal(combos.length,55);assert.equal(tasks.length,60);assert.equal(c.domains.length,12);
+ assert.equal(words.length,300);assert.equal(combos.length,73);assert.equal(tasks.length,72);assert.equal(c.domains.length,12);
  for(const domain of c.domains)assert.ok(tasks.filter(x=>x.domain===domain.id).length>=3,domain.id);
  for(const op of OPERATORS){const family=combos.filter(x=>x.operatorWordId==='ow-'+op);assert.ok(family.length>=3,op);assert.deepEqual(new Set(c.items.find(x=>x.id==='op-'+op)!.practiceCombinationIds),new Set(family.map(x=>x.id)));}
  assert.ok(!words.some(x=>x.english==='people'),'irregular plural must not pad core count');assert.equal(c.wordForms.people,'person');
@@ -34,6 +34,7 @@ test('listening weakness survives speaking mastery; review filters, early review
   assert.deepEqual((await call(user,'review')).items[0].review_modes,['listening']);
   const analytics=await call(user,'analytics');assert.equal(analytics.shared[0].mastered,1);assert.equal(analytics.practice.find((x:any)=>x.mode==='listening').attempts,1);assert.equal(analytics.practice.find((x:any)=>x.mode==='listening').weak,1);
   assert.equal((await call(other,'analytics')).practice.length,0);assert.equal((await call(other,'review',{},'mode=listening&all=true')).items.length,0);
+  assert.equal((await call(user,'review',{},'status=unmastered')).items.length,1);assert.equal((await call(user,'review',{},'mode=speaking&status=unmastered&all=true')).items.length,0);assert.equal((await call(user,'review',{},'status=review')).items.length,0);await assert.rejects(()=>call(user,'review',{},'status=made-up'),/Invalid review filter/);
   await assert.rejects(()=>call(user,'review',{},'mode=bad'),/Invalid review filter/);await assert.rejects(()=>call(user,'review',{},'kind=bad'),/Invalid review filter/);
   await call(user,'results',{...failed,status:'mastered',request_id:randomUUID()},'','POST');assert.equal((await call(user,'review')).items.length,0);
  }finally{await cleanup();}

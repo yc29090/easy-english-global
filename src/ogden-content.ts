@@ -19,7 +19,7 @@ export function validateOgden(d:OgdenContent){
   check(['draft','approved','retired'].includes(x.reviewStatus),'invalid review');
   if(x.kind==='word'){
    check(refs.has(x.originalRef)&&['retained','replaced','added','extension'].includes(x.modernStatus)&&x.changeReason,'word provenance/status');
-   check(x.category&&x.functions?.length&&x.patternIds?.length&&x.combinations?.length&&x.examples?.length,'word teaching fields');
+   check(x.category&&x.functions?.length&&x.patternIds?.length&&x.combinations?.length&&x.examples?.length&&x.scenarioIds?.length&&x.scenarioIds.every((id:string)=>domains.has(id)),'word teaching fields');
    check(typeof x.pronunciation?.arpabet==='string'&&x.pronunciation.arpabet.split(' ').every((p:string)=>/^[A-Z]+[012]?$/.test(p))&&x.pronunciation.dictionaryEntry&&sourceIds.has(x.pronunciation.dictionarySource),'missing selected American pronunciation');
    check(x.pronunciation?.locale==='en-US'&&x.pronunciation.primaryReading,'pronunciation metadata');
    const ref=d.originalReferences.find(r=>r.id===x.originalRef);
@@ -32,7 +32,8 @@ export function validateOgden(d:OgdenContent){
    const variantIds=new Set<string>();
    for(const v of x.variants){check(typeof v.id==='string'&&/^[-a-z0-9]+$/.test(v.id)&&v.id.startsWith(x.id+'-')&&!variantIds.has(v.id),'invalid/duplicate pattern variant');variantIds.add(v.id);check(v.label&&typeof v.english==='string'&&/[a-z]/i.test(v.english)&&typeof v.chinese==='string'&&/[\u3400-\u9fff]/.test(v.chinese),'invalid pattern variant text');check(['draft','approved'].includes(v.reviewStatus),'invalid variant review');if(x.reviewStatus==='approved')check(v.reviewStatus==='approved','unreviewed variant in approved pattern');}
   }
-  if(x.kind==='expression'){check(domains.has(x.domain),'unknown expression domain');check([1,2,3].includes(x.level)&&x.evaluation==='self-assessment'&&new Set(x.answers).size>=2,'expression requires multiple references and self-assessment');}
+  if(x.kind==='expression'){check(domains.has(x.domain),'unknown expression domain');check([1,2,3,4].includes(x.level)&&x.evaluation==='self-assessment'&&new Set(x.answers).size>=2,'expression requires multiple references and self-assessment');}
+  if(x.kind==='expression'&&x.level===2)check(x.variantPatternId&&d.items.some(p=>p.id===x.variantPatternId&&p.kind==='pattern'&&p.variants?.length>=2),'replacement task requires an authored pattern');
   if(x.kind==='combination')check(x.tokens?.length>1&&x.tokens.join(' ')===x.english,'invalid authored combination');
  }
  for(const x of d.items)for(const id of [...(x.wordIds||[]),...(x.patternIds||[]),...(x.wordId?[x.wordId]:[])])check(ids.has(id),'broken teaching reference: '+id);
