@@ -45,10 +45,10 @@ function bind(){
  document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=()=>{speech.stop();notify('已停止播放。');});
  document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{
   if(savePending)return;savePending=true;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=true);
-  const key=[b.dataset.save,b.dataset.mode,b.dataset.status].join(':');
-  if(!retryRequests.has(key))retryRequests.set(key,crypto.randomUUID());
+  const key=b.dataset.save,pending=retryRequests.get(key);
+  if(!pending||pending.mode!==b.dataset.mode||pending.status!==b.dataset.status)retryRequests.set(key,{mode:b.dataset.mode,status:b.dataset.status,requestId:crypto.randomUUID()});
   try{
-   await request('/ogden/results','POST',{item_id:b.dataset.save,status:b.dataset.status,mode:b.dataset.mode,request_id:retryRequests.get(key)});
+   await request('/ogden/results','POST',{item_id:b.dataset.save,status:b.dataset.status,mode:b.dataset.mode,request_id:retryRequests.get(key).requestId});
    retryRequests.delete(key);
    const a=b.closest('article');a.querySelector('[data-state]').textContent='当前：'+states[b.dataset.status];a.querySelectorAll('[data-save]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
    try{await refresh();notify('已保存2.0自评和复习时间。');}catch{notify('已保存；暂时无法刷新统计，请稍后刷新页面。');}
