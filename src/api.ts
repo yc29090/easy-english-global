@@ -6,7 +6,7 @@ import type {DB} from './db.ts';
 import {reviewSchedule} from './review.ts';
 import {dialogues} from './dialogues.ts';
 import {token,digest,hashPassword,verifyPassword,member,publicUser,HttpError,requireValue,email,password,days} from './security.ts';
-export type Context={db:DB;gmailConfig?:GmailConfig;query?:URLSearchParams;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;manualPayment?:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>};
+export type Context={db:DB;ogdenPreview?:boolean;gmailConfig?:GmailConfig;query?:URLSearchParams;method:string;path:string;body:any;session?:string;ip:string;sendReset:(email:string,url:string)=>Promise<void>;appUrl:string;mock:boolean;manualPayment?:boolean;passwordResetEnabled?:boolean;onMailError?:()=>void;notifyOrder?:(order:{id:string;email:string;method:string})=>Promise<void>};
 export async function api(c:Context):Promise<any>{
  const {db,method,path,body:b}=c;
  const one=async(sql:string,v:any[]=[])=> (await db.query(sql,v)).rows[0];
@@ -66,7 +66,7 @@ export async function api(c:Context):Promise<any>{
   return transaction(async()=>{await db.query('UPDATE users SET password_hash=$1,must_change_password=false WHERE id=$2',[hash,u.id]);await db.query('DELETE FROM sessions WHERE user_id=$1',[u.id]);await db.query('DELETE FROM password_resets WHERE user_id=$1',[u.id]);return {logout:true};});
  }
  if(u.must_change_password)throw new HttpError(403,'Change your temporary password first');
- if(path.startsWith('/api/ogden/'))return ogden({db,userId:u.id,method,path,body:b,user:u,query:c.query});
+ if(path.startsWith('/api/ogden/')){if(c.ogdenPreview!==true&&!member(u))throw new HttpError(403,'现有会员可使用2.0，无额外收费');return ogden({db,userId:u.id,method,path,body:b,user:u,query:c.query,preview:c.ogdenPreview===true});}
  if(path.startsWith('/api/learning-v2/'))return learningV2({db,user:u,method,path,body:b,query:c.query||new URLSearchParams()});
  if(method==='GET'&&path==='/api/progress')return {progress:(await db.query('SELECT * FROM progress WHERE user_id=$1',[u.id])).rows};
  if(method==='PUT'&&path==='/api/progress'){

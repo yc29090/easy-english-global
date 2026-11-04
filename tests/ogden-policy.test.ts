@@ -46,3 +46,19 @@ test('self-review evidence imports idempotently and stale review rolls back with
   assert.equal((await db.query('SELECT count(*)::int n FROM ogden_content_reviews')).rows[0].n,373);
  }finally{await cleanup();}
 });
+test('non-preview API access enforces existing membership and excludes unapproved content without opening production',async()=>{
+ const {api}=await import('../src/api.ts');const {digest}=await import('../src/security.ts');const {randomUUID}=await import('node:crypto');
+ const {db,cleanup}=await isolatedDatabase();try{
+  await prepareDatabase(db);await installOgden(db,c);const id=randomUUID(),session=randomUUID();
+  await db.query("INSERT INTO users(id,email,password_hash) VALUES($1,$2,'fixture')",[id,id+'@example.invalid']);await db.query("INSERT INTO sessions(token_hash,user_id,expires_at) VALUES($1,$2,now()+interval '1 day')",[digest(session),id]);
+  const call=(path:string,body:any={},preview=false,method='GET')=>api({db,method,path:'/api/ogden/'+path,body,ogdenPreview:preview,session,ip:'127.0.0.1',appUrl:'http://localhost:3100',mock:false,sendReset:async()=>{}});
+  await assert.rejects(()=>call('catalog'),(e:any)=>e.status===403);
+  await assert.rejects(()=>call('results',{item_id:'ow-get',status:'learned',mode:'study',request_id:randomUUID(),ogdenPreview:true},false,'POST'),(e:any)=>e.status===403);
+  assert.equal((await call('catalog',{},true)).items.length,c.items.length);
+  await db.query("UPDATE users SET membership='lifetime' WHERE id=$1",[id]);const paid=await call('catalog');assert.equal(paid.preview,false);assert.equal(paid.entitlement.additionalChargeCny,0);assert.equal(paid.items.length,c.items.length);
+  await db.query("UPDATE ogden_items SET review_status='draft' WHERE id='ow-get'");const approved=await call('catalog');assert.ok(!approved.items.some((x:any)=>['ow-get','op-get'].includes(x.id)));
+  await assert.rejects(()=>call('results',{item_id:'op-get',status:'learned',mode:'study',request_id:randomUUID()},false,'POST'),(e:any)=>e.status===404);
+  await db.query("UPDATE users SET membership='trial',trial_until=now()-interval '1 second' WHERE id=$1",[id]);await assert.rejects(()=>call('analytics'),(e:any)=>e.status===403);
+  await db.query("UPDATE users SET trial_until=now()+interval '1 day' WHERE id=$1",[id]);assert.ok((await call('catalog')).items.length>0);
+ }finally{await cleanup();}
+});

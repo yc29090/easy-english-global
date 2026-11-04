@@ -3,26 +3,28 @@ import {ogdenEntitlement} from './ogden-policy.ts';
 import type {DB} from './db.ts';
 import {HttpError,requireValue} from './security.ts';
 import {reviewSchedule} from './review.ts';
-export async function ogden(c:{db:DB;userId:string;method:string;path:string;body:any;query?:URLSearchParams;user?:{membership:string;trial_until?:string}}):Promise<any>{
+export async function ogden(c:{db:DB;userId:string;method:string;path:string;body:any;preview?:boolean;query?:URLSearchParams;user?:{membership:string;trial_until?:string}}):Promise<any>{
  const {db,userId,method,path,body:b}=c;
  const modes=['study','build','express','listening','speaking'];
- const query=c.query||new URLSearchParams();
- if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'existing-members-both-versions',entitlement:ogdenEntitlement(c.user||{membership:'free'}),preview:true,domains:OGDEN_DOMAINS,items:(await db.query(`SELECT i.payload FROM ogden_items i WHERE i.review_status<>'retired' AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND w.review_status<>'retired')) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload)};
+ const query=c.query||new URLSearchParams(),preview=c.preview!==false;
+ const active=preview?"i.review_status<>'retired'":"i.review_status='approved'";
+ const validTarget=preview?"review_status<>'retired'":"review_status='approved'";
+ if(method==='GET'&&path==='/api/ogden/catalog')return {release:'draft-preview',policy:'existing-members-both-versions',entitlement:ogdenEntitlement(c.user||{membership:'free'}),preview,domains:OGDEN_DOMAINS,items:(await db.query(`SELECT i.payload FROM ogden_items i WHERE ${active} AND (i.kind<>'operator' OR EXISTS(SELECT 1 FROM ogden_items w WHERE w.id=i.payload->>'wordId' AND ${preview?"w.review_status<>'retired'":"w.review_status='approved'"})) ORDER BY i.kind,(i.payload->>'order')::int,i.id`)).rows.map(r=>r.payload)};
  if(method==='GET'&&path==='/api/ogden/progress')return {progress:(await db.query('SELECT * FROM ogden_progress WHERE user_id=$1 ORDER BY updated_at DESC,item_id',[userId])).rows,practice:(await db.query('SELECT item_id,mode,status,next_review_at,attempts FROM ogden_practice_progress WHERE user_id=$1 ORDER BY item_id,mode',[userId])).rows};
  if(method==='GET'&&path==='/api/ogden/review'){
   const mode=query.get('mode')||'all',kind=query.get('kind')||'all',all=query.get('all')==='true';
   requireValue(['all',...modes].includes(mode)&&['all','word','operator','pattern','combination','expression'].includes(kind),'Invalid review filter');
-  if(mode!=='all')return {items:(await db.query(`SELECT i.payload,p.status,p.next_review_at,p.mode FROM ogden_practice_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND p.mode=$2 AND i.review_status<>'retired' AND ($3='all' OR i.kind=$3 OR ($3='operator' AND EXISTS(SELECT 1 FROM ogden_items o WHERE o.kind='operator' AND o.review_status<>'retired' AND o.payload->>'wordId'=i.id))) AND ($4::boolean OR p.status IN ('unmastered','review') OR p.next_review_at<=now()) ORDER BY CASE p.status WHEN 'unmastered' THEN 0 WHEN 'review' THEN 1 ELSE 2 END,p.next_review_at,i.id`,[userId,mode,kind,all])).rows};
+  if(mode!=='all')return {items:(await db.query(`SELECT i.payload,p.status,p.next_review_at,p.mode FROM ogden_practice_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND p.mode=$2 AND ${active} AND ($3='all' OR i.kind=$3 OR ($3='operator' AND EXISTS(SELECT 1 FROM ogden_items o WHERE o.kind='operator' AND ${preview?"o.review_status<>'retired'":"o.review_status='approved'"} AND o.payload->>'wordId'=i.id))) AND ($4::boolean OR p.status IN ('unmastered','review') OR p.next_review_at<=now()) ORDER BY CASE p.status WHEN 'unmastered' THEN 0 WHEN 'review' THEN 1 ELSE 2 END,p.next_review_at,i.id`,[userId,mode,kind,all])).rows};
   return {items:(await db.query(`SELECT i.payload,p.status,p.next_review_at,
    ARRAY(SELECT m.mode FROM ogden_practice_progress m WHERE m.user_id=p.user_id AND m.item_id=p.item_id AND (m.status IN ('unmastered','review') OR m.next_review_at<=now()) ORDER BY m.mode) AS review_modes
-   FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND i.review_status<>'retired' AND ($2='all' OR i.kind=$2 OR ($2='operator' AND EXISTS(SELECT 1 FROM ogden_items o WHERE o.kind='operator' AND o.review_status<>'retired' AND o.payload->>'wordId'=i.id)))
+   FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND ${active} AND ($2='all' OR i.kind=$2 OR ($2='operator' AND EXISTS(SELECT 1 FROM ogden_items o WHERE o.kind='operator' AND ${preview?"o.review_status<>'retired'":"o.review_status='approved'"} AND o.payload->>'wordId'=i.id)))
    AND ($3::boolean OR p.status IN ('unmastered','review') OR p.next_review_at<=now() OR EXISTS(SELECT 1 FROM ogden_practice_progress m WHERE m.user_id=p.user_id AND m.item_id=p.item_id AND (m.status IN ('unmastered','review') OR m.next_review_at<=now())))
    ORDER BY CASE WHEN p.status='unmastered' OR EXISTS(SELECT 1 FROM ogden_practice_progress m WHERE m.user_id=p.user_id AND m.item_id=p.item_id AND m.status='unmastered') THEN 0 ELSE 1 END,p.next_review_at,i.id`,[userId,kind,all])).rows};
  }
  if(method==='GET'&&path==='/api/ogden/analytics'){
-  const shared=(await db.query(`SELECT i.kind,count(*)::int AS studied,count(*) FILTER(WHERE p.status='mastered')::int AS mastered FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND i.review_status<>'retired' GROUP BY i.kind ORDER BY i.kind`,[userId])).rows;
-  const practice=(await db.query(`SELECT p.mode,count(*)::int AS practiced,sum(p.attempts)::int AS attempts,count(*) FILTER(WHERE p.status='unmastered')::int AS weak,count(*) FILTER(WHERE p.next_review_at<=now() OR p.status IN ('unmastered','review'))::int AS due FROM ogden_practice_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND i.review_status<>'retired' GROUP BY p.mode ORDER BY p.mode`,[userId])).rows;
-  const recent=(await db.query(`SELECT e.item_id,e.mode,e.status,e.created_at FROM ogden_practice_events e JOIN ogden_items i ON i.id=e.item_id WHERE e.user_id=$1 AND i.review_status<>'retired' ORDER BY e.created_at DESC,e.request_id DESC LIMIT 10`,[userId])).rows;
+  const shared=(await db.query(`SELECT i.kind,count(*)::int AS studied,count(*) FILTER(WHERE p.status='mastered')::int AS mastered FROM ogden_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND ${active} GROUP BY i.kind ORDER BY i.kind`,[userId])).rows;
+  const practice=(await db.query(`SELECT p.mode,count(*)::int AS practiced,sum(p.attempts)::int AS attempts,count(*) FILTER(WHERE p.status='unmastered')::int AS weak,count(*) FILTER(WHERE p.next_review_at<=now() OR p.status IN ('unmastered','review'))::int AS due FROM ogden_practice_progress p JOIN ogden_items i ON i.id=p.item_id WHERE p.user_id=$1 AND ${active} GROUP BY p.mode ORDER BY p.mode`,[userId])).rows;
+  const recent=(await db.query(`SELECT e.item_id,e.mode,e.status,e.created_at FROM ogden_practice_events e JOIN ogden_items i ON i.id=e.item_id WHERE e.user_id=$1 AND ${active} ORDER BY e.created_at DESC,e.request_id DESC LIMIT 10`,[userId])).rows;
   return {shared,practice,recent};
  }
  if(method==='POST'&&path==='/api/ogden/results'){
@@ -31,8 +33,8 @@ export async function ogden(c:{db:DB;userId:string;method:string;path:string;bod
   await db.query('BEGIN');
   try{
    await db.query('SELECT id FROM users WHERE id=$1 FOR UPDATE',[userId]);
-   let item=(await db.query('SELECT * FROM ogden_items WHERE id=$1 AND review_status<>\'retired\'',[b.item_id])).rows[0];if(!item)throw new HttpError(404,'教材不存在');
-   if(item.kind==='operator')item=(await db.query("SELECT * FROM ogden_items WHERE id=$1 AND review_status<>'retired'",[item.payload.wordId])).rows[0];
+   let item=(await db.query(`SELECT * FROM ogden_items WHERE id=$1 AND ${validTarget}`,[b.item_id])).rows[0];if(!item)throw new HttpError(404,'教材不存在');
+   if(item.kind==='operator')item=(await db.query(`SELECT * FROM ogden_items WHERE id=$1 AND ${validTarget}`,[item.payload.wordId])).rows[0];
    if(!item)throw new HttpError(404,'教材不存在');
    requireValue(b.mode!=='build'||item.kind==='combination');requireValue(b.mode!=='express'||item.kind==='expression');
    const prior=(await db.query('SELECT * FROM ogden_practice_events WHERE user_id=$1 AND request_id=$2',[userId,b.request_id])).rows[0];
