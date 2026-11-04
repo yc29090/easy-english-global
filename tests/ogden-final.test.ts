@@ -34,7 +34,7 @@ test('operator canonical identity and displayed forms must match declared teachi
 test('real preview HTTP uses test login, blocks payment/admin/real emails, rejects DNS rebinding and has no orders',async()=>{
  const {db,cleanup}=await isolatedDatabase();let server:any;try{
   await prepareDatabase(db);await installOgden(db,c);const config={production:false,appUrl:'http://127.0.0.1:3100',port:3100,mockCheckout:false,manualPayment:false,mailProvider:'disabled' as const,mailFrom:''};
-  server=createApplication({...db,connect:async()=>({...db,release(){}})},config,async()=>{throw Error('No external mail');},undefined,undefined,{isolatedPreview:true});await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));config.appUrl='http://127.0.0.1:'+server.address().port;
+  server=createApplication({query:db.query.bind(db),connect:async()=>({query:db.query.bind(db),release(){}})},config,async()=>{throw Error('No external mail');},undefined,undefined,{isolatedPreview:true});await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));config.appUrl='http://127.0.0.1:'+server.address().port;
   const root=await fetch(config.appUrl);assert.match(await root.text(),/隔离测试环境/);assert.equal(root.headers.get('x-easy-english-environment'),'isolated-preview');
   const post=(path:string,body:any)=>fetch(config.appUrl+path,{method:'POST',headers:{Origin:config.appUrl,'Content-Type':'application/json'},body:JSON.stringify(body)});
   assert.equal((await post('/api/auth/register',{email:'real@example.com',password:'test9!Password'})).status,400);
