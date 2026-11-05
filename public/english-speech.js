@@ -1,14 +1,15 @@
-/** Native Web Speech only. Bind an explicit en-US voice only; never fall back to a different accent. */
-export const ENGLISH_SPEECH_RATES=Object.freeze({normal:1,slow:0.55});
+/** Modern lifecycle; classic does not instantiate this engine. */
+import {ENGLISH_SPEECH_RATES,speechLocale,isUsEnglish,voiceSourceRank,voiceLabel} from './speech-policy.js';
+export {ENGLISH_SPEECH_RATES} from './speech-policy.js';
 export function createEnglishSpeech(env=globalThis){
  let synth,active=null,current=null,preferred=null,generation=0,disposed=false,cancelUntil=0,unlisten=()=>{};
  try{synth=env.speechSynthesis;}catch{/* Report unavailable on an explicit click. */}
  const timers=new Map(),normalDurations=new Map();
- const locale=v=>String(v?.lang||'').trim().replace(/_/g,'-').toLowerCase();
- const american=v=>locale(v)==='en-us';
+ const locale=speechLocale;
+ const american=isUsEnglish;
  const identity=v=>v?.voiceURI||`${locale(v)}|${v?.name||''}|${String(v?.localService)}`;
  const same=(a,b)=>!!a&&!!b&&(a===b||identity(a)===identity(b));
- const rank=v=>v.localService===true?0:v.localService===false?2:1;
+ const rank=voiceSourceRank;
  const now=()=>{try{return env.performance?.now?.()??Date.now();}catch{return Date.now();}};
  const tell=(fn,message)=>{try{fn(message);}catch{/* A detached view must not crash the engine. */}};
  const report=(s,status,message,details={})=>{tell(s.notify,message);try{s.onState({status,message,...details});}catch{}};
@@ -26,7 +27,7 @@ export function createEnglishSpeech(env=globalThis){
   return hadSpeech||now()<cancelUntil;
  }
  function halt(s,message,code='unavailable'){if(!valid(s))return;stop();report(s,'error',message,{code});}
- function voiceLabel(v){const source=v.localService===true?'本地英语语音':v.localService===false?'浏览器在线英语语音':'浏览器英语语音（来源由浏览器决定）';return `${source}：${v.name||v.lang} · ${v.lang}`;}
+
  function select(s,all){
   const candidates=all.filter(v=>american(v)&&!s.failed.has(identity(v))).sort((a,b)=>rank(a)-rank(b));
   const retained=candidates.find(v=>same(v,s.selected));if(retained)return retained;
@@ -109,6 +110,13 @@ export function createEnglishSpeech(env=globalThis){
   return begin(s);
  }
  function dispose(){stop();disposed=true;normalDurations.clear();try{unlisten();}catch{}}
- return {play,stop,dispose};
+ // Optional local-only diagnostics: no speech, microphone, URI, transcript, fetch or persistence.
+ function inspect(){
+  const result=scan(),rejected={};
+  for(const v of result.all.filter(v=>!american(v))){const lang=locale(v)||'未标明语言';rejected[lang]=(rejected[lang]||0)+1;}
+  return {supported:!!synth&&!!env.SpeechSynthesisUtterance,readError:result.error,total:result.all.length,
+   eligible:result.all.filter(american).map(v=>({name:String(v.name||'未命名'),lang:'en-US',source:v.localService===true?'本地':v.localService===false?'浏览器在线':'来源未标明'})),rejected};
+ }
+ return {play,stop,dispose,inspect};
 }
 

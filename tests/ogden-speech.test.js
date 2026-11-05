@@ -5,6 +5,10 @@ const US={lang:'en-US',name:'US local',voiceURI:'us-local',localService:true};
 const GB={lang:'en-GB',name:'UK local',voiceURI:'gb-local',localService:true};
 const ZH={lang:'zh-CN',name:'Chinese',voiceURI:'zh',localService:true};
 import {fixture as speechFixture} from './speech-fixture.js';
+test('optional inspection reports US sources and rejected languages without speaking, canceling or fetching',()=>{
+ const f=speechFixture([US,{...US,name:'Online',voiceURI:'online',localService:false},{lang:'en-US',name:'Unknown'},GB,ZH]),s=createOgdenSpeech(f.env);
+ const d=s.inspect();assert.equal(d.total,5);assert.deepEqual(d.eligible.map(x=>x.source),['本地','浏览器在线','来源未标明']);assert.deepEqual(d.rejected,{'en-gb':1,'zh-cn':1});assert.equal(f.spoken.length,0);assert.equal(f.cancels(),0);assert.equal(f.fetches(),0);assert.ok(d.eligible.every(x=>!('voiceURI' in x)));s.dispose();
+});
 const fixture=(initial=[ZH,GB,US])=>speechFixture(initial);
 test('en-US is preferred and explicitly bound; normal and slow set distinct real request rates',()=>{
  const f=fixture(),speech=createOgdenSpeech(f.env);let message='';speech.play('Get help.',{notify:s=>message=s});const first=f.spoken[0];assert.equal(first.voice,US);assert.equal(first.lang,'en-US');assert.equal(first.rate,1);assert.match(message,/等待设备确认/);assert.ok(!message.includes('正在正常播放'));

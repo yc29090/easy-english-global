@@ -3,11 +3,12 @@ import assert from 'node:assert/strict';
 import {readdir,readFile} from 'node:fs/promises';
 import {createEnglishSpeech} from '../public/english-speech.js';
 import {fixture} from './speech-fixture.js';
-test('all native curriculum synthesis is owned by the shared US engine',async()=>{
+test('classic and modern own separate lifecycles and share only US policy',async()=>{
  const files=await readdir(new URL('../public/',import.meta.url),{recursive:true});const owners=[];
  for(const file of files.filter(f=>f.endsWith('.js'))){const source=await readFile(new URL('../public/'+file,import.meta.url),'utf8');if(/new\s+env\.SpeechSynthesisUtterance|\bsynth\.speak\(/.test(source))owners.push(file);}
- assert.deepEqual(owners,['english-speech.js']);
- for(const [path,symbol] of [['playback.js','createEnglishSpeech'],['ogden/speech.js','createOgdenSpeech']])assert.ok((await readFile(new URL('../public/'+path,import.meta.url),'utf8')).includes(symbol));
+ assert.deepEqual(owners.sort(),['english-speech.js','playback.js']);
+ for(const [path,symbol] of [['playback.js','speech-policy.js'],['ogden/speech.js','createOgdenSpeech']])assert.ok((await readFile(new URL('../public/'+path,import.meta.url),'utf8')).includes(symbol));
+ assert.ok(!(await readFile(new URL('../public/playback.js',import.meta.url),'utf8')).includes('createEnglishSpeech'));
 });
 test('US-only retries are bounded to three voices, never other accents, with sanitized failures',()=>{
  const voices=Array.from({length:5},(_,i)=>({lang:'en-US',name:'US '+i,voiceURI:'us'+i}));const f=fixture([{lang:'en-GB'},...voices]),s=createEnglishSpeech(f.env);let state;

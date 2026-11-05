@@ -7,6 +7,12 @@ const routes=[['','学习首页'],['words','核心词'],['operators','18操作�
 const page=location.pathname.split('/')[2]||'';
 const notify=s=>{$('#feedback').textContent=s;};
 const request=ogdenRequest;
+$('[data-voice-check]').onclick=()=>{
+ const d=speech.inspect(),out=$('#voice-check');
+ out.textContent=!d.supported?'当前浏览器未提供语音合成API。':d.readError?'读取语音列表失败，不能判断是否有en-US。':!d.total?'当前语音列表为空，可能仍在加载；这不能证明设备没有英语语音引擎。':d.eligible.length?'当前可用en-US：'+d.eligible.map(v=>v.name+'（'+v.source+'）').join('；')+'。语言标签不证明实际口音或慢速听感。':'当前列表没有en-US，未播放其他口音。';
+ if(Object.keys(d.rejected).length)out.textContent+=' 未采用的语言：'+Object.entries(d.rejected).map(([lang,n])=>lang+' × '+n).join('；')+'。';
+ out.textContent+=' 仅在本页显示，不上传、不保存；检查不会播放声音。';
+};
 const state=id=>progress.find(p=>p.item_id===id);
 const states={learned:'已学习',mastered:'已掌握',unmastered:'未掌握',review:'待复习'};
 function sound(text){return `<div class="actions"><button data-say="${esc(text)}" aria-pressed="${!slowPlayback}">正常播放</button><button data-say="${esc(text)}" data-slow aria-pressed="${slowPlayback}">慢速播放</button><button data-say="${esc(text)}" data-repeat>重复播放</button><button data-stop>停止</button></div>`;}

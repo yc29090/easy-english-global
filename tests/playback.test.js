@@ -17,7 +17,7 @@ test('classic repeat and shadow pauses retain slow rate and stop prevents stale 
  const f=fixture([US]),p=createPlayback(f.env),phases=[];p.play({english:'Can you help me?'},{slow:true,repeat:true,shadow:true,onPhase:x=>phases.push(x)});f.start();f.end();assert.equal(phases.at(-1),'speak');f.advance(3400);assert.equal(f.spoken.length,2);assert.equal(f.spoken[1].rate,.55);p.stop();const count=phases.length;f.spoken[1].onstart();f.spoken[1].onend();f.advance(100000);assert.equal(phases.length,count);assert.equal(f.spoken.length,2);assert.equal(f.timers.size,0);
 });
 test('rapid classic mode changes cancel old audio without overlap',()=>{
- const f=fixture([US]),p=createPlayback(f.env);p.play({english:'One'},{repeat:true});f.start();p.play({english:'Two'},{slow:true});p.play({english:'Three'});f.advance(120);assert.equal(f.spoken.length,2);assert.equal(f.spoken[1].text,'Three');assert.equal(f.spoken[1].rate,1);assert.ok(f.cancels()>=1);p.stop();
+ const f=fixture([US]),p=createPlayback(f.env);p.play({english:'One'},{repeat:true});f.start();p.play({english:'Two'},{slow:true});p.play({english:'Three'});f.advance(120);assert.equal(f.spoken.length,3);assert.equal(f.spoken[2].text,'Three');assert.equal(f.spoken[2].rate,1);assert.ok(f.cancels()>=1);p.stop();
 });
 test('URL-only audio cannot bypass US policy; no unreviewed clip or default speech is played',()=>{
  const f=fixture([{lang:'en-GB',name:'British'}]),p=createPlayback(f.env);let errors=[];let audio=0;f.env.Audio=class{constructor(){audio++;}};

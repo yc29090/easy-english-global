@@ -28,6 +28,9 @@ async function setup(page:Page,voices:any[],error=''){
 }
 const last=(page:Page)=>page.evaluate(()=>(window as any).voiceFixture.calls().at(-1));
 const size=(page:Page)=>page.evaluate(()=>(window as any).voiceFixture.calls().length);
+test('voice shim: optional diagnosis exposes online US eligibility without playback or uploads',async({page})=>{
+ await setup(page,[zh,gb,{...us,localService:false}]);const posts:string[]=[];page.on('request',r=>{if(r.method()!=='GET')posts.push(r.url());});await page.locator('[data-voice-check]').click();await expect(page.locator('#voice-check')).toContainText('US fixture（浏览器在线）');await expect(page.locator('#voice-check')).toContainText('en-gb');await expect(page.locator('#voice-check')).toContainText('不上传、不保存');expect(await size(page)).toBe(0);expect(posts).toEqual([]);
+});
 test('voice shim: en-US is preferred over other English and the Chinese default',async({page})=>{
  await setup(page,[zh,gb,us]);expect(await size(page)).toBe(0);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('正在正常播放');expect((await last(page)).lang).toBe('en-US');expect((await last(page)).rate).toBe(1);
 });
