@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 7
     env:
-      RELEASE_STAGE: baseline-pr13
-      EXPECTED_SHA: fdd3e1a350a7a835c562663c29438f985ff58f40
+      RELEASE_STAGE: post-pr13
+      EXPECTED_SHA: ca89403568b5e8b4413ab4a8604210ca59fae685
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -36,9 +36,10 @@ jobs:
             if(attempt<3)await new Promise(r=>setTimeout(r,2000));
           }
           assert.equal(health,true,'Production health must respond ok');checks.push('/health:200 ok');
-          const home=await check('/');assert.ok((await home.text()).includes('Easy English'));assert.ok(home.headers.get('content-security-policy'));assert.equal(home.headers.get('x-content-type-options'),'nosniff');
-          assert.ok((await (await check('/ogden')).text()).includes('Modern Basic English'));
-          for(const path of ['/playback.js','/ogden/speech.js','/app.js','/ogden/app.js']){
+          const home=await check('/');const homeBody=await home.text();assert.ok(homeBody.includes('Easy English'));assert.ok(homeBody.includes('learning-status.css'));assert.ok(home.headers.get('content-security-policy'));assert.equal(home.headers.get('x-content-type-options'),'nosniff');
+          const modernBody=await (await check('/ogden')).text();assert.ok(modernBody.includes('Modern Basic English'));assert.ok(modernBody.includes('learning-status.css'));
+          for(const path of ['/ogden/words?q=get','/ogden/review','/?version=classic&page=words'])await check(path);
+          for(const path of ['/playback.js','/ogden/speech.js','/app.js','/ogden/app.js','/learning-status.js','/learning-status.css','/learning-v2.js']){
             const actual=await (await check(path+'?pr12_probe='+sha)).text();
             const expected=await fetch('https://raw.githubusercontent.com/yc29090/easy-english-global/'+sha+'/public'+path,{redirect:'error',signal:AbortSignal.timeout(30000)});
             assert.equal(expected.status,200,'Immutable source status');
@@ -49,7 +50,7 @@ jobs:
           const catalog=await (await check('/api/catalog')).json();
           const words=Number(catalog.counts.find(x=>x.kind==='word')?.count),phrases=Number(catalog.counts.find(x=>x.kind==='phrase')?.count);
           assert.equal(words,500);assert.equal(phrases,200);assert.equal(catalog.scenes.length,20);
-          assert.equal(catalog.features?.mockCheckout,false,'Mock checkout must remain closed');
+          assert.equal(catalog.features?.mockCheckout,false,'Mock checkout must remain closed');assert.equal(catalog.features?.manualPayment,false,'Manual payment unchanged from baseline');
           assert.ok(catalog.materials.length>0&&catalog.materials.every(x=>x.is_free===true),'Anonymous catalog only includes free material');
           await check('/api/me',401);await check('/api/admin/users',401);await check('/.env',404);await check('/data/curriculum.json',404);
           const featureFlags=Object.fromEntries(Object.entries(catalog.features||{}).filter(([,value])=>typeof value==='boolean'));
