@@ -109,7 +109,8 @@ function bind(){
  document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>notify(b.closest('article').querySelector('[data-built]').textContent===b.dataset.check?'与这条教材组合一致。':'这次排列与教材不同。可以重新排列或查看参考；这不是自由表达评分。'));
 }
 async function refresh(){[progress,review,analytics]=await Promise.all([request('/ogden/progress').then(r=>{retryRequests.owner(r.ownerId);modeProgress=r.practice||[];return r.progress;}),request('/ogden/review'+(page==='review'?location.search:'')).then(r=>r.items),request('/ogden/analytics')]);}
-document.addEventListener('visibilitychange',()=>{if(document.hidden)speech.stop();});addEventListener('pagehide',()=>speech.stop());
+function pauseSpeech(){speech.stop();notify('页面已暂停，旧播放请求已取消。请重新点击播放。');}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseSpeech();});addEventListener('pagehide',pauseSpeech);
 (async()=>{try{const catalog=await request('/ogden/catalog');items=catalog.items;domains=catalog.domains||[];coverage=catalog.coverage||{};learningPath=catalog.learningPath||[];await refresh();render();}catch(e){$('#content').innerHTML=e.status===401?'<div class="panel"><h2>使用现有账号登录</h2><p>两个版本共用现有账号和会员。登录后在首页选择学习版本。</p><a href="/?login=1">登录 / 注册并选择版本</a></div>':`<div class="panel"><h2>暂时无法读取2.0教材</h2><p>${esc(e.message)}</p><p>请检查网络或稍后，然后重试。已提交但未确认的保存会沿用原编号。</p><button id="retry-load">重新加载</button></div>`;if($('#retry-load'))$('#retry-load').onclick=()=>location.reload();}})();
 
 addEventListener('pageshow',event=>{if(event.persisted)location.reload();});

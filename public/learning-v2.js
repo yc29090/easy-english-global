@@ -83,7 +83,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
   root.querySelectorAll('[data-v2-dialogue]').forEach(el=>el.onclick=()=>openDialogue(el.dataset.v2Dialogue));
   root.querySelectorAll('[data-v2-definition]').forEach(el=>el.onclick=()=>{const word=links.materials.find(m=>m.id===el.dataset.v2Definition);const out=root.querySelector('#v2-definition');if(word&&out)out.textContent=word.english+' · '+word.chinese;});
   root.querySelectorAll('[data-v2-reveal]').forEach(el=>el.onclick=()=>{if(el.dataset.v2Reveal==='en')english=!english;else chinese=!chinese;draw();});
-  root.querySelector('[data-v2-play]')?.addEventListener('click',()=>{slow=false;play();});root.querySelector('[data-v2-repeat]')?.addEventListener('click',()=>play(true));root.querySelector('[data-v2-shadow]')?.addEventListener('click',()=>play(true,true));root.querySelector('[data-v2-stop]')?.addEventListener('click',()=>playback.stop());
+  root.querySelector('[data-v2-play]')?.addEventListener('click',()=>{slow=false;play();});root.querySelector('[data-v2-repeat]')?.addEventListener('click',()=>play(true));root.querySelector('[data-v2-shadow]')?.addEventListener('click',()=>play(true,true));root.querySelector('[data-v2-stop]')?.addEventListener('click',()=>{playback.stop();const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('已停止播放。','Playback stopped.');});
   root.querySelector('[data-v2-slow]')?.addEventListener('click',()=>{slow=true;play();});
   root.querySelectorAll('[data-v2-answer]').forEach(el=>el.onclick=async()=>{
    if(saved||busy||!item)return;busy=true;error='';resultId||=globalThis.crypto.randomUUID();const target=item,practiceMode=mode==='linked'?'expression':mode;draw();

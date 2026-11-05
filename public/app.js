@@ -3,9 +3,10 @@ import {createPlayback} from './playback.js';
 import {createLearningV2,findLinkedWord} from './learning-v2.js';
 const playback=createPlayback();
 let hideEnglish=false,hideChinese=false,slowAudio=false,reviewAll=false,reviewItems=[],learningState=null,practiceProgress=[],trainingItems=[],trainingIndex=0,trainingReview=false,activeDialogue=null,practiceRole='a',practiceTurn=0;
-document.addEventListener('visibilitychange',()=>{if(document.hidden){playback.stop();learningV2.pause();}});
-window.addEventListener('pagehide',()=>{playback.stop();learningV2.pause();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){stopForBackground();}});
+window.addEventListener('pagehide',()=>{stopForBackground();});
 const $=s=>document.querySelector(s);
+function stopForBackground(){playback.stop();learningV2.pause();document.querySelectorAll('.playback-phase').forEach(node=>node.textContent=t('页面已暂停，旧播放请求已取消。请重新点击播放。','Page paused. Previous speech was canceled. Click again to play.'));}
 const classicPages=new Set(['classic','words','phrases','scenes','review','v2','membership','account','admin']);
 function routePage(search=''){const query=new URLSearchParams(search);return classicPages.has(query.get('page'))?query.get('page'):query.get('version')==='classic'?'classic':'home';}
 function pageUrl(p){return p==='home'?'/':'/?version=classic'+(p==='classic'?'':'&page='+encodeURIComponent(p));}

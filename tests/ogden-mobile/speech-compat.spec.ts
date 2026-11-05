@@ -66,3 +66,8 @@ test('voice shim: permanently empty list times out and cannot resume after late 
 test('voice shim: pagehide cancels queued speech and background restoration cannot revive it',async({page})=>{
  await setup(page,[]);await page.locator('[data-say]').first().click();await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));await page.evaluate(voice=>(window as any).voiceFixture.load([voice]),us);await page.waitForTimeout(300);expect(await size(page)).toBe(0);
 });
+
+test('voice shim: visibility background and restoration do not revive pending speech',async({page})=>{
+ await setup(page,[]);await page.locator('[data-say]').first().click();await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});await expect(page.locator('#feedback')).toContainText('旧播放请求已取消');
+ await page.evaluate(voice=>{Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));(window as any).voiceFixture.load([voice]);},us);await page.waitForTimeout(300);expect(await size(page)).toBe(0);
+});
