@@ -1,3 +1,4 @@
+import {statusBadge} from './learning-status.js';
 import {createSpeechPractice} from './speech-practice.js';
 const escapeHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 /** Prefer the literal headword (meeting) over another lemma's form (meet). */
@@ -8,7 +9,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  let listSearch='',listKind='all';
  let root,mode='hub',item=null,links=null,patterns=[],review=null,analytics=null,english=false,chinese=false,slow=false,saved=false,busy=false,error='',resultId=null,generation=0;
  const text=(zh,en)=>getLanguage()==='zh'?zh:en,esc=escapeHtml;
- const stateLabel=value=>({learned:text('已学习','Learned'),unmastered:text('未掌握','Not mastered'),mastered:text('已掌握','Mastered'),review:text('待复习','To review')})[value]||text('未标记','Unmarked');
+ const stateLabel=value=>({learned:text('已学习','Learned'),unmastered:text('待掌握','Not mastered'),mastered:text('已掌握','Mastered'),review:text('待复习','To review')})[value]||text('未标记','Unmarked');
  const modes=()=>[['listening',text('先听后看','Listen first')],['expression',text('看中文说英语','Speak from Chinese')],['pattern',text('句型替换','Sentence patterns')],['review',text('关联复习','Linked review')],['analytics',text('学习分析','My learning')]];
  function leave(){generation++;playback.stop();speech.stop();speechState={status:'idle'};root=null;}
  function open(nextMode,id){speech.stop();speechState={status:'idle'};mode=nextMode;item=id?getCatalog().materials.find(m=>m.id===id)||null:null;links=null;english=false;chinese=nextMode==='expression'||nextMode==='pattern';saved=false;error='';resultId=null;}
@@ -23,7 +24,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  }
  function linked(){
   if(!links)return '';
-  return `<section><h2>${text(item.kind==='word'?'相关短句':'重点单词',item.kind==='word'?'Related phrases':'Key words')}</h2><p class="help">${text('数量以实际教材关联为准；没有关联时也可自由学习。','Links use existing lessons. Some words have no related phrase yet.')}</p><div class="v2-actions">${links.materials.map(m=>`<button data-v2-item="${esc(m.id)}">${english?`<span lang="en">${esc(m.english)}</span>`:esc(text(m.kind==='word'?'查看单词':'查看短句',m.kind==='word'?'Open word':'Open phrase'))}${chinese?' · '+esc(m.chinese):''} · ${esc(stateLabel(m.status))}</button>`).join('')||`<p>${text('暂无可用关联教材。','No accessible linked lessons yet.')}</p>`}</div>${links.dialogues.length?`<h2>${text('同场景对话','Conversations in this scene')}</h2><div class="v2-actions">${links.dialogues.map(d=>`<button data-v2-dialogue="${esc(d.id)}">${esc(getLanguage()==='zh'?d.title_zh:d.title_en)}</button>`).join('')}</div>`:''}</section>`;
+  return `<section><h2>${text(item.kind==='word'?'相关短句':'重点单词',item.kind==='word'?'Related phrases':'Key words')}</h2><p class="help">${text('数量以实际教材关联为准；没有关联时也可自由学习。','Links use existing lessons. Some words have no related phrase yet.')}</p><div class="v2-actions">${links.materials.map(m=>`<button data-v2-item="${esc(m.id)}">${english?`<span lang="en">${esc(m.english)}</span>`:esc(text(m.kind==='word'?'查看单词':'查看短句',m.kind==='word'?'Open word':'Open phrase'))}${chinese?' · '+esc(m.chinese):''} · ${statusBadge(m.status,getLanguage())}</button>`).join('')||`<p>${text('暂无可用关联教材。','No accessible linked lessons yet.')}</p>`}</div>${links.dialogues.length?`<h2>${text('同场景对话','Conversations in this scene')}</h2><div class="v2-actions">${links.dialogues.map(d=>`<button data-v2-dialogue="${esc(d.id)}">${esc(getLanguage()==='zh'?d.title_zh:d.title_en)}</button>`).join('')}</div>`:''}</section>`;
  }
  function speechPanel(){
   if(!['expression','pattern','linked'].includes(mode))return '';
@@ -41,7 +42,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
    <p id="v2-definition" class="help" role="status"></p>
    <div class="v2-actions"><button class="primary" data-v2-answer="yes" ${saved||busy?'disabled':''}>${text(isListening?'听懂了':'会说',isListening?'Understood':'I can say it')}</button><button data-v2-answer="no" ${saved||busy?'disabled':''}>${text(isListening?'没听懂':'还不会',isListening?'Not yet':'Not yet')}</button><button data-v2-next>${text('下一条 / 自由跳过','Next / skip freely')}</button></div>
    ${saved?`<p role="status">${text('结果已保存；可随时在关联复习中练习。','Saved. Practise again anytime in linked review.')}</p>`:''}
-   ${mode==='linked'?`<p class="help">${text('原学习状态：','Learning state: ')}${esc(stateLabel(item.status))}</p>`:''}
+   ${mode==='linked'?`<p class="help">${text('原学习状态：','Learning state: ')}${statusBadge(item.status,getLanguage())}</p>`:''}
    ${speechPanel()}</article>${!isPattern?linked():''}`;
  }
  function chooseList(){const items=getCatalog().materials.filter(m=>(listKind==='all'||m.kind===listKind)&&(m.english+' '+m.chinese).toLowerCase().includes(listSearch.toLowerCase())).slice(0,20);return `<h2>${text('选择内容','Choose content')}</h2><label>${text('搜索教材','Search lessons')}<input id="v2-search" type="search" value="${esc(listSearch)}"></label><select id="v2-kind" aria-label="${text('单词或短句','Words or phrases')}">${[['all',text('全部','All')],['word',text('单词','Words')],['phrase',text('短句','Phrases')]].map(([v,l])=>`<option value="${v}" ${listKind===v?'selected':''}>${l}</option>`).join('')}</select><p class="help">${text('每次显示最多20条，搜索可自由选择其他教材。','Showing up to 20 lessons. Search freely for others.')}</p><div class="v2-actions">${items.map(m=>`<button data-v2-start="${esc(m.id)}">${esc(m.chinese)} · ${text(m.kind==='word'?'单词':'短句',m.kind==='word'?'Word':'Phrase')}</button>`).join('')}</div>`;}
@@ -97,3 +98,4 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  async function mount(){root=document.querySelector('#learning-v2-root');if(!root)return;if(['listening','expression','pattern'].includes(mode)){english=false;chinese=mode!=='listening';}draw();if(!getUser())return;if(mode==='pattern'||mode==='review'||mode==='analytics')await enter(mode);else if(item)await loadItem(item.id,mode);}
  return {mount,open,leave,pause:()=>{speech.stop();playback.stop();speechState={...speechState,status:'idle'};draw();}};
 }
+

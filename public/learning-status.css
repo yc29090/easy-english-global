@@ -1,0 +1,26 @@
+/* Shared state colors. Accent is for borders; deep text preserves AA contrast. */
+:root{--state-learned:#2563EB;--state-mastered:#16A34A;--state-unmastered:#EA580C;--state-review:#9333EA}
+[data-learning-status="learned"],[data-learning-state="learned"]{--state-accent:var(--state-learned);--state-soft:#EFF6FF;--state-selected:#DBEAFE;--state-ink:#1E3A8A}
+[data-learning-status="mastered"],[data-learning-state="mastered"]{--state-accent:var(--state-mastered);--state-soft:#F0FDF4;--state-selected:#F0FDF4;--state-ink:#14532D}
+[data-learning-status="unmastered"],[data-learning-state="unmastered"]{--state-accent:var(--state-unmastered);--state-soft:#FFF7ED;--state-selected:#FFF7ED;--state-ink:#9A3412}
+[data-learning-status="review"],[data-learning-state="review"]{--state-accent:var(--state-review);--state-soft:#FAF5FF;--state-selected:#F3E8FF;--state-ink:#581C87}
+.learning-status-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px;max-width:100%}
+.learning-status-group .learning-status-button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;min-width:0;width:100%;margin:0;border:1px solid var(--state-accent);border-radius:10px;padding:11px 10px;background:var(--state-soft);color:var(--state-ink);font:inherit;font-size:15px;line-height:1.5;box-shadow:none;cursor:pointer;touch-action:manipulation}
+.learning-status-group .learning-status-button:hover{background:var(--state-selected)}
+.learning-status-group .learning-status-button[aria-pressed="true"]{border-width:3px;padding:9px 8px;background:var(--state-selected);color:var(--state-ink);font-weight:800;box-shadow:0 2px 5px #0f172a18}
+.learning-status-button .state-check{display:inline-block;width:1em;flex:none;font-weight:900;visibility:hidden}
+.learning-status-button[aria-pressed="true"] .state-check{visibility:visible}
+.learning-status-group .learning-status-button:focus-visible{outline:3px solid #0F172A;outline-offset:3px}
+.learning-status-button[aria-disabled="true"]{cursor:wait}
+.learning-state-panel[data-save-pending] .learning-status-button[aria-pressed="true"]{border-style:dashed}
+.learning-state-badge{display:inline-block;border:1px solid var(--state-accent,#64748B);border-radius:7px;padding:3px 8px;background:var(--state-soft,#F8FAFC);color:var(--state-ink,#334155);font-size:14px;font-weight:700;line-height:1.5;vertical-align:middle}
+.learning-state-panel .learning-state-summary{line-height:1.9;font-size:14px;margin:12px 0 4px;color:#334155}
+.learning-state-panel [data-next-review]{margin:4px 0;color:#475569}
+.learning-state-panel .learning-state-feedback{font-size:14px;line-height:1.6;color:#334155;margin:6px 0;min-height:0}
+.learning-state-feedback:empty{display:none}
+button[data-page="review"],.nav button[data-page="review"],a[href^="/ogden/review"],nav a[href^="/ogden/review"],button[data-review-mode="due"]{border:1px solid #9333EA;background:#FAF5FF;color:#581C87}
+button[data-page="review"]:focus-visible,a[href^="/ogden/review"]:focus-visible{outline:3px solid #0F172A;outline-offset:3px}
+@media(min-width:1100px){.learning-status-group{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(forced-colors:active){.learning-status-group .learning-status-button{border-color:ButtonText}.learning-status-group .learning-status-button[aria-pressed="true"]{border-color:Highlight;outline:2px solid Highlight;outline-offset:2px}.learning-state-badge{border-color:CanvasText}}
+
+.learning-status-button>span:last-child{min-width:0;overflow-wrap:anywhere}
