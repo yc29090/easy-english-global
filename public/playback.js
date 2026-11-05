@@ -9,7 +9,7 @@ export function createPlayback(env=globalThis){
  const valid=s=>!disposed&&active===s&&s.generation===generation;
  function clear(kind){if(timers.has(kind))env.clearTimeout(timers.get(kind));timers.delete(kind);}
  function later(kind,delay,s,fn){if(!valid(s))return;clear(kind);timers.set(kind,env.setTimeout(()=>{timers.delete(kind);if(valid(s))fn();},delay));}
- function voices(){try{return Array.from(synth?.getVoices?.()||[]).filter(isUsEnglish).sort((a,b)=>voiceSourceRank(a)-voiceSourceRank(b));}catch{return null;}}
+ function voices(){try{synth=env.speechSynthesis;return Array.from(synth?.getVoices?.()||[]).filter(isUsEnglish).sort((a,b)=>voiceSourceRank(a)-voiceSourceRank(b));}catch{return null;}}
  function phase(s,name,state={}){if(valid(s))try{s.options.onPhase?.(name,state);}catch{}}
  function stop(){generation++;active=null;for(const kind of [...timers.keys()])clear(kind);const old=speech;speech=null;if(old)try{synth?.cancel();}catch{}}
  function failed(s,code,message){if(!valid(s))return;stop();try{s.options.onError?.({code,message,status:'error'});}catch{}}
@@ -46,7 +46,7 @@ export function createPlayback(env=globalThis){
  voices(); // Same silent eager discovery as production classic.
  function play(item,options={}){
   stop();if(disposed||typeof item?.english!=='string'||!item.english.trim())return false;
-  const s={generation,item,options,waiting:false};active=s;
+  const s={generation,item,options,waiting:false};active=s;voices();
   if(!synth||!env.SpeechSynthesisUtterance){failed(s,'unsupported','当前浏览器不支持英语语音播放，尚未开始。');return false;}
   // Unreviewed URL-only media still cannot bypass the explicit en-US policy.
   return once(s);

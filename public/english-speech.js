@@ -103,6 +103,7 @@ export function createEnglishSpeech(env=globalThis){
  scan(); // Silent discovery before the first click. Never synthesize an unlock phrase.
  function play(text,{slow=false,repeat=false,notify=()=>{},onState=()=>{},repeatGap=1800}={}){
   const interrupted=stop();if(disposed||typeof text!=='string'||!text.trim())return false;
+  if(!synth)try{synth=env.speechSynthesis;}catch{}
   const s={generation,text,slow,repeat,notify,onState,repeatGap:Math.min(120000,Math.max(500,Number(repeatGap)||1800)),failed:new Set(),selected:null,attempts:0,waiting:false};active=s;
   if(!synth||!env.SpeechSynthesisUtterance){halt(s,'当前浏览器不支持英语语音播放，尚未开始朗读。','unsupported');return false;}
   // Allow Android's cancellation to settle before replacing an active utterance.
