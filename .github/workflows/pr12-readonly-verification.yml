@@ -1,4 +1,4 @@
-name: PR13 readonly release verification
+name: PR14 readonly release verification
 on:
   push:
     branches: ['ops/pr12-readonly-verification']
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 7
     env:
-      RELEASE_STAGE: post-pr13
-      EXPECTED_SHA: ca89403568b5e8b4413ab4a8604210ca59fae685
+      RELEASE_STAGE: post-pr14
+      EXPECTED_SHA: b314252c60bb5ddc6235ac3c5c52515f4a11ff27
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -39,7 +39,7 @@ jobs:
           const home=await check('/');const homeBody=await home.text();assert.ok(homeBody.includes('Easy English'));assert.ok(homeBody.includes('learning-status.css'));assert.ok(home.headers.get('content-security-policy'));assert.equal(home.headers.get('x-content-type-options'),'nosniff');
           const modernBody=await (await check('/ogden')).text();assert.ok(modernBody.includes('Modern Basic English'));assert.ok(modernBody.includes('learning-status.css'));
           for(const path of ['/ogden/words?q=get','/ogden/review','/?version=classic&page=words'])await check(path);
-          for(const path of ['/playback.js','/ogden/speech.js','/app.js','/ogden/app.js','/learning-status.js','/learning-status.css','/learning-v2.js']){
+          for(const path of ['/playback.js','/ogden/speech.js','/app.js','/ogden/app.js','/learning-status.js','/learning-status.css','/learning-v2.js','/ogden/expression-input.js']){
             const actual=await (await check(path+'?pr12_probe='+sha)).text();
             const expected=await fetch('https://raw.githubusercontent.com/yc29090/easy-english-global/'+sha+'/public'+path,{redirect:'error',signal:AbortSignal.timeout(30000)});
             assert.equal(expected.status,200,'Immutable source status');
