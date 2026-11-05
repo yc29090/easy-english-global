@@ -1,0 +1,96 @@
+{
+  "verdict": "BLOCKED",
+  "observedAt": "2026-11-05T11:15:24.494Z",
+  "baseCommit": "d12fef6eb9a5c5633e25343e0161b96b1466a2fe",
+  "candidateEvidence": "Enclosing Git commit + its lock checksum + same-commit PR checks.",
+  "lockSha256": "bba5eb988c4e06d6a4440b651892e5029d8253933413088336ef6499256fa1f4",
+  "audits": {
+    "date": "2026-11-05",
+    "allDependencyVulnerabilities": 0,
+    "productionDependencyVulnerabilities": 0
+  },
+  "historicalEvidence": [
+    {
+      "commit": "73eadf4e8c55bba2918c8fcfe3bc4c3dcd548aa5",
+      "run": 41845878866,
+      "mainTests": 150
+    },
+    {
+      "commit": "d12fef6eb9a5c5633e25343e0161b96b1466a2fe",
+      "run": 42012660429,
+      "meaning": "Documentation successor without the uncommitted lock/three smoke tests."
+    }
+  ],
+  "localRetest": {
+    "total": 153,
+    "passed": 149,
+    "failed": 0,
+    "skipped": 4
+  },
+  "render": {
+    "service": "srv-dbj23vmtlv9c73c1jpo0",
+    "plan": "free",
+    "buildPlan": "starter",
+    "instances": 1,
+    "autoDeploy": "no",
+    "remainingAllowances": null,
+    "overagePolicy": null
+  },
+  "neon": {
+    "project": "soft-tooth-72285618",
+    "plan": "free_v3",
+    "rawDataTransferBytes": 114826055,
+    "rawComputeTimeSeconds": 10841,
+    "branchLogicalSizeBytes": 34373632,
+    "configuredBranchLogicalLimitBytes": 1073741824,
+    "remainingBillingAllowances": null,
+    "overagePolicy": null,
+    "paidOnlyConsumptionAPIs": "Not called; Free excluded by API contract."
+  },
+  "backup": {
+    "snapshot": "snap-muddy-mouse-b50eb3wd",
+    "createdAt": "2026-11-04T13:28:47Z",
+    "sourceBranch": "br-royal-recipe-b5cxk6jr",
+    "database": "neondb",
+    "retained": true,
+    "expiry": "NOT_EXPOSED",
+    "copy": "br-wild-term-b5l1sn0p",
+    "readOnlyRecheck": {
+      "checkedAt": "2026-11-05T11:06:56.180Z",
+      "database": "neondb",
+      "postgres": "18.6 (ac70818)",
+      "businessTables": 22,
+      "matched": 22,
+      "differences": [],
+      "primaryMigrations": "7",
+      "copyMigrations": "9",
+      "noProductionWrite": true
+    },
+    "copyState": "idle",
+    "newRestorePerformed": false,
+    "releaseWindowRecheckRequired": true
+  },
+  "testAccounts": {
+    "status": "NOT_CREATED_OR_ACCESSED",
+    "roles": [
+      "Explicitly owner-authorized valid member/trial A",
+      "Second explicitly authorized account B",
+      "Free/expired test account if available"
+    ],
+    "noSecretsInReport": true
+  },
+  "ownerDeferred": {
+    "android": "NOT_RUN",
+    "iphone": "NOT_RUN",
+    "independentHumanReviews": 0,
+    "productionSmoke": "NOT_RUN; after actual deployment only"
+  },
+  "unresolved": [
+    "Actual Render/Neon remaining allowances and no-paid-overage evidence.",
+    "Read-only confirmation of production database target and payment flag.",
+    "Assign authorized smoke executor/accounts, with owner-run CLI alternative."
+  ],
+  "productionActions": [],
+  "releaseAuthorized": false,
+  "report": "docs/ogden/RELEASE-APPROVAL.md"
+}

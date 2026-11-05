@@ -21,10 +21,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: npm install
+      - run: npm ci
+      - run: npm audit --audit-level=high
       - run: npm audit --omit=dev --audit-level=high
+      - name: Record audited dependency lock checksum
+        run: sha256sum package-lock.json
       - run: npm run content:validate
       - run: npm run ogden:validate
+      - run: npm run ogden:final-audit
+      - run: npm run ogden:coverage
       - name: Report outstanding Ogden launch gates without granting publication
         run: npm run ogden:readiness
       - run: npm run check
@@ -40,7 +45,7 @@ jobs:
       - name: Test embedded PostgreSQL engine
         run: node --test tests/integration.test.ts tests/curriculum-db.test.ts tests/http.test.ts tests/admin-init.test.ts tests/manual-payment.test.ts tests/gmail.test.ts tests/learning-v2-db.test.ts
       - name: Verify Render build with production dependencies only
-        run: npm install --omit=dev && npm run content:validate
+        run: npm install --omit=dev && npm run content:validate && git diff --exit-code -- package-lock.json
       - name: Verify Render start command and repeated boot with runtime dependencies
         run: npm run test:runtime
         env:
@@ -74,7 +79,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: npm install
+      - run: npm ci
       - run: npx playwright install --with-deps chromium webkit
       - run: npm run test:mobile
       - run: npm run test:ogden:mobile

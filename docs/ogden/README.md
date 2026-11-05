@@ -31,3 +31,5 @@ ogden:preview仅启动本地临时PGlite，不读取生产DATABASE_URL。ogden:r
 第四轮完成代码/教材复查与本地隔离预览，覆盖计数修正并保留旧ID。[第四轮记录](round4-acceptance.md) · [真机操作](device-acceptance.md) · [隔离预览](preview-plan.md) · [发布/回滚检查](release-safety.md)。最终CI看PR当前提交；真机/Neon/生产验收仍待执行。
 
 第六轮最新费用核查、教材修订、手机模拟范围及人工步骤见[第六轮验收](round6-acceptance.md)。本轮不合并、不部署、不创建云资源；此前Neon快照恢复是第五轮历史记录。
+
+当前最终审批依据：[最终发布审批报告](RELEASE-APPROVAL.md)。它对齐候选提交/锁文件/153项测试与费用、备份及执行安排，保留此前各轮报告作为历史证据。结论未解除前不合并、不部署。
