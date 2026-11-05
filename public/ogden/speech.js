@@ -1,14 +1,14 @@
-/** Native Web Speech only. Always bind an explicit English voice; never use a non-English default. */
+/** Native Web Speech only. Bind an explicit en-US voice only; never fall back to a different accent. */
 export const OGDEN_SPEECH_RATES=Object.freeze({normal:1,slow:0.55});
 export function createOgdenSpeech(env=globalThis){
  let synth,active=null,current=null,preferred=null,generation=0,disposed=false,cancelUntil=0,unlisten=()=>{};
  try{synth=env.speechSynthesis;}catch{/* Report unavailable on an explicit click. */}
  const timers=new Map(),normalDurations=new Map();
  const locale=v=>String(v?.lang||'').trim().replace(/_/g,'-').toLowerCase();
- const english=v=>/^en(?:-[a-z0-9]+)*$/i.test(locale(v));
+ const american=v=>locale(v)==='en-us';
  const identity=v=>v?.voiceURI||`${locale(v)}|${v?.name||''}|${String(v?.localService)}`;
  const same=(a,b)=>!!a&&!!b&&(a===b||identity(a)===identity(b));
- const rank=v=>{const index=['en-us','en-gb','en-au','en-ca','en-nz'].indexOf(locale(v));return (index<0?5:index)*10+(v.localService===true?0:v.localService===false?2:1);};
+ const rank=v=>v.localService===true?0:v.localService===false?2:1;
  const now=()=>{try{return env.performance?.now?.()??Date.now();}catch{return Date.now();}};
  const tell=(fn,message)=>{try{fn(message);}catch{/* A detached view must not crash the engine. */}};
  const valid=s=>!disposed&&active===s&&s.generation===generation;
@@ -25,11 +25,10 @@ export function createOgdenSpeech(env=globalThis){
   return hadSpeech||now()<cancelUntil;
  }
  function halt(s,message){if(!valid(s))return;const notify=s.notify;stop();tell(notify,message);}
- function voiceLabel(v){const source=v.localService===true?'本地英语语音':v.localService===false?'浏览器在线英语语音':'浏览器英语语音（来源由浏览器决定）';return `${source}：${v.name||v.lang} · ${v.lang}${locale(v)==='en-us'?'':'（其他英语口音，未使用非英语语音）'}`;}
+ function voiceLabel(v){const source=v.localService===true?'本地英语语音':v.localService===false?'浏览器在线英语语音':'浏览器英语语音（来源由浏览器决定）';return `${source}：${v.name||v.lang} · ${v.lang}`;}
  function select(s,all){
-  const candidates=all.filter(v=>english(v)&&!s.failed.has(identity(v))).sort((a,b)=>rank(a)-rank(b));
+  const candidates=all.filter(v=>american(v)&&!s.failed.has(identity(v))).sort((a,b)=>rank(a)-rank(b));
   const retained=candidates.find(v=>same(v,s.selected));if(retained)return retained;
-  if(s.failedLocale){const different=candidates.find(v=>locale(v)!==s.failedLocale);if(different)return different;}
   return candidates.find(v=>same(v,preferred)&&rank(v)===rank(candidates[0]))||candidates[0]||null;
  }
  function failed(s,u,code){
@@ -48,7 +47,7 @@ export function createOgdenSpeech(env=globalThis){
   const message=messages[code]||'浏览器英语语音播放失败，尚未确认成功。';
   const candidates=scan();
   if(!['not-allowed','interrupted','canceled','text-too-long','invalid-argument'].includes(code)&&s.attempts<3&&!candidates.error&&select(s,candidates.all)){
-   tell(s.notify,message+' 正在尝试另一可用英语语音；不会使用非英语语音。');later('handoff',120,s,()=>begin(s));
+   tell(s.notify,message+' 正在尝试另一可用美式英语语音；不会切换其他口音。');later('handoff',120,s,()=>begin(s));
   }else halt(s,message+' 未自动接入网站付费TTS服务。');
  }
  function speak(s,selected){
@@ -79,15 +78,15 @@ export function createOgdenSpeech(env=globalThis){
  }
  function begin(s){
   if(!valid(s))return false;const result=scan();
-  if(result.error){halt(s,'浏览器无法读取英语语音列表，播放未开始。请重试；不会使用默认的非英语语音。');return false;}
+  if(result.error){halt(s,'浏览器无法读取英语语音列表，播放未开始。请重试；不会使用其他口音或默认语音。');return false;}
   const selected=select(s,result.all);
   if(selected){s.waiting=false;clear('poll');clear('load');return speak(s,selected);}
-  if(s.failed.size){halt(s,'可用英语语音均未能完成播放，已停止。没有改用非英语语音。');return false;}
+  if(s.failed.size){halt(s,'可用美式英语语音均未能完成播放，已停止。没有切换其他口音。');return false;}
   if(!s.waiting){
-   s.waiting=true;tell(s.notify,result.all.length?'正在等待英语语音加载，尚未开始播放。':'浏览器语音列表正在加载，尚未开始播放；就绪后会接续本次点击。');
+   s.waiting=true;tell(s.notify,result.all.length?'正在等待美式英语语音加载，尚未开始播放。':'浏览器语音列表正在加载，尚未开始播放；就绪后会接续本次点击。');
    later('load',6000,s,()=>{
     const last=scan();if(!last.error&&select(s,last.all)){begin(s);return;}
-    halt(s,last.error?'浏览器无法读取英语语音列表，播放未开始。':last.all.length?'当前语音列表没有可用的英语语音，未进行播放，也未使用非英语语音。':'等待后语音列表仍为空，无法确认英语语音是否可用；播放未开始。请重试。');
+    halt(s,last.error?'浏览器无法读取英语语音列表，播放未开始。':last.all.length?'当前语音列表没有可用的美式英语语音，未进行播放，也未切换其他口音。':'等待后语音列表仍为空，无法确认美式英语语音是否可用；播放未开始。请重试。');
    });
   }
   // Android devices do not always emit voiceschanged; poll only while a user request is waiting.
