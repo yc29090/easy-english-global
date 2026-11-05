@@ -46,5 +46,8 @@ test('slow playback actually sends a slower rate across words, phrases, repeats 
  await page.locator('[data-v2-slow]').click();await expect.poll(rate).toBe(0.55);
  await page.locator('[data-v2-repeat]').click();await expect.poll(rate).toBe(0.55);
  await page.locator('[data-v2-play]').click();await expect.poll(rate).toBe(1);await expect(page.locator('[data-v2-slow]')).toHaveAttribute('aria-pressed','false');
+ await page.locator('[data-v2-reveal="en"]').click();await expect(page.locator('[data-v2-word-speak][data-word-speed="normal"]').first()).toBeVisible();await page.locator('[data-v2-word-speak][data-word-speed="normal"]').first().click();await expect.poll(rate).toBe(1);await page.locator('[data-v2-word-speak][data-word-speed="slow"]').first().click();await expect.poll(rate).toBe(0.55);
+
 });
+
 
