@@ -8,13 +8,13 @@ test('mobile beginner flow: independent listening/speaking/pattern results and a
  const exercise=page.locator('.v2-exercise');await expect(exercise).toBeVisible();await expect(exercise.locator('h2')).toHaveCount(0);await expect(exercise.locator('[lang="zh-CN"]')).toHaveCount(0);
  await page.locator('[data-v2-slow]').click();await expect(page.locator('[data-v2-slow]')).toHaveAttribute('aria-pressed','true');
  await page.locator('[data-v2-reveal="en"]').click();await expect(exercise.locator('h2')).toBeVisible();
- await page.locator('[data-v2-answer="no"]').click();await expect(exercise.getByRole('status')).toContainText('结果已保存');
+ await page.locator('[data-v2-answer="no"]').click();await expect(exercise.getByRole('status').filter({hasText:'结果已保存'})).toBeVisible();
  const ordinary=await (await page.request.get('/api/progress')).json();expect(ordinary.progress).toHaveLength(0);
  await page.locator('[data-v2-mode="expression"]').click();await expect(exercise.locator('[lang="zh-CN"]')).toBeVisible();await expect(exercise.locator('h2')).toHaveCount(0);
- await page.locator('[data-v2-answer="yes"]').click();await expect(exercise.getByRole('status')).toContainText('结果已保存');
+ await page.locator('[data-v2-answer="yes"]').click();await expect(exercise.getByRole('status').filter({hasText:'结果已保存'})).toBeVisible();
  await page.locator('[data-v2-mode="pattern"]').click();await expect(page.locator('[data-v2-pattern]').first()).toBeVisible();await expect(exercise.locator('h2')).toHaveCount(0);
  await page.locator('[data-v2-reveal="en"]').click();await expect(exercise.locator('h2')).toBeVisible();
- await page.locator('[data-v2-answer="yes"]').click();await expect(exercise.getByRole('status')).toContainText('结果已保存');
+ await page.locator('[data-v2-answer="yes"]').click();await expect(exercise.getByRole('status').filter({hasText:'结果已保存'})).toBeVisible();
  await page.locator('[data-v2-mode="analytics"]').click();await expect(page.locator('.v2-stats')).toBeVisible();await expect(page.locator('.v2-stats')).toContainText('练习次数: 1');
  const analytics=await (await page.request.get('/api/learning-v2/analytics')).json();expect(analytics.ordinary).toHaveLength(0);expect(analytics.practice).toHaveLength(3);expect(analytics.practice.find((p:any)=>p.mode==='listening').weak).toBe(1);
  await expect(page.locator('[data-v2-exercise]')).toHaveCount(1);
