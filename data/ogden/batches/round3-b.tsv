@@ -1,0 +1,161 @@
+# english|中文|教学词类|例句|例句中文|组合|组合中文|句型ID
+@time-place
+west|西；西方|方位词|The station is west of here.|车站在这里西边。|west of here|这里以西|pt-location
+above|在……上方|介词|The light is above the table.|灯在桌子上方。|above the table|在桌子上方|pt-location
+below|在……下方|介词|My room is below yours.|我的房间在你的房间下面。|below the window|在窗户下面|pt-location
+across|在……对面；横过|介词|The shop is across the street.|商店在街对面。|across the street|在街对面|pt-location
+along|沿着|介词|Walk along this road.|沿着这条路走。|along the road|沿着道路|pt-request
+around|在……周围；大约|介词/副词|There are shops around the station.|车站周围有商店。|around the station|车站周围|pt-there
+away|离开；在远处|副词|The hotel is not far away.|酒店离这里不远。|far away|在远处|pt-location
+through|穿过|介词|Go through this door.|穿过这扇门。|through the door|穿过门|pt-request
+against|靠着；反对|介词|Put the chair against the wall.|把椅子靠墙放。|against the wall|靠着墙|pt-request
+without|没有；不带|介词|Can I have tea without milk?|我可以要不加牛奶的茶吗？|without milk|不加牛奶|pt-request
+within|在……范围内|介词|I will call within an hour.|我会在一小时内打电话。|within an hour|一小时内|pt-time-plan
+during|在……期间|介词|Please keep quiet during the meeting.|开会期间请保持安静。|during the meeting|开会期间|pt-request
+since|自从；从……以后|介词|I have lived here since last year.|我从去年起一直住在这里。|since last year|从去年起|pt-location
+while|当……时|连词|Please wait here while I check.|我核查的时候，请在这里等。|while I check|在我核查时|pt-request
+ago|以前|副词|I got here an hour ago.|我一小时前到的这里。|an hour ago|一小时前|pt-time-plan
+yesterday|昨天|时间词|I was here yesterday.|我昨天在这里。|yesterday morning|昨天早上|pt-location
+tonight|今晚|时间词|I need a room tonight.|我今晚需要一个房间。|tonight at eight|今晚八点|pt-need
+afternoon|下午|名词|We can meet this afternoon.|我们可以今天下午见面。|this afternoon|今天下午|pt-time-plan
+noon|中午|名词|We will leave at noon.|我们会在中午离开。|at noon|在中午|pt-time-plan
+midnight|午夜|名词|The shop closes at midnight.|商店午夜关门。|at midnight|在午夜|pt-when
+second|秒|名词|Please wait a few seconds.|请稍等几秒。|a few seconds|几秒钟|pt-request
+date|日期|名词|What is the date today?|今天几号？|today's date|今天的日期|pt-when
+calendar|日历|名词|Please check the calendar.|请查看日历。|on the calendar|在日历上|pt-request
+weekend|周末|名词|I work on weekends.|我周末工作。|this weekend|这个周末|pt-daily
+season|季节|名词|What is your favorite season?|你最喜欢什么季节？|the rainy season|雨季|pt-state
+spring|春天|名词|I like spring.|我喜欢春天。|in spring|在春天|pt-want
+summer|夏天|名词|It is hot here in summer.|这里夏天很热。|in summer|在夏天|pt-state
+autumn|秋天|名词|The weather is cool in autumn.|秋天天气凉爽。|in autumn|在秋天|pt-state
+winter|冬天|名词|I need warm clothes in winter.|冬天我需要暖和的衣服。|in winter|在冬天|pt-need
+@needs-wishes
+would|想要；礼貌请求中的情态词|情态功能|I would like some water.|我想要一些水。|would like|想要（礼貌说法）|pt-want
+could|能否（较委婉请求）|情态功能|Could you help me, please?|请问你能帮我吗？|could you help|你能帮忙吗|pt-request
+should|应该|情态功能|You should take a rest.|你应该休息一下。|should rest|应该休息|pt-can
+must|必须|情态功能|I must go now.|我现在必须走了。|must go|必须走|pt-time-plan
+hope|希望|动词|I hope you feel better soon.|希望你很快好起来。|hope to see you|希望见到你|pt-want
+@time-place
+then|然后；那时|副词|We can eat first and then go.|我们可以先吃饭，然后走。|and then|然后|pt-time-plan
+@needs-wishes
+prefer|更喜欢|动词|I prefer tea to coffee.|比起咖啡，我更喜欢茶。|prefer tea|更喜欢茶|pt-choice
+love|喜爱；爱|动词|I love this place.|我喜欢这个地方。|love this place|喜欢这个地方|pt-want
+hate|讨厌|动词|I hate waiting in long lines.|我讨厌排长队等候。|hate waiting|讨厌等待|pt-want
+feel|感到|动词|I feel tired.|我感到累了。|feel better|感觉好些|pt-state
+think|认为；想|动词|I think this is good.|我觉得这个不错。|think about it|考虑这件事|pt-state
+believe|相信|动词|I believe you.|我相信你。|believe you|相信你|pt-state
+remember|记得|动词|I cannot remember the address.|我记不起地址。|remember the address|记住地址|pt-cannot
+forget|忘记|动词|Please do not forget your key.|请别忘了你的钥匙。|forget the key|忘了钥匙|pt-request
+worry|担心|动词|Do not worry.|别担心。|worry about it|为此担心|pt-request
+mind|介意；头脑|动词/名词|Do you mind if I sit here?|你介意我坐这里吗？|change my mind|改变我的想法|pt-request
+agree|同意|动词|I agree with you.|我同意你的看法。|agree with you|同意你的看法|pt-state
+decide|决定|动词|I need time to decide.|我需要时间决定。|decide what to do|决定做什么|pt-need
+explain|解释|动词|Can you explain this to me?|你能向我解释一下吗？|explain the problem|解释问题|pt-request
+mean|意思是|动词|What does this word mean?|这个词是什么意思？|mean the same thing|意思相同|pt-request
+@people-things
+long|长的|形容词|This road is long.|这条路很长。|a long road|一条长路|pt-state
+short|短的；矮的|形容词|I need a short break.|我需要短暂休息一下。|a short break|短暂的休息|pt-need
+high|高的|形容词|The price is too high.|价格太高了。|a high price|很高的价格|pt-too
+low|低的|形容词|The table is too low.|这张桌子太低了。|a low table|一张低桌子|pt-too
+large|大的|形容词|Do you have a large room?|你们有大房间吗？|a large room|一个大房间|pt-have
+heavy|重的|形容词|This bag is heavy.|这个包很重。|a heavy bag|一个沉重的包|pt-state
+thick|厚的|形容词|This blanket is thick.|这条毯子很厚。|a thick blanket|一条厚毯子|pt-state
+thin|薄的；瘦的|形容词|This shirt is too thin for winter.|这件衬衫冬天穿太薄了。|a thin shirt|一件薄衬衫|pt-too
+hard|硬的；困难的|形容词|This bed is too hard.|这张床太硬了。|a hard bed|一张硬床|pt-too
+soft|软的|形容词|I would like a soft pillow.|我想要一个软枕头。|a soft pillow|一个软枕头|pt-want
+easy|容易的|形容词|This is easy to use.|这个很容易使用。|easy to use|容易使用|pt-state
+difficult|困难的|形容词|This question is difficult.|这个问题很难。|a difficult question|一个难题|pt-state
+fast|快的；快地|形容词/副词|This train is fast.|这列火车很快。|a fast train|一列快车|pt-state
+slow|慢的|形容词|The internet is slow.|网络很慢。|a slow train|一列慢车|pt-state
+quick|迅速的|形容词|Can I ask a quick question?|我可以问一个简短的问题吗？|a quick question|一个简短的问题|pt-request
+careful|小心的|形容词|Please be careful.|请小心。|be careful|小心|pt-request
+dangerous|危险的|形容词|This road is dangerous at night.|这条路晚上很危险。|a dangerous road|一条危险的道路|pt-state
+beautiful|美丽的|形容词|This city is beautiful.|这座城市很美。|a beautiful city|一座美丽的城市|pt-state
+nice|好的；令人愉快的|形容词|It is nice to meet you.|很高兴认识你。|a nice place|一个不错的地方|pt-state
+@people-things
+well|好地；健康的|副词/形容词|This phone works well.|这部手机运作正常。|work well|运作良好|pt-state
+@people-things
+young|年轻的|形容词|My brother is young.|我的弟弟很年轻。|a young person|一个年轻人|pt-state
+rich|富有的|形容词|He is rich.|他很富有。|a rich person|一个富有的人|pt-state
+poor|贫穷的|形容词|They help poor families.|他们帮助贫困家庭。|a poor family|一个贫困家庭|pt-state
+strong|强壮的；浓的|形容词|This coffee is too strong.|这杯咖啡太浓了。|strong coffee|浓咖啡|pt-too
+weak|虚弱的；淡的|形容词|I feel weak.|我感觉很虚弱。|feel weak|感到虚弱|pt-state
+true|真的|形容词|Is that true?|那是真的吗？|a true story|一个真实故事|pt-state
+false|假的；错误的|形容词|This information is false.|这个信息是假的。|false information|虚假信息|pt-state
+correct|正确的|形容词|Is this the correct address?|这是正确的地址吗？|the correct address|正确的地址|pt-state
+wrong|错误的|形容词|This is the wrong number.|这个号码不对。|the wrong number|错误的号码|pt-state
+useful|有用的|形容词|This map is useful.|这张地图很有用。|a useful map|一张有用的地图|pt-state
+clear|清楚的|形容词|Your message is clear.|你的信息很清楚。|a clear message|一条清楚的信息|pt-state
+dark|黑暗的|形容词|It is dark outside.|外面很黑。|a dark room|一个黑暗的房间|pt-state
+bright|明亮的|形容词|The room is bright.|房间很明亮。|a bright room|一个明亮的房间|pt-state
+loud|响亮的|形容词|The music is too loud.|音乐太响了。|a loud sound|很响的声音|pt-too
+friendly|友好的|形容词|The people here are friendly.|这里的人很友好。|a friendly person|一个友好的人|pt-state
+kind|友善的；种类|形容词/名词|That is very kind of you.|你真好。|a kind person|一个友善的人|pt-state
+angry|生气的|形容词|I am not angry.|我没有生气。|feel angry|感到生气|pt-state
+sad|难过的|形容词|I feel sad today.|我今天感到难过。|feel sad|感到难过|pt-state
+excited|兴奋的|形容词|I am excited about the trip.|我对这次旅行很兴奋。|be excited|感到兴奋|pt-state
+nervous|紧张的|形容词|I feel nervous.|我感到紧张。|feel nervous|感到紧张|pt-state
+comfortable|舒服的|形容词|This seat is comfortable.|这个座位很舒服。|a comfortable seat|一个舒服的座位|pt-state
+special|特别的|形容词|Is there a special price for children?|儿童有特别价格吗？|a special price|特别价格|pt-state
+normal|正常的|形容词|Is this sound normal?|这个声音正常吗？|a normal sound|正常的声音|pt-state
+simple|简单的|形容词|Please use simple words.|请用简单的词。|simple words|简单的词|pt-request
+basic|基本的|形容词|I can speak basic English.|我会说基础英语。|basic English|基础英语|pt-can
+usual|通常的|形容词|I will come at the usual time.|我会在通常的时间来。|the usual time|通常的时间|pt-time-plan
+local|当地的|形容词|Where is the local market?|当地市场在哪里？|a local market|一个当地市场|pt-where
+public|公共的|形容词|Is there a public toilet here?|这里有公共厕所吗？|a public toilet|公共厕所|pt-there
+private|私人的|形容词|Is this a private room?|这是私人房间吗？|a private room|私人房间|pt-state
+final|最后的|形容词|Is this the final price?|这是最终价格吗？|the final price|最终价格|pt-state
+@needs-wishes
+about|关于；大约|介词|I have a question about this.|我有一个关于这个的问题。|about this|关于这个|pt-have
+than|比|比较连接词|This is cheaper than that.|这个比那个便宜。|cheaper than that|比那个便宜|pt-choice
+as|作为；像……一样|介词/连接词|I work as a driver.|我是一名司机。|work as a driver|当司机|pt-daily
+so|所以；如此|连词/副词|I am tired, so I need a rest.|我累了，所以需要休息。|so tired|这么累|pt-state
+also|也；还|副词|I also need a ticket.|我还需要一张票。|also need|还需要|pt-need
+too|太；也|副词|This bag is too heavy.|这个包太重了。|too heavy|太重|pt-too
+very|很；非常|副词|Thank you very much.|非常感谢你。|very good|很好|pt-state
+really|确实；真地|副词|I really like this place.|我真的喜欢这个地方。|really like|真的喜欢|pt-want
+only|仅仅；只有|副词|I only need one ticket.|我只需要一张票。|only one|只有一个|pt-need
+just|刚刚；仅仅|副词|I just need some water.|我只需要一些水。|just one|只要一个|pt-need
+even|甚至|副词|I cannot even open the door.|我甚至打不开门。|even now|甚至现在|pt-cannot
+still|仍然|副词|I still need help.|我仍然需要帮助。|still here|仍在这里|pt-need
+already|已经|副词|I already have a ticket.|我已经有票了。|already have|已经有|pt-have
+enough|足够的；足够地|限定词/副词|I have enough money.|我的钱够了。|enough money|足够的钱|pt-have
+almost|几乎|副词|I am almost ready.|我快准备好了。|almost ready|快准备好了|pt-state
+maybe|也许|副词|Maybe we can go tomorrow.|也许我们可以明天去。|maybe tomorrow|也许明天|pt-can
+probably|很可能|副词|I will probably come tomorrow.|我很可能明天来。|probably tomorrow|很可能明天|pt-time-plan
+usually|通常|副词|I usually walk to work.|我通常步行上班。|usually walk|通常步行|pt-daily
+often|经常|副词|I often come here.|我经常来这里。|often come|经常来|pt-daily
+sometimes|有时|副词|I sometimes take the bus.|我有时坐公交车。|sometimes take a bus|有时乘公交车|pt-daily
+never|从不|副词|I never drink coffee.|我从不喝咖啡。|never drink coffee|从不喝咖啡|pt-daily
+always|总是|副词|I always keep my ticket.|我总是留好票。|always ready|总是准备好|pt-daily
+once|一次|副词|Please say it once more.|请再说一次。|once more|再一次|pt-repeat
+twice|两次|副词|I called twice.|我打了两次电话。|twice a day|一天两次|pt-daily
+both|两者都|限定词/代词|I like both colors.|两种颜色我都喜欢。|both colors|两种颜色|pt-want
+each|每一个|限定词/代词|How much is each ticket?|每张票多少钱？|each ticket|每张票|pt-price
+another|另一个；再一个|限定词/代词|Can I have another cup?|我可以再要一个杯子吗？|another cup|另一个杯子|pt-request
+other|其他的|限定词|Do you have any other rooms?|你们还有其他房间吗？|other rooms|其他房间|pt-have
+either|两者中任何一个|限定词/代词|Either seat is fine.|两个座位中哪个都可以。|either seat|两个中的任何一个座位|pt-choice
+neither|两者都不|限定词/代词|Neither answer is correct.|两个答案都不对。|neither answer|两个答案都不|pt-negative
+which|哪一个|疑问词|Which bus goes to the airport?|哪路公交车去机场？|which bus|哪路公交车|pt-where
+whose|谁的|疑问词|Whose bag is this?|这是谁的包？|whose bag|谁的包|pt-have
+@self-introduction
+age|年龄|名词|What is your age?|你多大了？|my age|我的年龄|pt-state
+language|语言|名词|What language do you speak?|你说什么语言？|a new language|一门新语言|pt-can
+English|英语|名词|I speak a little English.|我会说一点英语。|simple English|简单英语|pt-can
+Chinese|中文；中国的|名词/形容词|Can you speak Chinese?|你会说中文吗？|speak Chinese|说中文|pt-can
+@needs-wishes
+something|某事；某物|代词|I need something to eat.|我需要吃点东西。|something to eat|吃的东西|pt-need
+anything|任何事物|代词|Do you need anything?|你需要什么东西吗？|anything else|别的东西|pt-need
+nothing|没有什么|代词|There is nothing in the bag.|包里什么都没有。|nothing here|这里什么都没有|pt-there
+everyone|每个人|代词|Is everyone ready?|大家都准备好了吗？|everyone here|这里的每个人|pt-state
+someone|某个人|代词|Can someone help me?|有人能帮我吗？|someone to help|能帮忙的人|pt-request
+anyone|任何人；有人|代词|Is anyone here?|这里有人吗？|anyone here|这里的任何人|pt-there
+nobody|没有人|代词|Nobody is in the room.|房间里没有人。|nobody here|这里没有人|pt-negative
+everywhere|到处|副词|There are people everywhere.|到处都是人。|look everywhere|到处找|pt-there
+anywhere|任何地方|副词|Can I sit anywhere?|我可以随便坐吗？|anywhere here|这里的任何地方|pt-request
+somewhere|某个地方|副词|I need somewhere to sit.|我需要找个地方坐。|somewhere to sit|可以坐的地方|pt-need
+else|其他；别的|副词|Do you need anything else?|你还需要别的吗？|anything else|别的东西|pt-need
+off|关闭；离开|副词/介词|Please turn off the light.|请关灯。|turn off|关掉|pt-request
+out|在外；出去|副词|Can we go out now?|我们现在可以出去吗？|go out|出去|pt-request
+into|进入……里面|介词|Please put it into the bag.|请把它放进包里。|into the bag|进入包里|pt-request
+onto|到……上面|介词|Put the bag onto the table.|把包放到桌子上。|onto the table|到桌子上面|pt-request

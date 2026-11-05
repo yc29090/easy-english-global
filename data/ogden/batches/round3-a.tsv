@@ -1,0 +1,160 @@
+# english|中文|教学词类|例句|例句中文|组合|组合中文|句型ID
+@family-friends
+son|儿子|名词|This is my son.|这是我的儿子。|my son|我的儿子|pt-have
+daughter|女儿|名词|My daughter is at home.|我的女儿在家。|my daughter|我的女儿|pt-location
+baby|婴儿|名词|The baby is asleep.|婴儿睡着了。|a baby|一个婴儿|pt-state
+couple|一对；夫妻|名词|This couple needs a room.|这对夫妻需要一个房间。|a couple|一对夫妻|pt-need
+neighbor|邻居|名词|My neighbor can help.|我的邻居能帮忙。|my neighbor|我的邻居|pt-can
+guest|客人|名词|We have a guest today.|我们今天有一位客人。|a guest|一位客人|pt-have
+adult|成年人|名词|This ticket is for one adult.|这张票供一位成年人使用。|one adult|一位成年人|pt-have
+@transport-travel
+by|通过；在……旁边|介词|We can go by bus.|我们可以坐公交车去。|by bus|坐公交车|pt-can
+@family-friends
+pet|宠物|名词|Do you have a pet?|你养宠物吗？|have a pet|养宠物|pt-have
+dog|狗|名词|The dog is outside.|狗在外面。|a small dog|一只小狗|pt-location
+cat|猫|名词|My cat is under the bed.|我的猫在床下面。|a white cat|一只白猫|pt-location
+@people-things
+body|身体|名词|My whole body hurts.|我浑身疼。|the human body|人体|pt-state
+head|头|名词|My head hurts.|我的头疼。|my head|我的头|pt-have
+face|脸|名词|Please wash your face.|请洗脸。|wash your face|洗脸|pt-request
+eye|眼睛|名词|My eyes are tired.|我的眼睛累了。|my eyes|我的眼睛|pt-state
+ear|耳朵|名词|I have pain in my ear.|我的耳朵疼。|my ear|我的耳朵|pt-have
+nose|鼻子|名词|My nose is cold.|我的鼻子冰凉。|my nose|我的鼻子|pt-state
+mouth|嘴|名词|Please open your mouth.|请张嘴。|open your mouth|张嘴|pt-request
+tooth|牙齿|名词|This tooth hurts.|这颗牙疼。|a tooth|一颗牙|pt-have
+hand|手|名词|Please wash your hands.|请洗手。|wash your hands|洗手|pt-request
+arm|手臂|名词|I cannot move my arm.|我的手臂动不了。|my arm|我的手臂|pt-cannot
+leg|腿|名词|My leg hurts.|我的腿疼。|my leg|我的腿|pt-have
+foot|脚|名词|These shoes hurt my feet.|这双鞋使我的脚疼。|my feet|我的双脚|pt-have
+finger|手指|名词|I hurt my finger.|我弄伤了手指。|my finger|我的手指|pt-have
+hair|头发|名词|My hair is wet.|我的头发湿了。|long hair|长发|pt-state
+skin|皮肤|名词|My skin is dry.|我的皮肤很干。|dry skin|干燥的皮肤|pt-state
+heart|心脏；内心|名词|The heart moves blood around the body.|心脏推动血液在体内流动。|the heart|心脏|pt-daily
+blood|血液|名词|There is blood on my hand.|我的手上有血。|some blood|一些血|pt-there
+voice|嗓音|名词|I know that voice.|我认得那个声音。|a quiet voice|轻柔的嗓音|pt-can
+sound|声音|名词|I can hear a sound.|我能听到一个声音。|a loud sound|很响的声音|pt-can
+@problems-help
+hurt|疼；弄伤|动词|My back hurts.|我的背疼。|hurt my back|弄伤我的背|pt-state
+fever|发烧|名词|I have a fever.|我发烧了。|have a fever|发烧|pt-have
+cough|咳嗽|名词/动词|I have a cough.|我咳嗽。|have a cough|咳嗽|pt-have
+nurse|护士|名词|Can I speak to a nurse?|我可以和护士说话吗？|a nurse|一位护士|pt-request
+dentist|牙医|名词|I need to see a dentist.|我需要看牙医。|see a dentist|看牙医|pt-need
+appointment|预约|名词|I have an appointment at ten.|我预约了十点。|make an appointment|预约|pt-have
+health|健康|名词|Walking is good for your health.|步行有益健康。|good health|健康的身体|pt-state
+rest|休息|名词/动词|I need some rest.|我需要休息。|have a rest|休息一下|pt-need
+sleep|睡觉|动词/名词|I need to sleep.|我需要睡觉。|go to sleep|入睡|pt-need
+awake|醒着的|形容词|The baby is awake.|婴儿醒着。|stay awake|保持清醒|pt-state
+asleep|睡着的|形容词|My son is asleep.|我的儿子睡着了。|be asleep|睡着|pt-state
+@daily-actions
+wake|醒来；唤醒|动词|Please wake me at seven.|请在七点叫醒我。|wake up|醒来|pt-request
+sit|坐|动词|May I sit here?|我可以坐这里吗？|sit down|坐下|pt-permission
+stand|站立|动词|Please stand here.|请站在这里。|stand up|站起来|pt-request
+move|移动|动词|Can you move this chair?|你能移动这把椅子吗？|move the chair|移动椅子|pt-request
+carry|携带；搬|动词|Can you carry this bag?|你能提这个包吗？|carry a bag|提包|pt-request
+hold|拿着；握住|动词|Please hold my bag.|请帮我拿着包。|hold my hand|握住我的手|pt-request
+bring|带来|动词|Please bring some water.|请带些水来。|bring water|带水来|pt-request
+turn|转动；转弯|动词|Turn left here.|在这里左转。|turn left|左转|pt-request
+follow|跟随|动词|Please follow me.|请跟我来。|follow me|跟我来|pt-request
+reach|到达；够到|动词|I cannot reach the window.|我够不到窗户。|reach the window|够到窗户|pt-cannot
+pass|递；经过|动词|Please pass me the water.|请把水递给我。|pass me the water|把水递给我|pt-request
+pick|挑选；摘|动词|Please pick a color.|请选择一种颜色。|pick a color|挑选颜色|pt-request
+choose|选择|动词|You can choose a seat.|你可以选择一个座位。|choose a seat|选座位|pt-can
+wear|穿着；戴着|动词|I wear glasses.|我戴眼镜。|wear glasses|戴眼镜|pt-daily
+wash|洗|动词|I wash my hands before lunch.|我午餐前洗手。|wash your hands|洗手|pt-daily
+dry|干的；弄干|形容词/动词|Please keep this towel dry.|请保持这条毛巾干燥。|a dry towel|一条干毛巾|pt-request
+wet|湿的|形容词|My shoes are wet.|我的鞋湿了。|wet shoes|湿鞋子|pt-state
+@food-shopping
+meat|肉|名词|I do not eat meat.|我不吃肉。|some meat|一些肉|pt-negative
+fish|鱼；鱼肉|名词|I would like some fish.|我想要一些鱼肉。|some fish|一些鱼肉|pt-want
+chicken|鸡；鸡肉|名词|Can I have chicken and rice?|我可以要鸡肉和米饭吗？|chicken and rice|鸡肉和米饭|pt-request
+egg|鸡蛋|名词|I want an egg for breakfast.|我早餐想吃一个鸡蛋。|an egg|一个鸡蛋|pt-want
+cheese|奶酪|名词|Does this bread have cheese in it?|这个面包里有奶酪吗？|bread and cheese|面包和奶酪|pt-have
+butter|黄油|名词|No butter, please.|请不要放黄油。|some butter|一些黄油|pt-negative
+salt|盐|名词|Please use less salt.|请少放一点盐。|less salt|少一点盐|pt-request
+sugar|糖|名词|Do you want sugar in your tea?|你的茶里要放糖吗？|less sugar|少一点糖|pt-want
+oil|油|名词|Please use less oil.|请少放一点油。|cooking oil|食用油|pt-request
+soup|汤|名词|This soup is hot.|这碗汤很烫。|a bowl of soup|一碗汤|pt-state
+salad|沙拉|名词|I would like a salad.|我想要一份沙拉。|a salad|一份沙拉|pt-want
+vegetable|蔬菜|名词|I want more vegetables.|我想要更多蔬菜。|fresh vegetables|新鲜蔬菜|pt-want
+fruit|水果|名词|Do you have any fruit?|你有水果吗？|some fruit|一些水果|pt-have
+apple|苹果|名词|Can I have an apple?|我可以要一个苹果吗？|an apple|一个苹果|pt-request
+banana|香蕉|名词|I eat a banana every day.|我每天吃一根香蕉。|a banana|一根香蕉|pt-daily
+orange|橙子；橙色|名词|I want an orange.|我想要一个橙子。|an orange|一个橙子|pt-want
+potato|土豆|名词|Can I have some potatoes?|我可以要一些土豆吗？|some potatoes|一些土豆|pt-request
+tomato|西红柿|名词|There is a tomato in the salad.|沙拉里有一个西红柿。|a tomato|一个西红柿|pt-there
+onion|洋葱|名词|No onion, please.|请不要放洋葱。|some onion|一些洋葱|pt-negative
+bean|豆子|名词|I like rice and beans.|我喜欢米饭配豆子。|rice and beans|米饭配豆子|pt-want
+noodle|面条|名词|I would like some noodles.|我想要一些面条。|a bowl of noodles|一碗面条|pt-want
+pasta|意大利面|名词|Do you have pasta?|你们有意大利面吗？|some pasta|一些意大利面|pt-have
+sandwich|三明治|名词|I need a sandwich to take away.|我需要一个外带的三明治。|a sandwich|一个三明治|pt-need
+cake|蛋糕|名词|Can I have a piece of cake?|我可以要一块蛋糕吗？|a piece of cake|一块蛋糕|pt-request
+juice|果汁|名词|I would like some orange juice.|我想要一些橙汁。|orange juice|橙汁|pt-want
+ice|冰|名词|No ice in my water, please.|我的水里请不要加冰。|with ice|加冰|pt-request
+beer|啤酒|名词|I would like a small beer.|我想要一小杯啤酒。|a glass of beer|一杯啤酒|pt-want
+wine|葡萄酒|名词|Do you have red wine?|你们有红葡萄酒吗？|red wine|红葡萄酒|pt-have
+bowl|碗|名词|Can I have a bowl?|我可以要一个碗吗？|a bowl of rice|一碗米饭|pt-request
+plate|盘子|名词|This plate is clean.|这个盘子是干净的。|a clean plate|一个干净盘子|pt-state
+fork|叉子|名词|May I have a fork?|可以给我一把叉子吗？|a fork|一把叉子|pt-permission
+spoon|勺子|名词|I need a spoon.|我需要一把勺子。|a spoon|一把勺子|pt-need
+knife|刀|名词|Please be careful with the knife.|用刀时请小心。|a knife|一把刀|pt-request
+glass|玻璃；玻璃杯（glasses另可指眼镜）|名词|Can I have a glass of water?|我可以要一杯水吗？|a glass of water|一杯水|pt-request
+fresh|新鲜的|形容词|Is this fish fresh?|这条鱼新鲜吗？|fresh fish|新鲜的鱼|pt-state
+sweet|甜的|形容词|This tea is too sweet.|这杯茶太甜了。|too sweet|太甜|pt-too
+spicy|辣的|形容词|Is this food spicy?|这个食物辣吗？|spicy food|辣的食物|pt-state
+warm|温暖的；温热的|形容词|Can I have some warm water?|我可以要些温水吗？|warm water|温水|pt-request
+cool|凉爽的；凉的|形容词|It is cool in this room.|这个房间里很凉爽。|cool water|凉水|pt-state
+@hotels-airports
+kitchen|厨房|名词|Where is the kitchen?|厨房在哪里？|a small kitchen|一个小厨房|pt-where
+shower|淋浴|名词|The shower is not working.|淋浴坏了。|take a shower|洗淋浴|pt-state
+soap|肥皂|名词|I need some soap.|我需要一些肥皂。|some soap|一些肥皂|pt-need
+shampoo|洗发水|名词|Do you have shampoo?|你们有洗发水吗？|some shampoo|一些洗发水|pt-have
+blanket|毯子|名词|Can I have another blanket?|可以再给我一条毯子吗？|a warm blanket|一条暖和的毯子|pt-request
+pillow|枕头|名词|I need another pillow.|我需要再加一个枕头。|a soft pillow|一个软枕头|pt-need
+sheet|床单；纸张|名词|Please change the sheets.|请换床单。|clean sheets|干净的床单|pt-request
+light|灯；光|名词|Please turn on the light.|请打开灯。|turn on the light|开灯|pt-request
+switch|开关|名词|Where is the light switch?|灯的开关在哪里？|a light switch|一个电灯开关|pt-where
+heat|热；暖气|名词|There is no heat in my room.|我的房间没有暖气。|turn on the heat|打开暖气|pt-negative
+fan|风扇|名词|Can you turn on the fan?|你能打开风扇吗？|turn on the fan|开风扇|pt-request
+air|空气|名词|I need some fresh air.|我需要呼吸一点新鲜空气。|fresh air|新鲜空气|pt-need
+wall|墙|名词|The picture is on the wall.|图片在墙上。|on the wall|在墙上|pt-location
+roof|屋顶|名词|There is water on the roof.|屋顶上有水。|on the roof|在屋顶上|pt-there
+stairs|楼梯|名词|Where are the stairs?|楼梯在哪里？|take the stairs|走楼梯|pt-where
+entrance|入口|名词|The entrance is on your right.|入口在你的右边。|the main entrance|正门入口|pt-location
+exit|出口|名词|Where is the exit?|出口在哪里？|the nearest exit|最近的出口|pt-where
+lobby|大厅|名词|I will wait in the lobby.|我会在大厅等。|in the lobby|在大厅|pt-time-plan
+balcony|阳台|名词|Does this room have a balcony?|这个房间有阳台吗？|a room with a balcony|带阳台的房间|pt-have
+luggage|行李|名词|Where can I leave my luggage?|我可以把行李放在哪里？|my luggage|我的行李|pt-where
+suitcase|旅行箱|名词|I cannot find my suitcase.|我找不到我的旅行箱。|a small suitcase|一个小旅行箱|pt-cannot
+security|安全检查；安全保障|名词|Where is the security check?|安检在哪里？|a security check|安全检查|pt-where
+belt|传送带；腰带|名词|Please put your bag on the belt.|请把包放在传送带上。|the baggage belt|行李传送带|pt-request
+boarding|登机|名词|What time is boarding?|几点开始登机？|boarding time|登机时间|pt-when
+@transport-travel
+travel|旅行|动词/名词|I like to travel by train.|我喜欢坐火车旅行。|travel by train|乘火车旅行|pt-want
+trip|出行；旅行|名词|How was your trip?|你的旅行怎么样？|a short trip|一次短途旅行|pt-state
+visit|参观；拜访|动词|I want to visit my friend.|我想去看望朋友。|visit a friend|拜访朋友|pt-want
+ride|乘坐；骑|动词/名词|Can I ride with you?|我可以搭你的车吗？|ride a bike|骑自行车|pt-request
+drive|驾驶|动词|Can you drive a car?|你会开车吗？|drive a car|开汽车|pt-can
+bike|自行车|名词|Can I leave my bike here?|我可以把自行车放这里吗？|ride a bike|骑自行车|pt-request
+boat|船|名词|We can go by boat.|我们可以坐船去。|by boat|乘船|pt-can
+ship|轮船|名词|The ship will leave at six.|轮船将在六点出发。|a large ship|一艘大船|pt-when
+plane|飞机|名词|The plane is late.|飞机晚点了。|by plane|乘飞机|pt-state
+subway|地铁|名词|Where is the subway station?|地铁站在哪里？|take the subway|乘地铁|pt-where
+platform|站台|名词|Which platform do I need?|我应该去哪个站台？|platform two|二号站台|pt-where
+route|路线|名词|Is this the right route?|这是正确的路线吗？|a bus route|一条公交路线|pt-state
+corner|拐角|名词|Turn right at the corner.|在拐角处右转。|at the corner|在拐角处|pt-location
+cross|横过；交叉|动词|Can we cross the road here?|我们可以在这里过马路吗？|cross the road|过马路|pt-can
+traffic|交通；车流|名词|There is a lot of traffic.|路上车很多。|heavy traffic|拥堵的交通|pt-there
+bridge|桥|名词|Go over the bridge.|走过这座桥。|over the bridge|越过桥|pt-request
+park|公园|名词|The park is near my home.|公园在我家附近。|in the park|在公园里|pt-location
+parking|停车；停车区域|名词|Is parking free here?|这里停车免费吗？|free parking|免费停车|pt-state
+fuel|燃料|名词|We need more fuel.|我们需要更多燃料。|some fuel|一些燃料|pt-need
+gas|汽油；气体|名词|Where can I get gas?|我在哪里可以加汽油？|a gas station|一个加油站|pt-where
+distance|距离|名词|What is the distance to the hotel?|到酒店有多远？|a short distance|一段短距离|pt-where
+speed|速度|名词|Please drive at a safe speed.|请以安全速度驾驶。|a safe speed|安全速度|pt-request
+mile|英里|名词|The hotel is one mile away.|酒店在一英里外。|one mile|一英里|pt-location
+kilometer|千米；公里|名词|The station is two kilometers away.|车站在两公里外。|two kilometers|两公里|pt-location
+way|路；方法|名词|Is this the way to the station?|这是去车站的路吗？|the way home|回家的路|pt-where
+direction|方向|名词|Which direction is the hotel in?|酒店在哪个方向？|the right direction|正确的方向|pt-where
+north|北；北方|方位词|The station is north of here.|车站在这里的北边。|north of here|这里以北|pt-location
+south|南；南方|方位词|The park is south of the city.|公园在城市南边。|south of the city|城市以南|pt-location
+east|东；东方|方位词|The airport is east of the city.|机场在城市东边。|east of the city|城市以东|pt-location

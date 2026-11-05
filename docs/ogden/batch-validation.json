@@ -1,0 +1,42 @@
+[
+  {
+    "batch": "a",
+    "added": 150,
+    "total": 450,
+    "sourceFile": "data/ogden/batches/round3-a.tsv",
+    "sha256": "1ed6e5339af96ad5b29f4ee80c549979ea3274e2d946118d1191b8489dd6bf3b",
+    "validation": "每批初稿后实际运行教材校验；依赖审查调整后的文件哈希另经最终全量校验，不冒称初稿哈希未变。",
+    "reviewIdentity": "Codex (AI developer)",
+    "reviewScope": "开发者教材自查，非独立真人审阅"
+  },
+  {
+    "batch": "b",
+    "added": 150,
+    "total": 600,
+    "sourceFile": "data/ogden/batches/round3-b.tsv",
+    "sha256": "78f73d0c3b239ac54805abb26c90e68cb88153684f4e4db0c85f5933a8903e98",
+    "validation": "每批初稿后实际运行教材校验；依赖审查调整后的文件哈希另经最终全量校验，不冒称初稿哈希未变。",
+    "reviewIdentity": "Codex (AI developer)",
+    "reviewScope": "开发者教材自查，非独立真人审阅"
+  },
+  {
+    "batch": "c",
+    "added": 125,
+    "total": 725,
+    "sourceFile": "data/ogden/batches/round3-c.tsv",
+    "sha256": "3a294738912306af72d1cccec36dc65b66a73c050875502384fb675e26cbee2c",
+    "validation": "每批初稿后实际运行教材校验；依赖审查调整后的文件哈希另经最终全量校验，不冒称初稿哈希未变。",
+    "reviewIdentity": "Codex (AI developer)",
+    "reviewScope": "开发者教材自查，非独立真人审阅"
+  },
+  {
+    "batch": "d",
+    "added": 125,
+    "total": 850,
+    "sourceFile": "data/ogden/batches/round3-d.tsv",
+    "sha256": "5934a25ec6b47411043b2501a0ce17a21ad33dbaee32dd538a0319eb2012c6cd",
+    "validation": "每批初稿后实际运行教材校验；依赖审查调整后的文件哈希另经最终全量校验，不冒称初稿哈希未变。",
+    "reviewIdentity": "Codex (AI developer)",
+    "reviewScope": "开发者教材自查，非独立真人审阅"
+  }
+]

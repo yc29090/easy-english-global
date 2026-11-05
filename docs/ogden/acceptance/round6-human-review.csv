@@ -1,0 +1,1364 @@
+﻿id,version,kind,english_and_references,chinese_prompt_or_meaning,context_and_translation,historical_reference,reviewer,review_date,actual_findings,status
+ow-come,5,word,come,来,"Come here, please. / 请到这里来。 | come here / 来到这里 ",or-v3-come,,,,NOT_RUN
+ow-get,6,word,get,得到；到达,Can you get some water? / 你能拿些水来吗？ | get some water / 拿些水 ,or-v3-get,,,,NOT_RUN
+ow-give,5,word,give,给,Please give me some time. / 请给我一点时间。 | give me some time / 给我一点时间 ,or-v3-give,,,,NOT_RUN
+ow-go,6,word,go,去,We can go now. / 我们现在可以走了。 | go now / 现在走 ,or-v3-go,,,,NOT_RUN
+ow-keep,5,word,keep,保持；保留,Please keep the door open. / 请让门开着。 | keep the door open / 让门开着 ,or-v3-keep,,,,NOT_RUN
+ow-let,5,word,let,让；允许,Let me help you. / 让我帮你。 | let me help / 让我帮忙 ,or-v3-let,,,,NOT_RUN
+ow-make,5,word,make,制作；使,I can make some food. / 我会做些吃的。 | make some food / 做些吃的 ,or-v3-make,,,,NOT_RUN
+ow-put,5,word,put,放,"Put it here, please. / 请把它放这里。 | put it here / 把它放这里 ",or-v3-put,,,,NOT_RUN
+ow-seem,5,word,seem,似乎,You seem tired. / 你似乎累了。 | seem tired / 似乎累了 ,or-v3-seem,,,,NOT_RUN
+ow-take,5,word,take,拿；带；花费,Please take this bag. / 请拿这个包。 | take this bag / 拿这个包 ,or-v3-take,,,,NOT_RUN
+ow-be,5,word,be,是；处于,I am here. / 我在这里。 | be here / 在这里 ,or-v3-be,,,,NOT_RUN
+ow-do,5,word,do,做；辅助提问否定,Do you have time? / 你有时间吗？ | do you have / 你有……吗 ,or-v3-do,,,,NOT_RUN
+ow-have,5,word,have,有,I have a question. / 我有一个问题。 | have a question / 有一个问题 ,or-v3-have,,,,NOT_RUN
+ow-say,5,word,say,说,Please say it again. / 请再说一遍。 | say it again / 再说一遍 ,or-v3-say,,,,NOT_RUN
+ow-see,5,word,see,看见；明白,I can see the door. / 我能看见门。 | see the door / 看见门 ,or-v3-see,,,,NOT_RUN
+ow-send,5,word,send,发送；寄,Please send me the price. / 请把价格发给我。 | send me the price / 把价格发给我 ,or-v3-send,,,,NOT_RUN
+ow-may,5,word,may,可以；可能,May I come in? / 我可以进来吗？ | may I come in / 我可以进来吗 ,or-v3-may,,,,NOT_RUN
+ow-will,5,word,will,将；愿意,I will help you. / 我会帮你。 | will help / 会帮忙 ,or-v3-will,,,,NOT_RUN
+op-come,5,operator,come,来,"用于朝说话者或指定地点移动。 | Come here, please. / 请到这里来。 | come here / 到这里来 Come here, please. / 请到这里来。 | come with me / 跟我来 Come with me, please. / 请跟我来。 | come back / 回来 I will come back tomorrow. / 我明天会回来。 | come in / 进来 Please come in. / 请进。 | come on time / 准时来 Please come on time. / 请准时来。 | come to a meeting / 来参加会议 Can you come to the meeting? / 你能来参加会议吗？",,,,,NOT_RUN
+op-come-variant-1,5,authored-variant,"Come here, please.",请到这里来。,parent=op-come,,,,,NOT_RUN
+op-come-variant-2,5,authored-variant,"Come with me, please.",请跟我来。,parent=op-come,,,,,NOT_RUN
+op-come-variant-3,5,authored-variant,I will come back tomorrow.,我明天会回来。,parent=op-come,,,,,NOT_RUN
+op-get,5,operator,get,得到；到达,组合决定意思；get here 表示到这里。 | Can you get some water? / 你能拿些水来吗？ | get some water / 拿些水 Can you get some water? / 你能拿些水吗？ | get help / 获得帮助 I need to get help. / 我需要得到帮助。 | get a message / 收到一条消息 I will get a message. / 我会收到一条消息。 | get a ticket / 拿到一张票 Where can I get a ticket? / 我在哪里可以拿到票？ | get a receipt / 拿到收据 Can I get a receipt? / 我可以拿一张收据吗？ | get to the station / 到达车站 How do I get to the station? / 我怎么去车站？ | get ready / 准备好 Please get ready to leave. / 请做好出发准备。,,,,,NOT_RUN
+op-get-variant-1,5,authored-variant,Can you get some water?,你能拿些水吗？,parent=op-get,,,,,NOT_RUN
+op-get-variant-2,5,authored-variant,I need to get help.,我需要得到帮助。,parent=op-get,,,,,NOT_RUN
+op-get-variant-3,5,authored-variant,I will get a message.,我会收到一条消息。,parent=op-get,,,,,NOT_RUN
+op-give,5,operator,give,给,give + 人 + 事物。 | Please give me some time. / 请给我一点时间。 | give me some time / 给我一点时间 Please give me some time. / 请给我一点时间。 | give me a ticket / 给我一张票 Please give me a ticket. / 请给我一张票。 | give me your number / 给我你的号码 Can you give me your number? / 你能给我你的号码吗？ | give me a map / 给我一张地图 Please give me a map. / 请给我一张地图。 | give me a hand / 帮我一下 Can you give me a hand with this bag? / 你能帮我提一下这个包吗？ | give me an example / 给我举个例子 Can you give me an example? / 你能给我举个例子吗？,,,,,NOT_RUN
+op-give-variant-1,5,authored-variant,Please give me some time.,请给我一点时间。,parent=op-give,,,,,NOT_RUN
+op-give-variant-2,5,authored-variant,Please give me a ticket.,请给我一张票。,parent=op-give,,,,,NOT_RUN
+op-give-variant-3,5,authored-variant,Can you give me your number?,你能给我你的号码吗？,parent=op-give,,,,,NOT_RUN
+op-go,5,operator,go,去,用于离开或去其他地方。 | We can go now. / 我们现在可以走了。 | go home / 回家 I need to go home. / 我需要回家。 | go to work / 去上班 I go to work by bus. / 我坐公交车上班。 | go by bus / 坐公交车去 We can go by bus. / 我们可以坐公交车去。 | go to the gate / 去登机口 Please go to gate ten. / 请去十号登机口。 | go out / 出去 We can go out after lunch. / 午餐后我们可以出去。 | go back / 返回 I need to go back to the hotel. / 我需要返回酒店。,,,,,NOT_RUN
+op-go-variant-1,5,authored-variant,I need to go home.,我需要回家。,parent=op-go,,,,,NOT_RUN
+op-go-variant-2,5,authored-variant,I go to work by bus.,我坐公交车上班。,parent=op-go,,,,,NOT_RUN
+op-go-variant-3,5,authored-variant,We can go by bus.,我们可以坐公交车去。,parent=op-go,,,,,NOT_RUN
+op-keep,5,operator,keep,保持；保留,keep + 事物 + 状态。 | Please keep the door open. / 请让门开着。 | keep the door open / 让门开着 Please keep the door open. / 请让门开着。 | keep my bag / 保管我的包 Can you keep my bag here? / 你能把我的包保管在这里吗？ | keep your ticket / 留好你的票 Please keep your ticket. / 请留好你的票。 | keep the change / 不用找零 Please keep the change. / 零钱不用找了。 | keep in touch / 保持联系 Let us keep in touch. / 我们保持联系吧。 | keep it safe / 保管好它 Please keep your passport safe. / 请保管好你的护照。,,,,,NOT_RUN
+op-keep-variant-1,5,authored-variant,Please keep the door open.,请让门开着。,parent=op-keep,,,,,NOT_RUN
+op-keep-variant-2,5,authored-variant,Can you keep my bag here?,你能把我的包保管在这里吗？,parent=op-keep,,,,,NOT_RUN
+op-keep-variant-3,5,authored-variant,Please keep your ticket.,请留好你的票。,parent=op-keep,,,,,NOT_RUN
+op-let,5,operator,let,让；允许,let 后接人，再接动词原形。 | Let me help you. / 让我帮你。 | let me help / 让我帮忙 Let me help you. / 让我帮你。 | let me see / 让我看看 Let me see the message. / 让我看看这条消息。 | let me try / 让我试试 Please let me try. / 请让我试试。 | let me check / 让我核查一下 Let me check the price. / 让我核对一下价格。 | let me know / 告诉我 Please let me know the time. / 请告诉我时间。 | let us go / 我们走吧 Let us go to the station. / 我们去车站吧。,,,,,NOT_RUN
+op-let-variant-1,5,authored-variant,Let me help you.,让我帮你。,parent=op-let,,,,,NOT_RUN
+op-let-variant-2,5,authored-variant,Let me see the message.,让我看看这条消息。,parent=op-let,,,,,NOT_RUN
+op-let-variant-3,5,authored-variant,Please let me try.,请让我试试。,parent=op-let,,,,,NOT_RUN
+op-make,5,operator,make,制作；使,先学习制作含义，再扩展使某物变化。 | I can make some food. / 我会做些吃的。 | make some food / 做些吃的 I can make some food. / 我会做些吃的。 | make a call / 打个电话 May I make a call? / 我可以打个电话吗？ | make it clear / 把意思说清楚 Please make it clear. / 请把意思说清楚。 | make a reservation / 进行预订 I want to make a reservation. / 我想进行预订。 | make a choice / 作出选择 I need time to make a choice. / 我需要时间作出选择。 | make a mistake / 犯错 It is easy to make a mistake. / 这很容易出错。,,,,,NOT_RUN
+op-make-variant-1,5,authored-variant,I can make some food.,我会做些吃的。,parent=op-make,,,,,NOT_RUN
+op-make-variant-2,5,authored-variant,May I make a call?,我可以打个电话吗？,parent=op-make,,,,,NOT_RUN
+op-make-variant-3,5,authored-variant,Please make it clear.,请把意思说清楚。,parent=op-make,,,,,NOT_RUN
+op-put,5,operator,put,放,"通常需要说明放置的位置。 | Put it here, please. / 请把它放这里。 | put it here / 把它放这里 Put it here, please. / 请把它放这里。 | put it on the table / 把它放到桌上 Put it on the table, please. / 请把它放到桌上。 | put it in the bag / 把它放进包里 Please put it in the bag. / 请把它放进包里。 | put it in writing / 把它写下来 Please put the price in writing. / 请把价格写下来。 | put on a coat / 穿上外套 Please put on your coat. / 请穿上你的外套。 | put it away / 把它收好 Please put your phone away. / 请把手机收好。",,,,,NOT_RUN
+op-put-variant-1,5,authored-variant,"Put it here, please.",请把它放这里。,parent=op-put,,,,,NOT_RUN
+op-put-variant-2,5,authored-variant,"Put it on the table, please.",请把它放到桌上。,parent=op-put,,,,,NOT_RUN
+op-put-variant-3,5,authored-variant,Please put it in the bag.,请把它放进包里。,parent=op-put,,,,,NOT_RUN
+op-seem,6,operator,seem,似乎,seem + 形容词：You seem tired。seem to be + 形容词：You seem to be tired。两种说法都正确，表示印象而非确认事实。 | You seem tired. / 你似乎累了。 | seem tired / 似乎累了 You seem tired. / 你似乎累了。 | seem happy / 似乎很高兴 You seem happy. / 你似乎很高兴。 | seem ready / 似乎准备好了 You seem ready. / 你似乎准备好了。 | seem busy / 似乎很忙 You seem busy. / 你似乎很忙。 | seem to work / 似乎正常运作 The phone seems to work now. / 手机现在似乎能用了。 | seem to know / 似乎知道 You seem to know the way. / 你似乎知道路。,,,,,NOT_RUN
+op-seem-variant-1,6,authored-variant,You seem tired.,你似乎累了。,parent=op-seem,,,,,NOT_RUN
+op-seem-variant-2,6,authored-variant,You seem happy.,你似乎很高兴。,parent=op-seem,,,,,NOT_RUN
+op-seem-variant-3,6,authored-variant,You seem ready.,你似乎准备好了。,parent=op-seem,,,,,NOT_RUN
+op-take,5,operator,take,拿；带；花费,先学习拿、带；时间用法另列组合。 | Please take this bag. / 请拿这个包。 | take this bag / 拿这个包 Please take this bag. / 请拿这个包。 | take a bus / 坐公交车 We can take a bus. / 我们可以坐公交车。 | take some time / 花一些时间 This will take some time. / 这会花一些时间。 | take a taxi / 乘出租车 We can take a taxi. / 我们可以乘出租车。 | take a break / 休息一下 Let us take a break. / 我们休息一下吧。 | take a picture / 拍照 Can you take a picture of us? / 你能给我们拍张照吗？,,,,,NOT_RUN
+op-take-variant-1,5,authored-variant,Please take this bag.,请拿这个包。,parent=op-take,,,,,NOT_RUN
+op-take-variant-2,5,authored-variant,We can take a bus.,我们可以坐公交车。,parent=op-take,,,,,NOT_RUN
+op-take-variant-3,5,authored-variant,This will take some time.,这会花一些时间。,parent=op-take,,,,,NOT_RUN
+op-be,5,operator,be,是；处于,am/is/are 是 be 的变化；此处 am 表示所处位置。 | I am here. / 我在这里。 | be here / 在这里 I am here. / 我在这里。 | be ready / 准备好 I will be ready at six. / 我六点会准备好。 | be at home / 在家 She is at home. / 她在家。 | be on time / 准时 Please be on time. / 请准时。 | be careful / 小心 Please be careful with this box. / 请小心搬这个盒子。 | be made of / 由……制成 This table is made of wood. / 这张桌子是木制的。,,,,,NOT_RUN
+op-be-variant-1,5,authored-variant,I am here.,我在这里。,parent=op-be,,,,,NOT_RUN
+op-be-variant-2,5,authored-variant,I will be ready at six.,我六点会准备好。,parent=op-be,,,,,NOT_RUN
+op-be-variant-3,5,authored-variant,She is at home.,她在家。,parent=op-be,,,,,NOT_RUN
+op-do,5,operator,do,做；辅助提问否定,这里 do 帮助提问；不能把所有 do 都解释为做。 | Do you have time? / 你有时间吗？ | do the work / 做这项工作 I can do the work. / 我能做这项工作。 | do you have / 你有……吗 Do you have a ticket? / 你有票吗？ | do not know / 不知道 I do not know the address. / 我不知道地址。 | do not understand / 不理解 I do not understand this message. / 我不理解这条消息。 | do my best / 尽我所能 I will do my best to help. / 我会尽力帮忙。 | do we need / 我们需要……吗 Do we need a ticket? / 我们需要票吗？,,,,,NOT_RUN
+op-do-variant-1,5,authored-variant,I can do the work.,我能做这项工作。,parent=op-do,,,,,NOT_RUN
+op-do-variant-2,5,authored-variant,Do you have a ticket?,你有票吗？,parent=op-do,,,,,NOT_RUN
+op-do-variant-3,5,authored-variant,I do not know the address.,我不知道地址。,parent=op-do,,,,,NOT_RUN
+op-have,5,operator,have,有,本阶段教拥有与常见活动搭配：have a ticket 有票，have breakfast 吃早餐；不把这些含义等同于完成时助动词。 | I have a question. / 我有一个问题。 | have a question / 有一个问题 I have a question. / 我有一个问题。 | have some time / 有一些时间 Do you have some time? / 你有一些时间吗？ | have a ticket / 有一张票 I have a ticket. / 我有一张票。 | have breakfast / 吃早餐 We can have breakfast here. / 我们可以在这里吃早餐。 | have a look / 看一看 Can I have a look at the menu? / 我可以看看菜单吗？ | have a problem / 有个问题 I have a problem with my phone. / 我的手机出了问题。,,,,,NOT_RUN
+op-have-variant-1,5,authored-variant,I have a question.,我有一个问题。,parent=op-have,,,,,NOT_RUN
+op-have-variant-2,5,authored-variant,Do you have some time?,你有一些时间吗？,parent=op-have,,,,,NOT_RUN
+op-have-variant-3,5,authored-variant,I have a ticket.,我有一张票。,parent=op-have,,,,,NOT_RUN
+op-say,5,operator,say,说,say 后可以接说出的内容。 | Please say it again. / 请再说一遍。 | say it again / 再说一遍 Please say it again. / 请再说一遍。 | say your name / 说出你的名字 Please say your name. / 请说出你的名字。 | say yes / 说好；表示同意 You can say yes or no. / 你可以说好或不好。 | say it slowly / 慢慢说 Please say it slowly. / 请慢慢说。 | say no / 表示拒绝 You can say no if you do not want it. / 如果你不想要，可以拒绝。 | say thank you / 表示感谢 I want to say thank you for your help. / 我想感谢你的帮助。,,,,,NOT_RUN
+op-say-variant-1,5,authored-variant,Please say it again.,请再说一遍。,parent=op-say,,,,,NOT_RUN
+op-say-variant-2,5,authored-variant,Please say your name.,请说出你的名字。,parent=op-say,,,,,NOT_RUN
+op-say-variant-3,5,authored-variant,You can say yes or no.,你可以说好或不好。,parent=op-say,,,,,NOT_RUN
+op-see,5,operator,see,看见；明白,先教看见；I see 也可以表示明白。 | I can see the door. / 我能看见门。 | see the door / 看见门 I can see the door. / 我能看见门。 | see a doctor / 看医生 I need to see a doctor. / 我需要看医生。 | see you tomorrow / 明天见 I will see you tomorrow. / 我明天会见到你。 | see the menu / 看看菜单 Can I see the menu? / 我可以看看菜单吗？ | see what you mean / 明白你的意思 I see what you mean. / 我明白你的意思。 | see the difference / 看出区别 Can you see the difference? / 你能看出区别吗？,,,,,NOT_RUN
+op-see-variant-1,5,authored-variant,I can see the door.,我能看见门。,parent=op-see,,,,,NOT_RUN
+op-see-variant-2,5,authored-variant,I need to see a doctor.,我需要看医生。,parent=op-see,,,,,NOT_RUN
+op-see-variant-3,5,authored-variant,I will see you tomorrow.,我明天会见到你。,parent=op-see,,,,,NOT_RUN
+op-send,5,operator,send,发送；寄,简单工作应用；不扩展合同或物流术语。 | Please send me the price. / 请把价格发给我。 | send me the price / 把价格发给我 Please send me the price. / 请把价格发给我。 | send a message / 发消息 Please send me a message. / 请给我发一条消息。 | send an email / 发电子邮件 Can you send me an email? / 你能给我发一封电子邮件吗？ | send me a copy / 发给我一份副本 Please send me a copy. / 请发给我一份副本。 | send it back / 把它寄回 How can I send it back? / 我怎么把它寄回？ | send me a link / 发链接给我 Please send me a link to the website. / 请发给我这个网站的链接。,,,,,NOT_RUN
+op-send-variant-1,5,authored-variant,Please send me the price.,请把价格发给我。,parent=op-send,,,,,NOT_RUN
+op-send-variant-2,5,authored-variant,Please send me a message.,请给我发一条消息。,parent=op-send,,,,,NOT_RUN
+op-send-variant-3,5,authored-variant,Can you send me an email?,你能给我发一封电子邮件吗？,parent=op-send,,,,,NOT_RUN
+op-may,5,operator,may,可以；可能,may + 动词原形。May I ...? 用于礼貌请求许可；may need ... 表示可能需要，不表示一定。 | May I come in? / 我可以进来吗？ | may I come in / 我可以进来吗 May I come in? / 我可以进来吗？ | may I use your phone / 我可以用你的电话吗 May I use your phone? / 我可以用你的电话吗？ | may I ask a question / 我可以问一个问题吗 May I ask a question? / 我可以问一个问题吗？ | may need help / 可能需要帮助 We may need help. / 我们可能需要帮助。 | may be late / 可能会晚 The bus may be late. / 公交车可能会晚点。 | may I sit here / 我可以坐这里吗 May I sit here? / 我可以坐这里吗？,,,,,NOT_RUN
+op-may-variant-1,5,authored-variant,May I come in?,我可以进来吗？,parent=op-may,,,,,NOT_RUN
+op-may-variant-2,5,authored-variant,May I use your phone?,我可以用你的电话吗？,parent=op-may,,,,,NOT_RUN
+op-may-variant-3,5,authored-variant,May I ask a question?,我可以问一个问题吗？,parent=op-may,,,,,NOT_RUN
+op-will,5,operator,will,将；愿意,will 后接原形，不加 to；此句表达意愿。 | I will help you. / 我会帮你。 | will help / 会帮忙 I will help you. / 我会帮助你。 | will come / 会来 I will come tomorrow. / 我明天来。 | will send / 会发送 I will send you a message. / 我会给你发一条消息。 | will return tomorrow / 明天会回来 I will return tomorrow. / 我明天会回来。 | will let you know / 会告诉你 I will let you know tomorrow. / 我明天会告诉你。 | will be ready / 会准备好 The room will be ready at two. / 房间会在两点准备好。,,,,,NOT_RUN
+op-will-variant-1,5,authored-variant,I will help you.,我会帮助你。,parent=op-will,,,,,NOT_RUN
+op-will-variant-2,5,authored-variant,I will come tomorrow.,我明天来。,parent=op-will,,,,,NOT_RUN
+op-will-variant-3,5,authored-variant,I will send you a message.,我会给你发一条消息。,parent=op-will,,,,,NOT_RUN
+pt-need,6,pattern,I need ___.,我需要……,I need more time. / 我需要更多时间。,,,,,NOT_RUN
+pt-need-water,6,authored-variant,I need some water.,我需要一些水。,parent=pt-need,,,,,NOT_RUN
+pt-need-help,6,authored-variant,I need help.,我需要帮助。,parent=pt-need,,,,,NOT_RUN
+pt-need-time,6,authored-variant,I need more time.,我需要更多时间。,parent=pt-need,,,,,NOT_RUN
+pt-have,6,pattern,I have ___.,我有……,I have a question. / 我有一个问题。,,,,,NOT_RUN
+pt-have-question,6,authored-variant,I have a question.,我有一个问题。,parent=pt-have,,,,,NOT_RUN
+pt-have-ticket,6,authored-variant,I have a ticket.,我有一张票。,parent=pt-have,,,,,NOT_RUN
+pt-have-bag,6,authored-variant,I have a bag.,我有一个包。,parent=pt-have,,,,,NOT_RUN
+pt-where,6,pattern,Where is ___?,……在哪里？,Where is the door? / 门在哪里？,,,,,NOT_RUN
+pt-where-door,6,authored-variant,Where is the door?,门在哪里？,parent=pt-where,,,,,NOT_RUN
+pt-where-bag,6,authored-variant,Where is my bag?,我的包在哪里？,parent=pt-where,,,,,NOT_RUN
+pt-where-water,6,authored-variant,Where is the water?,水在哪里？,parent=pt-where,,,,,NOT_RUN
+pt-price,6,pattern,How much is ___?,……多少钱？,How much is it? / 它多少钱？,,,,,NOT_RUN
+pt-price-it,6,authored-variant,How much is it?,它多少钱？,parent=pt-price,,,,,NOT_RUN
+pt-price-ticket,6,authored-variant,How much is this ticket?,这张票多少钱？,parent=pt-price,,,,,NOT_RUN
+pt-price-bag,6,authored-variant,How much is this bag?,这个包多少钱？,parent=pt-price,,,,,NOT_RUN
+pt-request,6,pattern,Can you ___?,你能……吗？,Can you help me? / 你能帮我吗？,,,,,NOT_RUN
+pt-request-help,6,authored-variant,Can you help me?,你能帮我吗？,parent=pt-request,,,,,NOT_RUN
+pt-request-water,6,authored-variant,Can you get some water?,你能拿些水吗？,parent=pt-request,,,,,NOT_RUN
+pt-request-price,6,authored-variant,Can you send me the price?,你能把价格发给我吗？,parent=pt-request,,,,,NOT_RUN
+pt-negative,6,pattern,I do not have ___.,我没有……,I do not have time. / 我没有时间。,,,,,NOT_RUN
+pt-negative-time,6,authored-variant,I do not have time.,我没有时间。,parent=pt-negative,,,,,NOT_RUN
+pt-negative-ticket,6,authored-variant,I do not have a ticket.,我没有票。,parent=pt-negative,,,,,NOT_RUN
+pt-negative-bag,6,authored-variant,I do not have a bag.,我没有包。,parent=pt-negative,,,,,NOT_RUN
+pt-when,6,pattern,When will ___?,……什么时候会……？,When will the car get here? / 车什么时候会到这里？,,,,,NOT_RUN
+pt-when-car,6,authored-variant,When will the car get here?,车什么时候会到这里？,parent=pt-when,,,,,NOT_RUN
+pt-when-come,6,authored-variant,When will you come?,你什么时候会来？,parent=pt-when,,,,,NOT_RUN
+pt-when-go,6,authored-variant,When will we go?,我们什么时候走？,parent=pt-when,,,,,NOT_RUN
+pt-choice,6,pattern,This is ___ than that.,这个比那个更……,This is smaller than that. / 这个比那个更小。,,,,,NOT_RUN
+pt-choice-smaller,6,authored-variant,This is smaller than that.,这个比那个更小。,parent=pt-choice,,,,,NOT_RUN
+pt-choice-bigger,6,authored-variant,This is bigger than that.,这个比那个更大。,parent=pt-choice,,,,,NOT_RUN
+pt-choice-better,6,authored-variant,This is better than that.,这个比那个更好。,parent=pt-choice,,,,,NOT_RUN
+cb-water,5,combination,get some water,拿些水,Can you get some water? / 你能拿些水吗？,,,,,NOT_RUN
+cb-help,5,combination,get help,获得帮助,I need to get help. / 我需要得到帮助。,,,,,NOT_RUN
+cb-message,5,combination,get a message,收到一条消息,I will get a message. / 我会收到一条消息。,,,,,NOT_RUN
+cb-ticket,5,combination,get a ticket,拿到一张票,Where can I get a ticket? / 我在哪里可以拿到票？,,,,,NOT_RUN
+cb-time,5,combination,give me some time,给我一点时间,Please give me some time. / 请给我一点时间。,,,,,NOT_RUN
+cb-door,5,combination,keep the door open,让门开着,Please keep the door open. / 请让门开着。,,,,,NOT_RUN
+cb-place,5,combination,put it here,把它放这里,"Put it here, please. / 请把它放这里。",,,,,NOT_RUN
+cb-price,5,combination,send me the price,把价格发给我,Please send me the price. / 请把价格发给我。,,,,,NOT_RUN
+ex-help,5,expression,Can you help me? / Please help me.,请别人帮你,第一句用Can you提出帮助请求；第二句用please直接请求，表达的需求相同。,,,,,NOT_RUN
+ex-time,5,expression,I need more time. / Please give me more time.,表达你需要更多时间,第一句说明自己的需要；第二句直接请对方多给时间。,,,,,NOT_RUN
+ex-question,5,expression,I have a question. / I have something to ask.,说明你有一个问题,第一句说明有问题；第二句说明有事情想问，未限定具体问题内容。,,,,,NOT_RUN
+ex-arrival,5,expression,When will the car get here? / When will the car arrive?,我想知道车什么时候能到,get here强调到这里；arrive表示到达，具体地点由当前语境决定。,,,,,NOT_RUN
+ex-send-price,5,expression,Can you send me the price? / Please send me the price.,请对方发送价格,第一句以问题形式提出请求；第二句用please直接请求发送。,,,,,NOT_RUN
+ex-no-time,5,expression,I do not have time. / I have no time.,说明你没有时间,do not have time和have no time都说明没有时间，第二句更紧凑。,,,,,NOT_RUN
+ex-opener,5,expression,I need something to open this bottle. / Can you give me something to open this bottle?,忘了开瓶器这个词，描述你需要的东西,第一句说明需要开瓶工具；第二句直接请对方给你可用的东西，不要求工具只有一种。,,,,,NOT_RUN
+ex-late,5,expression,The car will not get here on time. / The car will be late.,忘了延误这个词，解释车不会按时到,第一句说明不会按时到，第二句直接说会晚到；未说明具体晚多久。,,,,,NOT_RUN
+ex-smaller,5,expression,I need something smaller than this. / Do you have a smaller one?,忘了小一号这个词，描述你想要的东西,第一句把需求与眼前物品比较；第二句询问有没有更小的一个。,,,,,NOT_RUN
+pt-state,6,pattern,I am ___.,我处于……状态；我在……,I am here. / 我在这里。,,,,,NOT_RUN
+pt-state-here,6,authored-variant,I am here.,我在这里。,parent=pt-state,,,,,NOT_RUN
+pt-state-ready,6,authored-variant,I am ready.,我准备好了。,parent=pt-state,,,,,NOT_RUN
+pt-state-tired,6,authored-variant,I am tired.,我累了。,parent=pt-state,,,,,NOT_RUN
+pt-seem,6,pattern,You seem ___.,你似乎……,You seem tired. / 你似乎累了。,,,,,NOT_RUN
+pt-seem-tired,6,authored-variant,You seem tired.,你似乎累了。,parent=pt-seem,,,,,NOT_RUN
+pt-seem-happy,6,authored-variant,You seem happy.,你似乎很开心。,parent=pt-seem,,,,,NOT_RUN
+pt-seem-ready,6,authored-variant,You seem ready.,你似乎准备好了。,parent=pt-seem,,,,,NOT_RUN
+pt-permission,6,pattern,May I ___?,我可以……吗？,May I come in? / 我可以进来吗？,,,,,NOT_RUN
+pt-permission-come,6,authored-variant,May I come in?,我可以进来吗？,parent=pt-permission,,,,,NOT_RUN
+pt-permission-go,6,authored-variant,May I go now?,我现在可以走吗？,parent=pt-permission,,,,,NOT_RUN
+pt-permission-take,6,authored-variant,May I take this?,我可以拿这个吗？,parent=pt-permission,,,,,NOT_RUN
+ow-i,4,word,I,我,I am here. / 我在这里。 | I am / 我是；我处于 ,or-v3-i,,,,NOT_RUN
+ow-you,5,word,you,你；你们,Can you help me? / 你能帮我吗？ | you can / 你可以 ,or-v3-you,,,,NOT_RUN
+ow-we,5,word,we,我们,We have time. / 我们有时间。 | we have / 我们有 ,or-v3-we,,,,NOT_RUN
+ow-he,4,word,he,他,He is here. / 他在这里。 | he is / 他是；他处于 ,or-v3-he,,,,NOT_RUN
+ow-she,4,word,she,她,She is ready. / 她准备好了。 | she is / 她是；她处于 ,or-v3-she,,,,NOT_RUN
+ow-it,5,word,it,它；这件事,How much is it? / 它多少钱？ | it is / 它是 ,or-v3-it,,,,NOT_RUN
+ow-they,5,word,they,他们；她们；它们,They are here. / 他们在这里。 | they are / 他们是；他们处于 ,or-v3-they,,,,NOT_RUN
+ow-a,5,word,a,一个；一件,I have a ticket. / 我有一张票。 | a ticket / 一张票 ,or-v3-a,,,,NOT_RUN
+ow-the,4,word,the,指已知或特定的人或事物,Where is the door? / 门在哪里？ | the door / 那扇门；特定的门 ,or-v3-the,,,,NOT_RUN
+ow-this,5,word,this,这；这个,May I take this? / 我可以拿这个吗？ | this bag / 这个包 ,or-v3-this,,,,NOT_RUN
+ow-that,5,word,that,那；那个,That is my room. / 那是我的房间。 | that room / 那个房间 ,or-v3-that,,,,NOT_RUN
+ow-some,4,word,some,一些,I need some water. / 我需要一些水。 | some water / 一些水 ,or-v3-some,,,,NOT_RUN
+ow-any,4,word,any,一些；任何,Do you have any questions? / 你有什么问题吗？ | any questions / 有什么问题 ,or-v3-any,,,,NOT_RUN
+ow-not,4,word,not,不；不是,I am not ready. / 我还没准备好。 | not ready / 没准备好 ,or-v3-not,,,,NOT_RUN
+ow-and,4,word,and,和；并且,I need bread and milk. / 我需要面包和牛奶。 | bread and milk / 面包和牛奶 ,or-v3-and,,,,NOT_RUN
+ow-or,4,word,or,或者,Do you want tea or coffee? / 你想要茶还是咖啡？ | tea or coffee / 茶或者咖啡 ,or-v3-or,,,,NOT_RUN
+ow-but,4,word,but,但是,"I have a ticket, but I need help. / 我有票，但是我需要帮助。 | but I need help / 但是我需要帮助 ",or-v3-but,,,,NOT_RUN
+ow-in,4,word,in,在……里面,The water is in the room. / 水在房间里。 | in the room / 在房间里 ,or-v3-in,,,,NOT_RUN
+ow-on,4,word,on,在……上面,The ticket is on the table. / 票在桌上。 | on the table / 在桌上 ,or-v3-on,,,,NOT_RUN
+ow-at,4,word,at,在某地点或时刻,I am at home. / 我在家。 | at home / 在家 ,or-v3-at,,,,NOT_RUN
+ow-to,4,word,to,向；到；不定式标记,I need to go. / 我需要走了。 | to go / 去；离开 ,or-v3-to,,,,NOT_RUN
+ow-from,4,word,from,从；来自,I am from China. / 我来自中国。 | from China / 来自中国 ,or-v3-from,,,,NOT_RUN
+ow-with,4,word,with,和……一起；带有,Come with me. / 跟我来。 | with me / 和我一起 ,or-v3-with,,,,NOT_RUN
+ow-for,4,word,for,为；给；用于,This is for you. / 这是给你的。 | for you / 给你；为你 ,or-v3-for,,,,NOT_RUN
+ow-of,4,word,of,……的,I need a cup of water. / 我需要一杯水。 | a cup of water / 一杯水 ,or-v3-of,,,,NOT_RUN
+ow-here,4,word,here,这里；到这里,"Put it here, please. / 请把它放这里。 | get here / 到这里 ",or-v3-here,,,,NOT_RUN
+ow-there,4,word,there,那里；在那里,The car is there. / 车在那里。 | over there / 在那边 ,or-v3-there,,,,NOT_RUN
+ow-now,4,word,now,现在,We can go now. / 我们现在可以走了。 | go now / 现在走 ,or-v3-now,,,,NOT_RUN
+ow-when,4,word,when,什么时候,When will you come? / 你什么时候来？ | when will / 什么时候会 ,or-v3-when,,,,NOT_RUN
+ow-where,4,word,where,在哪里,Where is my ticket? / 我的票在哪里？ | where is / ……在哪里 ,or-v3-where,,,,NOT_RUN
+ow-how,4,word,how,怎样；多么,How much is this? / 这个多少钱？ | how much / 多少；多少钱 ,or-v3-how,,,,NOT_RUN
+ow-why,4,word,why,为什么,Why do you need it? / 你为什么需要它？ | why do you / 你为什么 ,or-v3-why,,,,NOT_RUN
+ow-what,4,word,what,什么,What do you need? / 你需要什么？ | what do you need / 你需要什么 ,or-v3-what,,,,NOT_RUN
+ow-please,4,word,please,请,Please help me. / 请帮帮我。 | please help / 请帮忙 ,or-v3-please,,,,NOT_RUN
+ow-yes,4,word,yes,是；好的,"Yes, I have a ticket. / 是的，我有票。 | yes, please / 好的，谢谢 ",or-v3-yes,,,,NOT_RUN
+ow-no,4,word,no,不；没有,"No, I do not have a ticket. / 不，我没有票。 | no time / 没有时间 ",or-v3-no,,,,NOT_RUN
+ow-name,4,word,name,名字,My name is Ava. / 我的名字是Ava。 | my name / 我的名字 ,or-v3-name,,,,NOT_RUN
+ow-person,4,word,person,人,This person can help you. / 这个人能帮助你。 | There are three people here. / 这里有三个人。 | this person / 这个人 ,or-v3-person,,,,NOT_RUN
+ow-family,4,word,family,家人；家庭,My family is here. / 我的家人在这里。 | my family / 我的家人 ,or-v3-family,,,,NOT_RUN
+ow-friend,4,word,friend,朋友,This is my friend. / 这是我的朋友。 | my friend / 我的朋友 ,or-v3-friend,,,,NOT_RUN
+ow-mother,4,word,mother,母亲；妈妈,My mother is at home. / 我妈妈在家。 | my mother / 我的妈妈 ,or-v3-mother,,,,NOT_RUN
+ow-father,4,word,father,父亲；爸爸,My father is here. / 我爸爸在这里。 | my father / 我的爸爸 ,or-v3-father,,,,NOT_RUN
+ow-child,4,word,child,孩子,The child needs water. / 这个孩子需要水。 | the child / 这个孩子 ,or-v3-child,,,,NOT_RUN
+ow-home,4,word,home,家；在家,I will go home now. / 我现在要回家。 | go home / 回家 ,or-v3-home,,,,NOT_RUN
+ow-house,5,word,house,房子,This house is small. / 这栋房子很小。 | a small house / 一栋小房子 ,or-v3-house,,,,NOT_RUN
+ow-room,4,word,room,房间；空间,I need a room. / 我需要一个房间。 | a room / 一个房间 ,or-v3-room,,,,NOT_RUN
+ow-door,4,word,door,门,Please keep the door open. / 请让门开着。 | the door / 这扇门 ,or-v3-door,,,,NOT_RUN
+ow-water,4,word,water,水,Can you get some water? / 你能拿些水吗？ | some water / 一些水 ,or-v3-water,,,,NOT_RUN
+ow-food,4,word,food,食物,I need some food. / 我需要一些食物。 | some food / 一些食物 ,or-v3-food,,,,NOT_RUN
+ow-bread,4,word,bread,面包,I need some bread. / 我需要一些面包。 | some bread / 一些面包 ,or-v3-bread,,,,NOT_RUN
+ow-rice,4,word,rice,米饭；大米,Can I have some rice? / 我可以要一些米饭吗？ | some rice / 一些米饭 ,or-v3-rice,,,,NOT_RUN
+ow-milk,4,word,milk,牛奶,Can I have some milk? / 我可以要一些牛奶吗？ | some milk / 一些牛奶 ,or-v3-milk,,,,NOT_RUN
+ow-coffee,4,word,coffee,咖啡,Can I have some coffee? / 我可以要一些咖啡吗？ | some coffee / 一些咖啡 ,or-v3-coffee,,,,NOT_RUN
+ow-tea,4,word,tea,茶,Can I have some tea? / 我可以要一些茶吗？ | some tea / 一些茶 ,or-v3-tea,,,,NOT_RUN
+ow-time,4,word,time,时间,I need more time. / 我需要更多时间。 | more time / 更多时间 ,or-v3-time,,,,NOT_RUN
+ow-day,4,word,day,一天；白天,I need one more day. / 我还需要一天。 | one more day / 再一天 ,or-v3-day,,,,NOT_RUN
+ow-week,4,word,week,星期；一周,I will come next week. / 我下周来。 | next week / 下周 ,or-v3-week,,,,NOT_RUN
+ow-today,4,word,today,今天,I need it today. / 我今天需要它。 | here today / 今天在这里 ,or-v3-today,,,,NOT_RUN
+ow-tomorrow,4,word,tomorrow,明天,I will come tomorrow. / 我明天来。 | come tomorrow / 明天来 ,or-v3-tomorrow,,,,NOT_RUN
+ow-money,4,word,money,钱,I do not have enough money. / 我的钱不够。 | enough money / 足够的钱 ,or-v3-money,,,,NOT_RUN
+ow-price,4,word,price,价格,Please send me the price. / 请把价格发给我。 | the price / 价格 ,or-v3-price,,,,NOT_RUN
+ow-ticket,4,word,ticket,票,Where can I get a ticket? / 我在哪里可以拿到票？ | get a ticket / 拿到一张票 ,or-v3-ticket,,,,NOT_RUN
+ow-car,4,word,car,汽车,When will the car get here? / 车什么时候会到这里？ | the car / 这辆车 ,or-v3-car,,,,NOT_RUN
+ow-bus,4,word,bus,公共汽车,Where can I get a bus ticket? / 我在哪里可以买到公交车票？ | a bus ticket / 一张公交车票 ,or-v3-bus,,,,NOT_RUN
+ow-train,4,word,train,火车,When will the train get here? / 火车什么时候到这里？ | the train / 这班火车 ,or-v3-train,,,,NOT_RUN
+ow-airport,4,word,airport,机场,Can you take me to the airport? / 你能带我去机场吗？ | to the airport / 去机场 ,or-v3-airport,,,,NOT_RUN
+ow-hotel,4,word,hotel,酒店,Where is the hotel? / 酒店在哪里？ | the hotel / 这家酒店 ,or-v3-hotel,,,,NOT_RUN
+ow-phone,4,word,phone,电话；手机,May I use your phone? / 我可以用一下你的电话吗？ | your phone / 你的电话；你的手机 ,or-v3-phone,,,,NOT_RUN
+ow-email,4,word,email,电子邮件,Please send me an email. / 请给我发一封电子邮件。 | send an email / 发一封电子邮件 ,or-v3-email,,,,NOT_RUN
+ow-computer,4,word,computer,电脑,May I use this computer? / 我可以用这台电脑吗？ | this computer / 这台电脑 ,or-v3-computer,,,,NOT_RUN
+ow-help,4,word,help,帮助,I need help. / 我需要帮助。 | get help / 获得帮助 ,or-v3-help,,,,NOT_RUN
+ow-question,4,word,question,问题；提问,I have a question. / 我有一个问题。 | a question / 一个问题 ,or-v3-question,,,,NOT_RUN
+ow-work,4,word,work,工作,I have work today. / 我今天有工作要做。 | work today / 今天工作 ,or-v3-work,,,,NOT_RUN
+ow-need,4,word,need,需要,I need some water. / 我需要一些水。 | need help / 需要帮助 ,or-v3-need,,,,NOT_RUN
+ow-good,4,word,good,好的,This is good. / 这个很好。 | a good price / 一个不错的价格 ,or-v3-good,,,,NOT_RUN
+ow-bad,4,word,bad,不好的；糟糕的,This is a bad time. / 现在不是合适的时候。 | a bad time / 不合适的时候 ,or-v3-bad,,,,NOT_RUN
+ow-small,4,word,small,小的,I need a small room. / 我需要一个小房间。 | a small room / 一个小房间 ,or-v3-small,,,,NOT_RUN
+ow-big,4,word,big,大的,This room is big. / 这个房间很大。 | a big room / 一个大房间 ,or-v3-big,,,,NOT_RUN
+ow-new,4,word,new,新的,This is my new phone. / 这是我的新手机。 | a new phone / 一部新手机 ,or-v3-new,,,,NOT_RUN
+ow-old,4,word,old,旧的；年老的,This is an old house. / 这是一栋老房子。 | an old house / 一栋老房子 ,or-v3-old,,,,NOT_RUN
+ow-open,4,word,open,开着的；打开,The door is open. / 门开着。 | keep it open / 让它开着 ,or-v3-open,,,,NOT_RUN
+ow-ready,4,word,ready,准备好的,I am ready. / 我准备好了。 | get ready / 准备好 ,or-v3-ready,,,,NOT_RUN
+ow-tired,4,word,tired,疲倦的,I am tired. / 我累了。 | seem tired / 似乎累了 ,or-v3-tired,,,,NOT_RUN
+ex-introduce,4,expression,My name is Ava. / I am Ava.,说出你的名字,My name is明确介绍名字；I am也可以在自我介绍语境中报姓名，姓名可换成自己的。,,,,,NOT_RUN
+ex-origin,4,expression,I am from China. / I come from China.,说你来自中国,be from和come from在此都表示来自中国，不是在描述此刻的行走动作。,,,,,NOT_RUN
+ex-friend,4,expression,This is my friend. / This person is my friend.,介绍你的朋友,第一句直接介绍朋友；第二句用this person指出这个人是你的朋友。,,,,,NOT_RUN
+ex-food,4,expression,"I need some food. / Can I have some food, please?",告诉别人你需要一些食物,第一句说明需要食物；第二句更像礼貌地向别人要食物。,,,,,NOT_RUN
+ex-drink,4,expression,"Can I have some tea, please? / I would like some tea, please.",礼貌地要一些茶,第一句以Can I提问；第二句用would like表达礼貌意愿，都要茶。,,,,,NOT_RUN
+ex-ticket,4,expression,I have a ticket. / I already have a ticket.,说明你已经有票,第二句用already强调已经有票；第一句只说明有票。,,,,,NOT_RUN
+ex-room,4,expression,Do you have a room? / Do you have any rooms?,在酒店询问有没有房间,两句都询问有没有房间；any rooms较明确地询问可提供的空房。,,,,,NOT_RUN
+ex-airport,4,expression,Can you take me to the airport? / Please take me to the airport.,请对方带你去机场,第一句询问能否带你去；第二句直接礼貌请求带你去同一地点。,,,,,NOT_RUN
+ex-payment,4,expression,Can I pay by card? / Can I use a card to pay?,询问能不能用银行卡付款,pay by card和use a card to pay都指刷卡付款，不是现金。,,,,,NOT_RUN
+ex-price-choice,4,expression,How much is this bag? / What is the price of this bag?,想知道这个包多少钱,How much更简洁；What is the price用price这个名词询问同一个包的价格。,,,,,NOT_RUN
+ex-arrival-place,4,expression,When will the train get here? / When will the train arrive?,询问火车什么时候到这里,get here说明到这里；arrive本身不含here，地点需要由对话语境确定。,,,,,NOT_RUN
+ex-send-email,4,expression,Can you send me an email? / Please send me an email.,请对方给你发一封邮件,第一句用Can you提出请求；第二句用please直接请求发邮件。,,,,,NOT_RUN
+ex-delivery,4,expression,When can I get it? / When will I get it?,问你什么时候能收到东西,两句都问何时能收到东西；can强调可实现的时间，will问预期实际时间。,,,,,NOT_RUN
+ex-phone-problem,4,expression,My phone does not work. / I cannot use my phone.,忘了故障这个词，解释手机不能用了,第一句直接描述手机不能运作；第二句只说明自己不能用，必要时补充是设备问题。,,,,,NOT_RUN
+ex-lost-ticket,4,expression,I cannot find my ticket. / I do not know where my ticket is.,忘了遗失这个词，解释你找不到票,第一句说找不到票；第二句说不知道票在哪里，没有武断地声称票一定被偷走。,,,,,NOT_RUN
+ex-thirsty,4,expression,I need some water. / Can I have some water to drink?,忘了口渴这个词，用需要水说明需求,第一句说明要水；第二句加to drink说明水用于喝，不要求先说口渴。,,,,,NOT_RUN
+ex-vegetarian,4,expression,I do not eat meat. / Can I have food with no meat?,忘了素食这个词，说明你不吃肉,第一句说明不吃肉；第二句请求不含肉的食物，必要时补充是否也不吃鱼。,,,,,NOT_RUN
+ex-charger,4,expression,My phone needs power. Can you help me? / I need something to give my phone power.,忘了充电器这个词，解释你的手机需要电,第一句说手机需要电并求助；第二句请求能给手机补电的东西。,,,,,NOT_RUN
+ow-me,3,word,me,我（作宾语）,Please help me. / 请帮帮我。 | help me / 帮助我 ,or-v4-me,,,,NOT_RUN
+ow-my,4,word,my,我的,This is my bag. / 这是我的包。 | my bag / 我的包 ,or-v4-my,,,,NOT_RUN
+ow-your,4,word,your,你的；你们的,Is this your ticket? / 这是你的票吗？ | your ticket / 你的票 ,or-v4-your,,,,NOT_RUN
+ow-our,4,word,our,我们的,This is our room. / 这是我们的房间。 | our room / 我们的房间 ,or-v4-our,,,,NOT_RUN
+ow-their,4,word,their,他们的；她们的；它们的,Their car is here. / 他们的车在这里。 | their car / 他们的车 ,or-v4-their,,,,NOT_RUN
+ow-his,3,word,his,他的,This is his phone. / 这是他的手机。 | his phone / 他的手机 ,or-v4-his,,,,NOT_RUN
+ow-her,3,word,her,她；她的,Please give her some water. / 请给她一些水。 | her name / 她的名字 ,or-v4-her,,,,NOT_RUN
+ow-who,3,word,who,谁,Who can help me? / 谁能帮助我？ | who can help / 谁能帮忙 ,or-v4-who,,,,NOT_RUN
+ow-can,3,word,can,能；可以,Can you help me? / 你能帮我吗？ | can help / 能够帮忙 ,or-v4-can,,,,NOT_RUN
+ow-want,3,word,want,想要,I want some water. / 我想要一些水。 | want some water / 想要一些水 ,or-v4-want,,,,NOT_RUN
+ow-like,3,word,like,喜欢；像,I like this room. / 我喜欢这个房间。 | like this room / 喜欢这个房间 ,or-v4-like,,,,NOT_RUN
+ow-know,3,word,know,知道；认识,I do not know the price. / 我不知道价格。 | know the price / 知道价格 ,or-v4-know,,,,NOT_RUN
+ow-understand,3,word,understand,理解；明白,I do not understand. / 我不明白。 | do not understand / 不理解 ,or-v4-understand,,,,NOT_RUN
+ow-speak,3,word,speak,说；讲某种语言,Can you speak slowly? / 你能说慢一点吗？ | speak slowly / 慢慢说 ,or-v4-speak,,,,NOT_RUN
+ow-read,3,word,read,阅读（这里用原形）,Can you read this message? / 你能读一下这条消息吗？ | read a message / 读一条消息 ,or-v4-read,,,,NOT_RUN
+ow-write,4,word,write,写,Please write your name here. / 请把你的名字写在这里。 | write your name / 写下你的名字 ,or-v4-write,,,,NOT_RUN
+ow-eat,3,word,eat,吃,I need something to eat. / 我需要一些吃的。 | something to eat / 一些吃的东西 ,or-v4-eat,,,,NOT_RUN
+ow-drink,3,word,drink,喝；饮料,I need something to drink. / 我需要一些喝的。 | something to drink / 一些喝的东西 ,or-v4-drink,,,,NOT_RUN
+ow-pay,3,word,pay,付款,Can I pay by card? / 我能用银行卡付款吗？ | pay by card / 用银行卡付款 ,or-v4-pay,,,,NOT_RUN
+ow-buy,3,word,buy,买,I want to buy a ticket. / 我想买一张票。 | buy a ticket / 买一张票 ,or-v4-buy,,,,NOT_RUN
+ow-sell,3,word,sell,卖,I sell cars. / 我卖汽车。 | sell cars / 卖汽车 ,or-v4-sell,,,,NOT_RUN
+ow-wait,3,word,wait,等；等待,Please wait here. / 请在这里等。 | wait here / 在这里等 ,or-v4-wait,,,,NOT_RUN
+ow-call,3,word,call,打电话；叫,Can you call me tomorrow? / 你能明天给我打电话吗？ | call me / 给我打电话 ,or-v4-call,,,,NOT_RUN
+ow-use,3,word,use,使用（这里用动词读音）,May I use your phone? / 我可以用你的电话吗？ | use your phone / 使用你的电话 ,or-v4-use,,,,NOT_RUN
+ow-find,3,word,find,找到,I cannot find my ticket. / 我找不到我的票。 | find my ticket / 找到我的票 ,or-v4-find,,,,NOT_RUN
+ow-live,4,word,live,居住（这里用动词读音）,I live here. / 我住在这里。 | live here / 住在这里 ,or-v4-live,,,,NOT_RUN
+ow-ask,3,word,ask,问；请求,May I ask a question? / 我可以问个问题吗？ | ask a question / 问一个问题 ,or-v4-ask,,,,NOT_RUN
+ow-try,3,word,try,尝试,May I try this? / 我可以试试这个吗？ | try this / 试试这个 ,or-v4-try,,,,NOT_RUN
+ow-walk,3,word,walk,走路；步行,Can we walk there? / 我们能步行去那里吗？ | walk there / 步行去那里 ,or-v4-walk,,,,NOT_RUN
+ow-stay,3,word,stay,停留；住宿,I will stay here tonight. / 我今晚会住在这里。 | stay here / 住在这里；留在这里 ,or-v4-stay,,,,NOT_RUN
+ow-meet,3,word,meet,见面,Can we meet tomorrow? / 我们明天能见面吗？ | meet tomorrow / 明天见面 ,or-v4-meet,,,,NOT_RUN
+ow-man,4,word,man,男人；成年男性,That man can help you. / 那位男士可以帮助你。 | that man / 那位男士 ,or-v4-man,,,,NOT_RUN
+ow-woman,4,word,woman,女人；成年女性,That woman is my friend. / 那位女士是我的朋友。 | that woman / 那位女士 ,or-v4-woman,,,,NOT_RUN
+ow-boy,3,word,boy,男孩,The boy needs some food. / 这个男孩需要一些食物。 | the boy / 这个男孩 ,or-v4-boy,,,,NOT_RUN
+ow-girl,3,word,girl,女孩,The girl is here. / 这个女孩在这里。 | the girl / 这个女孩 ,or-v4-girl,,,,NOT_RUN
+ow-parent,3,word,parent,父亲或母亲,I am a parent. / 我是一位家长。 | my parents / 我的父母 ,or-v4-parent,,,,NOT_RUN
+ow-brother,3,word,brother,兄弟,This is my brother. / 这是我的兄弟。 | my brother / 我的兄弟 ,or-v4-brother,,,,NOT_RUN
+ow-sister,3,word,sister,姐妹,My sister is at home. / 我的姐妹在家。 | my sister / 我的姐妹 ,or-v4-sister,,,,NOT_RUN
+ow-husband,3,word,husband,丈夫,My husband is here. / 我丈夫在这里。 | my husband / 我的丈夫 ,or-v4-husband,,,,NOT_RUN
+ow-wife,3,word,wife,妻子,This is my wife. / 这是我的妻子。 | my wife / 我的妻子 ,or-v4-wife,,,,NOT_RUN
+ow-one,3,word,one,一；一个,I need one ticket. / 我需要一张票。 | one ticket / 一张票 ,or-v4-one,,,,NOT_RUN
+ow-two,3,word,two,二；两个,We need two rooms. / 我们需要两个房间。 | two rooms / 两个房间 ,or-v4-two,,,,NOT_RUN
+ow-three,3,word,three,三；三个,I have three bags. / 我有三个包。 | three bags / 三个包 ,or-v4-three,,,,NOT_RUN
+ow-four,3,word,four,四；四个,We need four chairs. / 我们需要四把椅子。 | four chairs / 四把椅子 ,or-v4-four,,,,NOT_RUN
+ow-five,3,word,five,五；五个,Please give me five minutes. / 请给我五分钟。 | five minutes / 五分钟 ,or-v4-five,,,,NOT_RUN
+ow-six,3,word,six,六；六个,I will come at six. / 我六点来。 | at six / 在六点 ,or-v4-six,,,,NOT_RUN
+ow-seven,3,word,seven,七；七个,I will go at seven. / 我七点走。 | at seven / 在七点 ,or-v4-seven,,,,NOT_RUN
+ow-eight,3,word,eight,八；八个,We can meet at eight. / 我们可以八点见面。 | at eight / 在八点 ,or-v4-eight,,,,NOT_RUN
+ow-nine,3,word,nine,九；九个,I start work at nine. / 我九点开始工作。 | at nine / 在九点 ,or-v4-nine,,,,NOT_RUN
+ow-ten,3,word,ten,十；十个,Please wait ten minutes. / 请等十分钟。 | ten minutes / 十分钟 ,or-v4-ten,,,,NOT_RUN
+ow-zero,3,word,zero,零,The number is zero. / 这个数字是零。 | the number zero / 数字零 ,or-v4-zero,,,,NOT_RUN
+ow-more,3,word,more,更多,I need more time. / 我需要更多时间。 | more time / 更多时间 ,or-v4-more,,,,NOT_RUN
+ow-less,3,word,less,更少（不可数数量）,I need less sugar. / 我需要少一点糖。 | less sugar / 更少的糖 ,or-v4-less,,,,NOT_RUN
+ow-many,3,word,many,许多（可数）,How many tickets do you need? / 你需要多少张票？ | how many tickets / 多少张票 ,or-v4-many,,,,NOT_RUN
+ow-much,3,word,much,许多（不可数）；多么,How much water do you need? / 你需要多少水？ | how much water / 多少水 ,or-v4-much,,,,NOT_RUN
+ow-little,3,word,little,少量（不可数）；小的,I need a little help. / 我需要一点帮助。 | a little help / 一点帮助 ,or-v4-little,,,,NOT_RUN
+ow-all,3,word,all,全部；所有,We are all here. / 我们都在这里。 | all here / 都在这里 ,or-v4-all,,,,NOT_RUN
+ow-every,3,word,every,每一个,I work every day. / 我每天工作。 | every day / 每天 ,or-v4-every,,,,NOT_RUN
+ow-first,3,word,first,第一；最先,This is my first day here. / 这是我来这里的第一天。 | the first day / 第一天 ,or-v4-first,,,,NOT_RUN
+ow-last,3,word,last,最后的；上一个,This is the last ticket. / 这是最后一张票。 | the last ticket / 最后一张票 ,or-v4-last,,,,NOT_RUN
+ow-next,3,word,next,下一个；接下来,I will come next week. / 我下周来。 | next week / 下周 ,or-v4-next,,,,NOT_RUN
+ow-early,3,word,early,早；早的,I can come early. / 我可以早点来。 | come early / 早点来 ,or-v4-early,,,,NOT_RUN
+ow-late,3,word,late,晚；迟的,The train is late. / 火车晚点了。 | be late / 迟到；晚点 ,or-v4-late,,,,NOT_RUN
+ow-morning,3,word,morning,早晨；上午,I will call you in the morning. / 我会在上午给你打电话。 | in the morning / 在上午 ,or-v4-morning,,,,NOT_RUN
+ow-evening,3,word,evening,傍晚；晚上,Can we meet this evening? / 我们今晚能见面吗？ | this evening / 今晚 ,or-v4-evening,,,,NOT_RUN
+ow-night,3,word,night,夜晚,I work at night. / 我夜里工作。 | at night / 在夜里 ,or-v4-night,,,,NOT_RUN
+ow-minute,3,word,minute,分钟,Please wait a minute. / 请等一分钟。 | a minute / 一分钟 ,or-v4-minute,,,,NOT_RUN
+ow-hour,3,word,hour,小时,I need one more hour. / 我还需要一个小时。 | one more hour / 再一个小时 ,or-v4-hour,,,,NOT_RUN
+ow-month,3,word,month,月,I will stay here for a month. / 我会在这里住一个月。 | for a month / 一个月的时间 ,or-v4-month,,,,NOT_RUN
+ow-year,3,word,year,年,I will come next year. / 我明年来。 | next year / 明年 ,or-v4-year,,,,NOT_RUN
+ow-left,3,word,left,左边；左侧的,The door is on the left. / 门在左边。 | on the left / 在左边 ,or-v4-left,,,,NOT_RUN
+ow-right,3,word,right,右边；正确的,The hotel is on the right. / 酒店在右边。 | on the right / 在右边 ,or-v4-right,,,,NOT_RUN
+ow-near,3,word,near,在……附近；近的,The hotel is near the station. / 酒店在车站附近。 | near the station / 在车站附近 ,or-v4-near,,,,NOT_RUN
+ow-far,3,word,far,远；远的,The station is not far. / 车站不远。 | not far / 不远 ,or-v4-far,,,,NOT_RUN
+ow-under,3,word,under,在……下面,My bag is under the table. / 我的包在桌子下面。 | under the table / 在桌子下面 ,or-v4-under,,,,NOT_RUN
+ow-over,3,word,over,在……上方；越过,There is a light over the door. / 门上方有一盏灯。 | over the door / 在门上方 ,or-v4-over,,,,NOT_RUN
+ow-behind,3,word,behind,在……后面,The bag is behind the door. / 包在门后面。 | behind the door / 在门后面 ,or-v4-behind,,,,NOT_RUN
+ow-between,3,word,between,在……之间,The shop is between the hotel and the station. / 商店在酒店和车站之间。 | between the hotel and the station / 在酒店与车站之间 ,or-v4-between,,,,NOT_RUN
+ow-inside,3,word,inside,在里面；里面的,Please wait inside. / 请在里面等。 | wait inside / 在里面等 ,or-v4-inside,,,,NOT_RUN
+ow-outside,3,word,outside,在外面；外面的,The car is outside. / 车在外面。 | wait outside / 在外面等 ,or-v4-outside,,,,NOT_RUN
+ow-up,3,word,up,向上；在上面,Please come up. / 请上来。 | come up / 上来 ,or-v4-up,,,,NOT_RUN
+ow-down,3,word,down,向下；在下面,Please sit down. / 请坐下。 | sit down / 坐下 ,or-v4-down,,,,NOT_RUN
+ow-back,3,word,back,回来；后面,I will come back tomorrow. / 我明天回来。 | come back / 回来 ,or-v4-back,,,,NOT_RUN
+ow-front,3,word,front,前面；前部,Please wait in front of the hotel. / 请在酒店前面等。 | in front of the hotel / 在酒店前面 ,or-v4-front,,,,NOT_RUN
+ow-table,4,word,table,桌子,The water is on the table. / 水在桌上。 | on the table / 在桌上 ,or-v4-table,,,,NOT_RUN
+ow-chair,3,word,chair,椅子,Can I have a chair? / 我可以要一把椅子吗？ | a chair / 一把椅子 ,or-v4-chair,,,,NOT_RUN
+ow-bed,3,word,bed,床,This room has one bed. / 这个房间有一张床。 | one bed / 一张床 ,or-v4-bed,,,,NOT_RUN
+ow-bag,3,word,bag,包,Where is my bag? / 我的包在哪里？ | my bag / 我的包 ,or-v4-bag,,,,NOT_RUN
+ow-bottle,3,word,bottle,瓶子,I need a bottle of water. / 我需要一瓶水。 | a bottle of water / 一瓶水 ,or-v4-bottle,,,,NOT_RUN
+ow-cup,3,word,cup,杯子,Can I have a cup of tea? / 我可以要一杯茶吗？ | a cup of tea / 一杯茶 ,or-v4-cup,,,,NOT_RUN
+ow-key,3,word,key,钥匙,I cannot find my key. / 我找不到我的钥匙。 | my key / 我的钥匙 ,or-v4-key,,,,NOT_RUN
+ow-card,3,word,card,卡；银行卡,Can I pay by card? / 我能用银行卡付款吗？ | pay by card / 用银行卡付款 ,or-v4-card,,,,NOT_RUN
+ow-cash,3,word,cash,现金,Can I pay in cash? / 我能用现金付款吗？ | pay in cash / 用现金付款 ,or-v4-cash,,,,NOT_RUN
+ow-passport,3,word,passport,护照,Here is my passport. / 这是我的护照。 | my passport / 我的护照 ,or-v4-passport,,,,NOT_RUN
+ow-station,3,word,station,车站,Where is the station? / 车站在哪里？ | the station / 车站 ,or-v4-station,,,,NOT_RUN
+ow-street,3,word,street,街道,The hotel is on this street. / 酒店在这条街上。 | this street / 这条街 ,or-v4-street,,,,NOT_RUN
+ow-shop,4,word,shop,商店,Where is the shop? / 商店在哪里？ | the shop / 商店 ,or-v4-shop,,,,NOT_RUN
+ow-restaurant,3,word,restaurant,餐馆,Is there a restaurant near here? / 这附近有餐馆吗？ | a restaurant / 一家餐馆 ,or-v4-restaurant,,,,NOT_RUN
+ow-toilet,3,word,toilet,厕所；马桶,Where is the toilet? / 厕所在哪里？ | the toilet / 厕所；马桶 ,or-v4-toilet,,,,NOT_RUN
+ow-bathroom,3,word,bathroom,洗手间；浴室,Where is the bathroom? / 洗手间在哪里？ | the bathroom / 洗手间 ,or-v4-bathroom,,,,NOT_RUN
+ow-doctor,3,word,doctor,医生,I need a doctor. / 我需要医生。 | a doctor / 一位医生 ,or-v4-doctor,,,,NOT_RUN
+ow-hospital,3,word,hospital,医院,Please take me to the hospital. / 请带我去医院。 | to the hospital / 去医院 ,or-v4-hospital,,,,NOT_RUN
+ow-problem,3,word,problem,问题；困难,I have a problem. / 我遇到了一个问题。 | a problem / 一个问题 ,or-v4-problem,,,,NOT_RUN
+ow-message,3,word,message,消息,Please send me a message. / 请给我发一条消息。 | send a message / 发一条消息 ,or-v4-message,,,,NOT_RUN
+ow-address,3,word,address,地址（这里用名词）,Please send me the address. / 请把地址发给我。 | the address / 地址 ,or-v4-address,,,,NOT_RUN
+ow-number,3,word,number,数字；号码,What is your phone number? / 你的电话号码是多少？ | your phone number / 你的电话号码 ,or-v4-number,,,,NOT_RUN
+ow-internet,3,word,internet,互联网,Can I use the internet here? / 我能在这里上网吗？ | use the internet / 上网 ,or-v4-internet,,,,NOT_RUN
+ow-password,3,word,password,密码,What is the password? / 密码是什么？ | the password / 密码 ,or-v4-password,,,,NOT_RUN
+ow-happy,3,word,happy,高兴的,I am happy to see you. / 见到你我很高兴。 | happy to see you / 很高兴见到你 ,or-v4-happy,,,,NOT_RUN
+ow-cold,3,word,cold,冷的,The water is cold. / 水是凉的。 | cold water / 凉水 ,or-v4-cold,,,,NOT_RUN
+ow-hot,3,word,hot,热的,Can I have some hot water? / 我可以要一些热水吗？ | hot water / 热水 ,or-v4-hot,,,,NOT_RUN
+ow-sick,3,word,sick,生病的；不舒服的,I am sick. / 我生病了。 | feel sick / 感觉不舒服 ,or-v4-sick,,,,NOT_RUN
+ow-hungry,3,word,hungry,饿的,I am hungry. / 我饿了。 | feel hungry / 感到饿 ,or-v4-hungry,,,,NOT_RUN
+ow-thirsty,3,word,thirsty,渴的,I am thirsty. / 我渴了。 | feel thirsty / 感到渴 ,or-v4-thirsty,,,,NOT_RUN
+ow-sorry,3,word,sorry,抱歉的；对不起,I am sorry. / 对不起。 | I am sorry / 对不起 ,or-v4-sorry,,,,NOT_RUN
+ow-thanks,3,word,thanks,谢谢,Thanks for your help. / 谢谢你的帮助。 | thanks for your help / 谢谢你的帮助 ,or-v4-thanks,,,,NOT_RUN
+cb-come-here,3,combination,come here,到这里来,"Come here, please. / 请到这里来。",,,,,NOT_RUN
+cb-come-with-me,3,combination,come with me,跟我来,"Come with me, please. / 请跟我来。",,,,,NOT_RUN
+cb-come-back,3,combination,come back,回来,I will come back tomorrow. / 我明天会回来。,,,,,NOT_RUN
+cb-give-ticket,3,combination,give me a ticket,给我一张票,Please give me a ticket. / 请给我一张票。,,,,,NOT_RUN
+cb-give-number,3,combination,give me your number,给我你的号码,Can you give me your number? / 你能给我你的号码吗？,,,,,NOT_RUN
+cb-go-home,3,combination,go home,回家,I need to go home. / 我需要回家。,,,,,NOT_RUN
+cb-go-work,3,combination,go to work,去上班,I go to work by bus. / 我坐公交车上班。,,,,,NOT_RUN
+cb-go-bus,3,combination,go by bus,坐公交车去,We can go by bus. / 我们可以坐公交车去。,,,,,NOT_RUN
+cb-keep-bag,3,combination,keep my bag,保管我的包,Can you keep my bag here? / 你能把我的包保管在这里吗？,,,,,NOT_RUN
+cb-keep-ticket,3,combination,keep your ticket,留好你的票,Please keep your ticket. / 请留好你的票。,,,,,NOT_RUN
+cb-let-help,3,combination,let me help,让我帮忙,Let me help you. / 让我帮你。,,,,,NOT_RUN
+cb-let-see,3,combination,let me see,让我看看,Let me see the message. / 让我看看这条消息。,,,,,NOT_RUN
+cb-let-try,3,combination,let me try,让我试试,Please let me try. / 请让我试试。,,,,,NOT_RUN
+cb-make-food,3,combination,make some food,做些吃的,I can make some food. / 我会做些吃的。,,,,,NOT_RUN
+cb-make-call,3,combination,make a call,打个电话,May I make a call? / 我可以打个电话吗？,,,,,NOT_RUN
+cb-make-clear,3,combination,make it clear,把意思说清楚,Please make it clear. / 请把意思说清楚。,,,,,NOT_RUN
+cb-put-table,3,combination,put it on the table,把它放到桌上,"Put it on the table, please. / 请把它放到桌上。",,,,,NOT_RUN
+cb-put-bag,3,combination,put it in the bag,把它放进包里,Please put it in the bag. / 请把它放进包里。,,,,,NOT_RUN
+cb-seem-tired,3,combination,seem tired,似乎累了,You seem tired. / 你似乎累了。,,,,,NOT_RUN
+cb-seem-happy,3,combination,seem happy,似乎很高兴,You seem happy. / 你似乎很高兴。,,,,,NOT_RUN
+cb-seem-ready,3,combination,seem ready,似乎准备好了,You seem ready. / 你似乎准备好了。,,,,,NOT_RUN
+cb-take-bag,3,combination,take this bag,拿这个包,Please take this bag. / 请拿这个包。,,,,,NOT_RUN
+cb-take-bus,3,combination,take a bus,坐公交车,We can take a bus. / 我们可以坐公交车。,,,,,NOT_RUN
+cb-take-time,3,combination,take some time,花一些时间,This will take some time. / 这会花一些时间。,,,,,NOT_RUN
+cb-be-here,3,combination,be here,在这里,I am here. / 我在这里。,,,,,NOT_RUN
+cb-be-ready,3,combination,be ready,准备好,I will be ready at six. / 我六点会准备好。,,,,,NOT_RUN
+cb-be-home,3,combination,be at home,在家,She is at home. / 她在家。,,,,,NOT_RUN
+cb-do-work,3,combination,do the work,做这项工作,I can do the work. / 我能做这项工作。,,,,,NOT_RUN
+cb-do-question,3,combination,do you have,你有……吗,Do you have a ticket? / 你有票吗？,,,,,NOT_RUN
+cb-do-negative,3,combination,do not know,不知道,I do not know the address. / 我不知道地址。,,,,,NOT_RUN
+cb-have-question,3,combination,have a question,有一个问题,I have a question. / 我有一个问题。,,,,,NOT_RUN
+cb-have-time,3,combination,have some time,有一些时间,Do you have some time? / 你有一些时间吗？,,,,,NOT_RUN
+cb-have-ticket,3,combination,have a ticket,有一张票,I have a ticket. / 我有一张票。,,,,,NOT_RUN
+cb-say-again,3,combination,say it again,再说一遍,Please say it again. / 请再说一遍。,,,,,NOT_RUN
+cb-say-name,3,combination,say your name,说出你的名字,Please say your name. / 请说出你的名字。,,,,,NOT_RUN
+cb-say-yes,3,combination,say yes,说好；表示同意,You can say yes or no. / 你可以说好或不好。,,,,,NOT_RUN
+cb-see-door,3,combination,see the door,看见门,I can see the door. / 我能看见门。,,,,,NOT_RUN
+cb-see-doctor,3,combination,see a doctor,看医生,I need to see a doctor. / 我需要看医生。,,,,,NOT_RUN
+cb-see-tomorrow,3,combination,see you tomorrow,明天见,I will see you tomorrow. / 我明天会见到你。,,,,,NOT_RUN
+cb-send-message,3,combination,send a message,发消息,Please send me a message. / 请给我发一条消息。,,,,,NOT_RUN
+cb-send-email,3,combination,send an email,发电子邮件,Can you send me an email? / 你能给我发一封电子邮件吗？,,,,,NOT_RUN
+cb-may-come,3,combination,may I come in,我可以进来吗,May I come in? / 我可以进来吗？,,,,,NOT_RUN
+cb-may-use,3,combination,may I use your phone,我可以用你的电话吗,May I use your phone? / 我可以用你的电话吗？,,,,,NOT_RUN
+cb-may-ask,3,combination,may I ask a question,我可以问一个问题吗,May I ask a question? / 我可以问一个问题吗？,,,,,NOT_RUN
+cb-will-help,3,combination,will help,会帮忙,I will help you. / 我会帮助你。,,,,,NOT_RUN
+cb-will-come,3,combination,will come,会来,I will come tomorrow. / 我明天来。,,,,,NOT_RUN
+cb-will-send,3,combination,will send,会发送,I will send you a message. / 我会给你发一条消息。,,,,,NOT_RUN
+pt-want,3,pattern,I want ___.,我想要……,I want some water. / 我想要一些水。,,,,,NOT_RUN
+pt-want-water,3,authored-variant,I want some water.,我想要一些水。,parent=pt-want,,,,,NOT_RUN
+pt-want-ticket,3,authored-variant,I want a ticket.,我想要一张票。,parent=pt-want,,,,,NOT_RUN
+pt-want-help,3,authored-variant,I want some help.,我想要一些帮助。,parent=pt-want,,,,,NOT_RUN
+pt-can,3,pattern,I can ___.,我能……,I can help you. / 我能帮助你。,,,,,NOT_RUN
+pt-can-help,3,authored-variant,I can help you.,我能帮助你。,parent=pt-can,,,,,NOT_RUN
+pt-can-read,3,authored-variant,I can read this message.,我能读懂这条消息。,parent=pt-can,,,,,NOT_RUN
+pt-can-write,3,authored-variant,I can write the address.,我能写下地址。,parent=pt-can,,,,,NOT_RUN
+pt-cannot,3,pattern,I cannot ___.,我不能……,I cannot find my ticket. / 我找不到我的票。,,,,,NOT_RUN
+pt-cannot-find,3,authored-variant,I cannot find my ticket.,我找不到我的票。,parent=pt-cannot,,,,,NOT_RUN
+pt-cannot-understand,3,authored-variant,I cannot understand this.,我不明白这个。,parent=pt-cannot,,,,,NOT_RUN
+pt-cannot-phone,3,authored-variant,I cannot use my phone.,我不能使用我的手机。,parent=pt-cannot,,,,,NOT_RUN
+pt-name,3,pattern,My name is ___.,我的名字是……,My name is Ava. / 我的名字是Ava。,,,,,NOT_RUN
+pt-name-ava,3,authored-variant,My name is Ava.,我的名字是Ava。,parent=pt-name,,,,,NOT_RUN
+pt-name-ben,3,authored-variant,My name is Ben.,我的名字是Ben。,parent=pt-name,,,,,NOT_RUN
+pt-name-mia,3,authored-variant,My name is Mia.,我的名字是Mia。,parent=pt-name,,,,,NOT_RUN
+pt-from,3,pattern,I am from ___.,我来自……,I am from China. / 我来自中国。,,,,,NOT_RUN
+pt-from-china,3,authored-variant,I am from China.,我来自中国。,parent=pt-from,,,,,NOT_RUN
+pt-from-japan,3,authored-variant,I am from Japan.,我来自日本。,parent=pt-from,,,,,NOT_RUN
+pt-from-brazil,3,authored-variant,I am from Brazil.,我来自巴西。,parent=pt-from,,,,,NOT_RUN
+pt-daily,3,pattern,I ___ every day.,我每天……,I work every day. / 我每天工作。,,,,,NOT_RUN
+pt-daily-work,3,authored-variant,I work every day.,我每天工作。,parent=pt-daily,,,,,NOT_RUN
+pt-daily-walk,3,authored-variant,I walk every day.,我每天步行。,parent=pt-daily,,,,,NOT_RUN
+pt-daily-read,3,authored-variant,I read every day.,我每天阅读。,parent=pt-daily,,,,,NOT_RUN
+pt-quantity,3,pattern,How many ___ do you need?,你需要多少……？,How many tickets do you need? / 你需要多少张票？,,,,,NOT_RUN
+pt-quantity-tickets,3,authored-variant,How many tickets do you need?,你需要多少张票？,parent=pt-quantity,,,,,NOT_RUN
+pt-quantity-rooms,3,authored-variant,How many rooms do you need?,你需要多少个房间？,parent=pt-quantity,,,,,NOT_RUN
+pt-quantity-bags,3,authored-variant,How many bags do you need?,你需要多少个包？,parent=pt-quantity,,,,,NOT_RUN
+pt-time-plan,3,pattern,I will ___ at ___.,我会在……点……,I will come at six. / 我六点来。,,,,,NOT_RUN
+pt-time-plan-come,3,authored-variant,I will come at six.,我六点来。,parent=pt-time-plan,,,,,NOT_RUN
+pt-time-plan-go,3,authored-variant,I will go at seven.,我七点走。,parent=pt-time-plan,,,,,NOT_RUN
+pt-time-plan-call,3,authored-variant,I will call you at eight.,我八点给你打电话。,parent=pt-time-plan,,,,,NOT_RUN
+pt-location,3,pattern,The ___ is ___.,……在……,The bag is under the table. / 包在桌子下面。,,,,,NOT_RUN
+pt-location-bag,3,authored-variant,The bag is under the table.,包在桌子下面。,parent=pt-location,,,,,NOT_RUN
+pt-location-door,3,authored-variant,The door is on the left.,门在左侧。,parent=pt-location,,,,,NOT_RUN
+pt-location-hotel,3,authored-variant,The hotel is near the station.,酒店在车站附近。,parent=pt-location,,,,,NOT_RUN
+pt-there,3,pattern,There is ___.,这里有……；存在……,There is a room here. / 这里有一个房间。,,,,,NOT_RUN
+pt-there-room,3,authored-variant,There is a room here.,这里有一个房间。,parent=pt-there,,,,,NOT_RUN
+pt-there-restaurant,3,authored-variant,There is a restaurant near here.,这附近有一家餐馆。,parent=pt-there,,,,,NOT_RUN
+pt-there-problem,3,authored-variant,There is a problem.,有一个问题。,parent=pt-there,,,,,NOT_RUN
+pt-repeat,3,pattern,Please ___ again.,请再……一遍,Please say that again. / 请再说一遍。,,,,,NOT_RUN
+pt-repeat-say,3,authored-variant,Please say that again.,请再说一遍。,parent=pt-repeat,,,,,NOT_RUN
+pt-repeat-read,3,authored-variant,Please read that again.,请再读一遍。,parent=pt-repeat,,,,,NOT_RUN
+pt-repeat-send,3,authored-variant,Please send the message again.,请再发一次这条消息。,parent=pt-repeat,,,,,NOT_RUN
+pt-payment,3,pattern,Can I pay ___?,我可以……付款吗？,Can I pay by card? / 我可以用银行卡付款吗？,,,,,NOT_RUN
+pt-payment-card,3,authored-variant,Can I pay by card?,我可以用银行卡付款吗？,parent=pt-payment,,,,,NOT_RUN
+pt-payment-cash,3,authored-variant,Can I pay in cash?,我可以用现金付款吗？,parent=pt-payment,,,,,NOT_RUN
+pt-payment-here,3,authored-variant,Can I pay here?,我可以在这里付款吗？,parent=pt-payment,,,,,NOT_RUN
+ex-intro-work,3,expression,I work in a shop. / I work at a shop.,介绍你在商店工作,in a shop和at a shop在此都可用于介绍在商店工作，含义相近。,,,,,NOT_RUN
+ex-live-here,3,expression,I live here. / My home is here.,告诉对方你住在这里,第一句用live介绍居住地；第二句用home说明家在这里。,,,,,NOT_RUN
+ex-new-here,3,expression,"I am new here. I do not know this place well. / I just got here, so I do not know this place well.",告诉对方你刚来这里，不太了解这个地方,两句都说明刚到、不熟悉；第二句用so把两个意思连接起来。,,,,,NOT_RUN
+ex-person-tired,3,expression,That person seems tired. / That person looks tired.,描述一个人看起来累了,seems tired和looks tired都表达印象，不是确认对方的身体状态。,,,,,NOT_RUN
+ex-describe-bag,3,expression,This bag is small. / This is a small bag.,说这个包是小的,第一句以包为主题说明大小；第二句把a small bag作为整体描述。,,,,,NOT_RUN
+ex-identify-phone,3,expression,That is my phone. / That phone is mine.,指出那是你的手机,第一句用my phone指出物品；第二句用mine说明所有权。,,,,,NOT_RUN
+ex-need-seat,3,expression,I need a place to sit. / Can I sit somewhere?,忘了座位这个词，用简单英语请求一个能坐下的地方,第一句说明需要坐的地方；第二句请求允许坐下，适合求助找座位。,,,,,NOT_RUN
+ex-want-rest,3,expression,I am tired. I need some rest. / I need to rest for a little while.,告诉对方你累了，需要休息一会儿,第一句说明疲劳及休息需求；第二句强调需要休息一小会儿。,,,,,NOT_RUN
+ex-choose-small-room,3,expression,"I would like a small room. / I want a small room, please.",告诉酒店你想要一个小房间,would like较委婉；want更直接，加入please保持礼貌。,,,,,NOT_RUN
+ex-leave-now,3,expression,I need to go now. / I have to leave now.,告诉对方你现在需要离开,need to go和have to leave在此都说明现在需要离开，后者常带必须的意味。,,,,,NOT_RUN
+ex-daily-walk,3,expression,I walk every day. / I go for a walk every day.,说你每天步行,第一句说每天步行；第二句通常指每天散步，不一定是步行通勤。,,,,,NOT_RUN
+ex-read-message,3,expression,Can you read this message? / Please read this message.,请求对方读一下这条消息,第一句以Can you请求读消息；第二句直接礼貌请求。,,,,,NOT_RUN
+ex-meet-eight,3,expression,Can we meet at eight? / How about meeting at eight?,提议八点见面,第一句询问八点见面是否可行；第二句以How about提出同一建议。,,,,,NOT_RUN
+ex-locate-bag,3,expression,The bag is under the table. / The bag is below the table.,说明包在桌子下面,under强调在桌子下面；below表示位置较低，实际遮挡关系可结合指物说明。,,,,,NOT_RUN
+ex-near-station,3,expression,Is the station near here? / Is the station close to here?,询问车站离这里近不近,near和close to在这里都表示距离近，注意close后接to。,,,,,NOT_RUN
+ex-two-tickets,3,expression,"I need two tickets. / Can I have two tickets, please?",请求两张票,第一句说明需要两张票；第二句礼貌地请求两张票。,,,,,NOT_RUN
+ex-price-two,3,expression,How much are these two things? / What is the price for both?,询问这两个东西总共多少钱,第一句直接问两个物品总价；第二句用both表示这两个，未询问单件价格。,,,,,NOT_RUN
+ex-payment-cash,3,expression,Can I pay in cash? / Can I use cash to pay?,询问是否可以付现金,pay in cash和use cash to pay都表示现金付款。,,,,,NOT_RUN
+ex-not-understand,3,expression,I do not understand. / I cannot understand this.,告诉对方你不明白,第一句说明不明白；第二句加this指出不理解的当前内容。,,,,,NOT_RUN
+ex-request-slow,3,expression,"Can you speak slowly, please? / Please speak more slowly.",请求对方说慢一点,第一句以Can you请求慢说；第二句用more slowly要求比刚才再慢一些。,,,,,NOT_RUN
+ex-need-doctor,3,expression,I am sick. I need a doctor. / Can you help me find a doctor?,身体不舒服，请求帮助找医生,第一句说明身体不适及找医生的需求；第二句直接请求帮助找到医生。,,,,,NOT_RUN
+ex-introduce-parent,3,expression,This is my father. / That person is my father.,介绍你的父亲,this和that通常分别指近处与较远处；请按照实际指向选择。,,,,,NOT_RUN
+ex-call-family,3,expression,May I use your phone to call my family? / Can I call my family on your phone?,询问能否用电话联系家人,May I较正式礼貌；Can I也常用于请求许可，两句都借电话联系家人。,,,,,NOT_RUN
+ex-sister-home,3,expression,My sister is at home. / My sister is home.,告诉对方你的姐妹在家,at home和home在这两句中都表示在家，指同一个姐妹。,,,,,NOT_RUN
+ex-order-water,3,expression,"Can I have a cup of water, please? / I would like a cup of water, please.",礼貌地要一杯水,Can I have提出请求；I would like礼貌表达想要一杯水。,,,,,NOT_RUN
+ex-less-sugar,3,expression,Please use less sugar. / Can you put in less sugar?,请求少放一点糖,第一句直接请求少放糖；第二句以Can you提出同一请求。,,,,,NOT_RUN
+ex-no-milk,3,expression,"No milk in my tea, please. / Please do not put milk in my tea.",告诉对方你的茶里不要加牛奶,第一句是自然的简短点单表达；第二句用完整请求说明不要加奶。,,,,,NOT_RUN
+ex-go-bus,3,expression,I will go there by bus. / I will take a bus there.,说你会坐公交车去那里,第一句用by bus说明方式；第二句用take a bus说明乘车动作。,,,,,NOT_RUN
+ex-ticket-direction,3,expression,Where can I buy a ticket? / Where can I get a ticket?,询问在哪里能买车票,buy明确问购票处；get也可表示拿到票，售票语境中通常能理解为购票。,,,,,NOT_RUN
+ex-hotel-key,3,expression,I cannot find my room key. / I do not know where my room key is.,在酒店说明房间钥匙找不到了,第一句说找不到房间钥匙；第二句说明不知道它在哪里，不推断丢失原因。,,,,,NOT_RUN
+ex-airport-wait,3,expression,Where can I wait? / Is there a place where I can wait?,在机场询问可以在哪里等,第一句直接问哪里能等；第二句询问是否有可等待的地方。,,,,,NOT_RUN
+ex-ask-quantity,3,expression,How many do you need? / How many would you like?,问对方需要多少个,第一句问需要多少；第二句问想要多少，意愿和必要数量可能不同，可继续确认。,,,,,NOT_RUN
+ex-work-delay,3,expression,I need a little more time. / Can you give me a little more time?,工作中说明你需要多一点时间,第一句说明需要更多时间；第二句直接请对方多给一点时间。,,,,,NOT_RUN
+ow-book,2,word,book,预订；书,I want to book a room. / 我想预订一个房间。 | book a room / 预订房间 ,or-v5-book,,,,NOT_RUN
+ow-reservation,2,word,reservation,预订记录,I have a reservation. / 我有预订。 | a reservation / 一份预订 ,or-v5-reservation,,,,NOT_RUN
+ow-reception,2,word,reception,接待处；前台,Where is reception? / 前台在哪里？ | hotel reception / 酒店前台 ,or-v5-reception,,,,NOT_RUN
+ow-floor,2,word,floor,楼层；地板,My room is on the first floor. / 我的房间在一楼。 | the first floor / 一楼 ,or-v5-floor,,,,NOT_RUN
+ow-towel,2,word,towel,毛巾,I need a clean towel. / 我需要一条干净的毛巾。 | a clean towel / 一条干净的毛巾 ,or-v5-towel,,,,NOT_RUN
+ow-elevator,2,word,elevator,电梯,The elevator is on your left. / 电梯在你的左边。 | take the elevator / 乘电梯 ,or-v5-elevator,,,,NOT_RUN
+ow-breakfast,2,word,breakfast,早餐,What time is breakfast? / 早餐几点开始？ | have breakfast / 吃早餐 ,or-v5-breakfast,,,,NOT_RUN
+ow-lunch,2,word,lunch,午餐,Let us have lunch here. / 我们在这里吃午餐吧。 | have lunch / 吃午餐 ,or-v5-lunch,,,,NOT_RUN
+ow-dinner,2,word,dinner,晚餐,Dinner is ready. / 晚餐准备好了。 | have dinner / 吃晚餐 ,or-v5-dinner,,,,NOT_RUN
+ow-menu,2,word,menu,菜单,Can I see the menu? / 我可以看看菜单吗？ | the menu / 菜单 ,or-v5-menu,,,,NOT_RUN
+ow-bill,2,word,bill,账单,"Can I have the bill, please? / 请给我账单，好吗？ | pay the bill / 付账 ",or-v5-bill,,,,NOT_RUN
+ow-receipt,2,word,receipt,收据,I need a receipt. / 我需要一张收据。 | get a receipt / 拿到收据 ,or-v5-receipt,,,,NOT_RUN
+ow-change,2,word,change,零钱；变化,Please keep the change. / 零钱不用找了。 | keep the change / 不用找零 ,or-v5-change,,,,NOT_RUN
+ow-cost,2,word,cost,花费；费用,How much does it cost? / 它要多少钱？ | the cost / 费用 ,or-v5-cost,,,,NOT_RUN
+ow-cheap,2,word,cheap,便宜的,This bag is cheap. / 这个包很便宜。 | a cheap bag / 一个便宜的包 ,or-v5-cheap,,,,NOT_RUN
+ow-expensive,2,word,expensive,昂贵的,This room is too expensive. / 这个房间太贵了。 | too expensive / 太贵 ,or-v5-expensive,,,,NOT_RUN
+ow-free,2,word,free,免费的；有空的,Is the water free? / 水是免费的吗？ | free water / 免费饮用水 ,or-v5-free,,,,NOT_RUN
+ow-size,2,word,size,尺寸；大小,Do you have this in a smaller size? / 这个有小一号的吗？ | a smaller size / 小一号 ,or-v5-size,,,,NOT_RUN
+ow-color,3,word,color,颜色,What color is your bag? / 你的包是什么颜色的？ | the same color / 相同的颜色 ,or-v5-color,,,,NOT_RUN
+ow-red,2,word,red,红色；红色的,My bag is red. / 我的包是红色的。 | a red bag / 一个红色的包 ,or-v5-red,,,,NOT_RUN
+ow-blue,2,word,blue,蓝色；蓝色的,I want the blue one. / 我想要蓝色的那个。 | a blue shirt / 一件蓝色衬衫 ,or-v5-blue,,,,NOT_RUN
+ow-black,2,word,black,黑色；黑色的,This is my black bag. / 这是我的黑色包。 | a black bag / 一个黑色的包 ,or-v5-black,,,,NOT_RUN
+ow-white,2,word,white,白色；白色的,The car is white. / 这辆车是白色的。 | a white car / 一辆白色的车 ,or-v5-white,,,,NOT_RUN
+ow-clothes,2,word,clothes,衣服,I need some clean clothes. / 我需要一些干净的衣服。 | clean clothes / 干净的衣服 ,or-v5-clothes,,,,NOT_RUN
+ow-shirt,2,word,shirt,衬衫,Can I try this shirt on? / 我可以试穿这件衬衫吗？ | a blue shirt / 一件蓝色衬衫 ,or-v5-shirt,,,,NOT_RUN
+ow-shoe,2,word,shoe,鞋,These shoes are too small. / 这双鞋太小了。 | a pair of shoes / 一双鞋 ,or-v5-shoe,,,,NOT_RUN
+ow-clean,2,word,clean,干净的；清洁,Please keep the room clean. / 请保持房间干净。 | keep it clean / 保持它干净 ,or-v5-clean,,,,NOT_RUN
+ow-dirty,2,word,dirty,脏的,This cup is dirty. / 这个杯子脏了。 | a dirty cup / 一个脏杯子 ,or-v5-dirty,,,,NOT_RUN
+ow-quiet,2,word,quiet,安静的,I need a quiet room. / 我需要一个安静的房间。 | a quiet room / 一个安静的房间 ,or-v5-quiet,,,,NOT_RUN
+ow-safe,2,word,safe,安全的,Is it safe to walk here? / 在这里步行安全吗？ | a safe place / 一个安全的地方 ,or-v5-safe,,,,NOT_RUN
+ow-busy,2,word,busy,忙的,I am busy now. / 我现在很忙。 | be busy / 忙着 ,or-v5-busy,,,,NOT_RUN
+ow-available,2,word,available,有空的；可提供的,Is a room available tonight? / 今晚有空房吗？ | a room available tonight / 今晚可入住的房间 ,or-v5-available,,,,NOT_RUN
+ow-full,2,word,full,满的；饱的,The bus is full. / 公共汽车满员了。 | a full bus / 一辆满员的公共汽车 ,or-v5-full,,,,NOT_RUN
+ow-empty,2,word,empty,空的,This bottle is empty. / 这个瓶子是空的。 | an empty bottle / 一个空瓶子 ,or-v5-empty,,,,NOT_RUN
+ow-broken,2,word,broken,坏了的,The door is broken. / 门坏了。 | a broken door / 一扇坏了的门 ,or-v5-broken,,,,NOT_RUN
+ow-lost,2,word,lost,迷路的；丢失的,I am lost. / 我迷路了。 | be lost / 迷路 ,or-v5-lost,,,,NOT_RUN
+ow-map,2,word,map,地图,Can you show me on the map? / 你能在地图上指给我看吗？ | a map of the city / 一张城市地图 ,or-v5-map,,,,NOT_RUN
+ow-stop,2,word,stop,停下；车站,Please stop here. / 请在这里停下。 | a bus stop / 一个公共汽车站 ,or-v5-stop,,,,NOT_RUN
+ow-taxi,2,word,taxi,出租车,I need a taxi to the airport. / 我需要一辆去机场的出租车。 | take a taxi / 乘出租车 ,or-v5-taxi,,,,NOT_RUN
+ow-flight,2,word,flight,航班,What time is my flight? / 我的航班是几点？ | my flight / 我的航班 ,or-v5-flight,,,,NOT_RUN
+ow-gate,2,word,gate,登机口；大门,Where is gate ten? / 十号登机口在哪里？ | gate ten / 十号登机口 ,or-v5-gate,,,,NOT_RUN
+ow-seat,2,word,seat,座位,Is this seat free? / 这个座位有人吗？ | a window seat / 一个靠窗座位 ,or-v5-seat,,,,NOT_RUN
+ow-window,2,word,window,窗户,Please open the window. / 请打开窗户。 | open the window / 打开窗户 ,or-v5-window,,,,NOT_RUN
+ow-road,2,word,road,道路,This road goes to the airport. / 这条路通往机场。 | the road to the airport / 去机场的路 ,or-v5-road,,,,NOT_RUN
+ow-city,2,word,city,城市,I live in this city. / 我住在这个城市。 | this city / 这个城市 ,or-v5-city,,,,NOT_RUN
+ow-country,2,word,country,国家；乡村,What country are you from? / 你来自哪个国家？ | my country / 我的国家 ,or-v5-country,,,,NOT_RUN
+ow-office,2,word,office,办公室,I work in an office. / 我在办公室工作。 | my office / 我的办公室 ,or-v5-office,,,,NOT_RUN
+ow-job,2,word,job,工作；职位,I have a new job. / 我有一份新工作。 | a new job / 一份新工作 ,or-v5-job,,,,NOT_RUN
+ow-meeting,2,word,meeting,会议；会面,The meeting is at ten. / 会议在十点开始。 | a meeting at ten / 十点的会议 ,or-v5-meeting,,,,NOT_RUN
+ow-order,2,word,order,订单；点餐,Can you send me my order number? / 你能把我的订单号发给我吗？ | an order number / 一个订单号 ,or-v5-order,,,,NOT_RUN
+ow-customer,2,word,customer,顾客,I can help this customer. / 我可以帮助这位顾客。 | a new customer / 一位新顾客 ,or-v5-customer,,,,NOT_RUN
+ow-product,2,word,product,产品,Can you send me a picture of the product? / 你能发给我一张产品图片吗？ | a product picture / 一张产品图片 ,or-v5-product,,,,NOT_RUN
+ow-picture,2,word,picture,图片；照片,Please send me a picture. / 请发给我一张图片。 | send a picture / 发送图片 ,or-v5-picture,,,,NOT_RUN
+ow-paper,2,word,paper,纸,Please write it on this paper. / 请把它写在这张纸上。 | a piece of paper / 一张纸 ,or-v5-paper,,,,NOT_RUN
+ow-pen,2,word,pen,笔,May I use your pen? / 我可以用你的笔吗？ | a pen and paper / 笔和纸 ,or-v5-pen,,,,NOT_RUN
+ow-copy,2,word,copy,副本；复制,Please send me a copy. / 请发给我一份副本。 | send a copy / 发送一份副本 ,or-v5-copy,,,,NOT_RUN
+ow-check,2,word,check,检查,Can you check the price? / 你能核对一下价格吗？ | check the price / 核对价格 ,or-v5-check,,,,NOT_RUN
+ow-show,2,word,show,给……看；展示,Please show me your ticket. / 请给我看一下你的票。 | show me / 给我看 ,or-v5-show,,,,NOT_RUN
+ow-close,3,word,close,关闭,Please close the door. / 请关门。 | close the door / 关门 ,or-v5-close,,,,NOT_RUN
+ow-start,2,word,start,开始,When does the meeting start? / 会议什么时候开始？ | start work / 开始工作 ,or-v5-start,,,,NOT_RUN
+ow-finish,2,word,finish,完成；结束,I will finish this today. / 我今天会完成这件事。 | finish work / 完成工作 ,or-v5-finish,,,,NOT_RUN
+ow-leave,2,word,leave,离开,When will the train leave? / 火车什么时候出发？ | leave now / 现在离开 ,or-v5-leave,,,,NOT_RUN
+ow-arrive,2,word,arrive,到达,When will the bus arrive? / 公共汽车什么时候到？ | arrive at the hotel / 到达酒店 ,or-v5-arrive,,,,NOT_RUN
+ow-return,3,word,return,返回；退还,I will return tomorrow. / 我明天会回来。 | return home / 回家 ,or-v5-return,,,,NOT_RUN
+ow-again,2,word,again,再次,Please say it again. / 请再说一遍。 | try again / 再试一次 ,or-v5-again,,,,NOT_RUN
+ow-slowly,2,word,slowly,慢慢地,Please speak slowly. / 请慢慢说。 | speak slowly / 慢慢说 ,or-v5-slowly,,,,NOT_RUN
+ow-together,2,word,together,一起,We can go together. / 我们可以一起去。 | work together / 一起工作 ,or-v5-together,,,,NOT_RUN
+ow-alone,2,word,alone,独自的；独自地,I live alone. / 我独自居住。 | go alone / 独自前往 ,or-v5-alone,,,,NOT_RUN
+ow-same,2,word,same,相同的,We have the same bag. / 我们的包是一样的。 | the same price / 相同的价格 ,or-v5-same,,,,NOT_RUN
+ow-different,2,word,different,不同的,I need a different size. / 我需要另一个尺码。 | a different size / 另一个尺码 ,or-v5-different,,,,NOT_RUN
+ow-important,2,word,important,重要的,This message is important. / 这条消息很重要。 | an important message / 一条重要的消息 ,or-v5-important,,,,NOT_RUN
+ow-possible,2,word,possible,可能的；可行的,Is it possible to pay by card? / 可以用卡付款吗？ | if possible / 如果可以的话 ,or-v5-possible,,,,NOT_RUN
+ow-sure,2,word,sure,确定的,I am not sure. / 我不确定。 | be sure / 确定 ,or-v5-sure,,,,NOT_RUN
+ow-because,2,word,because,因为,I need help because I am lost. / 我需要帮助，因为我迷路了。 | because I am lost / 因为我迷路了 ,or-v5-because,,,,NOT_RUN
+ow-if,2,word,if,如果,Please call me if you need help. / 如果你需要帮助，请给我打电话。 | if you need help / 如果你需要帮助 ,or-v5-if,,,,NOT_RUN
+ow-before,2,word,before,在……之前,Please call me before ten. / 请在十点前给我打电话。 | before ten / 十点之前 ,or-v5-before,,,,NOT_RUN
+ow-after,2,word,after,在……之后,We can go after lunch. / 我们可以午餐后去。 | after lunch / 午餐之后 ,or-v5-after,,,,NOT_RUN
+ow-until,2,word,until,直到……为止,I can wait until five. / 我可以等到五点。 | until five / 直到五点 ,or-v5-until,,,,NOT_RUN
+ow-medicine,2,word,medicine,药,I need some medicine. / 我需要一些药。 | take medicine / 吃药 ,or-v5-medicine,,,,NOT_RUN
+ow-pain,2,word,pain,疼痛,I have pain in my back. / 我的背部疼。 | back pain / 背痛 ,or-v5-pain,,,,NOT_RUN
+ow-allergy,2,word,allergy,过敏,I have a food allergy. / 我有食物过敏。 | a food allergy / 食物过敏 ,or-v5-allergy,,,,NOT_RUN
+ow-emergency,2,word,emergency,紧急情况,This is an emergency. / 这是紧急情况。 | in an emergency / 在紧急情况下 ,or-v5-emergency,,,,NOT_RUN
+ow-police,2,word,police,警察,Please call the police. / 请报警。 | call the police / 报警 ,or-v5-police,,,,NOT_RUN
+cb-come-in,2,combination,come in,进来,Please come in. / 请进。,,,,,NOT_RUN
+cb-get-a-receipt,2,combination,get a receipt,拿到收据,Can I get a receipt? / 我可以拿一张收据吗？,,,,,NOT_RUN
+cb-give-me-a-map,2,combination,give me a map,给我一张地图,Please give me a map. / 请给我一张地图。,,,,,NOT_RUN
+cb-go-to-the-gate,2,combination,go to the gate,去登机口,Please go to gate ten. / 请去十号登机口。,,,,,NOT_RUN
+cb-keep-the-change,2,combination,keep the change,不用找零,Please keep the change. / 零钱不用找了。,,,,,NOT_RUN
+cb-let-me-check,2,combination,let me check,让我核查一下,Let me check the price. / 让我核对一下价格。,,,,,NOT_RUN
+cb-make-a-reservation,2,combination,make a reservation,进行预订,I want to make a reservation. / 我想进行预订。,,,,,NOT_RUN
+cb-put-it-in-writing,2,combination,put it in writing,把它写下来,Please put the price in writing. / 请把价格写下来。,,,,,NOT_RUN
+cb-seem-busy,2,combination,seem busy,似乎很忙,You seem busy. / 你似乎很忙。,,,,,NOT_RUN
+cb-take-a-taxi,2,combination,take a taxi,乘出租车,We can take a taxi. / 我们可以乘出租车。,,,,,NOT_RUN
+cb-be-on-time,2,combination,be on time,准时,Please be on time. / 请准时。,,,,,NOT_RUN
+cb-do-not-understand,2,combination,do not understand,不理解,I do not understand this message. / 我不理解这条消息。,,,,,NOT_RUN
+cb-have-breakfast,2,combination,have breakfast,吃早餐,We can have breakfast here. / 我们可以在这里吃早餐。,,,,,NOT_RUN
+cb-say-it-slowly,2,combination,say it slowly,慢慢说,Please say it slowly. / 请慢慢说。,,,,,NOT_RUN
+cb-see-the-menu,2,combination,see the menu,看看菜单,Can I see the menu? / 我可以看看菜单吗？,,,,,NOT_RUN
+cb-send-me-a-copy,2,combination,send me a copy,发给我一份副本,Please send me a copy. / 请发给我一份副本。,,,,,NOT_RUN
+cb-may-need-help,2,combination,may need help,可能需要帮助,We may need help. / 我们可能需要帮助。,,,,,NOT_RUN
+cb-will-return-tomorrow,2,combination,will return tomorrow,明天会回来,I will return tomorrow. / 我明天会回来。,,,,,NOT_RUN
+pt-book,2,pattern,I want to book ___.,我想预订……。,I want to book a room. / 我想预订一个房间。,,,,,NOT_RUN
+pt-book-room,2,authored-variant,I want to book a room.,我想预订一个房间。,parent=pt-book,,,,,NOT_RUN
+pt-book-table,2,authored-variant,I want to book a table.,我想预订一张餐桌。,parent=pt-book,,,,,NOT_RUN
+pt-book-taxi,2,authored-variant,I want to book a taxi.,我想预订一辆出租车。,parent=pt-book,,,,,NOT_RUN
+pt-too,2,pattern,This is too ___.,这太……了。,This is too expensive. / 这太贵了。,,,,,NOT_RUN
+pt-too-expensive,2,authored-variant,This is too expensive.,这太贵了。,parent=pt-too,,,,,NOT_RUN
+pt-too-small,2,authored-variant,This is too small.,这太小了。,parent=pt-too,,,,,NOT_RUN
+pt-too-hot,2,authored-variant,This is too hot.,这太热了。,parent=pt-too,,,,,NOT_RUN
+pt-please-check,2,pattern,Please check ___.,请核查……。,Please check the price. / 请核对价格。,,,,,NOT_RUN
+pt-please-check-price,2,authored-variant,Please check the price.,请核对价格。,parent=pt-please-check,,,,,NOT_RUN
+pt-please-check-number,2,authored-variant,Please check the number.,请核对号码。,parent=pt-please-check,,,,,NOT_RUN
+pt-please-check-order,2,authored-variant,Please check my order.,请核查我的订单。,parent=pt-please-check,,,,,NOT_RUN
+pt-explain-thing,2,pattern,It is a thing for ___.,这是用来……的东西。,It is a thing for opening doors. / 这是用来开门的东西。,,,,,NOT_RUN
+pt-explain-thing-opening,2,authored-variant,It is a thing for opening doors.,这是用来开门的东西。,parent=pt-explain-thing,,,,,NOT_RUN
+pt-explain-thing-writing,2,authored-variant,It is a thing for writing.,这是用来写字的东西。,parent=pt-explain-thing,,,,,NOT_RUN
+pt-explain-thing-drinking,2,authored-variant,It is a thing for drinking water.,这是用来喝水的东西。,parent=pt-explain-thing,,,,,NOT_RUN
+ex-swap-book,2,expression,I want to book a room. / I would like to book a room.,我想预订一个房间。,want直接表达意愿；would like更委婉。替换练习以当前选中的中文和例句为准。,,,,,NOT_RUN
+ex-swap-too,2,expression,This is too expensive. / The price is too high.,这太贵了。,第一句用expensive描述物品；第二句用price is high说明价格高。,,,,,NOT_RUN
+ex-swap-check,2,expression,"Please check the price. / Can you check the price, please?",请核对价格。,第一句直接礼貌请求核价；第二句用Can you提问式请求。,,,,,NOT_RUN
+ex-swap-explain,3,expression,It is a thing for opening doors. / You use it to open a door.,这是用来开门的东西。,第一句说明用途；第二句从使用者动作说明。替换后的意思以上方中文为准。,,,,,NOT_RUN
+ex-paraphrase-receipt,2,expression,I need a piece of paper that shows how much I paid. / Please give me a piece of paper showing how much I paid.,不会说“收据”：请用简单英语说明，你需要一张纸，显示你付了多少钱。,两句都请求显示已付款金额的纸质记录，第二句是较直接的礼貌请求。,,,,,NOT_RUN
+ex-paraphrase-elevator,2,expression,Where is the thing that takes people up and down between floors? / I need to go up. Where is the thing that takes people to other floors?,不会说“电梯”：说明你要找一个能在楼层之间载人的房间一样的东西。,第一句通过楼层之间载人的用途解释；第二句先说想上楼，再说明要找的东西。,,,,,NOT_RUN
+ex-paraphrase-reservation,2,expression,I want to book a room now for tomorrow. / Can you keep a room for me for tomorrow?,不会说“预订”：说明你想现在订好房间，明天入住。,第一句用book预订明天的房间；第二句请求对方为你留一间房。,,,,,NOT_RUN
+ex-paraphrase-allergy,2,expression,This food makes me sick. I cannot eat it. / I cannot eat this food because it makes me sick.,不会说“过敏”：说明某种食物会让你生病，你不能吃它。,这是用普通英语说明不能吃及身体反应的练习，不是医学诊断。“过敏”涉及安全时可直接出示 allergy 这个词并请求专业帮助。 | 两句都说明某种食物会让你不舒服、不能吃；描述现象不等于确认医学上的过敏诊断。,,,,,NOT_RUN
+ex-paraphrase-charger,2,expression,I need something to give my phone power. / My phone needs power. Do you have something I can use?,不会说“充电器”：说明你需要给手机补充电力的东西。,第一句请求能给手机补电的东西；第二句先说明情况，再请对方提供可用物品。,,,,,NOT_RUN
+ex-paraphrase-pharmacy,2,expression,Where can I buy medicine? / Is there a shop here that sells medicine?,不会说“药店”：询问哪里可以买药。,第一句直接问哪里买药；第二句用销售药品的商店来解释。,,,,,NOT_RUN
+ex-paraphrase-vegetarian,2,expression,I want food with no meat or fish. / Please give me food without meat or fish.,不会说“素食”：说明你想要不含肉或鱼的食物。,两句都说明不要肉和鱼；with no与without在这里表达同一限制。,,,,,NOT_RUN
+ex-paraphrase-delayed,2,expression,The bus will be late. It will not get here on time. / The bus will not arrive on time. It will be late.,不会说“延误”：说明公交车会比原计划晚到。,两句都说明公交车晚到、不能按时到达，仅调整说明顺序。,,,,,NOT_RUN
+ow-son,1,word,son,儿子,This is my son. / 这是我的儿子。 | my son / 我的儿子 ,or-v6-son,,,,NOT_RUN
+ow-daughter,1,word,daughter,女儿,My daughter is at home. / 我的女儿在家。 | my daughter / 我的女儿 ,or-v6-daughter,,,,NOT_RUN
+ow-baby,1,word,baby,婴儿,The baby is asleep. / 婴儿睡着了。 | a baby / 一个婴儿 ,or-v6-baby,,,,NOT_RUN
+ow-couple,1,word,couple,一对；夫妻,This couple needs a room. / 这对夫妻需要一个房间。 | a couple / 一对夫妻 ,or-v6-couple,,,,NOT_RUN
+ow-neighbor,1,word,neighbor,邻居,My neighbor can help. / 我的邻居能帮忙。 | my neighbor / 我的邻居 ,or-v6-neighbor,,,,NOT_RUN
+ow-guest,1,word,guest,客人,We have a guest today. / 我们今天有一位客人。 | a guest / 一位客人 ,or-v6-guest,,,,NOT_RUN
+ow-adult,1,word,adult,成年人,This ticket is for one adult. / 这张票供一位成年人使用。 | one adult / 一位成年人 ,or-v6-adult,,,,NOT_RUN
+ow-by,1,word,by,通过；在……旁边,We can go by bus. / 我们可以坐公交车去。 | by bus / 坐公交车 ,or-v6-by,,,,NOT_RUN
+ow-pet,1,word,pet,宠物,Do you have a pet? / 你养宠物吗？ | have a pet / 养宠物 ,or-v6-pet,,,,NOT_RUN
+ow-dog,1,word,dog,狗,The dog is outside. / 狗在外面。 | a small dog / 一只小狗 ,or-v6-dog,,,,NOT_RUN
+ow-cat,1,word,cat,猫,My cat is under the bed. / 我的猫在床下面。 | a white cat / 一只白猫 ,or-v6-cat,,,,NOT_RUN
+ow-body,2,word,body,身体,My whole body hurts. / 我浑身疼。 | the human body / 人体 ,or-v6-body,,,,NOT_RUN
+ow-head,1,word,head,头,My head hurts. / 我的头疼。 | my head / 我的头 ,or-v6-head,,,,NOT_RUN
+ow-face,1,word,face,脸,Please wash your face. / 请洗脸。 | wash your face / 洗脸 ,or-v6-face,,,,NOT_RUN
+ow-eye,1,word,eye,眼睛,My eyes are tired. / 我的眼睛累了。 | my eyes / 我的眼睛 ,or-v6-eye,,,,NOT_RUN
+ow-ear,1,word,ear,耳朵,I have pain in my ear. / 我的耳朵疼。 | my ear / 我的耳朵 ,or-v6-ear,,,,NOT_RUN
+ow-nose,2,word,nose,鼻子,My nose is cold. / 我的鼻子冰凉。 | my nose / 我的鼻子 ,or-v6-nose,,,,NOT_RUN
+ow-mouth,1,word,mouth,嘴,Please open your mouth. / 请张嘴。 | open your mouth / 张嘴 ,or-v6-mouth,,,,NOT_RUN
+ow-tooth,1,word,tooth,牙齿,This tooth hurts. / 这颗牙疼。 | a tooth / 一颗牙 ,or-v6-tooth,,,,NOT_RUN
+ow-hand,1,word,hand,手,Please wash your hands. / 请洗手。 | wash your hands / 洗手 ,or-v6-hand,,,,NOT_RUN
+ow-arm,1,word,arm,手臂,I cannot move my arm. / 我的手臂动不了。 | my arm / 我的手臂 ,or-v6-arm,,,,NOT_RUN
+ow-leg,1,word,leg,腿,My leg hurts. / 我的腿疼。 | my leg / 我的腿 ,or-v6-leg,,,,NOT_RUN
+ow-foot,1,word,foot,脚,These shoes hurt my feet. / 这双鞋使我的脚疼。 | my feet / 我的双脚 ,or-v6-foot,,,,NOT_RUN
+ow-finger,1,word,finger,手指,I hurt my finger. / 我弄伤了手指。 | my finger / 我的手指 ,or-v6-finger,,,,NOT_RUN
+ow-hair,1,word,hair,头发,My hair is wet. / 我的头发湿了。 | long hair / 长发 ,or-v6-hair,,,,NOT_RUN
+ow-skin,1,word,skin,皮肤,My skin is dry. / 我的皮肤很干。 | dry skin / 干燥的皮肤 ,or-v6-skin,,,,NOT_RUN
+ow-heart,2,word,heart,心脏；内心,The heart moves blood around the body. / 心脏推动血液在体内流动。 | the heart / 心脏 ,or-v6-heart,,,,NOT_RUN
+ow-blood,1,word,blood,血液,There is blood on my hand. / 我的手上有血。 | some blood / 一些血 ,or-v6-blood,,,,NOT_RUN
+ow-voice,1,word,voice,嗓音,I know that voice. / 我认得那个声音。 | a quiet voice / 轻柔的嗓音 ,or-v6-voice,,,,NOT_RUN
+ow-sound,1,word,sound,声音,I can hear a sound. / 我能听到一个声音。 | a loud sound / 很响的声音 ,or-v6-sound,,,,NOT_RUN
+ow-hurt,1,word,hurt,疼；弄伤,My back hurts. / 我的背疼。 | hurt my back / 弄伤我的背 ,or-v6-hurt,,,,NOT_RUN
+ow-fever,1,word,fever,发烧,I have a fever. / 我发烧了。 | have a fever / 发烧 ,or-v6-fever,,,,NOT_RUN
+ow-cough,1,word,cough,咳嗽,I have a cough. / 我咳嗽。 | have a cough / 咳嗽 ,or-v6-cough,,,,NOT_RUN
+ow-nurse,1,word,nurse,护士,Can I speak to a nurse? / 我可以和护士说话吗？ | a nurse / 一位护士 ,or-v6-nurse,,,,NOT_RUN
+ow-dentist,1,word,dentist,牙医,I need to see a dentist. / 我需要看牙医。 | see a dentist / 看牙医 ,or-v6-dentist,,,,NOT_RUN
+ow-appointment,1,word,appointment,预约,I have an appointment at ten. / 我预约了十点。 | make an appointment / 预约 ,or-v6-appointment,,,,NOT_RUN
+ow-health,1,word,health,健康,Walking is good for your health. / 步行有益健康。 | good health / 健康的身体 ,or-v6-health,,,,NOT_RUN
+ow-rest,1,word,rest,休息,I need some rest. / 我需要休息。 | have a rest / 休息一下 ,or-v6-rest,,,,NOT_RUN
+ow-sleep,1,word,sleep,睡觉,I need to sleep. / 我需要睡觉。 | go to sleep / 入睡 ,or-v6-sleep,,,,NOT_RUN
+ow-awake,1,word,awake,醒着的,The baby is awake. / 婴儿醒着。 | stay awake / 保持清醒 ,or-v6-awake,,,,NOT_RUN
+ow-asleep,1,word,asleep,睡着的,My son is asleep. / 我的儿子睡着了。 | be asleep / 睡着 ,or-v6-asleep,,,,NOT_RUN
+ow-wake,1,word,wake,醒来；唤醒,Please wake me at seven. / 请在七点叫醒我。 | wake up / 醒来 ,or-v6-wake,,,,NOT_RUN
+ow-sit,1,word,sit,坐,May I sit here? / 我可以坐这里吗？ | sit down / 坐下 ,or-v6-sit,,,,NOT_RUN
+ow-stand,1,word,stand,站立,Please stand here. / 请站在这里。 | stand up / 站起来 ,or-v6-stand,,,,NOT_RUN
+ow-move,1,word,move,移动,Can you move this chair? / 你能移动这把椅子吗？ | move the chair / 移动椅子 ,or-v6-move,,,,NOT_RUN
+ow-carry,1,word,carry,携带；搬,Can you carry this bag? / 你能提这个包吗？ | carry a bag / 提包 ,or-v6-carry,,,,NOT_RUN
+ow-hold,1,word,hold,拿着；握住,Please hold my bag. / 请帮我拿着包。 | hold my hand / 握住我的手 ,or-v6-hold,,,,NOT_RUN
+ow-bring,2,word,bring,带来,Please bring some water. / 请带些水来。 | bring water / 带水来 ,or-v6-bring,,,,NOT_RUN
+ow-turn,1,word,turn,转动；转弯,Turn left here. / 在这里左转。 | turn left / 左转 ,or-v6-turn,,,,NOT_RUN
+ow-follow,1,word,follow,跟随,Please follow me. / 请跟我来。 | follow me / 跟我来 ,or-v6-follow,,,,NOT_RUN
+ow-reach,1,word,reach,到达；够到,I cannot reach the window. / 我够不到窗户。 | reach the window / 够到窗户 ,or-v6-reach,,,,NOT_RUN
+ow-pass,1,word,pass,递；经过,Please pass me the water. / 请把水递给我。 | pass me the water / 把水递给我 ,or-v6-pass,,,,NOT_RUN
+ow-pick,1,word,pick,挑选；摘,Please pick a color. / 请选择一种颜色。 | pick a color / 挑选颜色 ,or-v6-pick,,,,NOT_RUN
+ow-choose,1,word,choose,选择,You can choose a seat. / 你可以选择一个座位。 | choose a seat / 选座位 ,or-v6-choose,,,,NOT_RUN
+ow-wear,1,word,wear,穿着；戴着,I wear glasses. / 我戴眼镜。 | wear glasses / 戴眼镜 ,or-v6-wear,,,,NOT_RUN
+ow-wash,1,word,wash,洗,I wash my hands before lunch. / 我午餐前洗手。 | wash your hands / 洗手 ,or-v6-wash,,,,NOT_RUN
+ow-dry,1,word,dry,干的；弄干,Please keep this towel dry. / 请保持这条毛巾干燥。 | a dry towel / 一条干毛巾 ,or-v6-dry,,,,NOT_RUN
+ow-wet,1,word,wet,湿的,My shoes are wet. / 我的鞋湿了。 | wet shoes / 湿鞋子 ,or-v6-wet,,,,NOT_RUN
+ow-meat,1,word,meat,肉,I do not eat meat. / 我不吃肉。 | some meat / 一些肉 ,or-v6-meat,,,,NOT_RUN
+ow-fish,1,word,fish,鱼；鱼肉,I would like some fish. / 我想要一些鱼肉。 | some fish / 一些鱼肉 ,or-v6-fish,,,,NOT_RUN
+ow-chicken,1,word,chicken,鸡；鸡肉,Can I have chicken and rice? / 我可以要鸡肉和米饭吗？ | chicken and rice / 鸡肉和米饭 ,or-v6-chicken,,,,NOT_RUN
+ow-egg,1,word,egg,鸡蛋,I want an egg for breakfast. / 我早餐想吃一个鸡蛋。 | an egg / 一个鸡蛋 ,or-v6-egg,,,,NOT_RUN
+ow-cheese,1,word,cheese,奶酪,Does this bread have cheese in it? / 这个面包里有奶酪吗？ | bread and cheese / 面包和奶酪 ,or-v6-cheese,,,,NOT_RUN
+ow-butter,1,word,butter,黄油,"No butter, please. / 请不要放黄油。 | some butter / 一些黄油 ",or-v6-butter,,,,NOT_RUN
+ow-salt,1,word,salt,盐,Please use less salt. / 请少放一点盐。 | less salt / 少一点盐 ,or-v6-salt,,,,NOT_RUN
+ow-sugar,1,word,sugar,糖,Do you want sugar in your tea? / 你的茶里要放糖吗？ | less sugar / 少一点糖 ,or-v6-sugar,,,,NOT_RUN
+ow-oil,1,word,oil,油,Please use less oil. / 请少放一点油。 | cooking oil / 食用油 ,or-v6-oil,,,,NOT_RUN
+ow-soup,1,word,soup,汤,This soup is hot. / 这碗汤很烫。 | a bowl of soup / 一碗汤 ,or-v6-soup,,,,NOT_RUN
+ow-salad,1,word,salad,沙拉,I would like a salad. / 我想要一份沙拉。 | a salad / 一份沙拉 ,or-v6-salad,,,,NOT_RUN
+ow-vegetable,1,word,vegetable,蔬菜,I want more vegetables. / 我想要更多蔬菜。 | fresh vegetables / 新鲜蔬菜 ,or-v6-vegetable,,,,NOT_RUN
+ow-fruit,1,word,fruit,水果,Do you have any fruit? / 你有水果吗？ | some fruit / 一些水果 ,or-v6-fruit,,,,NOT_RUN
+ow-apple,1,word,apple,苹果,Can I have an apple? / 我可以要一个苹果吗？ | an apple / 一个苹果 ,or-v6-apple,,,,NOT_RUN
+ow-banana,1,word,banana,香蕉,I eat a banana every day. / 我每天吃一根香蕉。 | a banana / 一根香蕉 ,or-v6-banana,,,,NOT_RUN
+ow-orange,1,word,orange,橙子；橙色,I want an orange. / 我想要一个橙子。 | an orange / 一个橙子 ,or-v6-orange,,,,NOT_RUN
+ow-potato,1,word,potato,土豆,Can I have some potatoes? / 我可以要一些土豆吗？ | some potatoes / 一些土豆 ,or-v6-potato,,,,NOT_RUN
+ow-tomato,1,word,tomato,西红柿,There is a tomato in the salad. / 沙拉里有一个西红柿。 | a tomato / 一个西红柿 ,or-v6-tomato,,,,NOT_RUN
+ow-onion,2,word,onion,洋葱,"No onion, please. / 请不要放洋葱。 | some onion / 一些洋葱 ",or-v6-onion,,,,NOT_RUN
+ow-bean,1,word,bean,豆子,I like rice and beans. / 我喜欢米饭配豆子。 | rice and beans / 米饭配豆子 ,or-v6-bean,,,,NOT_RUN
+ow-noodle,1,word,noodle,面条,I would like some noodles. / 我想要一些面条。 | a bowl of noodles / 一碗面条 ,or-v6-noodle,,,,NOT_RUN
+ow-pasta,1,word,pasta,意大利面,Do you have pasta? / 你们有意大利面吗？ | some pasta / 一些意大利面 ,or-v6-pasta,,,,NOT_RUN
+ow-sandwich,1,word,sandwich,三明治,I need a sandwich to take away. / 我需要一个外带的三明治。 | a sandwich / 一个三明治 ,or-v6-sandwich,,,,NOT_RUN
+ow-cake,1,word,cake,蛋糕,Can I have a piece of cake? / 我可以要一块蛋糕吗？ | a piece of cake / 一块蛋糕 ,or-v6-cake,,,,NOT_RUN
+ow-juice,1,word,juice,果汁,I would like some orange juice. / 我想要一些橙汁。 | orange juice / 橙汁 ,or-v6-juice,,,,NOT_RUN
+ow-ice,1,word,ice,冰,"No ice in my water, please. / 我的水里请不要加冰。 | with ice / 加冰 ",or-v6-ice,,,,NOT_RUN
+ow-beer,1,word,beer,啤酒,I would like a small beer. / 我想要一小杯啤酒。 | a glass of beer / 一杯啤酒 ,or-v6-beer,,,,NOT_RUN
+ow-wine,1,word,wine,葡萄酒,Do you have red wine? / 你们有红葡萄酒吗？ | red wine / 红葡萄酒 ,or-v6-wine,,,,NOT_RUN
+ow-bowl,1,word,bowl,碗,Can I have a bowl? / 我可以要一个碗吗？ | a bowl of rice / 一碗米饭 ,or-v6-bowl,,,,NOT_RUN
+ow-plate,1,word,plate,盘子,This plate is clean. / 这个盘子是干净的。 | a clean plate / 一个干净盘子 ,or-v6-plate,,,,NOT_RUN
+ow-fork,1,word,fork,叉子,May I have a fork? / 可以给我一把叉子吗？ | a fork / 一把叉子 ,or-v6-fork,,,,NOT_RUN
+ow-spoon,1,word,spoon,勺子,I need a spoon. / 我需要一把勺子。 | a spoon / 一把勺子 ,or-v6-spoon,,,,NOT_RUN
+ow-knife,1,word,knife,刀,Please be careful with the knife. / 用刀时请小心。 | a knife / 一把刀 ,or-v6-knife,,,,NOT_RUN
+ow-glass,1,word,glass,玻璃；玻璃杯（glasses另可指眼镜）,Can I have a glass of water? / 我可以要一杯水吗？ | a glass of water / 一杯水  | wear glasses / 戴眼镜 ,or-v6-glass,,,,NOT_RUN
+ow-fresh,1,word,fresh,新鲜的,Is this fish fresh? / 这条鱼新鲜吗？ | fresh fish / 新鲜的鱼 ,or-v6-fresh,,,,NOT_RUN
+ow-sweet,1,word,sweet,甜的,This tea is too sweet. / 这杯茶太甜了。 | too sweet / 太甜 ,or-v6-sweet,,,,NOT_RUN
+ow-spicy,1,word,spicy,辣的,Is this food spicy? / 这个食物辣吗？ | spicy food / 辣的食物 ,or-v6-spicy,,,,NOT_RUN
+ow-warm,1,word,warm,温暖的；温热的,Can I have some warm water? / 我可以要些温水吗？ | warm water / 温水 ,or-v6-warm,,,,NOT_RUN
+ow-cool,1,word,cool,凉爽的；凉的,It is cool in this room. / 这个房间里很凉爽。 | cool water / 凉水 ,or-v6-cool,,,,NOT_RUN
+ow-kitchen,1,word,kitchen,厨房,Where is the kitchen? / 厨房在哪里？ | a small kitchen / 一个小厨房 ,or-v6-kitchen,,,,NOT_RUN
+ow-shower,1,word,shower,淋浴,The shower is not working. / 淋浴坏了。 | take a shower / 洗淋浴 ,or-v6-shower,,,,NOT_RUN
+ow-soap,1,word,soap,肥皂,I need some soap. / 我需要一些肥皂。 | some soap / 一些肥皂 ,or-v6-soap,,,,NOT_RUN
+ow-shampoo,1,word,shampoo,洗发水,Do you have shampoo? / 你们有洗发水吗？ | some shampoo / 一些洗发水 ,or-v6-shampoo,,,,NOT_RUN
+ow-blanket,1,word,blanket,毯子,Can I have another blanket? / 可以再给我一条毯子吗？ | a warm blanket / 一条暖和的毯子 ,or-v6-blanket,,,,NOT_RUN
+ow-pillow,1,word,pillow,枕头,I need another pillow. / 我需要再加一个枕头。 | a soft pillow / 一个软枕头 ,or-v6-pillow,,,,NOT_RUN
+ow-sheet,1,word,sheet,床单；纸张,Please change the sheets. / 请换床单。 | clean sheets / 干净的床单 ,or-v6-sheet,,,,NOT_RUN
+ow-light,1,word,light,灯；光,Please turn on the light. / 请打开灯。 | turn on the light / 开灯 ,or-v6-light,,,,NOT_RUN
+ow-switch,1,word,switch,开关,Where is the light switch? / 灯的开关在哪里？ | a light switch / 一个电灯开关 ,or-v6-switch,,,,NOT_RUN
+ow-heat,1,word,heat,热；暖气,There is no heat in my room. / 我的房间没有暖气。 | turn on the heat / 打开暖气 ,or-v6-heat,,,,NOT_RUN
+ow-fan,1,word,fan,风扇,Can you turn on the fan? / 你能打开风扇吗？ | turn on the fan / 开风扇 ,or-v6-fan,,,,NOT_RUN
+ow-air,1,word,air,空气,I need some fresh air. / 我需要呼吸一点新鲜空气。 | fresh air / 新鲜空气 ,or-v6-air,,,,NOT_RUN
+ow-wall,1,word,wall,墙,The picture is on the wall. / 图片在墙上。 | on the wall / 在墙上 ,or-v6-wall,,,,NOT_RUN
+ow-roof,1,word,roof,屋顶,There is water on the roof. / 屋顶上有水。 | on the roof / 在屋顶上 ,or-v6-roof,,,,NOT_RUN
+ow-stairs,1,word,stairs,楼梯,Where are the stairs? / 楼梯在哪里？ | take the stairs / 走楼梯 ,or-v6-stairs,,,,NOT_RUN
+ow-entrance,1,word,entrance,入口,The entrance is on your right. / 入口在你的右边。 | the main entrance / 正门入口 ,or-v6-entrance,,,,NOT_RUN
+ow-exit,1,word,exit,出口,Where is the exit? / 出口在哪里？ | the nearest exit / 最近的出口 ,or-v6-exit,,,,NOT_RUN
+ow-lobby,1,word,lobby,大厅,I will wait in the lobby. / 我会在大厅等。 | in the lobby / 在大厅 ,or-v6-lobby,,,,NOT_RUN
+ow-balcony,1,word,balcony,阳台,Does this room have a balcony? / 这个房间有阳台吗？ | a room with a balcony / 带阳台的房间 ,or-v6-balcony,,,,NOT_RUN
+ow-luggage,1,word,luggage,行李,Where can I leave my luggage? / 我可以把行李放在哪里？ | my luggage / 我的行李 ,or-v6-luggage,,,,NOT_RUN
+ow-suitcase,1,word,suitcase,旅行箱,I cannot find my suitcase. / 我找不到我的旅行箱。 | a small suitcase / 一个小旅行箱 ,or-v6-suitcase,,,,NOT_RUN
+ow-security,1,word,security,安全检查；安全保障,Where is the security check? / 安检在哪里？ | a security check / 安全检查 ,or-v6-security,,,,NOT_RUN
+ow-belt,1,word,belt,传送带；腰带,Please put your bag on the belt. / 请把包放在传送带上。 | the baggage belt / 行李传送带 ,or-v6-belt,,,,NOT_RUN
+ow-boarding,1,word,boarding,登机,What time is boarding? / 几点开始登机？ | boarding time / 登机时间 ,or-v6-boarding,,,,NOT_RUN
+ow-travel,1,word,travel,旅行,I like to travel by train. / 我喜欢坐火车旅行。 | travel by train / 乘火车旅行 ,or-v6-travel,,,,NOT_RUN
+ow-trip,1,word,trip,出行；旅行,How was your trip? / 你的旅行怎么样？ | a short trip / 一次短途旅行 ,or-v6-trip,,,,NOT_RUN
+ow-visit,1,word,visit,参观；拜访,I want to visit my friend. / 我想去看望朋友。 | visit a friend / 拜访朋友 ,or-v6-visit,,,,NOT_RUN
+ow-ride,1,word,ride,乘坐；骑,Can I ride with you? / 我可以搭你的车吗？ | ride a bike / 骑自行车 ,or-v6-ride,,,,NOT_RUN
+ow-drive,1,word,drive,驾驶,Can you drive a car? / 你会开车吗？ | drive a car / 开汽车 ,or-v6-drive,,,,NOT_RUN
+ow-bike,1,word,bike,自行车,Can I leave my bike here? / 我可以把自行车放这里吗？ | ride a bike / 骑自行车 ,or-v6-bike,,,,NOT_RUN
+ow-boat,1,word,boat,船,We can go by boat. / 我们可以坐船去。 | by boat / 乘船 ,or-v6-boat,,,,NOT_RUN
+ow-ship,1,word,ship,轮船,The ship will leave at six. / 轮船将在六点出发。 | a large ship / 一艘大船 ,or-v6-ship,,,,NOT_RUN
+ow-plane,1,word,plane,飞机,The plane is late. / 飞机晚点了。 | by plane / 乘飞机 ,or-v6-plane,,,,NOT_RUN
+ow-subway,1,word,subway,地铁,Where is the subway station? / 地铁站在哪里？ | take the subway / 乘地铁 ,or-v6-subway,,,,NOT_RUN
+ow-platform,1,word,platform,站台,Which platform do I need? / 我应该去哪个站台？ | platform two / 二号站台 ,or-v6-platform,,,,NOT_RUN
+ow-route,1,word,route,路线,Is this the right route? / 这是正确的路线吗？ | a bus route / 一条公交路线 ,or-v6-route,,,,NOT_RUN
+ow-corner,1,word,corner,拐角,Turn right at the corner. / 在拐角处右转。 | at the corner / 在拐角处 ,or-v6-corner,,,,NOT_RUN
+ow-cross,1,word,cross,横过；交叉,Can we cross the road here? / 我们可以在这里过马路吗？ | cross the road / 过马路 ,or-v6-cross,,,,NOT_RUN
+ow-traffic,1,word,traffic,交通；车流,There is a lot of traffic. / 路上车很多。 | heavy traffic / 拥堵的交通 ,or-v6-traffic,,,,NOT_RUN
+ow-bridge,1,word,bridge,桥,Go over the bridge. / 走过这座桥。 | over the bridge / 越过桥 ,or-v6-bridge,,,,NOT_RUN
+ow-park,1,word,park,公园,The park is near my home. / 公园在我家附近。 | in the park / 在公园里 ,or-v6-park,,,,NOT_RUN
+ow-parking,1,word,parking,停车；停车区域,Is parking free here? / 这里停车免费吗？ | free parking / 免费停车 ,or-v6-parking,,,,NOT_RUN
+ow-fuel,1,word,fuel,燃料,We need more fuel. / 我们需要更多燃料。 | some fuel / 一些燃料 ,or-v6-fuel,,,,NOT_RUN
+ow-gas,1,word,gas,汽油；气体,Where can I get gas? / 我在哪里可以加汽油？ | a gas station / 一个加油站 ,or-v6-gas,,,,NOT_RUN
+ow-distance,1,word,distance,距离,What is the distance to the hotel? / 到酒店有多远？ | a short distance / 一段短距离 ,or-v6-distance,,,,NOT_RUN
+ow-speed,1,word,speed,速度,Please drive at a safe speed. / 请以安全速度驾驶。 | a safe speed / 安全速度 ,or-v6-speed,,,,NOT_RUN
+ow-mile,1,word,mile,英里,The hotel is one mile away. / 酒店在一英里外。 | one mile / 一英里 ,or-v6-mile,,,,NOT_RUN
+ow-kilometer,2,word,kilometer,千米；公里,The station is two kilometers away. / 车站在两公里外。 | two kilometers / 两公里 ,or-v6-kilometer,,,,NOT_RUN
+ow-way,1,word,way,路；方法,Is this the way to the station? / 这是去车站的路吗？ | the way home / 回家的路 ,or-v6-way,,,,NOT_RUN
+ow-direction,1,word,direction,方向,Which direction is the hotel in? / 酒店在哪个方向？ | the right direction / 正确的方向 ,or-v6-direction,,,,NOT_RUN
+ow-north,1,word,north,北；北方,The station is north of here. / 车站在这里的北边。 | north of here / 这里以北 ,or-v6-north,,,,NOT_RUN
+ow-south,1,word,south,南；南方,The park is south of the city. / 公园在城市南边。 | south of the city / 城市以南 ,or-v6-south,,,,NOT_RUN
+ow-east,1,word,east,东；东方,The airport is east of the city. / 机场在城市东边。 | east of the city / 城市以东 ,or-v6-east,,,,NOT_RUN
+ow-west,1,word,west,西；西方,The station is west of here. / 车站在这里西边。 | west of here / 这里以西 ,or-v6-west,,,,NOT_RUN
+ow-above,1,word,above,在……上方,The light is above the table. / 灯在桌子上方。 | above the table / 在桌子上方 ,or-v6-above,,,,NOT_RUN
+ow-below,1,word,below,在……下方,My room is below yours. / 我的房间在你的房间下面。 | below the window / 在窗户下面 ,or-v6-below,,,,NOT_RUN
+ow-across,1,word,across,在……对面；横过,The shop is across the street. / 商店在街对面。 | across the street / 在街对面 ,or-v6-across,,,,NOT_RUN
+ow-along,1,word,along,沿着,Walk along this road. / 沿着这条路走。 | along the road / 沿着道路 ,or-v6-along,,,,NOT_RUN
+ow-around,1,word,around,在……周围；大约,There are shops around the station. / 车站周围有商店。 | around the station / 车站周围 ,or-v6-around,,,,NOT_RUN
+ow-away,1,word,away,离开；在远处,The hotel is not far away. / 酒店离这里不远。 | far away / 在远处 ,or-v6-away,,,,NOT_RUN
+ow-through,1,word,through,穿过,Go through this door. / 穿过这扇门。 | through the door / 穿过门 ,or-v6-through,,,,NOT_RUN
+ow-against,1,word,against,靠着；反对,Put the chair against the wall. / 把椅子靠墙放。 | against the wall / 靠着墙 ,or-v6-against,,,,NOT_RUN
+ow-without,1,word,without,没有；不带,Can I have tea without milk? / 我可以要不加牛奶的茶吗？ | without milk / 不加牛奶 ,or-v6-without,,,,NOT_RUN
+ow-within,1,word,within,在……范围内,I will call within an hour. / 我会在一小时内打电话。 | within an hour / 一小时内 ,or-v6-within,,,,NOT_RUN
+ow-during,1,word,during,在……期间,Please keep quiet during the meeting. / 开会期间请保持安静。 | during the meeting / 开会期间 ,or-v6-during,,,,NOT_RUN
+ow-since,1,word,since,自从；从……以后,I have lived here since last year. / 我从去年起一直住在这里。 | since last year / 从去年起 ,or-v6-since,,,,NOT_RUN
+ow-while,1,word,while,当……时,Please wait here while I check. / 我核查的时候，请在这里等。 | while I check / 在我核查时 ,or-v6-while,,,,NOT_RUN
+ow-ago,1,word,ago,以前,I got here an hour ago. / 我一小时前到的这里。 | an hour ago / 一小时前 ,or-v6-ago,,,,NOT_RUN
+ow-yesterday,1,word,yesterday,昨天,I was here yesterday. / 我昨天在这里。 | yesterday morning / 昨天早上 ,or-v6-yesterday,,,,NOT_RUN
+ow-tonight,1,word,tonight,今晚,I need a room tonight. / 我今晚需要一个房间。 | tonight at eight / 今晚八点 ,or-v6-tonight,,,,NOT_RUN
+ow-afternoon,1,word,afternoon,下午,We can meet this afternoon. / 我们可以今天下午见面。 | this afternoon / 今天下午 ,or-v6-afternoon,,,,NOT_RUN
+ow-noon,1,word,noon,中午,We will leave at noon. / 我们会在中午离开。 | at noon / 在中午 ,or-v6-noon,,,,NOT_RUN
+ow-midnight,1,word,midnight,午夜,The shop closes at midnight. / 商店午夜关门。 | at midnight / 在午夜 ,or-v6-midnight,,,,NOT_RUN
+ow-second,1,word,second,秒,Please wait a few seconds. / 请稍等几秒。 | a few seconds / 几秒钟 ,or-v6-second,,,,NOT_RUN
+ow-date,1,word,date,日期,What is the date today? / 今天几号？ | today's date / 今天的日期 ,or-v6-date,,,,NOT_RUN
+ow-calendar,1,word,calendar,日历,Please check the calendar. / 请查看日历。 | on the calendar / 在日历上 ,or-v6-calendar,,,,NOT_RUN
+ow-weekend,2,word,weekend,周末,I work on weekends. / 我周末工作。 | this weekend / 这个周末 ,or-v6-weekend,,,,NOT_RUN
+ow-season,1,word,season,季节,What is your favorite season? / 你最喜欢什么季节？ | the rainy season / 雨季 ,or-v6-season,,,,NOT_RUN
+ow-spring,1,word,spring,春天,I like spring. / 我喜欢春天。 | in spring / 在春天 ,or-v6-spring,,,,NOT_RUN
+ow-summer,1,word,summer,夏天,It is hot here in summer. / 这里夏天很热。 | in summer / 在夏天 ,or-v6-summer,,,,NOT_RUN
+ow-autumn,1,word,autumn,秋天,The weather is cool in autumn. / 秋天天气凉爽。 | in autumn / 在秋天 ,or-v6-autumn,,,,NOT_RUN
+ow-winter,1,word,winter,冬天,I need warm clothes in winter. / 冬天我需要暖和的衣服。 | in winter / 在冬天 ,or-v6-winter,,,,NOT_RUN
+ow-would,1,word,would,想要；礼貌请求中的情态词,I would like some water. / 我想要一些水。 | would like / 想要（礼貌说法） ,or-v6-would,,,,NOT_RUN
+ow-could,1,word,could,能否（较委婉请求）,"Could you help me, please? / 请问你能帮我吗？ | could you help / 你能帮忙吗 ",or-v6-could,,,,NOT_RUN
+ow-should,1,word,should,应该,You should take a rest. / 你应该休息一下。 | should rest / 应该休息 ,or-v6-should,,,,NOT_RUN
+ow-must,1,word,must,必须,I must go now. / 我现在必须走了。 | must go / 必须走 ,or-v6-must,,,,NOT_RUN
+ow-hope,1,word,hope,希望,I hope you feel better soon. / 希望你很快好起来。 | hope to see you / 希望见到你 ,or-v6-hope,,,,NOT_RUN
+ow-then,1,word,then,然后；那时,We can eat first and then go. / 我们可以先吃饭，然后走。 | and then / 然后 ,or-v6-then,,,,NOT_RUN
+ow-prefer,1,word,prefer,更喜欢,I prefer tea to coffee. / 比起咖啡，我更喜欢茶。 | prefer tea / 更喜欢茶 ,or-v6-prefer,,,,NOT_RUN
+ow-love,1,word,love,喜爱；爱,I love this place. / 我喜欢这个地方。 | love this place / 喜欢这个地方 ,or-v6-love,,,,NOT_RUN
+ow-hate,1,word,hate,讨厌,I hate waiting in long lines. / 我讨厌排长队等候。 | hate waiting / 讨厌等待 ,or-v6-hate,,,,NOT_RUN
+ow-feel,1,word,feel,感到,I feel tired. / 我感到累了。 | feel better / 感觉好些 ,or-v6-feel,,,,NOT_RUN
+ow-think,1,word,think,认为；想,I think this is good. / 我觉得这个不错。 | think about it / 考虑这件事 ,or-v6-think,,,,NOT_RUN
+ow-believe,1,word,believe,相信,I believe you. / 我相信你。 | believe you / 相信你 ,or-v6-believe,,,,NOT_RUN
+ow-remember,1,word,remember,记得,I cannot remember the address. / 我记不起地址。 | remember the address / 记住地址 ,or-v6-remember,,,,NOT_RUN
+ow-forget,1,word,forget,忘记,Please do not forget your key. / 请别忘了你的钥匙。 | forget the key / 忘了钥匙 ,or-v6-forget,,,,NOT_RUN
+ow-worry,1,word,worry,担心,Do not worry. / 别担心。 | worry about it / 为此担心 ,or-v6-worry,,,,NOT_RUN
+ow-mind,1,word,mind,介意；头脑,Do you mind if I sit here? / 你介意我坐这里吗？ | change my mind / 改变我的想法 ,or-v6-mind,,,,NOT_RUN
+ow-agree,1,word,agree,同意,I agree with you. / 我同意你的看法。 | agree with you / 同意你的看法 ,or-v6-agree,,,,NOT_RUN
+ow-decide,1,word,decide,决定,I need time to decide. / 我需要时间决定。 | decide what to do / 决定做什么 ,or-v6-decide,,,,NOT_RUN
+ow-explain,1,word,explain,解释,Can you explain this to me? / 你能向我解释一下吗？ | explain the problem / 解释问题 ,or-v6-explain,,,,NOT_RUN
+ow-mean,1,word,mean,意思是,What does this word mean? / 这个词是什么意思？ | mean the same thing / 意思相同 ,or-v6-mean,,,,NOT_RUN
+ow-long,1,word,long,长的,This road is long. / 这条路很长。 | a long road / 一条长路 ,or-v6-long,,,,NOT_RUN
+ow-short,1,word,short,短的；矮的,I need a short break. / 我需要短暂休息一下。 | a short break / 短暂的休息 ,or-v6-short,,,,NOT_RUN
+ow-high,1,word,high,高的,The price is too high. / 价格太高了。 | a high price / 很高的价格 ,or-v6-high,,,,NOT_RUN
+ow-low,1,word,low,低的,The table is too low. / 这张桌子太低了。 | a low table / 一张低桌子 ,or-v6-low,,,,NOT_RUN
+ow-large,1,word,large,大的,Do you have a large room? / 你们有大房间吗？ | a large room / 一个大房间 ,or-v6-large,,,,NOT_RUN
+ow-heavy,1,word,heavy,重的,This bag is heavy. / 这个包很重。 | a heavy bag / 一个沉重的包 ,or-v6-heavy,,,,NOT_RUN
+ow-thick,1,word,thick,厚的,This blanket is thick. / 这条毯子很厚。 | a thick blanket / 一条厚毯子 ,or-v6-thick,,,,NOT_RUN
+ow-thin,1,word,thin,薄的；瘦的,This shirt is too thin for winter. / 这件衬衫冬天穿太薄了。 | a thin shirt / 一件薄衬衫 ,or-v6-thin,,,,NOT_RUN
+ow-hard,1,word,hard,硬的；困难的,This bed is too hard. / 这张床太硬了。 | a hard bed / 一张硬床 ,or-v6-hard,,,,NOT_RUN
+ow-soft,1,word,soft,软的,I would like a soft pillow. / 我想要一个软枕头。 | a soft pillow / 一个软枕头 ,or-v6-soft,,,,NOT_RUN
+ow-easy,1,word,easy,容易的,This is easy to use. / 这个很容易使用。 | easy to use / 容易使用 ,or-v6-easy,,,,NOT_RUN
+ow-difficult,1,word,difficult,困难的,This question is difficult. / 这个问题很难。 | a difficult question / 一个难题 ,or-v6-difficult,,,,NOT_RUN
+ow-fast,1,word,fast,快的；快地,This train is fast. / 这列火车很快。 | a fast train / 一列快车 ,or-v6-fast,,,,NOT_RUN
+ow-slow,1,word,slow,慢的,The internet is slow. / 网络很慢。 | a slow train / 一列慢车 ,or-v6-slow,,,,NOT_RUN
+ow-quick,1,word,quick,迅速的,Can I ask a quick question? / 我可以问一个简短的问题吗？ | a quick question / 一个简短的问题 ,or-v6-quick,,,,NOT_RUN
+ow-careful,1,word,careful,小心的,Please be careful. / 请小心。 | be careful / 小心 ,or-v6-careful,,,,NOT_RUN
+ow-dangerous,1,word,dangerous,危险的,This road is dangerous at night. / 这条路晚上很危险。 | a dangerous road / 一条危险的道路 ,or-v6-dangerous,,,,NOT_RUN
+ow-beautiful,1,word,beautiful,美丽的,This city is beautiful. / 这座城市很美。 | a beautiful city / 一座美丽的城市 ,or-v6-beautiful,,,,NOT_RUN
+ow-nice,1,word,nice,好的；令人愉快的,It is nice to meet you. / 很高兴认识你。 | a nice place / 一个不错的地方 ,or-v6-nice,,,,NOT_RUN
+ow-well,1,word,well,好地；健康的,This phone works well. / 这部手机运作正常。 | work well / 运作良好 ,or-v6-well,,,,NOT_RUN
+ow-young,1,word,young,年轻的,My brother is young. / 我的弟弟很年轻。 | a young person / 一个年轻人 ,or-v6-young,,,,NOT_RUN
+ow-rich,1,word,rich,富有的,He is rich. / 他很富有。 | a rich person / 一个富有的人 ,or-v6-rich,,,,NOT_RUN
+ow-poor,1,word,poor,贫穷的,They help poor families. / 他们帮助贫困家庭。 | a poor family / 一个贫困家庭 ,or-v6-poor,,,,NOT_RUN
+ow-strong,1,word,strong,强壮的；浓的,This coffee is too strong. / 这杯咖啡太浓了。 | strong coffee / 浓咖啡 ,or-v6-strong,,,,NOT_RUN
+ow-weak,1,word,weak,虚弱的；淡的,I feel weak. / 我感觉很虚弱。 | feel weak / 感到虚弱 ,or-v6-weak,,,,NOT_RUN
+ow-true,1,word,true,真的,Is that true? / 那是真的吗？ | a true story / 一个真实故事 ,or-v6-true,,,,NOT_RUN
+ow-false,1,word,false,假的；错误的,This information is false. / 这个信息是假的。 | false information / 虚假信息 ,or-v6-false,,,,NOT_RUN
+ow-correct,1,word,correct,正确的,Is this the correct address? / 这是正确的地址吗？ | the correct address / 正确的地址 ,or-v6-correct,,,,NOT_RUN
+ow-wrong,1,word,wrong,错误的,This is the wrong number. / 这个号码不对。 | the wrong number / 错误的号码 ,or-v6-wrong,,,,NOT_RUN
+ow-useful,1,word,useful,有用的,This map is useful. / 这张地图很有用。 | a useful map / 一张有用的地图 ,or-v6-useful,,,,NOT_RUN
+ow-clear,1,word,clear,清楚的,Your message is clear. / 你的信息很清楚。 | a clear message / 一条清楚的信息 ,or-v6-clear,,,,NOT_RUN
+ow-dark,1,word,dark,黑暗的,It is dark outside. / 外面很黑。 | a dark room / 一个黑暗的房间 ,or-v6-dark,,,,NOT_RUN
+ow-bright,1,word,bright,明亮的,The room is bright. / 房间很明亮。 | a bright room / 一个明亮的房间 ,or-v6-bright,,,,NOT_RUN
+ow-loud,1,word,loud,响亮的,The music is too loud. / 音乐太响了。 | a loud sound / 很响的声音 ,or-v6-loud,,,,NOT_RUN
+ow-friendly,1,word,friendly,友好的,The people here are friendly. / 这里的人很友好。 | a friendly person / 一个友好的人 ,or-v6-friendly,,,,NOT_RUN
+ow-kind,1,word,kind,友善的；种类,That is very kind of you. / 你真好。 | a kind person / 一个友善的人 ,or-v6-kind,,,,NOT_RUN
+ow-angry,1,word,angry,生气的,I am not angry. / 我没有生气。 | feel angry / 感到生气 ,or-v6-angry,,,,NOT_RUN
+ow-sad,1,word,sad,难过的,I feel sad today. / 我今天感到难过。 | feel sad / 感到难过 ,or-v6-sad,,,,NOT_RUN
+ow-excited,1,word,excited,兴奋的,I am excited about the trip. / 我对这次旅行很兴奋。 | be excited / 感到兴奋 ,or-v6-excited,,,,NOT_RUN
+ow-nervous,1,word,nervous,紧张的,I feel nervous. / 我感到紧张。 | feel nervous / 感到紧张 ,or-v6-nervous,,,,NOT_RUN
+ow-comfortable,1,word,comfortable,舒服的,This seat is comfortable. / 这个座位很舒服。 | a comfortable seat / 一个舒服的座位 ,or-v6-comfortable,,,,NOT_RUN
+ow-special,1,word,special,特别的,Is there a special price for children? / 儿童有特别价格吗？ | a special price / 特别价格 ,or-v6-special,,,,NOT_RUN
+ow-normal,1,word,normal,正常的,Is this sound normal? / 这个声音正常吗？ | a normal sound / 正常的声音 ,or-v6-normal,,,,NOT_RUN
+ow-simple,1,word,simple,简单的,Please use simple words. / 请用简单的词。 | simple words / 简单的词 ,or-v6-simple,,,,NOT_RUN
+ow-basic,1,word,basic,基本的,I can speak basic English. / 我会说基础英语。 | basic English / 基础英语 ,or-v6-basic,,,,NOT_RUN
+ow-usual,1,word,usual,通常的,I will come at the usual time. / 我会在通常的时间来。 | the usual time / 通常的时间 ,or-v6-usual,,,,NOT_RUN
+ow-local,1,word,local,当地的,Where is the local market? / 当地市场在哪里？ | a local market / 一个当地市场 ,or-v6-local,,,,NOT_RUN
+ow-public,1,word,public,公共的,Is there a public toilet here? / 这里有公共厕所吗？ | a public toilet / 公共厕所 ,or-v6-public,,,,NOT_RUN
+ow-private,1,word,private,私人的,Is this a private room? / 这是私人房间吗？ | a private room / 私人房间 ,or-v6-private,,,,NOT_RUN
+ow-final,1,word,final,最后的,Is this the final price? / 这是最终价格吗？ | the final price / 最终价格 ,or-v6-final,,,,NOT_RUN
+ow-about,1,word,about,关于；大约,I have a question about this. / 我有一个关于这个的问题。 | about this / 关于这个 ,or-v6-about,,,,NOT_RUN
+ow-than,1,word,than,比,This is cheaper than that. / 这个比那个便宜。 | cheaper than that / 比那个便宜 ,or-v6-than,,,,NOT_RUN
+ow-as,1,word,as,作为；像……一样,I work as a driver. / 我是一名司机。 | work as a driver / 当司机 ,or-v6-as,,,,NOT_RUN
+ow-so,1,word,so,所以；如此,"I am tired, so I need a rest. / 我累了，所以需要休息。 | so tired / 这么累 ",or-v6-so,,,,NOT_RUN
+ow-also,1,word,also,也；还,I also need a ticket. / 我还需要一张票。 | also need / 还需要 ,or-v6-also,,,,NOT_RUN
+ow-too,1,word,too,太；也,This bag is too heavy. / 这个包太重了。 | too heavy / 太重 ,or-v6-too,,,,NOT_RUN
+ow-very,1,word,very,很；非常,Thank you very much. / 非常感谢你。 | very good / 很好 ,or-v6-very,,,,NOT_RUN
+ow-really,1,word,really,确实；真地,I really like this place. / 我真的喜欢这个地方。 | really like / 真的喜欢 ,or-v6-really,,,,NOT_RUN
+ow-only,1,word,only,仅仅；只有,I only need one ticket. / 我只需要一张票。 | only one / 只有一个 ,or-v6-only,,,,NOT_RUN
+ow-just,1,word,just,刚刚；仅仅,I just need some water. / 我只需要一些水。 | just one / 只要一个 ,or-v6-just,,,,NOT_RUN
+ow-even,1,word,even,甚至,I cannot even open the door. / 我甚至打不开门。 | even now / 甚至现在 ,or-v6-even,,,,NOT_RUN
+ow-still,1,word,still,仍然,I still need help. / 我仍然需要帮助。 | still here / 仍在这里 ,or-v6-still,,,,NOT_RUN
+ow-already,1,word,already,已经,I already have a ticket. / 我已经有票了。 | already have / 已经有 ,or-v6-already,,,,NOT_RUN
+ow-enough,1,word,enough,足够的；足够地,I have enough money. / 我的钱够了。 | enough money / 足够的钱 ,or-v6-enough,,,,NOT_RUN
+ow-almost,1,word,almost,几乎,I am almost ready. / 我快准备好了。 | almost ready / 快准备好了 ,or-v6-almost,,,,NOT_RUN
+ow-maybe,1,word,maybe,也许,Maybe we can go tomorrow. / 也许我们可以明天去。 | maybe tomorrow / 也许明天 ,or-v6-maybe,,,,NOT_RUN
+ow-probably,1,word,probably,很可能,I will probably come tomorrow. / 我很可能明天来。 | probably tomorrow / 很可能明天 ,or-v6-probably,,,,NOT_RUN
+ow-usually,1,word,usually,通常,I usually walk to work. / 我通常步行上班。 | usually walk / 通常步行 ,or-v6-usually,,,,NOT_RUN
+ow-often,1,word,often,经常,I often come here. / 我经常来这里。 | often come / 经常来 ,or-v6-often,,,,NOT_RUN
+ow-sometimes,1,word,sometimes,有时,I sometimes take the bus. / 我有时坐公交车。 | sometimes take a bus / 有时乘公交车 ,or-v6-sometimes,,,,NOT_RUN
+ow-never,1,word,never,从不,I never drink coffee. / 我从不喝咖啡。 | never drink coffee / 从不喝咖啡 ,or-v6-never,,,,NOT_RUN
+ow-always,1,word,always,总是,I always keep my ticket. / 我总是留好票。 | always ready / 总是准备好 ,or-v6-always,,,,NOT_RUN
+ow-once,1,word,once,一次,Please say it once more. / 请再说一次。 | once more / 再一次 ,or-v6-once,,,,NOT_RUN
+ow-twice,1,word,twice,两次,I called twice. / 我打了两次电话。 | twice a day / 一天两次 ,or-v6-twice,,,,NOT_RUN
+ow-both,2,word,both,两者都,I like both colors. / 两种颜色我都喜欢。 | both colors / 两种颜色 ,or-v6-both,,,,NOT_RUN
+ow-each,1,word,each,每一个,How much is each ticket? / 每张票多少钱？ | each ticket / 每张票 ,or-v6-each,,,,NOT_RUN
+ow-another,1,word,another,另一个；再一个,Can I have another cup? / 我可以再要一个杯子吗？ | another cup / 另一个杯子 ,or-v6-another,,,,NOT_RUN
+ow-other,1,word,other,其他的,Do you have any other rooms? / 你们还有其他房间吗？ | other rooms / 其他房间 ,or-v6-other,,,,NOT_RUN
+ow-either,1,word,either,两者中任何一个,Either seat is fine. / 两个座位中哪个都可以。 | either seat / 两个中的任何一个座位 ,or-v6-either,,,,NOT_RUN
+ow-neither,1,word,neither,两者都不,Neither answer is correct. / 两个答案都不对。 | neither answer / 两个答案都不 ,or-v6-neither,,,,NOT_RUN
+ow-which,1,word,which,哪一个,Which bus goes to the airport? / 哪路公交车去机场？ | which bus / 哪路公交车 ,or-v6-which,,,,NOT_RUN
+ow-whose,1,word,whose,谁的,Whose bag is this? / 这是谁的包？ | whose bag / 谁的包 ,or-v6-whose,,,,NOT_RUN
+ow-age,1,word,age,年龄,What is your age? / 你多大了？ | my age / 我的年龄 ,or-v6-age,,,,NOT_RUN
+ow-language,1,word,language,语言,What language do you speak? / 你说什么语言？ | a new language / 一门新语言 ,or-v6-language,,,,NOT_RUN
+ow-english,1,word,English,英语,I speak a little English. / 我会说一点英语。 | simple English / 简单英语 ,or-v6-english,,,,NOT_RUN
+ow-chinese,1,word,Chinese,中文；中国的,Can you speak Chinese? / 你会说中文吗？ | speak Chinese / 说中文 ,or-v6-chinese,,,,NOT_RUN
+ow-something,1,word,something,某事；某物,I need something to eat. / 我需要吃点东西。 | something to eat / 吃的东西 ,or-v6-something,,,,NOT_RUN
+ow-anything,1,word,anything,任何事物,Do you need anything? / 你需要什么东西吗？ | anything else / 别的东西 ,or-v6-anything,,,,NOT_RUN
+ow-nothing,1,word,nothing,没有什么,There is nothing in the bag. / 包里什么都没有。 | nothing here / 这里什么都没有 ,or-v6-nothing,,,,NOT_RUN
+ow-everyone,1,word,everyone,每个人,Is everyone ready? / 大家都准备好了吗？ | everyone here / 这里的每个人 ,or-v6-everyone,,,,NOT_RUN
+ow-someone,1,word,someone,某个人,Can someone help me? / 有人能帮我吗？ | someone to help / 能帮忙的人 ,or-v6-someone,,,,NOT_RUN
+ow-anyone,1,word,anyone,任何人；有人,Is anyone here? / 这里有人吗？ | anyone here / 这里的任何人 ,or-v6-anyone,,,,NOT_RUN
+ow-nobody,1,word,nobody,没有人,Nobody is in the room. / 房间里没有人。 | nobody here / 这里没有人 ,or-v6-nobody,,,,NOT_RUN
+ow-everywhere,1,word,everywhere,到处,There are people everywhere. / 到处都是人。 | look everywhere / 到处找 ,or-v6-everywhere,,,,NOT_RUN
+ow-anywhere,1,word,anywhere,任何地方,Can I sit anywhere? / 我可以随便坐吗？ | anywhere here / 这里的任何地方 ,or-v6-anywhere,,,,NOT_RUN
+ow-somewhere,1,word,somewhere,某个地方,I need somewhere to sit. / 我需要找个地方坐。 | somewhere to sit / 可以坐的地方 ,or-v6-somewhere,,,,NOT_RUN
+ow-else,1,word,else,其他；别的,Do you need anything else? / 你还需要别的吗？ | anything else / 别的东西 ,or-v6-else,,,,NOT_RUN
+ow-off,1,word,off,关闭；离开,Please turn off the light. / 请关灯。 | turn off / 关掉 ,or-v6-off,,,,NOT_RUN
+ow-out,1,word,out,在外；出去,Can we go out now? / 我们现在可以出去吗？ | go out / 出去 ,or-v6-out,,,,NOT_RUN
+ow-into,1,word,into,进入……里面,Please put it into the bag. / 请把它放进包里。 | into the bag / 进入包里 ,or-v6-into,,,,NOT_RUN
+ow-onto,1,word,onto,到……上面,Put the bag onto the table. / 把包放到桌子上。 | onto the table / 到桌子上面 ,or-v6-onto,,,,NOT_RUN
+ow-place,1,word,place,地方,This is a good place to eat. / 这是个吃饭的好地方。 | a good place / 一个好地方 ,or-v6-place,,,,NOT_RUN
+ow-town,1,word,town,城镇,I live in a small town. / 我住在一个小镇上。 | a small town / 一个小镇 ,or-v6-town,,,,NOT_RUN
+ow-village,1,word,village,村庄,My parents live in a village. / 我父母住在一个村庄。 | a small village / 一个小村庄 ,or-v6-village,,,,NOT_RUN
+ow-building,1,word,building,建筑物,The office is in this building. / 办公室在这栋楼里。 | this building / 这栋楼 ,or-v6-building,,,,NOT_RUN
+ow-apartment,1,word,apartment,公寓住房,I live in an apartment. / 我住在一套公寓里。 | a small apartment / 一套小公寓 ,or-v6-apartment,,,,NOT_RUN
+ow-bank,1,word,bank,银行,Where is the nearest bank? / 最近的银行在哪里？ | a bank account / 一个银行账户 ,or-v6-bank,,,,NOT_RUN
+ow-market,1,word,market,市场,The market is open today. / 市场今天营业。 | a local market / 当地市场 ,or-v6-market,,,,NOT_RUN
+ow-supermarket,1,word,supermarket,超市,I need to go to the supermarket. / 我需要去超市。 | a supermarket / 一家超市 ,or-v6-supermarket,,,,NOT_RUN
+ow-bakery,1,word,bakery,面包店,Is there a bakery near here? / 附近有面包店吗？ | a bakery / 一家面包店 ,or-v6-bakery,,,,NOT_RUN
+ow-cafe,1,word,cafe,咖啡馆,We can meet at the cafe. / 我们可以在咖啡馆见面。 | a small cafe / 一家小咖啡馆 ,or-v6-cafe,,,,NOT_RUN
+ow-pharmacy,1,word,pharmacy,药店,Where is the pharmacy? / 药店在哪里？ | a pharmacy / 一家药店 ,or-v6-pharmacy,,,,NOT_RUN
+ow-school,1,word,school,学校,My child is at school. / 我的孩子在学校。 | go to school / 上学 ,or-v6-school,,,,NOT_RUN
+ow-university,1,word,university,大学,I work at a university. / 我在一所大学工作。 | a university / 一所大学 ,or-v6-university,,,,NOT_RUN
+ow-library,1,word,library,图书馆,Can I use the library? / 我可以使用图书馆吗？ | a public library / 公共图书馆 ,or-v6-library,,,,NOT_RUN
+ow-museum,1,word,museum,博物馆,What time does the museum open? / 博物馆几点开门？ | a museum ticket / 一张博物馆门票 ,or-v6-museum,,,,NOT_RUN
+ow-cinema,1,word,cinema,电影院,The cinema is near the station. / 电影院在车站附近。 | go to the cinema / 去看电影 ,or-v6-cinema,,,,NOT_RUN
+ow-beach,1,word,beach,海滩,How can I get to the beach? / 我怎么去海滩？ | at the beach / 在海滩 ,or-v6-beach,,,,NOT_RUN
+ow-mountain,1,word,mountain,山,We can see the mountain. / 我们能看到那座山。 | a high mountain / 一座高山 ,or-v6-mountain,,,,NOT_RUN
+ow-river,1,word,river,河,The hotel is by the river. / 酒店在河边。 | by the river / 在河边 ,or-v6-river,,,,NOT_RUN
+ow-lake,1,word,lake,湖,There is a lake near here. / 这附近有一个湖。 | a small lake / 一个小湖 ,or-v6-lake,,,,NOT_RUN
+ow-sea,1,word,sea,海,Can we see the sea from here? / 我们从这里能看见海吗？ | by the sea / 在海边 ,or-v6-sea,,,,NOT_RUN
+ow-forest,1,word,forest,森林,Do not go into the forest alone. / 不要独自进入森林。 | in the forest / 在森林里 ,or-v6-forest,,,,NOT_RUN
+ow-garden,1,word,garden,花园,There is a garden behind the house. / 房子后面有一个花园。 | in the garden / 在花园里 ,or-v6-garden,,,,NOT_RUN
+ow-farm,1,word,farm,农场,My uncle works on a farm. / 我叔叔在农场工作。 | on a farm / 在农场 ,or-v6-farm,,,,NOT_RUN
+ow-weather,1,word,weather,天气,What is the weather like today? / 今天天气怎么样？ | hot weather / 炎热的天气 ,or-v6-weather,,,,NOT_RUN
+ow-rain,1,word,rain,雨；下雨,It may rain today. / 今天可能下雨。 | heavy rain / 大雨 ,or-v6-rain,,,,NOT_RUN
+ow-snow,1,word,snow,雪；下雪,There is snow on the road. / 路上有雪。 | some snow / 一些雪 ,or-v6-snow,,,,NOT_RUN
+ow-wind,1,word,wind,风,The wind is cold. / 风很冷。 | a cold wind / 一阵冷风 ,or-v6-wind,,,,NOT_RUN
+ow-sun,1,word,sun,太阳,The sun is bright today. / 今天阳光明亮。 | in the sun / 在阳光下 ,or-v6-sun,,,,NOT_RUN
+ow-sky,1,word,sky,天空,The sky is blue. / 天空是蓝色的。 | a blue sky / 蓝色的天空 ,or-v6-sky,,,,NOT_RUN
+ow-cloud,1,word,cloud,云,There are clouds in the sky. / 天空中有云。 | a dark cloud / 一朵乌云 ,or-v6-cloud,,,,NOT_RUN
+ow-storm,1,word,storm,暴风雨,A storm is coming. / 暴风雨要来了。 | a storm / 一场暴风雨 ,or-v6-storm,,,,NOT_RUN
+ow-fire,1,word,fire,火；火灾,There is a fire. Please get out. / 着火了，请出去。 | a fire / 一场火灾 ,or-v6-fire,,,,NOT_RUN
+ow-earth,1,word,earth,地球；土壤,We live on the earth. / 我们生活在地球上。 | the earth / 地球 ,or-v6-earth,,,,NOT_RUN
+ow-world,1,word,world,世界,People travel around the world. / 人们到世界各地旅行。 | around the world / 世界各地 ,or-v6-world,,,,NOT_RUN
+ow-plant,1,word,plant,植物,This plant needs water. / 这株植物需要水。 | a green plant / 一株绿色植物 ,or-v6-plant,,,,NOT_RUN
+ow-tree,1,word,tree,树,There is a tree outside. / 外面有一棵树。 | a tall tree / 一棵高树 ,or-v6-tree,,,,NOT_RUN
+ow-flower,1,word,flower,花,These flowers are beautiful. / 这些花很美。 | some flowers / 一些花 ,or-v6-flower,,,,NOT_RUN
+ow-grass,1,word,grass,草,Please keep off the grass. / 请勿踩踏草坪。 | green grass / 绿草 ,or-v6-grass,,,,NOT_RUN
+ow-stone,1,word,stone,石头,There is a stone in my shoe. / 我的鞋里有一块石头。 | a small stone / 一块小石头 ,or-v6-stone,,,,NOT_RUN
+ow-sand,1,word,sand,沙子,There is sand in my bag. / 我的包里有沙子。 | some sand / 一些沙子 ,or-v6-sand,,,,NOT_RUN
+ow-few,1,word,few,少量的（修饰可数名词）,I need a few minutes. / 我需要几分钟。 | a few minutes / 几分钟 ,or-v6-few,,,,NOT_RUN
+ow-green,1,word,green,绿色的,I want the green shirt. / 我想要那件绿色衬衫。 | a green shirt / 一件绿色衬衫 ,or-v6-green,,,,NOT_RUN
+ow-yellow,1,word,yellow,黄色的,This taxi is yellow. / 这辆出租车是黄色的。 | a yellow taxi / 一辆黄色出租车 ,or-v6-yellow,,,,NOT_RUN
+ow-brown,1,word,brown,棕色的,My shoes are brown. / 我的鞋是棕色的。 | brown shoes / 棕色的鞋 ,or-v6-brown,,,,NOT_RUN
+ow-gray,1,word,gray,灰色的,The sky is gray. / 天空是灰色的。 | a gray sky / 灰色的天空 ,or-v6-gray,,,,NOT_RUN
+ow-pink,1,word,pink,粉色的,She has a pink bag. / 她有一个粉色的包。 | a pink bag / 一个粉色的包 ,or-v6-pink,,,,NOT_RUN
+ow-purple,1,word,purple,紫色的,This shirt is purple. / 这件衬衫是紫色的。 | a purple shirt / 一件紫色衬衫 ,or-v6-purple,,,,NOT_RUN
+ow-round,1,word,round,圆的,This table is round. / 这张桌子是圆的。 | a round table / 一张圆桌 ,or-v6-round,,,,NOT_RUN
+ow-square,1,word,square,方形的；广场,The box is square. / 这个盒子是方形的。 | a square box / 一个方盒子 ,or-v6-square,,,,NOT_RUN
+ow-flat,1,word,flat,平的,Put it on a flat surface. / 把它放在平面上。 | a flat surface / 一个平面 ,or-v6-flat,,,,NOT_RUN
+ow-deep,1,word,deep,深的,This water is deep. / 这里的水很深。 | deep water / 深水 ,or-v6-deep,,,,NOT_RUN
+ow-wide,1,word,wide,宽的,The road is wide. / 这条路很宽。 | a wide road / 一条宽路 ,or-v6-wide,,,,NOT_RUN
+ow-narrow,1,word,narrow,窄的,This street is narrow. / 这条街很窄。 | a narrow street / 一条窄街 ,or-v6-narrow,,,,NOT_RUN
+ow-wood,1,word,wood,木材,This table is made of wood. / 这张桌子是木制的。 | made of wood / 木制的 ,or-v6-wood,,,,NOT_RUN
+ow-metal,1,word,metal,金属,This box is made of metal. / 这个盒子是金属制的。 | made of metal / 金属制的 ,or-v6-metal,,,,NOT_RUN
+ow-plastic,1,word,plastic,塑料,Do you need a plastic bag? / 你需要塑料袋吗？ | a plastic bag / 一个塑料袋 ,or-v6-plastic,,,,NOT_RUN
+ow-cloth,1,word,cloth,布,Can I have a cloth to clean this? / 可以给我一块布擦这个吗？ | a clean cloth / 一块干净的布 ,or-v6-cloth,,,,NOT_RUN
+ow-cotton,1,word,cotton,棉；棉花,This shirt is made of cotton. / 这件衬衫是棉制的。 | a cotton shirt / 一件棉衬衫 ,or-v6-cotton,,,,NOT_RUN
+ow-leather,1,word,leather,皮革,Is this bag made of leather? / 这个包是皮革做的吗？ | a leather bag / 一个皮包 ,or-v6-leather,,,,NOT_RUN
+ow-rubber,1,word,rubber,橡胶,These shoes have rubber soles. / 这些鞋有橡胶鞋底。 | rubber gloves / 橡胶手套 ,or-v6-rubber,,,,NOT_RUN
+ow-box,1,word,box,盒子,Please put it in this box. / 请把它放进这个盒子。 | a small box / 一个小盒子 ,or-v6-box,,,,NOT_RUN
+ow-basket,1,word,basket,篮子,Put the fruit in the basket. / 把水果放进篮子里。 | a basket of fruit / 一篮水果 ,or-v6-basket,,,,NOT_RUN
+ow-brush,1,word,brush,刷子,I need a brush to clean this. / 我需要一把刷子清洁这个。 | a small brush / 一把小刷子 ,or-v6-brush,,,,NOT_RUN
+ow-comb,1,word,comb,梳子,Can I use your comb? / 我可以用你的梳子吗？ | a comb / 一把梳子 ,or-v6-comb,,,,NOT_RUN
+ow-mirror,1,word,mirror,镜子,Is there a mirror in the room? / 房间里有镜子吗？ | a small mirror / 一面小镜子 ,or-v6-mirror,,,,NOT_RUN
+ow-clock,1,word,clock,钟,This clock is wrong. / 这个钟的时间不对。 | a wall clock / 一个挂钟 ,or-v6-clock,,,,NOT_RUN
+ow-watch,1,word,watch,手表；观看,My watch has stopped. / 我的手表停了。 | a watch / 一块手表 ,or-v6-watch,,,,NOT_RUN
+ow-screen,1,word,screen,屏幕,The screen is too dark. / 屏幕太暗了。 | a phone screen / 手机屏幕 ,or-v6-screen,,,,NOT_RUN
+ow-keyboard,1,word,keyboard,键盘,This keyboard is not working. / 这个键盘不能用了。 | a keyboard / 一个键盘 ,or-v6-keyboard,,,,NOT_RUN
+ow-mouse,1,word,mouse,鼠标；老鼠,Can I use this mouse? / 我可以用这个鼠标吗？ | a computer mouse / 一个电脑鼠标 ,or-v6-mouse,,,,NOT_RUN
+ow-charger,1,word,charger,充电器,I need a charger for my phone. / 我需要一个手机充电器。 | a phone charger / 手机充电器 ,or-v6-charger,,,,NOT_RUN
+ow-battery,1,word,battery,电池,The battery is empty. / 电池没电了。 | a phone battery / 手机电池 ,or-v6-battery,,,,NOT_RUN
+ow-plug,1,word,plug,插头,This plug does not fit. / 这个插头插不进去。 | a plug / 一个插头 ,or-v6-plug,,,,NOT_RUN
+ow-socket,1,word,socket,插座,Where is the socket? / 插座在哪里？ | a power socket / 电源插座 ,or-v6-socket,,,,NOT_RUN
+ow-cable,1,word,cable,线缆,I need a longer cable. / 我需要一根更长的线。 | a phone cable / 一根手机线 ,or-v6-cable,,,,NOT_RUN
+ow-camera,1,word,camera,照相机,Can I use my camera here? / 我可以在这里拍照吗？ | a camera / 一部照相机 ,or-v6-camera,,,,NOT_RUN
+ow-television,1,word,television,电视,The television does not work. / 电视不能用了。 | watch television / 看电视 ,or-v6-television,,,,NOT_RUN
+ow-radio,1,word,radio,收音机,Please turn down the radio. / 请把收音机音量调小。 | a radio / 一台收音机 ,or-v6-radio,,,,NOT_RUN
+ow-fridge,1,word,fridge,冰箱,Is there a fridge in the room? / 房间里有冰箱吗？ | a small fridge / 一台小冰箱 ,or-v6-fridge,,,,NOT_RUN
+ow-oven,1,word,oven,烤箱,The oven is hot. / 烤箱很烫。 | a hot oven / 一个热烤箱 ,or-v6-oven,,,,NOT_RUN
+ow-machine,1,word,machine,机器,How do I use this machine? / 这台机器怎么用？ | a washing machine / 一台洗衣机 ,or-v6-machine,,,,NOT_RUN
+ow-dress,1,word,dress,连衣裙,May I try on this dress? / 我可以试穿这条连衣裙吗？ | a dress / 一条连衣裙 ,or-v6-dress,,,,NOT_RUN
+ow-coat,1,word,coat,外套,Take your coat. It is cold. / 带上你的外套，天气很冷。 | a warm coat / 一件暖和的外套 ,or-v6-coat,,,,NOT_RUN
+ow-jacket,1,word,jacket,夹克,I need a jacket for the trip. / 这次旅行我需要一件夹克。 | a light jacket / 一件薄夹克 ,or-v6-jacket,,,,NOT_RUN
+ow-hat,1,word,hat,帽子,Is this your hat? / 这是你的帽子吗？ | a hat / 一顶帽子 ,or-v6-hat,,,,NOT_RUN
+ow-sock,1,word,sock,袜子,I need some clean socks. / 我需要一些干净袜子。 | a pair of socks / 一双袜子 ,or-v6-sock,,,,NOT_RUN
+ow-pants,1,word,pants,裤子（美式）,These pants are too long. / 这条裤子太长了。 | a pair of pants / 一条裤子 ,or-v6-pants,,,,NOT_RUN
+ow-skirt,1,word,skirt,裙子,Do you have this skirt in blue? / 这条裙子有蓝色的吗？ | a blue skirt / 一条蓝色裙子 ,or-v6-skirt,,,,NOT_RUN
+ow-pocket,1,word,pocket,口袋,My key is in my pocket. / 我的钥匙在口袋里。 | in my pocket / 在我的口袋里 ,or-v6-pocket,,,,NOT_RUN
+ow-button,1,word,button,纽扣；按钮,Please press this button. / 请按这个按钮。 | press a button / 按按钮 ,or-v6-button,,,,NOT_RUN
+ow-boot,1,word,boot,靴子,These boots are waterproof. / 这双靴子防水。 | a pair of boots / 一双靴子 ,or-v6-boot,,,,NOT_RUN
+ow-glove,1,word,glove,手套,I need gloves for the cold weather. / 天冷，我需要手套。 | a pair of gloves / 一副手套 ,or-v6-glove,,,,NOT_RUN
+ow-umbrella,1,word,umbrella,伞,Can I borrow an umbrella? / 我可以借一把伞吗？ | an umbrella / 一把伞 ,or-v6-umbrella,,,,NOT_RUN
+ow-wallet,1,word,wallet,钱包,I cannot find my wallet. / 我找不到我的钱包。 | my wallet / 我的钱包 ,or-v6-wallet,,,,NOT_RUN
+ow-account,1,word,account,账户,I cannot use my account. / 我无法使用我的账户。 | my account / 我的账户 ,or-v6-account,,,,NOT_RUN
+ow-ring,1,word,ring,戒指；圆环,This ring is too small. / 这个戒指太小了。 | a ring / 一枚戒指 ,or-v6-ring,,,,NOT_RUN
+ow-gift,1,word,gift,礼物,This gift is for you. / 这个礼物送给你。 | a gift for you / 给你的礼物 ,or-v6-gift,,,,NOT_RUN
+ow-package,1,word,package,包裹,When will my package arrive? / 我的包裹什么时候到？ | a small package / 一个小包裹 ,or-v6-package,,,,NOT_RUN
+ow-pair,1,word,pair,一双；一对,I need a pair of shoes. / 我需要一双鞋。 | a pair of shoes / 一双鞋 ,or-v6-pair,,,,NOT_RUN
+ow-piece,1,word,piece,片；块；张,Can I have a piece of paper? / 我可以要一张纸吗？ | a piece of paper / 一张纸 ,or-v6-piece,,,,NOT_RUN
+ow-part,1,word,part,部分；零件,This part is broken. / 这个零件坏了。 | a broken part / 一个坏了的零件 ,or-v6-part,,,,NOT_RUN
+ow-teacher,1,word,teacher,教师,I am a teacher. / 我是一名教师。 | a teacher / 一名教师 ,or-v6-teacher,,,,NOT_RUN
+ow-student,1,word,student,学生,My daughter is a student. / 我的女儿是学生。 | a student / 一名学生 ,or-v6-student,,,,NOT_RUN
+ow-driver,1,word,driver,司机,Please ask the driver. / 请问司机。 | a bus driver / 一位公交车司机 ,or-v6-driver,,,,NOT_RUN
+ow-worker,1,word,worker,工人；工作者,The workers are busy today. / 工作人员今天很忙。 | a worker / 一位工作人员 ,or-v6-worker,,,,NOT_RUN
+ow-manager,1,word,manager,经理,May I speak to the manager? / 我可以和经理说话吗？ | the manager / 经理 ,or-v6-manager,,,,NOT_RUN
+ow-cook,1,word,cook,做饭；厨师,I can cook simple food. / 我会做简单的饭菜。 | cook dinner / 做晚餐 ,or-v6-cook,,,,NOT_RUN
+ow-uncle,1,word,uncle,叔伯；舅舅；姑父等,My uncle lives here. / 我的叔叔住在这里。 | my uncle / 我的叔叔 ,or-v6-uncle,,,,NOT_RUN
+ow-aunt,1,word,aunt,姑妈；姨妈等,This is my aunt. / 这是我的姨妈。 | my aunt / 我的姨妈 ,or-v6-aunt,,,,NOT_RUN
+ow-cousin,1,word,cousin,堂兄弟姐妹；表兄弟姐妹,My cousin is visiting today. / 我的表亲今天来访。 | my cousin / 我的表亲 ,or-v6-cousin,,,,NOT_RUN
+ow-grandmother,1,word,grandmother,祖母；外祖母,My grandmother is at home. / 我的祖母在家。 | my grandmother / 我的祖母 ,or-v6-grandmother,,,,NOT_RUN
+ow-grandfather,1,word,grandfather,祖父；外祖父,My grandfather likes tea. / 我的祖父喜欢喝茶。 | my grandfather / 我的祖父 ,or-v6-grandfather,,,,NOT_RUN
+ow-animal,2,word,animal,动物,Is this animal dangerous? / 这种动物危险吗？ | a small animal / 一只小动物 ,or-v6-animal,,,,NOT_RUN
+ow-bird,2,word,bird,鸟,There is a bird in the tree. / 树上有一只鸟。 | a small bird / 一只小鸟 ,or-v6-bird,,,,NOT_RUN
+ow-insect,1,word,insect,昆虫,There is an insect in my room. / 我的房间里有一只昆虫。 | an insect / 一只昆虫 ,or-v6-insect,,,,NOT_RUN
+ow-mosquito,1,word,mosquito,蚊子,There are mosquitoes in the room. / 房间里有蚊子。 | a mosquito / 一只蚊子 ,or-v6-mosquito,,,,NOT_RUN
+ow-smoke,1,word,smoke,烟；吸烟,There is smoke in the room. / 房间里有烟。 | no smoking / 禁止吸烟 ,or-v6-smoke,,,,NOT_RUN
+ow-smell,1,word,smell,气味；闻起来,This food smells good. / 这个食物闻起来很香。 | a bad smell / 难闻的气味 ,or-v6-smell,,,,NOT_RUN
+ow-taste,1,word,taste,味道；尝起来,This soup tastes good. / 这碗汤味道很好。 | a sweet taste / 甜味 ,or-v6-taste,,,,NOT_RUN
+ow-noise,1,word,noise,噪音,There is too much noise. / 噪音太大了。 | too much noise / 太多噪音 ,or-v6-noise,,,,NOT_RUN
+ow-trash,1,word,trash,垃圾（美式）,Where can I put the trash? / 我可以把垃圾放哪里？ | a trash can / 一个垃圾桶 ,or-v6-trash,,,,NOT_RUN
+ow-waste,1,word,waste,浪费,Please do not waste water. / 请不要浪费水。 | waste water / 浪费水 ,or-v6-waste,,,,NOT_RUN
+ow-recycle,1,word,recycle,回收利用,Can I recycle this bottle? / 这个瓶子可以回收吗？ | recycle a bottle / 回收瓶子 ,or-v6-recycle,,,,NOT_RUN
+ow-environment,1,word,environment,环境,We need to keep the environment clean. / 我们需要保持环境清洁。 | a clean environment / 清洁的环境 ,or-v6-environment,,,,NOT_RUN
+ow-listen,1,word,listen,听（注意听）,Please listen to me. / 请听我说。 | listen to me / 听我说 ,or-v6-listen,,,,NOT_RUN
+ow-hear,1,word,hear,听见,I cannot hear you. / 我听不见你说话。 | hear you / 听见你 ,or-v6-hear,,,,NOT_RUN
+ow-look,2,word,look,看；看起来,Please look at this picture. / 请看这张图片。 | look at this / 看这个 ,or-v6-look,,,,NOT_RUN
+ow-tell,1,word,tell,告诉,Can you tell me the price? / 你能告诉我价格吗？ | tell me the price / 告诉我价格 ,or-v6-tell,,,,NOT_RUN
+ow-talk,1,word,talk,交谈,Can we talk now? / 我们现在可以谈谈吗？ | talk to me / 和我交谈 ,or-v6-talk,,,,NOT_RUN
+ow-answer,1,word,answer,回答；答案,Please answer this question. / 请回答这个问题。 | answer a question / 回答问题 ,or-v6-answer,,,,NOT_RUN
+ow-learn,2,word,learn,学习,I want to learn English. / 我想学英语。 | learn English / 学英语 ,or-v6-learn,,,,NOT_RUN
+ow-teach,1,word,teach,教,Can you teach me this word? / 你能教我这个词吗？ | teach me / 教我 ,or-v6-teach,,,,NOT_RUN
+ow-study,1,word,study,学习；研究,I study English at home. / 我在家学英语。 | study at home / 在家学习 ,or-v6-study,,,,NOT_RUN
+ow-practice,1,word,practice,练习,I practice English every day. / 我每天练习英语。 | practice English / 练习英语 ,or-v6-practice,,,,NOT_RUN
+ow-repeat,1,word,repeat,重复,"Can you repeat that, please? / 请问你能重复一下吗？ | repeat that / 重复那句话 ",or-v6-repeat,,,,NOT_RUN
+ow-spell,1,word,spell,拼写,How do you spell your name? / 你的名字怎么拼？ | spell your name / 拼写你的名字 ,or-v6-spell,,,,NOT_RUN
+ow-count,1,word,count,数；计数,Please count the tickets. / 请数一下票。 | count the tickets / 数票 ,or-v6-count,,,,NOT_RUN
+ow-add,1,word,add,添加,Please add some water. / 请加些水。 | add water / 加水 ,or-v6-add,,,,NOT_RUN
+ow-remove,1,word,remove,移走；去掉,Please remove this box. / 请移走这个盒子。 | remove a box / 移走盒子 ,or-v6-remove,,,,NOT_RUN
+ow-cut,1,word,cut,切；剪,Can you cut this bread? / 你能切一下这个面包吗？ | cut the bread / 切面包 ,or-v6-cut,,,,NOT_RUN
+ow-break,1,word,break,打破；弄坏,Do not break the glass. / 不要打破玻璃杯。 | break a glass / 打破玻璃杯 ,or-v6-break,,,,NOT_RUN
+ow-fix,1,word,fix,修理；解决,Can you fix this chair? / 你能修理这把椅子吗？ | fix a chair / 修理椅子 ,or-v6-fix,,,,NOT_RUN
+ow-build,1,word,build,建造,They build houses. / 他们建造房屋。 | build a house / 建造房屋 ,or-v6-build,,,,NOT_RUN
+ow-draw,1,word,draw,画（线条画）,Can you draw a map? / 你能画一张地图吗？ | draw a map / 画地图 ,or-v6-draw,,,,NOT_RUN
+ow-paint,1,word,paint,涂漆；用颜料画,They will paint the wall white. / 他们会把墙漆成白色。 | paint a wall / 粉刷墙壁 ,or-v6-paint,,,,NOT_RUN
+ow-touch,1,word,touch,触碰,Please do not touch this. / 请不要碰这个。 | do not touch / 不要触碰 ,or-v6-touch,,,,NOT_RUN
+ow-push,1,word,push,推,Please push the door. / 请推门。 | push the door / 推门 ,or-v6-push,,,,NOT_RUN
+ow-pull,1,word,pull,拉,Pull the door to open it. / 拉门把它打开。 | pull the door / 拉门 ,or-v6-pull,,,,NOT_RUN
+ow-press,1,word,press,按；压,Please press the green button. / 请按绿色按钮。 | press a button / 按按钮 ,or-v6-press,,,,NOT_RUN
+ow-lift,1,word,lift,抬起,Can you lift this bag? / 你能抬起这个包吗？ | lift a bag / 抬起包 ,or-v6-lift,,,,NOT_RUN
+ow-fall,1,word,fall,跌倒；落下,Be careful. You may fall. / 小心，你可能会摔倒。 | fall down / 跌倒 ,or-v6-fall,,,,NOT_RUN
+ow-drop,1,word,drop,掉落；放下,Please do not drop my phone. / 请不要把我的手机摔了。 | drop a phone / 使手机掉落 ,or-v6-drop,,,,NOT_RUN
+ow-throw,1,word,throw,扔,Do not throw trash here. / 不要在这里扔垃圾。 | throw it away / 把它扔掉 ,or-v6-throw,,,,NOT_RUN
+ow-catch,1,word,catch,赶上；接住,I need to catch the bus. / 我需要赶上公交车。 | catch a bus / 赶公交车 ,or-v6-catch,,,,NOT_RUN
+ow-run,1,word,run,跑,I run in the park. / 我在公园跑步。 | run in the park / 在公园跑步 ,or-v6-run,,,,NOT_RUN
+ow-swim,1,word,swim,游泳,Can you swim? / 你会游泳吗？ | swim in the sea / 在海里游泳 ,or-v6-swim,,,,NOT_RUN
+ow-dance,1,word,dance,跳舞,I like to dance. / 我喜欢跳舞。 | dance together / 一起跳舞 ,or-v6-dance,,,,NOT_RUN
+ow-sing,1,word,sing,唱歌,Can you sing this song? / 你会唱这首歌吗？ | sing a song / 唱歌 ,or-v6-sing,,,,NOT_RUN
+ow-play,2,word,play,玩；演奏,My children play outside. / 我的孩子们在外面玩。 | play outside / 在外面玩 ,or-v6-play,,,,NOT_RUN
+ow-laugh,1,word,laugh,笑,This story makes me laugh. / 这个故事让我发笑。 | make me laugh / 让我发笑 ,or-v6-laugh,,,,NOT_RUN
+ow-smile,1,word,smile,微笑,She has a friendly smile. / 她的笑容很友善。 | a friendly smile / 友善的微笑 ,or-v6-smile,,,,NOT_RUN
+ow-cry,1,word,cry,哭,The baby is crying. / 婴儿在哭。 | a baby crying / 正在哭的婴儿 ,or-v6-cry,,,,NOT_RUN
+ow-join,1,word,join,加入；参加,May I join you? / 我可以加入你们吗？ | join us / 加入我们 ,or-v6-join,,,,NOT_RUN
+ow-invite,1,word,invite,邀请,Can I invite my friend? / 我可以邀请朋友来吗？ | invite a friend / 邀请朋友 ,or-v6-invite,,,,NOT_RUN
+ow-offer,1,word,offer,提供；提议,Can you offer a lower price? / 你能给低一点的价格吗？ | offer help / 主动提供帮助 ,or-v6-offer,,,,NOT_RUN
+ow-accept,1,word,accept,接受,Do you accept cards? / 你们接受刷卡吗？ | accept cards / 接受刷卡 ,or-v6-accept,,,,NOT_RUN
+ow-refuse,1,word,refuse,拒绝,You can refuse the offer. / 你可以拒绝这个提议。 | refuse an offer / 拒绝提议 ,or-v6-refuse,,,,NOT_RUN
+ow-allow,1,word,allow,允许,Do you allow pets? / 你们允许带宠物吗？ | allow pets / 允许带宠物 ,or-v6-allow,,,,NOT_RUN
+ow-save,1,word,save,节省；保存,This can save time. / 这样可以节省时间。 | save time / 节省时间 ,or-v6-save,,,,NOT_RUN
+ow-spend,1,word,spend,花费,I do not want to spend more money. / 我不想再花钱了。 | spend money / 花钱 ,or-v6-spend,,,,NOT_RUN
+ow-lose,1,word,lose,丢失；失去,Please do not lose your ticket. / 请别弄丢你的票。 | lose a ticket / 弄丢票 ,or-v6-lose,,,,NOT_RUN
+ow-win,1,word,win,赢,I hope we win. / 我希望我们赢。 | win a game / 赢得比赛 ,or-v6-win,,,,NOT_RUN
+ow-search,1,word,search,寻找；搜索,Can you help me search for my bag? / 你能帮我找包吗？ | search for a bag / 寻找包 ,or-v6-search,,,,NOT_RUN
+ow-share,1,word,share,分享；共用,Can we share this table? / 我们可以共用这张桌子吗？ | share a table / 共用一张桌子 ,or-v6-share,,,,NOT_RUN
+ow-connect,1,word,connect,连接,How do I connect my phone? / 我怎么连接手机？ | connect my phone / 连接我的手机 ,or-v6-connect,,,,NOT_RUN
+ow-charge,2,word,charge,充电；收费,Can I charge my phone here? / 我可以在这里给手机充电吗？ | charge a phone / 给手机充电 ,or-v6-charge,,,,NOT_RUN
+ow-print,1,word,print,打印,Can you print my ticket? / 你能打印我的票吗？ | print a ticket / 打印票 ,or-v6-print,,,,NOT_RUN
+ow-download,1,word,download,下载,Can I download this map? / 我可以下载这张地图吗？ | download a map / 下载地图 ,or-v6-download,,,,NOT_RUN
+ow-upload,1,word,upload,上传,How do I upload a picture? / 我怎么上传图片？ | upload a picture / 上传图片 ,or-v6-upload,,,,NOT_RUN
+ow-type,1,word,type,打字；种类,Please type your name here. / 请在这里输入你的名字。 | type your name / 输入名字 ,or-v6-type,,,,NOT_RUN
+ow-sign,1,word,sign,签名；标志,Please sign here. / 请在这里签名。 | sign your name / 签名 ,or-v6-sign,,,,NOT_RUN
+ow-fill,1,word,fill,填满；填写,Please fill this bottle with water. / 请把这个瓶子装满水。 | fill a bottle / 装满瓶子 ,or-v6-fill,,,,NOT_RUN
+ow-cover,1,word,cover,盖住；覆盖,Please cover the food. / 请把食物盖好。 | cover the food / 盖住食物 ,or-v6-cover,,,,NOT_RUN
+ow-include,1,word,include,包括,Does the price include breakfast? / 这个价格包括早餐吗？ | include breakfast / 包括早餐 ,or-v6-include,,,,NOT_RUN
+ow-belong,1,word,belong,属于,Does this bag belong to you? / 这个包是你的吗？ | belong to you / 属于你 ,or-v6-belong,,,,NOT_RUN
+ow-depend,1,word,depend,依靠；取决于,It depends on the price. / 这取决于价格。 | depend on the price / 取决于价格 ,or-v6-depend,,,,NOT_RUN
+ow-happen,1,word,happen,发生,What happened to your phone? / 你的手机怎么了？ | what happened / 发生了什么 ,or-v6-happen,,,,NOT_RUN
+ow-continue,1,word,continue,继续,Can we continue tomorrow? / 我们可以明天继续吗？ | continue tomorrow / 明天继续 ,or-v6-continue,,,,NOT_RUN
+ow-become,1,word,become,变得；成为,I want to become a teacher. / 我想成为一名教师。 | become a teacher / 成为教师 ,or-v6-become,,,,NOT_RUN
+ow-grow,1,word,grow,生长；种植,These plants grow fast. / 这些植物长得很快。 | grow vegetables / 种蔬菜 ,or-v6-grow,,,,NOT_RUN
+ow-borrow,1,word,borrow,借入,May I borrow your pen? / 我可以借用你的笔吗？ | borrow a pen / 借入一支笔 ,or-v6-borrow,,,,NOT_RUN
+ow-lend,1,word,lend,借出,Can you lend me a pen? / 你能借给我一支笔吗？ | lend me a pen / 借给我一支笔 ,or-v6-lend,,,,NOT_RUN
+ow-rent,1,word,rent,租用,I want to rent a car. / 我想租一辆车。 | rent a car / 租汽车 ,or-v6-rent,,,,NOT_RUN
+ow-own,1,word,own,拥有；自己的,Do you own this car? / 这辆车是你的吗？ | my own room / 我自己的房间 ,or-v6-own,,,,NOT_RUN
+ow-fit,1,word,fit,大小合适,These shoes do not fit. / 这双鞋不合脚。 | fit well / 很合适 ,or-v6-fit,,,,NOT_RUN
+ow-weigh,1,word,weigh,称重；重量是,How much does this bag weigh? / 这个包有多重？ | weigh a bag / 称包的重量 ,or-v6-weigh,,,,NOT_RUN
+ow-measure,1,word,measure,测量,Can you measure the table? / 你能量一下桌子吗？ | measure the table / 测量桌子 ,or-v6-measure,,,,NOT_RUN
+ow-thing,1,word,thing,东西；事情,What is this thing for? / 这个东西是做什么用的？ | a useful thing / 有用的东西 ,or-v6-thing,,,,NOT_RUN
+ow-idea,1,word,idea,想法,That is a good idea. / 那是一个好主意。 | a good idea / 一个好主意 ,or-v6-idea,,,,NOT_RUN
+ow-reason,1,word,reason,原因,What is the reason for the delay? / 延误的原因是什么？ | the reason for it / 它的原因 ,or-v6-reason,,,,NOT_RUN
+ow-information,1,word,information,信息,I need more information. / 我需要更多信息。 | more information / 更多信息 ,or-v6-information,,,,NOT_RUN
+ow-detail,1,word,detail,细节,Can you send me the details? / 你能把详细信息发给我吗？ | the details / 详细信息 ,or-v6-detail,,,,NOT_RUN
+ow-example,1,word,example,例子,Can you give me an example? / 你能给我一个例子吗？ | an example / 一个例子 ,or-v6-example,,,,NOT_RUN
+ow-word,1,word,word,单词；词语,I do not know this word. / 我不认识这个词。 | a simple word / 一个简单的词 ,or-v6-word,,,,NOT_RUN
+ow-sentence,1,word,sentence,句子,Can you say this sentence slowly? / 你能慢慢说这个句子吗？ | a short sentence / 一个短句 ,or-v6-sentence,,,,NOT_RUN
+ow-meaning,1,word,meaning,含义,What is the meaning of this word? / 这个词的含义是什么？ | the meaning / 含义 ,or-v6-meaning,,,,NOT_RUN
+ow-letter,1,word,letter,字母；信,Please write your name in capital letters. / 请用大写字母写你的名字。 | a letter / 一个字母；一封信 ,or-v6-letter,,,,NOT_RUN
+ow-line,2,word,line,行；队伍,Please stand in line. / 请排队。 | stand in line / 排队 ,or-v6-line,,,,NOT_RUN
+ow-list,1,word,list,清单,Is my name on the list? / 清单上有我的名字吗？ | a shopping list / 购物清单 ,or-v6-list,,,,NOT_RUN
+ow-form,1,word,form,表格,Please fill in this form. / 请填写这张表格。 | fill in a form / 填表 ,or-v6-form,,,,NOT_RUN
+ow-note,1,word,note,便条,Please leave me a note. / 请给我留张便条。 | leave a note / 留便条 ,or-v6-note,,,,NOT_RUN
+ow-file,1,word,file,文件,Can you send me the file? / 你能把文件发给我吗？ | send a file / 发送文件 ,or-v6-file,,,,NOT_RUN
+ow-page,1,word,page,页；页面,Please read the first page. / 请读第一页。 | the first page / 第一页 ,or-v6-page,,,,NOT_RUN
+ow-website,1,word,website,网站,What is your website address? / 你们的网站地址是什么？ | a website address / 网站地址 ,or-v6-website,,,,NOT_RUN
+ow-app,1,word,app,应用程序,How do I use this app? / 这个应用怎么用？ | a phone app / 手机应用 ,or-v6-app,,,,NOT_RUN
+ow-code,1,word,code,代码；验证码,Please send me the code. / 请把验证码发给我。 | a code / 一个验证码 ,or-v6-code,,,,NOT_RUN
+ow-link,1,word,link,链接,This link does not work. / 这个链接打不开。 | send a link / 发送链接 ,or-v6-link,,,,NOT_RUN
+ow-service,1,word,service,服务,Is there a bus service to the airport? / 有去机场的公交服务吗？ | a bus service / 公交服务 ,or-v6-service,,,,NOT_RUN
+ow-business,1,word,business,生意；商业活动,I have a small business. / 我经营一家小企业。 | a small business / 一家小企业 ,or-v6-business,,,,NOT_RUN
+ow-company,1,word,company,公司,I work for a small company. / 我在一家小公司工作。 | a small company / 一家小公司 ,or-v6-company,,,,NOT_RUN
+ow-team,1,word,team,团队,I work with a small team. / 我和一个小团队一起工作。 | a small team / 一个小团队 ,or-v6-team,,,,NOT_RUN
+ow-plan,1,word,plan,计划,What is the plan for tomorrow? / 明天有什么计划？ | a plan for tomorrow / 明天的计划 ,or-v6-plan,,,,NOT_RUN
+ow-power,1,word,power,电力；力量,There is no power in my room. / 我的房间没电了。 | no power / 没有电 ,or-v6-power,,,,NOT_RUN
+ow-task,1,word,task,任务,This task is easy. / 这个任务很容易。 | an easy task / 一个简单任务 ,or-v6-task,,,,NOT_RUN
+ow-result,1,word,result,结果,When can I get the result? / 我什么时候可以拿到结果？ | the result / 结果 ,or-v6-result,,,,NOT_RUN
+ow-mistake,1,word,mistake,错误,There is a mistake in the address. / 地址里有一处错误。 | a small mistake / 一个小错误 ,or-v6-mistake,,,,NOT_RUN
+ow-rule,1,word,rule,规则,What is the rule here? / 这里有什么规定？ | a simple rule / 一条简单规则 ,or-v6-rule,,,,NOT_RUN
+ow-instruction,1,word,instruction,指示；使用说明,Please read the instructions. / 请阅读使用说明。 | clear instructions / 清楚的说明 ,or-v6-instruction,,,,NOT_RUN
+ow-news,1,word,news,消息；新闻,Do you have any news? / 你有消息吗？ | good news / 好消息 ,or-v6-news,,,,NOT_RUN
+ow-story,1,word,story,故事,Can you tell me a story? / 你能给我讲个故事吗？ | a short story / 一个短故事 ,or-v6-story,,,,NOT_RUN
+ow-experience,1,word,experience,经历；经验,I have some experience. / 我有一些经验。 | work experience / 工作经验 ,or-v6-experience,,,,NOT_RUN
+ow-life,1,word,life,生活；生命,Life here is quiet. / 这里的生活很安静。 | daily life / 日常生活 ,or-v6-life,,,,NOT_RUN
+ow-event,1,word,event,活动；事件,What time does the event start? / 活动几点开始？ | a special event / 一场特别活动 ,or-v6-event,,,,NOT_RUN
+ow-fact,1,word,fact,事实,I need to check the facts. / 我需要核查事实。 | check the facts / 核查事实 ,or-v6-fact,,,,NOT_RUN
+ow-choice,1,word,choice,选择,Do I have another choice? / 我还有别的选择吗？ | another choice / 另一个选择 ,or-v6-choice,,,,NOT_RUN
+ow-difference,1,word,difference,区别,What is the difference? / 有什么区别？ | the difference / 区别 ,or-v6-difference,,,,NOT_RUN
+ow-purpose,1,word,purpose,用途；目的,What is the purpose of this button? / 这个按钮有什么用途？ | the purpose / 用途 ,or-v6-purpose,,,,NOT_RUN
+ow-quality,1,word,quality,质量,The quality is good. / 质量很好。 | good quality / 好的质量 ,or-v6-quality,,,,NOT_RUN
+ow-amount,1,word,amount,数量；金额,Is this the correct amount? / 这个金额对吗？ | the correct amount / 正确的金额 ,or-v6-amount,,,,NOT_RUN
+ow-total,1,word,total,总数；总额,What is the total? / 总共是多少？ | the total price / 总价 ,or-v6-total,,,,NOT_RUN
+ow-limit,1,word,limit,限额；限制,Is there a time limit? / 有时间限制吗？ | a time limit / 时间限制 ,or-v6-limit,,,,NOT_RUN
+ow-chance,1,word,chance,机会；可能性,Can I have another chance? / 我可以再有一次机会吗？ | another chance / 另一次机会 ,or-v6-chance,,,,NOT_RUN
+ow-level,1,word,level,水平；层,The water level is low. / 水位很低。 | the water level / 水位 ,or-v6-level,,,,NOT_RUN
+ow-step,1,word,step,步骤；台阶,What is the next step? / 下一步是什么？ | the next step / 下一步 ,or-v6-step,,,,NOT_RUN
+ow-side,1,word,side,侧面；一边,Please stand on this side. / 请站在这一边。 | this side / 这一边 ,or-v6-side,,,,NOT_RUN
+ow-end,1,word,end,末端；结束,The shop is at the end of the road. / 商店在路的尽头。 | the end of the road / 路的尽头 ,or-v6-end,,,,NOT_RUN
+ow-middle,1,word,middle,中间,The key is in the middle of the table. / 钥匙在桌子中间。 | in the middle / 在中间 ,or-v6-middle,,,,NOT_RUN
+ow-top,1,word,top,顶部,Put it on top of the box. / 把它放在盒子顶部。 | on top of the box / 在盒子顶部 ,or-v6-top,,,,NOT_RUN
+ow-bottom,1,word,bottom,底部,My key is at the bottom of the bag. / 我的钥匙在包底。 | at the bottom / 在底部 ,or-v6-bottom,,,,NOT_RUN
+pt-identity,1,pattern,I am a ___.,我是……。,I am a teacher. / 我是一名教师。,,,,,NOT_RUN
+pt-identity-teacher,1,authored-variant,I am a teacher.,我是一名教师。,parent=pt-identity,,,,,NOT_RUN
+pt-identity-driver,1,authored-variant,I am a driver.,我是一名司机。,parent=pt-identity,,,,,NOT_RUN
+pt-identity-student,1,authored-variant,I am a student.,我是一名学生。,parent=pt-identity,,,,,NOT_RUN
+pt-going,1,pattern,I am going to ___.,我要去……。,I am going to the station. / 我要去车站。,,,,,NOT_RUN
+pt-going-station,1,authored-variant,I am going to the station.,我要去车站。,parent=pt-going,,,,,NOT_RUN
+pt-going-airport,1,authored-variant,I am going to the airport.,我要去机场。,parent=pt-going,,,,,NOT_RUN
+pt-going-home,1,authored-variant,I am going home.,我要回家。,parent=pt-going,,,,,NOT_RUN
+pt-why,1,pattern,Why is ___?,为什么……？,Why is the bus late? / 公交车为什么晚点？,,,,,NOT_RUN
+pt-why-late,1,authored-variant,Why is the bus late?,公交车为什么晚点？,parent=pt-why,,,,,NOT_RUN
+pt-why-closed,1,authored-variant,Why is the shop closed?,商店为什么关门了？,parent=pt-why,,,,,NOT_RUN
+pt-why-high,1,authored-variant,Why is the price so high?,价格为什么这么高？,parent=pt-why,,,,,NOT_RUN
+pt-because,1,pattern,I need ___ because ___.,因为……，我需要……。,I need water because I am thirsty. / 我需要水，因为我渴了。,,,,,NOT_RUN
+pt-because-water,1,authored-variant,I need water because I am thirsty.,我需要水，因为我渴了。,parent=pt-because,,,,,NOT_RUN
+pt-because-help,1,authored-variant,I need help because I am lost.,我需要帮助，因为我迷路了。,parent=pt-because,,,,,NOT_RUN
+pt-because-rest,1,authored-variant,I need a rest because I am tired.,我需要休息，因为我累了。,parent=pt-because,,,,,NOT_RUN
+pt-dont-know,1,pattern,I do not know ___.,我不知道……。,I do not know this word. / 我不认识这个词。,,,,,NOT_RUN
+pt-dont-know-word,1,authored-variant,I do not know this word.,我不认识这个词。,parent=pt-dont-know,,,,,NOT_RUN
+pt-dont-know-answer,1,authored-variant,I do not know the answer.,我不知道答案。,parent=pt-dont-know,,,,,NOT_RUN
+pt-dont-know-time,1,authored-variant,I do not know the time.,我不知道时间。,parent=pt-dont-know,,,,,NOT_RUN
+pt-understand,1,pattern,I do not understand ___.,我不明白……。,I do not understand this message. / 我不明白这条信息。,,,,,NOT_RUN
+pt-understand-message,1,authored-variant,I do not understand this message.,我不明白这条信息。,parent=pt-understand,,,,,NOT_RUN
+pt-understand-question,1,authored-variant,I do not understand the question.,我不明白这个问题。,parent=pt-understand,,,,,NOT_RUN
+pt-understand-rule,1,authored-variant,I do not understand this rule.,我不明白这条规则。,parent=pt-understand,,,,,NOT_RUN
+pt-like,1,pattern,I like ___.,我喜欢……。,I like tea. / 我喜欢茶。,,,,,NOT_RUN
+pt-like-tea,1,authored-variant,I like tea.,我喜欢茶。,parent=pt-like,,,,,NOT_RUN
+pt-like-place,1,authored-variant,I like this place.,我喜欢这个地方。,parent=pt-like,,,,,NOT_RUN
+pt-like-walk,1,authored-variant,I like to walk.,我喜欢步行。,parent=pt-like,,,,,NOT_RUN
+pt-dislike,1,pattern,I do not like ___.,我不喜欢……。,I do not like coffee. / 我不喜欢咖啡。,,,,,NOT_RUN
+pt-dislike-coffee,1,authored-variant,I do not like coffee.,我不喜欢咖啡。,parent=pt-dislike,,,,,NOT_RUN
+pt-dislike-food,1,authored-variant,I do not like this food.,我不喜欢这种食物。,parent=pt-dislike,,,,,NOT_RUN
+pt-dislike-noise,1,authored-variant,I do not like the noise.,我不喜欢这噪音。,parent=pt-dislike,,,,,NOT_RUN
+pt-think,1,pattern,I think ___.,我认为……。,I think this is good. / 我觉得这个不错。,,,,,NOT_RUN
+pt-think-good,1,authored-variant,I think this is good.,我觉得这个不错。,parent=pt-think,,,,,NOT_RUN
+pt-think-late,1,authored-variant,I think the bus is late.,我觉得公交车晚点了。,parent=pt-think,,,,,NOT_RUN
+pt-think-need,1,authored-variant,I think we need more time.,我觉得我们需要更多时间。,parent=pt-think,,,,,NOT_RUN
+pt-help-do,1,pattern,Can you help me ___?,你能帮我……吗？,Can you help me find the station? / 你能帮我找到车站吗？,,,,,NOT_RUN
+pt-help-do-find,1,authored-variant,Can you help me find the station?,你能帮我找到车站吗？,parent=pt-help-do,,,,,NOT_RUN
+pt-help-do-carry,1,authored-variant,Can you help me carry this bag?,你能帮我提这个包吗？,parent=pt-help-do,,,,,NOT_RUN
+pt-help-do-understand,1,authored-variant,Can you help me understand this?,你能帮我理解这个吗？,parent=pt-help-do,,,,,NOT_RUN
+pt-how-long,1,pattern,How long does ___ take?,……需要多长时间？,How long does the trip take? / 旅程需要多长时间？,,,,,NOT_RUN
+pt-how-long-trip,1,authored-variant,How long does the trip take?,旅程需要多长时间？,parent=pt-how-long,,,,,NOT_RUN
+pt-how-long-work,1,authored-variant,How long does the work take?,这项工作需要多长时间？,parent=pt-how-long,,,,,NOT_RUN
+pt-how-long-ride,1,authored-variant,How long does the ride take?,这段乘车需要多长时间？,parent=pt-how-long,,,,,NOT_RUN
+pt-how-far,1,pattern,How far is ___?,……有多远？,How far is the station from here? / 车站离这里多远？,,,,,NOT_RUN
+pt-how-far-station,1,authored-variant,How far is the station from here?,车站离这里多远？,parent=pt-how-far,,,,,NOT_RUN
+pt-how-far-hotel,1,authored-variant,How far is the hotel from here?,酒店离这里多远？,parent=pt-how-far,,,,,NOT_RUN
+pt-how-far-beach,1,authored-variant,How far is the beach from here?,海滩离这里多远？,parent=pt-how-far,,,,,NOT_RUN
+pt-how-use,1,pattern,How do I ___?,我怎么……？,How do I use this machine? / 这台机器怎么用？,,,,,NOT_RUN
+pt-how-use-use,1,authored-variant,How do I use this machine?,这台机器怎么用？,parent=pt-how-use,,,,,NOT_RUN
+pt-how-use-pay,1,authored-variant,How do I pay?,我怎么付款？,parent=pt-how-use,,,,,NOT_RUN
+pt-how-use-connect,1,authored-variant,How do I connect my phone?,我怎么连接手机？,parent=pt-how-use,,,,,NOT_RUN
+pt-not-work,1,pattern,The ___ does not work.,……不能正常使用。,The phone does not work. / 手机不能正常用了。,,,,,NOT_RUN
+pt-not-work-phone,1,authored-variant,The phone does not work.,手机不能正常用了。,parent=pt-not-work,,,,,NOT_RUN
+pt-not-work-light,1,authored-variant,The light does not work.,灯不亮了。,parent=pt-not-work,,,,,NOT_RUN
+pt-not-work-key,1,authored-variant,The key does not work.,钥匙打不开。,parent=pt-not-work,,,,,NOT_RUN
+pt-there-any,1,pattern,Is there ___?,有……吗？,Is there a toilet here? / 这里有厕所吗？,,,,,NOT_RUN
+pt-there-any-toilet,1,authored-variant,Is there a toilet here?,这里有厕所吗？,parent=pt-there-any,,,,,NOT_RUN
+pt-there-any-bank,1,authored-variant,Is there a bank near here?,附近有银行吗？,parent=pt-there-any,,,,,NOT_RUN
+pt-there-any-socket,1,authored-variant,Is there a socket in the room?,房间里有插座吗？,parent=pt-there-any,,,,,NOT_RUN
+pt-how-many-have,1,pattern,How many ___ do you have?,你有多少……？,How many rooms do you have? / 你们有多少个房间？,,,,,NOT_RUN
+pt-how-many-have-rooms,1,authored-variant,How many rooms do you have?,你们有多少个房间？,parent=pt-how-many-have,,,,,NOT_RUN
+pt-how-many-have-tickets,1,authored-variant,How many tickets do you have?,你有多少张票？,parent=pt-how-many-have,,,,,NOT_RUN
+pt-how-many-have-bags,1,authored-variant,How many bags do you have?,你有多少个包？,parent=pt-how-many-have,,,,,NOT_RUN
+pt-used-for,1,pattern,You use it to ___.,你用它来……。,You use it to open a door. / 你用它来开门。,,,,,NOT_RUN
+pt-used-for-open,1,authored-variant,You use it to open a door.,你用它来开门。,parent=pt-used-for,,,,,NOT_RUN
+pt-used-for-write,1,authored-variant,You use it to write on paper.,你用它在纸上写字。,parent=pt-used-for,,,,,NOT_RUN
+pt-used-for-charge,1,authored-variant,You use it to charge a phone.,你用它给手机充电。,parent=pt-used-for,,,,,NOT_RUN
+pt-person-who,1,pattern,It is a person who ___.,这是一个……的人。,It is a person who teaches students. / 这是一个教学生的人。,,,,,NOT_RUN
+pt-person-who-teach,1,authored-variant,It is a person who teaches students.,这是一个教学生的人。,parent=pt-person-who,,,,,NOT_RUN
+pt-person-who-drive,1,authored-variant,It is a person who drives a bus.,这是一个开公交车的人。,parent=pt-person-who,,,,,NOT_RUN
+pt-person-who-cook,1,authored-variant,It is a person who cooks food.,这是一个做饭的人。,parent=pt-person-who,,,,,NOT_RUN
+pt-place-where,1,pattern,It is a place where ___.,这是一个……的地方。,It is a place where you can buy medicine. / 这是一个可以买药的地方。,,,,,NOT_RUN
+pt-place-where-medicine,1,authored-variant,It is a place where you can buy medicine.,这是一个可以买药的地方。,parent=pt-place-where,,,,,NOT_RUN
+pt-place-where-books,1,authored-variant,It is a place where you can borrow books.,这是一个可以借书的地方。,parent=pt-place-where,,,,,NOT_RUN
+pt-place-where-sleep,1,authored-variant,It is a place where you can sleep.,这是一个可以睡觉的地方。,parent=pt-place-where,,,,,NOT_RUN
+pt-rather,1,pattern,I would like ___ instead.,我想换成……。,I would like tea instead. / 我想换成茶。,,,,,NOT_RUN
+pt-rather-tea,1,authored-variant,I would like tea instead.,我想换成茶。,parent=pt-rather,,,,,NOT_RUN
+pt-rather-cash,1,authored-variant,I would like to pay in cash instead.,我想改用现金付款。,parent=pt-rather,,,,,NOT_RUN
+pt-rather-room,1,authored-variant,I would like another room instead.,我想换一个房间。,parent=pt-rather,,,,,NOT_RUN
+pt-if-need,1,pattern,"If ___, please ___.",如果……，请……。,"If you need help, please call me. / 如果你需要帮助，请给我打电话。",,,,,NOT_RUN
+pt-if-need-help,1,authored-variant,"If you need help, please call me.",如果你需要帮助，请给我打电话。,parent=pt-if-need,,,,,NOT_RUN
+pt-if-need-late,1,authored-variant,"If you are late, please send a message.",如果你迟到，请发条消息。,parent=pt-if-need,,,,,NOT_RUN
+pt-if-need-lost,1,authored-variant,"If you are lost, please ask for help.",如果你迷路，请向别人求助。,parent=pt-if-need,,,,,NOT_RUN
+cb-come-on-time,1,combination,come on time,准时来,Please come on time. / 请准时来。,,,,,NOT_RUN
+cb-come-to-a-meeting,1,combination,come to a meeting,来参加会议,Can you come to the meeting? / 你能来参加会议吗？,,,,,NOT_RUN
+cb-get-to-the-station,1,combination,get to the station,到达车站,How do I get to the station? / 我怎么去车站？,,,,,NOT_RUN
+cb-get-ready,1,combination,get ready,准备好,Please get ready to leave. / 请做好出发准备。,,,,,NOT_RUN
+cb-give-me-a-hand,1,combination,give me a hand,帮我一下,Can you give me a hand with this bag? / 你能帮我提一下这个包吗？,,,,,NOT_RUN
+cb-give-me-an-example,1,combination,give me an example,给我举个例子,Can you give me an example? / 你能给我举个例子吗？,,,,,NOT_RUN
+cb-go-out,1,combination,go out,出去,We can go out after lunch. / 午餐后我们可以出去。,,,,,NOT_RUN
+cb-go-back,1,combination,go back,返回,I need to go back to the hotel. / 我需要返回酒店。,,,,,NOT_RUN
+cb-keep-in-touch,1,combination,keep in touch,保持联系,Let us keep in touch. / 我们保持联系吧。,,,,,NOT_RUN
+cb-keep-it-safe,1,combination,keep it safe,保管好它,Please keep your passport safe. / 请保管好你的护照。,,,,,NOT_RUN
+cb-let-me-know,1,combination,let me know,告诉我,Please let me know the time. / 请告诉我时间。,,,,,NOT_RUN
+cb-let-us-go,1,combination,let us go,我们走吧,Let us go to the station. / 我们去车站吧。,,,,,NOT_RUN
+cb-make-a-choice,1,combination,make a choice,作出选择,I need time to make a choice. / 我需要时间作出选择。,,,,,NOT_RUN
+cb-make-a-mistake,1,combination,make a mistake,犯错,It is easy to make a mistake. / 这很容易出错。,,,,,NOT_RUN
+cb-put-on-a-coat,1,combination,put on a coat,穿上外套,Please put on your coat. / 请穿上你的外套。,,,,,NOT_RUN
+cb-put-it-away,1,combination,put it away,把它收好,Please put your phone away. / 请把手机收好。,,,,,NOT_RUN
+cb-seem-to-work,1,combination,seem to work,似乎正常运作,The phone seems to work now. / 手机现在似乎能用了。,,,,,NOT_RUN
+cb-seem-to-know,1,combination,seem to know,似乎知道,You seem to know the way. / 你似乎知道路。,,,,,NOT_RUN
+cb-take-a-break,1,combination,take a break,休息一下,Let us take a break. / 我们休息一下吧。,,,,,NOT_RUN
+cb-take-a-picture,1,combination,take a picture,拍照,Can you take a picture of us? / 你能给我们拍张照吗？,,,,,NOT_RUN
+cb-be-careful,1,combination,be careful,小心,Please be careful with this box. / 请小心搬这个盒子。,,,,,NOT_RUN
+cb-be-made-of,1,combination,be made of,由……制成,This table is made of wood. / 这张桌子是木制的。,,,,,NOT_RUN
+cb-do-my-best,1,combination,do my best,尽我所能,I will do my best to help. / 我会尽力帮忙。,,,,,NOT_RUN
+cb-do-we-need,1,combination,do we need,我们需要……吗,Do we need a ticket? / 我们需要票吗？,,,,,NOT_RUN
+cb-have-a-look,1,combination,have a look,看一看,Can I have a look at the menu? / 我可以看看菜单吗？,,,,,NOT_RUN
+cb-have-a-problem,1,combination,have a problem,有个问题,I have a problem with my phone. / 我的手机出了问题。,,,,,NOT_RUN
+cb-say-no,1,combination,say no,表示拒绝,You can say no if you do not want it. / 如果你不想要，可以拒绝。,,,,,NOT_RUN
+cb-say-thank-you,1,combination,say thank you,表示感谢,I want to say thank you for your help. / 我想感谢你的帮助。,,,,,NOT_RUN
+cb-see-what-you-mean,1,combination,see what you mean,明白你的意思,I see what you mean. / 我明白你的意思。,,,,,NOT_RUN
+cb-see-the-difference,1,combination,see the difference,看出区别,Can you see the difference? / 你能看出区别吗？,,,,,NOT_RUN
+cb-send-it-back,1,combination,send it back,把它寄回,How can I send it back? / 我怎么把它寄回？,,,,,NOT_RUN
+cb-send-me-a-link,1,combination,send me a link,发链接给我,Please send me a link to the website. / 请发给我这个网站的链接。,,,,,NOT_RUN
+cb-may-be-late,1,combination,may be late,可能会晚,The bus may be late. / 公交车可能会晚点。,,,,,NOT_RUN
+cb-may-i-sit-here,1,combination,may I sit here,我可以坐这里吗,May I sit here? / 我可以坐这里吗？,,,,,NOT_RUN
+cb-will-let-you-know,1,combination,will let you know,会告诉你,I will let you know tomorrow. / 我明天会告诉你。,,,,,NOT_RUN
+cb-will-be-ready,1,combination,will be ready,会准备好,The room will be ready at two. / 房间会在两点准备好。,,,,,NOT_RUN
+ex-identity-teacher,1,expression,I am a teacher. / I work as a teacher.,介绍自己是一名教师。,第一句直接说明职业，第二句强调从事的工作；意思相近。,,,,,NOT_RUN
+ex-going-station,1,expression,I am going to the station. / I am on my way to the station.,说明你正要去车站。,第一句说明目的地，第二句强调已在前往的途中；请按实际情况选择。,,,,,NOT_RUN
+ex-why-closed,1,expression,Why is the shop closed? / Can you tell me why the shop is closed?,问商店为什么关门了。,第一句直接问原因，第二句以请对方告诉你的方式更委婉地问。,,,,,NOT_RUN
+ex-because-lost,1,expression,I need help because I am lost. / I am lost. Can you help me?,说明你迷路了，需要帮助。,第一句说明需求及原因，第二句先说明情况，再直接请求帮助。,,,,,NOT_RUN
+ex-unknown-word,1,expression,I do not know this word. / This word is new to me.,告诉对方你不认识这个词。,第一句直接说明不认识；第二句说明这个词对你是新的，并非说它刚被创造。,,,,,NOT_RUN
+ex-unknown-rule,1,expression,I do not understand this rule. / Can you explain this rule to me?,说明你不明白这条规则。,第一句说明不理解，第二句提出解释的请求；两者都能帮助继续交流。,,,,,NOT_RUN
+ex-like-walking,1,expression,I like to walk. / I like walking.,说你喜欢步行。,两句都自然地表示喜欢步行；这里不要求学习复杂语法名称。,,,,,NOT_RUN
+ex-dislike-coffee,1,expression,I do not like coffee. / Coffee is not something I like.,告诉对方你不喜欢咖啡。,第一句最简洁；第二句换一个组织方式，仍表达不喜欢，而不是过敏或不能喝。,,,,,NOT_RUN
+ex-think-need-time,1,expression,I think we need more time. / I believe we need more time.,表达你的看法：我们需要更多时间。,两句都表达个人看法；believe在这里可比think显得更确定一些。,,,,,NOT_RUN
+ex-help-carry,1,expression,Can you help me carry this bag? / Can you give me a hand with this bag?,请求别人帮你提这个包。,第一句明确说提包；第二句用give me a hand这个常用组合请求帮忙，不是索要一只手。,,,,,NOT_RUN
+ex-trip-duration,1,expression,How long does the trip take? / How much time does the trip take?,询问这段旅程需要多久。,两句都问耗时，第一句更简短；不是询问几点出发。,,,,,NOT_RUN
+ex-hotel-distance,1,expression,How far is the hotel from here? / What is the distance from here to the hotel?,询问酒店离这里有多远。,第一句更简洁常用；第二句用distance这个名词表达同一个距离问题。,,,,,NOT_RUN
+ex-use-machine,1,expression,How do I use this machine? / Can you show me how to use this machine?,请对方说明这台机器怎么用。,第一句询问方法；第二句请求对方演示，不只是口头解释。,,,,,NOT_RUN
+ex-key-not-work,1,expression,My key does not open the door. / My room key does not work.,在酒店说明钥匙打不开房门。,第一句说出不能开门的现象；第二句说明房间钥匙无效，并不确定具体故障原因。,,,,,NOT_RUN
+ex-ask-socket,1,expression,Is there a socket in the room? / Does the room have a power socket?,询问房间里有没有插座。,两句都询问房间设施，power socket明确指电源插座。,,,,,NOT_RUN
+ex-available-tickets,1,expression,How many tickets do you have? / What is the number of tickets you have?,问对方现在有多少张票。,第一句简短自然；第二句较正式但正确。这里问现有票数，不是想买的数量。,,,,,NOT_RUN
+ex-describe-key-use,1,expression,You use it to open a door. / It is for opening doors.,解释一把钥匙的用途：用它来开门。,第一句说明人怎样使用它，第二句说明用途；it要结合眼前物品或上下文理解。,,,,,NOT_RUN
+ex-describe-teacher,1,expression,It is a person who teaches students. / It is someone who helps students learn.,忘了“教师”这个词，用简单英语描述教学生的人。,第一句直接描述教学工作；第二句说明帮助学生学习，描述范围较宽。,,,,,NOT_RUN
+ex-describe-library,1,expression,It is a place where you can borrow books. / You can go there to read books and borrow them.,忘了“图书馆”：描述一个可以借书的地方。,第一句通过借书说明场所；第二句补充在那里读书。这里只描述通常提供借书服务的图书馆。,,,,,NOT_RUN
+ex-alternative-room,1,expression,I would like another room instead. / Can I change to a different room?,表达你想换一个房间。,第一句提出替代选择，第二句请求换房；不保证酒店一定有空房。,,,,,NOT_RUN
+ex-conditional-help,1,expression,"If you need help, please call me. / Please call me if you need help.",告诉朋友：如果需要帮助，请给你打电话。,两句条件与请求相同，只是先后顺序不同。,,,,,NOT_RUN
+ex-describe-driver,1,expression,It is a person who drives a bus. / It is someone whose job is to drive a bus.,忘了“公交车司机”：描述开公交车的人。,第一句描述动作，第二句明确这是一份工作。,,,,,NOT_RUN
+ex-describe-cook,1,expression,It is someone who cooks food as a job. / This person makes food for people at a restaurant.,忘了“厨师”：描述以做饭为工作的人。,第一句说明职业；第二句以餐馆的工作场景帮助对方理解。,,,,,NOT_RUN
+ex-describe-photographer,1,expression,It is a person whose job is to take pictures. / This person uses a camera to take pictures for work.,忘了“摄影师”：描述以拍照为工作的人。,两句都通过工作和工具解释；不是指每一个偶尔拍照的人。,,,,,NOT_RUN
+ex-describe-receptionist,1,expression,It is the person who helps guests at hotel reception. / This person works at the front of the hotel and gives guests their room keys.,忘了“前台接待员”：描述在酒店前台帮助客人的工作人员。,第一句用已知地点reception描述；第二句通过发房间钥匙的动作说明。,,,,,NOT_RUN
+ex-describe-wallet,1,expression,It is a small thing that you carry cash and cards in. / You keep your money and cards in it and carry it with you.,忘了“钱包”：描述随身放现金和卡的小物品。,两句都说明用途；第一句也可能描述小卡包，可结合外形或指物补充。,,,,,NOT_RUN
+ex-describe-umbrella,1,expression,You hold it above your head when it rains. / It is a thing you hold over your head to keep the rain off.,忘了“伞”：描述下雨时举在头上方的物品。,两句通过持物的位置与挡雨用途解释，没有把其他防雨衣物说成伞。,,,,,NOT_RUN
+ex-describe-towel,1,expression,It is a cloth you use to dry your hands or body. / You use this cloth to get water off your body after a shower.,忘了“毛巾”：描述用来擦干手和身体的布。,第一句简洁说明材料和用途，第二句补充洗澡后的使用场景。,,,,,NOT_RUN
+ex-describe-fridge,1,expression,It is a machine that keeps food cold. / You put food in it to keep the food cold.,忘了“冰箱”：描述让食物保持冷的机器。,第一句说明机器的功能，第二句从人的使用动作解释；未说冷冻所有食物。,,,,,NOT_RUN
+ex-describe-oven,2,expression,It is a box that gets hot inside. You use it to cook food. / You put food inside it and use heat to cook the food.,忘了“烤箱”：描述把食物放在里面加热烹饪的机器。,第一句用两个短句说明内部加热和做饭用途，第二句说明把食物放入并用热量烹饪的动作；可结合指物补充。,,,,,NOT_RUN
+ex-describe-washing-machine,1,expression,"It is a machine that washes clothes. / You put dirty clothes in it, and it washes them.",忘了“洗衣机”：描述清洗衣服的机器。,两句都明确清洗的对象是衣服，避免只说清洁机器而含混。,,,,,NOT_RUN
+ex-describe-battery,2,expression,It is a small thing inside a phone that gives the phone power. / The phone gets power from this small thing inside it.,忘了“电池”：描述给手机提供电力的小物品。,两句都说明这是手机内部提供电力的物品，与外接充电器区分。,,,,,NOT_RUN
+ex-describe-socket,1,expression,It is the place in the wall where you put a plug to get power. / You put the plug in this place in the wall to get power.,忘了“插座”：描述墙上让电器插头接电的地方。,两句都结合墙、插头和电力解释用途，不要求先说出socket。,,,,,NOT_RUN
+ex-describe-map,1,expression,It is a picture that shows roads and places. / You use this picture to find places and see which roads to take.,忘了“地图”：描述显示道路和地点的图片。,第一句描述图片内容，第二句说明找路的用途。,,,,,NOT_RUN
+ex-describe-platform,1,expression,It is the place at the station where you wait for a train. / You wait here at the station and get on the train here.,忘了“站台”：描述在车站等待并上火车的地方。,两句都指定车站内等车和上车的位置，第二句补充上车动作。,,,,,NOT_RUN
+ex-describe-gate,1,expression,"It is the place at the airport where you wait to get on the plane. / At the airport, you go to this place before you get on your plane.",忘了“登机口”：描述在机场等待登机的位置。,两句通过机场和登机流程描述，第二句更依赖眼前位置或指示牌。,,,,,NOT_RUN
+ex-describe-receipt-detail,1,expression,It is a piece of paper that shows what you bought and how much you paid. / This paper shows the things you paid for and the amount you paid.,忘了“收据”：描述显示买了什么、付了多少钱的纸。,两句都说明付款后的记录；不是尚未付款的账单。,,,,,NOT_RUN
+ex-describe-queue,1,expression,You stand behind other people and wait for your turn. / People stand in a line and wait to go one at a time.,忘了“排队”：描述站在其他人后面，等轮到自己。,第一句从个人动作说明，第二句描述一队人按顺序进行；不是挤在一起等。,,,,,NOT_RUN
+ex-describe-password,1,expression,"It is a word or code you type to get into your account. / You type this word or code to use your account, and you keep it private.",忘了“密码”：描述登录时输入、不能随便告诉别人的词或代码。,第一句说明用途，第二句补充保密；不把实际密码填写到练习中。,,,,,NOT_RUN
+ex-describe-appointment,1,expression,I will see the doctor at a time we agreed on. / The doctor and I agreed on a time to meet.,忘了“预约”：说明你和医生约好了见面的时间。,两句都说明见面时间经过约定，第一句说明会去见医生，第二句强调双方约好的时间。,,,,,NOT_RUN
+ex-describe-rent,1,expression,I want to pay to use a car for a few days and then give it back. / Can I pay to use this car for a few days and return it after that?,忘了“租车”：说明你想付钱使用一辆车几天，再把它还回去。,两句都含付钱、短期使用和归还，不是买车。,,,,,NOT_RUN
+ex-describe-borrow,1,expression,Can I use your pen and give it back after that? / May I use your pen? I will give it back.,忘了“借用”：请求现在用一下对方的笔，之后归还。,两句都说明会归还；第一句合成一个请求，第二句分成两个短句。,,,,,NOT_RUN
+ex-describe-refund,1,expression,I want to return this and get my money back. / Can I give this back and get back the money I paid?,忘了“退款”：说明你想退回买的物品并拿回钱。,两句都包含退物和退钱；不是只换另一个物品，也不保证商家接受。,,,,,NOT_RUN
+ex-describe-discount,1,expression,Can you make the price lower? / Can I get this for less money?,忘了“折扣”：询问价格能不能低一些。,第一句请对方降价，第二句问能否少付一点；不要求说出discount。,,,,,NOT_RUN
+ex-describe-spicy,1,expression,This food makes my mouth feel hot. / My mouth feels hot when I eat this food.,忘了“辣”：描述吃了以后嘴里有灼热感觉的食物。,这里说明辣的感受，不是说食物的温度高；必要时配合指物说明。,,,,,NOT_RUN
+ex-describe-waterproof,1,expression,This bag keeps rain out and keeps the things inside dry. / The things inside this bag stay dry in the rain.,忘了“防水”：说明这个包可以挡住雨水，不让里面的东西湿。,两句描述雨中防水效果，没有承诺可以长时间泡在水里。,,,,,NOT_RUN
+ex-describe-broken-screen,2,expression,The part of my phone that shows pictures and words is broken. / The part of my phone where I see words and pictures does not work.,忘了“屏幕”：说明手机显示图片和文字的那部分坏了。,第一句说明显示图片文字的部件坏了；第二句从使用者看到文字图片的位置说明不能正常运作。,,,,,NOT_RUN
+ex-describe-delivery-date,1,expression,What day will it get here? / When can you get it to this place?,询问东西哪一天可以送到这里。,第一句指定询问到达的日子；第二句更宽泛地问何时能送达，需要时可继续确认具体日期。,,,,,NOT_RUN
+ex-op-come-back,1,expression,Please come back tomorrow. / Can you come back tomorrow?,请对方明天回来。,第一句直接礼貌请求，第二句以问题方式询问明天回来是否可行。,,,,,NOT_RUN
+ex-op-get-ready,1,expression,Please get ready to leave. / Can you get ready to go?,请对方做好出发准备。,get ready表示进入准备好的状态，不是拿一个叫ready的东西。,,,,,NOT_RUN
+ex-op-give-example,1,expression,Can you give me an example? / Please show me an example.,请对方举一个例子。,第一句用give提出请求，第二句用show请求展示一个例子。,,,,,NOT_RUN
+ex-op-go-back,1,expression,I need to go back to the hotel. / I need to return to the hotel.,说明你需要返回酒店。,go back与return都表示返回；return本身已有回去的意思。,,,,,NOT_RUN
+ex-op-keep-safe,1,expression,Please keep your passport safe. / Please keep your passport in a safe place.,请对方保管好护照。,第一句强调保持安全，第二句补充放在安全地方这个方法。,,,,,NOT_RUN
+ex-op-let-know,1,expression,Please let me know the time. / Can you tell me the time?,请对方告诉你时间。,let me know在这里表示告诉我，不是允许我自己去找信息。,,,,,NOT_RUN
+ex-op-make-choice,1,expression,I need more time to make a choice. / I need more time to decide.,说明你还需要时间作出选择。,make a choice和decide都表示作决定，第一句使用名词组合。,,,,,NOT_RUN
+ex-op-put-away,1,expression,Please put your phone away. / Please put your phone in your bag.,请对方把手机收好。,第一句不限定收在哪里；第二句明确放进包，只有适合时才选。,,,,,NOT_RUN
+ex-op-seem-work,1,expression,The phone seems to work now. / It seems that the phone works now.,说明手机现在似乎能用了。,两句都保留似乎这一不确定程度，没有把印象说成已经确认。,,,,,NOT_RUN
+ex-op-take-break,1,expression,Let us take a break. / Let us have a short rest.,建议大家休息一下。,take a break是常用休息组合；第二句明确是短暂休息。口语也常用Let's。,,,,,NOT_RUN
+ex-op-be-careful,1,expression,Please be careful with this box. / Please move this box carefully.,请对方小心搬这个盒子。,第一句用be说明需要的状态，第二句直接说明小心移动；carefully是方式词。,,,,,NOT_RUN
+ex-op-do-best,1,expression,I will do my best to help. / I will try my best to help.,说明你会尽力帮助。,两句都承诺尽力，不是保证一定解决所有问题。,,,,,NOT_RUN
+ex-op-have-look,1,expression,Can I have a look at the menu? / Can I see the menu?,请求看一看菜单。,have a look表示看一看，不是拥有一个物品；第二句更简短。,,,,,NOT_RUN
+ex-op-say-thanks,1,expression,I want to say thank you for your help. / Thank you for helping me. / Thanks for your help.,感谢对方的帮助。,第一句完整说明想表达感谢，第二句是更直接自然的感谢。 也可用Thanks for your help简洁表达同一感谢。,,,,,NOT_RUN
+ex-op-see-meaning,1,expression,I see what you mean. / I understand what you mean.,告诉对方你明白他的意思了。,see在这里表示明白，不是用眼睛看到。,,,,,NOT_RUN
+ex-op-send-link,1,expression,Please send me a link to the website. / Can you send me the website link?,请对方发送网站链接。,两句请求同一链接，第一句直接礼貌请求，第二句用Can you提问。,,,,,NOT_RUN
+ex-op-may-use-phone,1,expression,"May I use your phone? / Can I use your phone, please?",礼貌询问能否使用对方的手机。,May I通常较正式；Can I在日常请求许可时也自然，不把may解释成普通动作。,,,,,NOT_RUN
+ex-op-will-ready,1,expression,The room will be ready at two. / It will be possible to use the room at two.,告诉对方房间两点会准备好。,第一句直接说明准备好的时间，第二句说明届时可以使用；都是对未来的说明。,,,,,NOT_RUN
+ex-repeat-again,1,expression,"Please say that again. / Can you repeat that, please?",请对方把刚才的话再说一次。,第一句用say again，第二句用repeat表达重复；不限定慢速。,,,,,NOT_RUN
+ex-room-has-shower,1,expression,There is a shower in the room. / The room has a shower.,说明房间里有淋浴设施。,第一句以There is说明某处有，第二句以房间为主题说明设施。,,,,,NOT_RUN

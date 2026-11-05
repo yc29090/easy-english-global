@@ -1,0 +1,4946 @@
+{
+  "version": "mbe-modern-850-v8-preflight",
+  "contentDigest": "eb29402c7482cb37604e5f034db6daeb91cec01cb2c6f7025117bc44a64181e0",
+  "coreWords": 850,
+  "taskItems": 140,
+  "uniqueIntents": 131,
+  "coreSupportedIntents": 129,
+  "independentIntents": 113,
+  "coreSupportedIndependentIntents": 113,
+  "paraphraseItems": 45,
+  "coreSupportedParaphraseIntents": 41,
+  "authoredReferences": 279,
+  "coreSupportedReferences": 267,
+  "method": "exact-core-and-reviewed-forms-at-least-one-reference-per-intent",
+  "isLearnerMastery": false,
+  "evidence": "developer-self-check; independent human reviews and real-device acceptance are separate",
+  "tasks": [
+    {
+      "id": "ex-help",
+      "intentId": "help",
+      "level": 1,
+      "references": [
+        {
+          "english": "Can you help me?",
+          "wordIds": [
+            "ow-can",
+            "ow-help",
+            "ow-me",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please help me.",
+          "wordIds": [
+            "ow-help",
+            "ow-me",
+            "ow-please"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-time",
+      "intentId": "request-more-time",
+      "level": 1,
+      "references": [
+        {
+          "english": "I need more time.",
+          "wordIds": [
+            "ow-i",
+            "ow-more",
+            "ow-need",
+            "ow-time"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please give me more time.",
+          "wordIds": [
+            "ow-give",
+            "ow-me",
+            "ow-more",
+            "ow-please",
+            "ow-time"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-question",
+      "intentId": "question",
+      "level": 1,
+      "references": [
+        {
+          "english": "I have a question.",
+          "wordIds": [
+            "ow-a",
+            "ow-have",
+            "ow-i",
+            "ow-question"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I have something to ask.",
+          "wordIds": [
+            "ow-ask",
+            "ow-have",
+            "ow-i",
+            "ow-something",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-arrival",
+      "intentId": "arrival-time",
+      "level": 3,
+      "references": [
+        {
+          "english": "When will the car get here?",
+          "wordIds": [
+            "ow-car",
+            "ow-get",
+            "ow-here",
+            "ow-the",
+            "ow-when",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "When will the car arrive?",
+          "wordIds": [
+            "ow-arrive",
+            "ow-car",
+            "ow-the",
+            "ow-when",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-send-price",
+      "intentId": "send-price",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you send me the price?",
+          "wordIds": [
+            "ow-can",
+            "ow-me",
+            "ow-price",
+            "ow-send",
+            "ow-the",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please send me the price.",
+          "wordIds": [
+            "ow-me",
+            "ow-please",
+            "ow-price",
+            "ow-send",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-no-time",
+      "intentId": "no-time",
+      "level": 3,
+      "references": [
+        {
+          "english": "I do not have time.",
+          "wordIds": [
+            "ow-do",
+            "ow-have",
+            "ow-i",
+            "ow-not",
+            "ow-time"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I have no time.",
+          "wordIds": [
+            "ow-have",
+            "ow-i",
+            "ow-no",
+            "ow-time"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-opener",
+      "intentId": "opener",
+      "level": 4,
+      "references": [
+        {
+          "english": "I need something to open this bottle.",
+          "wordIds": [
+            "ow-bottle",
+            "ow-i",
+            "ow-need",
+            "ow-open",
+            "ow-something",
+            "ow-this",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you give me something to open this bottle?",
+          "wordIds": [
+            "ow-bottle",
+            "ow-can",
+            "ow-give",
+            "ow-me",
+            "ow-open",
+            "ow-something",
+            "ow-this",
+            "ow-to",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-late",
+      "intentId": "describe-delay",
+      "level": 4,
+      "references": [
+        {
+          "english": "The car will not get here on time.",
+          "wordIds": [
+            "ow-car",
+            "ow-get",
+            "ow-here",
+            "ow-not",
+            "ow-on",
+            "ow-the",
+            "ow-time",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The car will be late.",
+          "wordIds": [
+            "ow-be",
+            "ow-car",
+            "ow-late",
+            "ow-the",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-smaller",
+      "intentId": "smaller",
+      "level": 4,
+      "references": [
+        {
+          "english": "I need something smaller than this.",
+          "wordIds": [
+            "ow-i",
+            "ow-need",
+            "ow-small",
+            "ow-something",
+            "ow-than",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Do you have a smaller one?",
+          "wordIds": [
+            "ow-a",
+            "ow-do",
+            "ow-have",
+            "ow-one",
+            "ow-small",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-introduce",
+      "intentId": "introduce",
+      "level": 1,
+      "references": [
+        {
+          "english": "My name is Ava.",
+          "wordIds": [
+            "ow-be",
+            "ow-my",
+            "ow-name"
+          ],
+          "supplementalTokens": [
+            "ava"
+          ],
+          "allCore": false
+        },
+        {
+          "english": "I am Ava.",
+          "wordIds": [
+            "ow-be",
+            "ow-i"
+          ],
+          "supplementalTokens": [
+            "ava"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-origin",
+      "intentId": "origin",
+      "level": 1,
+      "references": [
+        {
+          "english": "I am from China.",
+          "wordIds": [
+            "ow-be",
+            "ow-from",
+            "ow-i"
+          ],
+          "supplementalTokens": [
+            "china"
+          ],
+          "allCore": false
+        },
+        {
+          "english": "I come from China.",
+          "wordIds": [
+            "ow-come",
+            "ow-from",
+            "ow-i"
+          ],
+          "supplementalTokens": [
+            "china"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-friend",
+      "intentId": "friend",
+      "level": 1,
+      "references": [
+        {
+          "english": "This is my friend.",
+          "wordIds": [
+            "ow-be",
+            "ow-friend",
+            "ow-my",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This person is my friend.",
+          "wordIds": [
+            "ow-be",
+            "ow-friend",
+            "ow-my",
+            "ow-person",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-food",
+      "intentId": "food",
+      "level": 1,
+      "references": [
+        {
+          "english": "I need some food.",
+          "wordIds": [
+            "ow-food",
+            "ow-i",
+            "ow-need",
+            "ow-some"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I have some food, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-food",
+            "ow-have",
+            "ow-i",
+            "ow-please",
+            "ow-some"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-drink",
+      "intentId": "drink",
+      "level": 1,
+      "references": [
+        {
+          "english": "Can I have some tea, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-have",
+            "ow-i",
+            "ow-please",
+            "ow-some",
+            "ow-tea"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I would like some tea, please.",
+          "wordIds": [
+            "ow-i",
+            "ow-like",
+            "ow-please",
+            "ow-some",
+            "ow-tea",
+            "ow-would"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-ticket",
+      "intentId": "ticket",
+      "level": 1,
+      "references": [
+        {
+          "english": "I have a ticket.",
+          "wordIds": [
+            "ow-a",
+            "ow-have",
+            "ow-i",
+            "ow-ticket"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I already have a ticket.",
+          "wordIds": [
+            "ow-a",
+            "ow-already",
+            "ow-have",
+            "ow-i",
+            "ow-ticket"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-room",
+      "intentId": "room",
+      "level": 3,
+      "references": [
+        {
+          "english": "Do you have a room?",
+          "wordIds": [
+            "ow-a",
+            "ow-do",
+            "ow-have",
+            "ow-room",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Do you have any rooms?",
+          "wordIds": [
+            "ow-any",
+            "ow-do",
+            "ow-have",
+            "ow-room",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-airport",
+      "intentId": "airport",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you take me to the airport?",
+          "wordIds": [
+            "ow-airport",
+            "ow-can",
+            "ow-me",
+            "ow-take",
+            "ow-the",
+            "ow-to",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please take me to the airport.",
+          "wordIds": [
+            "ow-airport",
+            "ow-me",
+            "ow-please",
+            "ow-take",
+            "ow-the",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-payment",
+      "intentId": "payment",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can I pay by card?",
+          "wordIds": [
+            "ow-by",
+            "ow-can",
+            "ow-card",
+            "ow-i",
+            "ow-pay"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I use a card to pay?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-card",
+            "ow-i",
+            "ow-pay",
+            "ow-to",
+            "ow-use"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-price-choice",
+      "intentId": "price-choice",
+      "level": 3,
+      "references": [
+        {
+          "english": "How much is this bag?",
+          "wordIds": [
+            "ow-bag",
+            "ow-be",
+            "ow-how",
+            "ow-much",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "What is the price of this bag?",
+          "wordIds": [
+            "ow-bag",
+            "ow-be",
+            "ow-of",
+            "ow-price",
+            "ow-the",
+            "ow-this",
+            "ow-what"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-arrival-place",
+      "intentId": "arrival-time",
+      "level": 3,
+      "references": [
+        {
+          "english": "When will the train get here?",
+          "wordIds": [
+            "ow-get",
+            "ow-here",
+            "ow-the",
+            "ow-train",
+            "ow-when",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "When will the train arrive?",
+          "wordIds": [
+            "ow-arrive",
+            "ow-the",
+            "ow-train",
+            "ow-when",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-send-email",
+      "intentId": "send-email",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you send me an email?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-email",
+            "ow-me",
+            "ow-send",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please send me an email.",
+          "wordIds": [
+            "ow-a",
+            "ow-email",
+            "ow-me",
+            "ow-please",
+            "ow-send"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-delivery",
+      "intentId": "delivery",
+      "level": 3,
+      "references": [
+        {
+          "english": "When can I get it?",
+          "wordIds": [
+            "ow-can",
+            "ow-get",
+            "ow-i",
+            "ow-it",
+            "ow-when"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "When will I get it?",
+          "wordIds": [
+            "ow-get",
+            "ow-i",
+            "ow-it",
+            "ow-when",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-phone-problem",
+      "intentId": "phone-problem",
+      "level": 4,
+      "references": [
+        {
+          "english": "My phone does not work.",
+          "wordIds": [
+            "ow-do",
+            "ow-my",
+            "ow-not",
+            "ow-phone",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I cannot use my phone.",
+          "wordIds": [
+            "ow-can",
+            "ow-i",
+            "ow-my",
+            "ow-not",
+            "ow-phone",
+            "ow-use"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-lost-ticket",
+      "intentId": "lost-ticket",
+      "level": 4,
+      "references": [
+        {
+          "english": "I cannot find my ticket.",
+          "wordIds": [
+            "ow-can",
+            "ow-find",
+            "ow-i",
+            "ow-my",
+            "ow-not",
+            "ow-ticket"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I do not know where my ticket is.",
+          "wordIds": [
+            "ow-be",
+            "ow-do",
+            "ow-i",
+            "ow-know",
+            "ow-my",
+            "ow-not",
+            "ow-ticket",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-thirsty",
+      "intentId": "request-water",
+      "level": 4,
+      "references": [
+        {
+          "english": "I need some water.",
+          "wordIds": [
+            "ow-i",
+            "ow-need",
+            "ow-some",
+            "ow-water"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I have some water to drink?",
+          "wordIds": [
+            "ow-can",
+            "ow-drink",
+            "ow-have",
+            "ow-i",
+            "ow-some",
+            "ow-to",
+            "ow-water"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-vegetarian",
+      "intentId": "food-without-meat",
+      "level": 4,
+      "references": [
+        {
+          "english": "I do not eat meat.",
+          "wordIds": [
+            "ow-do",
+            "ow-eat",
+            "ow-i",
+            "ow-meat",
+            "ow-not"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I have food with no meat?",
+          "wordIds": [
+            "ow-can",
+            "ow-food",
+            "ow-have",
+            "ow-i",
+            "ow-meat",
+            "ow-no",
+            "ow-with"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-charger",
+      "intentId": "paraphrase-charger",
+      "level": 4,
+      "references": [
+        {
+          "english": "My phone needs power. Can you help me?",
+          "wordIds": [
+            "ow-can",
+            "ow-help",
+            "ow-me",
+            "ow-my",
+            "ow-need",
+            "ow-phone",
+            "ow-power",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I need something to give my phone power.",
+          "wordIds": [
+            "ow-give",
+            "ow-i",
+            "ow-my",
+            "ow-need",
+            "ow-phone",
+            "ow-power",
+            "ow-something",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-intro-work",
+      "intentId": "introduce-job",
+      "level": 1,
+      "references": [
+        {
+          "english": "I work in a shop.",
+          "wordIds": [
+            "ow-a",
+            "ow-i",
+            "ow-in",
+            "ow-shop",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I work at a shop.",
+          "wordIds": [
+            "ow-a",
+            "ow-at",
+            "ow-i",
+            "ow-shop",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-live-here",
+      "intentId": "live-here",
+      "level": 1,
+      "references": [
+        {
+          "english": "I live here.",
+          "wordIds": [
+            "ow-here",
+            "ow-i",
+            "ow-live"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "My home is here.",
+          "wordIds": [
+            "ow-be",
+            "ow-here",
+            "ow-home",
+            "ow-my"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-new-here",
+      "intentId": "new-here",
+      "level": 3,
+      "references": [
+        {
+          "english": "I am new here. I do not know this place well.",
+          "wordIds": [
+            "ow-be",
+            "ow-do",
+            "ow-here",
+            "ow-i",
+            "ow-know",
+            "ow-new",
+            "ow-not",
+            "ow-place",
+            "ow-this",
+            "ow-well"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I just got here, so I do not know this place well.",
+          "wordIds": [
+            "ow-do",
+            "ow-get",
+            "ow-here",
+            "ow-i",
+            "ow-just",
+            "ow-know",
+            "ow-not",
+            "ow-place",
+            "ow-so",
+            "ow-this",
+            "ow-well"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-person-tired",
+      "intentId": "person-tired",
+      "level": 3,
+      "references": [
+        {
+          "english": "That person seems tired.",
+          "wordIds": [
+            "ow-person",
+            "ow-seem",
+            "ow-that",
+            "ow-tired"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "That person looks tired.",
+          "wordIds": [
+            "ow-look",
+            "ow-person",
+            "ow-that",
+            "ow-tired"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-bag",
+      "intentId": "describe-bag",
+      "level": 1,
+      "references": [
+        {
+          "english": "This bag is small.",
+          "wordIds": [
+            "ow-bag",
+            "ow-be",
+            "ow-small",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This is a small bag.",
+          "wordIds": [
+            "ow-a",
+            "ow-bag",
+            "ow-be",
+            "ow-small",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-identify-phone",
+      "intentId": "identify-phone",
+      "level": 3,
+      "references": [
+        {
+          "english": "That is my phone.",
+          "wordIds": [
+            "ow-be",
+            "ow-my",
+            "ow-phone",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "That phone is mine.",
+          "wordIds": [
+            "ow-be",
+            "ow-my",
+            "ow-phone",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-need-seat",
+      "intentId": "need-seat",
+      "level": 4,
+      "references": [
+        {
+          "english": "I need a place to sit.",
+          "wordIds": [
+            "ow-a",
+            "ow-i",
+            "ow-need",
+            "ow-place",
+            "ow-sit",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I sit somewhere?",
+          "wordIds": [
+            "ow-can",
+            "ow-i",
+            "ow-sit",
+            "ow-somewhere"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-want-rest",
+      "intentId": "want-rest",
+      "level": 3,
+      "references": [
+        {
+          "english": "I am tired. I need some rest.",
+          "wordIds": [
+            "ow-be",
+            "ow-i",
+            "ow-need",
+            "ow-rest",
+            "ow-some",
+            "ow-tired"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I need to rest for a little while.",
+          "wordIds": [
+            "ow-a",
+            "ow-for",
+            "ow-i",
+            "ow-little",
+            "ow-need",
+            "ow-rest",
+            "ow-to",
+            "ow-while"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-choose-small-room",
+      "intentId": "choose-small-room",
+      "level": 3,
+      "references": [
+        {
+          "english": "I would like a small room.",
+          "wordIds": [
+            "ow-a",
+            "ow-i",
+            "ow-like",
+            "ow-room",
+            "ow-small",
+            "ow-would"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I want a small room, please.",
+          "wordIds": [
+            "ow-a",
+            "ow-i",
+            "ow-please",
+            "ow-room",
+            "ow-small",
+            "ow-want"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-leave-now",
+      "intentId": "leave-now",
+      "level": 3,
+      "references": [
+        {
+          "english": "I need to go now.",
+          "wordIds": [
+            "ow-go",
+            "ow-i",
+            "ow-need",
+            "ow-now",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I have to leave now.",
+          "wordIds": [
+            "ow-have",
+            "ow-i",
+            "ow-leave",
+            "ow-now",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-daily-walk",
+      "intentId": "daily-walk",
+      "level": 1,
+      "references": [
+        {
+          "english": "I walk every day.",
+          "wordIds": [
+            "ow-day",
+            "ow-every",
+            "ow-i",
+            "ow-walk"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I go for a walk every day.",
+          "wordIds": [
+            "ow-a",
+            "ow-day",
+            "ow-every",
+            "ow-for",
+            "ow-go",
+            "ow-i",
+            "ow-walk"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-read-message",
+      "intentId": "read-message",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you read this message?",
+          "wordIds": [
+            "ow-can",
+            "ow-message",
+            "ow-read",
+            "ow-this",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please read this message.",
+          "wordIds": [
+            "ow-message",
+            "ow-please",
+            "ow-read",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-meet-eight",
+      "intentId": "meet-eight",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can we meet at eight?",
+          "wordIds": [
+            "ow-at",
+            "ow-can",
+            "ow-eight",
+            "ow-meet",
+            "ow-we"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "How about meeting at eight?",
+          "wordIds": [
+            "ow-about",
+            "ow-at",
+            "ow-eight",
+            "ow-how",
+            "ow-meeting"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-locate-bag",
+      "intentId": "locate-bag",
+      "level": 3,
+      "references": [
+        {
+          "english": "The bag is under the table.",
+          "wordIds": [
+            "ow-bag",
+            "ow-be",
+            "ow-table",
+            "ow-the",
+            "ow-under"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The bag is below the table.",
+          "wordIds": [
+            "ow-bag",
+            "ow-be",
+            "ow-below",
+            "ow-table",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-near-station",
+      "intentId": "near-station",
+      "level": 3,
+      "references": [
+        {
+          "english": "Is the station near here?",
+          "wordIds": [
+            "ow-be",
+            "ow-here",
+            "ow-near",
+            "ow-station",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Is the station close to here?",
+          "wordIds": [
+            "ow-be",
+            "ow-close",
+            "ow-here",
+            "ow-station",
+            "ow-the",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-two-tickets",
+      "intentId": "two-tickets",
+      "level": 1,
+      "references": [
+        {
+          "english": "I need two tickets.",
+          "wordIds": [
+            "ow-i",
+            "ow-need",
+            "ow-ticket",
+            "ow-two"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I have two tickets, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-have",
+            "ow-i",
+            "ow-please",
+            "ow-ticket",
+            "ow-two"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-price-two",
+      "intentId": "price-two",
+      "level": 3,
+      "references": [
+        {
+          "english": "How much are these two things?",
+          "wordIds": [
+            "ow-be",
+            "ow-how",
+            "ow-much",
+            "ow-thing",
+            "ow-this",
+            "ow-two"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "What is the price for both?",
+          "wordIds": [
+            "ow-be",
+            "ow-both",
+            "ow-for",
+            "ow-price",
+            "ow-the",
+            "ow-what"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-payment-cash",
+      "intentId": "payment-cash",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can I pay in cash?",
+          "wordIds": [
+            "ow-can",
+            "ow-cash",
+            "ow-i",
+            "ow-in",
+            "ow-pay"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I use cash to pay?",
+          "wordIds": [
+            "ow-can",
+            "ow-cash",
+            "ow-i",
+            "ow-pay",
+            "ow-to",
+            "ow-use"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-not-understand",
+      "intentId": "not-understand",
+      "level": 1,
+      "references": [
+        {
+          "english": "I do not understand.",
+          "wordIds": [
+            "ow-do",
+            "ow-i",
+            "ow-not",
+            "ow-understand"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I cannot understand this.",
+          "wordIds": [
+            "ow-can",
+            "ow-i",
+            "ow-not",
+            "ow-this",
+            "ow-understand"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-request-slow",
+      "intentId": "request-slow",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you speak slowly, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-please",
+            "ow-slowly",
+            "ow-speak",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please speak more slowly.",
+          "wordIds": [
+            "ow-more",
+            "ow-please",
+            "ow-slowly",
+            "ow-speak"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-need-doctor",
+      "intentId": "need-doctor",
+      "level": 3,
+      "references": [
+        {
+          "english": "I am sick. I need a doctor.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-doctor",
+            "ow-i",
+            "ow-need",
+            "ow-sick"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you help me find a doctor?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-doctor",
+            "ow-find",
+            "ow-help",
+            "ow-me",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-introduce-parent",
+      "intentId": "introduce-parent",
+      "level": 1,
+      "references": [
+        {
+          "english": "This is my father.",
+          "wordIds": [
+            "ow-be",
+            "ow-father",
+            "ow-my",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "That person is my father.",
+          "wordIds": [
+            "ow-be",
+            "ow-father",
+            "ow-my",
+            "ow-person",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-call-family",
+      "intentId": "call-family",
+      "level": 3,
+      "references": [
+        {
+          "english": "May I use your phone to call my family?",
+          "wordIds": [
+            "ow-call",
+            "ow-family",
+            "ow-i",
+            "ow-may",
+            "ow-my",
+            "ow-phone",
+            "ow-to",
+            "ow-use",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I call my family on your phone?",
+          "wordIds": [
+            "ow-call",
+            "ow-can",
+            "ow-family",
+            "ow-i",
+            "ow-my",
+            "ow-on",
+            "ow-phone",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-sister-home",
+      "intentId": "sister-home",
+      "level": 3,
+      "references": [
+        {
+          "english": "My sister is at home.",
+          "wordIds": [
+            "ow-at",
+            "ow-be",
+            "ow-home",
+            "ow-my",
+            "ow-sister"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "My sister is home.",
+          "wordIds": [
+            "ow-be",
+            "ow-home",
+            "ow-my",
+            "ow-sister"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-order-water",
+      "intentId": "request-water",
+      "level": 1,
+      "references": [
+        {
+          "english": "Can I have a cup of water, please?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-cup",
+            "ow-have",
+            "ow-i",
+            "ow-of",
+            "ow-please",
+            "ow-water"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I would like a cup of water, please.",
+          "wordIds": [
+            "ow-a",
+            "ow-cup",
+            "ow-i",
+            "ow-like",
+            "ow-of",
+            "ow-please",
+            "ow-water",
+            "ow-would"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-less-sugar",
+      "intentId": "less-sugar",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please use less sugar.",
+          "wordIds": [
+            "ow-less",
+            "ow-please",
+            "ow-sugar",
+            "ow-use"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you put in less sugar?",
+          "wordIds": [
+            "ow-can",
+            "ow-in",
+            "ow-less",
+            "ow-put",
+            "ow-sugar",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-no-milk",
+      "intentId": "no-milk",
+      "level": 3,
+      "references": [
+        {
+          "english": "No milk in my tea, please.",
+          "wordIds": [
+            "ow-in",
+            "ow-milk",
+            "ow-my",
+            "ow-no",
+            "ow-please",
+            "ow-tea"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please do not put milk in my tea.",
+          "wordIds": [
+            "ow-do",
+            "ow-in",
+            "ow-milk",
+            "ow-my",
+            "ow-not",
+            "ow-please",
+            "ow-put",
+            "ow-tea"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-go-bus",
+      "intentId": "go-bus",
+      "level": 1,
+      "references": [
+        {
+          "english": "I will go there by bus.",
+          "wordIds": [
+            "ow-bus",
+            "ow-by",
+            "ow-go",
+            "ow-i",
+            "ow-there",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I will take a bus there.",
+          "wordIds": [
+            "ow-a",
+            "ow-bus",
+            "ow-i",
+            "ow-take",
+            "ow-there",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-ticket-direction",
+      "intentId": "ticket-direction",
+      "level": 3,
+      "references": [
+        {
+          "english": "Where can I buy a ticket?",
+          "wordIds": [
+            "ow-a",
+            "ow-buy",
+            "ow-can",
+            "ow-i",
+            "ow-ticket",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Where can I get a ticket?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-get",
+            "ow-i",
+            "ow-ticket",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-hotel-key",
+      "intentId": "hotel-key",
+      "level": 3,
+      "references": [
+        {
+          "english": "I cannot find my room key.",
+          "wordIds": [
+            "ow-can",
+            "ow-find",
+            "ow-i",
+            "ow-key",
+            "ow-my",
+            "ow-not",
+            "ow-room"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I do not know where my room key is.",
+          "wordIds": [
+            "ow-be",
+            "ow-do",
+            "ow-i",
+            "ow-key",
+            "ow-know",
+            "ow-my",
+            "ow-not",
+            "ow-room",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-airport-wait",
+      "intentId": "airport-wait",
+      "level": 3,
+      "references": [
+        {
+          "english": "Where can I wait?",
+          "wordIds": [
+            "ow-can",
+            "ow-i",
+            "ow-wait",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Is there a place where I can wait?",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-can",
+            "ow-i",
+            "ow-place",
+            "ow-there",
+            "ow-wait",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-ask-quantity",
+      "intentId": "ask-quantity",
+      "level": 3,
+      "references": [
+        {
+          "english": "How many do you need?",
+          "wordIds": [
+            "ow-do",
+            "ow-how",
+            "ow-many",
+            "ow-need",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "How many would you like?",
+          "wordIds": [
+            "ow-how",
+            "ow-like",
+            "ow-many",
+            "ow-would",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-work-delay",
+      "intentId": "request-more-time",
+      "level": 3,
+      "references": [
+        {
+          "english": "I need a little more time.",
+          "wordIds": [
+            "ow-a",
+            "ow-i",
+            "ow-little",
+            "ow-more",
+            "ow-need",
+            "ow-time"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you give me a little more time?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-give",
+            "ow-little",
+            "ow-me",
+            "ow-more",
+            "ow-time",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-swap-book",
+      "intentId": "swap-book",
+      "level": 2,
+      "references": [
+        {
+          "english": "I want to book a room.",
+          "wordIds": [
+            "ow-a",
+            "ow-book",
+            "ow-i",
+            "ow-room",
+            "ow-to",
+            "ow-want"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I would like to book a room.",
+          "wordIds": [
+            "ow-a",
+            "ow-book",
+            "ow-i",
+            "ow-like",
+            "ow-room",
+            "ow-to",
+            "ow-would"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-swap-too",
+      "intentId": "swap-too",
+      "level": 2,
+      "references": [
+        {
+          "english": "This is too expensive.",
+          "wordIds": [
+            "ow-be",
+            "ow-expensive",
+            "ow-this",
+            "ow-too"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The price is too high.",
+          "wordIds": [
+            "ow-be",
+            "ow-high",
+            "ow-price",
+            "ow-the",
+            "ow-too"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-swap-check",
+      "intentId": "swap-check",
+      "level": 2,
+      "references": [
+        {
+          "english": "Please check the price.",
+          "wordIds": [
+            "ow-check",
+            "ow-please",
+            "ow-price",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you check the price, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-check",
+            "ow-please",
+            "ow-price",
+            "ow-the",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-swap-explain",
+      "intentId": "explain-key-use",
+      "level": 2,
+      "references": [
+        {
+          "english": "It is a thing for opening doors.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-door",
+            "ow-for",
+            "ow-it",
+            "ow-open",
+            "ow-thing"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You use it to open a door.",
+          "wordIds": [
+            "ow-a",
+            "ow-door",
+            "ow-it",
+            "ow-open",
+            "ow-to",
+            "ow-use",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-receipt",
+      "intentId": "paraphrase-receipt",
+      "level": 4,
+      "references": [
+        {
+          "english": "I need a piece of paper that shows how much I paid.",
+          "wordIds": [
+            "ow-a",
+            "ow-how",
+            "ow-i",
+            "ow-much",
+            "ow-need",
+            "ow-of",
+            "ow-paper",
+            "ow-pay",
+            "ow-piece",
+            "ow-show",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please give me a piece of paper showing how much I paid.",
+          "wordIds": [
+            "ow-a",
+            "ow-give",
+            "ow-how",
+            "ow-i",
+            "ow-me",
+            "ow-much",
+            "ow-of",
+            "ow-paper",
+            "ow-pay",
+            "ow-piece",
+            "ow-please"
+          ],
+          "supplementalTokens": [
+            "showing"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-elevator",
+      "intentId": "paraphrase-elevator",
+      "level": 4,
+      "references": [
+        {
+          "english": "Where is the thing that takes people up and down between floors?",
+          "wordIds": [
+            "ow-and",
+            "ow-be",
+            "ow-between",
+            "ow-down",
+            "ow-floor",
+            "ow-person",
+            "ow-take",
+            "ow-that",
+            "ow-the",
+            "ow-thing",
+            "ow-up",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I need to go up. Where is the thing that takes people to other floors?",
+          "wordIds": [
+            "ow-be",
+            "ow-floor",
+            "ow-go",
+            "ow-i",
+            "ow-need",
+            "ow-other",
+            "ow-person",
+            "ow-take",
+            "ow-that",
+            "ow-the",
+            "ow-thing",
+            "ow-to",
+            "ow-up",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-reservation",
+      "intentId": "paraphrase-reservation",
+      "level": 4,
+      "references": [
+        {
+          "english": "I want to book a room now for tomorrow.",
+          "wordIds": [
+            "ow-a",
+            "ow-book",
+            "ow-for",
+            "ow-i",
+            "ow-now",
+            "ow-room",
+            "ow-to",
+            "ow-tomorrow",
+            "ow-want"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you keep a room for me for tomorrow?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-for",
+            "ow-keep",
+            "ow-me",
+            "ow-room",
+            "ow-tomorrow",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-allergy",
+      "intentId": "paraphrase-allergy",
+      "level": 4,
+      "references": [
+        {
+          "english": "This food makes me sick. I cannot eat it.",
+          "wordIds": [
+            "ow-can",
+            "ow-eat",
+            "ow-food",
+            "ow-i",
+            "ow-it",
+            "ow-make",
+            "ow-me",
+            "ow-not",
+            "ow-sick",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I cannot eat this food because it makes me sick.",
+          "wordIds": [
+            "ow-because",
+            "ow-can",
+            "ow-eat",
+            "ow-food",
+            "ow-i",
+            "ow-it",
+            "ow-make",
+            "ow-me",
+            "ow-not",
+            "ow-sick",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-charger",
+      "intentId": "paraphrase-charger",
+      "level": 4,
+      "references": [
+        {
+          "english": "I need something to give my phone power.",
+          "wordIds": [
+            "ow-give",
+            "ow-i",
+            "ow-my",
+            "ow-need",
+            "ow-phone",
+            "ow-power",
+            "ow-something",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "My phone needs power. Do you have something I can use?",
+          "wordIds": [
+            "ow-can",
+            "ow-do",
+            "ow-have",
+            "ow-i",
+            "ow-my",
+            "ow-need",
+            "ow-phone",
+            "ow-power",
+            "ow-something",
+            "ow-use",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-pharmacy",
+      "intentId": "paraphrase-pharmacy",
+      "level": 4,
+      "references": [
+        {
+          "english": "Where can I buy medicine?",
+          "wordIds": [
+            "ow-buy",
+            "ow-can",
+            "ow-i",
+            "ow-medicine",
+            "ow-where"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Is there a shop here that sells medicine?",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-here",
+            "ow-medicine",
+            "ow-sell",
+            "ow-shop",
+            "ow-that",
+            "ow-there"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-vegetarian",
+      "intentId": "food-without-meat",
+      "level": 4,
+      "references": [
+        {
+          "english": "I want food with no meat or fish.",
+          "wordIds": [
+            "ow-fish",
+            "ow-food",
+            "ow-i",
+            "ow-meat",
+            "ow-no",
+            "ow-or",
+            "ow-want",
+            "ow-with"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please give me food without meat or fish.",
+          "wordIds": [
+            "ow-fish",
+            "ow-food",
+            "ow-give",
+            "ow-me",
+            "ow-meat",
+            "ow-or",
+            "ow-please",
+            "ow-without"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-paraphrase-delayed",
+      "intentId": "describe-delay",
+      "level": 4,
+      "references": [
+        {
+          "english": "The bus will be late. It will not get here on time.",
+          "wordIds": [
+            "ow-be",
+            "ow-bus",
+            "ow-get",
+            "ow-here",
+            "ow-it",
+            "ow-late",
+            "ow-not",
+            "ow-on",
+            "ow-the",
+            "ow-time",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The bus will not arrive on time. It will be late.",
+          "wordIds": [
+            "ow-arrive",
+            "ow-be",
+            "ow-bus",
+            "ow-it",
+            "ow-late",
+            "ow-not",
+            "ow-on",
+            "ow-the",
+            "ow-time",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-identity-teacher",
+      "intentId": "introduce-job",
+      "level": 3,
+      "references": [
+        {
+          "english": "I am a teacher.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-i",
+            "ow-teacher"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I work as a teacher.",
+          "wordIds": [
+            "ow-a",
+            "ow-as",
+            "ow-i",
+            "ow-teacher",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-going-station",
+      "intentId": "state-destination",
+      "level": 3,
+      "references": [
+        {
+          "english": "I am going to the station.",
+          "wordIds": [
+            "ow-be",
+            "ow-go",
+            "ow-i",
+            "ow-station",
+            "ow-the",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I am on my way to the station.",
+          "wordIds": [
+            "ow-be",
+            "ow-i",
+            "ow-my",
+            "ow-on",
+            "ow-station",
+            "ow-the",
+            "ow-to",
+            "ow-way"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-why-closed",
+      "intentId": "ask-reason-closed",
+      "level": 3,
+      "references": [
+        {
+          "english": "Why is the shop closed?",
+          "wordIds": [
+            "ow-be",
+            "ow-close",
+            "ow-shop",
+            "ow-the",
+            "ow-why"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you tell me why the shop is closed?",
+          "wordIds": [
+            "ow-be",
+            "ow-can",
+            "ow-close",
+            "ow-me",
+            "ow-shop",
+            "ow-tell",
+            "ow-the",
+            "ow-why",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-because-lost",
+      "intentId": "request-help-lost",
+      "level": 3,
+      "references": [
+        {
+          "english": "I need help because I am lost.",
+          "wordIds": [
+            "ow-be",
+            "ow-because",
+            "ow-help",
+            "ow-i",
+            "ow-lost",
+            "ow-need"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I am lost. Can you help me?",
+          "wordIds": [
+            "ow-be",
+            "ow-can",
+            "ow-help",
+            "ow-i",
+            "ow-lost",
+            "ow-me",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-unknown-word",
+      "intentId": "unknown-word",
+      "level": 3,
+      "references": [
+        {
+          "english": "I do not know this word.",
+          "wordIds": [
+            "ow-do",
+            "ow-i",
+            "ow-know",
+            "ow-not",
+            "ow-this",
+            "ow-word"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This word is new to me.",
+          "wordIds": [
+            "ow-be",
+            "ow-me",
+            "ow-new",
+            "ow-this",
+            "ow-to",
+            "ow-word"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-unknown-rule",
+      "intentId": "explain-rule",
+      "level": 3,
+      "references": [
+        {
+          "english": "I do not understand this rule.",
+          "wordIds": [
+            "ow-do",
+            "ow-i",
+            "ow-not",
+            "ow-rule",
+            "ow-this",
+            "ow-understand"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you explain this rule to me?",
+          "wordIds": [
+            "ow-can",
+            "ow-explain",
+            "ow-me",
+            "ow-rule",
+            "ow-this",
+            "ow-to",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-like-walking",
+      "intentId": "like-walking",
+      "level": 3,
+      "references": [
+        {
+          "english": "I like to walk.",
+          "wordIds": [
+            "ow-i",
+            "ow-like",
+            "ow-to",
+            "ow-walk"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I like walking.",
+          "wordIds": [
+            "ow-i",
+            "ow-like",
+            "ow-walk"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-dislike-coffee",
+      "intentId": "dislike-coffee",
+      "level": 3,
+      "references": [
+        {
+          "english": "I do not like coffee.",
+          "wordIds": [
+            "ow-coffee",
+            "ow-do",
+            "ow-i",
+            "ow-like",
+            "ow-not"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Coffee is not something I like.",
+          "wordIds": [
+            "ow-be",
+            "ow-coffee",
+            "ow-i",
+            "ow-like",
+            "ow-not",
+            "ow-something"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-think-need-time",
+      "intentId": "opinion-more-time",
+      "level": 3,
+      "references": [
+        {
+          "english": "I think we need more time.",
+          "wordIds": [
+            "ow-i",
+            "ow-more",
+            "ow-need",
+            "ow-think",
+            "ow-time",
+            "ow-we"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I believe we need more time.",
+          "wordIds": [
+            "ow-believe",
+            "ow-i",
+            "ow-more",
+            "ow-need",
+            "ow-time",
+            "ow-we"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-help-carry",
+      "intentId": "request-carry-bag",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you help me carry this bag?",
+          "wordIds": [
+            "ow-bag",
+            "ow-can",
+            "ow-carry",
+            "ow-help",
+            "ow-me",
+            "ow-this",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you give me a hand with this bag?",
+          "wordIds": [
+            "ow-a",
+            "ow-bag",
+            "ow-can",
+            "ow-give",
+            "ow-hand",
+            "ow-me",
+            "ow-this",
+            "ow-with",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-trip-duration",
+      "intentId": "ask-trip-duration",
+      "level": 3,
+      "references": [
+        {
+          "english": "How long does the trip take?",
+          "wordIds": [
+            "ow-do",
+            "ow-how",
+            "ow-long",
+            "ow-take",
+            "ow-the",
+            "ow-trip"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "How much time does the trip take?",
+          "wordIds": [
+            "ow-do",
+            "ow-how",
+            "ow-much",
+            "ow-take",
+            "ow-the",
+            "ow-time",
+            "ow-trip"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-hotel-distance",
+      "intentId": "ask-hotel-distance",
+      "level": 3,
+      "references": [
+        {
+          "english": "How far is the hotel from here?",
+          "wordIds": [
+            "ow-be",
+            "ow-far",
+            "ow-from",
+            "ow-here",
+            "ow-hotel",
+            "ow-how",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "What is the distance from here to the hotel?",
+          "wordIds": [
+            "ow-be",
+            "ow-distance",
+            "ow-from",
+            "ow-here",
+            "ow-hotel",
+            "ow-the",
+            "ow-to",
+            "ow-what"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-use-machine",
+      "intentId": "ask-machine-use",
+      "level": 3,
+      "references": [
+        {
+          "english": "How do I use this machine?",
+          "wordIds": [
+            "ow-do",
+            "ow-how",
+            "ow-i",
+            "ow-machine",
+            "ow-this",
+            "ow-use"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you show me how to use this machine?",
+          "wordIds": [
+            "ow-can",
+            "ow-how",
+            "ow-machine",
+            "ow-me",
+            "ow-show",
+            "ow-this",
+            "ow-to",
+            "ow-use",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-key-not-work",
+      "intentId": "key-not-work",
+      "level": 3,
+      "references": [
+        {
+          "english": "My key does not open the door.",
+          "wordIds": [
+            "ow-do",
+            "ow-door",
+            "ow-key",
+            "ow-my",
+            "ow-not",
+            "ow-open",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "My room key does not work.",
+          "wordIds": [
+            "ow-do",
+            "ow-key",
+            "ow-my",
+            "ow-not",
+            "ow-room",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-ask-socket",
+      "intentId": "ask-room-socket",
+      "level": 3,
+      "references": [
+        {
+          "english": "Is there a socket in the room?",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-in",
+            "ow-room",
+            "ow-socket",
+            "ow-the",
+            "ow-there"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Does the room have a power socket?",
+          "wordIds": [
+            "ow-a",
+            "ow-do",
+            "ow-have",
+            "ow-power",
+            "ow-room",
+            "ow-socket",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-available-tickets",
+      "intentId": "ask-tickets-held",
+      "level": 3,
+      "references": [
+        {
+          "english": "How many tickets do you have?",
+          "wordIds": [
+            "ow-do",
+            "ow-have",
+            "ow-how",
+            "ow-many",
+            "ow-ticket",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "What is the number of tickets you have?",
+          "wordIds": [
+            "ow-be",
+            "ow-have",
+            "ow-number",
+            "ow-of",
+            "ow-the",
+            "ow-ticket",
+            "ow-what",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-key-use",
+      "intentId": "explain-key-use",
+      "level": 3,
+      "references": [
+        {
+          "english": "You use it to open a door.",
+          "wordIds": [
+            "ow-a",
+            "ow-door",
+            "ow-it",
+            "ow-open",
+            "ow-to",
+            "ow-use",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "It is for opening doors.",
+          "wordIds": [
+            "ow-be",
+            "ow-door",
+            "ow-for",
+            "ow-it",
+            "ow-open"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-teacher",
+      "intentId": "paraphrase-teacher",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a person who teaches students.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-it",
+            "ow-person",
+            "ow-student",
+            "ow-teach",
+            "ow-who"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "It is someone who helps students learn.",
+          "wordIds": [
+            "ow-be",
+            "ow-help",
+            "ow-it",
+            "ow-learn",
+            "ow-someone",
+            "ow-student",
+            "ow-who"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-library",
+      "intentId": "paraphrase-library",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a place where you can borrow books.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-book",
+            "ow-borrow",
+            "ow-can",
+            "ow-it",
+            "ow-place",
+            "ow-where",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You can go there to read books and borrow them.",
+          "wordIds": [
+            "ow-and",
+            "ow-book",
+            "ow-borrow",
+            "ow-can",
+            "ow-go",
+            "ow-read",
+            "ow-there",
+            "ow-they",
+            "ow-to",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-alternative-room",
+      "intentId": "request-room-change",
+      "level": 3,
+      "references": [
+        {
+          "english": "I would like another room instead.",
+          "wordIds": [
+            "ow-another",
+            "ow-i",
+            "ow-like",
+            "ow-room",
+            "ow-would"
+          ],
+          "supplementalTokens": [
+            "instead"
+          ],
+          "allCore": false
+        },
+        {
+          "english": "Can I change to a different room?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-change",
+            "ow-different",
+            "ow-i",
+            "ow-room",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-conditional-help",
+      "intentId": "offer-conditional-help",
+      "level": 3,
+      "references": [
+        {
+          "english": "If you need help, please call me.",
+          "wordIds": [
+            "ow-call",
+            "ow-help",
+            "ow-if",
+            "ow-me",
+            "ow-need",
+            "ow-please",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please call me if you need help.",
+          "wordIds": [
+            "ow-call",
+            "ow-help",
+            "ow-if",
+            "ow-me",
+            "ow-need",
+            "ow-please",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-driver",
+      "intentId": "paraphrase-bus-driver",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a person who drives a bus.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-bus",
+            "ow-drive",
+            "ow-it",
+            "ow-person",
+            "ow-who"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "It is someone whose job is to drive a bus.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-bus",
+            "ow-drive",
+            "ow-it",
+            "ow-job",
+            "ow-someone",
+            "ow-to",
+            "ow-whose"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-cook",
+      "intentId": "paraphrase-cook",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is someone who cooks food as a job.",
+          "wordIds": [
+            "ow-a",
+            "ow-as",
+            "ow-be",
+            "ow-cook",
+            "ow-food",
+            "ow-it",
+            "ow-job",
+            "ow-someone",
+            "ow-who"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This person makes food for people at a restaurant.",
+          "wordIds": [
+            "ow-a",
+            "ow-at",
+            "ow-food",
+            "ow-for",
+            "ow-make",
+            "ow-person",
+            "ow-restaurant",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-photographer",
+      "intentId": "paraphrase-photographer",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a person whose job is to take pictures.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-it",
+            "ow-job",
+            "ow-person",
+            "ow-picture",
+            "ow-take",
+            "ow-to",
+            "ow-whose"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This person uses a camera to take pictures for work.",
+          "wordIds": [
+            "ow-a",
+            "ow-camera",
+            "ow-for",
+            "ow-person",
+            "ow-picture",
+            "ow-take",
+            "ow-this",
+            "ow-to",
+            "ow-work"
+          ],
+          "supplementalTokens": [
+            "uses"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-receptionist",
+      "intentId": "paraphrase-receptionist",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is the person who helps guests at hotel reception.",
+          "wordIds": [
+            "ow-at",
+            "ow-be",
+            "ow-guest",
+            "ow-help",
+            "ow-hotel",
+            "ow-it",
+            "ow-person",
+            "ow-reception",
+            "ow-the",
+            "ow-who"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This person works at the front of the hotel and gives guests their room keys.",
+          "wordIds": [
+            "ow-and",
+            "ow-at",
+            "ow-front",
+            "ow-give",
+            "ow-guest",
+            "ow-hotel",
+            "ow-of",
+            "ow-person",
+            "ow-room",
+            "ow-the",
+            "ow-their",
+            "ow-this",
+            "ow-work"
+          ],
+          "supplementalTokens": [
+            "keys"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-wallet",
+      "intentId": "paraphrase-wallet",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a small thing that you carry cash and cards in.",
+          "wordIds": [
+            "ow-a",
+            "ow-and",
+            "ow-be",
+            "ow-card",
+            "ow-carry",
+            "ow-cash",
+            "ow-in",
+            "ow-it",
+            "ow-small",
+            "ow-that",
+            "ow-thing",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You keep your money and cards in it and carry it with you.",
+          "wordIds": [
+            "ow-and",
+            "ow-card",
+            "ow-carry",
+            "ow-in",
+            "ow-it",
+            "ow-keep",
+            "ow-money",
+            "ow-with",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-umbrella",
+      "intentId": "paraphrase-umbrella",
+      "level": 4,
+      "references": [
+        {
+          "english": "You hold it above your head when it rains.",
+          "wordIds": [
+            "ow-above",
+            "ow-head",
+            "ow-hold",
+            "ow-it",
+            "ow-rain",
+            "ow-when",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "It is a thing you hold over your head to keep the rain off.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-head",
+            "ow-hold",
+            "ow-it",
+            "ow-keep",
+            "ow-off",
+            "ow-over",
+            "ow-rain",
+            "ow-the",
+            "ow-thing",
+            "ow-to",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-towel",
+      "intentId": "paraphrase-towel",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a cloth you use to dry your hands or body.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-body",
+            "ow-cloth",
+            "ow-dry",
+            "ow-hand",
+            "ow-it",
+            "ow-or",
+            "ow-to",
+            "ow-use",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You use this cloth to get water off your body after a shower.",
+          "wordIds": [
+            "ow-a",
+            "ow-after",
+            "ow-body",
+            "ow-cloth",
+            "ow-get",
+            "ow-off",
+            "ow-shower",
+            "ow-this",
+            "ow-to",
+            "ow-use",
+            "ow-water",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-fridge",
+      "intentId": "paraphrase-fridge",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a machine that keeps food cold.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-cold",
+            "ow-food",
+            "ow-it",
+            "ow-keep",
+            "ow-machine",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You put food in it to keep the food cold.",
+          "wordIds": [
+            "ow-cold",
+            "ow-food",
+            "ow-in",
+            "ow-it",
+            "ow-keep",
+            "ow-put",
+            "ow-the",
+            "ow-to",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-oven",
+      "intentId": "paraphrase-oven",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a box that gets hot inside. You use it to cook food.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-box",
+            "ow-cook",
+            "ow-food",
+            "ow-get",
+            "ow-hot",
+            "ow-inside",
+            "ow-it",
+            "ow-that",
+            "ow-to",
+            "ow-use",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You put food inside it and use heat to cook the food.",
+          "wordIds": [
+            "ow-and",
+            "ow-cook",
+            "ow-food",
+            "ow-heat",
+            "ow-inside",
+            "ow-it",
+            "ow-put",
+            "ow-the",
+            "ow-to",
+            "ow-use",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-washing-machine",
+      "intentId": "paraphrase-washing-machine",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a machine that washes clothes.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-clothes",
+            "ow-it",
+            "ow-machine",
+            "ow-that",
+            "ow-wash"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You put dirty clothes in it, and it washes them.",
+          "wordIds": [
+            "ow-and",
+            "ow-clothes",
+            "ow-dirty",
+            "ow-in",
+            "ow-it",
+            "ow-put",
+            "ow-they",
+            "ow-wash",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-battery",
+      "intentId": "paraphrase-battery",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a small thing inside a phone that gives the phone power.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-give",
+            "ow-inside",
+            "ow-it",
+            "ow-phone",
+            "ow-power",
+            "ow-small",
+            "ow-that",
+            "ow-the",
+            "ow-thing"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The phone gets power from this small thing inside it.",
+          "wordIds": [
+            "ow-from",
+            "ow-get",
+            "ow-inside",
+            "ow-it",
+            "ow-phone",
+            "ow-power",
+            "ow-small",
+            "ow-the",
+            "ow-thing",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-socket",
+      "intentId": "paraphrase-socket",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is the place in the wall where you put a plug to get power.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-get",
+            "ow-in",
+            "ow-it",
+            "ow-place",
+            "ow-plug",
+            "ow-power",
+            "ow-put",
+            "ow-the",
+            "ow-to",
+            "ow-wall",
+            "ow-where",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You put the plug in this place in the wall to get power.",
+          "wordIds": [
+            "ow-get",
+            "ow-in",
+            "ow-place",
+            "ow-plug",
+            "ow-power",
+            "ow-put",
+            "ow-the",
+            "ow-this",
+            "ow-to",
+            "ow-wall",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-map",
+      "intentId": "paraphrase-map",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a picture that shows roads and places.",
+          "wordIds": [
+            "ow-a",
+            "ow-and",
+            "ow-be",
+            "ow-it",
+            "ow-picture",
+            "ow-place",
+            "ow-road",
+            "ow-show",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You use this picture to find places and see which roads to take.",
+          "wordIds": [
+            "ow-and",
+            "ow-find",
+            "ow-picture",
+            "ow-place",
+            "ow-road",
+            "ow-see",
+            "ow-take",
+            "ow-this",
+            "ow-to",
+            "ow-use",
+            "ow-which",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-platform",
+      "intentId": "paraphrase-platform",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is the place at the station where you wait for a train.",
+          "wordIds": [
+            "ow-a",
+            "ow-at",
+            "ow-be",
+            "ow-for",
+            "ow-it",
+            "ow-place",
+            "ow-station",
+            "ow-the",
+            "ow-train",
+            "ow-wait",
+            "ow-where",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You wait here at the station and get on the train here.",
+          "wordIds": [
+            "ow-and",
+            "ow-at",
+            "ow-get",
+            "ow-here",
+            "ow-on",
+            "ow-station",
+            "ow-the",
+            "ow-train",
+            "ow-wait",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-gate",
+      "intentId": "paraphrase-airport-gate",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is the place at the airport where you wait to get on the plane.",
+          "wordIds": [
+            "ow-airport",
+            "ow-at",
+            "ow-be",
+            "ow-get",
+            "ow-it",
+            "ow-on",
+            "ow-place",
+            "ow-plane",
+            "ow-the",
+            "ow-to",
+            "ow-wait",
+            "ow-where",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "At the airport, you go to this place before you get on your plane.",
+          "wordIds": [
+            "ow-airport",
+            "ow-at",
+            "ow-before",
+            "ow-get",
+            "ow-go",
+            "ow-on",
+            "ow-place",
+            "ow-plane",
+            "ow-the",
+            "ow-this",
+            "ow-to",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-receipt-detail",
+      "intentId": "paraphrase-receipt",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a piece of paper that shows what you bought and how much you paid.",
+          "wordIds": [
+            "ow-a",
+            "ow-and",
+            "ow-be",
+            "ow-buy",
+            "ow-how",
+            "ow-it",
+            "ow-much",
+            "ow-of",
+            "ow-paper",
+            "ow-pay",
+            "ow-piece",
+            "ow-show",
+            "ow-that",
+            "ow-what",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "This paper shows the things you paid for and the amount you paid.",
+          "wordIds": [
+            "ow-amount",
+            "ow-and",
+            "ow-for",
+            "ow-paper",
+            "ow-pay",
+            "ow-show",
+            "ow-the",
+            "ow-thing",
+            "ow-this",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-queue",
+      "intentId": "paraphrase-queue",
+      "level": 4,
+      "references": [
+        {
+          "english": "You stand behind other people and wait for your turn.",
+          "wordIds": [
+            "ow-and",
+            "ow-behind",
+            "ow-for",
+            "ow-other",
+            "ow-person",
+            "ow-stand",
+            "ow-turn",
+            "ow-wait",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "People stand in a line and wait to go one at a time.",
+          "wordIds": [
+            "ow-a",
+            "ow-and",
+            "ow-at",
+            "ow-go",
+            "ow-in",
+            "ow-line",
+            "ow-one",
+            "ow-person",
+            "ow-stand",
+            "ow-time",
+            "ow-to",
+            "ow-wait"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-password",
+      "intentId": "paraphrase-password",
+      "level": 4,
+      "references": [
+        {
+          "english": "It is a word or code you type to get into your account.",
+          "wordIds": [
+            "ow-a",
+            "ow-account",
+            "ow-be",
+            "ow-code",
+            "ow-get",
+            "ow-into",
+            "ow-it",
+            "ow-or",
+            "ow-to",
+            "ow-type",
+            "ow-word",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "You type this word or code to use your account, and you keep it private.",
+          "wordIds": [
+            "ow-account",
+            "ow-and",
+            "ow-code",
+            "ow-it",
+            "ow-keep",
+            "ow-or",
+            "ow-private",
+            "ow-this",
+            "ow-to",
+            "ow-type",
+            "ow-use",
+            "ow-word",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-appointment",
+      "intentId": "paraphrase-appointment",
+      "level": 4,
+      "references": [
+        {
+          "english": "I will see the doctor at a time we agreed on.",
+          "wordIds": [
+            "ow-a",
+            "ow-agree",
+            "ow-at",
+            "ow-doctor",
+            "ow-i",
+            "ow-on",
+            "ow-see",
+            "ow-the",
+            "ow-time",
+            "ow-we",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The doctor and I agreed on a time to meet.",
+          "wordIds": [
+            "ow-a",
+            "ow-agree",
+            "ow-and",
+            "ow-doctor",
+            "ow-i",
+            "ow-meet",
+            "ow-on",
+            "ow-the",
+            "ow-time",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-rent",
+      "intentId": "paraphrase-rent-car",
+      "level": 4,
+      "references": [
+        {
+          "english": "I want to pay to use a car for a few days and then give it back.",
+          "wordIds": [
+            "ow-a",
+            "ow-and",
+            "ow-back",
+            "ow-car",
+            "ow-day",
+            "ow-few",
+            "ow-for",
+            "ow-give",
+            "ow-i",
+            "ow-it",
+            "ow-pay",
+            "ow-then",
+            "ow-to",
+            "ow-use",
+            "ow-want"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I pay to use this car for a few days and return it after that?",
+          "wordIds": [
+            "ow-a",
+            "ow-after",
+            "ow-and",
+            "ow-can",
+            "ow-car",
+            "ow-day",
+            "ow-few",
+            "ow-for",
+            "ow-i",
+            "ow-it",
+            "ow-pay",
+            "ow-return",
+            "ow-that",
+            "ow-this",
+            "ow-to",
+            "ow-use"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-borrow",
+      "intentId": "paraphrase-borrow-pen",
+      "level": 4,
+      "references": [
+        {
+          "english": "Can I use your pen and give it back after that?",
+          "wordIds": [
+            "ow-after",
+            "ow-and",
+            "ow-back",
+            "ow-can",
+            "ow-give",
+            "ow-i",
+            "ow-it",
+            "ow-pen",
+            "ow-that",
+            "ow-use",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "May I use your pen? I will give it back.",
+          "wordIds": [
+            "ow-back",
+            "ow-give",
+            "ow-i",
+            "ow-it",
+            "ow-may",
+            "ow-pen",
+            "ow-use",
+            "ow-will",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-refund",
+      "intentId": "paraphrase-refund",
+      "level": 4,
+      "references": [
+        {
+          "english": "I want to return this and get my money back.",
+          "wordIds": [
+            "ow-and",
+            "ow-back",
+            "ow-get",
+            "ow-i",
+            "ow-money",
+            "ow-my",
+            "ow-return",
+            "ow-this",
+            "ow-to",
+            "ow-want"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I give this back and get back the money I paid?",
+          "wordIds": [
+            "ow-and",
+            "ow-back",
+            "ow-can",
+            "ow-get",
+            "ow-give",
+            "ow-i",
+            "ow-money",
+            "ow-pay",
+            "ow-the",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-discount",
+      "intentId": "paraphrase-discount",
+      "level": 4,
+      "references": [
+        {
+          "english": "Can you make the price lower?",
+          "wordIds": [
+            "ow-can",
+            "ow-low",
+            "ow-make",
+            "ow-price",
+            "ow-the",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I get this for less money?",
+          "wordIds": [
+            "ow-can",
+            "ow-for",
+            "ow-get",
+            "ow-i",
+            "ow-less",
+            "ow-money",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-spicy",
+      "intentId": "paraphrase-spicy",
+      "level": 4,
+      "references": [
+        {
+          "english": "This food makes my mouth feel hot.",
+          "wordIds": [
+            "ow-feel",
+            "ow-food",
+            "ow-hot",
+            "ow-make",
+            "ow-mouth",
+            "ow-my",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "My mouth feels hot when I eat this food.",
+          "wordIds": [
+            "ow-eat",
+            "ow-food",
+            "ow-hot",
+            "ow-i",
+            "ow-mouth",
+            "ow-my",
+            "ow-this",
+            "ow-when"
+          ],
+          "supplementalTokens": [
+            "feels"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-waterproof",
+      "intentId": "paraphrase-waterproof",
+      "level": 4,
+      "references": [
+        {
+          "english": "This bag keeps rain out and keeps the things inside dry.",
+          "wordIds": [
+            "ow-and",
+            "ow-bag",
+            "ow-dry",
+            "ow-inside",
+            "ow-keep",
+            "ow-out",
+            "ow-rain",
+            "ow-the",
+            "ow-thing",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The things inside this bag stay dry in the rain.",
+          "wordIds": [
+            "ow-bag",
+            "ow-dry",
+            "ow-in",
+            "ow-inside",
+            "ow-rain",
+            "ow-stay",
+            "ow-the",
+            "ow-thing",
+            "ow-this"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-broken-screen",
+      "intentId": "paraphrase-screen",
+      "level": 4,
+      "references": [
+        {
+          "english": "The part of my phone that shows pictures and words is broken.",
+          "wordIds": [
+            "ow-and",
+            "ow-be",
+            "ow-broken",
+            "ow-my",
+            "ow-of",
+            "ow-part",
+            "ow-phone",
+            "ow-picture",
+            "ow-show",
+            "ow-that",
+            "ow-the",
+            "ow-word"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The part of my phone where I see words and pictures does not work.",
+          "wordIds": [
+            "ow-and",
+            "ow-do",
+            "ow-i",
+            "ow-my",
+            "ow-not",
+            "ow-of",
+            "ow-part",
+            "ow-phone",
+            "ow-picture",
+            "ow-see",
+            "ow-the",
+            "ow-where",
+            "ow-word",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-describe-delivery-date",
+      "intentId": "ask-delivery-day",
+      "level": 3,
+      "references": [
+        {
+          "english": "What day will it get here?",
+          "wordIds": [
+            "ow-day",
+            "ow-get",
+            "ow-here",
+            "ow-it",
+            "ow-what",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "When can you get it to this place?",
+          "wordIds": [
+            "ow-can",
+            "ow-get",
+            "ow-it",
+            "ow-place",
+            "ow-this",
+            "ow-to",
+            "ow-when",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-come-back",
+      "intentId": "request-return-tomorrow",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please come back tomorrow.",
+          "wordIds": [
+            "ow-back",
+            "ow-come",
+            "ow-please",
+            "ow-tomorrow"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you come back tomorrow?",
+          "wordIds": [
+            "ow-back",
+            "ow-can",
+            "ow-come",
+            "ow-tomorrow",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-get-ready",
+      "intentId": "get-ready-to-leave",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please get ready to leave.",
+          "wordIds": [
+            "ow-get",
+            "ow-leave",
+            "ow-please",
+            "ow-ready",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you get ready to go?",
+          "wordIds": [
+            "ow-can",
+            "ow-get",
+            "ow-go",
+            "ow-ready",
+            "ow-to",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-give-example",
+      "intentId": "request-example",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can you give me an example?",
+          "wordIds": [
+            "ow-a",
+            "ow-can",
+            "ow-example",
+            "ow-give",
+            "ow-me",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please show me an example.",
+          "wordIds": [
+            "ow-a",
+            "ow-example",
+            "ow-me",
+            "ow-please",
+            "ow-show"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-go-back",
+      "intentId": "return-to-hotel",
+      "level": 3,
+      "references": [
+        {
+          "english": "I need to go back to the hotel.",
+          "wordIds": [
+            "ow-back",
+            "ow-go",
+            "ow-hotel",
+            "ow-i",
+            "ow-need",
+            "ow-the",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I need to return to the hotel.",
+          "wordIds": [
+            "ow-hotel",
+            "ow-i",
+            "ow-need",
+            "ow-return",
+            "ow-the",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-keep-safe",
+      "intentId": "keep-passport-safe",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please keep your passport safe.",
+          "wordIds": [
+            "ow-keep",
+            "ow-passport",
+            "ow-please",
+            "ow-safe",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please keep your passport in a safe place.",
+          "wordIds": [
+            "ow-a",
+            "ow-in",
+            "ow-keep",
+            "ow-passport",
+            "ow-place",
+            "ow-please",
+            "ow-safe",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-let-know",
+      "intentId": "ask-time-info",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please let me know the time.",
+          "wordIds": [
+            "ow-know",
+            "ow-let",
+            "ow-me",
+            "ow-please",
+            "ow-the",
+            "ow-time"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you tell me the time?",
+          "wordIds": [
+            "ow-can",
+            "ow-me",
+            "ow-tell",
+            "ow-the",
+            "ow-time",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-make-choice",
+      "intentId": "time-to-decide",
+      "level": 3,
+      "references": [
+        {
+          "english": "I need more time to make a choice.",
+          "wordIds": [
+            "ow-a",
+            "ow-choice",
+            "ow-i",
+            "ow-make",
+            "ow-more",
+            "ow-need",
+            "ow-time",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I need more time to decide.",
+          "wordIds": [
+            "ow-decide",
+            "ow-i",
+            "ow-more",
+            "ow-need",
+            "ow-time",
+            "ow-to"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-put-away",
+      "intentId": "put-phone-away",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please put your phone away.",
+          "wordIds": [
+            "ow-away",
+            "ow-phone",
+            "ow-please",
+            "ow-put",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please put your phone in your bag.",
+          "wordIds": [
+            "ow-bag",
+            "ow-in",
+            "ow-phone",
+            "ow-please",
+            "ow-put",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-seem-work",
+      "intentId": "phone-seems-working",
+      "level": 3,
+      "references": [
+        {
+          "english": "The phone seems to work now.",
+          "wordIds": [
+            "ow-now",
+            "ow-phone",
+            "ow-seem",
+            "ow-the",
+            "ow-to",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "It seems that the phone works now.",
+          "wordIds": [
+            "ow-it",
+            "ow-now",
+            "ow-phone",
+            "ow-seem",
+            "ow-that",
+            "ow-the",
+            "ow-work"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-take-break",
+      "intentId": "suggest-break",
+      "level": 3,
+      "references": [
+        {
+          "english": "Let us take a break.",
+          "wordIds": [
+            "ow-a",
+            "ow-break",
+            "ow-let",
+            "ow-take",
+            "ow-we"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Let us have a short rest.",
+          "wordIds": [
+            "ow-a",
+            "ow-have",
+            "ow-let",
+            "ow-rest",
+            "ow-short",
+            "ow-we"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-be-careful",
+      "intentId": "careful-with-box",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please be careful with this box.",
+          "wordIds": [
+            "ow-be",
+            "ow-box",
+            "ow-careful",
+            "ow-please",
+            "ow-this",
+            "ow-with"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Please move this box carefully.",
+          "wordIds": [
+            "ow-box",
+            "ow-move",
+            "ow-please",
+            "ow-this"
+          ],
+          "supplementalTokens": [
+            "carefully"
+          ],
+          "allCore": false
+        }
+      ]
+    },
+    {
+      "id": "ex-op-do-best",
+      "intentId": "try-best-to-help",
+      "level": 3,
+      "references": [
+        {
+          "english": "I will do my best to help.",
+          "wordIds": [
+            "ow-do",
+            "ow-good",
+            "ow-help",
+            "ow-i",
+            "ow-my",
+            "ow-to",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I will try my best to help.",
+          "wordIds": [
+            "ow-good",
+            "ow-help",
+            "ow-i",
+            "ow-my",
+            "ow-to",
+            "ow-try",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-have-look",
+      "intentId": "ask-menu",
+      "level": 3,
+      "references": [
+        {
+          "english": "Can I have a look at the menu?",
+          "wordIds": [
+            "ow-a",
+            "ow-at",
+            "ow-can",
+            "ow-have",
+            "ow-i",
+            "ow-look",
+            "ow-menu",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I see the menu?",
+          "wordIds": [
+            "ow-can",
+            "ow-i",
+            "ow-menu",
+            "ow-see",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-say-thanks",
+      "intentId": "thank-for-help",
+      "level": 3,
+      "references": [
+        {
+          "english": "I want to say thank you for your help.",
+          "wordIds": [
+            "ow-for",
+            "ow-help",
+            "ow-i",
+            "ow-say",
+            "ow-to",
+            "ow-want",
+            "ow-you",
+            "ow-your"
+          ],
+          "supplementalTokens": [
+            "thank"
+          ],
+          "allCore": false
+        },
+        {
+          "english": "Thank you for helping me.",
+          "wordIds": [
+            "ow-for",
+            "ow-help",
+            "ow-me",
+            "ow-you"
+          ],
+          "supplementalTokens": [
+            "thank"
+          ],
+          "allCore": false
+        },
+        {
+          "english": "Thanks for your help.",
+          "wordIds": [
+            "ow-for",
+            "ow-help",
+            "ow-thanks",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-see-meaning",
+      "intentId": "understand-meaning",
+      "level": 3,
+      "references": [
+        {
+          "english": "I see what you mean.",
+          "wordIds": [
+            "ow-i",
+            "ow-mean",
+            "ow-see",
+            "ow-what",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "I understand what you mean.",
+          "wordIds": [
+            "ow-i",
+            "ow-mean",
+            "ow-understand",
+            "ow-what",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-send-link",
+      "intentId": "request-website-link",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please send me a link to the website.",
+          "wordIds": [
+            "ow-a",
+            "ow-link",
+            "ow-me",
+            "ow-please",
+            "ow-send",
+            "ow-the",
+            "ow-to",
+            "ow-website"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you send me the website link?",
+          "wordIds": [
+            "ow-can",
+            "ow-link",
+            "ow-me",
+            "ow-send",
+            "ow-the",
+            "ow-website",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-may-use-phone",
+      "intentId": "permission-use-phone",
+      "level": 3,
+      "references": [
+        {
+          "english": "May I use your phone?",
+          "wordIds": [
+            "ow-i",
+            "ow-may",
+            "ow-phone",
+            "ow-use",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can I use your phone, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-i",
+            "ow-phone",
+            "ow-please",
+            "ow-use",
+            "ow-your"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-op-will-ready",
+      "intentId": "room-ready-time",
+      "level": 3,
+      "references": [
+        {
+          "english": "The room will be ready at two.",
+          "wordIds": [
+            "ow-at",
+            "ow-be",
+            "ow-ready",
+            "ow-room",
+            "ow-the",
+            "ow-two",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "It will be possible to use the room at two.",
+          "wordIds": [
+            "ow-at",
+            "ow-be",
+            "ow-it",
+            "ow-possible",
+            "ow-room",
+            "ow-the",
+            "ow-to",
+            "ow-two",
+            "ow-use",
+            "ow-will"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-repeat-again",
+      "intentId": "request-repeat",
+      "level": 3,
+      "references": [
+        {
+          "english": "Please say that again.",
+          "wordIds": [
+            "ow-again",
+            "ow-please",
+            "ow-say",
+            "ow-that"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "Can you repeat that, please?",
+          "wordIds": [
+            "ow-can",
+            "ow-please",
+            "ow-repeat",
+            "ow-that",
+            "ow-you"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    },
+    {
+      "id": "ex-room-has-shower",
+      "intentId": "state-room-shower",
+      "level": 3,
+      "references": [
+        {
+          "english": "There is a shower in the room.",
+          "wordIds": [
+            "ow-a",
+            "ow-be",
+            "ow-in",
+            "ow-room",
+            "ow-shower",
+            "ow-the",
+            "ow-there"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        },
+        {
+          "english": "The room has a shower.",
+          "wordIds": [
+            "ow-a",
+            "ow-have",
+            "ow-room",
+            "ow-shower",
+            "ow-the"
+          ],
+          "supplementalTokens": [],
+          "allCore": true
+        }
+      ]
+    }
+  ]
+}

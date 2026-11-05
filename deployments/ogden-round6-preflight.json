@@ -1,0 +1,47 @@
+{
+  "round": 6,
+  "observedAt": "2026-11-04T14:15:16.484Z",
+  "source": "Read-only Render connector and GitHub repository metadata; not a billing statement.",
+  "baseCommit": "5fb1fd44f22451ffe49f549cc1736a1006c03e23",
+  "workspaceId": "tea-dbj1o5rbc2fs73bjno10",
+  "service": {
+    "id": "srv-dbj23vmtlv9c73c1jpo0",
+    "url": "https://easy-english-global.onrender.com",
+    "runtimePlan": "free",
+    "buildPlan": "starter",
+    "instances": 1,
+    "autoDeploy": "no",
+    "autoDeployTrigger": "off",
+    "branch": "main",
+    "httpHealthCheckPath": ""
+  },
+  "liveDeploy": {
+    "id": "dep-dbl6o261egvs73duhjr0",
+    "commit": "6c4c3cfd8407878439194e2f347e7c4bd791f729"
+  },
+  "bandwidth": {
+    "since": "2026-11-01T00:00:00Z",
+    "reportedSamples": 31,
+    "sumReportedSamples": 36.628077548040004,
+    "unit": "mb",
+    "isInvoice": false,
+    "isRemainingAllowance": false
+  },
+  "billing": {
+    "buildMinutesRemaining": null,
+    "freeInstanceHoursRemaining": null,
+    "transferAllowanceRemaining": null,
+    "automaticOverageChargePolicy": null,
+    "zeroIncrementalCostForFutureDeployment": "unverified"
+  },
+  "network": {
+    "productionSmoke": "NOT_RUN",
+    "reason": "Environment HTTP proxy denied destination with 403",
+    "currentRenderDocumentation": "unavailable"
+  },
+  "githubRepositoryVisibility": "public",
+  "productionActionsPerformedThisRound": [],
+  "openingAuthorized": false,
+  "manualDeviceAcceptance": "NOT_RUN",
+  "independentHumanReviews": 0
+}

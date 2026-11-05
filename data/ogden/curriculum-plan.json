@@ -1,0 +1,77 @@
+{
+  "version": "modern-850-plan-v1",
+  "status": "developer-self-checked-850-preview",
+  "target": 850,
+  "currentApprovedCore": 850,
+  "countingRule": "850个不同拼写的稳定教学词头，包含保留的300词中单列代词/数字形式；新增批次不把普通复数、时态变化扩成额外词头。保留broken/lost状态形容词ID，另教break/lose动作义并注明差别。历史850索引不计作现代教材。",
+  "batches": [
+    {
+      "id": "foundation-300",
+      "targetTotal": 300,
+      "status": "developer-self-checked",
+      "focus": "零基础句子、18操作词、生活旅行与简单工作"
+    },
+    {
+      "id": "daily-450",
+      "targetTotal": 450,
+      "status": "developer-self-checked",
+      "focus": "家庭、健康、饮食、衣着、时间与常见描述"
+    },
+    {
+      "id": "life-600",
+      "targetTotal": 600,
+      "status": "developer-self-checked",
+      "focus": "城市服务、旅行异常、居家与工作协作"
+    },
+    {
+      "id": "describe-725",
+      "targetTotal": 725,
+      "status": "developer-self-checked",
+      "focus": "位置、形状、材料、变化与简单释义"
+    },
+    {
+      "id": "express-850",
+      "targetTotal": 850,
+      "status": "developer-self-checked",
+      "focus": "填补日常表达覆盖缺口，优先组合能力与改述，不为凑数加入术语"
+    }
+  ],
+  "domainBudgets": {
+    "self-introduction": 50,
+    "people-things": 85,
+    "needs-wishes": 55,
+    "daily-actions": 80,
+    "time-place": 75,
+    "quantity-price": 75,
+    "problems-help": 80,
+    "family-friends": 50,
+    "food-shopping": 90,
+    "transport-travel": 90,
+    "hotels-airports": 75,
+    "simple-work": 45
+  },
+  "budgetRule": "domainBudgets保留最初规划配额以便追溯；本轮按实用性调整，actualPrimaryDomainCounts才是850词的实际主场景分布，不将规划配额冒称实绩。",
+  "admissionGates": [
+    "明确高频日常意图或释义价值，不仅因为在历史表中出现",
+    "自然组合、完整双语例句、功能句型和适用场景",
+    "历史词头匹配与现代词类区别，新增理由及可靠来源",
+    "固定CMU美式主读与异读上下文检查；不冒称录音",
+    "开发者逐条自然度及语义自查；无法确认留draft",
+    "重复导入、版本升级及用户记录保护测试"
+  ],
+  "notIncludedAsCompleted": "850核心教材经开发者自查完成；不代表独立真人审核、真实手机发音验收、生产迁移或部署已完成。",
+  "actualPrimaryDomainCounts": {
+    "daily-actions": 137,
+    "needs-wishes": 84,
+    "self-introduction": 23,
+    "time-place": 75,
+    "family-friends": 30,
+    "hotels-airports": 58,
+    "food-shopping": 78,
+    "quantity-price": 39,
+    "transport-travel": 73,
+    "people-things": 201,
+    "simple-work": 24,
+    "problems-help": 28
+  }
+}

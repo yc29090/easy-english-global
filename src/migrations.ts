@@ -1,6 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import type {DB} from './db.ts';
-export const migrations=['001_init.sql','002_learning_method.sql','003_curriculum.sql','004_manual_payment.sql','005_manual_payment_safety.sql','006_gmail_oauth.sql','007_learning_v2.sql'];
+export const migrations=['001_init.sql','002_learning_method.sql','003_curriculum.sql','004_manual_payment.sql','005_manual_payment_safety.sql','006_gmail_oauth.sql','007_learning_v2.sql','008_ogden.sql','009_ogden_practice_progress.sql'];
 export async function migrate(db:DB){
  await db.query('BEGIN');
  try{
