@@ -1,4 +1,4 @@
-name: PR12 readonly release verification
+name: PR13 readonly release verification
 on:
   push:
     branches: ['ops/pr12-readonly-verification']
@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 7
     env:
+      RELEASE_STAGE: baseline-pr13
       EXPECTED_SHA: fdd3e1a350a7a835c562663c29438f985ff58f40
     steps:
       - uses: actions/setup-node@v4
