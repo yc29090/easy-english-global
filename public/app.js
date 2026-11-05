@@ -3,10 +3,9 @@ import {createPlayback} from './playback.js';
 import {createLearningV2,findLinkedWord} from './learning-v2.js';
 const playback=createPlayback();
 let hideEnglish=false,hideChinese=false,slowAudio=false,reviewAll=false,reviewItems=[],learningState=null,practiceProgress=[],trainingItems=[],trainingIndex=0,trainingReview=false,activeDialogue=null,practiceRole='a',practiceTurn=0;
-document.addEventListener('visibilitychange',()=>{if(document.hidden){stopForBackground();}});
-window.addEventListener('pagehide',()=>{stopForBackground();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){playback.stop();learningV2.pause();}});
+window.addEventListener('pagehide',()=>{playback.stop();learningV2.pause();});
 const $=s=>document.querySelector(s);
-function stopForBackground(){playback.stop();learningV2.pause();document.querySelectorAll('.playback-phase').forEach(node=>node.textContent=t('页面已暂停，旧播放请求已取消。请重新点击播放。','Page paused. Previous speech was canceled. Click again to play.'));}
 const classicPages=new Set(['classic','words','phrases','scenes','review','v2','membership','account','admin']);
 function routePage(search=''){const query=new URLSearchParams(search);return classicPages.has(query.get('page'))?query.get('page'):query.get('version')==='classic'?'classic':'home';}
 function pageUrl(p){return p==='home'?'/':'/?version=classic'+(p==='classic'?'':'&page='+encodeURIComponent(p));}
@@ -31,7 +30,7 @@ async function syncLearning(){
  const [p,r]=await Promise.all([request('/progress'),request(reviewAll?'/review/all':'/review')]);progress=p.progress;reviewItems=r.items;
 }
 const dateLabel=value=>new Date(value).toLocaleString(lang==='zh'?'zh-CN':'en');
-function audioControls(id){return `<div class="audio"><button data-speak="${esc(id)}" data-speed="normal" aria-pressed="${!slowAudio}">◖)) ${t('正常发音','Normal')}</button><button data-speak="${esc(id)}" data-speed="slow" aria-pressed="${slowAudio}">◷ ${t('慢速发音','Slow')}</button><button data-repeat="${esc(id)}">↻ ${t('重复播放','Repeat')}</button><button data-shadow="${esc(id)}">${t('听一句，跟读一句','Listen & repeat aloud')}</button><button data-stop>${t('停止','Stop')}</button></div><p class="help">${t('仅使用en-US本地或在线语音；无可用美式语音时不播放。语言标签不能证明标准美式口音，实际音质和慢速听感待真机核验。在线语音可能将教材文字交给浏览器服务商。','Only en-US local or online voices; no other accent fallback. The language tag does not certify General American quality or slow playback. Online voices may send curriculum text to the browser provider.')}</p><p class="help playback-phase" role="status" aria-live="polite"></p>`;}
+function audioControls(id){return `<div class="audio"><button data-speak="${esc(id)}" data-speed="normal" aria-pressed="${!slowAudio}">◖)) ${t('正常发音','Normal')}</button><button data-speak="${esc(id)}" data-speed="slow" aria-pressed="${slowAudio}">◷ ${t('慢速发音','Slow')}</button><button data-repeat="${esc(id)}">↻ ${t('重复播放','Repeat')}</button><button data-shadow="${esc(id)}">${t('听一句，跟读一句','Listen & repeat aloud')}</button><button data-stop>${t('停止','Stop')}</button></div><p class="help playback-phase" role="status" aria-live="polite"></p>`;}
 function visibilityControls(){return `<div class="practice-options"><button data-hide="en" aria-pressed="${hideEnglish}">${hideEnglish?t('显示英文','Show English'):t('隐藏英文 · 练听力','Hide English · Listen')}</button><button data-hide="zh" aria-pressed="${hideChinese}">${hideChinese?t('显示中文','Show Chinese'):t('隐藏中文 · 试着理解','Hide Chinese · Understand')}</button><button id="slow-audio" aria-pressed="${slowAudio}">${slowAudio?t('重复/陪练：慢速','Repeat/dialogue: slow'):t('重复/陪练：正常','Repeat/dialogue: normal')}</button></div>`;}
 function statusControls(m){const state=progress.find(p=>p.material_id===m.id);return `<div class="statuses">${statuses().map(([v,l])=>`<button data-status="${v}" data-material="${esc(m.id)}" class="${state?.status===v?'selected':''}" aria-pressed="${state?.status===v}">${l}</button>`).join('')}</div>${state?.next_review_at?`<p class="help">${t('下次复习：','Next review: ')}${esc(dateLabel(state.next_review_at))}</p>`:''}`;}
 function linkedPhraseText(m){return m.kind!=='phrase'?esc(m.english):m.english.split(/([A-Za-z]+(?:['’-][A-Za-z]+)*)/g).map(token=>/^[A-Za-z]/.test(token)?`<button class="v2-token" data-v2-token="${esc(token)}" data-v2-phrase="${esc(m.id)}" title="${t('点击查看词义','Tap for meaning')}">${esc(token)}</button>`:esc(token)).join('');}
@@ -169,8 +168,8 @@ function bindLearning(){
   document.querySelectorAll('.playback-phase').forEach(node=>node.textContent='');
   const output=el.closest('.material')?.querySelector('.playback-phase');
   playback.play(item,{slow:slowAudio,repeat,shadow,
-   onPhase:(phase,state)=>{if(output)output.textContent=phase==='loading'?t('正在等待美式英语语音，尚未确认播放。','Waiting for en-US speech; playback not yet confirmed.'):phase==='listen'?(lang==='zh'?state.message:t(slowAudio?'正在慢速播放，先听一听…':'正在正常播放，先听一听…',slowAudio?'Listening slowly…':'Listening normally…')):phase==='speak'?t('轮到你跟读，稍后自动重复。随时可以停止。','Your turn to speak. Audio repeats after a pause; stop anytime.'):phase==='pause'?t('稍停一下，马上重复…','A short pause before repeating…'):t('听完了，可以自己说一遍。','Now try saying it aloud.');},
-   onError:state=>{if(output)output.textContent=lang==='zh'?state.message:`en-US playback failed (${state.code}). No other accent or default voice was used. Retry playback.`;}
+   onPhase:phase=>{if(output)output.textContent=phase==='listen'?t(slowAudio?'正在慢速播放，先听一听…':'正在正常播放，先听一听…',slowAudio?'Listening slowly…':'Listening normally…'):phase==='speak'?t('轮到你跟读，稍后自动重复。随时可以停止。','Your turn to speak. Audio repeats after a pause; stop anytime.'):phase==='pause'?t('稍停一下，马上重复…','A short pause before repeating…'):t('听完了，可以自己说一遍。','Now try saying it aloud.');},
+   onError:()=>{if(output)output.textContent=t('播放不可用，请重试或更换浏览器。','Playback unavailable. Please retry or use another browser.');}
   });
  };
  document.querySelectorAll('[data-speak]').forEach(el=>el.onclick=()=>playFrom(el));

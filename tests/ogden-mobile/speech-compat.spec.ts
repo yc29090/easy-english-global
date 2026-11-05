@@ -28,49 +28,25 @@ async function setup(page:Page,voices:any[],error=''){
 }
 const last=(page:Page)=>page.evaluate(()=>(window as any).voiceFixture.calls().at(-1));
 const size=(page:Page)=>page.evaluate(()=>(window as any).voiceFixture.calls().length);
-test('voice shim: optional diagnosis exposes online US eligibility without playback or uploads',async({page})=>{
- await setup(page,[zh,gb,{...us,localService:false}]);const posts:string[]=[];page.on('request',r=>{if(r.method()!=='GET')posts.push(r.url());});await page.locator('[data-voice-check]').click();await expect(page.locator('#voice-check')).toContainText('US fixture（浏览器在线）');await expect(page.locator('#voice-check')).toContainText('en-gb');await expect(page.locator('#voice-check')).toContainText('不上传、不保存');expect(await size(page)).toBe(0);expect(posts).toEqual([]);
+test('classic mode: online and unknown-source en-US use the same selection without local-only filtering',async({page})=>{
+ await setup(page,[{...us,localService:false}]);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('已请求正常播放');expect((await last(page)).lang).toBe('en-US');
+ await page.evaluate(voice=>(window as any).voiceFixture.load([voice]),{lang:'en-US',name:'Unknown US',voiceURI:'unknown'});await page.locator('[data-say]').first().click();expect((await last(page)).voice).toBe('Unknown US');
 });
-test('voice shim: en-US is preferred over other English and the Chinese default',async({page})=>{
- await setup(page,[zh,gb,us]);expect(await size(page)).toBe(0);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('正在正常播放');expect((await last(page)).lang).toBe('en-US');expect((await last(page)).rate).toBe(1);
+test('classic mode: other English is allowed exactly as production 1.0',async({page})=>{
+ await setup(page,[zh,gb]);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('已请求正常播放');expect((await last(page)).lang).toBe('en-GB');expect((await last(page)).voice).toBe('UK fixture');
 });
-for(const lang of ['en-GB','en-AU','en-CA','en-NZ','en','zh-CN'])test(`voice shim: reject ${lang} without default speech`,async({page})=>{
- await setup(page,[{...gb,lang}]);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('没有可用的 en-US',{timeout:12000});expect(await size(page)).toBe(0);
+test('classic mode: initially empty list requests default voice immediately; loaded voice is used on next click',async({page})=>{
+ await setup(page,[]);await page.locator('[data-say]').first().click();expect(await size(page)).toBe(1);expect((await last(page)).lang).toBe('en-US');expect((await last(page)).voice).toBeUndefined();
+ await page.evaluate(voice=>(window as any).voiceFixture.load([voice]),us);expect(await size(page)).toBe(1);await page.locator('[data-say]').first().click();expect((await last(page)).voice).toBe('US fixture');
 });
-test('voice shim: en-US without localService is eligible',async({page})=>{
- await setup(page,[{lang:'en-US',name:'Unknown source US',voiceURI:'unknown-us'}]);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('正在正常播放');expect((await last(page)).lang).toBe('en-US');
+test('classic mode: slow repeat preserves .55, stop and rapid changes cancel future repeats',async({page})=>{
+ await setup(page,[us]);await page.locator('[data-slow]').first().click();expect((await last(page)).rate).toBe(.55);await page.locator('[data-repeat]').first().click();expect((await last(page)).rate).toBe(.55);const before=await size(page);await page.evaluate(()=>(window as any).voiceFixture.finish());await expect.poll(()=>size(page)).toBe(before+1);expect((await last(page)).rate).toBe(.55);
+ await page.locator('[data-say]:not([data-repeat]):not([data-slow])').first().click();expect((await last(page)).rate).toBe(1);await page.locator('[data-slow]').first().click();expect((await last(page)).rate).toBe(.55);await page.locator('[data-stop]').first().click();const stopped=await size(page);await page.waitForTimeout(1700);expect(await size(page)).toBe(stopped);await expect(page.locator('#feedback')).toContainText('已停止');
 });
-test('voice shim: empty list resumes the clicked request after asynchronous voiceschanged',async({page})=>{
- await setup(page,[]);await page.locator('[data-slow]').first().click();await expect(page.locator('#feedback')).toContainText('正在加载');expect(await size(page)).toBe(0);
- await page.evaluate(voice=>(window as any).voiceFixture.load([voice]),us);await expect(page.locator('#feedback')).toContainText('正在慢速播放');expect(await size(page)).toBe(1);expect((await last(page)).rate).toBe(.55);
+test('classic mode: network playback error reports failure without another service',async({page})=>{
+ await setup(page,[us],'network');await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('暂不可用');expect(await size(page)).toBe(1);
 });
-test('voice shim: no English voice fails honestly without speaking a non-English default',async({page})=>{
- await setup(page,[zh]);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('没有可用的 en-US',{timeout:12000});expect(await size(page)).toBe(0);
-});
-test('voice shim: slow selection survives repeat; stop cancels late callbacks and normal resets rate',async({page})=>{
- await setup(page,[us]);await page.locator('[data-slow]').first().click();await expect(page.locator('#feedback')).toContainText('正在慢速播放');expect((await last(page)).rate).toBe(.55);
- await page.locator('[data-repeat]').first().click();await expect.poll(()=>size(page)).toBe(2);await expect(page.locator('#feedback')).toContainText('正在慢速播放');expect((await last(page)).rate).toBe(.55);
- await page.evaluate(()=>(window as any).voiceFixture.finish());await expect.poll(()=>size(page)).toBe(3);expect((await last(page)).rate).toBe(.55);
- await page.locator('[data-stop]').first().click();const stopped=await size(page);await page.waitForTimeout(2000);expect(await size(page)).toBe(stopped);await expect(page.locator('#feedback')).toContainText('已停止');
- await page.locator('[data-say]:not([data-repeat]):not([data-slow])').first().click();await expect(page.locator('#feedback')).toContainText('正在正常播放');expect((await last(page)).rate).toBe(1);
- await page.locator('[data-slow]').first().click();await page.locator('[data-stop]').first().click();const afterStop=await size(page);await page.waitForTimeout(300);expect(await size(page)).toBe(afterStop);
-});
-test('voice shim: playback network failure never displays a successful playing state',async({page})=>{
- await setup(page,[us],'network');await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('连接失败');await expect(page.locator('#feedback')).not.toContainText('正在正常播放');expect(await size(page)).toBe(1);
-});
-test('voice shim: browser online English is identified and requires no website paid TTS endpoint',async({page})=>{
- await setup(page,[zh,{...us,localService:false}]);const requests:string[]=[];page.on('request',r=>{if(r.method()!=='GET')requests.push(r.url());});
- await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('浏览器在线英语语音');await expect(page.locator('.speech-policy')).toContainText('可能将教材文字');expect((await last(page)).lang).toBe('en-US');expect(requests).toEqual([]);
-});
-
-test('voice shim: permanently empty list times out and cannot resume after late voices',async({page})=>{
- await setup(page,[]);await page.locator('[data-say]').first().click();await expect(page.locator('#feedback')).toContainText('列表仍为空',{timeout:12000});await page.evaluate(voice=>(window as any).voiceFixture.load([voice]),us);expect(await size(page)).toBe(0);
-});
-test('voice shim: pagehide cancels queued speech and background restoration cannot revive it',async({page})=>{
- await setup(page,[]);await page.locator('[data-say]').first().click();await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));await page.evaluate(voice=>(window as any).voiceFixture.load([voice]),us);await page.waitForTimeout(300);expect(await size(page)).toBe(0);
-});
-
-test('voice shim: visibility background and restoration do not revive pending speech',async({page})=>{
- await setup(page,[]);await page.locator('[data-say]').first().click();await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});await expect(page.locator('#feedback')).toContainText('旧播放请求已取消');
- await page.evaluate(voice=>{Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));(window as any).voiceFixture.load([voice]);},us);await page.waitForTimeout(300);expect(await size(page)).toBe(0);
+test('classic mode: background restoration and pagehide do not revive canceled repetition',async({page})=>{
+ await setup(page,[us]);await page.locator('[data-repeat]').first().click();await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});const stopped=await size(page);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));});await page.waitForTimeout(1700);expect(await size(page)).toBe(stopped);
+ await page.locator('[data-repeat]').first().click();await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));const hidden=await size(page);await page.waitForTimeout(1700);expect(await size(page)).toBe(hidden);
 });
