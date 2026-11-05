@@ -22,8 +22,8 @@ test('modern 850-word core remains traceable and contains the distinct 18 operat
  }
  for(const x of content.items.filter(x=>x.kind==='expression')){assert.ok(x.answers.length>=2);assert.equal(x.evaluation,'self-assessment');}
 });
-test('legacy curriculum, billing, authentication, audio and deployment inputs remain byte-identical',async()=>{
- for(const file of ['data/curriculum.json','src/security.ts','src/config.ts','src/review.ts','src/setup.ts','src/install-content.ts','src/learning-v2.ts','public/playback.js','public/speech-practice.js','public/styles.css','render.yaml','.env.example','scripts/import.ts',...['001_init.sql','002_learning_method.sql','003_curriculum.sql','004_manual_payment.sql','005_manual_payment_safety.sql','006_gmail_oauth.sql','007_learning_v2.sql'].map(x=>'db/'+x)]){
+test('legacy curriculum, billing, authentication, recognition and deployment inputs remain byte-identical',async()=>{
+ for(const file of ['data/curriculum.json','src/security.ts','src/config.ts','src/review.ts','src/setup.ts','src/install-content.ts','src/learning-v2.ts','public/speech-practice.js','public/styles.css','render.yaml','.env.example','scripts/import.ts',...['001_init.sql','002_learning_method.sql','003_curriculum.sql','004_manual_payment.sql','005_manual_payment_safety.sql','006_gmail_oauth.sql','007_learning_v2.sql'].map(x=>'db/'+x)]){
   const baseline=JSON.parse(await readFile(new URL('../docs/ogden/legacy-baseline.json',import.meta.url),'utf8'));
   const bytes=await readFile(new URL('../'+file,import.meta.url));
   // This explicitly authorized UI change appends styles; the original CSS must stay intact.
@@ -68,7 +68,7 @@ test('HTTP protects authentication, user identity, preview routes, CSRF and prod
   assert.equal((await fetch(base+'/api/ogden/catalog')).status,401);
   const registered=await post('/api/auth/register',{email:randomUUID()+'@example.invalid',password:'Preview9!Example'});assert.equal(registered.status,200);const cookie=registered.headers.get('set-cookie')!.split(';')[0];const user=(await registered.json()).user;
   assert.equal((await post('/api/auth/login',{email:user.email,password:'Preview9!Example'})).status,200);
-  for(const path of ['/ogden','/ogden/words','/ogden/operators','/ogden/operators/get','/ogden/patterns','/ogden/build','/ogden/express','/ogden/listening','/ogden/speaking','/ogden/review','/ogden/progress','/ogden/app.js','/ogden/speech.js','/ogden/styles.css']){const r=await fetch(base+path);assert.equal(r.status,200,path);}
+  for(const path of ['/ogden','/ogden/words','/ogden/operators','/ogden/operators/get','/ogden/patterns','/ogden/build','/ogden/express','/ogden/listening','/ogden/speaking','/ogden/review','/ogden/progress','/ogden/app.js','/ogden/speech.js','/english-speech.js','/ogden/styles.css']){const r=await fetch(base+path);assert.equal(r.status,200,path);}
   assert.equal((await fetch(base+'/ogden/no-such-route')).status,404);assert.equal((await fetch(base+'/ogden',{method:'POST'})).status,404);
   assert.equal((await (await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie}})).json()).items.length,content.items.length);
   const compressed=await fetch(base+'/api/ogden/catalog',{headers:{Cookie:cookie,'Accept-Encoding':'gzip'}});assert.equal(compressed.headers.get('content-encoding'),'gzip');assert.equal(compressed.headers.get('vary'),'Accept-Encoding');const text=await compressed.text();assert.equal(JSON.parse(text).coverage.coreWords,850);assert.ok(Number(compressed.headers.get('content-length'))<Buffer.byteLength(text)/2);

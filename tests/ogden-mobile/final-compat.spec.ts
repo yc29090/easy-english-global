@@ -43,7 +43,7 @@ test('mocked API: malformed gateway and failed save recover without fake success
  });
  await page.goto('/ogden/express?task=ex-arrival');await expect(page.getByRole('heading',{name:'暂时无法读取2.0教材'})).toBeVisible();await page.getByRole('button',{name:'重新加载'}).click();
  await expect(page.locator('article')).toHaveCount(1);await page.locator('textarea').fill('Private mobile draft: never upload this.');
- await page.getByRole('button',{name:'正常播放',exact:true}).first().click();await expect(page.locator('#feedback')).toContainText('没有可用的英语语音',{timeout:12000});expect(await page.evaluate(()=>(window as any).nonEnglishSpeakCalls)).toBe(0);
+ await page.getByRole('button',{name:'正常播放',exact:true}).first().click();await expect(page.locator('#feedback')).toContainText('没有可用的 en-US 美式英语语音',{timeout:12000});expect(await page.evaluate(()=>(window as any).nonEnglishSpeakCalls)).toBe(0);
  const save=page.getByRole('button',{name:'已学习',exact:true});await save.click();await expect(page.locator('#feedback')).toContainText('尚未确认保存');await expect(save).toBeEnabled();await expect(page.locator('textarea')).toHaveValue('Private mobile draft: never upload this.');
  await save.click();await expect(page.locator('#feedback')).toContainText('已保存2.0');expect(saves).toHaveLength(2);expect(saves[0]).toEqual(saves[1]);expect(JSON.stringify(saves)).not.toContain('Private mobile draft');expect(errors).toEqual([]);
 });

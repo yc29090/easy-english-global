@@ -1,36 +1,47 @@
-# Android English speech compatibility fix
+# Android en-US 兼容性修复（PR #12）
 
-Development and tests only. This PR must not be merged or deployed without a later release authorization.
+本轮基于远程 `a04121e`，保留既有提交，只更新 `fix/android-english-speech`。不得合并、部署、执行生产迁移或改变支付开关。本文件替代此前允许其他英语口音的说明。
 
-## Cause and scope
+## 根因与当前实现
 
-The published 2.0 player accepted only `en-US` with `localService === true`. Android Chrome can expose usable English voices as online or omit that flag; it can initially return an empty list. The old event handler merely asked for another click instead of resuming the already requested playback.
+- 原生产2.0要求 `en-US && localService===true`，会误拒绝Android浏览器提供的在线美式语音；首次空列表、延迟/缺失 `voiceschanged` 也会导致错误不可用提示。
+- PR早期允许其他英语口音的回退不符合本次要求，已删除。最新远程虽已限制2.0，1.0共享播放器、隐私说明、旧测试及PR正文仍保留宽泛回退，必须同步修正。
+- 两版原生朗读统一到 `/english-speech.js`：只选择规范化后为 `en-US` 的voice（大小写及下划线规范化），显式绑定 `voice` 和 `lang='en-US'`。本地优先；缺失来源标记、浏览器在线en-US均允许。GB/AU/CA/NZ、无地区的en及非英语默认声音均禁止。失败只在其他en-US之间尝试，最多3次。
+- `/ogden/speech.js`保留原导出契约；`/playback.js`保留经典版单词、短句、场景、对话、跟读和听说练习接口，使用同一引擎。公共模块独立于2.0发布开关，不妨碍1.0。
+- 等待列表最多6秒，200ms有界轮询补充事件；用户点击后就绪则继续本次请求。开始事件最多等待8秒；结束看门狗15～120秒。没有开始事件不显示播放成功，错误消息不输出底层异常中的敏感内容。
+- 快速切换有120ms取消接续窗口；generation使旧事件失效。停止、离页、后台取消等待、播放与重复，恢复前台不复活旧请求。没有自动解锁朗读、麦克风请求、网站TTS请求或付费服务。
+- 正常请求1.0，慢速请求0.55；重复继承所选语速。跟读保留说话间隔。对同声同句的真实开始/结束事件做有限内存时长对比，慢速不足正常时长1.15倍则明确警告并终止重复。这只能提示疑似忽略rate，不能证明音频实际变慢。
+- 原先只有URL的音频没有口音审核来源，不能绕过严格en-US策略；适配器暂不播放此类未审核媒体。当前经典教材未提供录音URL。没有删除或修改教材记录。
+- 原有教材、认证、会员、订单、迁移和部署输入仍保留历史哈希测试。`public/playback.js`因本次明确授权被共享适配器替换，从旧逐字节断言中单独移出，新增行为和共享合成入口检查；没有重写其余历史基线。
 
-The native Web Speech player now explicitly selects en-US only. It prefers local en-US voices but accepts browser online en-US voices. It never falls back to another English accent. A missing localService flag is not a reason to reject English; browser-provided online English is identified honestly. No new TTS endpoint, API key, paid SDK or resource is introduced. Browser online voices can send the selected curriculum text to their browser/system provider; the visible notice and privacy page explain this. User drafts, passwords and recordings are not read or uploaded by this feature. Dictionary phonemes remain the American teaching reference and do not control the selected voice's accent.
+## 自动化验收范围
 
-An explicit user click owns the pending request. voiceschanged or bounded 200ms polling can resume it; discovery times out at 6 seconds. Stop, pagehide and backgrounding invalidate pending callbacks. An active cancel gets 120ms to settle, including rapid subsequent clicks. onstart is required before saying “playing”; start failure is bounded at 8 seconds, completion has its own watchdog, and errors try at most 3 explicitly English voices. Permission/cancellation failures do not silently retry. Repetition waits for a confirmed end plus 1.8 seconds and retains the chosen slow/normal setting.
+单元：本地/在线/来源缺失en-US、GB/AU/CA/NZ/en/中文拒绝、空列表和延迟事件/轮询、始终空列表、构造/读取/播放异常、开始及结束超时、三次上限、正常/慢速、重复/停止、快速切换、过期回调、真实事件时长诊断、经典版各教材类型及未审核URL拒绝。
 
-## Slow playback and evidence limits
+手机浏览器：现有Playwright的Android Chromium、iPhone WebKit与iPhone尺寸Chromium；语音fixture明确模拟Web Speech API，验证页面接线、语言/语速参数及生命周期。它们不是Android/iPhone真机语音引擎，不能证明出声、General American音质或实际慢速。完整回归由已有GitHub Actions隔离PostgreSQL运行，不接触生产Neon。
 
-Actual utterance.rate is set to 1 or 0.55, not merely a button label. If the same voice/text has already completed a normal playback in this page, the player compares start/end event durations. A slow duration near the normal duration warns that the engine may have ignored rate and stops repetition. These timings are a diagnostic, not an acoustic measurement or pronunciation score. Without a paired normal sample the player cannot prove that the engine honors rate. There is no browser API that forces every installed TTS engine to respect a requested rate.
+实际CI链接、通过/失败/跳过数量记录在PR正文和最终交付报告；不能沿用旧SHA的通过结果。
 
-Unit tests exercise delayed/missing voice events, English fallback, remote/missing source flags, Chinese rejection, pause/cancel, repeat, errors and measured duration warnings. Mobile compatibility tests use **explicit API and SpeechSynthesis shims**, on Android Chromium/iPhone WebKit/iPhone-size Chromium. They validate routing of voice/lang/rate and error states; they do not prove that a real Android phone emits sound or slows it.
+## 无新增付费资源的预制音频备选研究
 
-## Required Android device acceptance (NOT RUN by automation)
+Google翻译能发声不代表同一设备的Web Speech API暴露了en-US voice；不能用非官方Google翻译TTS抓取接口绕过，也不接入收费TTS。
 
-Use a later approved test build; the current production website remains unchanged during this PR. Test Android Chrome and the device's default browser separately. No microphone permission is required for speech playback.
+当目标设备没有en-US或引擎忽略rate，预制、人工审核的General American音频是可控备选：用有授权的真人录音或经许可离线生成的美式来源，逐条确认教材文本、许可、口音与音质。为正常和慢速分别生成静态文件；慢速可离线用FFmpeg `atempo=0.55`保留音高，浏览器以1倍播放，避免依赖Android TTS rate。录音仍需人听验收，不能由标签或工具处理替代。
 
-1. Record device, Android/browser versions and the selected voice name/language/local-or-online label. Use the same word and a full short sentence.
-2. Tap normal playback. Require audible English and a start confirmation, not just an enabled button. With only another English locale available, require an explicit unavailable message; never play that accent.
-3. Play that same sentence normally to completion, then slowly. Repeat comparisons three times. Require clearly slower speech and a longer duration. If unchanged, mark slow playback FAIL, even if automated rate tests passed. Record any “cannot confirm slower” warning.
-4. Tap repeat after slow. Require the same selected slow setting, a gap between completions, and no overlapping voices. Stop must prevent later repeats; rapidly switch normal/slow/stop and check that only the newest request runs.
-5. Navigate away or put the browser in the background while loading/playing; no delayed speech may start after Stop/navigation. Return and start with a fresh click.
-6. If English is genuinely unavailable or the speech provider fails, require a truthful loading/failure message and no Chinese/default-language reading. Online voices can require connectivity; no silent site-paid TTS fallback is permitted.
+本地离线技术实验：2秒440Hz合成测试音，经`atempo=0.55`输出3.618027秒（PCM）；仅验证变速处理能力和大致时长，**不是英语、不是教材资产、不是音质验收**，未提交音频到仓库或上传服务。以后需要正常/慢速文件及哈希、en-US、来源许可、审核人、时长的受控清单，复用现有会员鉴权按教材ID提供音频，不能用裸静态路径泄露付费教材。先测算Git/Render带宽、冷启动和存储，再决定现有免费资源是否可承载，不能保证未来绝对零费用。
 
-For a failure, provide only the displayed error, voice label, device/browser version and normal/slow observed durations. Do not send passwords, cookies or connection strings. Keep this acceptance NOT_RUN until a human actually performs it.
+本轮没有合格录音资产，未启用预制音频或假造备用端点。若真机仍失败，则需要补充经审核的音频方案，不能宣布问题已在所有安卓设备解决。
 
-No curriculum, account, membership, payment, database migration or saved progress changes are part of this fix. Historical reports describing the previous local-US-only policy are retained as historical evidence; the new visible policy above supersedes it for this PR.
+## 受控真机验收清单（NOT_RUN）
 
-## User-approved American English restriction
+在后续获授权的测试版本，记录设备、系统/浏览器版本、系统TTS引擎及提示的voice名称/来源；不要发送账号密码或连接字符串。
 
-The user requires American English only. The follow-up commit enforces `en-US` while accepting browser-provided online American voices even when `localService` is false or missing. No `en-GB`, `en-AU`, `en-CA`, `en-NZ`, generic `en`, or default voice fallback is permitted. Android real-device acceptance remains NOT_RUN; existing simulated fallback tests must be revised and rerun before merge. This change is development-only and must not be deployed without separate release approval.
+1. Android Chrome和默认浏览器、iPhone Safari分别听同一句较长教材，确认本地或在线en-US实际出声。
+2. 由能判断口音的人确认General American；en-US标签仅为必要程序条件，未审核的声音不得填写音质PASS。
+3. 正常→慢速各听同句，慢速必须明显更慢且清晰；记录可闻时长，不能仅凭rate=0.55填PASS。系统不服从参数则FAIL，考虑预制音频。
+4. 慢速→重复，确认持续慢速；停止立即静音且不再重复。快速正常/慢速切换不能重叠。
+5. 后台、锁屏、离页后再返回，不得突然播放过期请求；必须重新点击。
+6. 断网在线语音、无en-US及加载失败应准确提示，不播放其他口音或默认声音。朗读不需要麦克风权限。
+7. 覆盖经典单词/短句/场景对话与2.0各学习/练习入口；核实学习进度和账号权限原样保留。
+
+状态分别记录：代码完成、模拟通过、真机出声/口音/慢速验收、正式上线。当前真机未验收，生产未更新；只有自动化通过后才具备进入受控真机测试的条件。
