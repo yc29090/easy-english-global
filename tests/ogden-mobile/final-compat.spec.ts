@@ -30,11 +30,11 @@ test('mocked API: 320px large text, landscape and a reduced keyboard viewport re
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBeTruthy();expect(errors).toEqual([]);
 });
 
-test('mocked API: malformed gateway and failed save recover without fake success, uploaded draft or remote voice fallback',async({page})=>{
+test('mocked API: malformed gateway and failed save recover without fake success, uploaded draft with classic default voice fallback',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));let badCatalog=true,badSave=true;const saves:any[]=[];
  await page.addInitScript(()=>{
-  (window as any).remoteSpeakCalls=0;
-  Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{getVoices:()=>[{lang:'en-US',localService:false,name:'Remote-only fixture'}],cancel(){},addEventListener(){},removeEventListener(){},speak(){(window as any).remoteSpeakCalls++;}}});
+  (window as any).nonEnglishSpeakCalls=0;
+  Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{getVoices:()=>[{lang:'zh-CN',localService:false,name:'Non-English fixture'}],cancel(){},addEventListener(){},removeEventListener(){},speak(){(window as any).nonEnglishSpeakCalls++;}}});
   Object.defineProperty(window,'SpeechSynthesisUtterance',{configurable:true,value:class{constructor(public text:string){}}});
  });
  await fixtureApi(page,async(route,path)=>{
@@ -43,7 +43,7 @@ test('mocked API: malformed gateway and failed save recover without fake success
  });
  await page.goto('/ogden/express?task=ex-arrival');await expect(page.getByRole('heading',{name:'暂时无法读取2.0教材'})).toBeVisible();await page.getByRole('button',{name:'重新加载'}).click();
  await expect(page.locator('article')).toHaveCount(1);await page.locator('textarea').fill('Private mobile draft: never upload this.');
- await page.getByRole('button',{name:'正常播放',exact:true}).first().click();await expect(page.locator('#feedback')).toContainText('没有可用的本地美式');expect(await page.evaluate(()=>(window as any).remoteSpeakCalls)).toBe(0);
+ await page.getByRole('button',{name:'正常播放',exact:true}).first().click();await expect(page.locator('#feedback')).toContainText('已请求正常播放');expect(await page.evaluate(()=>(window as any).nonEnglishSpeakCalls)).toBe(1);
  const save=page.getByRole('button',{name:'已学习',exact:true});await save.click();await expect(page.locator('#feedback')).toContainText('尚未确认保存');await expect(save).toBeEnabled();await expect(page.locator('textarea')).toHaveValue('Private mobile draft: never upload this.');
  await save.click();await expect(page.locator('#feedback')).toContainText('已保存2.0');expect(saves).toHaveLength(2);expect(saves[0]).toEqual(saves[1]);expect(JSON.stringify(saves)).not.toContain('Private mobile draft');expect(errors).toEqual([]);
 });
