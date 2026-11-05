@@ -14,9 +14,9 @@
 .learning-status-button[aria-disabled="true"]{cursor:wait}
 .learning-state-panel[data-save-pending] .learning-status-button[aria-pressed="true"]{border-style:dashed}
 .learning-state-badge{display:inline-block;border:1px solid var(--state-accent,#64748B);border-radius:7px;padding:3px 8px;background:var(--state-soft,#F8FAFC);color:var(--state-ink,#334155);font-size:14px;font-weight:700;line-height:1.5;vertical-align:middle}
-.learning-state-summary{line-height:1.9;font-size:14px;margin:12px 0 4px;color:#334155}
+.learning-state-panel .learning-state-summary{line-height:1.9;font-size:14px;margin:12px 0 4px;color:#334155}
 .learning-state-panel [data-next-review]{margin:4px 0;color:#475569}
-.learning-state-feedback{font-size:14px;line-height:1.6;color:#334155;margin:6px 0;min-height:0}
+.learning-state-panel .learning-state-feedback{font-size:14px;line-height:1.6;color:#334155;margin:6px 0;min-height:0}
 .learning-state-feedback:empty{display:none}
 button[data-page="review"],.nav button[data-page="review"],a[href^="/ogden/review"],nav a[href^="/ogden/review"],button[data-review-mode="due"]{border:1px solid #9333EA;background:#FAF5FF;color:#581C87}
 button[data-page="review"]:focus-visible,a[href^="/ogden/review"]:focus-visible{outline:3px solid #0F172A;outline-offset:3px}

@@ -16,12 +16,18 @@ export function paintStatus(panel,state,{pending=false,language='zh'}={}){
  group.setAttribute('aria-busy',String(pending));
  if(!pending)group.dataset.confirmedState=state||'';
  panel.toggleAttribute('data-save-pending',pending);
+ panel.removeAttribute('data-sync-unconfirmed');
  for(const button of group.querySelectorAll('[data-learning-status]'))button.setAttribute('aria-pressed',String(button.dataset.learningStatus===state));
  const feedback=panel.querySelector('[data-status-feedback]');if(feedback)feedback.textContent=pending?(language==='zh'?'正在保存：':'Saving: ')+statusLabel(state,language)+(language==='zh'?'，尚未确认。':'; not yet confirmed.') : '';
 }
 export function refreshStatusPanel(panel,record,{language='zh',emptyLabel}={}){
  paintStatus(panel,record?.status,{language});
- panel.querySelector('[data-status-summary]').innerHTML=summary(record,language,emptyLabel);
- panel.querySelector('[data-next-review]').textContent=nextReview(record,language);
+ const saved=panel.querySelector('[data-status-summary]'),next=panel.querySelector('[data-next-review]'),html=summary(record,language,emptyLabel),date=nextReview(record,language);
+ if(saved.innerHTML!==html)saved.innerHTML=html;
+ if(next.textContent!==date)next.textContent=date;
+}
+export function unconfirmedStatus(panel,state,language='zh'){
+ paintStatus(panel,state,{language});panel.setAttribute('data-sync-unconfirmed','true');
+ panel.querySelector('[data-status-feedback]').textContent=language==='zh'?'显示上次确认状态；云端保存尚未确认，请重试或刷新核对。':'Showing last confirmed state. Cloud save is unconfirmed; retry or reload.';
 }
 export function statusBusy(root,busy){for(const button of root.querySelectorAll('.learning-status-button'))button.setAttribute('aria-disabled',String(busy));}

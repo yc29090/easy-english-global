@@ -1,4 +1,4 @@
-import {statusPanel,statusBadge,paintStatus,refreshStatusPanel,statusBusy} from '../learning-status.js';
+import {statusPanel,statusBadge,paintStatus,refreshStatusPanel,statusBusy,unconfirmedStatus} from '../learning-status.js';
 import {ogdenRequest,pendingResults} from './requests.js';
 import {continueTarget,prioritizeTasks,taskReadiness,modeLabels} from './learning.js';
 import {createOgdenSpeech} from './speech.js';
@@ -97,7 +97,7 @@ function bind(){
    await refresh();showCloud();notify('已保存2.0自评和复习时间。');
   }catch(e){
    try{await refresh();showCloud();notify(acknowledged?'已保存，已重新读取云端状态。':'尚未确认保存，已重新读取云端状态；重试仍沿用原编号。');}
-   catch{paintStatus(panel,previous);notify((acknowledged?'请求已提交，尚未重新确认云端状态。':'尚未确认保存，请重试（重复请求不会重复计数）。')+' 显示上次确认状态。'+(!retryRequests.persistent?' 此浏览器阻止标签页存储，请留在当前页重试，刷新将无法沿用编号。':''));}
+   catch{unconfirmedStatus(panel,previous);notify((acknowledged?'请求已提交，尚未重新确认云端状态。':'尚未确认保存，请重试（重复请求不会重复计数）。')+' 显示上次确认状态。'+(!retryRequests.persistent?' 此浏览器阻止标签页存储，请留在当前页重试，刷新将无法沿用编号。':''));}
   }finally{savePending=false;statusBusy(document,false);}
  });
  document.querySelectorAll('[data-variant]').forEach(select=>select.onchange=()=>{

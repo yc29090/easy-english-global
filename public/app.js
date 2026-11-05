@@ -1,5 +1,5 @@
 'use strict';
-import {statusPanel,statusBadge,paintStatus,statusBusy} from './learning-status.js';
+import {statusPanel,statusBadge,paintStatus,statusBusy,unconfirmedStatus} from './learning-status.js';
 import {createPlayback} from './playback.js';
 import {createLearningV2,findLinkedWord} from './learning-v2.js';
 const playback=createPlayback();
@@ -190,7 +190,7 @@ function bindLearning(){
    await syncLearning();render();restoreFocus();toast(t('已保存：','Saved: ')+statuses().find(([v])=>v===value)[1]);
   }catch(error){
    try{await syncLearning();render();restoreFocus();toast(confirmed?t('已保存，已重新读取云端状态。','Saved; cloud state reloaded.'):t('保存请求尚未确认，已重新读取云端状态；可重试。','Save unconfirmed; cloud state reloaded. You can retry.'));}
-   catch{if(confirmed){render();restoreFocus();toast(t('已保存；暂时无法刷新统计，请稍后刷新。','Saved; statistics could not refresh. Please reload later.'));}else{paintStatus(panel,previous,{language:lang});toast(t('保存尚未确认，显示上次确认状态；请重试或刷新核对。','Save unconfirmed. Showing last confirmed state; retry or reload.'));}}
+   catch{if(confirmed){render();restoreFocus();toast(t('已保存；暂时无法刷新统计，请稍后刷新。','Saved; statistics could not refresh. Please reload later.'));}else{unconfirmedStatus(panel,previous,lang);toast(t('保存尚未确认，显示上次确认状态；请重试或刷新核对。','Save unconfirmed. Showing last confirmed state; retry or reload.'));}}
   }finally{savingClassicStatus=false;statusBusy(document,false);}
  });
  document.querySelectorAll('[data-review-mode]').forEach(el=>safely(el,async()=>{
