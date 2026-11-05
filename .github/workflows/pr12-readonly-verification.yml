@@ -1,0 +1,56 @@
+name: PR12 readonly release verification
+on:
+  push:
+    branches: ['ops/pr12-readonly-verification']
+    paths: ['.github/workflows/pr12-readonly-verification.yml']
+permissions:
+  contents: read
+jobs:
+  readonly-production-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    env:
+      EXPECTED_SHA: 6c5afeb60c1d3e05c36cea1b99bf6046bd73ddfa
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify real HTTPS deployment with GET requests only
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {createHash} from 'node:crypto';
+          const base='https://easy-english-global.onrender.com',sha=process.env.EXPECTED_SHA;
+          assert.match(sha,/^[a-f0-9]{40}$/);
+          const checks=[];
+          async function read(path){return fetch(base+path,{method:'GET',redirect:'error',headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(45000)});}
+          async function check(path,status=200){
+            const r=await read(path);assert.equal(r.status,status,path+' HTTP status');
+            checks.push(path+':'+r.status);return r;
+          }
+          let health;
+          for(let attempt=0;attempt<4;attempt++){
+            try{const r=await read('/health');if(r.status===200&&(await r.json()).ok===true){health=true;break;}}catch{}
+            if(attempt<3)await new Promise(r=>setTimeout(r,2000));
+          }
+          assert.equal(health,true,'Production health must respond ok');checks.push('/health:200 ok');
+          const home=await check('/');assert.ok((await home.text()).includes('Easy English'));assert.ok(home.headers.get('content-security-policy'));assert.equal(home.headers.get('x-content-type-options'),'nosniff');
+          assert.ok((await (await check('/ogden')).text()).includes('Modern Basic English'));
+          for(const path of ['/playback.js','/ogden/speech.js','/app.js','/ogden/app.js']){
+            const actual=await (await check(path+'?pr12_probe='+sha)).text();
+            const expected=await fetch('https://raw.githubusercontent.com/yc29090/easy-english-global/'+sha+'/public'+path,{redirect:'error',signal:AbortSignal.timeout(30000)});
+            assert.equal(expected.status,200,'Immutable source status');
+            const hash=x=>createHash('sha256').update(x).digest('hex');
+            assert.equal(hash(actual),hash(await expected.text()),path+' must equal expected source commit');
+            checks.push(path+':source-hash-matched');
+          }
+          const catalog=await (await check('/api/catalog')).json();
+          const words=Number(catalog.counts.find(x=>x.kind==='word')?.count),phrases=Number(catalog.counts.find(x=>x.kind==='phrase')?.count);
+          assert.equal(words,500);assert.equal(phrases,200);assert.equal(catalog.scenes.length,20);
+          assert.equal(catalog.features?.mockCheckout,false,'Mock checkout must remain closed');
+          assert.ok(catalog.materials.length>0&&catalog.materials.every(x=>x.is_free===true),'Anonymous catalog only includes free material');
+          await check('/api/me',401);await check('/api/admin/users',401);await check('/.env',404);await check('/data/curriculum.json',404);
+          const featureFlags=Object.fromEntries(Object.entries(catalog.features||{}).filter(([,value])=>typeof value==='boolean'));
+          console.log('READONLY_RELEASE_VERIFICATION '+JSON.stringify({ok:true,expectedSha:sha,checks,words,phrases,scenes:catalog.scenes.length,featureFlags,productionWrites:0,credentialedLogin:'NOT_RUN',realDeviceAudio:'NOT_RUN'}));
+          NODE
