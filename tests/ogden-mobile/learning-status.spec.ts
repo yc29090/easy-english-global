@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {randomUUID} from 'node:crypto';
-import {selected,mobileFits} from '../status-ui-assertions';
+import {selected,mobileFits} from '../status-ui-assertions.ts';
 test('modern state: pending, saved record, refresh/login, mode isolation, failed save keeps draft',async({page},info)=>{
  const origin='http://127.0.0.1:3100',email='status-modern-'+randomUUID()+'@example.invalid',password='Status9!'+randomUUID();
  expect((await page.request.post('/api/auth/register',{headers:{Origin:origin},data:{email,password}})).ok()).toBeTruthy();
