@@ -31,3 +31,11 @@ export function unconfirmedStatus(panel,state,language='zh'){
  panel.querySelector('[data-status-feedback]').textContent=language==='zh'?'显示上次确认状态；云端保存尚未确认，请重试或刷新核对。':'Showing last confirmed state. Cloud save is unconfirmed; retry or reload.';
 }
 export function statusBusy(root,busy){for(const button of root.querySelectorAll('.learning-status-button'))button.setAttribute('aria-disabled',String(busy));}
+
+
+// Counts reflect stored self-assessments; due dates never reclassify them.
+export function learningStateCounts(records){return Object.fromEntries(LEARNING_STATES.map(state=>[state,records.filter(record=>record.status===state).length]));}
+export function statusFilters(records,selected,language='zh'){
+ const counts=learningStateCounts(records);
+ return `<div class="learning-status-group learning-state-filters" role="group" aria-label="${language==='zh'?'学习状态筛选':'Filter learning states'}">${LEARNING_STATES.map(state=>`<button type="button" class="learning-status-button" data-learning-status="${state}" data-filter-state="${state}" aria-pressed="${selected===state}"><span class="state-check" aria-hidden="true">✓</span><span>${state==='unmastered'&&language==='zh'?'未掌握':statusLabel(state,language)}（${counts[state]}）</span></button>`).join('')}</div>`;
+}

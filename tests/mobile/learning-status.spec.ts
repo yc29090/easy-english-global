@@ -17,4 +17,8 @@ test('classic state: immediate pending, persisted colors, failure recovery, keyb
  await panel.locator('[data-learning-status="review"]').click();await expect(page.locator('#notice')).toContainText('尚未确认');await selected(panel,'mastered');
  await page.unrouteAll({behavior:'wait'});await page.route('**/api/progress',async route=>{const response=await route.fetch(),data=await response.json();for(const p of data.progress)if(p.material_id===id)p.next_review_at='2000-01-01T00:00:00Z';await route.fulfill({response,json:data});});await page.reload();await selected(panel,'mastered');await expect(panel.locator('[data-status-summary] [data-learning-state="review"]')).toHaveText('已到复习时间');await expect(panel.locator('[data-learning-status="review"]')).toHaveAttribute('aria-pressed','false');
  await mobileFits(page);await panel.scrollIntoViewIfNeeded();await page.screenshot({path:'ui-previews/status-classic-'+info.project.name+'.png'});
+ await page.unrouteAll({behavior:'wait'});await page.goto('/?version=classic&page=review');await expect(page.getByRole('heading',{name:'学习状态',exact:true})).toBeVisible();
+ const filters=page.getByRole('group',{name:'学习状态筛选'});await expect(filters.getByRole('button',{name:'已掌握（1）',exact:true})).toBeVisible();await filters.locator('[data-filter-state="mastered"]').click();await expect(page.locator('.materials article')).toHaveCount(1);await expect(filters.locator('[data-filter-state="mastered"]')).toHaveAttribute('aria-pressed','true');await filters.locator('[data-filter-state="learned"]').click();await expect(page.locator('.materials article')).toHaveCount(0);await page.reload();await expect(filters.getByRole('button',{name:'已掌握（1）',exact:true})).toBeVisible();await mobileFits(page);
+
 });
+
