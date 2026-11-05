@@ -17,6 +17,7 @@ export function createEnglishSpeech(env=globalThis){
  function clear(kind){if(timers.has(kind))env.clearTimeout(timers.get(kind));timers.delete(kind);}
  function later(kind,delay,s,fn){if(!valid(s))return;clear(kind);timers.set(kind,env.setTimeout(()=>{timers.delete(kind);if(valid(s))fn();},delay));}
  function scan(){
+  if(!synth)try{synth=env.speechSynthesis;}catch{}
   try{if(typeof synth?.getVoices!=='function')return {all:[],error:true};const raw=synth.getVoices()||[],length=Math.min(500,Math.max(0,Number(raw.length)||0));return {all:Array.from({length},(_,i)=>raw[i]).filter(Boolean),error:false};}
   catch{return {all:[],error:true};}
  }

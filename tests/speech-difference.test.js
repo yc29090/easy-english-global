@@ -7,7 +7,7 @@ import {createOgdenSpeech} from '../public/ogden/speech.js';
 import {fixture} from './speech-fixture.js';
 // Exact repository main 6c5afeb snapshots, not claims about a real phone's selected voice.
 test('late speechSynthesis initialization is rediscovered on the next explicit click in both versions',()=>{
- for(const kind of ['classic','modern']){const f=fixture([{lang:'en-US',name:'Late API US'}]),synth=f.env.speechSynthesis;delete f.env.speechSynthesis;const p=kind==='classic'?createPlayback(f.env):createOgdenSpeech(f.env);p.play(kind==='classic'?{english:'Hello'}:'Hello');assert.equal(f.spoken.length,0);f.env.speechSynthesis=synth;p.play(kind==='classic'?{english:'Hello'}:'Hello');assert.equal(f.spoken.length,1);assert.equal(f.spoken[0].voice.name,'Late API US');p.stop();}
+ for(const kind of ['classic','modern']){const f=fixture([{lang:'en-US',name:'Late API US'}]),synth=f.env.speechSynthesis;delete f.env.speechSynthesis;const p=kind==='classic'?createPlayback(f.env):createOgdenSpeech(f.env);p.play(kind==='classic'?{english:'Hello'}:'Hello');assert.equal(f.spoken.length,0);f.env.speechSynthesis=synth;if(kind==='modern')assert.equal(p.inspect().eligible.length,1);p.play(kind==='classic'?{english:'Hello'}:'Hello');assert.equal(f.spoken.length,1);assert.equal(f.spoken[0].voice.name,'Late API US');p.stop();}
 });
 for(const source of [false,undefined])test(`same-device differential: online/unknown US (${source}) passes classic, old modern rejects, fixed modern accepts`,()=>{
  const voice={lang:'en-US',name:'Same-device US',voiceURI:'us',...(source===undefined?{}:{localService:source})};
