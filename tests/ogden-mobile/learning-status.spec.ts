@@ -1,0 +1,18 @@
+import {test,expect} from '@playwright/test';
+import {randomUUID} from 'node:crypto';
+import {selected,mobileFits} from '../status-ui-assertions';
+test('modern state: pending, saved record, refresh/login, mode isolation, failed save keeps draft',async({page},info)=>{
+ const origin='http://127.0.0.1:3100',email='status-modern-'+randomUUID()+'@example.invalid',password='Status9!'+randomUUID();
+ expect((await page.request.post('/api/auth/register',{headers:{Origin:origin},data:{email,password}})).ok()).toBeTruthy();
+ await page.goto('/ogden/words?q=get');const panel=page.locator('article[data-item="ow-get"] .learning-state-panel');await expect(panel).toBeVisible();let release!:()=>void,held=true,writes=0;const gate=new Promise<void>(r=>release=r);
+ await page.route('**/api/ogden/results',async route=>{writes++;if(held){held=false;await gate;}await route.continue();});
+ await panel.locator('[data-learning-status="learned"]').click();await selected(panel,'learned');await expect(panel.locator('[role="group"]')).toHaveAttribute('aria-busy','true');await expect(panel.locator('[data-status-feedback]')).toContainText('正在保存');await panel.locator('[data-learning-status="learned"]').focus();await page.keyboard.press('Enter');expect(writes).toBe(1);release();await expect(page.locator('#feedback')).toContainText('已保存');
+ for(const value of ['unmastered','review','mastered']){await panel.locator(`[data-learning-status="${value}"]`).click();await expect(panel.locator('[data-confirmed-state]')).toHaveAttribute('data-confirmed-state',value);await selected(panel,value);}
+ await page.reload();await selected(panel,'mastered');await page.request.post('/api/auth/logout',{headers:{Origin:origin},data:{}});expect((await page.request.post('/api/auth/login',{headers:{Origin:origin},data:{email,password}})).ok()).toBeTruthy();await page.reload();await selected(panel,'mastered');
+ const classic=await(await page.request.get('/api/progress')).json();expect(classic.progress).toHaveLength(0);
+ await page.goto('/ogden/listening?kind=word&item=ow-get');await expect(panel.locator('[data-state]')).toContainText('本模式尚未记录');await panel.locator('[data-learning-status="unmastered"]').focus();await panel.locator('[data-learning-status="unmastered"]').press('Enter');await expect(page.locator('#feedback')).toContainText('已保存');await selected(panel,'unmastered');
+ await page.goto('/ogden/words?q=get');await panel.locator('[data-learning-status="mastered"]').click();await expect(page.locator('#feedback')).toContainText('已保存');await page.goto('/ogden/listening?kind=word&item=ow-get');await selected(panel,'unmastered');
+ await page.unrouteAll({behavior:'wait'});await page.goto('/ogden/express?task=ex-arrival');const expression=page.locator('article').first(),marks=expression.locator('.learning-state-panel');await expression.locator('textarea').fill('Private unsaved status draft');let fail=true;await page.route('**/api/ogden/results',async route=>{if(fail){fail=false;await route.fulfill({status:500,json:{error:'fixture rejected'}});}else await route.continue();});
+ await marks.locator('[data-learning-status="review"]').click();await expect(page.locator('#feedback')).toContainText('尚未确认保存');await expect(marks.locator('[aria-pressed="true"]')).toHaveCount(0);await expect(expression.locator('textarea')).toHaveValue('Private unsaved status draft');await marks.locator('[data-learning-status="learned"]').click();await expect(page.locator('#feedback')).toContainText('已保存');await selected(marks,'learned');await expect(expression.locator('textarea')).toHaveValue('Private unsaved status draft');
+ await mobileFits(page);await marks.scrollIntoViewIfNeeded();await page.screenshot({path:'ui-previews/status-modern-'+info.project.name+'.png'});
+});

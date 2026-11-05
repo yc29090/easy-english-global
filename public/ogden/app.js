@@ -1,3 +1,4 @@
+import {statusPanel,statusBadge,paintStatus,refreshStatusPanel,statusBusy} from '../learning-status.js';
 import {ogdenRequest,pendingResults} from './requests.js';
 import {continueTarget,prioritizeTasks,taskReadiness,modeLabels} from './learning.js';
 import {createOgdenSpeech} from './speech.js';
@@ -8,12 +9,15 @@ const page=location.pathname.split('/')[2]||'';
 const notify=s=>{$('#feedback').textContent=s;};
 const request=ogdenRequest;
 const state=id=>progress.find(p=>p.item_id===id);
-const states={learned:'已学习',mastered:'已掌握',unmastered:'未掌握',review:'待复习'};
+const states={learned:'已学习',mastered:'已掌握',unmastered:'待掌握',review:'待复习'};
 function sound(text){return `<div class="actions"><button data-say="${esc(text)}" aria-pressed="${!slowPlayback}">正常播放</button><button data-say="${esc(text)}" data-slow aria-pressed="${slowPlayback}">慢速播放</button><button data-say="${esc(text)}" data-repeat>重复播放</button><button data-stop>停止</button></div>`;}
 function assessment(x,mode,reviewState){
- const current=reviewState??(mode==='study'?state(x.id)?.status:modeProgress.find(p=>p.item_id===x.id&&p.mode===mode)?.status);
- return `<p class="muted">我对这条内容的自评（${modeLabels[mode]}模式，与1.0分开保存）</p><div class="actions">${Object.entries(states).map(([v,l])=>`<button data-save="${x.id}" data-status="${v}" data-mode="${mode}" ${current===v?'aria-pressed="true"':''}>${l}</button>`).join('')}</div><p class="tag" data-state="${x.id}">${current?'当前：'+states[current]:'本模式尚未记录'}</p>${mode!=='study'?`<p class="tag">词条总状态：${states[state(x.id)?.status]||'尚未记录'}；本模式的复习单独保存。</p>`:''}`;
+ const record=mode==='study'?state(x.id):modeProgress.find(p=>p.item_id===x.id&&p.mode===mode);
+ const saved=reviewState===undefined?record:{...record,status:reviewState};
+ return `<p class="muted">我对这条内容的自评（${modeLabels[mode]}模式，与1.0分开保存）</p>${statusPanel(saved,{panelAttributes:`data-state-item="${esc(x.id)}" data-state-mode="${mode}"`,summaryAttributes:`data-state="${esc(x.id)}"`,groupLabel:'学习状态自评 · '+modeLabels[mode],emptyLabel:'本模式尚未记录',buttonAttributes:value=>`data-save="${esc(x.id)}" data-status="${value}" data-mode="${mode}"`})}${mode!=='study'?`<p class="tag">词条总状态：${statusBadge(state(x.id)?.status)}；本模式的复习单独保存。</p>`:''}`;
 }
+function syncStatusViews(){for(const panel of document.querySelectorAll('.learning-state-panel')){const id=panel.dataset.stateItem,mode=panel.dataset.stateMode;refreshStatusPanel(panel,mode==='study'?state(id):modeProgress.find(p=>p.item_id===id&&p.mode===mode),{emptyLabel:'本模式尚未记录'});}}
+
 function references(x){return (x.answers?x.answers.map(english=>({english})):x.examples||[{english:x.english,chinese:x.chinese}]).map(e=>`<p lang="en">${esc(e.english)}</p>${e.chinese?`<p>${esc(e.chinese)}</p>`:''}${sound(e.english)}`).join('');}
 function patternPractice(x){
  const first=x.variants[0];
@@ -39,7 +43,7 @@ function render(){
  speech.stop();$('#nav').innerHTML=routes.map(([r,label])=>`<a href="/ogden${r?'/'+r:''}" ${page===r?'aria-current="page"':''}>${label}</a>`).join('');
  let html='';
  if(!page){const last=analytics.recent[0]||progress[0],next=items.find(x=>x.id===(last?.item_id))||items.filter(x=>x.kind==='word').sort((a,b)=>a.teachingOrder-b.teachingOrder)[0];html=`<h2>今天想表达什么？</h2><div class="paths"><a href="${continueTarget(next,last?.mode)}">继续学习${next?' · '+esc(next.english):''}</a><a href="/ogden/build">词语组合 · 一个词，多种意思</a><a href="/ogden/express">我能表达什么 · 自己组织英语</a><a href="/ogden/review">待复习 · ${review.length}条</a></div><div class="panel" id="curriculum-coverage"><p>教材有${coverage.uniqueIntents}种已自查表达意图，其中${coverage.coreSupportedIndependentIntents}种自主表达或改述可用核心词和明确词形完成至少一条参考。覆盖数量不是你的掌握数量，也不是自动评分。</p></div><details><summary>零基础可以按这个顺序学（不强制）</summary><ol>${learningPath.map(step=>`<li><a href="${esc(step.href)}">${esc(step.label)}</a></li>`).join('')}</ol></details><h2>四条自由学习路径</h2><ol><li><a href="/ogden/words">核心表达</a>：核心词 → 操作词 → 组合 → 句型</li><li><a href="/ogden/express">独立表达</a>：模仿 → 替换 → 自主表达 → 简单改述</li><li><a href="/ogden/express?scenario=life">生活交流</a>：日常与少量简单工作表达</li><li><a href="/ogden/listening">听说复习</a>：先听 → 跟读 → 自评 → 主动复习</li></ol><p>四条路径共用2.0条目状态；没有每日限额或强制过关。</p>`;}
- else if(page==='progress'){html=`<h2>2.0独立学习进度</h2><p>共有 ${progress.length} 条内容记录，${progress.filter(x=>x.status==='mastered'&&items.find(i=>i.id===x.item_id)?.kind==='word').length} 个核心词自评已掌握。操作词页与核心词页使用同一个词条状态。</p><div class="panel">${Object.entries(states).map(([key,label])=>`<p>${label}：${progress.filter(x=>x.status===key).length}</p>`).join('')}</div><h3>按练习模式查看</h3><div class="panel">${analytics.practice.length?analytics.practice.map(p=>`<p>${modeLabels[p.mode]}：练习${p.attempts}次，${p.practiced}条内容，未掌握${p.weak}条，待复习${p.due}条。<a href="/ogden/review?mode=${p.mode}">进入复习</a></p>`).join(''):'尚无练习记录。'}</div><p>同一核心词只计算一次掌握；听力、开口等模式独立保留练习和复习时间。统计来自活动教材的自评，不是系统能力评分。</p>`;}
+ else if(page==='progress'){html=`<h2>2.0独立学习进度</h2><p>共有 ${progress.length} 条内容记录，${progress.filter(x=>x.status==='mastered'&&items.find(i=>i.id===x.item_id)?.kind==='word').length} 个核心词自评已掌握。操作词页与核心词页使用同一个词条状态。</p><div class="panel">${Object.entries(states).map(([key,label])=>`<p>${statusBadge(key)}：${progress.filter(x=>x.status===key).length}</p>`).join('')}</div><h3>按练习模式查看</h3><div class="panel">${analytics.practice.length?analytics.practice.map(p=>`<p>${modeLabels[p.mode]}：练习${p.attempts}次，${p.practiced}条内容，未掌握${p.weak}条，待复习${p.due}条。<a href="/ogden/review?mode=${p.mode}">进入复习</a></p>`).join(''):'尚无练习记录。'}</div><p>同一核心词只计算一次掌握；听力、开口等模式独立保留练习和复习时间。统计来自活动教材的自评，不是系统能力评分。</p>`;}
  else if(page==='review'){
  const params=new URLSearchParams(location.search),selectedMode=params.get('mode')||'all',selectedKind=params.get('kind')||'all',scope=params.get('all')==='true'?'all':params.get('status')==='unmastered'?'weak':params.get('status')==='review'?'marked':'due';
  html='<h2>先复习还不会的内容</h2><p>总掌握状态共用，练习模式的薄弱项和复习时间分别保存。也可以选择全部已学内容提前复习。</p>'+
@@ -83,16 +87,18 @@ function bind(){
  });
  document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=()=>{speech.stop();notify('已停止播放。');});
  document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{
-  if(savePending)return;savePending=true;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=true);
-  const key=b.dataset.save;
+  if(savePending)return;savePending=true;statusBusy(document,true);
+  const key=b.dataset.save,mode=b.dataset.mode,value=b.dataset.status,panel=b.closest('.learning-state-panel'),previous=panel.querySelector('.learning-status-group').dataset.confirmedState,wasFocused=document.activeElement===b;
+  paintStatus(panel,value,{pending:true});let acknowledged=false;
+  const showCloud=()=>{if(page==='review'){render();if(wasFocused){const next=[...document.querySelectorAll('[data-save]')].find(x=>x.dataset.save===key&&x.dataset.mode===mode&&x.dataset.status===value);if(next)next.focus({preventScroll:true});else{const heading=$('#content h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}}}else syncStatusViews();};
   try{
    const version=items.find(x=>x.id===key)?.version;
-   await request('/ogden/results','POST',retryRequests.get(key,b.dataset.mode,b.dataset.status,version));
-   retryRequests.confirm(key);
-   const a=b.closest('article');a.querySelector('[data-state]').textContent='当前：'+states[b.dataset.status];a.querySelectorAll('[data-save]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
-   try{await refresh();if(page==='review')render();notify('已保存2.0自评和复习时间。');}catch{notify('已保存；暂时无法刷新统计，请稍后刷新页面。');}
-  }catch(e){notify('尚未确认保存，请重试（重复请求不会重复计数）：'+e.message+(!retryRequests.persistent?' 此浏览器阻止标签页存储，请留在当前页重试，刷新将无法沿用编号。':''));}
-  finally{savePending=false;document.querySelectorAll('[data-save]').forEach(x=>x.disabled=false);}
+   await request('/ogden/results','POST',retryRequests.get(key,mode,value,version));acknowledged=true;retryRequests.confirm(key);
+   await refresh();showCloud();notify('已保存2.0自评和复习时间。');
+  }catch(e){
+   try{await refresh();showCloud();notify(acknowledged?'已保存，已重新读取云端状态。':'尚未确认保存，已重新读取云端状态；重试仍沿用原编号。');}
+   catch{paintStatus(panel,previous);notify((acknowledged?'请求已提交，尚未重新确认云端状态。':'尚未确认保存，请重试（重复请求不会重复计数）。')+' 显示上次确认状态。'+(!retryRequests.persistent?' 此浏览器阻止标签页存储，请留在当前页重试，刷新将无法沿用编号。':''));}
+  }finally{savePending=false;statusBusy(document,false);}
  });
  document.querySelectorAll('[data-variant]').forEach(select=>select.onchange=()=>{
   speech.stop();const x=items.find(x=>x.id===select.dataset.variant),v=x.variants.find(v=>v.id===select.value),section=select.closest('[data-pattern]');
@@ -114,3 +120,4 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseSpeech
 (async()=>{try{const catalog=await request('/ogden/catalog');items=catalog.items;domains=catalog.domains||[];coverage=catalog.coverage||{};learningPath=catalog.learningPath||[];await refresh();render();}catch(e){$('#content').innerHTML=e.status===401?'<div class="panel"><h2>使用现有账号登录</h2><p>两个版本共用现有账号和会员。登录后在首页选择学习版本。</p><a href="/?login=1">登录 / 注册并选择版本</a></div>':`<div class="panel"><h2>暂时无法读取2.0教材</h2><p>${esc(e.message)}</p><p>请检查网络或稍后，然后重试。已提交但未确认的保存会沿用原编号。</p><button id="retry-load">重新加载</button></div>`;if($('#retry-load'))$('#retry-load').onclick=()=>location.reload();}})();
 
 addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
+
