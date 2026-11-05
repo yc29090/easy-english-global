@@ -25,7 +25,7 @@
     "test:admin-terminal": "python3 tests/admin-terminal-pty.py",
     "ogden:preview": "node scripts/ogden-preview.ts",
     "ogden:validate": "node scripts/validate-ogden.ts",
-    "test:ogden:mobile": "playwright test --config=playwright.ogden.config.ts",
+    "test:ogden:mobile": "playwright test --config=playwright.ogden.config.ts --project=android-chromium && playwright test --config=playwright.ogden.config.ts --project=iphone-viewport-chromium && playwright test --config=playwright.ogden.config.ts --project=iphone-webkit",
     "ogden:readiness": "node scripts/ogden-readiness.ts",
     "ogden:review-export": "node scripts/ogden-readiness.ts --export-review",
     "ogden:coverage": "node scripts/ogden-coverage.ts",

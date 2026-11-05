@@ -87,7 +87,7 @@ function bind(){
  });
  document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=()=>{speech.stop();notify('已停止播放。');});
  document.querySelectorAll('[data-save]').forEach(b=>b.onclick=async()=>{
-  if(savePending)return;savePending=true;statusBusy(document,true);
+  if(savePending)return;savePending=true;statusBusy(document,true);notify("正在保存，请稍候…");
   const key=b.dataset.save,mode=b.dataset.mode,value=b.dataset.status,panel=b.closest('.learning-state-panel'),previous=panel.querySelector('.learning-status-group').dataset.confirmedState,wasFocused=document.activeElement===b;
   paintStatus(panel,value,{pending:true});let acknowledged=false;
   const showCloud=()=>{if(page==='review'){render();if(wasFocused){const next=[...document.querySelectorAll('[data-save]')].find(x=>x.dataset.save===key&&x.dataset.mode===mode&&x.dataset.status===value);if(next)next.focus({preventScroll:true});else{const heading=$('#content h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}}}else syncStatusViews();};
