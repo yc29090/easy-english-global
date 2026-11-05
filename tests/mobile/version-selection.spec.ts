@@ -5,7 +5,7 @@ test('version cards, browser navigation and classic cloud progress work on mobil
  const registered=await page.request.post('/api/auth/register',{headers:{Origin:'http://127.0.0.1:3000'},data:{email:'versions-'+randomUUID()+'@example.invalid',password:'Version9!'+randomUUID()}});expect(registered.ok()).toBeTruthy();
  await page.goto('/');await expect(page.locator('.version-card')).toHaveCount(2);await expect(page.locator('[data-version="modern"]')).toHaveAttribute('href','/ogden');
  await expect(page.getByRole('heading',{name:'选择你的英语学习版本'})).toBeVisible();
- await page.screenshot({path:'test-results/version-selector-'+info.project.name+'.png',fullPage:true});
+ await page.screenshot({path:'ui-previews/version-selector-'+info.project.name+'.png',fullPage:true});
  await page.setViewportSize({width:320,height:640});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
  for(const card of await page.locator('.version-card').all()){const box=await card.boundingBox();expect(box?.width).toBeGreaterThan(200);expect(box?.height).toBeGreaterThan(44);}
  await page.locator('[data-version="classic"]').click();await expect(page).toHaveURL(/\?version=classic$/);await expect(page.locator('[data-continue]')).toBeVisible();
