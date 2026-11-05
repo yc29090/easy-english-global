@@ -15,7 +15,8 @@ const t=(zh,en)=>lang==='zh'?zh:en;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const learningV2=createLearningV2({request,getUser:()=>user,getCatalog:()=>catalog,getLanguage:()=>lang,playback,signIn:()=>auth('login'),openDialogue:async id=>{practiceCategory='all';practiceScene='all';await navigate('scenes');const button=[...document.querySelectorAll('[data-dialogue]')].find(b=>b.dataset.dialogue===id);if(button)await button.onclick();}});
 const statuses=()=>[['learned',t('已学习','Learned')],['unmastered',t('待掌握','Not mastered')],['mastered',t('已掌握','Mastered')],['review',t('待复习','To review')]];
-function toast(message){$('#notice').textContent=message;$('#notice').style.display='block';setTimeout(()=>$('#notice').style.display='none',4500);}
+let noticeTimer;
+function toast(message){const notice=$('#notice');if(!notice)return;notice.textContent=message;notice.style.display='block';clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>{notice.style.display='none';},4500);}
 async function request(path,method='GET',body){const r=await fetch('/api'+path,{method,headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined});const data=await r.json();if(!r.ok){const error=new Error(data.error);error.status=r.status;throw error;}return data;}
 async function refresh(){
  try{user=(await request('/me')).user;}catch(error){if(error.status===401)user=null;else throw error;}
@@ -27,8 +28,8 @@ async function refresh(){
  if(user?.must_change_password)page='account';
 }
 async function syncLearning(){
- if(!user)return;
- const [p,r]=await Promise.all([request('/progress'),request(reviewAll?'/review/all':'/review')]);progress=p.progress;reviewItems=r.items;
+ if(!user)return;const owner=user.id;
+ const [p,r]=await Promise.all([request('/progress'),request(reviewAll?'/review/all':'/review')]);if(user?.id!==owner)return;progress=p.progress;reviewItems=r.items;
 }
 const dateLabel=value=>new Date(value).toLocaleString(lang==='zh'?'zh-CN':'en');
 function audioControls(id){return `<div class="audio"><button data-speak="${esc(id)}" data-speed="normal" aria-pressed="${!slowAudio}">◖)) ${t('正常发音','Normal')}</button><button data-speak="${esc(id)}" data-speed="slow" aria-pressed="${slowAudio}">◷ ${t('慢速发音','Slow')}</button><button data-repeat="${esc(id)}">↻ ${t('重复播放','Repeat')}</button><button data-shadow="${esc(id)}">${t('听一句，跟读一句','Listen & repeat aloud')}</button><button data-stop>${t('停止','Stop')}</button></div><p class="help playback-phase" role="status" aria-live="polite"></p>`;}
@@ -181,16 +182,16 @@ function bindLearning(){
  document.querySelectorAll('[data-stop]').forEach(el=>el.onclick=()=>{playback.stop();document.querySelectorAll('.playback-phase').forEach(node=>node.textContent=t('已停止。随时可以继续。','Stopped. Continue whenever you like.'));});
  document.querySelectorAll('[data-status]').forEach(el=>el.onclick=async()=>{
   if(savingClassicStatus)return;if(!user)return auth('login');
-  const id=el.dataset.material,value=el.dataset.status,panel=el.closest('.learning-state-panel'),previous=panel.querySelector('.learning-status-group').dataset.confirmedState,wasFocused=document.activeElement===el,startPage=page;
+  const ownerId=user.id,id=el.dataset.material,value=el.dataset.status,panel=el.closest('.learning-state-panel'),previous=panel.querySelector('.learning-status-group').dataset.confirmedState,wasFocused=document.activeElement===el,startPage=page;
   savingClassicStatus=true;paintStatus(panel,value,{pending:true,language:lang});statusBusy(document,true);playback.stop();let confirmed=false;
   const restoreFocus=()=>{if(wasFocused&&page===startPage){const button=[...document.querySelectorAll('[data-material][data-status]')].find(b=>b.dataset.material===id&&b.dataset.status===value);if(button)button.focus({preventScroll:true});else{const count=$('#material-count');if(count){count.tabIndex=-1;count.focus({preventScroll:true});}}}};
   try{
-   const result=await request('/progress','PUT',{material_id:id,status:value});confirmed=true;
+   const result=await request('/progress','PUT',{material_id:id,status:value});confirmed=true;if(user?.id!==ownerId)return;
    const old=progress.find(p=>p.material_id===id)||{};progress=[...progress.filter(p=>p.material_id!==id),{...old,material_id:id,status:value,next_review_at:result.next_review_at}];learningState={last_material_id:id};
-   await syncLearning();render();restoreFocus();toast(t('已保存：','Saved: ')+statuses().find(([v])=>v===value)[1]);
+   await syncLearning();if(user?.id!==ownerId)return;render();restoreFocus();toast(t('已保存：','Saved: ')+statuses().find(([v])=>v===value)[1]);
   }catch(error){
-   try{await syncLearning();render();restoreFocus();toast(confirmed?t('已保存，已重新读取云端状态。','Saved; cloud state reloaded.'):t('保存请求尚未确认，已重新读取云端状态；可重试。','Save unconfirmed; cloud state reloaded. You can retry.'));}
-   catch{if(confirmed){render();restoreFocus();toast(t('已保存；暂时无法刷新统计，请稍后刷新。','Saved; statistics could not refresh. Please reload later.'));}else{unconfirmedStatus(panel,previous,lang);toast(t('保存尚未确认，显示上次确认状态；请重试或刷新核对。','Save unconfirmed. Showing last confirmed state; retry or reload.'));}}
+   if(user?.id!==ownerId)return;try{await syncLearning();if(user?.id!==ownerId)return;render();restoreFocus();toast(confirmed?t('已保存，已重新读取云端状态。','Saved; cloud state reloaded.'):t('保存请求尚未确认，已重新读取云端状态；可重试。','Save unconfirmed; cloud state reloaded. You can retry.'));}
+   catch{if(user?.id!==ownerId)return;if(confirmed){render();restoreFocus();toast(t('已保存；暂时无法刷新统计，请稍后刷新。','Saved; statistics could not refresh. Please reload later.'));}else{unconfirmedStatus(panel,previous,lang);toast(t('保存尚未确认，显示上次确认状态；请重试或刷新核对。','Save unconfirmed. Showing last confirmed state; retry or reload.'));}}
   }finally{savingClassicStatus=false;statusBusy(document,false);}
  });
  document.querySelectorAll('[data-review-mode]').forEach(el=>safely(el,async()=>{
