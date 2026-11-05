@@ -25,7 +25,12 @@ test('modern 850-word core remains traceable and contains the distinct 18 operat
 test('legacy curriculum, billing, authentication, audio and deployment inputs remain byte-identical',async()=>{
  for(const file of ['data/curriculum.json','src/security.ts','src/config.ts','src/review.ts','src/setup.ts','src/install-content.ts','src/learning-v2.ts','public/playback.js','public/speech-practice.js','public/styles.css','render.yaml','.env.example','scripts/import.ts',...['001_init.sql','002_learning_method.sql','003_curriculum.sql','004_manual_payment.sql','005_manual_payment_safety.sql','006_gmail_oauth.sql','007_learning_v2.sql'].map(x=>'db/'+x)]){
   const baseline=JSON.parse(await readFile(new URL('../docs/ogden/legacy-baseline.json',import.meta.url),'utf8'));
-  assert.equal(createHash('sha256').update(await readFile(new URL('../'+file,import.meta.url))).digest('hex'),baseline.files[file],file);
+  const bytes=await readFile(new URL('../'+file,import.meta.url));
+  // This explicitly authorized UI change appends styles; the original CSS must stay intact.
+  const marker=Buffer.from('\n/* Equal entry points: shared account and membership, independent learning histories. */');
+  const boundary=file==='public/styles.css'?bytes.indexOf(marker):-1;
+  if(file==='public/styles.css')assert.ok(boundary>0,'Classic CSS must precede the documented append-only version styles');
+  assert.equal(createHash('sha256').update(boundary>0?bytes.subarray(0,boundary):bytes).digest('hex'),baseline.files[file],file);
  }
 });
 test('additive schema, repeat import, immutable versions and per-user isolated practice',async()=>{
