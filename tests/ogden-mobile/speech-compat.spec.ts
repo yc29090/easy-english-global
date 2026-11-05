@@ -50,3 +50,18 @@ test('classic mode: background restoration and pagehide do not revive canceled r
  await setup(page,[us]);await page.locator('[data-repeat]').first().click();await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});const stopped=await size(page);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'));});await page.waitForTimeout(1700);expect(await size(page)).toBe(stopped);
  await page.locator('[data-repeat]').first().click();await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));const hidden=await size(page);await page.waitForTimeout(1700);expect(await size(page)).toBe(hidden);
 });
+
+
+test('standalone core and operator words expose normal and slow controls through the existing player',async({page})=>{
+ await setup(page,[us]);
+ await page.goto('/ogden/words');await expect(page.locator('#word-results article').first()).toBeVisible();
+ for(const article of await page.locator('#word-results article').all()){
+  const word=await article.locator('h2').innerText();await expect(article.locator('[data-say]').filter({hasText:'正常播放'}).first()).toBeVisible();
+  expect(await article.locator('[data-say]').evaluateAll((buttons,word)=>[false,true].every(slow=>buttons.some(b=>b.getAttribute('data-say')===word&&b.hasAttribute('data-slow')===slow)),word)).toBeTruthy();
+ }
+ const contextual=content.items.find(x=>x.kind==='word'&&x.pronunciation?.contextPlayback&&x.english.length>=4)!;expect(contextual).toBeTruthy();
+ await page.goto('/ogden/words?q='+encodeURIComponent(contextual.english));const article=page.locator('article').filter({has:page.getByRole('heading',{name:contextual.english,exact:true})}).first();await expect(article).toBeVisible();
+ const controls=article.locator('[data-say]').filter({hasText:'正常播放'});await controls.first().click();expect((await last(page)).text).toBe(contextual.english);expect((await last(page)).rate).toBe(1);
+ await article.locator('[data-say][data-slow]').first().click();expect((await last(page)).text).toBe(contextual.english);expect((await last(page)).rate).toBe(.55);
+ await page.goto('/ogden/operators/get');const operator=page.locator('article').first();await operator.locator('[data-say]').first().click();expect((await last(page)).text).toBe('get');expect((await last(page)).rate).toBe(1);await operator.locator('[data-say][data-slow]').first().click();expect((await last(page)).text).toBe('get');expect((await last(page)).rate).toBe(.55);
+});

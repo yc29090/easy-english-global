@@ -24,7 +24,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  }
  function linked(){
   if(!links)return '';
-  return `<section><h2>${text(item.kind==='word'?'相关短句':'重点单词',item.kind==='word'?'Related phrases':'Key words')}</h2><p class="help">${text('数量以实际教材关联为准；没有关联时也可自由学习。','Links use existing lessons. Some words have no related phrase yet.')}</p><div class="v2-actions">${links.materials.map(m=>`<button data-v2-item="${esc(m.id)}">${english?`<span lang="en">${esc(m.english)}</span>`:esc(text(m.kind==='word'?'查看单词':'查看短句',m.kind==='word'?'Open word':'Open phrase'))}${chinese?' · '+esc(m.chinese):''} · ${statusBadge(m.status,getLanguage())}</button>`).join('')||`<p>${text('暂无可用关联教材。','No accessible linked lessons yet.')}</p>`}</div>${links.dialogues.length?`<h2>${text('同场景对话','Conversations in this scene')}</h2><div class="v2-actions">${links.dialogues.map(d=>`<button data-v2-dialogue="${esc(d.id)}">${esc(getLanguage()==='zh'?d.title_zh:d.title_en)}</button>`).join('')}</div>`:''}</section>`;
+  return `<section><h2>${text(item.kind==='word'?'相关短句':'重点单词',item.kind==='word'?'Related phrases':'Key words')}</h2><p class="help">${text('数量以实际教材关联为准；没有关联时也可自由学习。','Links use existing lessons. Some words have no related phrase yet.')}</p><div class="v2-actions">${links.materials.map(m=>`<button data-v2-item="${esc(m.id)}">${english?`<span lang="en">${esc(m.english)}</span>`:esc(text(m.kind==='word'?'查看单词':'查看短句',m.kind==='word'?'Open word':'Open phrase'))}${chinese?' · '+esc(m.chinese):''} · ${statusBadge(m.status,getLanguage())}</button>${m.kind==='word'&&english?`<button data-v2-word-speak="${esc(m.id)}" data-word-speed="normal" aria-label="${esc(m.english)} · ${text('正常播放','Play normally')}">${text('正常播放','Play normally')}</button><button data-v2-word-speak="${esc(m.id)}" data-word-speed="slow" aria-label="${esc(m.english)} · ${text('慢速播放','Play slowly')}">${text('慢速播放','Play slowly')}</button>`:''}`).join('')||`<p>${text('暂无可用关联教材。','No accessible linked lessons yet.')}</p>`}</div>${links.dialogues.length?`<h2>${text('同场景对话','Conversations in this scene')}</h2><div class="v2-actions">${links.dialogues.map(d=>`<button data-v2-dialogue="${esc(d.id)}">${esc(getLanguage()==='zh'?d.title_zh:d.title_en)}</button>`).join('')}</div>`:''}</section>`;
  }
  function speechPanel(){
   if(!['expression','pattern','linked'].includes(mode))return '';
@@ -71,6 +71,7 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  }
  function play(repeat=false,shadow=false){if(!item)return;speech.stop();speechState={status:'idle'};draw();playback.play(item,{slow,repeat,shadow,onPhase:phase=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=phase==='listen'?text(slow?'正在慢速播放…':'正在正常播放…',slow?'Playing slowly…':'Playing normally…'):text('可以再听或自己说一遍。','Listen again or try saying it.');},onError:()=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('发音暂不可用，请重试或更换浏览器。','Audio unavailable. Retry or use another browser.');}});}
  function bind(){
+  root.querySelectorAll('[data-v2-word-speak]').forEach(button=>button.onclick=()=>{const word=getCatalog().materials.find(m=>m.id===button.dataset.v2WordSpeak&&m.kind==='word');if(word)playback.play(word,{slow:button.dataset.wordSpeed==='slow',onError:()=>{const out=root?.querySelector('#v2-playback');if(out)out.textContent=text('发音暂不可用，请重试。','Audio unavailable. Please retry.');}});});
   root.querySelector('[data-v2-mic]')?.addEventListener('click',()=>{if(!item)return;playback.stop();speechState={status:'idle'};speech.start(item.english,next=>{speechState=next.status==='ended'?{...speechState,status:speechState.status==='listening'?'ended':speechState.status}:next;draw();});});
   root.querySelector('[data-v2-mic-stop]')?.addEventListener('click',()=>{speech.stop();speechState={...speechState,status:'idle'};draw();});
 
@@ -98,4 +99,5 @@ export function createLearningV2({request,getUser,getCatalog,getLanguage,playbac
  async function mount(){root=document.querySelector('#learning-v2-root');if(!root)return;if(['listening','expression','pattern'].includes(mode)){english=false;chinese=mode!=='listening';}draw();if(!getUser())return;if(mode==='pattern'||mode==='review'||mode==='analytics')await enter(mode);else if(item)await loadItem(item.id,mode);}
  return {mount,open,leave,pause:()=>{speech.stop();playback.stop();speechState={...speechState,status:'idle'};draw();}};
 }
+
 
