@@ -1,12 +1,10 @@
 {
-  "stage": "baseline",
-  "expectedApplicationCommit": "33bebb1ced1327f4550b10c6ec899a95f6639b1a",
+  "stage": "post",
+  "expectedApplicationCommit": "6c5afeb60c1d3e05c36cea1b99bf6046bd73ddfa",
   "previousLiveDeploy": "dep-dbmah4ec6qcc738f2o2g",
-  "historicalFeeEvidence": {
-    "source": "Owner-attested Render console screenshots, 2026-11-05; not a real-time billing API",
-    "workspacePlan": "Hobby", "servicePlan": "Free", "paymentMethodOnFile": false,
-    "balanceUSD": 0, "pipeline": "Starter", "pipelineMonthlySpendLimitUSD": 0,
-    "instanceHoursUsed": 16.18, "instanceHoursIncluded": 750,
-    "bandwidthUsedMB": 37, "bandwidthIncludedGB": 5
+  "expectedFeatures": {
+    "manualPayment": false,
+    "mockCheckout": false,
+    "passwordReset": true
   }
 }
