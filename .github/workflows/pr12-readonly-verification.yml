@@ -1,4 +1,4 @@
-name: PR14 readonly release verification
+name: PR15 readonly release verification
 on:
   push:
     branches: ['ops/pr12-readonly-verification']
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 7
     env:
-      RELEASE_STAGE: post-pr14
-      EXPECTED_SHA: b314252c60bb5ddc6235ac3c5c52515f4a11ff27
+      RELEASE_STAGE: post-pr15
+      EXPECTED_SHA: aed23a98191e15f6ba37cb3effb955d030480814
     steps:
       - uses: actions/setup-node@v4
         with:
