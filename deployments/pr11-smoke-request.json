@@ -1,0 +1,12 @@
+{
+  "stage": "baseline",
+  "expectedApplicationCommit": "33bebb1ced1327f4550b10c6ec899a95f6639b1a",
+  "previousLiveDeploy": "dep-dbmah4ec6qcc738f2o2g",
+  "historicalFeeEvidence": {
+    "source": "Owner-attested Render console screenshots, 2026-11-05; not a real-time billing API",
+    "workspacePlan": "Hobby", "servicePlan": "Free", "paymentMethodOnFile": false,
+    "balanceUSD": 0, "pipeline": "Starter", "pipelineMonthlySpendLimitUSD": 0,
+    "instanceHoursUsed": 16.18, "instanceHoursIncluded": 750,
+    "bandwidthUsedMB": 37, "bandwidthIncludedGB": 5
+  }
+}

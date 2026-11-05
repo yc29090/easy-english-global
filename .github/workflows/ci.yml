@@ -1,5 +1,8 @@
 name: Test
-on: [push, pull_request]
+on:
+  push:
+    branches-ignore: [ops/pr11-controlled-smoke]
+  pull_request:
 permissions:
   contents: read
 jobs:
