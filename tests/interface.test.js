@@ -27,7 +27,7 @@ test('adult-beginner UI: continue, hide text, review, role-play and cloud resume
  const click=async selector=>{const el=document.querySelector(selector);assert.ok(el,selector);await el.onclick();await settle();};
  try{
   await import('../public/app.js');await settle();
-  assert.match(document.querySelector('h1').textContent,/先听懂/);assert.ok(document.querySelector('[data-continue]'));assert.ok(document.querySelector('[data-page="review"]'));
+  assert.match(document.querySelector('h1').textContent,/选择你的英语学习版本/);await click('[data-version="classic"]');assert.match(document.querySelector('h1').textContent,/先听懂/);assert.ok(document.querySelector('[data-continue]'));assert.ok(document.querySelector('[data-page="review"]'));
   await click('[data-continue]');assert.equal(document.querySelector('.trainer-card h3').textContent,'Thank you.');assert.ok(writes.some(w=>w.path==='/api/learning-state'&&w.body.material_id==='phrase'));
   await click('[data-hide="en"]');assert.equal(document.querySelector('.trainer-card h3'),null);assert.match(document.querySelector('.trainer-card').textContent,/英文已隐藏/);
   await click('[data-hide="zh"]');assert.ok(!document.querySelector('.trainer-card').textContent.includes('谢谢。'));assert.ok(document.querySelector('[data-repeat]'));assert.ok(document.querySelector('[data-shadow]'));assert.ok(document.querySelector('[data-stop]'));
@@ -37,7 +37,7 @@ test('adult-beginner UI: continue, hide text, review, role-play and cloud resume
   await click('[data-page="scenes"]');await click('[data-dialogue="d"]');assert.match(document.querySelector('.dialogue-turn').textContent,/轮到你/);
   await click('#advance-dialogue');assert.match(document.querySelector('.empty').textContent,/完成了一次简单交流/);assert.equal(savedPractice[0].turn_index,2);
   await click('[data-page="membership"]');assert.match(document.querySelector('h1').textContent,/一次选择/);assert.equal(document.querySelector('#create-order'),null);assert.equal(document.querySelector('[data-confirm]'),null);
-  await click('[data-page="home"]');await click('#language');assert.equal(document.documentElement.lang,'en');assert.match(document.querySelector('h1').textContent,/Listen first/);
+  await click('[data-page="home"]');assert.ok(document.querySelector('[data-version="modern"]'));await click('[data-version="classic"]');await click('#language');assert.equal(document.documentElement.lang,'en');assert.match(document.querySelector('h1').textContent,/Listen first/);
  }finally{for(const [k,v]of Object.entries(old)){if(v===undefined)delete globalThis[k];else globalThis[k]=v;}}
 });
 
