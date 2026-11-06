@@ -8,6 +8,13 @@ const expressionInput=createExpressionInput();
 const speech=createOgdenSpeech();let slowPlayback=false;let taskLimit=20,visibleTasks=[],coverage={},learningPath=[],items=[],progress=[],review=[],domains=[],modeProgress=[],analytics={shared:[],practice:[],recent:[]},savePending=false;let wordQuery=new URLSearchParams(location.search).get('q')||'',wordLimit=20;let listeningLimit=20;let buildOperator=new URLSearchParams(location.search).get('operator')||'';const retryRequests=pendingResults();
 const routes=[['','学习首页'],['words','核心词'],['operators','18操作词'],['patterns','简化句型'],['build','词语组合'],['express','我能表达什么'],['listening','听力'],['speaking','开口表达'],['review','学习状态'],['progress','学习进度']];
 const page=location.pathname.split('/')[2]||'';
+let navCountsReady=false;
+function renderNavigation(){
+ const counts=Object.create(null);for(const item of items)counts[item.kind]=(counts[item.kind]||0)+1;
+ const totals={words:counts.word||0,operators:counts.operator||0,patterns:counts.pattern||0,build:counts.combination||0,express:counts.expression||0,listening:['word','pattern','combination','expression'].reduce((sum,kind)=>sum+(counts[kind]||0),0),speaking:counts.expression||0,review:progress.length,progress:progress.length};
+ $('#nav').innerHTML=routes.map(([route,label])=>{const counted=navCountsReady&&Object.hasOwn(totals,route);return `<a href="/ogden${route?'/'+route:''}" aria-label="${label}" ${page===route?'aria-current="page"':''} ${counted?`aria-describedby="nav-count-${route}"`:''}>${label}${counted?`<span class="nav-count" id="nav-count-${route}" title="${route==='listening'?'全部听力教材':'当前栏目'}：${totals[route]}条">${totals[route]}</span>`:''}</a>`;}).join('');
+}
+
 const notify=s=>{$('#feedback').textContent=s;};
 const request=ogdenRequest;
 const state=id=>progress.find(p=>p.item_id===id);
@@ -42,7 +49,7 @@ function list(values,mode){return values.length?`<div class="grid">${values.map(
 function matchingWords(){const q=wordQuery.trim().toLowerCase(),stage=new URLSearchParams(location.search).get('stage');return items.filter(x=>x.kind==='word'&&(!stage||x.teachingStage===Number(stage))&&(!q||x.english.toLowerCase().includes(q)||x.chinese.includes(q))).sort((a,b)=>a.teachingOrder-b.teachingOrder);}
 function wordResults(){const found=matchingWords();return `<p>${found.length}个核心词，当前显示${Math.min(wordLimit,found.length)}个。可自由继续学习，没有每日限额。</p>`+list(found.slice(0,wordLimit),'study');}
 function render(){
- expressionInput.cancel();speech.stop();$('#nav').innerHTML=routes.map(([r,label])=>`<a href="/ogden${r?'/'+r:''}" ${page===r?'aria-current="page"':''}>${label}</a>`).join('');
+ expressionInput.cancel();speech.stop();renderNavigation();
  let html='';
  if(!page){const last=analytics.recent[0]||progress[0],next=items.find(x=>x.id===(last?.item_id))||items.filter(x=>x.kind==='word').sort((a,b)=>a.teachingOrder-b.teachingOrder)[0];html=`<h2>今天想表达什么？</h2><div class="paths"><a href="${continueTarget(next,last?.mode)}">继续学习${next?' · '+esc(next.english):''}</a><a href="/ogden/build">词语组合 · 一个词，多种意思</a><a href="/ogden/express">我能表达什么 · 自己组织英语</a><a href="/ogden/review">学习状态 · ${progress.length}条</a></div><div class="panel" id="curriculum-coverage"><p>教材有${coverage.uniqueIntents}种已自查表达意图，其中${coverage.coreSupportedIndependentIntents}种自主表达或改述可用核心词和明确词形完成至少一条参考。覆盖数量不是你的掌握数量，也不是自动评分。</p></div><details><summary>零基础可以按这个顺序学（不强制）</summary><ol>${learningPath.map(step=>`<li><a href="${esc(step.href)}">${esc(step.label)}</a></li>`).join('')}</ol></details><h2>四条自由学习路径</h2><ol><li><a href="/ogden/words">核心表达</a>：核心词 → 操作词 → 组合 → 句型</li><li><a href="/ogden/express">独立表达</a>：模仿 → 替换 → 自主表达 → 简单改述</li><li><a href="/ogden/express?scenario=life">生活交流</a>：日常与少量简单工作表达</li><li><a href="/ogden/listening">听说复习</a>：先听 → 跟读 → 自评 → 主动复习</li></ol><p>四条路径共用2.0条目状态；没有每日限额或强制过关。</p>`;}
  else if(page==='progress'){html=`<h2>2.0独立学习进度</h2><p>共有 ${progress.length} 条内容记录，${progress.filter(x=>x.status==='mastered'&&items.find(i=>i.id===x.item_id)?.kind==='word').length} 个核心词自评已掌握。操作词页与核心词页使用同一个词条状态。</p><div class="panel">${Object.entries(states).map(([key,label])=>`<p>${statusBadge(key)}：${progress.filter(x=>x.status===key).length}</p>`).join('')}</div><h3>按练习模式查看</h3><div class="panel">${analytics.practice.length?analytics.practice.map(p=>`<p>${modeLabels[p.mode]}：练习${p.attempts}次，${p.practiced}条内容，未掌握${p.weak}条，待复习${p.due}条。<a href="/ogden/review?mode=${p.mode}">进入复习</a></p>`).join(''):'尚无练习记录。'}</div><p>同一核心词只计算一次掌握；听力、开口等模式独立保留练习和复习时间。统计来自活动教材的自评，不是系统能力评分。</p>`;}
@@ -123,10 +130,10 @@ function bind(){
  document.querySelectorAll('[data-reset]').forEach(b=>b.onclick=()=>{const a=b.closest('article');a.querySelector('[data-built]').textContent='';a.querySelectorAll('[data-token]').forEach(t=>t.disabled=false);});
  document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>notify(b.closest('article').querySelector('[data-built]').textContent===b.dataset.check?'与这条教材组合一致。':'这次排列与教材不同。可以重新排列或查看参考；这不是自由表达评分。'));
 }
-async function refresh(){[progress,review,analytics]=await Promise.all([request('/ogden/progress').then(r=>{retryRequests.owner(r.ownerId);modeProgress=r.practice||[];return r.progress;}),request('/ogden/review'+(page==='review'?location.search:'')).then(r=>r.items),request('/ogden/analytics')]);}
+async function refresh(){[progress,review,analytics]=await Promise.all([request('/ogden/progress').then(r=>{retryRequests.owner(r.ownerId);modeProgress=r.practice||[];return r.progress;}),request('/ogden/review'+(page==='review'?location.search:'')).then(r=>r.items),request('/ogden/analytics')]);if(navCountsReady)renderNavigation();}
 function pauseSpeech(){speech.stop();notify('页面已暂停，旧播放请求已取消。请重新点击播放。');}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseSpeech();});addEventListener('pagehide',pauseSpeech);
-(async()=>{try{const catalog=await request('/ogden/catalog');items=catalog.items;domains=catalog.domains||[];coverage=catalog.coverage||{};learningPath=catalog.learningPath||[];await refresh();render();}catch(e){$('#content').innerHTML=e.status===401?'<div class="panel"><h2>使用现有账号登录</h2><p>两个版本共用现有账号和会员。登录后在首页选择学习版本。</p><a href="/?login=1">登录 / 注册并选择版本</a></div>':`<div class="panel"><h2>暂时无法读取2.0教材</h2><p>${esc(e.message)}</p><p>请检查网络或稍后，然后重试。已提交但未确认的保存会沿用原编号。</p><button id="retry-load">重新加载</button></div>`;if($('#retry-load'))$('#retry-load').onclick=()=>location.reload();}})();
+(async()=>{try{const catalog=await request('/ogden/catalog');items=catalog.items;domains=catalog.domains||[];coverage=catalog.coverage||{};learningPath=catalog.learningPath||[];await refresh();navCountsReady=true;render();}catch(e){$('#content').innerHTML=e.status===401?'<div class="panel"><h2>使用现有账号登录</h2><p>两个版本共用现有账号和会员。登录后在首页选择学习版本。</p><a href="/?login=1">登录 / 注册并选择版本</a></div>':`<div class="panel"><h2>暂时无法读取2.0教材</h2><p>${esc(e.message)}</p><p>请检查网络或稍后，然后重试。已提交但未确认的保存会沿用原编号。</p><button id="retry-load">重新加载</button></div>`;if($('#retry-load'))$('#retry-load').onclick=()=>location.reload();}})();
 
 addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
 
@@ -134,4 +141,5 @@ addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
 
 window.addEventListener('pagehide',()=>expressionInput.cancel());
 document.addEventListener('visibilitychange',()=>{if(document.hidden)expressionInput.cancel();});
+
 
