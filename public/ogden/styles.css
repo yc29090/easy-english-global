@@ -2,3 +2,8 @@
 
 input[type=checkbox]{display:inline-block;width:auto;min-height:24px;vertical-align:middle;margin-right:10px} .reference-comparison{background:#f3f6ed;padding:12px;border-radius:10px}
 header{flex-wrap:wrap;gap:12px}.version-actions{display:flex;flex-wrap:wrap;gap:8px;margin:0}.version-actions a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border-radius:10px;background:#edf3ed;text-decoration:none}
+
+
+/* Navigation counts inherit the existing link colors. */
+#nav a{display:inline-flex;align-items:center;gap:6px;max-width:100%;white-space:nowrap}
+#nav .nav-count{display:inline-block;flex-shrink:0;min-width:1.7em;padding:0 .35em;border:1px solid currentColor;border-radius:999px;color:inherit;background:transparent;font-size:.75em;font-weight:700;line-height:1.4;text-align:center;font-variant-numeric:tabular-nums}
