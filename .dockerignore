@@ -1,7 +1,0 @@
-.git
-.env*
-.secrets
-*.pem
-*.key
-node_modules
-*.log

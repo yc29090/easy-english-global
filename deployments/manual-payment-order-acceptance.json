@@ -1,7 +1,0 @@
-{
-  "source_commit": "8b90ac2dee9d7a82cc34c651e16cd49829e3d50c",
-  "render_deploy_id": "dep-dbjijhu7bikc73findv0",
-  "authorized_by": "Owner explicitly requested payment launch and verification",
-  "scope": "One dedicated synthetic account/order; no actual transfer or membership approval",
-  "cleanup": "Disable only ee-launch-<run>@example.invalid and close its synthetic order after checking logs"
-}
